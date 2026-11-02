@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Post;
 use App\Observers\CrudNotificationObserver;
+use App\Observers\PostSitemapObserver;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -28,6 +30,9 @@ class AppServiceProvider extends ServiceProvider
         $this->configurePasswordRules();
         $this->configureRateLimiting();
         $this->registerCrudNotifications();
+
+        // Keeps sitemap.xml fresh between scheduled runs (see config/sitemap.php).
+        Post::observe(PostSitemapObserver::class);
     }
 
     /**

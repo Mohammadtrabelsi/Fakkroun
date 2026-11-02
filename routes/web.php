@@ -4,12 +4,15 @@ use App\Http\Controllers\ActivityLogExportController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\RobotsController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/robots.txt', RobotsController::class)->name('robots');
 
 Route::view('/about', 'about')->name('about');
 Route::view('/docs', 'docs')->name('docs');

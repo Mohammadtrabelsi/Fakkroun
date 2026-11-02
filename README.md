@@ -12,6 +12,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 - **Activity logging** — every meaningful change to users, posts, categories, and settings is recorded with [spatie/laravel-activitylog](https://spatie.be/docs/laravel-activitylog) and browsable from the admin panel.
 - **Activity log export & retention** — download the filtered activity log as CSV or JSON; `activitylog:clean` runs daily via the scheduler.
 - **CRUD notifications** — admins receive a stored notification when posts, categories, users or settings are created, updated, deleted or restored, and can review them in a bell-linked notifications page. The acting user is never notified about their own change. See [Feature notes](#feature-notes).
+- **XML sitemap** — `php artisan sitemap:generate` writes `/sitemap.xml` (via [spatie/laravel-sitemap](https://github.com/spatie/laravel-sitemap)) from the public pages and published posts; it is rebuilt hourly by the scheduler and after post changes, and declared in a dynamic `/robots.txt`. See [Feature notes](#feature-notes).
 - **Visit statistics** — page views on the public site are counted (bots, admin, API and asset requests are excluded) and shown on the dashboards.
 - **System health** — the admin dashboard checks the database, cache and queue, and `/up` exposes a liveness endpoint for uptime monitors.
 - **REST API** — every service is exposed as JSON endpoints under `/api`, protected by the same authorization gates as the web UI. Sessions and Sanctum personal access tokens are both accepted (see [API](#api)).
@@ -79,7 +80,8 @@ Then create the file with `touch database/database.sqlite` and run `composer set
 
 - **Cover images** are stored on the `public` disk. Run `php artisan storage:link` once per environment.
 - **Queues:** mail is queued (`QUEUE_CONNECTION=database` by default). Run `php artisan queue:work` as a long-running process; `composer dev` starts one for you locally. Without a worker, verification and reset emails are not sent.
-- **Scheduler:** run `php artisan schedule:work` locally, or add `* * * * * php /path/to/artisan schedule:run` to cron in production. The scheduler prunes the activity log.
+- **Scheduler:** run `php artisan schedule:work` locally, or add `* * * * * php /path/to/artisan schedule:run` to cron in production. The scheduler prunes the activity log and rebuilds the sitemap.
+- **Sitemap:** set `APP_URL` to the canonical production domain (e.g. `https://www.example.com`) — every sitemap and robots.txt URL is built from it, and generation refuses `localhost`/`.test`-style hosts in production. The PHP user running the scheduler and queue worker must be able to write to `public/`. Run `php artisan sitemap:generate` once after deploying.
 - **Maintenance mode** is controlled from **Admin → Settings**; it does not need `php artisan down`.
 - **Health checks:** point uptime monitors at `/up`. The admin dashboard's system-health card shows the same probes in more detail.
 - **Passwords:** every password rule uses `Password::defaults()`. In production it also requires mixed case, numbers and a password that is not in a known breach list. Outside production the minimum is 8 characters.
@@ -97,6 +99,9 @@ These are the keys that change the starter kit's own behaviour. Everything else 
 | `QUEUE_CONNECTION` | `database` | Where queued mail and notifications run |
 | `CACHE_STORE` | `database` | Cache store, used by the health probes and rate limiting |
 | `SESSION_DRIVER` | `database` | Session store behind the web login |
+| `SITEMAP_SCHEDULE` | `0 * * * *` | Cron expression for scheduled sitemap regeneration |
+| `SITEMAP_REGENERATE_ON_CHANGE` | `true` | Queue a sitemap rebuild when a published post changes |
+| `SITEMAP_MAX_URLS_PER_FILE` | `50000` | Split into a sitemap index above this many URLs |
 | `MAIL_MAILER` | `log` in `.env.example` | Set to a real mailer before sending verification or reset emails |
 | `CRUD_NOTIFICATIONS_ENABLED` | `true` | Turns the CRUD notification observers on or off |
 | `ADMIN_EMAIL` / `ADMIN_NAME` / `ADMIN_PASSWORD` | `admin@majidastarter.com` / `Admin User` / `password` | Read by `AdminUserSeeder` only |
@@ -183,6 +188,7 @@ app/Services/
 ├── ActivityLogService.php # Activity log queries and export rows
 ├── CategoryService.php    # Category CRUD, options, stats
 ├── PostService.php        # Post CRUD, search, public listing, stats
+├── SitemapService.php     # Builds and atomically publishes sitemap.xml
 ├── SettingService.php     # Reads/updates the site settings record
 ├── SystemHealthService.php# Probes for the admin health card
 ├── TwoFactorService.php   # TOTP setup, verification, recovery codes
@@ -192,7 +198,7 @@ app/Services/
 routes/
 ├── web.php                # Public, guest, authenticated, verified, and admin route groups
 ├── api.php                # JSON API endpoints (see below)
-└── console.php            # Scheduled tasks (activitylog:clean)
+└── console.php            # Scheduled tasks (activitylog:clean, sitemap:generate)
 
 lang/
 └── en/  ar/  fr/          # PHP translation files per locale
@@ -205,7 +211,7 @@ docs/
 
 ### Web
 
-- **Public** — `/` (landing), `/docs`, `/blog` (listing, `?q=` search), `/blog/{slug}` (published post), `/up` (health check)
+- **Public** — `/` (landing), `/about`, `/docs`, `/blog` (listing, `?q=` search), `/blog/{slug}` (published post), `/up` (health check), `/robots.txt`, `/sitemap.xml` (static file written by `sitemap:generate`)
 - **Guest routes** — `/login`, `/register`, `/forgot-password`, `/reset-password/{token}`, `/two-factor-challenge` (second step of sign-in)
 - **Authenticated routes** — `/verify-email`, `/verify-email/{id}/{hash}` (signed link), `/settings/profile`, `/settings/two-factor`, `/logout`
 - **Verified routes** — `/dashboard`
@@ -279,6 +285,7 @@ These features work out of the box, but are easy to miss in the code.
 - **Maintenance mode.** Toggled from **Admin → Settings**. `EnforceMaintenanceMode` serves a 503 page to visitors and JSON on `/api`. Administrators, the login and two-factor pages, language switching and `/up` stay reachable.
 - **Date format.** The admin settings choose one format for dates shown in the activity log and the users list. The choices are defined in `Setting::DATE_FORMATS`.
 - **Cover images.** Posts can have a cover image, uploaded in the post form and stored on the `public` disk. It is shown on `/blog` and on the post page. Run `php artisan storage:link` first.
+- **XML sitemap.** `php artisan sitemap:generate` (`SitemapService`) lists the named routes in `config/sitemap.php` (`home`, `about`, `docs`, `blog`) and every post that `/blog/{slug}` actually serves (published, not trashed). URLs are built from `APP_URL`, never contain query strings and are de-duplicated. `<lastmod>` is the post's `updated_at` (and the newest one for `/blog`); static pages get none, and `changefreq`/`priority` are omitted. Files are rendered, validated and written to a temp file, then renamed into place, so a failed run leaves the previous sitemap intact and the command exits non-zero. Above 50,000 URLs it writes `sitemap-1.xml`, `sitemap-2.xml`, … behind a sitemap index. It is regenerated hourly (`SITEMAP_SCHEDULE`, `withoutOverlapping`) and `PostSitemapObserver` queues a de-duplicated `GenerateSitemapJob` whenever a published post changes. Auth, account, admin, API and language routes are never listed; categories have no public page, so they are not listed either. `/robots.txt` is served by `RobotsController` and adds the `Sitemap:` line once the file exists.
 - **Support email.** Set in admin settings and stored with the site settings.
 
 ## Localization
