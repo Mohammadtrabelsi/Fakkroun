@@ -20,6 +20,7 @@
 /public/build
 /public/fonts-manifest.dev.json
 /public/hot
+/public/sitemap*.xml
 /public/storage
 /storage/*.key
 /storage/pail

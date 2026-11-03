@@ -3,9 +3,12 @@
 namespace App\Services;
 
 use App\Models\Post;
+use Carbon\CarbonInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\LazyCollection;
 use Illuminate\Support\Str;
 
 class PostService
@@ -128,6 +131,31 @@ class PostService
             ->with(['category', 'author'])
             ->where('slug', $slug)
             ->first();
+    }
+
+    /**
+     * Every publicly reachable post (the same set findPublishedBySlug() serves),
+     * streamed in id order with only the columns a sitemap needs, so memory
+     * stays flat however many posts there are.
+     *
+     * @return LazyCollection<int, Post>
+     */
+    public function publishedForSitemap(int $chunkSize = 500): LazyCollection
+    {
+        return Post::query()
+            ->published()
+            ->select(['id', 'slug', 'updated_at'])
+            ->lazyById($chunkSize);
+    }
+
+    /**
+     * When the most recently changed published post was last modified, or null if none.
+     */
+    public function lastPublishedModification(): ?CarbonInterface
+    {
+        $latest = Post::query()->published()->max('updated_at');
+
+        return $latest ? Carbon::parse($latest) : null;
     }
 
     public function stats(): array

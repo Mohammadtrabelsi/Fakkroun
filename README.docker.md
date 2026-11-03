@@ -113,7 +113,7 @@ docker compose exec app php artisan storage:link
 
 ### 8. Start the background workers
 
-Mail is queued by default (`QUEUE_CONNECTION=database`), and the activity log is pruned by the scheduler. Neither runs inside the stack automatically, so start them in the background:
+Mail is queued by default (`QUEUE_CONNECTION=database`), and the scheduler prunes the activity log and rebuilds `public/sitemap.xml`. Neither runs inside the stack automatically, so start them in the background:
 
 ```bash
 docker compose exec -d app php artisan queue:work
