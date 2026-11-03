@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
+use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 /**
@@ -42,12 +42,11 @@ class TagService
     }
 
     /**
-     * Replaces a taggable model's tags with the given names, creating missing tags.
+     * Replaces a post's tags with the given names, creating missing tags.
      *
-     * @param  Model  $model  a model using Spatie\Tags\HasTags
      * @param  iterable<mixed>  $names
      */
-    public function syncTo(Model $model, iterable $names): void
+    public function syncTo(Post $model, iterable $names): void
     {
         $model->syncTags($this->normalize($names));
     }

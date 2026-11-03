@@ -3,8 +3,9 @@
 namespace App\Services;
 
 use App\Jobs\RunBackupJob;
+use Carbon\Carbon;
 use Spatie\Backup\BackupDestination\Backup;
-use Spatie\Backup\Config\MonitoredBackupsConfig;
+use Spatie\Backup\Config\Config;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatus;
 use Spatie\Backup\Tasks\Monitor\BackupDestinationStatusFactory;
 use Throwable;
@@ -19,7 +20,7 @@ class BackupService
     /** Newest backups listed per destination. */
     public const LIST_LIMIT = 10;
 
-    public function __construct(private readonly MonitoredBackupsConfig $monitorConfig) {}
+    public function __construct(private readonly Config $config) {}
 
     /**
      * One entry per monitored destination disk. An unreachable disk is
@@ -27,13 +28,13 @@ class BackupService
      *
      * @return array<int, array{
      *     disk: string, name: string, reachable: bool, healthy: bool,
-     *     failure: string|null, count: int, newest: \Carbon\Carbon|null,
-     *     usedBytes: float, backups: array<int, array{file: string, date: \Carbon\Carbon, sizeBytes: float}>
+     *     failure: string|null, count: int, newest: Carbon|null,
+     *     usedBytes: float, backups: array<int, array{file: string, date: Carbon, sizeBytes: float}>
      * }>
      */
     public function destinations(): array
     {
-        return BackupDestinationStatusFactory::createForMonitorConfig($this->monitorConfig)
+        return BackupDestinationStatusFactory::createForMonitorConfig($this->config->monitoredBackups)
             ->map(fn (BackupDestinationStatus $status) => $this->describe($status))
             ->values()
             ->all();

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Spatie\Activitylog\Models\Concerns\LogsActivity;
@@ -19,6 +20,10 @@ use Spatie\Feed\FeedItem;
 use Spatie\Tags\HasTags;
 use Spatie\Translatable\HasTranslations;
 
+/**
+ * @property string $slug
+ * @property Carbon|null $published_at
+ */
 class Post extends Model implements Feedable
 {
     /** @use HasFactory<PostFactory> */
@@ -150,7 +155,7 @@ class Post extends Model implements Feedable
             ->summary($this->summary(500))
             ->updated($this->updated_at)
             ->link($this->publicUrl())
-            ->authorName($this->author?->name ?? config('app.name'))
+            ->authorName($this->author->name ?? config('app.name'))
             ->category(...array_filter([$this->category?->name, ...$this->tags->pluck('name')->all()]));
     }
 

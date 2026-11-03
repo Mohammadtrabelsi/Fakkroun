@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Spatie\LaravelPdf\Enums\Unit;
 use Spatie\LaravelPdf\Facades\Pdf;
@@ -49,7 +50,7 @@ class PdfService
     /**
      * Shared values the layout's header and footer print.
      *
-     * @return array{siteName: string, supportEmail: string|null, generatedAt: \Illuminate\Support\Carbon, pageNumbers: bool}
+     * @return array{siteName: string, supportEmail: string|null, generatedAt: Carbon, pageNumbers: bool}
      */
     public function documentMeta(): array
     {

@@ -46,10 +46,13 @@ trait HasUniqueSlug
     /**
      * Normalises any slug written to the model; an empty result becomes null
      * so that it is regenerated from the source attribute.
+     *
+     * @return Attribute<string|null, string|null>
      */
     protected function slug(): Attribute
     {
         return Attribute::make(
+            get: fn (?string $value): ?string => $value,
             set: fn (?string $value): ?string => Str::slug((string) $value) ?: null,
         );
     }

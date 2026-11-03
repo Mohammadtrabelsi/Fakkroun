@@ -10,7 +10,7 @@ use RuntimeException;
 
 /**
  * Runs `backup:run` in the background for the admin "Back up now" action.
- * Unique, so repeated clicks queue a single run. Failures are also mailed by
+ * Unique per mode, so repeated clicks queue a single run. Failures are also mailed by
  * laravel-backup's own BackupHasFailed notification.
  */
 class RunBackupJob implements ShouldBeUnique, ShouldQueue
@@ -24,6 +24,14 @@ class RunBackupJob implements ShouldBeUnique, ShouldQueue
     public int $uniqueFor = 1800;
 
     public function __construct(public bool $onlyDatabase = true) {}
+
+    /**
+     * One pending run per mode: a database-only and a full backup don't block each other.
+     */
+    public function uniqueId(): string
+    {
+        return $this->onlyDatabase ? 'db' : 'full';
+    }
 
     public function handle(): void
     {

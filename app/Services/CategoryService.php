@@ -133,22 +133,28 @@ class CategoryService
         return Category::query()
             ->withCount('posts')
             ->lazyById(500)
-            ->map(function (Category $category): array {
-                $row = ['slug' => $category->slug];
+            ->map(fn (Category $category): array => $this->exportRow($category));
+    }
 
-                foreach ($this->importLocales() as $locale) {
-                    $row["name_{$locale}"] = $category->getTranslation('name', $locale, false);
-                }
+    /**
+     * @return array<string, mixed>
+     */
+    protected function exportRow(Category $category): array
+    {
+        $row = ['slug' => $category->slug];
 
-                foreach ($this->importLocales() as $locale) {
-                    $row["description_{$locale}"] = $category->getTranslation('description', $locale, false);
-                }
+        foreach ($this->importLocales() as $locale) {
+            $row["name_{$locale}"] = $category->getTranslation('name', $locale, false);
+        }
 
-                return $row + [
-                    'is_active' => $category->is_active ? 1 : 0,
-                    'posts_count' => $category->posts_count,
-                ];
-            });
+        foreach ($this->importLocales() as $locale) {
+            $row["description_{$locale}"] = $category->getTranslation('description', $locale, false);
+        }
+
+        return $row + [
+            'is_active' => $category->is_active ? 1 : 0,
+            'posts_count' => $category->posts_count,
+        ];
     }
 
     /**

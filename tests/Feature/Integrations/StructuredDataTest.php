@@ -17,7 +17,7 @@ class StructuredDataTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * @return array<int, array<string, mixed>>  the @graph nodes of every JSON-LD block on the page
+     * @return array<int, array<string, mixed>> the @graph nodes of every JSON-LD block on the page
      */
     private function jsonLd(TestResponse $response): array
     {

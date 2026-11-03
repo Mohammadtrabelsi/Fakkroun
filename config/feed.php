@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\PostService;
+
 /*
 | RSS feeds (spatie/laravel-feed). Routes are registered by Route::feeds() in
 | routes/web.php; each feed below becomes "feeds.{name}" at its "url".
@@ -16,7 +18,7 @@ return [
 
     'feeds' => [
         'blog' => [
-            'items' => [App\Services\PostService::class, 'feedItems'],
+            'items' => [PostService::class, 'feedItems'],
 
             'url' => '/feed',
 

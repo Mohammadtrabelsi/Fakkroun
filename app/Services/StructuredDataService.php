@@ -67,8 +67,8 @@ class StructuredDataService
             ->inLanguage(str_replace('_', '-', app()->getLocale()))
             ->datePublished($post->published_at)
             ->dateModified($post->updated_at)
-            ->publisher(['@id' => $this->organizationId()])
-            ->isPartOf(['@id' => $this->websiteId()]);
+            ->setProperty('publisher', $this->reference($this->organizationId()))
+            ->setProperty('isPartOf', $this->reference($this->websiteId()));
 
         if ($post->author) {
             $article->author(Schema::person()->name($post->author->name));
@@ -100,7 +100,7 @@ class StructuredDataService
         $position = 1;
 
         foreach ([__('marketing.home') => route('home')] + $trail as $name => $url) {
-            $items[] = Schema::listItem()->position($position++)->name((string) $name)->item($url);
+            $items[] = Schema::listItem()->position($position++)->name((string) $name)->setProperty('item', $url);
         }
 
         return Schema::breadcrumbList()->itemListElement($items);
@@ -130,7 +130,7 @@ class StructuredDataService
             ->name($name)
             ->url(route('home'))
             ->inLanguage(str_replace('_', '-', app()->getLocale()))
-            ->publisher(['@id' => $this->organizationId()])
+            ->setProperty('publisher', $this->reference($this->organizationId()))
             ->potentialAction(
                 Schema::searchAction()
                     ->target(route('blog').'?q={search_term_string}')
@@ -145,6 +145,16 @@ class StructuredDataService
         $graph->add($organization)->add($website);
 
         return $graph;
+    }
+
+    /**
+     * A JSON-LD node reference, so an entity is described once per graph.
+     *
+     * @return array{'@id': string}
+     */
+    protected function reference(string $id): array
+    {
+        return ['@id' => $id];
     }
 
     protected function organizationId(): string

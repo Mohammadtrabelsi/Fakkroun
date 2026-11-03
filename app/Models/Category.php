@@ -13,6 +13,9 @@ use Spatie\Activitylog\Models\Concerns\LogsActivity;
 use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Translatable\HasTranslations;
 
+/**
+ * @property string $slug
+ */
 class Category extends Model
 {
     /** @use HasFactory<CategoryFactory> */
