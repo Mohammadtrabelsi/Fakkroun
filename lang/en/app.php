@@ -18,4 +18,7 @@ return [
     'my_space' => 'My space',
     'view_site' => 'View site',
     'welcome_back' => 'Welcome,',
+    'tags' => 'Tags',
+    'health' => 'Health',
+    'backups' => 'Backups',
 ];

@@ -26,6 +26,9 @@ new #[Layout('layouts::app')] #[Title('Edit post')] class extends Component
 
     public ?int $categoryId = null;
 
+    /** @var array<int, string> */
+    public array $tags = [];
+
     public $cover = null;
 
     public bool $removeCover = false;
@@ -40,6 +43,7 @@ new #[Layout('layouts::app')] #[Title('Edit post')] class extends Component
         $this->slug = $post->slug;
         $this->status = $post->status;
         $this->categoryId = $post->category_id;
+        $this->tags = $post->tags->map(fn ($tag) => $tag->getTranslation('name', \App\Models\Tag::getLocale()))->all();
 
         foreach (array_keys($this->locales) as $locale) {
             $this->title[$locale] = $post->getTranslation('title', $locale, false) ?? '';
@@ -67,6 +71,8 @@ new #[Layout('layouts::app')] #[Title('Edit post')] class extends Component
             'slug' => ['required', 'string', 'max:255', Rule::unique('posts', 'slug')->ignore($this->post->id)],
             'status' => ['required', Rule::in(array_keys(Post::statuses()))],
             'categoryId' => ['nullable', 'exists:categories,id'],
+            'tags' => ['array', 'max:'.\App\Services\TagService::MAX_PER_MODEL],
+            'tags.*' => ['string', 'max:'.\App\Services\TagService::MAX_LENGTH],
             'cover' => ['nullable', 'image', 'max:2048'],
         ]);
 
@@ -77,6 +83,7 @@ new #[Layout('layouts::app')] #[Title('Edit post')] class extends Component
             'slug' => $this->slug,
             'status' => $this->status,
             'category_id' => $this->categoryId,
+            'tags' => $this->tags,
             'cover_image' => $this->cover
                 ? $posts->storeCover($this->cover)
                 : ($this->removeCover ? null : $this->post->cover_image),
@@ -164,6 +171,12 @@ new #[Layout('layouts::app')] #[Title('Edit post')] class extends Component
                     @endforeach
                 </select>
                 <x-input-error :message="$errors->first('categoryId')" />
+            </div>
+
+            <div class="field ms-mb-0">
+                <x-input-label for="tags" :value="__('tags.label')" />
+                <livewire:admin.tag-selector wire:model="tags" />
+                <x-input-error :message="$errors->first('tags') ?: $errors->first('tags.*')" />
             </div>
 
             <div class="field ms-mb-0">

@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'export' => 'Export :format',
+    'export_filtered' => 'Downloads the posts matching the current filters',
+    'import' => 'Import',
+    'categories_title' => 'Import categories',
+    'categories_help' => 'Create or update categories from a CSV or Excel file. Rows are matched by slug; rows without a slug create new categories.',
+    'categories_columns' => 'Columns: slug, name_en (required), name_ar, name_fr, description_en, description_ar, description_fr, is_active (1/0). Tip: export the categories to get a ready-made template.',
+    'back_to_categories' => 'Back to categories',
+    'file' => 'File',
+    'limits' => ':formats, up to :kb KB and :rows rows.',
+    'start' => 'Import',
+    'importing' => 'Importing…',
+    'uploading' => 'Uploading…',
+    'download_template' => 'Download current categories (CSV)',
+    'created' => 'Created',
+    'updated' => 'Updated',
+    'failed' => 'Rejected',
+    'row' => 'Row',
+    'problem' => 'Problem',
+    'skipped' => ':count row(s) were not processed: the limit is :max rows per file.',
+    'more_errors' => '…and :count more rejected row(s).',
+    'missing_columns' => 'Missing required column(s): :columns.',
+    'row_failed' => 'This row could not be saved.',
+    'slug_trashed' => 'The slug ":slug" belongs to a category in the trash. Restore or permanently delete it first.',
+    'unreadable' => 'The file could not be read. Check that it is a valid CSV or XLSX file.',
+];

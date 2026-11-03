@@ -5,10 +5,12 @@ namespace App\Providers;
 use App\Models\Post;
 use App\Observers\CrudNotificationObserver;
 use App\Observers\PostSitemapObserver;
+use App\Services\StructuredDataService;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
 
@@ -30,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configurePasswordRules();
         $this->configureRateLimiting();
         $this->registerCrudNotifications();
+        $this->registerStructuredData();
 
         // Keeps sitemap.xml fresh between scheduled runs (see config/sitemap.php).
         Post::observe(PostSitemapObserver::class);
@@ -40,6 +43,25 @@ class AppServiceProvider extends ServiceProvider
      * declared in config/crud_notifications.php. Adding a resource to that
      * config is all it takes to start notifying — no per-model wiring here.
      */
+    /**
+     * JSON-LD for the public pages that have no controller of their own
+     * (the blog pages get theirs from BlogController).
+     */
+    private function registerStructuredData(): void
+    {
+        View::composer('welcome', fn ($view) => $view->with(
+            'structuredData', app(StructuredDataService::class)->forHome(),
+        ));
+
+        View::composer('about', fn ($view) => $view->with(
+            'structuredData', app(StructuredDataService::class)->forPage([__('marketing.about') => route('about')]),
+        ));
+
+        View::composer('docs', fn ($view) => $view->with(
+            'structuredData', app(StructuredDataService::class)->forPage([__('marketing.docs') => route('docs')]),
+        ));
+    }
+
     private function registerCrudNotifications(): void
     {
         if (! config('crud_notifications.enabled', true)) {

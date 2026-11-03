@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Services\PostService;
+use App\Services\TagService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -24,6 +25,7 @@ class PostController extends Controller
             'per_page' => ['nullable', 'integer', 'min:1', 'max:100'],
             'status' => ['nullable', 'in:'.implode(',', array_keys(Post::statuses()))],
             'category_id' => ['nullable', 'integer', 'exists:categories,id'],
+            'tag' => ['nullable', 'integer', 'exists:tags,id'],
             'trashed' => ['nullable', 'in:only,with'],
             'sort' => ['nullable', 'in:published_at,title,created_at'],
             'direction' => ['nullable', 'in:asc,desc'],
@@ -33,7 +35,7 @@ class PostController extends Controller
             $this->posts->searchPaginated(
                 $validated['search'] ?? null,
                 $validated['per_page'] ?? 10,
-                collect($validated)->only(['status', 'category_id', 'trashed', 'sort', 'direction'])->all(),
+                collect($validated)->only(['status', 'category_id', 'tag', 'trashed', 'sort', 'direction'])->all(),
             )
         );
     }
@@ -63,9 +65,9 @@ class PostController extends Controller
             'status' => $validated['status'],
             'category_id' => $validated['category_id'] ?? null,
             'user_id' => $request->user()->id,
-        ]);
+        ] + $this->tagsPayload($validated));
 
-        return response()->json($post, 201);
+        return response()->json($post->load('tags'), 201);
     }
 
     /**
@@ -84,9 +86,9 @@ class PostController extends Controller
             'slug' => $validated['slug'] ?? null,
             'status' => $validated['status'],
             'category_id' => $validated['category_id'] ?? null,
-        ]);
+        ] + $this->tagsPayload($validated));
 
-        return response()->json($post);
+        return response()->json($post->load('tags'));
     }
 
     /**
@@ -140,6 +142,21 @@ class PostController extends Controller
             'slug' => ['nullable', 'string', 'max:255', Rule::unique('posts', 'slug')->ignore($post?->id)],
             'status' => ['required', Rule::in(array_keys(Post::statuses()))],
             'category_id' => ['nullable', 'exists:categories,id'],
+            // Optional: tag names; when present they replace the post's tags.
+            'tags' => ['sometimes', 'array', 'max:'.TagService::MAX_PER_MODEL],
+            'tags.*' => ['string', 'max:'.TagService::MAX_LENGTH],
         ]);
+    }
+
+    /**
+     * Only forwards "tags" when the client sent it, so omitting the key
+     * leaves existing tags untouched.
+     *
+     * @param  array<string, mixed>  $validated
+     * @return array<string, mixed>
+     */
+    private function tagsPayload(array $validated): array
+    {
+        return array_key_exists('tags', $validated) ? ['tags' => $validated['tags']] : [];
     }
 }

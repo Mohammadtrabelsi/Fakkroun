@@ -1,55 +1,40 @@
 <?php
 
+/*
+| RSS feeds (spatie/laravel-feed). Routes are registered by Route::feeds() in
+| routes/web.php; each feed below becomes "feeds.{name}" at its "url".
+|
+| Items come from PostService::feedItems(): published, non-trashed posts only
+| (the same set /blog/{slug} serves), newest first, capped at FEED_LIMIT.
+*/
+
 return [
+
+    'enabled' => (bool) env('FEED_ENABLED', true),
+
+    'limit' => (int) env('FEED_LIMIT', 20),
+
     'feeds' => [
-        'main' => [
-            /*
-             * Here you can specify which class and method will return
-             * the items that should appear in the feed. For example:
-             * [App\Model::class, 'getAllFeedItems']
-             *
-             * You can also pass an argument to that method. Note that their key must be the name of the parameter:
-             * [App\Model::class, 'getAllFeedItems', 'parameterName' => 'argument']
-             */
-            'items' => '',
+        'blog' => [
+            'items' => [App\Services\PostService::class, 'feedItems'],
 
-            /*
-             * The feed will be available on this url.
-             */
-            'url' => '',
+            'url' => '/feed',
 
-            'title' => 'My feed',
-            'description' => 'The description of the feed.',
-            'language' => 'en-US',
+            'title' => env('FEED_TITLE', env('APP_NAME', 'Laravel').' — Blog'),
+            'description' => env('FEED_DESCRIPTION', 'The latest posts from the blog.'),
+            'language' => env('FEED_LANGUAGE', 'en-US'),
 
-            /*
-             * The image to display for the feed. For Atom feeds, this is displayed as
-             * a banner/logo; for RSS and JSON feeds, it's displayed as an icon.
-             * An empty value omits the image attribute from the feed.
-             */
-            'image' => '',
+            /* Absolute URL of a feed image, or empty for none. */
+            'image' => env('FEED_IMAGE', ''),
 
-            /*
-             * The format of the feed. Acceptable values are 'rss', 'atom', or 'json'.
-             */
-            'format' => 'atom',
+            /* rss | atom | json */
+            'format' => 'rss',
+            'view' => 'feed::rss',
 
-            /*
-             * The view that will render the feed.
-             */
-            'view' => 'feed::atom',
-
-            /*
-             * The mime type to be used in the <link> tag. Set to an empty string to automatically
-             * determine the correct value.
-             */
+            /* Leave empty to use the default content type of the format. */
             'type' => '',
-
-            /*
-             * The content type for the feed response. Set to an empty string to automatically
-             * determine the correct value.
-             */
             'contentType' => '',
         ],
     ],
+
 ];

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'home' => 'Home',
     'auth_highlight_' => 'Auth highlight ',
     'auth_highlight_activity' => 'Activity log with CSV and JSON export',
     'auth_highlight_i18n' => 'English, Arabic and French, with right-to-left layouts',

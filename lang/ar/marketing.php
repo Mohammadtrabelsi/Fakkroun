@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'home' => 'الرئيسية',
     'auth_highlight_' => 'سجل نشاط مع تصدير CSV وJSON',
     'auth_highlight_activity' => 'سجل نشاط مع تصدير CSV وJSON',
     'auth_highlight_i18n' => 'الإنجليزية والعربية والفرنسية مع دعم الاتجاه من اليمين إلى اليسار',

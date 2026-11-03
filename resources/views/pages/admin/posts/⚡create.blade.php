@@ -23,6 +23,9 @@ new #[Layout('layouts::app')] #[Title('New post')] class extends Component
 
     public ?int $categoryId = null;
 
+    /** @var array<int, string> */
+    public array $tags = [];
+
     public $cover = null;
 
     public array $locales = ['en' => 'English', 'ar' => 'العربية'];
@@ -57,6 +60,8 @@ new #[Layout('layouts::app')] #[Title('New post')] class extends Component
             'slug' => ['nullable', 'string', 'max:255', 'unique:posts,slug'],
             'status' => ['required', Rule::in(array_keys(Post::statuses()))],
             'categoryId' => ['nullable', 'exists:categories,id'],
+            'tags' => ['array', 'max:'.\App\Services\TagService::MAX_PER_MODEL],
+            'tags.*' => ['string', 'max:'.\App\Services\TagService::MAX_LENGTH],
             'cover' => ['nullable', 'image', 'max:2048'],
         ]);
 
@@ -67,6 +72,7 @@ new #[Layout('layouts::app')] #[Title('New post')] class extends Component
             'slug' => $this->slug ?: null,
             'status' => $this->status,
             'category_id' => $this->categoryId,
+            'tags' => $this->tags,
             'user_id' => auth()->id(),
             'cover_image' => $this->cover ? $posts->storeCover($this->cover) : null,
         ]);
@@ -153,6 +159,12 @@ new #[Layout('layouts::app')] #[Title('New post')] class extends Component
                     @endforeach
                 </select>
                 <x-input-error :message="$errors->first('categoryId')" />
+            </div>
+
+            <div class="field ms-mb-0">
+                <x-input-label for="tags" :value="__('tags.label')" />
+                <livewire:admin.tag-selector wire:model="tags" />
+                <x-input-error :message="$errors->first('tags') ?: $errors->first('tags.*')" />
             </div>
 
             <div class="field ms-mb-0">

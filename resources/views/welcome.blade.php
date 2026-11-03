@@ -1,4 +1,4 @@
-<x-layouts.marketing>
+<x-layouts.marketing :structured-data="$structuredData ?? null" :canonical="route('home')">
     @push('styles')
         <style>
             /* Navy hero with a light diagonal panel, as in the brand visual. */

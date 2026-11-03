@@ -1,75 +1,46 @@
 <?php
 
-use Spatie\Health\Models\HealthCheckResultHistoryItem;
 use Spatie\Health\Notifications\CheckFailedNotification;
 use Spatie\Health\Notifications\Notifiable;
-use Spatie\Health\ResultStores\EloquentHealthResultStore;
+use Spatie\Health\ResultStores\CacheHealthResultStore;
+
+/*
+| Application health monitoring (spatie/laravel-health). Checks are
+| registered in App\Providers\HealthServiceProvider from the "checks" section
+| below, run every minute by the scheduler (`health:check`), and shown to
+| administrators at /admin/health. Machine-readable results are available at
+| /health.json only when HEALTH_SECRET_TOKEN is set (see README → Health).
+*/
 
 return [
+
     /*
-     * A result store is responsible for saving the results of the checks. The
-     * `EloquentHealthResultStore` will save results in the database. You
-     * can use multiple stores at the same time.
+     * Latest results are kept in the default cache store, so no extra table
+     * is needed. Use EloquentHealthResultStore if you want a history.
      */
     'result_stores' => [
-        EloquentHealthResultStore::class => [
-            'connection' => env('HEALTH_DB_CONNECTION', env('DB_CONNECTION')),
-            'model' => HealthCheckResultHistoryItem::class,
-            'keep_history_for_days' => 5,
+        CacheHealthResultStore::class => [
+            'store' => env('HEALTH_CACHE_STORE', env('CACHE_STORE', 'database')),
         ],
-
-        /*
-        Spatie\Health\ResultStores\CacheHealthResultStore::class => [
-            'store' => 'file',
-        ],
-
-        Spatie\Health\ResultStores\JsonFileHealthResultStore::class => [
-            'disk' => 's3',
-            'path' => 'health.json',
-        ],
-
-        Spatie\Health\ResultStores\InMemoryHealthResultStore::class,
-        */
     ],
 
-    /*
-     * You can get notified when specific events occur. Out of the box you can use 'mail' and 'slack'.
-     * For Slack you need to install laravel/slack-notification-channel.
-     */
     'notifications' => [
-        /*
-         * Notifications will only get sent if this option is set to `true`.
-         */
-        'enabled' => env('HEALTH_NOTIFICATIONS_ENABLED', true),
+        /* Mail alerts are sent only when a recipient is configured. */
+        'enabled' => (bool) env('HEALTH_NOTIFICATIONS_ENABLED', true) && filled(env('HEALTH_NOTIFICATION_EMAIL')),
 
         'notifications' => [
             CheckFailedNotification::class => ['mail'],
         ],
 
-        /*
-         * Here you can specify the notifiable to which the notifications should be sent. The default
-         * notifiable will use the variables specified in this config file.
-         */
         'notifiable' => Notifiable::class,
 
-        /*
-         * When checks start failing, you could potentially end up getting
-         * a notification every minute.
-         *
-         * With this setting, notifications are throttled. By default, you'll
-         * only get one notification per hour.
-         */
-        'throttle_notifications_for_minutes' => 60,
+        'throttle_notifications_for_minutes' => (int) env('HEALTH_THROTTLE_MINUTES', 60),
         'throttle_notifications_key' => 'health:latestNotificationSentAt:',
 
-        /*
-         * When set to true, notifications will only be sent when at least one
-         * check has a 'failed' status. Warnings will be ignored.
-         */
-        'only_on_failure' => false,
+        'only_on_failure' => true,
 
         'mail' => [
-            'to' => env('HEALTH_TO_ADDRESS', ''),
+            'to' => env('HEALTH_NOTIFICATION_EMAIL', ''),
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
@@ -79,91 +50,65 @@ return [
 
         'slack' => [
             'webhook_url' => env('HEALTH_SLACK_WEBHOOK_URL', ''),
-
-            /*
-             * If this is set to null the default channel of the webhook will be used.
-             */
             'channel' => null,
-
             'username' => null,
-
             'icon' => null,
         ],
     ],
 
-    /*
-     * You can let Oh Dear monitor the results of all health checks. This way, you'll
-     * get notified of any problems even if your application goes totally down. Via
-     * Oh Dear, you can also have access to more advanced notification options.
-     */
+    /* The Oh Dear endpoint is not used; /health.json covers external monitors. */
     'oh_dear_endpoint' => [
         'enabled' => false,
-
-        /*
-         * When this option is enabled, the checks will run before sending a response.
-         * Otherwise, we'll send the results from the last time the checks have run.
-         */
-        'always_send_fresh_results' => true,
-
-        /*
-         * The secret that is displayed at the Application Health settings at Oh Dear.
-         */
+        'always_send_fresh_results' => false,
         'secret' => env('OH_DEAR_HEALTH_CHECK_SECRET'),
-
-        /*
-         * The URL that should be configured in the Application health settings at Oh Dear.
-         */
         'url' => '/oh-dear-health-check-results',
     ],
 
-    /*
-     * You can specify a heartbeat URL for the Horizon check.
-     * This URL will be pinged if the Horizon check is successful.
-     * This way you can get notified if Horizon goes down.
-     */
     'horizon' => [
         'heartbeat_url' => env('HORIZON_HEARTBEAT_URL'),
     ],
 
-    /*
-     * You can specify a heartbeat URL for the Schedule check.
-     * This URL will be pinged if the Schedule check is successful.
-     * This way you can get notified if the schedule fails to run.
-     */
     'schedule' => [
         'heartbeat_url' => env('SCHEDULE_HEARTBEAT_URL'),
     ],
 
-    /*
-     * You can set a theme for the local results page
-     *
-     * - light: light mode
-     * - dark: dark mode
-     */
     'theme' => 'light',
 
-    /*
-     * When enabled, completed `HealthQueueJob`s will be displayed
-     * in Horizon's silenced jobs screen.
-     */
     'silence_health_queue_job' => true,
 
-    /*
-     * The response code to use for HealthCheckJsonResultsController when a health
-     * check has failed
-     */
-    'json_results_failure_status' => 200,
+    /* /health.json answers 503 when a check fails, so monitors can alert on status alone. */
+    'json_results_failure_status' => 503,
 
     /*
-     * You can specify a secret token that needs to be sent in the X-Secret-Token for secured access.
+     * Bearer token for /health.json. Empty (default) disables the endpoint;
+     * the package's own X-Secret-Token middleware is not used.
      */
     'secret_token' => env('HEALTH_SECRET_TOKEN'),
 
-/**
- * By default, conditionally skipped health checks are treated as failures.
- * You can override this behavior by uncommenting the configuration below.
- *
- * @link https://spatie.be/docs/laravel-health/v1/basic-usage/conditionally-running-or-modifying-checks
- */
-    // 'treat_skipped_as_failure' => false
+    /*
+     * Which checks run, with their thresholds (application-level settings).
+     * Queue and schedule checks rely on heartbeat commands scheduled in
+     * routes/console.php, so they only make sense where the scheduler runs.
+     */
+    'checks' => [
+        'database' => true,
+        'cache' => true,
+        'disk_space' => [
+            'enabled' => (bool) env('HEALTH_CHECK_DISK', true),
+            'warn_above_percent' => (int) env('HEALTH_DISK_WARN_PERCENT', 70),
+            'fail_above_percent' => (int) env('HEALTH_DISK_FAIL_PERCENT', 90),
+        ],
+        'queue' => [
+            'enabled' => (bool) env('HEALTH_CHECK_QUEUE', true),
+            'max_minutes' => (int) env('HEALTH_QUEUE_MAX_MINUTES', 5),
+        ],
+        'schedule' => [
+            'enabled' => (bool) env('HEALTH_CHECK_SCHEDULE', true),
+            'max_minutes' => (int) env('HEALTH_SCHEDULE_MAX_MINUTES', 2),
+        ],
+        'backups' => (bool) env('HEALTH_CHECK_BACKUPS', true),
+        /* Debug mode / environment / caching checks run in production only. */
+        'production_hygiene' => true,
+    ],
+
 ];

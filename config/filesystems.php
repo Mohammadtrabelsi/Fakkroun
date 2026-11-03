@@ -47,6 +47,16 @@ return [
             'report' => false,
         ],
 
+        // Private disk for spatie/laravel-backup archives. It is never served
+        // over HTTP and has no URL; see config/backup.php.
+        'backups' => [
+            'driver' => 'local',
+            'root' => env('BACKUP_LOCAL_PATH', storage_path('app/backups')),
+            'visibility' => 'private',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

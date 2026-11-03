@@ -6,9 +6,21 @@ use Illuminate\Validation\Rules\Password;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
+use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 
 new #[Layout('layouts::guest')] #[Title('Create account')] class extends Component
 {
+    use UsesSpamProtection;
+
+    /** Honeypot + timing fields (spatie/laravel-honeypot); bots that fill them get a 403. */
+    public HoneypotData $extraFields;
+
+    public function mount(): void
+    {
+        $this->extraFields = new HoneypotData;
+    }
+
     public string $name = '';
 
     public string $email = '';
@@ -28,6 +40,8 @@ new #[Layout('layouts::guest')] #[Title('Create account')] class extends Compone
 
     public function register(): void
     {
+        $this->protectAgainstSpam();
+
         $validated = $this->validate();
 
         $user = app(UserService::class)->register($validated);
@@ -48,6 +62,7 @@ new #[Layout('layouts::guest')] #[Title('Create account')] class extends Compone
     <p class="text-muted ms-mb-28">{{ __('register.start_building') }} {{ config('app.name') }} {{ __('register.today') }}.</p>
 
     <form wire:submit="register">
+        <x-honeypot livewire-model="extraFields" />
         <div class="field">
             <x-input-label for="name" value="Full name" />
             <x-text-input

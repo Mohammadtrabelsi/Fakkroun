@@ -401,6 +401,7 @@ html.theme-ready body { transition: background-color 0.2s ease, color 0.2s ease;
 .ms-mw-720 { max-width: 720px; }
 .ms-btn-sm { padding: 6px 12px; font-size: 12px; }
 .ms-mw-640 { max-width: 640px; }
+.ms-stack-8 { display: flex; flex-direction: column; gap: 8px; }
 .ms-stack-16 { display: flex; flex-direction: column; gap: 16px; }
 .ms-stack-24 { display: flex; flex-direction: column; gap: 24px; }
 .ms-mb-28 { margin-bottom: 28px; }
