@@ -8,4 +8,5 @@ return [
     'search' => 'Rechercher',
     'no_posts' => 'Aucun article trouvé.',
     'back' => 'Retour au blog',
+    'rss' => 'Flux RSS',
 ];

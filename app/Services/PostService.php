@@ -3,13 +3,15 @@
 namespace App\Services;
 
 use App\Models\Post;
+use App\Models\Tag;
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\LazyCollection;
-use Illuminate\Support\Str;
 
 class PostService
 {
@@ -18,17 +20,36 @@ class PostService
     /** @var array<int, string> */
     private const SORTABLE = ['title', 'published_at', 'created_at'];
 
+    public function __construct(private readonly TagService $tags) {}
+
+    /**
+     * Slugs are generated and kept unique by the model (HasUniqueSlug). An
+     * optional "tags" key holds tag names to attach.
+     */
     public function create(array $data): Post
     {
-        $data['slug'] = $this->uniqueSlug($data['slug'] ?? null, $data['title'] ?? null);
+        $tags = $this->pullTags($data);
         $data = $this->syncPublishedAt($data);
 
-        return Post::create($data);
+        return DB::transaction(function () use ($data, $tags): Post {
+            $post = Post::create($data);
+
+            if ($tags !== null) {
+                $this->tags->syncTo($post, $tags);
+            }
+
+            return $post;
+        });
     }
 
+    /**
+     * An unchanged slug is kept even if the title changes, so published URLs
+     * stay stable; passing a null slug regenerates it from the title. When
+     * the "tags" key is present the post's tags are replaced by those names.
+     */
     public function update(Post $post, array $data): Post
     {
-        $data['slug'] = $this->uniqueSlug($data['slug'] ?? null, $data['title'] ?? null, $post);
+        $tags = $this->pullTags($data);
         $data = $this->syncPublishedAt($data, $post);
 
         // A replaced or removed cover must not leave an orphaned file behind.
@@ -36,8 +57,14 @@ class PostService
             $this->deleteCover($post->cover_image);
         }
 
-        $post->fill($data);
-        $post->save();
+        DB::transaction(function () use ($post, $data, $tags): void {
+            $post->fill($data);
+            $post->save();
+
+            if ($tags !== null) {
+                $this->tags->syncTo($post, $tags);
+            }
+        });
 
         return $post;
     }
@@ -85,7 +112,8 @@ class PostService
 
     /**
      * Admin listing. Supported filters: status (draft|published), category_id,
-     * trashed (only|with), sort (title|published_at|created_at) and direction (asc|desc).
+     * tag (tag id), trashed (only|with), sort (title|published_at|created_at)
+     * and direction (asc|desc).
      *
      * @param  array<string, mixed>  $filters
      */
@@ -95,11 +123,12 @@ class PostService
         $direction = ($filters['direction'] ?? 'desc') === 'asc' ? 'asc' : 'desc';
 
         return Post::query()
-            ->with(['category', 'author'])
+            ->with(['category', 'author', 'tags'])
             ->when(($filters['trashed'] ?? null) === 'only', fn ($query) => $query->onlyTrashed())
             ->when(($filters['trashed'] ?? null) === 'with', fn ($query) => $query->withTrashed())
             ->when(in_array($filters['status'] ?? null, [Post::STATUS_DRAFT, Post::STATUS_PUBLISHED], true), fn ($query) => $query->where('status', $filters['status']))
             ->when(! empty($filters['category_id']), fn ($query) => $query->where('category_id', $filters['category_id']))
+            ->when(! empty($filters['tag']), fn ($query) => $query->whereHas('tags', fn ($q) => $q->whereKey($filters['tag'])))
             ->when($search, fn ($query) => $this->matchSearch($query, $search))
             ->when($sort === 'title',
                 fn ($query) => $query->orderBy('title->'.app()->getLocale(), $direction),
@@ -111,13 +140,15 @@ class PostService
     }
 
     /**
-     * Public blog listing: published posts only, newest first.
+     * Public blog listing: published posts only, newest first, optionally
+     * limited to one tag.
      */
-    public function publishedPaginated(?string $search, int $perPage = 9): LengthAwarePaginator
+    public function publishedPaginated(?string $search, int $perPage = 9, ?Tag $tag = null): LengthAwarePaginator
     {
         return Post::query()
             ->published()
-            ->with(['category', 'author'])
+            ->with(['category', 'author', 'tags'])
+            ->when($tag, fn ($query) => $query->whereHas('tags', fn ($q) => $q->whereKey($tag->getKey())))
             ->when($search, fn ($query) => $this->matchSearch($query, $search))
             ->orderByDesc('published_at')
             ->paginate($perPage)
@@ -128,9 +159,61 @@ class PostService
     {
         return Post::query()
             ->published()
-            ->with(['category', 'author'])
+            ->with(['category', 'author', 'tags'])
             ->where('slug', $slug)
             ->first();
+    }
+
+    /**
+     * Items for the RSS feed (config/feed.php): the newest published posts,
+     * i.e. exactly what /blog/{slug} serves. Trashed posts are excluded by
+     * the soft-delete scope.
+     *
+     * @return Collection<int, Post>
+     */
+    public function feedItems(): Collection
+    {
+        return Post::query()
+            ->published()
+            ->whereNotNull('published_at')
+            ->with(['category', 'author', 'tags'])
+            ->orderByDesc('published_at')
+            ->orderByDesc('id')
+            ->limit((int) config('feed.limit', 20))
+            ->get();
+    }
+
+    /**
+     * Rows for the admin spreadsheet export, honouring the listing filters
+     * (status, category_id, tag, trashed). Streamed in chunks so memory stays
+     * flat regardless of the number of posts.
+     *
+     * @param  array<string, mixed>  $filters
+     * @return LazyCollection<int, array<string, mixed>>
+     */
+    public function exportRows(?string $search, array $filters = []): LazyCollection
+    {
+        return Post::query()
+            ->with(['category', 'author', 'tags'])
+            ->when(($filters['trashed'] ?? null) === 'only', fn ($query) => $query->onlyTrashed())
+            ->when(in_array($filters['status'] ?? null, [Post::STATUS_DRAFT, Post::STATUS_PUBLISHED], true), fn ($query) => $query->where('status', $filters['status']))
+            ->when(! empty($filters['category_id']), fn ($query) => $query->where('category_id', $filters['category_id']))
+            ->when(! empty($filters['tag']), fn ($query) => $query->whereHas('tags', fn ($q) => $q->whereKey($filters['tag'])))
+            ->when($search, fn ($query) => $this->matchSearch($query, $search))
+            ->lazyById(500)
+            ->map(fn (Post $post): array => [
+                'id' => $post->id,
+                'slug' => $post->slug,
+                'title_en' => $post->getTranslation('title', 'en', false),
+                'title_ar' => $post->getTranslation('title', 'ar', false),
+                'status' => $post->status,
+                'category' => $post->category?->name,
+                'tags' => $post->tags->pluck('name')->implode(', '),
+                'author_email' => $post->author?->email,
+                'published_at' => $post->published_at?->toIso8601String(),
+                'created_at' => $post->created_at?->toIso8601String(),
+                'updated_at' => $post->updated_at?->toIso8601String(),
+            ]);
     }
 
     /**
@@ -218,25 +301,19 @@ class PostService
     }
 
     /**
-     * Build a unique slug, falling back to the title when none is supplied.
-     * Trashed posts still hold their slug, so restoring one can never collide.
+     * Removes the "tags" key from the payload. Null means "leave tags alone".
+     *
+     * @return array<int, string>|null
      */
-    protected function uniqueSlug(?string $slug, string|array|null $title, ?Post $ignore = null): string
+    protected function pullTags(array &$data): ?array
     {
-        $source = $slug ?: (is_array($title) ? ($title['en'] ?? reset($title) ?: '') : (string) $title);
-        $base = Str::slug($source) ?: 'post';
-        $candidate = $base;
-        $suffix = 2;
-
-        while (Post::withTrashed()
-            ->where('slug', $candidate)
-            ->when($ignore, fn ($query) => $query->whereKeyNot($ignore->getKey()))
-            ->exists()
-        ) {
-            $candidate = "{$base}-{$suffix}";
-            $suffix++;
+        if (! array_key_exists('tags', $data)) {
+            return null;
         }
 
-        return $candidate;
+        $tags = (array) ($data['tags'] ?? []);
+        unset($data['tags']);
+
+        return $tags;
     }
 }

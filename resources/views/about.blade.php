@@ -1,4 +1,4 @@
-<x-layouts.marketing :title="__('about.hero_title').' — '.__('about.title')">
+<x-layouts.marketing :title="__('about.hero_title').' — '.__('about.title')" :structured-data="$structuredData ?? null" :canonical="url()->current()">
     @push('styles')
         <style>
             .page-head { padding: 72px 48px 56px; }

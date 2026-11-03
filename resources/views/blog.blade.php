@@ -1,4 +1,9 @@
-<x-layouts.marketing :title="config('app.name').' — '.__('blog.title')">
+<x-layouts.marketing
+    :title="config('app.name').' — '.__('blog.title').($tag ? ' — #'.$tag->name : '')"
+    :description="__('blog.description')"
+    :canonical="$canonical"
+    :structured-data="$structuredData"
+>
     @push('styles')
         <style>
             .page-head { padding: 72px 48px 40px; }
@@ -26,8 +31,21 @@
 
         <form method="GET" action="{{ route('blog') }}" class="blog-search">
             <input type="search" name="q" value="{{ $search }}" class="input" placeholder="{{ __('blog.search_placeholder') }}" aria-label="{{ __('blog.search_placeholder') }}">
+            @if ($tag)
+                <input type="hidden" name="tag" value="{{ request('tag') }}">
+            @endif
             <button type="submit" class="btn">{{ __('blog.search') }}</button>
         </form>
+
+        <div class="blog-filter">
+            @if ($tag)
+                <span>{{ __('tags.filtered_by', ['tag' => $tag->name]) }}</span>
+                <a href="{{ route('blog', array_filter(['q' => $search])) }}">{{ __('tags.clear_filter') }}</a>
+            @endif
+            @if (config('feed.enabled'))
+                <a href="{{ route('feeds.blog') }}" class="text-muted">{{ __('blog.rss') }}</a>
+            @endif
+        </div>
     </div>
 
     <div class="container ms-pb-96">
@@ -48,6 +66,7 @@
                         @endif
                         <h3><a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a></h3>
                         <p>{{ $post->excerpt ?: Str::limit(strip_tags($post->body), 180) }}</p>
+                        <x-blog.tag-list :tags="$post->tags" />
                     </div>
                 </article>
             @empty

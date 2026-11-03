@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasUniqueSlug;
 use App\Models\Concerns\TracksUserActions;
 use Database\Factories\PostFactory;
 use Illuminate\Database\Eloquent\Builder;
@@ -9,15 +10,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\Activitylog\Models\Concerns\LogsActivity;
 use Spatie\Activitylog\Support\LogOptions;
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
+use Spatie\Tags\HasTags;
 use Spatie\Translatable\HasTranslations;
 
-class Post extends Model
+/**
+ * @property string $slug
+ * @property Carbon|null $published_at
+ */
+class Post extends Model implements Feedable
 {
     /** @use HasFactory<PostFactory> */
-    use HasFactory, HasTranslations, LogsActivity, SoftDeletes, TracksUserActions;
+    use HasFactory, HasTags, HasTranslations, HasUniqueSlug, LogsActivity, SoftDeletes, TracksUserActions;
 
     public const STATUS_DRAFT = 'draft';
 
@@ -50,6 +60,23 @@ class Post extends Model
         return [
             'published_at' => 'datetime',
         ];
+    }
+
+    /**
+     * Replaces HasTags' boot logic, which detaches tags on every delete: here
+     * tags survive a soft delete, so a restored post keeps them, and are only
+     * detached when the post is deleted for good.
+     */
+    public static function bootHasTags(): void
+    {
+        static::created(function (self $post): void {
+            if ($post->queuedTags !== []) {
+                $post->attachTags($post->queuedTags);
+                $post->queuedTags = [];
+            }
+        });
+
+        static::forceDeleted(fn (self $post) => $post->tags()->detach());
     }
 
     /**
@@ -100,6 +127,46 @@ class Post extends Model
     public function scopePublished(Builder $query): void
     {
         $query->where('status', self::STATUS_PUBLISHED);
+    }
+
+    /**
+     * Public URL of the post (only meaningful once it is published).
+     */
+    public function publicUrl(): string
+    {
+        return route('blog.show', $this->slug);
+    }
+
+    /**
+     * Short plain-text summary: the excerpt, or the start of the body.
+     */
+    public function summary(int $limit = 200): string
+    {
+        $text = $this->excerpt ?: $this->body;
+
+        return Str::limit(trim(preg_replace('/\s+/', ' ', strip_tags((string) $text))), $limit);
+    }
+
+    public function toFeedItem(): FeedItem
+    {
+        return FeedItem::create()
+            ->id($this->publicUrl())
+            ->title($this->title)
+            ->summary($this->summary(500))
+            ->updated($this->updated_at)
+            ->link($this->publicUrl())
+            ->authorName($this->author->name ?? config('app.name'))
+            ->category(...array_filter([$this->category?->name, ...$this->tags->pluck('name')->all()]));
+    }
+
+    protected function slugSourceAttribute(): string
+    {
+        return 'title';
+    }
+
+    protected function slugFallback(): string
+    {
+        return 'post';
     }
 
     public function getActivitylogOptions(): LogOptions

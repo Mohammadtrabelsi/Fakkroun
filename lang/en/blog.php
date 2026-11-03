@@ -8,4 +8,5 @@ return [
     'search' => 'Search',
     'no_posts' => 'No articles found.',
     'back' => 'Back to the blog',
+    'rss' => 'RSS feed',
 ];

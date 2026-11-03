@@ -171,10 +171,18 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
             <h2>{{ __('categories.categories') }}</h2>
             <p class="text-muted ms-note">{{ __('categories.organize_your_posts_into_categories') }}</p>
         </div>
-        <a href="{{ route('admin.categories.create') }}" wire:navigate class="btn btn-primary">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" d="M12 5v14M5 12h14"></path></svg>
-            {{ __('categories.new_category') }}
-        </a>
+        <div class="ms-row-10 ms-wrap">
+            @foreach (config('spreadsheets.export_formats') as $format)
+                <a href="{{ route('admin.categories.export', $format) }}" class="btn">{{ __('imports.export', ['format' => strtoupper($format)]) }}</a>
+            @endforeach
+            @can('create', \App\Models\Category::class)
+                <a href="{{ route('admin.categories.import') }}" wire:navigate class="btn">{{ __('imports.import') }}</a>
+            @endcan
+            <a href="{{ route('admin.categories.create') }}" wire:navigate class="btn btn-primary">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" d="M12 5v14M5 12h14"></path></svg>
+                {{ __('categories.new_category') }}
+            </a>
+        </div>
     </div>
 
     @if (session('status'))

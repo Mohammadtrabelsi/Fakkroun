@@ -3,10 +3,14 @@
 use App\Http\Controllers\ActivityLogExportController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\LocaleController;
+use App\Http\Controllers\PostPdfController;
 use App\Http\Controllers\RobotsController;
+use App\Http\Middleware\RequireHealthToken;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
+use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +22,17 @@ Route::view('/about', 'about')->name('about');
 Route::view('/docs', 'docs')->name('docs');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+// RSS feed(s) from config/feed.php ("feeds.blog" → /feed).
+if (config('feed.enabled')) {
+    Route::feeds();
+}
+
+// Machine-readable health results for external monitors; 404 unless
+// HEALTH_SECRET_TOKEN is set (see RequireHealthToken).
+Route::get('/health.json', HealthCheckJsonResultsController::class)
+    ->middleware([RequireHealthToken::class, 'throttle:30,1'])
+    ->name('health.json');
 
 Route::get('/language/{locale}', LocaleController::class)->name('locale.switch');
 
@@ -61,6 +76,13 @@ Route::middleware('auth')->group(function () {
                 ->middleware('can:manage users')
                 ->name('admin.users.edit');
 
+            Route::get('/admin/categories/export/{format}', [ExportController::class, 'categories'])
+                ->middleware('can:manage categories')
+                ->where('format', 'csv|xlsx')
+                ->name('admin.categories.export');
+            Route::livewire('/admin/categories/import', 'pages::admin.categories.import')
+                ->middleware('can:manage categories')
+                ->name('admin.categories.import');
             Route::livewire('/admin/categories', 'pages::admin.categories.index')
                 ->middleware('can:manage categories')
                 ->name('admin.categories.index');
@@ -71,6 +93,13 @@ Route::middleware('auth')->group(function () {
                 ->middleware('can:manage categories')
                 ->name('admin.categories.edit');
 
+            Route::get('/admin/posts/export/{format}', [ExportController::class, 'posts'])
+                ->middleware('can:manage posts')
+                ->where('format', 'csv|xlsx')
+                ->name('admin.posts.export');
+            Route::get('/admin/posts/{post}/pdf', PostPdfController::class)
+                ->middleware('can:manage posts')
+                ->name('admin.posts.pdf');
             Route::livewire('/admin/posts', 'pages::admin.posts.index')
                 ->middleware('can:manage posts')
                 ->name('admin.posts.index');
@@ -80,6 +109,17 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/posts/{post}/edit', 'pages::admin.posts.edit')
                 ->middleware('can:manage posts')
                 ->name('admin.posts.edit');
+
+            Route::livewire('/admin/tags', 'pages::admin.tags.index')
+                ->middleware('can:manage tags')
+                ->name('admin.tags.index');
+
+            Route::livewire('/admin/health', 'pages::admin.health')
+                ->middleware('can:view system health')
+                ->name('admin.health');
+            Route::livewire('/admin/backups', 'pages::admin.backups')
+                ->middleware('can:manage backups')
+                ->name('admin.backups');
 
             Route::livewire('/admin/notifications', 'pages::admin.notifications.index')
                 ->name('admin.notifications.index');

@@ -1,4 +1,4 @@
-<x-layouts.marketing :title="config('app.name').' — Documentation'">
+<x-layouts.marketing :title="config('app.name').' — Documentation'" :structured-data="$structuredData ?? null" :canonical="url()->current()">
     @push('styles')
         <style>
             .page-head { padding: 72px 48px 40px; }

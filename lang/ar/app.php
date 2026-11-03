@@ -18,4 +18,7 @@ return [
     'my_space' => 'مساحتي',
     'view_site' => 'عرض الموقع',
     'welcome_back' => 'مرحباً،',
+    'tags' => 'الوسوم',
+    'health' => 'الصحة',
+    'backups' => 'النسخ الاحتياطية',
 ];

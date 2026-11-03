@@ -4,6 +4,7 @@ use App\Models\Post;
 use App\Services\CategoryService;
 use App\Services\PostService;
 use App\Services\SettingService;
+use App\Services\TagService;
 use App\Support\Livewire\InteractsWithToasts;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
@@ -36,6 +37,9 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
     #[Url(as: 'category', history: true)]
     public string $category = '';
 
+    #[Url(as: 'tag', history: true)]
+    public string $tag = '';
+
     /** title | published_at | created_at */
     #[Url(as: 'sort', history: true)]
     public string $sort = 'created_at';
@@ -63,7 +67,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
 
     public function updated(string $property): void
     {
-        if (in_array($property, ['search', 'status', 'category', 'sort', 'direction'], true)) {
+        if (in_array($property, ['search', 'status', 'category', 'tag', 'sort', 'direction'], true)) {
             $this->resetPage();
             $this->selected = [];
         }
@@ -171,15 +175,32 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
     }
 
     #[Computed]
-    public function posts()
+    public function tagOptions(): array
     {
-        return app(PostService::class)->searchPaginated($this->search, 10, [
+        return app(TagService::class)->options();
+    }
+
+    /**
+     * The current filters, shared by the listing and the export links.
+     *
+     * @return array<string, mixed>
+     */
+    public function filters(): array
+    {
+        return [
             'status' => in_array($this->status, [Post::STATUS_DRAFT, Post::STATUS_PUBLISHED], true) ? $this->status : null,
             'trashed' => $this->status === 'trashed' ? 'only' : null,
             'category_id' => $this->category !== '' ? (int) $this->category : null,
+            'tag' => $this->tag !== '' ? (int) $this->tag : null,
             'sort' => $this->sort,
             'direction' => $this->direction,
-        ]);
+        ];
+    }
+
+    #[Computed]
+    public function posts()
+    {
+        return app(PostService::class)->searchPaginated($this->search, 10, $this->filters());
     }
 
     public function render()
@@ -195,10 +216,19 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
             <h2>Posts</h2>
             <p class="text-muted ms-note">{{ __('posts.write_and_publish_content') }}</p>
         </div>
+        <div class="ms-row-10 ms-wrap">
+            @foreach (config('spreadsheets.export_formats') as $format)
+                <a
+                    href="{{ route('admin.posts.export', ['format' => $format] + array_filter(['q' => $search, 'status' => $status !== 'all' ? $status : null, 'category' => $category, 'tag' => $tag])) }}"
+                    class="btn"
+                    title="{{ __('imports.export_filtered') }}"
+                >{{ __('imports.export', ['format' => strtoupper($format)]) }}</a>
+            @endforeach
         <a href="{{ route('admin.posts.create') }}" wire:navigate class="btn btn-primary">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" d="M12 5v14M5 12h14"></path></svg>
             {{ __('posts.new_post') }}
         </a>
+        </div>
     </div>
 
     @if (session('status'))
@@ -238,6 +268,14 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
                     <option value="{{ $id }}">{{ $name }}</option>
                 @endforeach
             </select>
+            @if ($this->tagOptions !== [])
+                <select wire:model.live="tag" class="input" aria-label="{{ __('tags.label') }}">
+                    <option value="">{{ __('tags.all_tags') }}</option>
+                    @foreach ($this->tagOptions as $id => $name)
+                        <option value="{{ $id }}">{{ $name }}</option>
+                    @endforeach
+                </select>
+            @endif
         </div>
     </div>
 
@@ -330,6 +368,9 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
                                     @else
                                         @can('update', $post)
                                             <a href="{{ route('admin.posts.edit', $post) }}" wire:navigate class="btn ms-btn-sm">Edit</a>
+                                        @endcan
+                                        @can('view', $post)
+                                            <a href="{{ route('admin.posts.pdf', $post) }}" class="btn ms-btn-sm" title="{{ __('pdf.download') }}">PDF</a>
                                         @endcan
                                         @can('delete', $post)
                                             <button

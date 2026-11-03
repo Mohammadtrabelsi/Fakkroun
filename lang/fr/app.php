@@ -18,4 +18,7 @@ return [
     'my_space' => 'Mon espace',
     'view_site' => 'Voir le site',
     'welcome_back' => 'Bienvenue,',
+    'tags' => 'Étiquettes',
+    'health' => 'Santé',
+    'backups' => 'Sauvegardes',
 ];

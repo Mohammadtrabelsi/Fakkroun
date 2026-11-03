@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasUniqueSlug;
 use App\Models\Concerns\TracksUserActions;
 use Database\Factories\CategoryFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,10 +13,13 @@ use Spatie\Activitylog\Models\Concerns\LogsActivity;
 use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Translatable\HasTranslations;
 
+/**
+ * @property string $slug
+ */
 class Category extends Model
 {
     /** @use HasFactory<CategoryFactory> */
-    use HasFactory, HasTranslations, LogsActivity, SoftDeletes, TracksUserActions;
+    use HasFactory, HasTranslations, HasUniqueSlug, LogsActivity, SoftDeletes, TracksUserActions;
 
     protected $fillable = [
         'name',
@@ -46,6 +50,16 @@ class Category extends Model
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    protected function slugSourceAttribute(): string
+    {
+        return 'name';
+    }
+
+    protected function slugFallback(): string
+    {
+        return 'category';
     }
 
     public function getActivitylogOptions(): LogOptions

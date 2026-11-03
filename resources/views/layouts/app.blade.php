@@ -61,6 +61,20 @@
                             </a>
                         @endcan
 
+                        @can('view system health')
+                            <a href="{{ route('admin.health') }}" wire:navigate class="{{ request()->routeIs('admin.health') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"></path></svg>
+                                {{ __('app.health') }}
+                            </a>
+                        @endcan
+
+                        @can('manage backups')
+                            <a href="{{ route('admin.backups') }}" wire:navigate class="{{ request()->routeIs('admin.backups') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path></svg>
+                                {{ __('app.backups') }}
+                            </a>
+                        @endcan
+
                         <a href="{{ route('dashboard') }}" wire:navigate class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>
                             {{ __('app.my_dashboard') }}
@@ -79,6 +93,13 @@
                             <a href="{{ route('admin.categories.index') }}" wire:navigate class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
                                 {{ __('app.categories') }}
+                            </a>
+                        @endcan
+
+                        @can('manage tags')
+                            <a href="{{ route('admin.tags.index') }}" wire:navigate class="{{ request()->routeIs('admin.tags.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12l-8 8-9-9V3h8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>
+                                {{ __('app.tags') }}
                             </a>
                         @endcan
 

@@ -2,26 +2,30 @@
 
 namespace App\Services;
 
+use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Str;
+use Illuminate\Support\LazyCollection;
 
 class CategoryService
 {
     /** @var array<int, string> */
     private const SORTABLE = ['name', 'created_at'];
 
+    /**
+     * Slugs are generated and kept unique by the model (HasUniqueSlug).
+     */
     public function create(array $data): Category
     {
-        $data['slug'] = $this->uniqueSlug($data['slug'] ?? null, $data['name'] ?? null);
-
         return Category::create($data);
     }
 
+    /**
+     * An unchanged slug is kept even if the name changes; passing a null slug
+     * regenerates it from the name.
+     */
     public function update(Category $category, array $data): Category
     {
-        $data['slug'] = $this->uniqueSlug($data['slug'] ?? null, $data['name'] ?? null, $category);
-
         $category->fill($data);
         $category->save();
 
@@ -119,25 +123,122 @@ class CategoryService
     }
 
     /**
-     * Build a unique slug, falling back to the name when none is supplied.
-     * Trashed categories still hold their slug, so restoring one can never collide.
+     * Rows for the spreadsheet export, in the same column layout the import
+     * accepts, so an exported file can be edited and imported back.
+     *
+     * @return LazyCollection<int, array<string, mixed>>
      */
-    protected function uniqueSlug(?string $slug, string|array|null $name, ?Category $ignore = null): string
+    public function exportRows(): LazyCollection
     {
-        $source = $slug ?: (is_array($name) ? ($name['en'] ?? reset($name) ?: '') : (string) $name);
-        $base = Str::slug($source) ?: 'category';
-        $candidate = $base;
-        $suffix = 2;
+        return Category::query()
+            ->withCount('posts')
+            ->lazyById(500)
+            ->map(fn (Category $category): array => $this->exportRow($category));
+    }
 
-        while (Category::withTrashed()
-            ->where('slug', $candidate)
-            ->when($ignore, fn ($query) => $query->whereKeyNot($ignore->getKey()))
-            ->exists()
-        ) {
-            $candidate = "{$base}-{$suffix}";
-            $suffix++;
+    /**
+     * @return array<string, mixed>
+     */
+    protected function exportRow(Category $category): array
+    {
+        $row = ['slug' => $category->slug];
+
+        foreach ($this->importLocales() as $locale) {
+            $row["name_{$locale}"] = $category->getTranslation('name', $locale, false);
         }
 
-        return $candidate;
+        foreach ($this->importLocales() as $locale) {
+            $row["description_{$locale}"] = $category->getTranslation('description', $locale, false);
+        }
+
+        return $row + [
+            'is_active' => $category->is_active ? 1 : 0,
+            'posts_count' => $category->posts_count,
+        ];
+    }
+
+    /**
+     * Validation rules for one imported row (see exportRows() for the columns).
+     *
+     * @return array<string, mixed>
+     */
+    public function importRules(): array
+    {
+        $rules = [
+            'slug' => ['nullable', 'string', 'max:240', 'regex:/^[a-z0-9]+(?:-[a-z0-9]+)*$/'],
+            'is_active' => ['nullable', 'in:0,1,true,false,yes,no'],
+        ];
+
+        foreach ($this->importLocales() as $locale) {
+            $rules["name_{$locale}"] = [$locale === 'en' ? 'required' : 'nullable', 'string', 'max:255'];
+            $rules["description_{$locale}"] = ['nullable', 'string', 'max:5000'];
+        }
+
+        return $rules;
+    }
+
+    /**
+     * Columns an import file must contain.
+     *
+     * @return array<int, string>
+     */
+    public function importRequiredHeaders(): array
+    {
+        return ['name_en'];
+    }
+
+    /**
+     * Creates or updates (matched by slug) a category from a validated row.
+     * Returns true when a category was created. A slug held by a trashed
+     * category is rejected rather than silently restoring it.
+     *
+     * @param  array<string, mixed>  $row
+     */
+    public function importRow(array $row): bool
+    {
+        $existing = filled($row['slug'] ?? null)
+            ? Category::withTrashed()->where('slug', $row['slug'])->first()
+            : null;
+
+        if ($existing?->trashed()) {
+            throw new DomainActionException(__('imports.slug_trashed', ['slug' => $row['slug']]));
+        }
+
+        $data = ['name' => [], 'description' => []];
+
+        foreach ($this->importLocales() as $locale) {
+            if (array_key_exists("name_{$locale}", $row)) {
+                $data['name'][$locale] = (string) ($row["name_{$locale}"] ?? '');
+            }
+
+            if (array_key_exists("description_{$locale}", $row)) {
+                $data['description'][$locale] = (string) ($row["description_{$locale}"] ?? '');
+            }
+        }
+
+        if (array_key_exists('is_active', $row) && $row['is_active'] !== null) {
+            $data['is_active'] = in_array(strtolower((string) $row['is_active']), ['1', 'true', 'yes'], true);
+        }
+
+        if ($existing) {
+            // Keep translations the file does not mention.
+            $data['name'] = array_filter($data['name'], 'filled') + $existing->getTranslations('name');
+            $data['description'] = $data['description'] + $existing->getTranslations('description');
+            $this->update($existing, $data);
+
+            return false;
+        }
+
+        $this->create($data + ['slug' => $row['slug'] ?? null]);
+
+        return true;
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    protected function importLocales(): array
+    {
+        return array_keys(config('app.available_locales'));
     }
 }

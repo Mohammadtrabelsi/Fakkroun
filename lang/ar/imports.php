@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'export' => 'تصدير :format',
+    'export_filtered' => 'تنزيل المقالات المطابقة للمرشحات الحالية',
+    'import' => 'استيراد',
+    'categories_title' => 'استيراد التصنيفات',
+    'categories_help' => 'أنشئ التصنيفات أو حدّثها من ملف CSV أو Excel. تتم مطابقة الصفوف حسب المعرّف؛ والصفوف دون معرّف تنشئ تصنيفات جديدة.',
+    'categories_columns' => 'الأعمدة: slug و name_en (إلزامي) و name_ar و name_fr و description_en و description_ar و description_fr و is_active (1/0). نصيحة: صدّر التصنيفات للحصول على نموذج جاهز.',
+    'back_to_categories' => 'العودة إلى التصنيفات',
+    'file' => 'الملف',
+    'limits' => ':formats، حتى :kb كيلوبايت و :rows صف.',
+    'start' => 'استيراد',
+    'importing' => 'جارٍ الاستيراد…',
+    'uploading' => 'جارٍ الرفع…',
+    'download_template' => 'تنزيل التصنيفات الحالية (CSV)',
+    'created' => 'أُنشئ',
+    'updated' => 'حُدّث',
+    'failed' => 'رُفض',
+    'row' => 'الصف',
+    'problem' => 'المشكلة',
+    'skipped' => 'لم تتم معالجة :count صف: الحد الأقصى :max صف لكل ملف.',
+    'more_errors' => '…و :count صف مرفوض آخر.',
+    'missing_columns' => 'أعمدة إلزامية مفقودة: :columns.',
+    'row_failed' => 'تعذّر حفظ هذا الصف.',
+    'slug_trashed' => 'المعرّف ":slug" يخص تصنيفًا في سلة المهملات. استعده أو احذفه نهائيًا أولًا.',
+    'unreadable' => 'تعذّرت قراءة الملف. تحقق من أنه ملف CSV أو XLSX صالح.',
+];

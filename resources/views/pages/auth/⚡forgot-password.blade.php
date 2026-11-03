@@ -5,9 +5,21 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
+use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 
 new #[Layout('layouts::guest')] #[Title('Forgot password')] class extends Component
 {
+    use UsesSpamProtection;
+
+    /** Honeypot + timing fields (spatie/laravel-honeypot); bots that fill them get a 403. */
+    public HoneypotData $extraFields;
+
+    public function mount(): void
+    {
+        $this->extraFields = new HoneypotData;
+    }
+
     #[Validate('required|string|email')]
     public string $email = '';
 
@@ -15,6 +27,8 @@ new #[Layout('layouts::guest')] #[Title('Forgot password')] class extends Compon
 
     public function sendResetLink(): void
     {
+        $this->protectAgainstSpam();
+
         $this->validate();
 
         $result = Password::sendResetLink(['email' => $this->email]);
@@ -40,6 +54,7 @@ new #[Layout('layouts::guest')] #[Title('Forgot password')] class extends Compon
     @endif
 
     <form wire:submit="sendResetLink">
+        <x-honeypot livewire-model="extraFields" />
         <div class="field ms-mb-22">
             <x-input-label for="email" value="Email" />
             <x-text-input

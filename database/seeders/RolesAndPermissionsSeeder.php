@@ -19,8 +19,11 @@ class RolesAndPermissionsSeeder extends Seeder
             'manage users',
             'manage categories',
             'manage posts',
+            'manage tags',
             'view activity log',
             'manage settings',
+            'view system health',
+            'manage backups',
         ];
 
         foreach ($permissions as $permission) {

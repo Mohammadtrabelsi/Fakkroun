@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'export' => 'Exporter :format',
+    'export_filtered' => 'Télécharge les articles correspondant aux filtres actuels',
+    'import' => 'Importer',
+    'categories_title' => 'Importer des catégories',
+    'categories_help' => 'Créez ou mettez à jour des catégories depuis un fichier CSV ou Excel. Les lignes sont rapprochées par slug ; une ligne sans slug crée une nouvelle catégorie.',
+    'categories_columns' => 'Colonnes : slug, name_en (obligatoire), name_ar, name_fr, description_en, description_ar, description_fr, is_active (1/0). Astuce : exportez les catégories pour obtenir un modèle.',
+    'back_to_categories' => 'Retour aux catégories',
+    'file' => 'Fichier',
+    'limits' => ':formats, :kb Ko et :rows lignes maximum.',
+    'start' => 'Importer',
+    'importing' => 'Import en cours…',
+    'uploading' => 'Envoi…',
+    'download_template' => 'Télécharger les catégories actuelles (CSV)',
+    'created' => 'Créées',
+    'updated' => 'Mises à jour',
+    'failed' => 'Rejetées',
+    'row' => 'Ligne',
+    'problem' => 'Problème',
+    'skipped' => ':count ligne(s) non traitée(s) : la limite est de :max lignes par fichier.',
+    'more_errors' => '…et :count autre(s) ligne(s) rejetée(s).',
+    'missing_columns' => 'Colonne(s) obligatoire(s) manquante(s) : :columns.',
+    'row_failed' => 'Cette ligne n\'a pas pu être enregistrée.',
+    'slug_trashed' => 'Le slug « :slug » appartient à une catégorie dans la corbeille. Restaurez-la ou supprimez-la définitivement.',
+    'unreadable' => 'Le fichier n\'a pas pu être lu. Vérifiez qu\'il s\'agit d\'un CSV ou XLSX valide.',
+];
