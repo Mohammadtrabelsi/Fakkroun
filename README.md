@@ -13,6 +13,11 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 - **Activity log export & retention** — download the filtered activity log as CSV or JSON; `activitylog:clean` runs daily via the scheduler.
 - **CRUD notifications** — admins receive a stored notification when posts, categories, users or settings are created, updated, deleted or restored, and can review them in a bell-linked notifications page. The acting user is never notified about their own change. See [Feature notes](#feature-notes).
 - **XML sitemap** — `php artisan sitemap:generate` writes `/sitemap.xml` (via [spatie/laravel-sitemap](https://github.com/spatie/laravel-sitemap)) from the public pages and published posts; it is rebuilt hourly by the scheduler and after post changes, and declared in a dynamic `/robots.txt`. See [Feature notes](#feature-notes).
+- **Tags** — translatable post tags via [spatie/laravel-tags](https://spatie.be/docs/laravel-tags): a reusable tag picker on the post form, an admin tag screen, and filtering in the admin list, on `/blog?tag=` and in the API.
+- **SEO structured data & RSS** — schema.org JSON-LD (Organization, WebSite, BreadcrumbList, BlogPosting) with [spatie/schema-org](https://github.com/spatie/schema-org), canonical/Open Graph tags, and an RSS feed at `/feed` with [spatie/laravel-feed](https://github.com/spatie/laravel-feed). Slugs are generated and kept stable by [spatie/laravel-sluggable](https://github.com/spatie/laravel-sluggable).
+- **Spam protection** — the register and forgot-password forms carry a honeypot and timing check ([spatie/laravel-honeypot](https://github.com/spatie/laravel-honeypot)).
+- **Backups & health monitoring** — scheduled, monitored database + upload backups ([spatie/laravel-backup](https://spatie.be/docs/laravel-backup)) and application health checks ([spatie/laravel-health](https://spatie.be/docs/laravel-health)), each with an admin page; a token-protected `/health.json` for uptime monitors.
+- **PDF & spreadsheets** — post PDFs from a shared Blade layout ([spatie/laravel-pdf](https://spatie.be/docs/laravel-pdf), DomPDF driver), streamed CSV/XLSX exports and a validated category import ([spatie/simple-excel](https://github.com/spatie/simple-excel)). See **[docs/spatie-integrations.md](docs/spatie-integrations.md)** for these features in detail.
 - **Visit statistics** — page views on the public site are counted (bots, admin, API and asset requests are excluded) and shown on the dashboards.
 - **System health** — the admin dashboard checks the database, cache and queue, and `/up` exposes a liveness endpoint for uptime monitors.
 - **REST API** — every service is exposed as JSON endpoints under `/api`, protected by the same authorization gates as the web UI. Sessions and Sanctum personal access tokens are both accepted (see [API](#api)).
@@ -45,7 +50,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 
 ## Requirements
 
-- PHP 8.3 or higher, with the `mbstring`, `pdo`, `intl` and `bcmath` extensions (CI also uses `pdo_sqlite` and `sqlite3` for the test suite)
+- PHP 8.3 or higher (note: the current `composer.lock` resolves Symfony 8.1, `spatie/laravel-activitylog` 5 and `spatie/laravel-sitemap` 8.2, which require **PHP 8.4**; `composer update` on PHP 8.3 resolves 8.3-compatible versions of everything except activitylog 5), with the `mbstring`, `pdo`, `intl` and `bcmath` extensions (CI also uses `pdo_sqlite` and `sqlite3` for the test suite)
 - Composer
 - Node.js 20 or newer & npm (CI builds with Node 20)
 
@@ -80,8 +85,11 @@ Then create the file with `touch database/database.sqlite` and run `composer set
 
 - **Cover images** are stored on the `public` disk. Run `php artisan storage:link` once per environment.
 - **Queues:** mail is queued (`QUEUE_CONNECTION=database` by default). Run `php artisan queue:work` as a long-running process; `composer dev` starts one for you locally. Without a worker, verification and reset emails are not sent.
-- **Scheduler:** run `php artisan schedule:work` locally, or add `* * * * * php /path/to/artisan schedule:run` to cron in production. The scheduler prunes the activity log and rebuilds the sitemap.
+- **Scheduler:** run `php artisan schedule:work` locally, or add `* * * * * php /path/to/artisan schedule:run` to cron in production. The scheduler prunes the activity log, rebuilds the sitemap, runs the health checks every minute and the daily backup.
 - **Sitemap:** set `APP_URL` to the canonical production domain (e.g. `https://www.example.com`) — every sitemap and robots.txt URL is built from it, and generation refuses `localhost`/`.test`-style hosts in production. The PHP user running the scheduler and queue worker must be able to write to `public/`. Run `php artisan sitemap:generate` once after deploying.
+- **New permissions:** after upgrading, run `php artisan migrate --force` and `php artisan db:seed --class=RolesAndPermissionsSeeder --force` so the admin role gets `manage tags`, `view system health` and `manage backups`.
+- **Backups:** the server needs `mysqldump`/`pg_dump`/`sqlite3` for your database driver. Set `BACKUP_NOTIFICATION_EMAIL` and, for off-site disks, `BACKUP_DISKS` and `BACKUP_ARCHIVE_PASSWORD`. Archives exclude `.env` and the source code. Restore steps: [docs/spatie-integrations.md#restoring](docs/spatie-integrations.md#restoring).
+- **Health monitoring:** the scheduler runs the checks every minute. Set `HEALTH_NOTIFICATION_EMAIL` for alerts and `HEALTH_SECRET_TOKEN` to enable `/health.json` for external monitors.
 - **Maintenance mode** is controlled from **Admin → Settings**; it does not need `php artisan down`.
 - **Health checks:** point uptime monitors at `/up`. The admin dashboard's system-health card shows the same probes in more detail.
 - **Passwords:** every password rule uses `Password::defaults()`. In production it also requires mixed case, numbers and a password that is not in a known breach list. Outside production the minimum is 8 characters.
@@ -102,6 +110,18 @@ These are the keys that change the starter kit's own behaviour. Everything else 
 | `SITEMAP_SCHEDULE` | `0 * * * *` | Cron expression for scheduled sitemap regeneration |
 | `SITEMAP_REGENERATE_ON_CHANGE` | `true` | Queue a sitemap rebuild when a published post changes |
 | `SITEMAP_MAX_URLS_PER_FILE` | `50000` | Split into a sitemap index above this many URLs |
+| `FEED_ENABLED` / `FEED_LIMIT` | `true` / `20` | RSS feed at `/feed` |
+| `SEO_STRUCTURED_DATA` | `true` | JSON-LD on public pages (`SEO_ORGANIZATION_LOGO`, `SEO_SAME_AS` for the organisation) |
+| `HONEYPOT_ENABLED` / `HONEYPOT_SECONDS` | `true` / `1` | Spam protection on register and forgot-password |
+| `BACKUP_DISKS` | `backups` | Backup destinations (comma-separated disks) |
+| `BACKUP_SCHEDULE_ENABLED` / `BACKUP_RUN_AT` | `true` / `01:30` | Daily backup, then cleanup (+1 h) and monitoring (+1 h 30) |
+| `BACKUP_NOTIFICATION_EMAIL` | `ADMIN_EMAIL` | Receives backup failure mails |
+| `BACKUP_ARCHIVE_PASSWORD` | empty | Encrypts archives (recommended off-site) |
+| `HEALTH_NOTIFICATION_EMAIL` | empty | Receives failed health-check mails (none sent when empty) |
+| `HEALTH_SECRET_TOKEN` | empty | Bearer token for `/health.json` (endpoint is 404 when empty) |
+| `LARAVEL_PDF_DRIVER` | `dompdf` | PDF engine; `browsershot` for Arabic/RTL documents |
+| `PDF_FORMAT` / `PDF_ORIENTATION` | `a4` / `portrait` | Default PDF page setup |
+| `IMPORT_MAX_KB` / `IMPORT_MAX_ROWS` | `5120` / `5000` | Upload limits for CSV/XLSX imports |
 | `MAIL_MAILER` | `log` in `.env.example` | Set to a real mailer before sending verification or reset emails |
 | `CRUD_NOTIFICATIONS_ENABLED` | `true` | Turns the CRUD notification observers on or off |
 | `ADMIN_EMAIL` / `ADMIN_NAME` / `ADMIN_PASSWORD` | `admin@majidastarter.com` / `Admin User` / `password` | Read by `AdminUserSeeder` only |
@@ -188,7 +208,13 @@ app/Services/
 ├── ActivityLogService.php # Activity log queries and export rows
 ├── CategoryService.php    # Category CRUD, options, stats
 ├── PostService.php        # Post CRUD, search, public listing, stats
+├── BackupService.php      # Backup destination status, queued backup runs
+├── HealthCheckService.php # Latest / fresh spatie/laravel-health results
+├── PdfService.php         # Shared PDF defaults and layout
 ├── SitemapService.php     # Builds and atomically publishes sitemap.xml
+├── SpreadsheetService.php # Streamed CSV/XLSX export, validated import
+├── StructuredDataService.php # schema.org JSON-LD graphs for public pages
+├── TagService.php         # Tag normalisation, syncing and management
 ├── SettingService.php     # Reads/updates the site settings record
 ├── SystemHealthService.php# Probes for the admin health card
 ├── TwoFactorService.php   # TOTP setup, verification, recovery codes
@@ -204,14 +230,15 @@ lang/
 └── en/  ar/  fr/          # PHP translation files per locale
 
 docs/
-└── feature-audit-and-improvements.md  # Feature audit and improvement backlog
+├── feature-audit-and-improvements.md  # Feature audit and improvement backlog
+└── spatie-integrations.md             # Slugs, SEO, tags, RSS, honeypot, backups, health, PDF, spreadsheets
 ```
 
 ## Routing Overview
 
 ### Web
 
-- **Public** — `/` (landing), `/about`, `/docs`, `/blog` (listing, `?q=` search), `/blog/{slug}` (published post), `/up` (health check), `/robots.txt`, `/sitemap.xml` (static file written by `sitemap:generate`)
+- **Public** — `/` (landing), `/about`, `/docs`, `/blog` (listing, `?q=` search, `?tag=` filter), `/feed` (RSS), `/health.json` (token-protected), `/blog/{slug}` (published post), `/up` (health check), `/robots.txt`, `/sitemap.xml` (static file written by `sitemap:generate`)
 - **Guest routes** — `/login`, `/register`, `/forgot-password`, `/reset-password/{token}`, `/two-factor-challenge` (second step of sign-in)
 - **Authenticated routes** — `/verify-email`, `/verify-email/{id}/{hash}` (signed link), `/settings/profile`, `/settings/two-factor`, `/logout`
 - **Verified routes** — `/dashboard`
@@ -220,6 +247,9 @@ docs/
   `/admin/users`, `/admin/users/create`, `/admin/users/{user}/edit`,
   `/admin/categories`, `/admin/categories/create`, `/admin/categories/{category}/edit`,
   `/admin/posts`, `/admin/posts/create`, `/admin/posts/{post}/edit`,
+  `/admin/posts/{post}/pdf`, `/admin/posts/export/{csv|xlsx}`,
+  `/admin/categories/import`, `/admin/categories/export/{csv|xlsx}`, `/admin/tags`,
+  `/admin/health`, `/admin/backups`,
   `/admin/activity-log`, `/admin/activity-log/export/{csv|json}`, `/admin/settings`, `/admin/notifications`
 - **Locale switch** — `/language/{locale}` persists the chosen locale to the session
 
@@ -271,7 +301,7 @@ Registration, login and token issuance are throttled to 6 requests per minute pe
 | `GET    /api/settings`                       | `can:manage settings`   | `SettingService::current`          |
 | `PUT    /api/settings`                       | `can:manage settings`   | `SettingService::update`           |
 
-List endpoints accept `trashed=only|with`, `sort` and `direction`. Posts also accept `status` and `category_id`; users accept `role=admin|member`. The `stats` and `options` endpoints feed select boxes and dashboard widgets.
+List endpoints accept `trashed=only|with`, `sort` and `direction`. Posts also accept `status`, `category_id` and `tag` (tag id), and `POST`/`PUT /api/posts` accept an optional `tags` array of names; users accept `role=admin|member`. The `stats` and `options` endpoints feed select boxes and dashboard widgets.
 
 Errors on `/api` are always JSON. A site in maintenance mode returns `503` to everyone except administrators.
 
@@ -319,6 +349,9 @@ Roles and permissions are seeded by `RolesAndPermissionsSeeder`. The `admin` rol
 - `manage categories`
 - `view activity log`
 - `manage settings`
+- `manage tags`
+- `view system health`
+- `manage backups`
 
 Check for admin access in code via `$user->isAdmin()` or the `admin` route middleware alias.
 
