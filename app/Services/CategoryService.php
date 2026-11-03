@@ -4,24 +4,26 @@ namespace App\Services;
 
 use App\Models\Category;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Str;
 
 class CategoryService
 {
     /** @var array<int, string> */
     private const SORTABLE = ['name', 'created_at'];
 
+    /**
+     * Slugs are generated and kept unique by the model (HasUniqueSlug).
+     */
     public function create(array $data): Category
     {
-        $data['slug'] = $this->uniqueSlug($data['slug'] ?? null, $data['name'] ?? null);
-
         return Category::create($data);
     }
 
+    /**
+     * An unchanged slug is kept even if the name changes; passing a null slug
+     * regenerates it from the name.
+     */
     public function update(Category $category, array $data): Category
     {
-        $data['slug'] = $this->uniqueSlug($data['slug'] ?? null, $data['name'] ?? null, $category);
-
         $category->fill($data);
         $category->save();
 
@@ -116,28 +118,5 @@ class CategoryService
             'inactive' => (int) ($counts->inactive ?? 0),
             'trashed' => Category::onlyTrashed()->count(),
         ];
-    }
-
-    /**
-     * Build a unique slug, falling back to the name when none is supplied.
-     * Trashed categories still hold their slug, so restoring one can never collide.
-     */
-    protected function uniqueSlug(?string $slug, string|array|null $name, ?Category $ignore = null): string
-    {
-        $source = $slug ?: (is_array($name) ? ($name['en'] ?? reset($name) ?: '') : (string) $name);
-        $base = Str::slug($source) ?: 'category';
-        $candidate = $base;
-        $suffix = 2;
-
-        while (Category::withTrashed()
-            ->where('slug', $candidate)
-            ->when($ignore, fn ($query) => $query->whereKeyNot($ignore->getKey()))
-            ->exists()
-        ) {
-            $candidate = "{$base}-{$suffix}";
-            $suffix++;
-        }
-
-        return $candidate;
     }
 }
