@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\QuestionController;
 use App\Http\Controllers\Api\SettingController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Support\Facades\Route;
@@ -37,7 +38,18 @@ Route::middleware('auth:sanctum,web')->group(function () {
     Route::get('profile', [ProfileController::class, 'show']);
     Route::put('profile', [ProfileController::class, 'update']);            // UserService::updateProfile
     Route::put('profile/password', [ProfileController::class, 'password']); // UserService::updatePassword
+    Route::put('profile/preferences', [ProfileController::class, 'preferences']); // UserService::updatePreferences
     Route::delete('profile', [ProfileController::class, 'destroy']);        // UserService::deleteOwnAccount
+
+    // ---------------------------------------------------------------------
+    // Question bank: community submissions and reports
+    // ---------------------------------------------------------------------
+    Route::middleware('can:submit questions')->group(function () {
+        Route::get('questions/submissions', [QuestionController::class, 'mySubmissions']); // SubmissionService::mine
+        Route::post('questions/submissions', [QuestionController::class, 'submit'])->middleware('throttle:20,1'); // SubmissionService::submit
+    });
+    Route::post('questions/{question}/reports', [QuestionController::class, 'report'])
+        ->middleware(['can:play games', 'throttle:20,1']); // ReportService::report
 
     // ---------------------------------------------------------------------
     // CategoryService
@@ -79,6 +91,8 @@ Route::middleware('auth:sanctum,web')->group(function () {
         Route::post('users/{user}/restore', [UserController::class, 'restore'])->withTrashed();       // UserService::restore
         Route::delete('users/{user}/force', [UserController::class, 'forceDestroy'])->withTrashed(); // UserService::forceDelete
         Route::post('users/{user}/toggle-admin', [UserController::class, 'toggleAdmin']); // UserService::toggleAdminRole
+        Route::post('users/{user}/suspend', [UserController::class, 'suspend']);       // UserService::suspend
+        Route::post('users/{user}/reactivate', [UserController::class, 'reactivate']); // UserService::reactivate
     });
 
     // ---------------------------------------------------------------------

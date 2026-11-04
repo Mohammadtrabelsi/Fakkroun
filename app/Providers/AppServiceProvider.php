@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Domain\Questions\Contracts\SimilarQuestionFinder;
+use App\Domain\Questions\Support\TokenOverlapFinder;
 use App\Models\Post;
 use App\Observers\CrudNotificationObserver;
 use App\Observers\PostSitemapObserver;
@@ -21,7 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Near-duplicate question detection; swap for an embedding-based
+        // finder (Phase 4) without touching the callers.
+        $this->app->bind(SimilarQuestionFinder::class, TokenOverlapFinder::class);
     }
 
     /**

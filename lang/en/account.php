@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'suspended' => 'This account has been suspended. Please contact support if you think this is a mistake.',
+    'preferences' => 'Language preferences',
+    'preferences_description' => 'Choose the language of the interface and, separately, the language you want to receive questions in.',
+    'interface_language' => 'Interface language',
+    'question_language' => 'Question language',
+    'same_as_interface' => 'Same as interface',
+    'platform_default' => 'Platform default',
+    'preferences_saved' => 'Preferences saved',
+    'avatar' => 'Profile picture',
+    'avatar_description' => 'JPG, PNG or WebP, up to 1 MB.',
+    'upload_avatar' => 'Upload picture',
+    'remove_avatar' => 'Remove picture',
+    'avatar_updated' => 'Profile picture updated',
+    'avatar_removed' => 'Profile picture removed',
+    'suspend' => 'Suspend',
+    'reactivate' => 'Reactivate',
+    'suspend_reason' => 'Reason (optional)',
+    'suspend_confirm' => 'Suspend :name? They will be signed out and unable to sign in.',
+    'user_suspended' => 'Account suspended',
+    'user_reactivated' => 'Account reactivated',
+    'all_statuses' => 'All statuses',
+    'status_active' => 'Active',
+    'status_suspended' => 'Suspended',
+];

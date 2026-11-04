@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Fakkroun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'github_url' => env('GITHUB_URL', 'https://github.com/Mohammadtrabelsi/MajidaStarter'),
+    'github_url' => env('GITHUB_URL', 'https://github.com/Mohammadtrabelsi/Fakkroun'),
 
     'locale' => env('APP_LOCALE', 'en'),
 

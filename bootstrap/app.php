@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Middleware\EnforceMaintenanceMode;
+use App\Http\Middleware\EnsureAccountIsActive;
+use App\Http\Middleware\EnsureBackofficeAccess;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use App\Http\Middleware\SetLocale;
 use App\Http\Middleware\TrackVisit;
@@ -18,6 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [
+            EnsureAccountIsActive::class,
             SetLocale::class,
             TrackVisit::class,
             EnforceMaintenanceMode::class,
@@ -29,6 +32,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         $middleware->alias([
             'admin' => EnsureUserIsAdmin::class,
+            'backoffice' => EnsureBackofficeAccess::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

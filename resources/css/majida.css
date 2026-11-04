@@ -243,6 +243,7 @@ a:hover { color: var(--color-accent-600); }
     font-family: var(--font-heading); font-weight: 600; font-size: 12px; border-radius: 50%;
     background: var(--color-accent-100); color: var(--color-accent-800);
 }
+.avatar-img { object-fit: cover; padding: 0; }
 
 /* — stat band (accent-900 full-bleed section; use sparingly) — */
 .stat-band { background: var(--color-accent-900); color: var(--color-bg); padding: 64px 48px; }
@@ -491,6 +492,8 @@ html.theme-ready body { transition: background-color 0.2s ease, color 0.2s ease;
 .ms-row-between { display: flex; align-items: center; justify-content: space-between; }
 .ms-mt-5 { margin-top: 5px; }
 .ms-check-label-22 { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 22px; cursor: pointer; }
+.ms-check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 8px; cursor: pointer; }
+.ms-ps-24 { padding-inline-start: 24px; }
 .ms-notice-20 { display: block; margin-bottom: 20px; padding: 8px 12px; }
 .ms-fs12-mt8 { font-size: 12px; margin-top: 8px; }
 .ms-linkbtn { background: none; border: none; padding: 0; cursor: pointer; font: inherit; font-size: 12px; color: var(--color-accent); }
@@ -625,3 +628,20 @@ html.dark .btn-primary:hover { background: #196a6e; }
 .notification-row:last-child { border-bottom: none; }
 .notification-row.is-unread { background: rgba(var(--ink), 0.03); }
 .notification-empty { padding: 20px 16px; margin: 0; }
+
+/* — gameplay (Fakkroun) — large, readable, thumb-friendly (spec §22.3) — */
+.play-question { font-family: var(--font-heading); font-weight: 600; font-size: 22px; line-height: 1.4; }
+.play-answers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.play-answer { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 12px 16px; border-radius: 10px; border: 2px solid var(--color-divider); background: var(--color-surface); color: var(--color-text); font-size: 16px; font-weight: 500; text-align: start; cursor: pointer; }
+.play-answer b { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 30px; height: 30px; border-radius: 8px; background: rgba(var(--ink), 0.08); }
+.play-answer span { flex: 1; }
+.play-answer:disabled { cursor: default; }
+.play-answer:not(:disabled):hover { border-color: var(--color-accent); }
+.play-answer.is-mine { border-color: var(--color-accent); }
+.play-answer.is-correct { border-color: #2f855a; background: rgba(47, 133, 90, 0.12); }
+.play-answer.is-wrong { border-color: #c53030; background: rgba(197, 48, 48, 0.1); }
+.play-timer { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 50%; border: 4px solid var(--color-accent); font-family: var(--font-heading); font-weight: 700; font-size: 20px; }
+@media (max-width: 560px) {
+    .play-answers { grid-template-columns: minmax(0, 1fr); }
+    .play-question { font-size: 19px; }
+}

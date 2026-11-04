@@ -21,18 +21,23 @@ class DatabaseSeeder extends Seeder
     ];
 
     /**
-     * Structural configuration / lookups. This starter kit ships none yet.
+     * Structural configuration / lookups: the initial Fakkroun categories.
      *
      * @var array<int, class-string>
      */
-    public const REFERENCE = [];
+    public const REFERENCE = [
+        FakkrounCategorySeeder::class,
+    ];
 
     /**
-     * Demo / sample seeders. Sample users are created inline in run() below.
+     * Demo / sample seeders: a playable trilingual question set. Sample users
+     * are created inline in run() below.
      *
      * @var array<int, class-string>
      */
-    public const DEMO = [];
+    public const DEMO = [
+        FakkrounDemoQuestionSeeder::class,
+    ];
 
     /**
      * Seed the application's database with full data (configuration + demo content).

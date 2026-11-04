@@ -1,3 +1,18 @@
+# Fakkroun (فكّرون)
+
+**Think, Answer, Learn, Win!** Fakkroun is a multilingual (Arabic, French, English), real-time multiplayer quiz platform focused on the green economy, the blue economy and environmental awareness.
+
+It is built on top of the MajidaStarter kit documented below. Fakkroun-specific documentation lives in [`docs/fakkroun/`](docs/fakkroun):
+
+- [`00-technical-assessment.md`](docs/fakkroun/00-technical-assessment.md): repository audit, proposed schema, risks and roadmap
+- [`01-phase-1-report.md`](docs/fakkroun/01-phase-1-report.md): Phase 1 (foundation) progress report
+- [`02-mvp.md`](docs/fakkroun/02-mvp.md): the first playable version (question bank, moderation, live multiplayer games) and how to try it
+- `03-…` to `11-next-step-*.md`: one file per next step, starting with [running CI](docs/fakkroun/03-next-step-run-ci.md)
+
+After migrating, run `php artisan db:seed --class=ConfigDatabaseSeeder` to create the roles, the admin account and the 13 initial categories (or `php artisan db:seed` to also get 18 playable demo questions), and `php artisan storage:link` so profile pictures and cover images are served.
+
+---
+
 # MajidaStarter
 
 MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. It ships with everything you usually rebuild at the start of every project — authentication with two-factor support, an admin panel, role-based access control, activity logging, multilingual (LTR/RTL) support, light/dark theming, a content module (posts & categories), a matching REST API, and a clean service layer — so you can skip the boilerplate and start building features.
@@ -37,7 +52,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 
 | Layer              | Technology                                                         |
 | ------------------ | ------------------------------------------------------------------ |
-| Framework          | Laravel 13 (PHP 8.3+)                                              |
+| Framework          | Laravel 13 (PHP 8.4+)                                              |
 | UI / Interactivity | Livewire 4 (single-file components)                                |
 | Styling / Build    | Tailwind CSS 4, Vite 8                                             |
 | Auth & Access      | Laravel Auth, Sanctum (API tokens), spatie/laravel-permission      |
@@ -50,7 +65,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 
 ## Requirements
 
-- PHP 8.3 or higher (note: the current `composer.lock` resolves Symfony 8.1, `spatie/laravel-activitylog` 5 and `spatie/laravel-sitemap` 8.2, which require **PHP 8.4**; `composer update` on PHP 8.3 resolves 8.3-compatible versions of everything except activitylog 5), with the `mbstring`, `pdo`, `intl` and `bcmath` extensions (CI also uses `pdo_sqlite` and `sqlite3` for the test suite)
+- PHP 8.4 or higher (the `composer.lock` resolves Symfony 8.1, `spatie/laravel-activitylog` 5 and `spatie/laravel-sitemap` 8.2, which require PHP 8.4), with the `mbstring`, `pdo`, `intl` and `bcmath` extensions (CI also uses `pdo_sqlite` and `sqlite3` for the test suite)
 - Composer
 - Node.js 20 or newer & npm (CI builds with Node 20)
 
@@ -83,7 +98,7 @@ Then create the file with `touch database/database.sqlite` and run `composer set
 
 ### Production notes
 
-- **Cover images** are stored on the `public` disk. Run `php artisan storage:link` once per environment.
+- **Cover images and profile pictures** are stored on the `public` disk. Run `php artisan storage:link` once per environment.
 - **Queues:** mail is queued (`QUEUE_CONNECTION=database` by default). Run `php artisan queue:work` as a long-running process; `composer dev` starts one for you locally. Without a worker, verification and reset emails are not sent.
 - **Scheduler:** run `php artisan schedule:work` locally, or add `* * * * * php /path/to/artisan schedule:run` to cron in production. The scheduler prunes the activity log, rebuilds the sitemap, runs the health checks every minute and the daily backup.
 - **Sitemap:** set `APP_URL` to the canonical production domain (e.g. `https://www.example.com`) — every sitemap and robots.txt URL is built from it, and generation refuses `localhost`/`.test`-style hosts in production. The PHP user running the scheduler and queue worker must be able to write to `public/`. Run `php artisan sitemap:generate` once after deploying.
@@ -124,7 +139,7 @@ These are the keys that change the starter kit's own behaviour. Everything else 
 | `IMPORT_MAX_KB` / `IMPORT_MAX_ROWS` | `5120` / `5000` | Upload limits for CSV/XLSX imports |
 | `MAIL_MAILER` | `log` in `.env.example` | Set to a real mailer before sending verification or reset emails |
 | `CRUD_NOTIFICATIONS_ENABLED` | `true` | Turns the CRUD notification observers on or off |
-| `ADMIN_EMAIL` / `ADMIN_NAME` / `ADMIN_PASSWORD` | `admin@majidastarter.com` / `Admin User` / `password` | Read by `AdminUserSeeder` only |
+| `ADMIN_EMAIL` / `ADMIN_NAME` / `ADMIN_PASSWORD` | `admin@fakkroun.test` / `Admin User` / `password` | Read by `AdminUserSeeder` only |
 
 ### Admin login
 
@@ -132,14 +147,14 @@ Sign in at `/login` with the seeded admin account:
 
 | Field    | Default value            |
 | -------- | ------------------------ |
-| Email    | `admin@majidastarter.com` |
+| Email    | `admin@fakkroun.test` |
 | Password | `password`               |
 
 The admin is created by `database/seeders/AdminUserSeeder.php` and is always seeded, including by `php artisan db:seed --class=MinimalDatabaseSeeder` and `ConfigDatabaseSeeder`. Override the defaults before seeding by setting these in `.env`:
 
 ```dotenv
 ADMIN_NAME="Admin User"
-ADMIN_EMAIL=admin@majidastarter.com
+ADMIN_EMAIL=admin@fakkroun.test
 ADMIN_PASSWORD=change-me-now
 ```
 
@@ -384,8 +399,8 @@ The suite lives in `tests/Feature` and covers authentication and two-factor, ema
 
 A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push to `develop`/`main` and on every pull request. It:
 
-- runs the test suite on PHP 8.3 and 8.4 (building front-end assets first with Node 20), and
-- checks code style with Pint and runs Larastan static analysis on PHP 8.3.
+- runs the test suite on PHP 8.4 (building front-end assets first with Node 20), and
+- checks code style with Pint and runs Larastan static analysis on PHP 8.4.
 
 ## License
 

@@ -86,7 +86,7 @@
         <div class="about-steps">
             @foreach ([1, 2, 3] as $step)
                 <div class="about-step">
-                    <code class="ms-code-chip">{{ __('about.start_'.$step.'_cmd') }}</code>
+                    <div class="card-title">{{ __('about.start_'.$step.'_cmd') }}</div>
                     <p>{{ __('about.start_'.$step.'_body') }}</p>
                 </div>
             @endforeach

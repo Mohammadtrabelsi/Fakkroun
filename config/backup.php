@@ -119,7 +119,7 @@ return [
         'notifiable' => Notifiable::class,
 
         'mail' => [
-            'to' => env('BACKUP_NOTIFICATION_EMAIL', env('ADMIN_EMAIL', 'admin@majidastarter.com')),
+            'to' => env('BACKUP_NOTIFICATION_EMAIL', env('ADMIN_EMAIL', 'admin@fakkroun.test')),
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),

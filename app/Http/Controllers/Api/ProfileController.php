@@ -37,6 +37,21 @@ class ProfileController extends Controller
     }
 
     /**
+     * UserService::updatePreferences (interface and question language)
+     */
+    public function preferences(Request $request): JsonResponse
+    {
+        $locales = array_keys((array) config('app.available_locales', []));
+
+        $validated = $request->validate([
+            'locale' => ['sometimes', 'nullable', Rule::in($locales)],
+            'question_locale' => ['sometimes', 'nullable', Rule::in($locales)],
+        ]);
+
+        return response()->json($this->users->updatePreferences($request->user(), $validated));
+    }
+
+    /**
      * UserService::updatePassword
      */
     public function password(Request $request): JsonResponse

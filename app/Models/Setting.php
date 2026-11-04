@@ -21,6 +21,7 @@ class Setting extends Model
         'support_email',
         'maintenance_mode',
         'date_format',
+        'platform',
     ];
 
     public array $translatable = [
@@ -37,13 +38,14 @@ class Setting extends Model
     {
         return [
             'maintenance_mode' => 'boolean',
+            'platform' => 'array',
         ];
     }
 
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-            ->logOnly(['site_name', 'site_description', 'support_email', 'maintenance_mode', 'date_format'])
+            ->logOnly(['site_name', 'site_description', 'support_email', 'maintenance_mode', 'date_format', 'platform'])
             ->logOnlyDirty()
             ->useLogName('settings');
     }

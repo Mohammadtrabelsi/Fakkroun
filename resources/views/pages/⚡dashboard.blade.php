@@ -104,6 +104,34 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
         @endif
     </div>
 
+    @can('play games')
+        <div class="card ms-stack-16 ms-mb-24">
+            <div>
+                <div class="card-kicker">{{ __('fakkroun.tagline') }}</div>
+                <h3 class="ms-fs-18">{{ __('play.dashboard.title') }}</h3>
+                <p class="text-muted ms-note">{{ __('play.dashboard.description') }}</p>
+            </div>
+            <div class="ms-row-10 ms-wrap">
+                <a href="{{ route('rooms.create') }}" wire:navigate class="btn btn-primary">{{ __('play.nav.new_room') }}</a>
+                <a href="{{ route('rooms.join') }}" wire:navigate class="btn">{{ __('play.nav.join_room') }}</a>
+                @can('submit questions')
+                    <a href="{{ route('questions.submit') }}" wire:navigate class="btn">{{ __('questions.submit.title') }}</a>
+                @endcan
+            </div>
+            @php($recent = \App\Domain\Gameplay\Models\GameResult::query()->where('user_id', auth()->id())->with('game.room:id,name')->latest('id')->limit(5)->get())
+            @if ($recent->isNotEmpty())
+                <div>
+                    <div class="ds-label">{{ __('play.dashboard.recent') }}</div>
+                    <ul class="ms-stack-16 ms-fs-13">
+                        @foreach ($recent as $result)
+                            <li>{{ $result->game?->room?->name }} · #{{ $result->rank }} · {{ __('play.dashboard.points', ['points' => $result->score]) }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+    @endcan
+
     {{-- Personal stats --}}
     <h3 class="dash-section">{{ __('dashboard.your_activity') }}</h3>
     <div class="stat-cards">

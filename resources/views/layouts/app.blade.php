@@ -28,17 +28,33 @@
             ></div>
 
             <aside class="shell-sidebar">
-                <a href="{{ auth()->user()?->isAdmin() ? route('admin.dashboard') : route('dashboard') }}" wire:navigate class="brand ms-pad-x20-b22">
+                <a href="{{ auth()->user()?->can('view admin dashboard') ? route('admin.dashboard') : route('dashboard') }}" wire:navigate class="brand ms-pad-x20-b22">
                     <x-brand-mark />
                     <span class="brand-name">{{ config('app.name') }}</span>
                 </a>
 
                 <nav class="side-nav">
-                    @if (auth()->user()?->isAdmin())
-                        <a href="{{ route('admin.dashboard') }}" wire:navigate class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 17v-5M12 17V8M16 17v-3"></path></svg>
-                            {{ __('app.dashboard') }}
-                        </a>
+                    @if (auth()->user()?->canAccessBackoffice())
+                        @can('view admin dashboard')
+                            <a href="{{ route('admin.dashboard') }}" wire:navigate class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 17v-5M12 17V8M16 17v-3"></path></svg>
+                                {{ __('app.dashboard') }}
+                            </a>
+                        @endcan
+
+                        @can('manage questions')
+                            <a href="{{ route('admin.questions.index') }}" wire:navigate class="{{ request()->routeIs('admin.questions.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"></path></svg>
+                                {{ __('questions.admin.title') }}
+                            </a>
+                        @endcan
+
+                        @can('moderate questions')
+                            <a href="{{ route('admin.moderation') }}" wire:navigate class="{{ request()->routeIs('admin.moderation') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"></path><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"></path></svg>
+                                {{ __('questions.moderation.title') }}
+                            </a>
+                        @endcan
 
                         @can('manage users')
                             <a href="{{ route('admin.users.index') }}" wire:navigate class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
@@ -61,6 +77,20 @@
                             </a>
                         @endcan
 
+                        @can('manage platform settings')
+                            <a href="{{ route('admin.game-settings') }}" wire:navigate class="{{ request()->routeIs('admin.game-settings') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="4"></rect><path d="M7 11v4M5 13h4"></path><circle cx="16" cy="12" r="1"></circle><circle cx="18" cy="14.5" r="1"></circle></svg>
+                                {{ __('fakkroun.game_settings') }}
+                            </a>
+                        @endcan
+
+                        @can('manage moderators')
+                            <a href="{{ route('admin.moderators') }}" wire:navigate class="{{ request()->routeIs('admin.moderators') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                                {{ __('fakkroun.moderators') }}
+                            </a>
+                        @endcan
+
                         @can('view system health')
                             <a href="{{ route('admin.health') }}" wire:navigate class="{{ request()->routeIs('admin.health') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"></path></svg>
@@ -79,8 +109,27 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>
                             {{ __('app.my_dashboard') }}
                         </a>
+                        @can('play games')
+                            <a href="{{ route('rooms.create') }}" wire:navigate class="{{ request()->routeIs('rooms.create') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z"></path></svg>
+                                {{ __('play.nav.new_room') }}
+                            </a>
+                            <a href="{{ route('rooms.join') }}" wire:navigate class="{{ request()->routeIs('rooms.join') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"></path></svg>
+                                {{ __('play.nav.join_room') }}
+                            </a>
+                        @endcan
+                        @can('submit questions')
+                            <a href="{{ route('questions.mine') }}" wire:navigate class="{{ request()->routeIs('questions.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+                                {{ __('questions.mine.title') }}
+                            </a>
+                        @endcan
 
-                        <div class="side-nav-label">{{ __('app.marketing_site') }}</div>
+
+                        @canany(['manage posts', 'manage categories', 'manage tags'])
+                            <div class="side-nav-label">{{ __('app.marketing_site') }}</div>
+                        @endcanany
 
                         @can('manage posts')
                             <a href="{{ route('admin.posts.index') }}" wire:navigate class="{{ request()->routeIs('admin.posts.*') ? 'active' : '' }}">
@@ -112,6 +161,23 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 17v-5M12 17V8M16 17v-3"></path></svg>
                             {{ __('app.my_space') }}
                         </a>
+                        @can('play games')
+                            <a href="{{ route('rooms.create') }}" wire:navigate class="{{ request()->routeIs('rooms.create') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z"></path></svg>
+                                {{ __('play.nav.new_room') }}
+                            </a>
+                            <a href="{{ route('rooms.join') }}" wire:navigate class="{{ request()->routeIs('rooms.join') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"></path></svg>
+                                {{ __('play.nav.join_room') }}
+                            </a>
+                        @endcan
+                        @can('submit questions')
+                            <a href="{{ route('questions.mine') }}" wire:navigate class="{{ request()->routeIs('questions.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+                                {{ __('questions.mine.title') }}
+                            </a>
+                        @endcan
+
                         <a href="{{ route('profile.edit') }}" wire:navigate class="{{ request()->routeIs('profile.edit') ? 'active' : '' }}">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-3.3 3-5 7-5s7 1.7 7 5"></path></svg>
                             {{ __('app.profile') }}
@@ -120,7 +186,7 @@
                 </nav>
 
                 <a href="{{ route('profile.edit') }}" wire:navigate class="side-user">
-                    <span class="avatar">{{ Str::of(auth()->user()->name)->explode(' ')->map(fn ($p) => $p[0] ?? '')->take(2)->implode('') }}</span>
+                    <x-user-avatar :user="auth()->user()" />
                     <span class="ms-minw-0 ms-flex-1">
                         <span class="text-muted ms-fs-12 ms-block">{{ __('app.welcome_back') }}</span>
                         <span class="ms-ellipsis-strong ms-block">{{ auth()->user()->name }}</span>
@@ -137,7 +203,7 @@
 
                     <div class="ms-flex-1"></div>
 
-                    @if (auth()->user()?->isAdmin())
+                    @if (auth()->user()?->canAccessBackoffice())
                         @php($unreadCount = auth()->user()->unreadNotifications()->count())
                         <a
                             href="{{ route('admin.notifications.index') }}"
@@ -160,7 +226,7 @@
 
                     <div class="ms-row-12-rel" data-dropdown>
                         <button type="button" data-dropdown-toggle class="ms-iconbtn-plain">
-                            <span class="avatar">{{ Str::of(auth()->user()->name)->explode(' ')->map(fn ($p) => $p[0] ?? '')->take(2)->implode('') }}</span>
+                            <x-user-avatar :user="auth()->user()" />
                             <span class="hidden sm:inline ms-strong-13">{{ auth()->user()->name }}</span>
                             @if (auth()->user()->isAdmin())
                                 <span class="tag tag-accent hidden sm:inline-flex">{{ __('app.admin') }}</span>

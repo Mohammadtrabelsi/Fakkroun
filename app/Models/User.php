@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\AccountStatus;
 use App\Models\Concerns\TracksUserActions;
 use App\Notifications\QueuedResetPassword;
 use App\Notifications\QueuedVerifyEmail;
@@ -10,15 +11,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Activitylog\Models\Concerns\LogsActivity;
 use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Permission\Traits\HasRoles;
 
-#[Fillable(['name', 'email', 'password'])]
+#[Fillable(['name', 'email', 'password', 'locale', 'question_locale'])]
 #[Hidden(['password', 'remember_token', 'two_factor_secret', 'two_factor_recovery_codes'])]
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -26,6 +29,10 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasApiTokens, HasFactory, HasRoles, LogsActivity, Notifiable, SoftDeletes, TracksUserActions;
 
     protected string $guard_name = 'web';
+
+    protected $attributes = [
+        'status' => 'active',
+    ];
 
     /**
      * Get the attributes that should be cast.
@@ -40,12 +47,79 @@ class User extends Authenticatable implements MustVerifyEmail
             'two_factor_secret' => 'encrypted',
             'two_factor_recovery_codes' => 'encrypted:array',
             'two_factor_confirmed_at' => 'datetime',
+            'status' => AccountStatus::class,
+            'suspended_at' => 'datetime',
+            'last_seen_at' => 'datetime',
         ];
     }
 
     public function isAdmin(): bool
     {
         return $this->hasRole('admin');
+    }
+
+    /**
+     * Admins and moderators may enter /admin; each screen has its own permission.
+     */
+    public function canAccessBackoffice(): bool
+    {
+        return $this->can('access backoffice');
+    }
+
+    public function isSuspended(): bool
+    {
+        return $this->status === AccountStatus::Suspended;
+    }
+
+    /**
+     * Categories this user moderates (spec §3.3). Moderators only reach
+     * content inside these categories unless they also manage all questions.
+     *
+     * @return BelongsToMany<Category, $this>
+     */
+    public function moderatedCategories(): BelongsToMany
+    {
+        return $this->belongsToMany(Category::class, 'category_moderator')->withTimestamps();
+    }
+
+    /**
+     * Interface language: the saved preference when it is still a supported locale.
+     */
+    public function preferredLocale(): ?string
+    {
+        return $this->supportedLocaleOrNull($this->locale);
+    }
+
+    /**
+     * Language questions are served in. Independent of the interface language;
+     * falls back to it, then to the platform default.
+     */
+    public function preferredQuestionLocale(): string
+    {
+        return $this->supportedLocaleOrNull($this->question_locale)
+            ?? $this->preferredLocale()
+            ?? (string) config('app.locale');
+    }
+
+    public function avatarUrl(): ?string
+    {
+        return $this->avatar_path ? Storage::disk('public')->url($this->avatar_path) : null;
+    }
+
+    public function initials(): string
+    {
+        return collect(preg_split('/\s+/u', trim((string) $this->name)) ?: [])
+            ->filter()
+            ->take(2)
+            ->map(fn (string $part) => mb_strtoupper(mb_substr($part, 0, 1)))
+            ->implode('');
+    }
+
+    private function supportedLocaleOrNull(?string $locale): ?string
+    {
+        return $locale !== null && array_key_exists($locale, (array) config('app.available_locales', []))
+            ? $locale
+            : null;
     }
 
     /**
@@ -76,7 +150,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
-            ->logOnly(['name', 'email'])
+            ->logOnly(['name', 'email', 'status', 'suspension_reason'])
             ->logOnlyDirty()
             ->useLogName('users');
     }
