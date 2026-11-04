@@ -373,7 +373,7 @@ class QuestionImportService
     /**
      * @param  array<string, mixed>  $row  file row
      * @param  array<string, string>  $mapping  field => header
-     * @return array<string, mixed>  field => value
+     * @return array<string, mixed> field => value
      */
     public function mapRow(array $row, array $mapping): array
     {

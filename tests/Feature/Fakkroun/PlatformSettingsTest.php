@@ -6,6 +6,7 @@ use App\Enums\UserRole;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
 use App\Services\PlatformSettings;
+use App\Services\SettingService;
 use Database\Seeders\RolesAndPermissionsSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Validation\ValidationException;
@@ -145,7 +146,7 @@ class PlatformSettingsTest extends TestCase
 
     public function test_changes_are_recorded_in_the_activity_log(): void
     {
-        app(\App\Services\SettingService::class)->current();
+        app(SettingService::class)->current();
 
         $this->settings->update(['game' => ['max_players' => 33]]);
 

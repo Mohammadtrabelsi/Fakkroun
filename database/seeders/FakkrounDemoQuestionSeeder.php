@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
-use App\Domain\Questions\ModerationService;
 use App\Domain\Questions\Models\Question;
+use App\Domain\Questions\ModerationService;
 use App\Domain\Questions\QuestionPool;
 use App\Domain\Questions\QuestionService;
 use App\Models\Category;

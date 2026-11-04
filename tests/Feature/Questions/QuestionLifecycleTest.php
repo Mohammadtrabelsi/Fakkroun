@@ -5,8 +5,8 @@ namespace Tests\Feature\Questions;
 use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Enums\TranslationStatus;
-use App\Domain\Questions\ModerationService;
 use App\Domain\Questions\Models\Question;
+use App\Domain\Questions\ModerationService;
 use App\Domain\Questions\QuestionPool;
 use App\Domain\Questions\QuestionService;
 use App\Enums\UserRole;
@@ -14,6 +14,7 @@ use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Validation\ValidationException;
+use Livewire\Livewire;
 
 class QuestionLifecycleTest extends QuestionBankTestCase
 {
@@ -251,7 +252,7 @@ class QuestionLifecycleTest extends QuestionBankTestCase
         $this->actingAs($this->admin)->get(route('admin.questions.create'))->assertOk();
         $this->actingAs($this->admin)->get(route('admin.moderation'))->assertOk();
 
-        \Livewire\Livewire::actingAs($this->admin)
+        Livewire::actingAs($this->admin)
             ->test('pages::admin.questions.editor')
             ->set('categoryId', (string) $this->category->id)
             ->set('body', 'Which planet is known as the red planet?')

@@ -7,8 +7,10 @@ use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Imports\QuestionImportService;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\Models\QuestionImportBatch;
+use App\Enums\UserRole;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
 use Spatie\SimpleExcel\SimpleExcelReader;
 
 class QuestionImportExportTest extends QuestionBankTestCase
@@ -102,7 +104,7 @@ class QuestionImportExportTest extends QuestionBankTestCase
 
     public function test_required_fields_must_be_mapped(): void
     {
-        $this->expectException(\Illuminate\Validation\ValidationException::class);
+        $this->expectException(ValidationException::class);
 
         app(QuestionImportService::class)->start($this->admin, $this->csv("question\nx\n"), ['question' => 'question']);
     }
@@ -126,6 +128,6 @@ class QuestionImportExportTest extends QuestionBankTestCase
         $this->assertSame('Libyque', $rows[0]['choice_4_fr']);
 
         $this->actingAs($this->admin)->get(route('admin.questions.export', 'json'))->assertOk();
-        $this->actingAs($this->userWithRole(\App\Enums\UserRole::Player))->get(route('admin.questions.export', 'csv'))->assertForbidden();
+        $this->actingAs($this->userWithRole(UserRole::Player))->get(route('admin.questions.export', 'csv'))->assertForbidden();
     }
 }

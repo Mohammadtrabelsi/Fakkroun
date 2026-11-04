@@ -2,16 +2,16 @@
 
 namespace App\Services;
 
-use App\Exceptions\DomainActionException;
 use App\Enums\UserRole;
 use App\Enums\ValidationPolicy;
+use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Spatie\Activitylog\Models\Activity;
 use Illuminate\Support\LazyCollection;
+use Spatie\Activitylog\Models\Activity;
 
 class CategoryService
 {

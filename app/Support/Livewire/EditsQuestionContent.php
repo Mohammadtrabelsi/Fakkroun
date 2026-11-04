@@ -2,8 +2,8 @@
 
 namespace App\Support\Livewire;
 
-use App\Services\CategoryService;
 use App\Models\Category;
+use App\Services\CategoryService;
 use Livewire\Attributes\Computed;
 
 /**

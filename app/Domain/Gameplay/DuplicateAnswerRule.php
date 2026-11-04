@@ -14,7 +14,7 @@ final class DuplicateAnswerRule
 {
     /**
      * @param  array<int, int>  $choiceByPlayer  player id => chosen choice id
-     * @return array<int, int>  choice ids whose answers are excluded
+     * @return array<int, int> choice ids whose answers are excluded
      */
     public static function excludedChoices(array $choiceByPlayer, int $threshold): array
     {

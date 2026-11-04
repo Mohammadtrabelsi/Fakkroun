@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $question_id
  * @property string $language
  * @property string $body
- * @property array<string, string> $choices  choice id => text
+ * @property array<string, string> $choices choice id => text
  * @property string|null $explanation
  * @property string $content_hash
  * @property TranslationStatus $status

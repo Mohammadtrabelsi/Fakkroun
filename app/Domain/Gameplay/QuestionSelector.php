@@ -20,7 +20,7 @@ class QuestionSelector
     /**
      * @param  array<int, int>  $categoryIds  top-level category ids
      * @param  array<int, int>  $playerIds
-     * @return array<int, int>  question ids, in play order
+     * @return array<int, int> question ids, in play order
      */
     public function select(string $language, array $categoryIds, ?string $difficulty, int $count, array $playerIds = []): array
     {

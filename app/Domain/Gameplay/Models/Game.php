@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property int $id
  * @property int $room_id
- * @property string $status  in_progress | completed
+ * @property string $status in_progress | completed
  * @property array<string, mixed> $settings
  * @property int $total_questions
  * @property int $current_position

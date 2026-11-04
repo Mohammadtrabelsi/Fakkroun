@@ -17,7 +17,6 @@ use App\Models\User;
 use App\Services\PlatformSettings;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\UniqueConstraintViolationException;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 /**
