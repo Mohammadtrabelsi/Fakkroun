@@ -31,7 +31,8 @@ class PlatformSettingsTest extends TestCase
     public function test_defaults_come_from_config_with_their_types(): void
     {
         $this->assertSame(20, $this->settings->get('game.max_players'));
-        $this->assertSame(30, $this->settings->get('scoring.points_hard'));
+        $this->assertSame(50, $this->settings->get('scoring.points_hard'));
+        $this->assertSame(100, $this->settings->get('scoring.speed_bonus_max'));
         $this->assertTrue($this->settings->get('scoring.duplicate_rule_default'));
         $this->assertFalse($this->settings->get('submissions.auto_publish'));
         $this->assertSame('fallback', $this->settings->get('translations.missing_policy'));

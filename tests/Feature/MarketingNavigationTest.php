@@ -10,9 +10,11 @@ class MarketingNavigationTest extends TestCase
 {
     use RefreshDatabase;
 
+    // The home page has its own Fakkroun layout (HomePageTest); the configurable
+    // marketing navbar serves the other public pages, e.g. /docs.
     public function test_navbar_renders_items_from_config(): void
     {
-        $this->get('/')
+        $this->get(route('docs'))
             ->assertOk()
             ->assertSee('href="'.url('/#features').'"', false)
             ->assertSee('href="'.route('docs').'"', false)
@@ -25,7 +27,7 @@ class MarketingNavigationTest extends TestCase
             ['label' => 'Pricing', 'url' => '/pricing'],
         ]]);
 
-        $this->get('/')
+        $this->get(route('docs'))
             ->assertOk()
             ->assertSee('href="'.url('/pricing').'"', false)
             ->assertSee('>Pricing<', false);
@@ -55,7 +57,7 @@ class MarketingNavigationTest extends TestCase
 
     public function test_navbar_toggle_is_present_for_small_screens(): void
     {
-        $this->get('/')
+        $this->get(route('docs'))
             ->assertOk()
             ->assertSee('data-nav-toggle', false)
             ->assertSee('aria-expanded="false"', false)

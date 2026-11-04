@@ -35,11 +35,13 @@ return [
         ],
 
         'scoring' => [
-            'points_easy' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:10000']],
-            'points_medium' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:0', 'max:10000']],
-            'points_hard' => ['type' => 'int', 'default' => 30, 'rules' => ['integer', 'min:0', 'max:10000']],
+            // Design brief: correct ? 50 + round(100 × remaining / duration) : 0, at every
+            // difficulty. Raise medium/hard here to reward harder questions.
+            'points_easy' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'points_medium' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'points_hard' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
             // Extra points for an instant correct answer, decreasing linearly to 0 at the deadline.
-            'speed_bonus_max' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'speed_bonus_max' => ['type' => 'int', 'default' => 100, 'rules' => ['integer', 'min:0', 'max:10000']],
             // Duplicate-answer rule (spec §14): identical answers from this many players or more score nothing.
             'duplicate_rule_default' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             'duplicate_rule_threshold' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:2', 'max:1000']],
@@ -69,6 +71,21 @@ return [
 
     // Seconds the merged settings stay cached; updates flush the cache immediately.
     'settings_cache_ttl' => 3600,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Brand placeholders (design brief: never invent facts — keep placeholders
+    | until the client provides the real value)
+    |--------------------------------------------------------------------------
+    */
+    'brand' => [
+        'copyright_year' => env('FAKKROUN_COPYRIGHT_YEAR', '[YEAR]'),
+        'partner_placeholder' => '[PARTNER LOGO]',
+        'source_placeholder' => '[ADD SOURCE LINK]',
+        // Shown on the home page partners band when no partner is active.
+        'partner_placeholders' => 4,
+        'partner_contact_url' => env('FAKKROUN_PARTNER_URL'),
+    ],
 
     /*
     |--------------------------------------------------------------------------

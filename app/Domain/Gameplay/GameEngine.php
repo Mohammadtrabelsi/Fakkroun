@@ -242,7 +242,7 @@ class GameEngine
                 'difficulty' => $question->difficulty->value,
                 'choices' => $question->choices->map(fn ($choice) => [
                     'id' => $choice->id,
-                    'letter' => $choice->letter(),
+                    'letter' => $choice->letter($current->language),
                     'text' => $translation?->choiceText($choice->id),
                 ])->all(),
             ],

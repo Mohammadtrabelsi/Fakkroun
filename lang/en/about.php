@@ -4,7 +4,7 @@ return [
     'tag' => 'Our mission',
     'title' => 'About',
     'hero_title' => 'Fakkroun – فكّرون',
-    'hero_lead' => 'Fakkroun turns learning into friendly competition. Its name comes from the Arabic for “think”, and its mascot is the turtle: patient, curious and at home on land and at sea.',
+    'hero_lead' => 'Fakkroun turns learning into friendly competition. In Tunisian Arabic, a fakkroun (فكّرون) is a turtle, and the word sounds like فكّر, “think”. Our turtle mascot takes a breath before every answer — patient, curious and at home on land and at sea.',
 
     'stat_free_value' => 'Free',
     'stat_free_label' => 'to play with friends, family or a class',

@@ -4,8 +4,54 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 
+/* Fakkroun design tokens (fakkroun-design/FAKKROUN_PROMPT.md). Tailwind turns
+   each into utilities: bg-sand, text-ink-soft, border-sand-300, font-display… */
+@theme {
+    --color-sand: #F5EFE3;
+    --color-sand-200: #EBE2D0;
+    --color-sand-300: #E3D8C3;
+    --color-sand-400: #CDBF9F;
+    --color-paper: #FFFBF3;
+    --color-ink: #10262E;
+    --color-ink-muted: #3E5257;
+    --color-ink-soft: #4A5E63;
+    --color-sea: #0B6E69;
+    --color-sea-dark: #084F4B;
+    --color-sea-deep: #0E3B43;
+    --color-sea-deep-2: #164A53;
+    --color-sea-line: #1E525B;
+    --color-sea-mist: #B8C7C4;
+    --color-sun: #F2A33A;
+    --color-sun-text: #C2611A;
+    --color-leaf: #7DB57A;
+    --color-tint-green: #E4EFE6;
+    --color-tint-sea: #DDEDEE;
+    --color-tint-sun: #FBE6D2;
+    --color-correct: #2F8A3E;
+    --color-wrong: #9E2B1E;
+
+    --font-display: 'Baloo Bhaijaan 2', system-ui, sans-serif;
+    --font-body: 'Readex Pro', system-ui, sans-serif;
+}
+
 @theme {
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-heading: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
+
+/* — Fakkroun public pages — */
+.fk-page { font-family: var(--font-body); color: var(--color-ink); background: var(--color-sand); }
+.fk-container { max-width: 1240px; margin-inline: auto; padding-inline: 24px; }
+.fk-eyebrow { font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--color-sun-text); }
+.fk-h1 { font-family: var(--font-display); font-weight: 800; line-height: .95; letter-spacing: -.02em; text-wrap: balance; }
+.fk-h2 { font-family: var(--font-display); font-weight: 800; line-height: 1.05; }
+.fk-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding-inline: 20px; border-radius: 12px; font-weight: 600; text-decoration: none; cursor: pointer; }
+.fk-btn-primary { background: var(--color-sea); color: var(--color-paper); box-shadow: 0 6px 0 var(--color-sea-dark); }
+.fk-btn-primary:hover { background: var(--color-sea-dark); color: var(--color-paper); }
+.fk-btn-outline { border: 2px solid var(--color-ink); background: transparent; color: var(--color-ink); }
+.fk-input { min-height: 52px; padding-inline: 16px; border: 2px solid var(--color-sand-400); border-radius: 14px; background: var(--color-paper); color: var(--color-ink); font: 600 18px var(--font-body); }
+.fk-link { color: var(--color-sea); }
+.fk-link:hover { color: var(--color-sea-dark); }
+.fk-focus:focus-visible, .fk-page a:focus-visible, .fk-page button:focus-visible, .fk-page input:focus-visible { outline: 3px solid var(--color-sun); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .fk-page * { transition: none !important; animation: none !important; } }

@@ -4,7 +4,7 @@ return [
     'tag' => 'Notre mission',
     'title' => 'À propos',
     'hero_title' => 'Fakkroun – فكّرون',
-    'hero_lead' => 'Fakkroun transforme l’apprentissage en compétition amicale. Son nom vient du mot arabe « penser », et sa mascotte est la tortue : patiente, curieuse et à l’aise sur terre comme en mer.',
+    'hero_lead' => 'Fakkroun transforme l’apprentissage en compétition amicale. En arabe tunisien, un fakkroun (فكّرون) est une tortue, et le mot sonne comme فكّر, « réfléchis ». Notre tortue mascotte prend une respiration avant chaque réponse — patiente, curieuse et à l’aise sur terre comme en mer.',
 
     'stat_free_value' => 'Gratuit',
     'stat_free_label' => 'pour jouer entre amis, en famille ou en classe',
