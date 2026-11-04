@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fakkroun — Play lobby</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&amp;family=Readex+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5EFE3}
+a{color:#0B6E69}a:hover{color:#084F4B}
+</style>
+</helmet>
+<div style="font-family: 'Readex Pro', system-ui, sans-serif; color: #10262E; background: #F5EFE3; min-height: 600px">
+
+<header style="border-bottom: 1px solid #E3D8C3">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #10262E">
+<svg width="48" height="40" viewBox="0 0 140 110" aria-hidden="true"><ellipse cx="38" cy="84" rx="14" ry="9" fill="#7DB57A" transform="rotate(-25 38 84)"></ellipse><ellipse cx="92" cy="86" rx="14" ry="9" fill="#7DB57A" transform="rotate(25 92 86)"></ellipse><ellipse cx="34" cy="38" rx="14" ry="8" fill="#7DB57A" transform="rotate(30 34 38)"></ellipse><ellipse cx="96" cy="36" rx="14" ry="8" fill="#7DB57A" transform="rotate(-30 96 36)"></ellipse><ellipse cx="64" cy="60" rx="42" ry="34" fill="#0B6E69"></ellipse><polygon points="77,60 70.5,71.3 57.5,71.3 51,60 57.5,48.7 70.5,48.7" fill="#F2A33A"></polygon><g stroke="#F5EFE3" stroke-width="3" stroke-linecap="round" opacity="0.8"><line x1="77" y1="60" x2="104" y2="60"></line><line x1="70.5" y1="71.3" x2="82" y2="91"></line><line x1="57.5" y1="71.3" x2="46" y2="91"></line><line x1="51" y1="60" x2="24" y2="60"></line><line x1="57.5" y1="48.7" x2="46" y2="29"></line><line x1="70.5" y1="48.7" x2="82" y2="29"></line></g><circle cx="116" cy="58" r="19" fill="#7DB57A"></circle><circle cx="109" cy="54" r="5" fill="#fff"></circle><circle cx="123" cy="54" r="5" fill="#fff"></circle><circle cx="109.5" cy="55" r="2.8" fill="#10262E"></circle><circle cx="123.5" cy="55" r="2.8" fill="#10262E"></circle><path d="M109 64 q7 6 14 0" stroke="#10262E" stroke-width="2.5" fill="none" stroke-linecap="round"></path></svg>
+<span style="font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 26px">Fakkroun</span>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 2px">
+<a href="Lobby.dc.html" aria-current="page" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 10px; text-decoration: none; color: #10262E; font-weight: 600; background: #EBE2D0">Play</a>
+<a href="Main.dc.html#categories" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; text-decoration: none; color: #10262E; font-weight: 500">Categories</a>
+<a href="Community.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; text-decoration: none; color: #10262E; font-weight: 500">Community</a>
+<a href="Results.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; text-decoration: none; color: #10262E; font-weight: 500">Leaderboard</a>
+</nav>
+<div style="margin-left: auto; display: flex; align-items: center; gap: 10px">
+<span style="width: 40px; height: 40px; border-radius: 50%; background: #F2A33A; display: flex; align-items: center; justify-content: center; font-weight: 700" aria-label="Your profile">M</span>
+</div>
+</div>
+</header>
+
+<main style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 80px; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 52px; line-height: 1">Let's play.</h1>
+<p style="margin: 0; font-size: 18px; color: #3E5257">Set up a room for your group, or jump into one that's already open.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+
+<section aria-labelledby="create-h" style="flex: 999 1 600px; min-width: 0; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 28px; padding: clamp(20px, 3vw, 36px); display: flex; flex-direction: column; gap: 28px">
+<h2 id="create-h" style="margin: 0; font-size: 26px; font-weight: 600">Create a room</h2>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="room-name" style="font-weight: 600">Room name</label>
+<input id="room-name" value="Thursday quiz — 3ème B" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 2px solid #CDBF9F; border-radius: 14px; background: #FFFFFF; font: 500 17px 'Readex Pro', sans-serif; color: #10262E">
+</div>
+
+<fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<legend style="font-weight: 600; padding: 0; margin-bottom: 12px">Categories <span style="font-weight: 400; color: #4A5E63">· pick one or more</span></legend>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="13">
+<button type="button" aria-pressed="{{ c.on }}" onClick="{{ c.toggle }}" style="{{ c.style }}">{{ c.label }}</button>
+</sc-for>
+</div>
+</fieldset>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px">
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="font-weight: 600; padding: 0; margin-bottom: 12px">Difficulty</legend>
+<div style="display: flex; background: #EBE2D0; border-radius: 14px; padding: 4px; gap: 4px">
+<sc-for list="{{ diffs }}" as="d" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{ d.on }}" onClick="{{ d.pick }}" style="{{ d.style }}">{{ d.label }}</button>
+</sc-for>
+</div>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="font-weight: 600; padding: 0; margin-bottom: 12px">Questions</legend>
+<div style="display: flex; background: #EBE2D0; border-radius: 14px; padding: 4px; gap: 4px">
+<sc-for list="{{ counts }}" as="d" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{ d.on }}" onClick="{{ d.pick }}" style="{{ d.style }}">{{ d.label }}</button>
+</sc-for>
+</div>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="font-weight: 600; padding: 0; margin-bottom: 12px">Time per question</legend>
+<div style="display: flex; background: #EBE2D0; border-radius: 14px; padding: 4px; gap: 4px">
+<sc-for list="{{ times }}" as="d" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{ d.on }}" onClick="{{ d.pick }}" style="{{ d.style }}">{{ d.label }}</button>
+</sc-for>
+</div>
+</fieldset>
+<fieldset style="border: 0; margin: 0; padding: 0">
+<legend style="font-weight: 600; padding: 0; margin-bottom: 12px">Language</legend>
+<div style="display: flex; background: #EBE2D0; border-radius: 14px; padding: 4px; gap: 4px">
+<sc-for list="{{ langs }}" as="d" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{ d.on }}" onClick="{{ d.pick }}" style="{{ d.style }}">{{ d.label }}</button>
+</sc-for>
+</div>
+</fieldset>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 24px; border-top: 1px solid #E3D8C3">
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; cursor: pointer">
+<input type="checkbox" checked="{{ priv }}" onChange="{{ togglePriv }}" style="width: 22px; height: 22px; accent-color: #0B6E69">
+<span><b>Private room</b> <span style="color: #4A5E63">— only people with the code can join</span></span>
+</label>
+<a href="Game.dc.html" style="min-height: 56px; display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; border-radius: 16px; background: #0B6E69; color: #FFFBF3; text-decoration: none; font-weight: 600; font-size: 18px; box-shadow: 0 6px 0 #084F4B">Create room · {{ summary }}</a>
+</div>
+</section>
+
+<aside style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<section aria-labelledby="join-h" style="background: #10262E; color: #F5EFE3; border-radius: 28px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<h2 id="join-h" style="margin: 0; font-size: 24px; font-weight: 600">Join with a code</h2>
+<label for="code" style="color: #C9D3D0; font-size: 15px">Ask the host for the 4-character code on their screen.</label>
+<div style="display: flex; gap: 8px">
+<input id="code" placeholder="7KQ2" maxlength="6" style="flex: 1; min-width: 0; min-height: 56px; box-sizing: border-box; padding: 0 16px; border: 2px solid #3C5A62; border-radius: 14px; background: #183740; color: #F5EFE3; font: 700 24px 'Readex Pro', sans-serif; letter-spacing: 0.3em; text-transform: uppercase; text-align: center">
+<a href="Game.dc.html" style="min-height: 56px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: 14px; background: #F2A33A; color: #10262E; text-decoration: none; font-weight: 600">Join</a>
+</div>
+</section>
+
+<section aria-labelledby="open-h" style="background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 28px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<h2 id="open-h" style="margin: 0; font-size: 22px; font-weight: 600">Open rooms</h2>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #2F6B34; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #2F8A3E"></span>Live</span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{ rooms }}" as="r" hint-placeholder-count="4">
+<li style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 16px; background: #F5EFE3">
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<b style="font-size: 16px">{{ r.name }}</b>
+<span style="font-size: 13px; color: #4A5E63">{{ r.meta }}</span>
+</div>
+<a href="Game.dc.html" aria-label="{{ r.aria }}" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 12px; border: 2px solid #0B6E69; color: #0B6E69; text-decoration: none; font-weight: 600; font-size: 14px">Join</a>
+</li>
+</sc-for>
+</ul>
+</section>
+</aside>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { cats: ['blue', 'bio'], diff: 'medium', count: 10, time: 20, lang: 'ar', priv: true };
+  }
+  seg(on) {
+    return 'flex: 1; min-height: 44px; border: 0; border-radius: 10px; cursor: pointer; font: 600 15px \'Readex Pro\', sans-serif; ' +
+      (on ? 'background: #10262E; color: #F5EFE3;' : 'background: transparent; color: #3E5257;');
+  }
+  renderVals() {
+    const s = this.state;
+    const catDefs = [
+      ['green', 'Green Economy'], ['blue', 'Blue Economy'], ['env', 'Environmental Protection'],
+      ['climate', 'Climate Change'], ['energy', 'Renewable Energy'], ['bio', 'Marine Biodiversity'],
+      ['sdg', 'Sustainable Development'], ['science', 'Science'], ['tech', 'Technology'],
+      ['history', 'History'], ['geo', 'Geography'], ['culture', 'Culture'], ['sports', 'Sports']
+    ];
+    const cats = catDefs.map(([id, label]) => {
+      const on = s.cats.includes(id);
+      return {
+        label, on: on ? 'true' : 'false',
+        style: 'min-height: 44px; padding: 0 16px; border-radius: 999px; cursor: pointer; font: 500 15px \'Readex Pro\', sans-serif; ' +
+          (on ? 'background: #0B6E69; color: #FFFBF3; border: 2px solid #0B6E69;' : 'background: #FFFFFF; color: #10262E; border: 2px solid #CDBF9F;'),
+        toggle: () => this.setState({ cats: on ? s.cats.filter((x) => x !== id) : s.cats.concat(id) })
+      };
+    });
+    const mk = (key, defs) => defs.map(([v, label]) => ({
+      label, on: s[key] === v ? 'true' : 'false', style: this.seg(s[key] === v),
+      pick: () => this.setState({ [key]: v })
+    }));
+    const langName = { ar: 'العربية', fr: 'Français', en: 'English' }[s.lang];
+    return {
+      cats,
+      diffs: mk('diff', [['easy', 'Easy'], ['medium', 'Medium'], ['hard', 'Hard']]),
+      counts: mk('count', [[10, '10'], [15, '15'], [20, '20']]),
+      times: mk('time', [[10, '10s'], [20, '20s'], [30, '30s']]),
+      langs: mk('lang', [['ar', 'عربي'], ['fr', 'FR'], ['en', 'EN']]),
+      priv: s.priv,
+      togglePriv: () => this.setState({ priv: !s.priv }),
+      summary: s.count + ' questions',
+      rooms: [
+        { name: 'Sea turtles of Kuriat', meta: 'Marine Biodiversity · عربي · 5/12 players', aria: 'Join Sea turtles of Kuriat' },
+        { name: 'Énergie solaire — défi', meta: 'Renewable Energy · FR · 9/20 players', aria: 'Join Énergie solaire — défi' },
+        { name: 'Climate Friday', meta: 'Climate Change · EN · 3/8 players', aria: 'Join Climate Friday' },
+        { name: 'Mix général', meta: 'General knowledge · FR · 14/30 players', aria: 'Join Mix général' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

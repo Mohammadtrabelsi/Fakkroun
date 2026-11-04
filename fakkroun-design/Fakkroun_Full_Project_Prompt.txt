@@ -1,0 +1,1198 @@
+FAKKROUN (فكّرون)
+COMPLETE PROJECT SPECIFICATION & MASTER DEVELOPMENT PROMPT
+
+Project name: Fakkroun
+Arabic name: فكّرون
+Project type: Multilingual multiplayer quiz and educational gaming platform
+Repository: Existing majidastarter repository
+Primary concept: Think, Answer, Learn, Win!
+
+======================================================================
+1. PROJECT VISION
+======================================================================
+
+Fakkroun is a modern, multilingual, real-time multiplayer quiz platform designed to make learning entertaining, interactive, and accessible.
+
+The platform combines:
+- Multiplayer quiz games.
+- General knowledge and educational questions.
+- Green economy and environmental awareness.
+- Blue economy and marine biodiversity.
+- Community-generated questions.
+- AI-assisted question generation.
+- Educational partnerships.
+- Non-intrusive advertising and sponsorship.
+
+Fakkroun should encourage users to learn while competing with friends, family, colleagues, students, and other players.
+
+The platform should initially prioritize:
+1. Green Economy.
+2. Blue Economy.
+3. Environmental Protection.
+4. Climate Change.
+5. Renewable Energy.
+6. Marine Biodiversity.
+7. Sustainable Development.
+
+It should also support general knowledge, science, technology, history, geography, culture, and sports.
+
+The platform must be scalable, maintainable, secure, responsive, and capable of supporting a large question bank and many simultaneous multiplayer rooms.
+
+This is not simply a quiz website. It is a complete multiplayer gaming and educational ecosystem.
+
+======================================================================
+2. MANDATORY STARTING POINT: MAJIDASTARTER
+======================================================================
+
+2.1 Existing repository requirement
+
+Start development from the existing majidastarter GitHub repository.
+
+DO NOT create a new Laravel project from scratch. Do not initialize another Laravel application or create a separate project to implement Fakkroun.
+
+The objective is to transform and extend majidastarter into Fakkroun.
+
+2.2 Repository audit
+
+Before modifying any files, inspect the complete repository. Analyze:
+- Laravel version.
+- PHP version.
+- Application architecture.
+- Directory and namespace organization.
+- Authentication and registration.
+- User management.
+- Existing roles and permissions.
+- Existing database schema and migrations.
+- Existing frontend framework and UI components.
+- Existing layouts and reusable components.
+- Existing services and business logic.
+- Existing middleware and providers.
+- Existing API structure.
+- Existing queues and scheduled tasks.
+- Existing tests.
+- Installed Composer and frontend dependencies.
+- Existing coding conventions.
+
+2.3 Reuse existing functionality
+
+Identify which existing features can be reused, extended, or improved.
+- Preserve existing working functionality.
+- Avoid duplicating existing features.
+- Follow established repository conventions where appropriate.
+- Do not replace the existing architecture without a technical justification.
+- Avoid unnecessary framework upgrades.
+- Do not introduce dependencies without a clear reason.
+- Maintain compatibility with the existing application.
+
+2.4 First deliverable: technical assessment
+
+Before implementing anything, produce:
+1. Repository architecture assessment.
+2. Existing functionality inventory.
+3. Reusable components and modules.
+4. Missing functionality required by Fakkroun.
+5. Proposed database changes.
+6. Required dependencies.
+7. Technical risks and compatibility issues.
+8. Proposed application architecture.
+9. Development roadmap with implementation phases.
+
+Do not perform destructive changes before this assessment.
+
+======================================================================
+3. USER ROLES AND PERMISSIONS
+======================================================================
+
+Implement a flexible role-based access control system.
+
+3.1 Player
+Players can:
+- Register and log in.
+- Manage their profiles and upload profile pictures.
+- Select interface language and preferred question language.
+- Create multiplayer rooms and join rooms.
+- Scan QR codes to join rooms and share room invitations.
+- Participate in quizzes and submit questions.
+- View game history, scores, rankings, and achievements.
+- Report incorrect or inappropriate questions.
+- Manage notification preferences.
+
+3.2 Administrator
+Administrators can:
+- Manage users, roles, and permissions.
+- Manage categories and subcategories.
+- Manage questions and translations.
+- Validate community questions and manage moderators.
+- Configure game rules.
+- Manage advertising campaigns and advertisers.
+- Configure advertising packages and pricing.
+- Manage advertising credits.
+- Monitor impressions and sponsored questions.
+- Generate questions using AI.
+- Import and export questions.
+- View statistics and reports.
+- Configure platform settings and access audit logs.
+
+3.3 Category moderator
+Moderators can:
+- Access assigned categories.
+- Review submitted questions.
+- Approve or reject questions.
+- Edit question content.
+- Validate translations.
+- Detect duplicates and identify inaccurate or outdated information.
+- Provide rejection reasons.
+
+Moderators must not access categories outside their assigned permissions unless explicitly authorized.
+
+3.4 Advertiser / Partner
+Advertisers can:
+- Create and manage campaigns.
+- Select advertising formats, target categories, and target languages.
+- Upload advertising creatives.
+- Purchase advertising packages.
+- Monitor campaign performance.
+- View impressions and sponsored-question statistics.
+- Monitor available credits and access billing history.
+
+Potential partners include environmental associations, NGOs, universities, schools, educational institutions, sustainable businesses, renewable energy companies, and marine conservation organizations.
+
+======================================================================
+4. AUTHENTICATION AND USER MANAGEMENT
+======================================================================
+
+Extend the existing authentication system.
+
+Requirements:
+- Email registration.
+- Login and logout.
+- Email verification.
+- Password recovery.
+- User profile management.
+- Optional social login.
+- Account activation and suspension.
+- Role-based authorization.
+- Rate limiting.
+- Secure session management.
+- User language preferences.
+- Account activity history.
+
+Avoid introducing a second authentication system if the existing repository already provides a suitable implementation.
+
+======================================================================
+5. MULTILINGUAL SYSTEM
+======================================================================
+
+Initially support Arabic, French, and English. The architecture must allow additional languages without significant structural changes.
+
+5.1 Two independent language preferences
+Every player must be able to select:
+1. Interface language.
+2. Question language.
+
+For example, a player can use the interface in French while receiving questions in Arabic.
+
+5.2 Question translations
+Store translations independently. A question translation should include:
+- Question text.
+- Answer choices.
+- Explanation.
+- Language.
+- Translation status.
+- Translator or creator.
+- Validation information.
+- Created and updated dates.
+
+Use stable answer-choice identifiers across translations. The correct answer must reference a choice identifier, not a translated text value.
+
+5.3 Missing translations
+Implement a configurable fallback policy:
+- Use a configured fallback language, or
+- Exclude questions without an approved translation.
+
+Never display an unapproved translation silently.
+
+5.4 Translation validation
+Translation approval must be independent of original question approval. Example: a French question and its English translation may be approved while its Arabic translation remains pending. The question can be used in French and English but not Arabic until the Arabic translation is approved.
+
+======================================================================
+6. CATEGORY MANAGEMENT
+======================================================================
+
+Create dynamic categories and subcategories.
+
+Initial categories:
+- Green Economy — Sustainable economic development.
+- Blue Economy — Marine resources and sustainable maritime activities.
+- Environmental Protection — Pollution, waste, and conservation.
+- Renewable Energy — Solar, wind, and clean energy.
+- Climate Change — Climate science and adaptation.
+- Marine Biodiversity — Marine species and ecosystems.
+- Sustainable Development — Sustainable development goals.
+- General Knowledge — Everyday knowledge.
+- Science & Technology — Scientific and technological knowledge.
+- History — Historical events and civilizations.
+- Geography — Countries, regions, and geography.
+- Culture — Art, literature, and traditions.
+- Sports — Sports and sporting events.
+
+Administrators must be able to create, edit, deactivate, and reorganize categories. Category rules must be configurable, not hardcoded.
+
+======================================================================
+7. CENTRALIZED QUESTION BANK
+======================================================================
+
+Build a centralized question bank designed for hundreds of thousands of questions.
+
+7.1 Initial question format
+Start with multiple-choice questions. Each question must have:
+- Exactly four choices.
+- Exactly one correct answer.
+- Optional explanation.
+- Category and subcategory.
+- Difficulty.
+- Language.
+- Source/reference.
+- Creator.
+- Validation status.
+
+Design the system to support other question formats in future versions.
+
+7.2 Question data model
+A question should contain:
+- Unique identifier.
+- Category ID and subcategory ID.
+- Creator ID.
+- Original language.
+- Difficulty: Easy, Medium, Hard.
+- Question type and content.
+- Answer choices.
+- Correct choice identifier.
+- Explanation.
+- Source/reference.
+- Validation and publication status.
+- Created and updated dates.
+- Usage statistics.
+
+Separate original questions from translations.
+
+7.3 Question lifecycle
+Implement:
+Draft → Pending Validation → Under Review → Approved / Rejected → Published.
+
+Additional requirements:
+- Record who approved or rejected a question.
+- Record rejection reasons.
+- Maintain question revision history.
+- Trigger revalidation when an approved question is modified.
+- Allow administrators to unpublish questions.
+- Preserve historical game records even when questions are deactivated.
+
+7.4 Validation policies
+Validation policies must be configurable by category. Examples:
+- Green Economy: administrator approval required.
+- Blue Economy: administrator approval required.
+- Environmental Protection: administrator approval required.
+- Science & Technology: administrator approval required.
+- General Knowledge: community or administrator validation according to configured policy.
+
+7.5 Question sources
+Support administrator-created questions, community submissions, AI-generated questions, CSV imports, Excel imports, JSON imports, and educational or institutional partners.
+
+======================================================================
+8. QUESTION QUALITY AND DUPLICATE DETECTION
+======================================================================
+
+Implement quality-control mechanisms to detect:
+- Missing question content.
+- Missing answer choices.
+- Invalid correct answers.
+- Duplicate questions.
+- Semantically similar questions.
+- Cross-language duplicates.
+- Translation inconsistencies.
+- Incorrect explanations.
+- Invalid references.
+- Difficulty mismatches.
+- Outdated information.
+- Inappropriate content.
+
+Use exact matching and semantic similarity detection where appropriate. AI-generated content must not be considered factually verified simply because an AI model produced it. Require reliable references and human validation for sensitive or factual categories.
+
+======================================================================
+9. COMMUNITY QUESTION SUBMISSION
+======================================================================
+
+Allow registered players to propose questions.
+
+Submission process:
+1. Player selects a category.
+2. Player selects the language.
+3. Player writes the question.
+4. Player provides four answer choices.
+5. Player selects the correct answer.
+6. Player optionally adds an explanation and reference.
+7. Player submits the question.
+8. The platform validates required fields and detects duplicates.
+9. The question enters the moderation workflow.
+10. A moderator or administrator reviews it.
+
+Players should be able to track their submission status. Implement anti-spam protection, submission limits, and reporting mechanisms. Do not publish unapproved questions automatically unless an explicit administrator-configured policy allows it.
+
+======================================================================
+10. AI-POWERED QUESTION GENERATION
+======================================================================
+
+Implement an AI-assisted question generation module.
+
+10.1 Generation interface
+Administrators can configure:
+- Category and subcategory.
+- Difficulty.
+- Language.
+- Number of questions.
+- Question format.
+- Number of answer choices.
+- Explanation requirement.
+- Reference requirement.
+- Target audience.
+
+Support batch generation of hundreds or thousands of questions through asynchronous jobs.
+
+10.2 Generation workflow
+1. Administrator configures generation parameters.
+2. System submits generation jobs.
+3. AI generates structured question data.
+4. System validates the output format.
+5. System checks missing fields.
+6. System detects possible duplicates.
+7. System checks answer consistency.
+8. System records references and source information.
+9. Questions enter Draft or Pending Validation.
+10. Moderators validate the content.
+
+Default behavior: AI-generated questions must not be published automatically.
+
+10.3 AI architecture
+Use an abstraction layer for AI providers. Avoid tightly coupling business logic to a single provider. Support future integration with different AI providers.
+
+Store provider, model identifier, generation parameters, generation timestamp, batch identifier, prompt version, generation status, and validation results.
+
+Implement retries, error handling, rate limits, and cost monitoring.
+
+======================================================================
+11. QUESTION IMPORT AND EXPORT
+======================================================================
+
+Support bulk imports through CSV, Excel, and JSON.
+
+Implement:
+- File upload validation.
+- Column mapping.
+- Import preview.
+- Required-field validation.
+- Category mapping.
+- Language mapping.
+- Duplicate detection.
+- Error reports.
+- Import history.
+- Asynchronous processing for large files.
+
+Allow exporting approved questions with their translations and metadata. Never publish imported questions automatically unless explicitly configured.
+
+======================================================================
+12. MULTIPLAYER ROOMS
+======================================================================
+
+This is one of the platform's core features. Registered players must be able to create and join multiplayer rooms.
+
+12.1 Room creation
+The room creator can configure:
+- Room name.
+- Categories.
+- Number of questions.
+- Maximum players.
+- Difficulty distribution.
+- Question language policy.
+- Question duration.
+- Maximum number of rounds, if supported.
+- Community questions inclusion.
+- Sponsored questions inclusion.
+- Visibility: private or public.
+
+Game settings should be configurable by administrators.
+
+12.2 Room identifiers
+Each room must have:
+- Unique room ID.
+- Unique joining code.
+- Shareable invitation URL.
+- QR code.
+
+Example URL: https://example.com/join/ROOM-CODE
+
+Generate a QR code containing the invitation URL. When a player scans it:
+1. Open the invitation page.
+2. Check authentication.
+3. Request login if necessary.
+4. Validate the room.
+5. Check whether the room is joinable.
+6. Check player capacity.
+7. Allow the player to join.
+
+Players must also be able to share room invitations through messaging applications and other sharing mechanisms.
+
+12.3 Room lifecycle
+Implement: Waiting, Ready, In Progress, Completed, and Cancelled. Room transitions must be controlled by server-side rules.
+
+12.4 Room capacity
+Administrators must configure:
+- Minimum players per room.
+- Maximum players per room.
+- Maximum players per round.
+- Maximum concurrent rooms.
+
+Do not hardcode these limits. When the room reaches capacity, reject additional participants with a clear message.
+
+12.5 Room lobby
+Display room name, room code, QR code, host, joined players, player count, configured categories, number of questions, game language policy, and start status.
+
+The room host can start the game when the configured conditions are met.
+
+======================================================================
+13. REAL-TIME MULTIPLAYER GAMEPLAY
+======================================================================
+
+Implement real-time communication using Laravel-compatible broadcasting. Evaluate Laravel Reverb or another appropriate WebSocket solution based on the existing repository.
+
+13.1 Gameplay flow
+1. Host starts the game.
+2. Server selects questions.
+3. Server broadcasts the current question.
+4. All players receive the question simultaneously.
+5. Timer starts.
+6. Players submit answers.
+7. Server records submissions.
+8. Timer expires or all eligible players answer.
+9. Server calculates results.
+10. Server broadcasts results.
+11. Next question begins.
+12. Final leaderboard is displayed.
+
+13.2 Question display
+Display question number, total questions, question text, four answer choices, countdown timer, player status, and sponsored content label when applicable. The interface must be responsive and easy to use on mobile devices.
+
+13.3 Server-authoritative gameplay
+Never trust the client for correct answers, scores, timers, ranking, game status, or advertising consumption. The server must be authoritative.
+
+Implement timestamp validation, duplicate submission protection, answer submission limits, reconnection handling, disconnection handling, game-state synchronization, protection against late submissions, and concurrency-safe score calculation.
+
+13.4 Reconnection
+When a player disconnects:
+- Preserve the current game state.
+- Allow reconnection.
+- Synchronize the current question and remaining time.
+- Prevent duplicate answer submission.
+- Preserve already recorded answers.
+
+Define what happens when a player cannot reconnect within the configured period.
+
+======================================================================
+14. DUPLICATE-ANSWER RULE
+======================================================================
+
+Implement a configurable duplicate-answer rule.
+
+Example for one question:
+- Player A answers B.
+- Player B answers B.
+- Player C answers A.
+- Player D answers C.
+
+If the rule is enabled, answers B from players A and B are excluded from scoring because two players submitted the same answer. Only unique responses are considered for scoring.
+
+The rule must be configurable:
+- Enabled or disabled per game.
+- Applied per question.
+- Configurable minimum number of identical answers required for exclusion.
+- Clearly explained to players before the game starts.
+
+Default example: two or more identical responses are excluded. Implement the rule server-side and apply it consistently to every player. Clarify in the game results that duplicated responses were excluded.
+
+======================================================================
+15. SCORING SYSTEM
+======================================================================
+
+Implement a configurable scoring engine. Scoring may consider:
+- Correct answer.
+- Response time.
+- Question difficulty.
+- Bonus points.
+- Duplicate-answer exclusion.
+- Optional achievements.
+
+Example scoring configuration:
+- Easy: 10 points.
+- Medium: 20 points.
+- Hard: 30 points.
+- Speed bonus: configurable.
+- Incorrect answer: 0 points.
+- Duplicate answer: excluded from scoring.
+
+These are initial examples, not fixed business rules. Store scoring results for every question and player. Calculate the final ranking on the server.
+
+15.1 Results
+After each question, show correct answer, player answer, correct/incorrect status, points earned, response time, duplicate-answer status, and current leaderboard.
+
+At the end of the game, show final scores, player rankings, winner, correct answers, incorrect answers, total response time, achievements, and game statistics.
+
+======================================================================
+16. QUESTION SELECTION AND ANTI-REPETITION
+======================================================================
+
+The question bank may contain hundreds of thousands of questions. Never load the entire question bank into memory to select questions.
+
+Implement an efficient selection engine with:
+- Randomized question selection.
+- Category distribution.
+- Difficulty distribution.
+- Language availability.
+- Approved and published status only.
+- No duplicate question in the same round.
+- Avoid recent repetitions in the same room.
+- Track question usage per player.
+- Avoid questions recently seen by a player when possible.
+- Exclude inactive or outdated questions.
+- Avoid repeatedly selecting the same questions across rooms.
+
+Maintain usage statistics and optimize database queries. Use appropriate indexes, caching, and efficient selection strategies.
+
+======================================================================
+17. ADVERTISING AND MONETIZATION STRATEGY
+======================================================================
+
+Advertising must generate revenue without damaging the gaming experience. Non-intrusive advertising is a fundamental product requirement.
+
+Avoid excessive interruptions, aggressive popups, forced external navigation, and advertisements that interfere with answering questions.
+
+Prioritize educational and environmentally relevant advertisers.
+
+17.1 Advertising formats
+Support:
+1. Small banners.
+2. Sponsored questions.
+3. Sponsored rounds.
+4. Sponsored categories.
+5. Brand logos.
+6. Small in-game advertising placements.
+7. Optional post-game sponsor messages.
+
+All advertising must be clearly identified. Sponsored questions must remain educational and relevant. An advertiser must never control the correct answer, scoring, or game result.
+
+17.2 Advertising placement strategy
+Possible placements:
+- Between questions.
+- During waiting-lobby periods.
+- On the results screen.
+- In non-disruptive interface areas.
+- As a clearly identified sponsored question.
+
+Do not display an advertisement on every question by default.
+
+The administrator must configure:
+- Maximum advertisements per player per round.
+- Maximum advertisements per question.
+- Minimum interval between advertisements.
+- Maximum advertisements per session.
+- Maximum sponsored questions per round.
+- Campaign frequency limits.
+- Category restrictions.
+- Language targeting.
+
+17.3 Sponsored questions
+Sponsored questions must be clearly labeled, match the selected category, be factually accurate, have approved content, follow normal game rules, use the same scoring rules as other questions, and respect configured limits.
+
+Advertisers must not manipulate question answers or influence player rankings.
+
+======================================================================
+18. ADVERTISING BILLING MODEL
+======================================================================
+
+This section is financially critical. Implement it precisely.
+
+Fakkroun has two independent advertising consumption units:
+1. Advertisement impressions.
+2. Sponsored-question deliveries.
+
+They must be tracked and billed separately.
+
+18.1 Impression billing
+An impression is counted per player, per question, only when the advertisement is successfully displayed to that individual player.
+
+Example: one advertisement successfully displayed to 10 players during one question = 10 impressions.
+
+If an advertisement is displayed to 10 players during 5 different questions = 50 impressions.
+
+Do not count a server-side broadcast attempt as an impression. The system must record an auditable delivery/display event.
+
+18.2 Duplicate impression protection
+Prevent double billing caused by page refresh, browser reconnection, WebSocket reconnection, duplicate client events, retried requests, or concurrent workers.
+
+Use a unique billing reference for every billable impression. An impression must not be billed twice for the same delivery event.
+
+18.3 Sponsored-question billing
+Sponsored questions are billed separately from impressions.
+
+Example: one sponsored question is delivered to a room containing 10 players:
+- Sponsored-question consumption = 1.
+- If a related advertisement is successfully displayed to all 10 players, impression consumption = 10.
+
+Therefore:
+- One sponsored-question delivery is charged once.
+- Ten impressions are charged separately.
+
+Do not charge the sponsored-question fee per player unless the administrator explicitly configures that pricing model.
+
+18.4 Separate balances
+Maintain separate balances for impression credits and sponsored-question credits. Never mix these balances.
+
+Campaign budget, monetary payment, purchased credits, and actual consumption must be tracked separately.
+
+18.5 Advertising ledger
+Implement an immutable and auditable financial ledger.
+
+Each transaction must record:
+- Advertiser.
+- Campaign.
+- Advertising format.
+- Consumption type.
+- Quantity.
+- Unit price.
+- Total amount.
+- Currency.
+- Timestamp.
+- Room.
+- Question.
+- Player, where applicable.
+- Unique billing reference.
+- Transaction status.
+
+Prevent negative balances and duplicate financial transactions. Use database transactions and concurrency-safe operations. Provide a reconciliation mechanism between recorded display events and billing ledger entries.
+
+======================================================================
+19. ADVERTISING PACKAGES
+======================================================================
+
+Administrators can configure advertising packages.
+
+Example package structure:
+- Starter: 5,000 impression credits and 10 sponsored-question credits.
+- Growth: 30,000 impression credits and 75 sponsored-question credits.
+- Premium: 100,000 impression credits and 300 sponsored-question credits.
+
+These are illustrative quantities. Prices must be configurable by administrators. Do not hardcode prices in application logic.
+
+Support package creation, editing, activation/deactivation, custom packages, campaign-specific budgets, credit purchases, credit consumption, transaction history, and refund or adjustment records with authorization and audit history.
+
+======================================================================
+20. ADVERTISER DASHBOARD
+======================================================================
+
+Provide a dashboard containing:
+- Active campaigns.
+- Campaign status.
+- Start and end dates.
+- Available impression credits.
+- Available sponsored-question credits.
+- Consumed credits.
+- Remaining budget.
+- Total impressions.
+- Sponsored-question deliveries.
+- Performance by category.
+- Performance by language.
+- Daily and monthly statistics.
+- Campaign billing history.
+
+Allow advertisers to filter reports by date, category, language, and campaign.
+
+======================================================================
+21. AI-ASSISTED ADVERTISING
+======================================================================
+
+Optionally use AI to help administrators:
+- Match campaigns with relevant categories.
+- Detect inappropriate advertising content.
+- Suggest suitable question sponsorships.
+- Identify language mismatches.
+- Detect potentially misleading claims.
+
+AI recommendations must not automatically approve advertising without the configured review process.
+
+======================================================================
+22. USER EXPERIENCE AND INTERFACE
+======================================================================
+
+Build a modern, accessible, responsive interface supporting desktop, tablet, and mobile.
+
+22.1 Visual identity
+Brand name: Fakkroun – فكّرون.
+
+The name evokes thinking and knowledge and can use the turtle as a visual mascot.
+
+Explore a visual identity based on intelligence, curiosity, education, nature, sustainability, and friendly competition. The interface should feel modern, playful, and professional.
+
+22.2 Main pages
+Implement:
+- Landing page.
+- Registration and login.
+- User dashboard.
+- Profile.
+- Room creation.
+- Room joining.
+- QR invitation.
+- Waiting lobby.
+- Live gameplay.
+- Question submission.
+- Game results.
+- Leaderboard.
+- Question categories.
+- Advertiser dashboard.
+- Admin dashboard.
+- Moderator dashboard.
+- Question management.
+- AI generation interface.
+- Campaign management.
+- Analytics.
+
+22.3 Gameplay interface
+Prioritize large readable question text, four clear answer buttons, visible countdown, simple interaction, immediate feedback, accessible color contrast, smooth transitions, and minimal distractions.
+
+Advertisements must not obstruct the answer buttons or countdown. Support right-to-left layout for Arabic.
+
+======================================================================
+23. NOTIFICATIONS
+======================================================================
+
+Implement notifications for important events, including:
+- Room invitation.
+- Player joining a room.
+- Game starting.
+- Game completed.
+- Question approved or rejected.
+- Translation approved.
+- Campaign activated.
+- Credits running low.
+- Campaign exhausted.
+- Advertiser billing event.
+
+Use email, in-app notifications, and real-time notifications where appropriate. Avoid excessive notifications.
+
+======================================================================
+24. ANALYTICS AND REPORTING
+======================================================================
+
+Build platform-wide analytics.
+
+24.1 Platform analytics
+Track registered users, active users, new registrations, total games, active rooms, completed games, questions played, most popular categories, most popular languages, average game duration, average players per room, and player retention.
+
+24.2 Question analytics
+Track question usage, correct-answer rate, incorrect-answer rate, average response time, difficulty performance, player reports, question approval history, translation usage, and duplicate detection results.
+
+24.3 Advertising analytics
+Track total impressions, sponsored-question deliveries, campaign consumption, remaining credits, advertising revenue, revenue by campaign, revenue by category, revenue by format, and daily and monthly performance.
+
+Do not confuse an attempted advertisement delivery with a confirmed impression.
+
+======================================================================
+25. DATABASE DESIGN
+======================================================================
+
+Design a normalized and scalable relational database. Evaluate the exact schema after inspecting majidastarter.
+
+The following is a logical entity inventory, not a requirement to create every table independently if existing structures already provide equivalent functionality.
+
+Users and authorization:
+- users
+- roles
+- permissions
+- role_user or equivalent
+- user_preferences
+- user_achievements
+
+Languages and categories:
+- languages
+- categories
+- category_translations
+- subcategories
+- subcategory_translations
+
+Questions:
+- questions
+- question_translations
+- answer_choices
+- answer_choice_translations
+- question_sources
+- question_revisions
+- question_reports
+- question_moderation_logs
+- question_usage
+- player_question_history
+
+Multiplayer:
+- rooms
+- room_players
+- games
+- game_rounds
+- game_questions
+- player_answers
+- player_scores
+- game_results
+- game_events
+
+AI and imports:
+- ai_generation_batches
+- ai_generation_jobs or equivalent
+- ai_generation_logs
+- import_batches
+- import_errors
+
+Advertising:
+- advertisers
+- advertising_campaigns
+- advertising_creatives
+- advertising_packages
+- advertiser_wallets
+- advertising_ledger
+- advertising_impressions
+- sponsored_question_deliveries
+- campaign_statistics
+
+Notifications and audit:
+- notifications
+- audit_logs
+
+Use foreign keys, appropriate indexes, unique constraints, and database transactions. Avoid unnecessary denormalization. Consider partitioning or archival strategies only when actual data volumes justify them.
+
+======================================================================
+26. APPLICATION ARCHITECTURE
+======================================================================
+
+Adapt the architecture to the existing repository. Prefer clear separation of responsibilities.
+
+Potential application modules:
+- Authentication.
+- User Management.
+- Categories.
+- Question Bank.
+- Translations.
+- Moderation.
+- Community Submissions.
+- Multiplayer Rooms.
+- Gameplay.
+- Scoring.
+- AI Generation.
+- Imports and Exports.
+- Advertising.
+- Campaign Management.
+- Billing and Ledger.
+- Analytics.
+- Notifications.
+
+Engineering principles:
+- SOLID.
+- Clean Code.
+- Separation of Concerns.
+- Dependency Injection.
+- Appropriate service boundaries.
+- Reusable business logic.
+- Thin controllers.
+- Form Requests.
+- Policies and Gates.
+- Events and Listeners.
+- Queues and Jobs.
+- API Resources where appropriate.
+- Database transactions for critical operations.
+
+Avoid unnecessary abstractions and overengineering. Do not introduce a repository pattern everywhere without a clear benefit. Business rules should not be placed directly inside controllers or Blade templates. Follow the repository's established architectural conventions when appropriate.
+
+======================================================================
+27. PERFORMANCE AND SCALABILITY
+======================================================================
+
+The system must support large question banks, many concurrent users, multiple simultaneous rooms, real-time events, large AI generation batches, bulk imports, and advertising delivery and billing.
+
+Requirements:
+- Redis where appropriate.
+- Queues for long-running tasks.
+- Efficient broadcasting.
+- Database indexing.
+- Pagination.
+- Query optimization.
+- Select only required columns.
+- Avoid N+1 queries.
+- Avoid loading unnecessary relationships.
+- Cache frequently used configuration and suitable read data.
+- Use batch processing for large operations.
+- Avoid expensive synchronous operations.
+- Monitor queue health and failures.
+
+Implement load testing for multiplayer rooms and concurrent answer submissions.
+
+======================================================================
+28. SECURITY AND ANTI-CHEATING
+======================================================================
+
+Implement secure authentication, authorization checks, input validation, CSRF protection, rate limiting, secure file uploads, protection against SQL injection and XSS, anti-spam controls, question submission limits, duplicate answer protection, server-authoritative scoring, server-authoritative game timers, protection against room joining abuse, advertising fraud detection, duplicate impression prevention, immutable financial transaction records, and audit logging.
+
+Never expose correct answers before the appropriate game stage. Never trust scores, correct answers, or billing information received from the client. Protect advertiser budgets against concurrent billing operations.
+
+======================================================================
+29. TESTING STRATEGY
+======================================================================
+
+Implement automated tests throughout development. Prioritize integration and feature tests for critical workflows.
+
+Authentication tests:
+- Registration.
+- Login.
+- Verification.
+- Permissions.
+- Account suspension.
+
+Question tests:
+- Creation.
+- Editing.
+- Validation.
+- Translation.
+- Approval.
+- Rejection.
+- Duplicate detection.
+- Imports.
+- AI generation.
+
+Multiplayer tests:
+- Room creation.
+- Joining by code.
+- Joining by QR URL.
+- Capacity restrictions.
+- Game start.
+- Question synchronization.
+- Answer submission.
+- Scoring.
+- Duplicate-answer exclusion.
+- Leaderboards.
+- Reconnection.
+
+Advertising tests:
+- Campaign creation.
+- Credit purchase.
+- Impression recording.
+- Sponsored-question recording.
+- Separate credit balances.
+- Duplicate billing prevention.
+- Budget exhaustion.
+- Concurrent consumption.
+- Ledger reconciliation.
+
+Important edge cases:
+- Two players submit identical answers.
+- A player submits an answer twice.
+- A player disconnects and reconnects.
+- A player joins a full room.
+- Two hosts attempt to start a game simultaneously.
+- A campaign runs out of credits during a game.
+- An advertisement is delivered more than once.
+- A question is modified after approval.
+- A translation is missing.
+- Two workers attempt to consume the same advertising credit.
+- A question becomes inactive during selection.
+
+Use integration tests to verify interactions between modules.
+
+======================================================================
+30. DEVELOPMENT ROADMAP
+======================================================================
+
+Implement the project in controlled phases.
+
+PHASE 1 — Repository audit and foundation
+- Inspect majidastarter.
+- Document existing architecture.
+- Reuse authentication and permissions.
+- Implement missing roles.
+- Implement language preferences.
+- Prepare category management.
+- Define database architecture.
+
+Deliverable: working foundation.
+
+PHASE 2 — Question bank
+- Question management.
+- Categories and subcategories.
+- Multilingual translations.
+- Moderation workflow.
+- Community submissions.
+- Duplicate detection.
+- Import and export.
+
+Deliverable: complete question management system.
+
+PHASE 3 — Multiplayer gameplay
+- Room creation.
+- Room codes.
+- QR invitations.
+- Room capacity.
+- Waiting lobby.
+- Real-time broadcasting.
+- Question selection.
+- Answer submission.
+- Duplicate-answer rule.
+- Scoring.
+- Leaderboards.
+- Reconnection.
+
+Deliverable: functional multiplayer quiz experience.
+
+PHASE 4 — AI generation
+- AI provider abstraction.
+- Generation interface.
+- Batch generation.
+- Validation.
+- Duplicate detection.
+- Reference management.
+- Moderation workflow.
+
+Deliverable: AI-assisted question production.
+
+PHASE 5 — Advertising and monetization
+- Advertiser accounts.
+- Campaign management.
+- Advertising formats.
+- Packages.
+- Separate credit balances.
+- Impression tracking.
+- Sponsored-question tracking.
+- Immutable billing ledger.
+- Advertiser dashboard.
+- Reconciliation.
+
+Deliverable: complete monetization system.
+
+PHASE 6 — Analytics and optimization
+- Platform dashboards.
+- Question analytics.
+- Advertising analytics.
+- Performance optimization.
+- Security review.
+- Load testing.
+- Deployment preparation.
+
+Deliverable: production-ready platform.
+
+======================================================================
+31. DEPLOYMENT AND OPERATIONS
+======================================================================
+
+Prepare the platform for production deployment.
+
+Requirements:
+- Environment configuration.
+- Database migration strategy.
+- Queue workers.
+- Scheduler configuration.
+- WebSocket/broadcasting configuration.
+- Redis configuration where required.
+- Logging.
+- Error monitoring.
+- Backup strategy.
+- Restore procedures.
+- Deployment documentation.
+- Secure secrets management.
+- Health checks.
+- Queue failure monitoring.
+
+Document the required processes and infrastructure. Do not assume a specific hosting provider without inspecting project constraints.
+
+======================================================================
+32. PROJECT DELIVERABLES
+======================================================================
+
+The completed project should include:
+1. Repository architecture assessment.
+2. Technical architecture documentation.
+3. Database schema and ER diagram.
+4. Roles and permissions.
+5. Multilingual user interface.
+6. Category management.
+7. Question bank.
+8. Question moderation.
+9. Community question submission.
+10. AI question generation.
+11. Import and export functionality.
+12. Multiplayer rooms.
+13. QR-code invitations.
+14. Real-time gameplay.
+15. Scoring engine.
+16. Duplicate-answer rule.
+17. Leaderboards.
+18. Advertising management.
+19. Advertiser dashboard.
+20. Advertising credit system.
+21. Impression billing.
+22. Sponsored-question billing.
+23. Immutable advertising ledger.
+24. Analytics dashboards.
+25. Automated tests.
+26. API documentation where applicable.
+27. Deployment documentation.
+28. Security and performance assessment.
+
+======================================================================
+33. FINAL INSTRUCTIONS FOR THE AI CODING AGENT
+======================================================================
+
+You are acting as a senior software architect and senior Laravel developer.
+
+Your mission is to transform the existing majidastarter repository into Fakkroun.
+
+Follow these rules:
+1. Start by inspecting the existing repository.
+2. Never create a new Laravel application.
+3. Do not modify files before completing the initial technical assessment.
+4. Identify reusable functionality before implementing new modules.
+5. Present the architecture assessment and phased roadmap first.
+6. Implement incrementally.
+7. Preserve existing working features.
+8. Follow SOLID and clean-code principles.
+9. Avoid duplicated business logic.
+10. Keep controllers focused and business logic properly separated.
+11. Use database transactions for scoring and financial operations.
+12. Protect real-time gameplay against concurrency issues.
+13. Never trust client-side scores or advertising consumption.
+14. Optimize queries and indexes for large datasets.
+15. Use asynchronous jobs for AI generation and bulk imports.
+16. Keep the system extensible without unnecessary complexity.
+17. Add tests for every critical business rule.
+18. Document architectural decisions and significant changes.
+19. Do not claim a feature is complete unless it is implemented and tested.
+20. Report blockers and unresolved technical decisions explicitly.
+
+Required progress report at the end of each implementation phase:
+- Features implemented.
+- Files created or modified.
+- Database changes.
+- Dependencies added or changed.
+- Tests executed.
+- Test results.
+- Performance considerations.
+- Security considerations.
+- Remaining tasks.
+- Known limitations.
+
+Do not attempt to implement the entire platform in one uncontrolled operation. Prioritize a reliable foundation and a working multiplayer experience before expanding into advanced AI and monetization.
+
+FINAL OBJECTIVE:
+Build Fakkroun (فكّرون), a scalable, multilingual, real-time multiplayer quiz platform that makes knowledge, environmental awareness, green economy, and blue economy engaging through friendly competition.
+
+REPOSITORY FOUNDATION: majidastarter. NO FRESH LARAVEL PROJECT.

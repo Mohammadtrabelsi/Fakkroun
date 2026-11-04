@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fakkroun — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&amp;family=Readex+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5EFE3}
+a{color:#0B6E69}a:hover{color:#084F4B}
+</style>
+</helmet>
+<div style="font-family: 'Readex Pro', system-ui, sans-serif; color: #10262E; background: #F5EFE3; min-height: 600px">
+
+<header style="border-bottom: 1px solid #E3D8C3; background: #F5EFE3">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #10262E">
+<svg width="48" height="40" viewBox="0 0 140 110" aria-hidden="true"><ellipse cx="38" cy="84" rx="14" ry="9" fill="#7DB57A" transform="rotate(-25 38 84)"></ellipse><ellipse cx="92" cy="86" rx="14" ry="9" fill="#7DB57A" transform="rotate(25 92 86)"></ellipse><ellipse cx="34" cy="38" rx="14" ry="8" fill="#7DB57A" transform="rotate(30 34 38)"></ellipse><ellipse cx="96" cy="36" rx="14" ry="8" fill="#7DB57A" transform="rotate(-30 96 36)"></ellipse><ellipse cx="64" cy="60" rx="42" ry="34" fill="#0B6E69"></ellipse><polygon points="77,60 70.5,71.3 57.5,71.3 51,60 57.5,48.7 70.5,48.7" fill="#F2A33A"></polygon><g stroke="#F5EFE3" stroke-width="3" stroke-linecap="round" opacity="0.8"><line x1="77" y1="60" x2="104" y2="60"></line><line x1="70.5" y1="71.3" x2="82" y2="91"></line><line x1="57.5" y1="71.3" x2="46" y2="91"></line><line x1="51" y1="60" x2="24" y2="60"></line><line x1="57.5" y1="48.7" x2="46" y2="29"></line><line x1="70.5" y1="48.7" x2="82" y2="29"></line></g><circle cx="116" cy="58" r="19" fill="#7DB57A"></circle><circle cx="109" cy="54" r="5" fill="#fff"></circle><circle cx="123" cy="54" r="5" fill="#fff"></circle><circle cx="109.5" cy="55" r="2.8" fill="#10262E"></circle><circle cx="123.5" cy="55" r="2.8" fill="#10262E"></circle><path d="M109 64 q7 6 14 0" stroke="#10262E" stroke-width="2.5" fill="none" stroke-linecap="round"></path></svg>
+<div style="display: flex; flex-direction: column; line-height: 1">
+<span style="font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 26px">Fakkroun</span>
+<span lang="ar" dir="rtl" style="font-size: 14px; color: #0B6E69; font-weight: 600">فكّرون</span>
+</div>
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 2px">
+<a href="Lobby.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 10px; text-decoration: none; color: #10262E; font-weight: 500">Play</a>
+<a href="#categories" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 10px; text-decoration: none; color: #10262E; font-weight: 500">Categories</a>
+<a href="#learn" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 10px; text-decoration: none; color: #10262E; font-weight: 500">Learn</a>
+<a href="Community.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 10px; text-decoration: none; color: #10262E; font-weight: 500">Community</a>
+<a href="Results.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; border-radius: 10px; text-decoration: none; color: #10262E; font-weight: 500">Leaderboard</a>
+</nav>
+<div style="margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<div role="group" aria-label="Language" style="display: flex; background: #EBE2D0; border-radius: 12px; padding: 3px; gap: 2px">
+<button aria-pressed="true" style="min-width: 44px; min-height: 38px; border: 0; border-radius: 9px; background: #FFFBF3; color: #10262E; font: 600 14px 'Readex Pro', sans-serif; cursor: pointer">EN</button>
+<button aria-pressed="false" style="min-width: 44px; min-height: 38px; border: 0; border-radius: 9px; background: transparent; color: #4A5E63; font: 600 14px 'Readex Pro', sans-serif; cursor: pointer">FR</button>
+<button aria-pressed="false" lang="ar" style="min-width: 44px; min-height: 38px; border: 0; border-radius: 9px; background: transparent; color: #4A5E63; font: 600 15px 'Readex Pro', sans-serif; cursor: pointer">عربي</button>
+</div>
+<a href="#signin" style="min-height: 44px; display: flex; align-items: center; padding: 0 14px; text-decoration: none; color: #10262E; font-weight: 600">Sign in</a>
+<a href="Lobby.dc.html" style="min-height: 44px; display: flex; align-items: center; padding: 0 20px; border-radius: 12px; background: #0B6E69; color: #FFFBF3; text-decoration: none; font-weight: 600">Play now</a>
+</div>
+</div>
+</header>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px 24px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #E4EFE6; color: #0B5A55; font-size: 14px; font-weight: 600">Live multiplayer quiz · Green &amp; Blue economy</span>
+<h1 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: clamp(52px, 7vw, 92px); line-height: 0.95; letter-spacing: -0.02em; text-wrap: balance">Think. Answer. Learn. <span style="color: #0B6E69">Win.</span></h1>
+<p lang="ar" dir="rtl" style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-size: 32px; font-weight: 700; color: #C2611A">فكّر، جاوب، تعلّم… واربح!</p>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3E5257; max-width: 34rem; text-wrap: pretty">Open a room, share the code, and race your friends, class or colleagues through questions about our sea, our climate and our planet — in Arabic, French or English. Every answer comes with the story behind it.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; width: 100%">
+<a href="Lobby.dc.html" style="min-height: 56px; display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; border-radius: 16px; background: #0B6E69; color: #FFFBF3; text-decoration: none; font-weight: 600; font-size: 18px; box-shadow: 0 6px 0 #084F4B">Create a room
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<form style="display: flex; flex-direction: column; gap: 6px">
+<label for="join-code" style="font-size: 13px; font-weight: 600; color: #3E5257">Have a code?</label>
+<div style="display: flex; gap: 8px">
+<input id="join-code" placeholder="e.g. 7KQ2" maxlength="6" style="width: 130px; min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 2px solid #CDBF9F; border-radius: 14px; background: #FFFBF3; font: 600 18px 'Readex Pro', sans-serif; letter-spacing: 0.15em; text-transform: uppercase; color: #10262E">
+<button type="button" style="min-height: 52px; padding: 0 20px; border: 2px solid #10262E; border-radius: 14px; background: transparent; color: #10262E; font: 600 16px 'Readex Pro', sans-serif; cursor: pointer">Join</button>
+</div>
+</form>
+</div>
+</div>
+
+<div style="position: relative; min-height: 540px; display: flex; align-items: center; justify-content: center">
+<svg style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true"><defs><pattern id="hex" width="56" height="97" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)"><path d="M28 0 L56 16 L56 48 L28 64 L0 48 L0 16 Z M28 64 L28 97" fill="none" stroke="#DCCFB4" stroke-width="2"></path></pattern><radialGradient id="fade"><stop offset="0.35" stop-color="#fff"></stop><stop offset="1" stop-color="#000"></stop></radialGradient><mask id="m"><rect width="100%" height="100%" fill="url(#fade)"></rect></mask></defs><rect width="100%" height="100%" fill="url(#hex)" mask="url(#m)"></rect></svg>
+<div style="position: absolute; width: 420px; height: 420px; max-width: 90%; border-radius: 50%; background: #E4EFE6"></div>
+<svg width="400" height="314" viewBox="0 0 140 110" role="img" aria-label="Fakkroun the turtle mascot" style="position: relative; max-width: 86%"><ellipse cx="38" cy="84" rx="14" ry="9" fill="#7DB57A" transform="rotate(-25 38 84)"></ellipse><ellipse cx="92" cy="86" rx="14" ry="9" fill="#7DB57A" transform="rotate(25 92 86)"></ellipse><ellipse cx="34" cy="38" rx="14" ry="8" fill="#7DB57A" transform="rotate(30 34 38)"></ellipse><ellipse cx="96" cy="36" rx="14" ry="8" fill="#7DB57A" transform="rotate(-30 96 36)"></ellipse><path d="M22 64 l-10 4 l10 3 z" fill="#7DB57A"></path><ellipse cx="64" cy="60" rx="42" ry="34" fill="#0B6E69"></ellipse><ellipse cx="64" cy="60" rx="42" ry="34" fill="none" stroke="#084F4B" stroke-width="3"></ellipse><polygon points="77,60 70.5,71.3 57.5,71.3 51,60 57.5,48.7 70.5,48.7" fill="#F2A33A"></polygon><g stroke="#F5EFE3" stroke-width="3" stroke-linecap="round" opacity="0.8"><line x1="77" y1="60" x2="104" y2="60"></line><line x1="70.5" y1="71.3" x2="82" y2="91"></line><line x1="57.5" y1="71.3" x2="46" y2="91"></line><line x1="51" y1="60" x2="24" y2="60"></line><line x1="57.5" y1="48.7" x2="46" y2="29"></line><line x1="70.5" y1="48.7" x2="82" y2="29"></line></g><circle cx="116" cy="58" r="19" fill="#7DB57A"></circle><circle cx="109" cy="54" r="5" fill="#fff"></circle><circle cx="123" cy="54" r="5" fill="#fff"></circle><circle cx="109.5" cy="55" r="2.8" fill="#10262E"></circle><circle cx="123.5" cy="55" r="2.8" fill="#10262E"></circle><circle cx="110.6" cy="53.8" r="1" fill="#fff"></circle><circle cx="124.6" cy="53.8" r="1" fill="#fff"></circle><circle cx="104" cy="62" r="2.6" fill="#F2A33A" opacity="0.6"></circle><circle cx="128" cy="62" r="2.6" fill="#F2A33A" opacity="0.6"></circle><path d="M109 64 q7 6 14 0" stroke="#10262E" stroke-width="2.5" fill="none" stroke-linecap="round"></path><circle cx="128" cy="30" r="3" fill="#F2A33A"></circle><circle cx="134" cy="20" r="4.5" fill="#F2A33A"></circle></svg>
+
+<div style="position: absolute; top: 12px; left: 0; width: 300px; max-width: 80%; background: #FFFBF3; border-radius: 20px; padding: 18px; box-shadow: 0 18px 40px rgba(16,38,46,0.14); display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<span style="font-size: 12px; font-weight: 600; color: #0B5A55; background: #DDEDEE; padding: 4px 10px; border-radius: 999px">Blue Economy</span>
+<span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 20px; color: #C2611A">12s</span>
+</div>
+<p style="margin: 0; font-weight: 600; font-size: 15px; line-height: 1.4">Which seagrass, found only in the Mediterranean, forms vast meadows in the Gulf of Gabès?</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<span style="padding: 9px 10px; border-radius: 10px; background: #0B6E69; color: #FFFBF3; font-size: 13px; font-weight: 600">Posidonia oceanica</span>
+<span style="padding: 9px 10px; border-radius: 10px; background: #F0E8D8; font-size: 13px">Zostera marina</span>
+</div>
+</div>
+
+<div style="position: absolute; bottom: 24px; right: 0; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 10px; background: #10262E; color: #FFFBF3; padding: 10px 16px 10px 10px; border-radius: 999px; font-size: 14px; font-weight: 500"><span style="width: 28px; height: 28px; border-radius: 50%; background: #F2A33A; color: #10262E; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px">A</span>Amira answered first <b style="color: #F2A33A">+120</b></span>
+<span style="display: flex; align-items: center; gap: 10px; background: #FFFBF3; color: #10262E; padding: 10px 16px 10px 10px; border-radius: 999px; font-size: 14px; font-weight: 500; box-shadow: 0 8px 20px rgba(16,38,46,0.1)"><span style="width: 28px; height: 28px; border-radius: 50%; background: #7DB57A; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px">Y</span>Youssef is thinking…</span>
+</div>
+</div>
+</section>
+
+<section style="background: #FFFBF3; border-block: 1px solid #E3D8C3">
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 40px">
+<svg width="56" height="44" viewBox="0 0 140 110" aria-hidden="true"><ellipse cx="64" cy="60" rx="42" ry="34" fill="#0B6E69"></ellipse><polygon points="77,60 70.5,71.3 57.5,71.3 51,60 57.5,48.7 70.5,48.7" fill="#F2A33A"></polygon><circle cx="116" cy="58" r="19" fill="#7DB57A"></circle><circle cx="109" cy="54" r="5" fill="#fff"></circle><circle cx="123" cy="54" r="5" fill="#fff"></circle><circle cx="109.5" cy="55" r="2.8" fill="#10262E"></circle><circle cx="123.5" cy="55" r="2.8" fill="#10262E"></circle><path d="M109 64 q7 6 14 0" stroke="#10262E" stroke-width="2.5" fill="none" stroke-linecap="round"></path></svg>
+<p style="margin: 0; flex: 1 1 420px; font-size: 18px; line-height: 1.6; color: #3E5257"><b style="color: #10262E">Why a turtle?</b> In Tunisian Arabic, a <span lang="ar">فكّرون</span> <i>(fakkroun)</i> is a turtle — and the word sounds like <span lang="ar">فكّر</span>, “think”. Our mascot takes a breath before every answer. So should you.</p>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 96px 24px 40px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 40rem">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C2611A">How it works</span>
+<h2 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05">A room, a code, and ten good questions.</h2>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px">
+<li style="background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #0B6E69">1</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600">Create a room</h3>
+<p style="margin: 0; color: #3E5257; line-height: 1.6">Pick categories, difficulty, language and how many seconds each question gets.</p>
+</li>
+<li style="background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #0B6E69">2</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600">Share the code</h3>
+<p style="margin: 0; color: #3E5257; line-height: 1.6">Friends join from any phone or laptop with a short room code or a link — no install.</p>
+</li>
+<li style="background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 56px; line-height: 1; color: #0B6E69">3</span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600">Answer live, learn why</h3>
+<p style="margin: 0; color: #3E5257; line-height: 1.6">Faster correct answers score more. After each question, a short explanation shows what's behind it.</p>
+</li>
+</ol>
+</section>
+
+<section id="categories" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 40rem">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C2611A">Categories</span>
+<h2 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05">Start with the planet.</h2>
+<p style="margin: 0; font-size: 18px; color: #3E5257; line-height: 1.6">Seven themes lead the question bank — from the seagrass off Sfax to the solar farms of the south.</p>
+</div>
+<a href="Lobby.dc.html" style="min-height: 48px; display: inline-flex; align-items: center; padding: 0 20px; border: 2px solid #10262E; border-radius: 14px; color: #10262E; text-decoration: none; font-weight: 600">See all categories</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr)); gap: 16px">
+
+<a href="Lobby.dc.html" style="text-decoration: none; color: #10262E; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #E4EFE6; color: #2F6B34; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"></path><path d="M5 19l7-7"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 20px">Green Economy</b><span lang="ar" dir="rtl" style="font-size: 15px; color: #4A5E63; text-align: left">الاقتصاد الأخضر</span></div>
+<span style="color: #3E5257; line-height: 1.5; font-size: 15px">Circular production, green jobs, recycling and sustainable farming.</span>
+</a>
+
+<a href="Lobby.dc.html" style="text-decoration: none; color: #10262E; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #DDEDEE; color: #0B5A55; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 9c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"></path><path d="M2 15c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 20px">Blue Economy</b><span lang="ar" dir="rtl" style="font-size: 15px; color: #4A5E63; text-align: left">الاقتصاد الأزرق</span></div>
+<span style="color: #3E5257; line-height: 1.5; font-size: 15px">Fishing, ports, aquaculture and coastal life that depend on a healthy sea.</span>
+</a>
+
+<a href="Lobby.dc.html" style="text-decoration: none; color: #10262E; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #E4EFE6; color: #2F6B34; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 20px">Environmental Protection</b><span lang="ar" dir="rtl" style="font-size: 15px; color: #4A5E63; text-align: left">حماية البيئة</span></div>
+<span style="color: #3E5257; line-height: 1.5; font-size: 15px">Pollution, waste, protected areas and the everyday choices that matter.</span>
+</a>
+
+<a href="Lobby.dc.html" style="text-decoration: none; color: #10262E; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #FBE6D2; color: #A3500F; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.8V4a2 2 0 0 0-4 0v10.8a4 4 0 1 0 4 0z"></path><path d="M12 9v7"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 20px">Climate Change</b><span lang="ar" dir="rtl" style="font-size: 15px; color: #4A5E63; text-align: left">التغيّر المناخي</span></div>
+<span style="color: #3E5257; line-height: 1.5; font-size: 15px">Causes, consequences and how the Mediterranean is already feeling it.</span>
+</a>
+
+<a href="Lobby.dc.html" style="text-decoration: none; color: #10262E; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #FBE6D2; color: #A3500F; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 20px">Renewable Energy</b><span lang="ar" dir="rtl" style="font-size: 15px; color: #4A5E63; text-align: left">الطاقات المتجددة</span></div>
+<span style="color: #3E5257; line-height: 1.5; font-size: 15px">Sun, wind, water and the grid that connects them.</span>
+</a>
+
+<a href="Lobby.dc.html" style="text-decoration: none; color: #10262E; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #DDEDEE; color: #0B5A55; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c3-4 7-5 11-5 3 0 5 2 7 5-2 3-4 5-7 5-4 0-8-1-11-5z"></path><path d="M3 12l-1-4M3 12l-1 4"></path><circle cx="16" cy="11" r="1" fill="currentColor"></circle></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 20px">Marine Biodiversity</b><span lang="ar" dir="rtl" style="font-size: 15px; color: #4A5E63; text-align: left">التنوع البيولوجي البحري</span></div>
+<span style="color: #3E5257; line-height: 1.5; font-size: 15px">Sea turtles, seagrass meadows, fish nurseries and the species we share the coast with.</span>
+</a>
+
+<a href="Lobby.dc.html" style="text-decoration: none; color: #10262E; background: #FFFBF3; border: 1px solid #E3D8C3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 52px; height: 52px; border-radius: 16px; background: #E4EFE6; color: #2F6B34; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-15.5 6.2M3 12a9 9 0 0 1 15.5-6.2"></path><path d="M18.5 2v4h-4M5.5 22v-4h4"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 20px">Sustainable Development</b><span lang="ar" dir="rtl" style="font-size: 15px; color: #4A5E63; text-align: left">التنمية المستدامة</span></div>
+<span style="color: #3E5257; line-height: 1.5; font-size: 15px">The Sustainable Development Goals and what they mean close to home.</span>
+</a>
+
+<div style="background: #10262E; color: #F5EFE3; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<b style="font-size: 20px">…and everything else</b>
+<span style="color: #C9D3D0; line-height: 1.5; font-size: 15px">General knowledge for when the room wants a change of pace.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="padding: 6px 12px; border-radius: 999px; background: #1E3C45; font-size: 14px">Science</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: #1E3C45; font-size: 14px">Technology</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: #1E3C45; font-size: 14px">History</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: #1E3C45; font-size: 14px">Geography</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: #1E3C45; font-size: 14px">Culture</span>
+<span style="padding: 6px 12px; border-radius: 999px; background: #1E3C45; font-size: 14px">Sports</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="learn" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C2611A">Learn as you play</span>
+<h2 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05">Every answer teaches something.</h2>
+<p style="margin: 0; font-size: 18px; color: #3E5257; line-height: 1.6; max-width: 32rem">Right or wrong, the reveal shows a short explanation and its source. The game moves fast; the facts stay with you.</p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 17px">
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0B6E69" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Explanations in the room's language</li>
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0B6E69" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>A recap of every question after the game</li>
+<li style="display: flex; gap: 12px; align-items: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0B6E69" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>Sources linked, so teachers can take it further</li>
+</ul>
+</div>
+<div style="background: #FFFBF3; border-radius: 28px; padding: 28px; box-shadow: 0 24px 50px rgba(16,38,46,0.12); display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+<span style="font-size: 13px; font-weight: 600; color: #0B5A55; background: #DDEDEE; padding: 5px 12px; border-radius: 999px">Marine Biodiversity · Question 4 of 10</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: #0B6E69"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg>6 of 8 got it</span>
+</div>
+<p style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.4">Which seagrass, found only in the Mediterranean, forms vast meadows in the Gulf of Gabès?</p>
+<div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: #0B6E69; color: #FFFBF3; font-weight: 600"><span style="width: 32px; height: 32px; border-radius: 10px; background: #FFFBF3; color: #0B6E69; display: flex; align-items: center; justify-content: center">A</span>Posidonia oceanica</div>
+<div style="background: #F5EFE3; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+<b style="font-size: 15px; color: #A3500F">Why it matters</b>
+<p style="margin: 0; line-height: 1.6; color: #3E5257">Posidonia oceanica grows only in the Mediterranean. Its meadows shelter young fish, calm waves that would erode beaches, and lock carbon away in the seabed for centuries.</p>
+<span style="font-size: 13px; color: #4A5E63">Source: [ADD SOURCE LINK]</span>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 40rem">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C2611A">Who plays</span>
+<h2 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 48px; line-height: 1.05">Built for the dinner table and the classroom.</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px">
+<div style="border-radius: 24px; padding: 28px; background: #E4EFE6; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 22px">Friends &amp; family</h3>
+<p style="margin: 0; color: #2E4A3F; line-height: 1.6">Quick rooms for after dinner. Mix planet questions with sports and history so everyone has a shot.</p>
+</div>
+<div style="border-radius: 24px; padding: 28px; background: #DDEDEE; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 22px">Classrooms</h3>
+<p style="margin: 0; color: #24474B; line-height: 1.6">Teachers project the question, students answer from their phones, and the recap becomes the lesson.</p>
+</div>
+<div style="border-radius: 24px; padding: 28px; background: #FBE6D2; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 22px">Teams &amp; events</h3>
+<p style="margin: 0; color: #5A3618; line-height: 1.6">Awareness days, workshops and team breaks — big rooms with a live leaderboard on screen.</p>
+</div>
+</div>
+</section>
+
+<section style="padding: 24px 24px 72px">
+<div style="max-width: 1240px; margin: 0 auto; background: #0E3B43; color: #F5EFE3; border-radius: 36px; padding: 56px clamp(24px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F2A33A">Community</span>
+<h2 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 46px; line-height: 1.05">Questions written by players, checked by people.</h2>
+<p style="margin: 0; font-size: 18px; color: #C9D3D0; line-height: 1.6">Know something about your coast, your city or your field? Write a question — or let AI help draft one — and our moderators review it before it goes live.</p>
+<a href="Community.dc.html" style="align-self: flex-start; min-height: 52px; display: inline-flex; align-items: center; padding: 0 24px; border-radius: 14px; background: #F2A33A; color: #10262E; text-decoration: none; font-weight: 600">Submit a question</a>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<li style="display: flex; gap: 16px; align-items: center; background: #164A53; border-radius: 18px; padding: 16px 20px"><span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 24px; color: #F2A33A; width: 24px">1</span><div><b>Write or draft with AI</b><div style="color: #C9D3D0; font-size: 15px">Four options, one correct, plus a short explanation.</div></div></li>
+<li style="display: flex; gap: 16px; align-items: center; background: #164A53; border-radius: 18px; padding: 16px 20px"><span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 24px; color: #F2A33A; width: 24px">2</span><div><b>Automatic checks</b><div style="color: #C9D3D0; font-size: 15px">Duplicates, clarity and language are flagged first.</div></div></li>
+<li style="display: flex; gap: 16px; align-items: center; background: #164A53; border-radius: 18px; padding: 16px 20px"><span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 24px; color: #F2A33A; width: 24px">3</span><div><b>Moderator review</b><div style="color: #C9D3D0; font-size: 15px">A person verifies the facts and the source.</div></div></li>
+<li style="display: flex; gap: 16px; align-items: center; background: #164A53; border-radius: 18px; padding: 16px 20px"><span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 24px; color: #F2A33A; width: 24px">4</span><div><b>Live in the bank</b><div style="color: #C9D3D0; font-size: 15px">Your name appears as the author when it's played.</div></div></li>
+</ol>
+</div>
+</section>
+
+<section id="partners" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 72px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 40rem">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #C2611A">Partners &amp; sponsors</span>
+<h2 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05">Learning first. Sponsors stay quiet.</h2>
+<p style="margin: 0; font-size: 17px; color: #3E5257; line-height: 1.6">Sponsored categories carry a single credit on the category card and the recap — never an ad in the middle of a question.</p>
+</div>
+<a href="#partners" style="min-height: 48px; display: inline-flex; align-items: center; padding: 0 20px; border: 2px solid #10262E; border-radius: 14px; color: #10262E; text-decoration: none; font-weight: 600">Become a partner</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 16px">
+<div style="height: 96px; border: 2px dashed #CDBF9F; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #6B6150; font-weight: 600; font-size: 14px">[PARTNER LOGO]</div>
+<div style="height: 96px; border: 2px dashed #CDBF9F; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #6B6150; font-weight: 600; font-size: 14px">[PARTNER LOGO]</div>
+<div style="height: 96px; border: 2px dashed #CDBF9F; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #6B6150; font-weight: 600; font-size: 14px">[PARTNER LOGO]</div>
+<div style="height: 96px; border: 2px dashed #CDBF9F; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: #6B6150; font-weight: 600; font-size: 14px">[PARTNER LOGO]</div>
+</div>
+</section>
+
+<section style="padding: 0 24px 88px">
+<div style="max-width: 1240px; margin: 0 auto; background: #F2A33A; border-radius: 36px; padding: 56px clamp(24px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 800; font-size: 52px; line-height: 1; color: #10262E">Your room is one code away.</h2>
+<p lang="ar" dir="rtl" style="margin: 0; font-size: 24px; font-weight: 600; color: #10262E; text-align: left">جاهز؟ فكّر قبل ما تجاوب.</p>
+</div>
+<a href="Lobby.dc.html" style="min-height: 60px; display: inline-flex; align-items: center; padding: 0 32px; border-radius: 18px; background: #10262E; color: #F5EFE3; text-decoration: none; font-weight: 600; font-size: 19px">Create a room</a>
+</div>
+</section>
+
+<footer style="background: #10262E; color: #C9D3D0">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 32px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 28px; color: #F5EFE3">Fakkroun <span lang="ar" style="color: #F2A33A">فكّرون</span></span>
+<span style="line-height: 1.6">Think, Answer, Learn, Win! A multiplayer quiz for a greener, bluer Mediterranean.</span>
+</div>
+<nav aria-label="Play" style="display: flex; flex-direction: column; gap: 4px">
+<b style="color: #F5EFE3; margin-bottom: 6px">Play</b>
+<a href="Lobby.dc.html" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Create a room</a>
+<a href="Lobby.dc.html" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Join with a code</a>
+<a href="Results.dc.html" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Leaderboards</a>
+</nav>
+<nav aria-label="Contribute" style="display: flex; flex-direction: column; gap: 4px">
+<b style="color: #F5EFE3; margin-bottom: 6px">Contribute</b>
+<a href="Community.dc.html" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Submit a question</a>
+<a href="#partners" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">For schools</a>
+<a href="#partners" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Partners &amp; sponsors</a>
+</nav>
+<nav aria-label="About" style="display: flex; flex-direction: column; gap: 4px">
+<b style="color: #F5EFE3; margin-bottom: 6px">About</b>
+<a href="#about" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Our mission</a>
+<a href="#about" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Privacy</a>
+<a href="#about" style="color: #C9D3D0; min-height: 32px; display: flex; align-items: center">Terms</a>
+</nav>
+</div>
+<div style="border-top: 1px solid #284750; padding-top: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 14px">
+<span>© [YEAR] Fakkroun. Made in Sfax.</span>
+<span>English · Français · <span lang="ar">العربية</span></span>
+</div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4700}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

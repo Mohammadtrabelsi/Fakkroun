@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fakkroun — Live game</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&amp;family=Readex+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E3B43}
+a{color:#F2A33A}a:hover{color:#F7C27A}
+</style>
+</helmet>
+<div style="font-family: 'Readex Pro', system-ui, sans-serif; color: #F5EFE3; background: #0E3B43; min-height: 100vh; display: flex; flex-direction: column">
+
+<header style="border-bottom: 1px solid #1E525B">
+<div style="max-width: 1320px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px">
+<a href="Main.dc.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #F5EFE3">
+<svg width="40" height="32" viewBox="0 0 140 110" aria-hidden="true"><ellipse cx="38" cy="84" rx="14" ry="9" fill="#7DB57A" transform="rotate(-25 38 84)"></ellipse><ellipse cx="92" cy="86" rx="14" ry="9" fill="#7DB57A" transform="rotate(25 92 86)"></ellipse><ellipse cx="34" cy="38" rx="14" ry="8" fill="#7DB57A" transform="rotate(30 34 38)"></ellipse><ellipse cx="96" cy="36" rx="14" ry="8" fill="#7DB57A" transform="rotate(-30 96 36)"></ellipse><ellipse cx="64" cy="60" rx="42" ry="34" fill="#13857E"></ellipse><polygon points="77,60 70.5,71.3 57.5,71.3 51,60 57.5,48.7 70.5,48.7" fill="#F2A33A"></polygon><circle cx="116" cy="58" r="19" fill="#7DB57A"></circle><circle cx="109" cy="54" r="5" fill="#fff"></circle><circle cx="123" cy="54" r="5" fill="#fff"></circle><circle cx="109.5" cy="55" r="2.8" fill="#10262E"></circle><circle cx="123.5" cy="55" r="2.8" fill="#10262E"></circle><path d="M109 64 q7 6 14 0" stroke="#10262E" stroke-width="2.5" fill="none" stroke-linecap="round"></path></svg>
+<span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 22px">Fakkroun</span>
+</a>
+<div style="display: flex; align-items: center; gap: 10px; background: #164A53; border-radius: 12px; padding: 8px 14px">
+<span style="font-size: 13px; color: #B8C7C4">Room</span>
+<b style="font-size: 18px; letter-spacing: 0.2em">7KQ2</b>
+</div>
+<span style="font-size: 15px; color: #B8C7C4">Thursday quiz — 3ème B</span>
+<div style="margin-left: auto; display: flex; align-items: center; gap: 16px">
+<span style="font-weight: 600">Question 4 <span style="color: #B8C7C4; font-weight: 400">of 10</span></span>
+<a href="Lobby.dc.html" style="min-height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 12px; border: 2px solid #3C6A72; color: #F5EFE3; text-decoration: none; font-weight: 500">Leave</a>
+</div>
+</div>
+<div style="height: 6px; background: #164A53"><div style="width: 40%; height: 6px; background: #F2A33A"></div></div>
+</header>
+
+<div style="flex: 1; max-width: 1320px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 36px 24px 48px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+
+<main style="flex: 999 1 620px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #DDEDEE; color: #0B5A55; font-weight: 600; font-size: 15px">Marine Biodiversity · Medium</span>
+<div style="position: relative; width: 84px; height: 84px">
+<svg width="84" height="84" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="36" fill="none" stroke="#164A53" stroke-width="8"></circle><circle cx="42" cy="42" r="36" fill="none" stroke="#F2A33A" stroke-width="8" stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="{{ ringOffset }}" transform="rotate(-90 42 42)"></circle></svg>
+<span role="timer" aria-label="{{ timerLabel }}" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 30px">{{ seconds }}</span>
+</div>
+</div>
+
+<h1 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 700; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; text-wrap: balance">Which seagrass, found only in the Mediterranean, forms vast meadows in the Gulf of Gabès?</h1>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 14px">
+<sc-for list="{{ options }}" as="o" hint-placeholder-count="4">
+<button type="button" onClick="{{ o.pick }}" disabled="{{ o.disabled }}" style="{{ o.style }}">
+<span style="{{ o.badgeStyle }}">{{ o.letter }}</span>
+<span style="flex: 1; text-align: left">{{ o.text }}</span>
+<span style="font-size: 14px; font-weight: 600">{{ o.tag }}</span>
+</button>
+</sc-for>
+</div>
+
+<sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
+<section aria-live="polite" style="background: #FFFBF3; color: #10262E; border-radius: 24px; padding: 24px 28px; display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 8px">
+<b style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-size: 26px; color: {{ verdictColor }}">{{ verdict }}</b>
+<p style="margin: 0; line-height: 1.6; color: #3E5257">Posidonia oceanica grows only in the Mediterranean. Its meadows shelter young fish, calm the waves that erode beaches, and lock carbon in the seabed for centuries.</p>
+<span style="font-size: 13px; color: #4A5E63">Source: [ADD SOURCE LINK] · Question by @[AUTHOR]</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px">
+<span style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 34px; color: #0B6E69">{{ points }}</span>
+<a href="Results.dc.html" style="min-height: 52px; display: inline-flex; align-items: center; padding: 0 24px; border-radius: 14px; background: #0B6E69; color: #FFFBF3; text-decoration: none; font-weight: 600">Next question</a>
+</div>
+</section>
+</sc-if>
+<sc-if value="{{ waiting }}" hint-placeholder-val="{{ true }}">
+<p style="margin: 0; color: #B8C7C4; font-size: 15px">Faster correct answers earn more points. You can't change your answer once it's locked in.</p>
+</sc-if>
+</main>
+
+<aside aria-labelledby="players-h" style="flex: 1 1 300px; min-width: 0; background: #164A53; border-radius: 24px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<h2 id="players-h" style="margin: 0; font-size: 18px; font-weight: 600">Players</h2>
+<span style="font-size: 14px; color: #B8C7C4">6 of 8 answered</span>
+</div>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{ players }}" as="p" hint-placeholder-count="8">
+<li style="{{ p.rowStyle }}">
+<span style="width: 22px; font-weight: 600; color: #B8C7C4; font-size: 14px">{{ p.rank }}</span>
+<span style="{{ p.avatarStyle }}">{{ p.initial }}</span>
+<span style="flex: 1; min-width: 0; font-weight: 500">{{ p.name }}</span>
+<span style="font-size: 12px; color: #B8C7C4">{{ p.status }}</span>
+<b style="font-variant-numeric: tabular-nums; min-width: 52px; text-align: right">{{ p.score }}</b>
+</li>
+</sc-for>
+</ol>
+</aside>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: null };
+  }
+  renderVals() {
+    const picked = this.state.picked;
+    const correct = 'A';
+    const defs = [['A', 'Posidonia oceanica'], ['B', 'Zostera marina'], ['C', 'Halophila stipulacea'], ['D', 'Caulerpa taxifolia']];
+    const base = 'min-height: 76px; width: 100%; display: flex; align-items: center; gap: 16px; padding: 14px 20px; border-radius: 20px; cursor: pointer; font: 600 19px \'Readex Pro\', sans-serif; ';
+    const options = defs.map(([letter, text]) => {
+      let bg = '#FFFBF3', fg = '#10262E', border = '#FFFBF3', badgeBg = '#EBE2D0', badgeFg = '#10262E', tag = '', shadow = 'box-shadow: 0 5px 0 #A9B9B5;';
+      if (picked) {
+        shadow = '';
+        if (letter === correct) { bg = '#2F8A3E'; fg = '#FFFFFF'; border = '#2F8A3E'; badgeBg = '#FFFFFF'; badgeFg = '#1F6A2C'; tag = 'Correct'; }
+        else if (letter === picked) { bg = '#9E2B1E'; fg = '#FFFFFF'; border = '#9E2B1E'; badgeBg = '#FFFFFF'; badgeFg = '#9E2B1E'; tag = 'Your answer'; }
+        else { bg = '#164A53'; fg = '#B8C7C4'; border = '#1E525B'; badgeBg = '#1E525B'; badgeFg = '#B8C7C4'; }
+      }
+      return {
+        letter, text, tag,
+        disabled: !!picked,
+        style: base + 'background: ' + bg + '; color: ' + fg + '; border: 2px solid ' + border + '; ' + shadow,
+        badgeStyle: 'width: 44px; height: 44px; flex: none; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: \'Baloo Bhaijaan 2\', sans-serif; font-weight: 800; font-size: 22px; background: ' + badgeBg + '; color: ' + badgeFg + ';',
+        pick: () => { if (!this.state.picked) this.setState({ picked: letter }); }
+      };
+    });
+    const right = picked === correct;
+    const youScore = picked ? (right ? 1210 : 1090) : 1090;
+    const raw = [
+      ['Amira', 1240, 'answered', '#F2A33A'], ['Youssef', 1180, 'answered', '#7DB57A'], ['You', youScore, picked ? 'answered' : 'thinking…', '#F5EFE3'],
+      ['Selim', 860, 'answered', '#8FC6D0'], ['Ines', 720, 'answered', '#E7B8A0'], ['Karim', 540, 'thinking…', '#C9B6E4'],
+      ['Nour', 510, 'answered', '#F2A33A'], ['Hedi', 380, 'answered', '#7DB57A']
+    ].sort((a, b) => b[1] - a[1]);
+    const players = raw.map(([name, score, status, color], i) => ({
+      rank: i + 1, name, score: score.toLocaleString('en-US'), status, initial: name[0],
+      rowStyle: 'display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 12px; ' + (name === 'You' ? 'background: #0E3B43; outline: 2px solid #F2A33A;' : ''),
+      avatarStyle: 'width: 32px; height: 32px; flex: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #10262E; background: ' + color + ';'
+    }));
+    const seconds = picked ? 9 : 12;
+    return {
+      options, players,
+      revealed: !!picked,
+      waiting: !picked,
+      verdict: right ? 'Correct — nicely thought!' : 'Not this time.',
+      verdictColor: right ? '#1F6A2C' : '#9E2B1E',
+      points: right ? '+120' : '+0',
+      seconds,
+      timerLabel: seconds + ' seconds left',
+      ringOffset: Math.round(226 * (1 - seconds / 20))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>فكّرون — سؤال مباشر</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&amp;family=Readex+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0E3B43}
+</style>
+</helmet>
+<div dir="rtl" style="width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; font-family: 'Readex Pro', system-ui, sans-serif; color: #F5EFE3; background: #0E3B43; padding: 56px 20px 32px; display: flex; flex-direction: column; gap: 18px">
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<div style="display: flex; align-items: center; gap: 8px; background: #164A53; border-radius: 12px; padding: 8px 12px">
+<span style="font-size: 13px; color: #B8C7C4">الغرفة</span>
+<b dir="ltr" style="letter-spacing: 0.2em">7KQ2</b>
+</div>
+<span style="font-weight: 600">السؤال ٤ <span style="color: #B8C7C4; font-weight: 400">من ١٠</span></span>
+</div>
+<div style="height: 6px; border-radius: 3px; background: #164A53"><div style="width: 40%; height: 6px; border-radius: 3px; background: #F2A33A"></div></div>
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="padding: 6px 12px; border-radius: 999px; background: #DDEDEE; color: #0B5A55; font-weight: 600; font-size: 14px">التنوع البيولوجي البحري</span>
+<div style="position: relative; width: 60px; height: 60px">
+<svg width="60" height="60" viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="42" r="36" fill="none" stroke="#164A53" stroke-width="9"></circle><circle cx="42" cy="42" r="36" fill="none" stroke="#F2A33A" stroke-width="9" stroke-linecap="round" stroke-dasharray="226" stroke-dashoffset="{{ ringOffset }}" transform="rotate(-90 42 42)"></circle></svg>
+<span role="timer" aria-label="{{ timerLabel }}" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Baloo Bhaijaan 2', sans-serif; font-weight: 800; font-size: 22px">{{ seconds }}</span>
+</div>
+</div>
+
+<h1 style="margin: 0; font-family: 'Baloo Bhaijaan 2', system-ui, sans-serif; font-weight: 700; font-size: 26px; line-height: 1.35">ما هي العشبة البحرية الموجودة فقط في البحر المتوسط والتي تكوّن مروجاً واسعة في خليج قابس؟</h1>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{ options }}" as="o" hint-placeholder-count="4">
+<button type="button" onClick="{{ o.pick }}" disabled="{{ o.disabled }}" style="{{ o.style }}">
+<span style="{{ o.badgeStyle }}">{{ o.letter }}</span>
+<span dir="ltr" style="flex: 1; text-align: right">{{ o.text }}</span>
+</button>
+</sc-for>
+</div>
+
+<sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
+<div aria-live="polite" style="background: #FFFBF3; color: #10262E; border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<b style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-size: 20px; color: {{ verdictColor }}">{{ verdict }}</b>
+<b dir="ltr" style="font-family: 'Baloo Bhaijaan 2', sans-serif; font-size: 22px; color: #0B6E69">{{ points }}</b>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #3E5257">البوسيدونيا لا تنمو إلا في المتوسط. مروجها تحمي صغار الأسماك وتخزّن الكربون في قاع البحر.</p>
+</div>
+</sc-if>
+<sc-if value="{{ waiting }}" hint-placeholder-val="{{ true }}">
+<p style="margin: 0; color: #B8C7C4; font-size: 14px; text-align: center">٦ من ٨ لاعبين جاوبوا</p>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: null };
+  }
+  renderVals() {
+    const picked = this.state.picked;
+    const correct = 'أ';
+    const defs = [['أ', 'Posidonia oceanica'], ['ب', 'Zostera marina'], ['ج', 'Halophila stipulacea'], ['د', 'Caulerpa taxifolia']];
+    const base = 'min-height: 64px; width: 100%; display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 18px; cursor: pointer; font: 600 17px \'Readex Pro\', sans-serif; ';
+    const options = defs.map(([letter, text]) => {
+      let bg = '#FFFBF3', fg = '#10262E', border = '#FFFBF3', bb = '#EBE2D0', bf = '#10262E', shadow = 'box-shadow: 0 4px 0 #A9B9B5;';
+      if (picked) {
+        shadow = '';
+        if (letter === correct) { bg = '#2F8A3E'; fg = '#FFFFFF'; border = '#2F8A3E'; bb = '#FFFFFF'; bf = '#1F6A2C'; }
+        else if (letter === picked) { bg = '#9E2B1E'; fg = '#FFFFFF'; border = '#9E2B1E'; bb = '#FFFFFF'; bf = '#9E2B1E'; }
+        else { bg = '#164A53'; fg = '#B8C7C4'; border = '#1E525B'; bb = '#1E525B'; bf = '#B8C7C4'; }
+      }
+      return {
+        letter, text, disabled: !!picked,
+        style: base + 'background: ' + bg + '; color: ' + fg + '; border: 2px solid ' + border + '; ' + shadow,
+        badgeStyle: 'width: 40px; height: 40px; flex: none; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: \'Baloo Bhaijaan 2\', sans-serif; font-weight: 800; font-size: 20px; background: ' + bb + '; color: ' + bf + ';',
+        pick: () => { if (!this.state.picked) this.setState({ picked: letter }); }
+      };
+    });
+    const right = picked === correct;
+    const seconds = picked ? 9 : 12;
+    return {
+      options,
+      revealed: !!picked,
+      waiting: !picked,
+      verdict: right ? 'صحيح! برافو' : 'المرة الجاية!',
+      verdictColor: right ? '#1F6A2C' : '#9E2B1E',
+      points: right ? '+120' : '+0',
+      seconds: String(seconds).replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[d]),
+      timerLabel: seconds + ' ثانية متبقية',
+      ringOffset: Math.round(226 * (1 - seconds / 20))
+    };
+  }
+}
+</script>
+</body>
+</html>
