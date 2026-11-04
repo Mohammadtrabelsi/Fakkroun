@@ -10,7 +10,8 @@
 | take precedence over these defaults; read values through
 | App\Services\PlatformSettings, never config() directly, so overrides apply.
 |
-| Each entry: 'type' (int|bool|string), 'default', and Laravel 'rules'.
+| Each entry: 'type' (int|bool|string), 'default', Laravel 'rules', and for
+| choice settings 'options' (value => label key under settings.{group}).
 | Labels live in lang/{locale}/fakkroun.php under settings.{group}.{key}.
 |
 */
@@ -50,10 +51,17 @@ return [
             'auto_publish' => ['type' => 'bool', 'default' => false, 'rules' => ['boolean']],
         ],
 
+        'imports' => [
+            // Status imported questions start in. Never published directly (spec §11).
+            'initial_status' => ['type' => 'string', 'default' => 'pending', 'rules' => ['string', 'in:draft,pending'], 'options' => ['draft' => 'status_draft', 'pending' => 'status_pending']],
+            // Skip rows whose text exactly matches a question already in the bank.
+            'skip_duplicates' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+        ],
+
         'translations' => [
             // fallback: serve the fallback language when the player's language has no approved translation.
             // exclude: skip questions without an approved translation in the player's language.
-            'missing_policy' => ['type' => 'string', 'default' => 'fallback', 'rules' => ['string', 'in:fallback,exclude']],
+            'missing_policy' => ['type' => 'string', 'default' => 'fallback', 'rules' => ['string', 'in:fallback,exclude'], 'options' => ['fallback' => 'policy_fallback', 'exclude' => 'policy_exclude']],
             'fallback_locale' => ['type' => 'string', 'default' => env('APP_FALLBACK_LOCALE', 'en'), 'rules' => ['string', 'locale']],
         ],
 
@@ -61,5 +69,46 @@ return [
 
     // Seconds the merged settings stay cached; updates flush the cache immediately.
     'settings_cache_ttl' => 3600,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Gameplay timing — deployment-level
+    |--------------------------------------------------------------------------
+    */
+    'gameplay' => [
+        // Seconds the correct answer and results stay on screen before the next question.
+        'reveal_seconds' => 6,
+        // Network allowance after the deadline; the server clock still decides.
+        'answer_grace_ms' => 750,
+        // How often clients ask the server for the game state (MVP: polling, see docs).
+        'poll_seconds' => 1,
+        // Questions a player answered within this many days are avoided when possible.
+        'recent_question_days' => 30,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Question quality checks (spec §8) — deployment-level, not admin-editable
+    |--------------------------------------------------------------------------
+    */
+    'questions' => [
+        'body_min' => 10,
+        'body_max' => 500,
+        'choice_max' => 200,
+        'explanation_max' => 2000,
+        'reference_text_max' => 500,
+        // 0..1 token overlap above which a question is flagged as a possible duplicate.
+        'similarity_threshold' => 0.8,
+        // Candidate rows compared per similarity check (keeps the check bounded).
+        'similarity_candidates' => 50,
+        // Words that flag a question for a moderator's attention (never auto-reject).
+        'flagged_terms' => array_filter(explode(',', (string) env('FAKKROUN_FLAGGED_TERMS', ''))),
+        // Reports a player may file per hour.
+        'reports_per_hour' => 10,
+        // Rows processed per transaction during imports.
+        'import_chunk_size' => 100,
+        'import_max_rows' => (int) env('QUESTION_IMPORT_MAX_ROWS', 20000),
+        'import_max_kb' => (int) env('QUESTION_IMPORT_MAX_KB', 20480),
+    ],
 
 ];

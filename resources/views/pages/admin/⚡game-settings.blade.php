@@ -86,12 +86,13 @@ new #[Layout('layouts::app')] #[Title('Game settings')] class extends Component
                                 <span class="ms-block-strong">{{ __('fakkroun.settings.'.$group.'.'.$name) }}</span>
                             </span>
                         </label>
-                    @elseif ($group === 'translations' && $name === 'missing_policy')
+                    @elseif (isset($definition['options']))
                         <div class="field ms-mb-0">
                             <x-input-label :for="$id" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
                             <select wire:model="values.{{ $group }}.{{ $name }}" id="{{ $id }}" class="input">
-                                <option value="fallback">{{ __('fakkroun.settings.translations.policy_fallback') }}</option>
-                                <option value="exclude">{{ __('fakkroun.settings.translations.policy_exclude') }}</option>
+                                @foreach ($definition['options'] as $optionValue => $optionLabel)
+                                    <option value="{{ $optionValue }}">{{ __('fakkroun.settings.'.$group.'.'.$optionLabel) }}</option>
+                                @endforeach
                             </select>
                         </div>
                     @elseif ($group === 'translations' && $name === 'fallback_locale')

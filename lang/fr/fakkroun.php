@@ -56,6 +56,13 @@ return [
             'daily_limit_per_player' => 'Questions qu’un joueur peut proposer par jour',
             'auto_publish' => 'Publier les questions de la communauté sans modération (déconseillé)',
         ],
+        'imports' => [
+            'title' => 'Import de questions',
+            'initial_status' => 'Statut des questions importées',
+            'skip_duplicates' => 'Ignorer les lignes qui reprennent une question existante',
+            'status_draft' => 'Brouillon',
+            'status_pending' => 'En attente de validation',
+        ],
         'translations' => [
             'title' => 'Langues des questions',
             'missing_policy' => 'Si une question n’a pas de traduction approuvée dans la langue du joueur',

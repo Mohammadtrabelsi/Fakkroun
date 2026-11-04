@@ -42,6 +42,20 @@
                             </a>
                         @endcan
 
+                        @can('manage questions')
+                            <a href="{{ route('admin.questions.index') }}" wire:navigate class="{{ request()->routeIs('admin.questions.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"></path></svg>
+                                {{ __('questions.admin.title') }}
+                            </a>
+                        @endcan
+
+                        @can('moderate questions')
+                            <a href="{{ route('admin.moderation') }}" wire:navigate class="{{ request()->routeIs('admin.moderation') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"></path><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"></path></svg>
+                                {{ __('questions.moderation.title') }}
+                            </a>
+                        @endcan
+
                         @can('manage users')
                             <a href="{{ route('admin.users.index') }}" wire:navigate class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.2c2 .7 3.5 2.6 3.5 5.8"></path></svg>
@@ -95,6 +109,23 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg>
                             {{ __('app.my_dashboard') }}
                         </a>
+                        @can('play games')
+                            <a href="{{ route('rooms.create') }}" wire:navigate class="{{ request()->routeIs('rooms.create') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z"></path></svg>
+                                {{ __('play.nav.new_room') }}
+                            </a>
+                            <a href="{{ route('rooms.join') }}" wire:navigate class="{{ request()->routeIs('rooms.join') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"></path></svg>
+                                {{ __('play.nav.join_room') }}
+                            </a>
+                        @endcan
+                        @can('submit questions')
+                            <a href="{{ route('questions.mine') }}" wire:navigate class="{{ request()->routeIs('questions.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+                                {{ __('questions.mine.title') }}
+                            </a>
+                        @endcan
+
 
                         @canany(['manage posts', 'manage categories', 'manage tags'])
                             <div class="side-nav-label">{{ __('app.marketing_site') }}</div>
@@ -130,6 +161,23 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 17v-5M12 17V8M16 17v-3"></path></svg>
                             {{ __('app.my_space') }}
                         </a>
+                        @can('play games')
+                            <a href="{{ route('rooms.create') }}" wire:navigate class="{{ request()->routeIs('rooms.create') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z"></path></svg>
+                                {{ __('play.nav.new_room') }}
+                            </a>
+                            <a href="{{ route('rooms.join') }}" wire:navigate class="{{ request()->routeIs('rooms.join') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"></path></svg>
+                                {{ __('play.nav.join_room') }}
+                            </a>
+                        @endcan
+                        @can('submit questions')
+                            <a href="{{ route('questions.mine') }}" wire:navigate class="{{ request()->routeIs('questions.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+                                {{ __('questions.mine.title') }}
+                            </a>
+                        @endcan
+
                         <a href="{{ route('profile.edit') }}" wire:navigate class="{{ request()->routeIs('profile.edit') ? 'active' : '' }}">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c0-3.3 3-5 7-5s7 1.7 7 5"></path></svg>
                             {{ __('app.profile') }}

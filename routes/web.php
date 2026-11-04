@@ -6,7 +6,9 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\PostPdfController;
+use App\Http\Controllers\QuestionExportController;
 use App\Http\Controllers\RobotsController;
+use App\Http\Controllers\RoomInvitationController;
 use App\Http\Middleware\RequireHealthToken;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +62,22 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('verified')->group(function () {
         Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
+
+        Route::middleware('can:play games')->group(function () {
+            Route::livewire('/play/new', 'pages::rooms.create')->name('rooms.create');
+            Route::livewire('/play/join', 'pages::rooms.join')->name('rooms.join');
+            Route::livewire('/rooms/{room}', 'pages::rooms.show')->name('rooms.show');
+            // Shareable invitation link (spec §12.2); guests are sent to log in first.
+            Route::get('/join/{code}', RoomInvitationController::class)
+                ->middleware('throttle:30,1')
+                ->where('code', '[A-Za-z0-9-]{4,12}')
+                ->name('rooms.invitation');
+        });
+
+        Route::middleware('can:submit questions')->group(function () {
+            Route::livewire('/questions/submit', 'pages::questions.submit')->name('questions.submit');
+            Route::livewire('/questions/mine', 'pages::questions.mine')->name('questions.mine');
+        });
 
         // Admins and moderators; each screen is further gated by its own permission.
         Route::middleware('backoffice')->group(function () {
@@ -135,6 +153,23 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/settings', 'pages::admin.settings')
                 ->middleware('can:manage settings')
                 ->name('admin.settings');
+
+            Route::get('/admin/questions/export/{format}', QuestionExportController::class)
+                ->middleware('can:manage questions')
+                ->where('format', 'csv|xlsx|json')
+                ->name('admin.questions.export');
+            Route::livewire('/admin/questions', 'pages::admin.questions.index')
+                ->middleware('can:manage questions')
+                ->name('admin.questions.index');
+            Route::livewire('/admin/questions/create', 'pages::admin.questions.editor')
+                ->middleware('can:manage questions')
+                ->name('admin.questions.create');
+            Route::livewire('/admin/questions/{question}/edit', 'pages::admin.questions.editor')
+                ->middleware('can:manage questions')
+                ->name('admin.questions.edit');
+            Route::livewire('/admin/moderation', 'pages::admin.moderation')
+                ->middleware('can:moderate questions')
+                ->name('admin.moderation');
 
             Route::livewire('/admin/game-settings', 'pages::admin.game-settings')
                 ->middleware('can:manage platform settings')

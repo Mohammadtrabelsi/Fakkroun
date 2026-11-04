@@ -56,6 +56,13 @@ return [
             'daily_limit_per_player' => 'Questions a player may submit per day',
             'auto_publish' => 'Publish community questions without moderation (not recommended)',
         ],
+        'imports' => [
+            'title' => 'Question imports',
+            'initial_status' => 'Status of imported questions',
+            'skip_duplicates' => 'Skip rows that duplicate an existing question',
+            'status_draft' => 'Draft',
+            'status_pending' => 'Waiting for review',
+        ],
         'translations' => [
             'title' => 'Question languages',
             'missing_policy' => 'When a question has no approved translation in the player’s language',
