@@ -37,7 +37,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 
 | Layer              | Technology                                                         |
 | ------------------ | ------------------------------------------------------------------ |
-| Framework          | Laravel 13 (PHP 8.3+)                                              |
+| Framework          | Laravel 13 (PHP 8.4+)                                              |
 | UI / Interactivity | Livewire 4 (single-file components)                                |
 | Styling / Build    | Tailwind CSS 4, Vite 8                                             |
 | Auth & Access      | Laravel Auth, Sanctum (API tokens), spatie/laravel-permission      |
@@ -50,7 +50,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 
 ## Requirements
 
-- PHP 8.3 or higher (note: the current `composer.lock` resolves Symfony 8.1, `spatie/laravel-activitylog` 5 and `spatie/laravel-sitemap` 8.2, which require **PHP 8.4**; `composer update` on PHP 8.3 resolves 8.3-compatible versions of everything except activitylog 5), with the `mbstring`, `pdo`, `intl` and `bcmath` extensions (CI also uses `pdo_sqlite` and `sqlite3` for the test suite)
+- PHP 8.4 or higher (the `composer.lock` resolves Symfony 8.1, `spatie/laravel-activitylog` 5 and `spatie/laravel-sitemap` 8.2, which require PHP 8.4), with the `mbstring`, `pdo`, `intl` and `bcmath` extensions (CI also uses `pdo_sqlite` and `sqlite3` for the test suite)
 - Composer
 - Node.js 20 or newer & npm (CI builds with Node 20)
 
@@ -384,8 +384,8 @@ The suite lives in `tests/Feature` and covers authentication and two-factor, ema
 
 A GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push to `develop`/`main` and on every pull request. It:
 
-- runs the test suite on PHP 8.3 and 8.4 (building front-end assets first with Node 20), and
-- checks code style with Pint and runs Larastan static analysis on PHP 8.3.
+- runs the test suite on PHP 8.4 (building front-end assets first with Node 20), and
+- checks code style with Pint and runs Larastan static analysis on PHP 8.4.
 
 ## License
 

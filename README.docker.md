@@ -16,7 +16,7 @@ A containerised local development stack for the MajidaStarter Laravel applicatio
 ├── README.docker.md          # This file
 ├── docker/
 │   ├── php/
-│   │   ├── Dockerfile        # PHP 8.3-FPM image with Laravel extensions + Composer
+│   │   ├── Dockerfile        # PHP 8.4-FPM image with Laravel extensions + Composer
 │   │   └── php.ini           # Custom PHP settings for development
 │   └── nginx/
 │       └── default.conf      # Nginx vhost pointing at src/public
@@ -184,7 +184,7 @@ docker compose restart web
 
 | Service      | Image                | Purpose                                  |
 |--------------|----------------------|------------------------------------------|
-| `app`        | custom PHP 8.3-FPM   | Runs Laravel (PHP + Composer)            |
+| `app`        | custom PHP 8.4-FPM   | Runs Laravel (PHP + Composer)            |
 | `web`        | nginx:1.27-alpine    | Web server, proxies PHP to `app`         |
 | `db`         | mysql:8.0            | Database (Laravel connects via `db`)     |
 | `phpmyadmin` | phpmyadmin:5         | Database web UI                          |
