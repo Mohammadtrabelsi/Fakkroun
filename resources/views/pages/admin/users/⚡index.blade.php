@@ -26,6 +26,10 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
     #[Url(as: 'view', history: true)]
     public string $listing = 'active';
 
+    /** all | active | suspended */
+    #[Url(as: 'status', history: true)]
+    public string $status = 'all';
+
     /** name | created_at */
     #[Url(as: 'sort', history: true)]
     public string $sort = 'created_at';
@@ -40,7 +44,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
 
     public function updated(string $property): void
     {
-        if (in_array($property, ['search', 'role', 'listing', 'sort', 'direction'], true)) {
+        if (in_array($property, ['search', 'role', 'listing', 'status', 'sort', 'direction'], true)) {
             $this->resetPage();
         }
     }
@@ -77,6 +81,26 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
         }
     }
 
+    public function suspendUser(int $userId, UserService $users): void
+    {
+        $this->authorize('manage users');
+
+        try {
+            $users->suspend(auth()->user(), User::findOrFail($userId));
+            $this->dispatch('notify', type: 'success', message: __('account.user_suspended'));
+        } catch (\DomainException $e) {
+            $this->addError('toggle', $e->getMessage());
+        }
+    }
+
+    public function reactivateUser(int $userId, UserService $users): void
+    {
+        $this->authorize('manage users');
+
+        $users->reactivate(User::findOrFail($userId));
+        $this->dispatch('notify', type: 'success', message: __('account.user_reactivated'));
+    }
+
     public function restoreUser(int $userId, UserService $users): void
     {
         $this->authorize('manage users');
@@ -107,6 +131,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
         return app(UserService::class)->searchPaginated($this->search, 8, [
             'role' => in_array($this->role, ['admin', 'member'], true) ? $this->role : null,
             'trashed' => $this->listing === 'trashed' ? 'only' : null,
+            'status' => in_array($this->status, ['active', 'suspended'], true) ? $this->status : null,
             'sort' => $this->sort,
             'direction' => $this->direction,
         ]);
@@ -153,6 +178,11 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                 <option value="admin">Administrators</option>
                 <option value="member">{{ __('dashboard.member') }}</option>
             </select>
+            <select wire:model.live="status" class="input" aria-label="Status">
+                <option value="all">{{ __('account.all_statuses') }}</option>
+                <option value="active">{{ __('account.status_active') }}</option>
+                <option value="suspended">{{ __('account.status_suspended') }}</option>
+            </select>
         </div>
     </div>
 
@@ -180,7 +210,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                         <tr wire:key="user-{{ $user->id }}">
                             <td>
                                 <div class="ms-row-10-center">
-                                    <span class="avatar">{{ Str::of($user->name)->substr(0, 2)->upper() }}</span>
+                                    <x-user-avatar :user="$user" />
                                     <div class="ms-minw-0">
                                         <div class="ms-fw-500">{{ $user->name }}</div>
                                         <div class="text-muted ms-fs-12">{{ $user->email }}</div>
@@ -192,7 +222,14 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                                 @if ($user->trashed())
                                     <span class="tag tag-outline">Trashed</span>
                                 @else
-                                    <span class="tag {{ $user->hasRole('admin') ? 'tag-accent' : 'tag-neutral' }}">{{ $user->hasRole('admin') ? 'Admin' : 'Member' }}</span>
+                                    @forelse ($user->roles as $role)
+                                        <span class="tag {{ $role->name === 'admin' ? 'tag-accent' : 'tag-neutral' }}">{{ __('fakkroun.roles.'.$role->name) }}</span>
+                                    @empty
+                                        <span class="tag tag-neutral">Member</span>
+                                    @endforelse
+                                    @if ($user->isSuspended())
+                                        <span class="tag tag-outline">{{ __('account.status_suspended') }}</span>
+                                    @endif
                                 @endif
                             </td>
                             <td class="ms-text-right">
@@ -216,6 +253,17 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                                         >
                                             {{ $user->hasRole('admin') ? __('dashboard.revoke_admin') : __('dashboard.make_admin') }}
                                         </button>
+                                        @if ($user->isSuspended())
+                                            <button type="button" wire:click="reactivateUser({{ $user->id }})" class="btn ms-btn-sm">{{ __('account.reactivate') }}</button>
+                                        @else
+                                            <button
+                                                type="button"
+                                                wire:click="suspendUser({{ $user->id }})"
+                                                wire:confirm="{{ __('account.suspend_confirm', ['name' => $user->name]) }}"
+                                                @disabled($user->id === auth()->id())
+                                                class="btn ms-btn-sm"
+                                            >{{ __('account.suspend') }}</button>
+                                        @endif
                                         <a
                                             href="{{ route('admin.users.edit', $user) }}"
                                             wire:navigate

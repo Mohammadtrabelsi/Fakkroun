@@ -28,17 +28,19 @@
             ></div>
 
             <aside class="shell-sidebar">
-                <a href="{{ auth()->user()?->isAdmin() ? route('admin.dashboard') : route('dashboard') }}" wire:navigate class="brand ms-pad-x20-b22">
+                <a href="{{ auth()->user()?->can('view admin dashboard') ? route('admin.dashboard') : route('dashboard') }}" wire:navigate class="brand ms-pad-x20-b22">
                     <x-brand-mark />
                     <span class="brand-name">{{ config('app.name') }}</span>
                 </a>
 
                 <nav class="side-nav">
-                    @if (auth()->user()?->isAdmin())
-                        <a href="{{ route('admin.dashboard') }}" wire:navigate class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 17v-5M12 17V8M16 17v-3"></path></svg>
-                            {{ __('app.dashboard') }}
-                        </a>
+                    @if (auth()->user()?->canAccessBackoffice())
+                        @can('view admin dashboard')
+                            <a href="{{ route('admin.dashboard') }}" wire:navigate class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 17v-5M12 17V8M16 17v-3"></path></svg>
+                                {{ __('app.dashboard') }}
+                            </a>
+                        @endcan
 
                         @can('manage users')
                             <a href="{{ route('admin.users.index') }}" wire:navigate class="{{ request()->routeIs('admin.users.*') ? 'active' : '' }}">
@@ -61,6 +63,20 @@
                             </a>
                         @endcan
 
+                        @can('manage platform settings')
+                            <a href="{{ route('admin.game-settings') }}" wire:navigate class="{{ request()->routeIs('admin.game-settings') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="4"></rect><path d="M7 11v4M5 13h4"></path><circle cx="16" cy="12" r="1"></circle><circle cx="18" cy="14.5" r="1"></circle></svg>
+                                {{ __('fakkroun.game_settings') }}
+                            </a>
+                        @endcan
+
+                        @can('manage moderators')
+                            <a href="{{ route('admin.moderators') }}" wire:navigate class="{{ request()->routeIs('admin.moderators') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+                                {{ __('fakkroun.moderators') }}
+                            </a>
+                        @endcan
+
                         @can('view system health')
                             <a href="{{ route('admin.health') }}" wire:navigate class="{{ request()->routeIs('admin.health') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"></path></svg>
@@ -80,7 +96,9 @@
                             {{ __('app.my_dashboard') }}
                         </a>
 
-                        <div class="side-nav-label">{{ __('app.marketing_site') }}</div>
+                        @canany(['manage posts', 'manage categories', 'manage tags'])
+                            <div class="side-nav-label">{{ __('app.marketing_site') }}</div>
+                        @endcanany
 
                         @can('manage posts')
                             <a href="{{ route('admin.posts.index') }}" wire:navigate class="{{ request()->routeIs('admin.posts.*') ? 'active' : '' }}">
@@ -120,7 +138,7 @@
                 </nav>
 
                 <a href="{{ route('profile.edit') }}" wire:navigate class="side-user">
-                    <span class="avatar">{{ Str::of(auth()->user()->name)->explode(' ')->map(fn ($p) => $p[0] ?? '')->take(2)->implode('') }}</span>
+                    <x-user-avatar :user="auth()->user()" />
                     <span class="ms-minw-0 ms-flex-1">
                         <span class="text-muted ms-fs-12 ms-block">{{ __('app.welcome_back') }}</span>
                         <span class="ms-ellipsis-strong ms-block">{{ auth()->user()->name }}</span>
@@ -137,7 +155,7 @@
 
                     <div class="ms-flex-1"></div>
 
-                    @if (auth()->user()?->isAdmin())
+                    @if (auth()->user()?->canAccessBackoffice())
                         @php($unreadCount = auth()->user()->unreadNotifications()->count())
                         <a
                             href="{{ route('admin.notifications.index') }}"
@@ -160,7 +178,7 @@
 
                     <div class="ms-row-12-rel" data-dropdown>
                         <button type="button" data-dropdown-toggle class="ms-iconbtn-plain">
-                            <span class="avatar">{{ Str::of(auth()->user()->name)->explode(' ')->map(fn ($p) => $p[0] ?? '')->take(2)->implode('') }}</span>
+                            <x-user-avatar :user="auth()->user()" />
                             <span class="hidden sm:inline ms-strong-13">{{ auth()->user()->name }}</span>
                             @if (auth()->user()->isAdmin())
                                 <span class="tag tag-accent hidden sm:inline-flex">{{ __('app.admin') }}</span>

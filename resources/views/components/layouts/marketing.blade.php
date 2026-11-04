@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         @php
-            $pageTitle = $title ?? config('app.name').' — Laravel Livewire admin starter';
+            $pageTitle = $title ?? config('app.name').' — '.__('fakkroun.tagline');
         @endphp
         <title>{{ $pageTitle }}</title>
 

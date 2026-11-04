@@ -2,14 +2,19 @@
 
 namespace App\Services;
 
+use App\Enums\AccountStatus;
+use App\Enums\UserRole;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
 use Spatie\Permission\Models\Role;
 
 class UserService
@@ -20,7 +25,13 @@ class UserService
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            // Remember the language the visitor signed up in.
+            'locale' => array_key_exists(app()->getLocale(), (array) config('app.available_locales', []))
+                ? app()->getLocale()
+                : null,
         ]);
+
+        $user->assignRole(Role::findOrCreate(UserRole::default()->value, 'web'));
 
         event(new Registered($user));
 
@@ -29,7 +40,15 @@ class UserService
 
     public function attempt(string $email, string $password, bool $remember = false): bool
     {
-        return Auth::attempt(['email' => $email, 'password' => $password], $remember);
+        $user = $this->authenticate($email, $password);
+
+        if ($user === null) {
+            return false;
+        }
+
+        Auth::login($user, $remember);
+
+        return true;
     }
 
     /**
@@ -42,7 +61,114 @@ class UserService
             return null;
         }
 
-        return User::query()->where('email', $email)->first();
+        $user = User::query()->where('email', $email)->first();
+
+        // Only reported after the password matched, so it reveals nothing to
+        // someone guessing addresses.
+        if ($user?->isSuspended()) {
+            throw ValidationException::withMessages([
+                'email' => __('account.suspended'),
+            ]);
+        }
+
+        return $user;
+    }
+
+    /**
+     * Suspends an account: it can no longer sign in, its API tokens are revoked
+     * and any open session is ended on its next request (EnsureAccountIsActive).
+     */
+    public function suspend(User $actor, User $target, ?string $reason = null): User
+    {
+        if ($actor->is($target)) {
+            throw new DomainActionException('You cannot suspend your own account.');
+        }
+
+        DB::transaction(function () use ($actor, $target, $reason): void {
+            $target->forceFill([
+                'status' => AccountStatus::Suspended,
+                'suspended_at' => now(),
+                'suspension_reason' => $reason !== null && trim($reason) !== '' ? trim($reason) : null,
+                'suspended_by' => $actor->id,
+            ])->save();
+
+            $target->tokens()->delete();
+
+            if (config('session.driver') === 'database') {
+                DB::table((string) config('session.table', 'sessions'))->where('user_id', $target->id)->delete();
+            }
+        });
+
+        return $target;
+    }
+
+    public function reactivate(User $target): User
+    {
+        $target->forceFill([
+            'status' => AccountStatus::Active,
+            'suspended_at' => null,
+            'suspension_reason' => null,
+            'suspended_by' => null,
+        ])->save();
+
+        return $target;
+    }
+
+    /**
+     * Interface and question languages (spec §5.1). Null resets to the default.
+     *
+     * @param  array{locale?: string|null, question_locale?: string|null}  $data
+     */
+    public function updatePreferences(User $user, array $data): User
+    {
+        $supported = array_keys((array) config('app.available_locales', []));
+
+        foreach (['locale', 'question_locale'] as $field) {
+            if (! array_key_exists($field, $data)) {
+                continue;
+            }
+
+            $value = $data[$field] === '' ? null : $data[$field];
+
+            if ($value !== null && ! in_array($value, $supported, true)) {
+                throw new DomainActionException('Unsupported language.');
+            }
+
+            $user->{$field} = $value;
+        }
+
+        $user->save();
+
+        return $user;
+    }
+
+    /**
+     * Stores a new profile picture on the public disk and removes the old one.
+     * The file must already be validated by the caller (image, size limits).
+     */
+    public function updateAvatar(User $user, UploadedFile $file): User
+    {
+        $previous = $user->avatar_path;
+
+        $user->avatar_path = $file->storePublicly('avatars', 'public');
+        $user->save();
+
+        if ($previous !== null && $previous !== $user->avatar_path) {
+            Storage::disk('public')->delete($previous);
+        }
+
+        return $user;
+    }
+
+    public function removeAvatar(User $user): User
+    {
+        if ($user->avatar_path !== null) {
+            Storage::disk('public')->delete($user->avatar_path);
+            $user->avatar_path = null;
+            $user->save();
+        }
+
+        return $user;
     }
 
     public function toggleAdminRole(User $actor, User $target): void
@@ -167,7 +293,7 @@ class UserService
     }
 
     /**
-     * Admin listing. Supported filters: role (admin|member), trashed (only|with),
+     * Admin listing. Supported filters: role (admin|member), status (active|suspended), trashed (only|with),
      * sort (name|created_at) and direction (asc|desc).
      *
      * @param  array<string, mixed>  $filters
@@ -183,6 +309,8 @@ class UserService
             ->when(($filters['trashed'] ?? null) === 'with', fn ($query) => $query->withTrashed())
             ->when(($filters['role'] ?? null) === 'admin', fn ($query) => $query->role('admin'))
             ->when(($filters['role'] ?? null) === 'member', fn ($query) => $query->whereDoesntHave('roles', fn ($q) => $q->where('name', 'admin')))
+            ->when(($filters['status'] ?? null) === 'active', fn ($query) => $query->where('status', AccountStatus::Active->value))
+            ->when(($filters['status'] ?? null) === 'suspended', fn ($query) => $query->where('status', AccountStatus::Suspended->value))
             ->when($search, fn ($query) => $query->where(
                 fn ($q) => $q->where('name', 'like', "%{$search}%")
                     ->orWhere('email', 'like', "%{$search}%")

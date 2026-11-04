@@ -10,10 +10,10 @@ class AboutPageTest extends TestCase
     {
         $this->get(route('about'))
             ->assertOk()
-            ->assertSee("Magie d'Astrata")
+            ->assertSee('Fakkroun')
             ->assertSee(__('about.features_title'))
-            ->assertSee('Sadaka Jariya')
-            ->assertSee('composer setup');
+            ->assertSee(__('about.start_title'))
+            ->assertSee('Sadaka Jariya');
     }
 
     public function test_about_page_is_linked_from_the_navbar_and_footer(): void

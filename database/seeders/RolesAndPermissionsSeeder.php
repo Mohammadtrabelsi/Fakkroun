@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserRole;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -10,11 +11,17 @@ use Spatie\Permission\PermissionRegistrar;
 class RolesAndPermissionsSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Permissions granted to each role. The admin role always receives every
+     * permission listed anywhere in this map.
+     *
+     * Some permissions gate modules that arrive in later phases (questions,
+     * games, advertising); they are seeded now so role definitions stay stable.
+     *
+     * @var array<string, array<int, string>>
      */
-    public function run(): void
-    {
-        $permissions = [
+    public const ROLE_PERMISSIONS = [
+        'admin' => [
+            // Back office (inherited from MajidaStarter)
             'view admin dashboard',
             'manage users',
             'manage categories',
@@ -24,9 +31,35 @@ class RolesAndPermissionsSeeder extends Seeder
             'manage settings',
             'view system health',
             'manage backups',
-        ];
+            // Fakkroun
+            'access backoffice',
+            'manage platform settings',
+            'manage moderators',
+            'manage questions',
+            'moderate questions',
+            'manage advertising',
+        ],
+        'moderator' => [
+            'access backoffice',
+            'moderate questions',
+            'play games',
+            'submit questions',
+        ],
+        'advertiser' => [
+            'manage own campaigns',
+            'play games',
+        ],
+        'player' => [
+            'play games',
+            'submit questions',
+        ],
+    ];
 
-        foreach ($permissions as $permission) {
+    public function run(): void
+    {
+        $all = collect(self::ROLE_PERMISSIONS)->flatten()->unique()->values()->all();
+
+        foreach ($all as $permission) {
             Permission::findOrCreate($permission, 'web');
         }
 
@@ -35,6 +68,12 @@ class RolesAndPermissionsSeeder extends Seeder
         // must be flushed into the registrar's cache manually.
         app(PermissionRegistrar::class)->forgetCachedPermissions();
 
-        Role::findOrCreate('admin', 'web')->syncPermissions($permissions);
+        foreach (UserRole::cases() as $role) {
+            $permissions = $role === UserRole::Admin ? $all : self::ROLE_PERMISSIONS[$role->value];
+
+            Role::findOrCreate($role->value, 'web')->syncPermissions($permissions);
+        }
+
+        app(PermissionRegistrar::class)->forgetCachedPermissions();
     }
 }

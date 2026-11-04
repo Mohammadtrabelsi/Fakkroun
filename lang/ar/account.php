@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'suspended' => 'تم تعليق هذا الحساب. يرجى التواصل مع الدعم إذا كنت تعتقد أن هذا خطأ.',
+    'preferences' => 'تفضيلات اللغة',
+    'preferences_description' => 'اختر لغة الواجهة، واختر بشكل منفصل اللغة التي تريد تلقي الأسئلة بها.',
+    'interface_language' => 'لغة الواجهة',
+    'question_language' => 'لغة الأسئلة',
+    'same_as_interface' => 'نفس لغة الواجهة',
+    'platform_default' => 'اللغة الافتراضية للمنصة',
+    'preferences_saved' => 'تم حفظ التفضيلات',
+    'avatar' => 'صورة الملف الشخصي',
+    'avatar_description' => 'JPG أو PNG أو WebP، بحد أقصى 1 ميغابايت.',
+    'upload_avatar' => 'رفع صورة',
+    'remove_avatar' => 'حذف الصورة',
+    'avatar_updated' => 'تم تحديث صورة الملف الشخصي',
+    'avatar_removed' => 'تم حذف صورة الملف الشخصي',
+    'suspend' => 'تعليق',
+    'reactivate' => 'إعادة التفعيل',
+    'suspend_reason' => 'السبب (اختياري)',
+    'suspend_confirm' => 'هل تريد تعليق حساب :name؟ سيتم تسجيل خروجه ولن يتمكن من تسجيل الدخول.',
+    'user_suspended' => 'تم تعليق الحساب',
+    'user_reactivated' => 'تمت إعادة تفعيل الحساب',
+    'all_statuses' => 'كل الحالات',
+    'status_active' => 'نشط',
+    'status_suspended' => 'معلّق',
+];

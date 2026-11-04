@@ -274,7 +274,14 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
                             <td>
                                 <input type="checkbox" class="checkbox" value="{{ $category->id }}" wire:model.live="selected" aria-label="Select category">
                             </td>
-                            <td class="ms-fw-500">{{ $category->name }}</td>
+                            <td>
+                                <div class="ms-fw-500">{{ $category->name }}</div>
+                                @if ($category->parent)
+                                    <div class="text-muted ms-fs-12">{{ __('categories.subcategory_of', ['name' => $category->parent->name]) }}</div>
+                                @elseif ($category->children_count > 0)
+                                    <div class="text-muted ms-fs-12">{{ __('categories.subcategories') }}: {{ $category->children_count }}</div>
+                                @endif
+                            </td>
                             <td class="text-muted">{{ $category->slug }}</td>
                             <td class="text-muted">{{ $category->posts_count }}</td>
                             <td>

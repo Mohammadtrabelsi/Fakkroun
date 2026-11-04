@@ -3,7 +3,7 @@
 > **Deliverable:** §2.4 of the master specification, the assessment required before any implementation.
 > **Base:** `Mohammadtrabelsi/MajidaStarter` @ `develop` (`7260135`), imported into this repository with full history (151 commits). No new Laravel application was created.
 > **Date:** 2026-11-03
-> **Status:** For review. **No application code has been changed yet.** Phase 1 starts once the open decisions in §10 are answered.
+> **Status:** Approved 2026-11-04 with all recommendations in §10. Phase 1 is reported in [`01-phase-1-report.md`](01-phase-1-report.md).
 
 ---
 
@@ -278,7 +278,7 @@ Advertisers, packages, wallets, ledger, campaigns/creatives with review, deliver
 ### Phase 6: Analytics & hardening
 Rollup jobs + dashboards, security review, load tests (k6), Redis/Horizon, deployment docs (Reverb, workers, scheduler, backups/restore, secrets).
 
-## 10. Open decisions (please confirm before Phase 1)
+## 10. Decisions (approved 2026-11-04: all recommendations accepted)
 
 | # | Decision | Recommendation |
 | --- | --- | --- |

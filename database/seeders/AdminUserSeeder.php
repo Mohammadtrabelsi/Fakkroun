@@ -19,7 +19,7 @@ class AdminUserSeeder extends Seeder
 
         app(PermissionRegistrar::class)->forgetCachedPermissions();
 
-        $email = env('ADMIN_EMAIL', 'admin@majidastarter.com');
+        $email = env('ADMIN_EMAIL', 'admin@fakkroun.test');
 
         $user = User::updateOrCreate(
             ['email' => $email],

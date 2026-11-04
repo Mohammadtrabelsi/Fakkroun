@@ -8,10 +8,20 @@ use Illuminate\Validation\Rules\Password;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
 {
+    use WithFileUploads;
+
     public string $name = '';
+
+    public string $locale = '';
+
+    public string $question_locale = '';
+
+    /** @var \Illuminate\Http\UploadedFile|null */
+    public $avatar = null;
 
     public string $email = '';
 
@@ -27,6 +37,43 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
     {
         $this->name = auth()->user()->name;
         $this->email = auth()->user()->email;
+        $this->locale = (string) auth()->user()->locale;
+        $this->question_locale = (string) auth()->user()->question_locale;
+    }
+
+    public function updatePreferences(UserService $users): void
+    {
+        $locales = array_keys(config('app.available_locales', []));
+
+        $validated = $this->validate([
+            'locale' => ['nullable', Rule::in($locales)],
+            'question_locale' => ['nullable', Rule::in($locales)],
+        ]);
+
+        $users->updatePreferences(auth()->user(), $validated);
+
+        // Reload so the new interface language applies to the whole page.
+        $this->redirect(route('profile.edit'), navigate: true);
+    }
+
+    public function updatedAvatar(): void
+    {
+        $this->validate([
+            'avatar' => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:1024', 'dimensions:max_width=4000,max_height=4000'],
+        ]);
+
+        app(UserService::class)->updateAvatar(auth()->user(), $this->avatar);
+
+        $this->reset('avatar');
+
+        $this->dispatch('avatar-updated');
+    }
+
+    public function removeAvatar(UserService $users): void
+    {
+        $users->removeAvatar(auth()->user());
+
+        $this->dispatch('avatar-updated');
     }
 
     public function updateProfile(UserService $users): void
@@ -83,8 +130,69 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
         <p class="text-muted ms-note">{{ __('profile.manage_account_info') }}</p>
     </div>
 
+    {{-- Profile picture --}}
+    <div class="card ms-stack-16">
+        <div>
+            <h3 class="ms-fs-18">{{ __('account.avatar') }}</h3>
+            <p class="text-muted ms-note">{{ __('account.avatar_description') }}</p>
+        </div>
+
+        <div data-show-on="avatar-updated" class="tag tag-accent">
+            <span class="ms-block-pad">{{ __('account.avatar_updated') }}</span>
+        </div>
+
+        <div class="ms-row-between">
+            <x-user-avatar :user="auth()->user()" size="56" />
+
+            <div class="ms-row-12-rel">
+                <label for="avatar" class="btn">{{ __('account.upload_avatar') }}</label>
+                <input type="file" wire:model="avatar" id="avatar" accept="image/jpeg,image/png,image/webp" class="sr-only">
+
+                @if (auth()->user()->avatar_path)
+                    <button type="button" wire:click="removeAvatar" class="btn ms-outline-danger">{{ __('account.remove_avatar') }}</button>
+                @endif
+            </div>
+        </div>
+        <div wire:loading wire:target="avatar" class="text-muted ms-fs-12">Uploading…</div>
+        <x-input-error :message="$errors->first('avatar')" />
+    </div>
+
+    {{-- Language preferences --}}
+    <form wire:submit="updatePreferences" class="card ms-mt16-stack-16">
+        <div>
+            <h3 class="ms-fs-18">{{ __('account.preferences') }}</h3>
+            <p class="text-muted ms-note">{{ __('account.preferences_description') }}</p>
+        </div>
+
+        <div class="field ms-mb-0">
+            <x-input-label for="locale" :value="__('account.interface_language')" />
+            <select wire:model="locale" id="locale" class="input">
+                <option value="">{{ __('account.platform_default') }}</option>
+                @foreach (config('app.available_locales') as $code => $meta)
+                    <option value="{{ $code }}" lang="{{ $code }}">{{ $meta['label'] }}</option>
+                @endforeach
+            </select>
+            <x-input-error :message="$errors->first('locale')" />
+        </div>
+
+        <div class="field ms-mb-0">
+            <x-input-label for="question_locale" :value="__('account.question_language')" />
+            <select wire:model="question_locale" id="question_locale" class="input">
+                <option value="">{{ __('account.same_as_interface') }}</option>
+                @foreach (config('app.available_locales') as $code => $meta)
+                    <option value="{{ $code }}" lang="{{ $code }}">{{ $meta['label'] }}</option>
+                @endforeach
+            </select>
+            <x-input-error :message="$errors->first('question_locale')" />
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="updatePreferences">Save</button>
+        </div>
+    </form>
+
     {{-- Profile information --}}
-    <form wire:submit="updateProfile" class="card ms-stack-16">
+    <form wire:submit="updateProfile" class="card ms-mt16-stack-16">
         <div>
             <h3 class="ms-fs-18">{{ __('profile.account_information') }}</h3>
             <p class="text-muted ms-note">{{ __('profile.update_name_email') }}</p>

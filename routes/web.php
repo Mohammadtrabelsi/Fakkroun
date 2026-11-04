@@ -61,7 +61,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware('verified')->group(function () {
         Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
 
-        Route::middleware('admin')->group(function () {
+        // Admins and moderators; each screen is further gated by its own permission.
+        Route::middleware('backoffice')->group(function () {
             Route::livewire('/admin/dashboard', 'pages::admin.dashboard')
                 ->middleware('can:view admin dashboard')
                 ->name('admin.dashboard');
@@ -134,6 +135,13 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/settings', 'pages::admin.settings')
                 ->middleware('can:manage settings')
                 ->name('admin.settings');
+
+            Route::livewire('/admin/game-settings', 'pages::admin.game-settings')
+                ->middleware('can:manage platform settings')
+                ->name('admin.game-settings');
+            Route::livewire('/admin/moderators', 'pages::admin.moderators')
+                ->middleware('can:manage moderators')
+                ->name('admin.moderators');
         });
     });
 

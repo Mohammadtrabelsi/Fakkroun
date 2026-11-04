@@ -128,4 +128,26 @@ class UserController extends Controller
 
         return response()->json($user->fresh()->load('roles'));
     }
+
+    /**
+     * UserService::suspend
+     */
+    public function suspend(Request $request, User $user): JsonResponse
+    {
+        $validated = $request->validate([
+            'reason' => ['nullable', 'string', 'max:500'],
+        ]);
+
+        $this->users->suspend($request->user(), $user, $validated['reason'] ?? null);
+
+        return response()->json($user->fresh());
+    }
+
+    /**
+     * UserService::reactivate
+     */
+    public function reactivate(User $user): JsonResponse
+    {
+        return response()->json($this->users->reactivate($user));
+    }
 }

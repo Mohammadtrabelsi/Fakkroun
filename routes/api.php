@@ -37,6 +37,7 @@ Route::middleware('auth:sanctum,web')->group(function () {
     Route::get('profile', [ProfileController::class, 'show']);
     Route::put('profile', [ProfileController::class, 'update']);            // UserService::updateProfile
     Route::put('profile/password', [ProfileController::class, 'password']); // UserService::updatePassword
+    Route::put('profile/preferences', [ProfileController::class, 'preferences']); // UserService::updatePreferences
     Route::delete('profile', [ProfileController::class, 'destroy']);        // UserService::deleteOwnAccount
 
     // ---------------------------------------------------------------------
@@ -79,6 +80,8 @@ Route::middleware('auth:sanctum,web')->group(function () {
         Route::post('users/{user}/restore', [UserController::class, 'restore'])->withTrashed();       // UserService::restore
         Route::delete('users/{user}/force', [UserController::class, 'forceDestroy'])->withTrashed(); // UserService::forceDelete
         Route::post('users/{user}/toggle-admin', [UserController::class, 'toggleAdmin']); // UserService::toggleAdminRole
+        Route::post('users/{user}/suspend', [UserController::class, 'suspend']);       // UserService::suspend
+        Route::post('users/{user}/reactivate', [UserController::class, 'reactivate']); // UserService::reactivate
     });
 
     // ---------------------------------------------------------------------

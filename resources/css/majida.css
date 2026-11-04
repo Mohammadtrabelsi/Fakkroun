@@ -243,6 +243,7 @@ a:hover { color: var(--color-accent-600); }
     font-family: var(--font-heading); font-weight: 600; font-size: 12px; border-radius: 50%;
     background: var(--color-accent-100); color: var(--color-accent-800);
 }
+.avatar-img { object-fit: cover; padding: 0; }
 
 /* — stat band (accent-900 full-bleed section; use sparingly) — */
 .stat-band { background: var(--color-accent-900); color: var(--color-bg); padding: 64px 48px; }
@@ -491,6 +492,8 @@ html.theme-ready body { transition: background-color 0.2s ease, color 0.2s ease;
 .ms-row-between { display: flex; align-items: center; justify-content: space-between; }
 .ms-mt-5 { margin-top: 5px; }
 .ms-check-label-22 { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 22px; cursor: pointer; }
+.ms-check-row { display: flex; align-items: center; gap: 8px; font-size: 13px; margin-bottom: 8px; cursor: pointer; }
+.ms-ps-24 { padding-inline-start: 24px; }
 .ms-notice-20 { display: block; margin-bottom: 20px; padding: 8px 12px; }
 .ms-fs12-mt8 { font-size: 12px; margin-top: 8px; }
 .ms-linkbtn { background: none; border: none; padding: 0; cursor: pointer; font: inherit; font-size: 12px; color: var(--color-accent); }
