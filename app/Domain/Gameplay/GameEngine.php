@@ -228,6 +228,8 @@ class GameEngine
         $mine = $answers->firstWhere('user_id', $viewer->id);
         $now = now();
 
+        $question->loadMissing(['category', 'author:id,name']);
+
         $state = [
             'status' => $game->status,
             'phase' => $game->isCompleted() ? 'completed' : ($current->isOpen() ? 'question' : 'reveal'),
@@ -236,6 +238,12 @@ class GameEngine
             'server_now' => $now->getTimestampMs(),
             'deadline_ms' => $current->deadline_at?->getTimestampMs(),
             'remaining_ms' => $current->isOpen() ? max(0, (int) $now->diffInMilliseconds($current->deadline_at, false)) : 0,
+            'duration_ms' => $current->opened_at && $current->deadline_at ? (int) $current->opened_at->diffInMilliseconds($current->deadline_at) : 0,
+            'category' => $question->category?->name,
+            'author' => $question->author?->name,
+            'source' => $question->source->value,
+            // Who has answered the current question — never which answer.
+            'answered_user_ids' => $answers->pluck('user_id')->map(fn ($id) => (int) $id)->values()->all(),
             'duplicate_rule' => (bool) ($game->settings['duplicate_rule'] ?? false),
             'question' => [
                 'body' => $translation?->body,
@@ -286,6 +294,43 @@ class GameEngine
         }
 
         return $state;
+    }
+
+    /**
+     * "What we learned": every question of a finished game with its correct
+     * answer and the viewer's result. Only available once the game is over.
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    public function recap(Game $game, User $viewer): array
+    {
+        if (! $game->fresh()->isCompleted()) {
+            return [];
+        }
+
+        return GameQuestion::query()
+            ->where('game_id', $game->id)
+            ->orderBy('position')
+            ->with(['question.choices', 'answers' => fn ($query) => $query->where('user_id', $viewer->id)])
+            ->get()
+            ->map(function (GameQuestion $gq): array {
+                $question = $gq->question;
+                $translation = $this->translationFor($question, $gq->language);
+                $mine = $gq->answers->first();
+
+                return [
+                    'position' => $gq->position,
+                    'body' => $translation?->body,
+                    'correct_text' => $translation?->choiceText((int) $question->correct_choice_id),
+                    'explanation' => $translation?->explanation,
+                    'reference_url' => $question->reference_url,
+                    'answered' => $mine !== null,
+                    'correct' => (bool) $mine?->is_correct,
+                    'excluded' => (bool) $mine?->is_duplicate_excluded,
+                    'points' => (int) ($mine?->points ?? 0),
+                ];
+            })
+            ->all();
     }
 
     private function current(Game $game): GameQuestion

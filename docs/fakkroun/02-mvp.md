@@ -80,7 +80,7 @@ php artisan serve
 
 | Route | Who |
 | --- | --- |
-| `/play/new`, `/play/join`, `/rooms/{ulid}`, `/join/{code}` | `play games` |
+| `/play`, `/play/join`, `/rooms/{ulid}`, `/join/{code}` | `play games` |
 | `/questions/submit`, `/questions/mine` | `submit questions` |
 | `/admin/questions…`, `/admin/questions/export/{csv,xlsx,json}` | `manage questions` |
 | `/admin/moderation` | `moderate questions` (scoped by category) |

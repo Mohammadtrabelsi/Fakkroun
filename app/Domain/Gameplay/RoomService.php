@@ -49,6 +49,7 @@ class RoomService
             'language' => ['required', Rule::in(array_keys((array) config('app.available_locales')))],
             'duplicate_rule' => ['required', 'boolean'],
             'max_players' => ['required', 'integer', 'min:'.max(1, $game['min_players']), 'max:'.$game['max_players']],
+            'visibility' => ['nullable', Rule::in(['private', 'public'])],
         ])->validate();
 
         $open = Room::query()
@@ -64,6 +65,7 @@ class RoomService
             $room = Room::query()->create([
                 'host_id' => $host->id,
                 'name' => trim($validated['name']),
+                'visibility' => $validated['visibility'] ?? 'private',
                 'code' => $this->codes->generate(),
                 'max_players' => (int) $validated['max_players'],
                 'expires_at' => now()->addMinutes($game['room_expiry_minutes']),
@@ -82,6 +84,46 @@ class RoomService
 
             return $room;
         });
+    }
+
+    /**
+     * Public rooms still waiting for players, newest first (lobby "Open rooms").
+     *
+     * @return \Illuminate\Support\Collection<int, Room>
+     */
+    public function openRooms(int $limit = 8)
+    {
+        return Room::query()
+            ->where('visibility', 'public')
+            ->where('status', RoomStatus::Waiting->value)
+            ->where(fn ($query) => $query->whereNull('expires_at')->orWhere('expires_at', '>', now()))
+            ->with('host:id,name')
+            ->withCount(['memberships as players_count' => fn ($query) => $query->whereNull('left_at')])
+            ->latest('id')
+            ->limit($limit)
+            ->get();
+    }
+
+    /**
+     * "Play again": a new waiting room with the same settings, hosted by the
+     * caller. (One game per room keeps game history and the double-start
+     * guard simple, so the old code is not reused.)
+     */
+    public function replay(Room $room, User $host): Room
+    {
+        $settings = $room->settings;
+
+        return $this->create($host, [
+            'name' => $room->name,
+            'category_ids' => $settings['category_ids'] ?? [],
+            'question_count' => $settings['question_count'] ?? 10,
+            'seconds_per_question' => $settings['seconds_per_question'] ?? 20,
+            'difficulty' => $settings['difficulty'] ?? 'any',
+            'language' => $settings['language'] ?? config('app.locale'),
+            'duplicate_rule' => (bool) ($settings['duplicate_rule'] ?? false),
+            'max_players' => $room->max_players,
+            'visibility' => $room->visibility,
+        ]);
     }
 
     public function findByCode(string $code): ?Room

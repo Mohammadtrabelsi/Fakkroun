@@ -23,13 +23,17 @@ The brief arrived after the MVP. Most of its domain model already exists under t
 | Name meaning | About page fixed: *fakkroun* is Tunisian Arabic for "turtle", and sounds like فكّر ("think"). |
 | Tests | `Fakkroun/HomePageTest` (sections, two eyes, priority grid, partners fallback, join form, Arabic RTL), `Gameplay/AnswerLettersTest`. The navbar tests now target `/docs`, which still uses the configurable marketing navbar. |
 
-## Step 2: next in this branch
+## Step 2: play screens
 
-1. **Lobby** (`Lobby.dc.html` → `/play/new` + `/play/join`, merged into one `/play` page): category chips, segmented controls (difficulty, 10/15/20 questions, 10/20/30 s, language), private toggle, "Create room · N questions", join-by-code aside, and the live open-rooms list (needs public rooms).
-2. **Game** (`Game.dc.html` + `Mobile.dc.html`): dark `sea-deep` room, big code in the waiting state, a countdown ring computed from server time with a clock-skew offset, answer states with "Correct" / "Your answer" text labels (not colour alone), and a players sidebar (answered/thinking, never which answer) that collapses to "6 of 8 answered" on phones.
-3. **Results** (`Results.dc.html`, `/rooms/{ulid}/results`): podium in 2-1-3 order, standings, a "What we learned" recap with ✓/✗, Play again in the same room, New room, Share.
-4. **Community** (`Community.dc.html`): the submission form restyled (question ≤ 160 characters, required source URL), Save draft / Send for review, a "What happens next" panel, and "Your questions" with Live / In review / Needs changes badges and the moderator's note.
-5. **Admin:** CRUD for partners.
+| Screen | Status |
+| --- | --- |
+| **Lobby** (`Lobby.dc.html`) | Done at **`/play`** (`rooms.create`): category chips with `aria-pressed`, segmented controls (Mixed/Easy/Medium/Hard, 10/15/20 questions, 10/20/30 s, EN/FR/عربي, all clipped to the admin limits), duplicate-rule toggle, private toggle (unticked creates a **public** room), and "Create room · N questions". The aside holds join-by-code (pre-filled by `?code=`) and **Open rooms**, which lists public waiting rooms and refreshes every 10 s. |
+| **Game** (`Game.dc.html`, `Mobile.dc.html`) | Done: dark `sea-deep` room; waiting state with the big code, copy, share and WhatsApp, room settings and players; category · difficulty pill; **countdown ring** driven by the server's remaining time (a relative value, so no client-clock skew); answer states (default pressable, *Your answer* while waiting, then *Correct* in green and *Your answer* in red with text labels, others dimmed); reveal panel (`aria-live`) with verdict, explanation, source or `[ADD SOURCE LINK]`, "Question by @author" for community questions, and points; players sidebar with rank, avatar, answered/thinking (never which answer) and live score, which on phones collapses to the "N of M answered" line. |
+| **Results** (`Results.dc.html`) | Done at **`/rooms/{ulid}/results`** (the room page redirects there at the end): podium in 2-1-3 order, standings, and "What we learned" with ✓/✗ plus text labels. *Play again* opens a **new room with the same settings** (one game per room keeps history and the double-start guard simple, so the code isn't reused, unlike the brief's "same room"). *New room* and *Share* (Web Share, with a copy-link fallback). |
+| **Community** (`Community.dc.html`) | **Next:** restyle the submit page and "Your questions" (≤ 160 characters, required source URL, Save draft / Send for review, "What happens next", Live / In review / Needs changes badges with the moderator's note). |
+| **Admin** | **Next:** CRUD for partners. |
+
+Tests: `Gameplay/PlayScreensTest`, covering the lobby (create with chips and segments, category required, public/private listing, join by code and query prefill), results (podium, standings, recap, members only, redirect before the end), play-again, and the answered-status state without leaking answers.
 
 ## Decisions for you (the brief differs from the master specification or from the current code)
 
