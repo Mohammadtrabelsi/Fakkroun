@@ -8,6 +8,7 @@ use App\Domain\Billing\Enums\PaymentStatus;
 use App\Domain\Billing\Models\Payment;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\PlatformSettings;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -21,7 +22,19 @@ class PaymentService
     public function __construct(
         private readonly PaymentProvider $provider,
         private readonly PlanService $plans,
+        private readonly PlatformSettings $settings,
     ) {}
+
+    /** Monthly price of the paid account (Admin → Game settings → Accounts). */
+    public function planPrice(): int
+    {
+        return (int) $this->settings->get('accounts.paid_plan_price_minor');
+    }
+
+    public function planCurrency(): string
+    {
+        return (string) $this->settings->get('accounts.paid_plan_currency');
+    }
 
     public function provider(): PaymentProvider
     {
@@ -33,7 +46,7 @@ class PaymentService
      */
     public function startPlanPurchase(User $user, int $months, string $returnUrl): array
     {
-        $price = (int) config('fakkroun.payments.player_plan_price_minor');
+        $price = $this->planPrice();
 
         if ($price <= 0) {
             throw new DomainActionException(__('billing.errors.plan_not_available'));
@@ -44,7 +57,7 @@ class PaymentService
             'purpose' => PaymentPurpose::PlayerPlan,
             'provider' => $this->provider->name(),
             'amount_minor' => $price * max(1, $months),
-            'currency' => (string) config('fakkroun.payments.currency'),
+            'currency' => $this->planCurrency(),
             'metadata' => ['months' => max(1, $months)],
         ]);
 
@@ -114,23 +127,23 @@ class PaymentService
     }
 
     /**
-     * Records a plan granted by an administrator for a payment received
-     * outside the platform (the manual driver's flow).
+     * Records a cash payment taken by an administrator and starts the plan.
+     * $reference is the receipt number; it must be unique.
      */
-    public function grantManually(User $user, int $months, string $reference, int $amountMinor = 0): Payment
+    public function grantManually(User $user, int $months, string $reference, int $amountMinor = 0, ?User $admin = null): Payment
     {
-        if (Payment::query()->where('provider', 'manual')->where('provider_reference', $reference)->exists()) {
+        if (Payment::query()->where('provider', 'cash')->where('provider_reference', $reference)->exists()) {
             throw new DomainActionException(__('billing.errors.duplicate_reference'));
         }
 
         $payment = Payment::query()->create([
             'user_id' => $user->id,
             'purpose' => PaymentPurpose::PlayerPlan,
-            'provider' => 'manual',
+            'provider' => 'cash',
             'provider_reference' => $reference,
             'amount_minor' => max(0, $amountMinor),
-            'currency' => (string) config('fakkroun.payments.currency'),
-            'metadata' => ['months' => max(1, $months)],
+            'currency' => $this->planCurrency(),
+            'metadata' => ['months' => max(1, $months), 'recorded_by' => $admin?->id],
         ]);
 
         return $this->markPaid($payment);

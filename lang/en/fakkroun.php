@@ -75,6 +75,11 @@ return [
             'currency' => 'Currency (ISO code)',
             'low_credit_threshold' => 'Warn advertisers when credits fall below',
         ],
+        'accounts' => [
+            'title' => 'Accounts (players)',
+            'paid_plan_price_minor' => 'Paid ad-free account: monthly price (minor units, 0 = not on sale)',
+            'paid_plan_currency' => 'Paid account currency (ISO code)',
+        ],
         'translations' => [
             'title' => 'Question languages',
             'missing_policy' => 'When a question has no approved translation in the player’s language',

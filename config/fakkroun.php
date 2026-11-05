@@ -74,6 +74,14 @@ return [
             'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
         ],
 
+        // Player/user accounts (not advertisers): free with ads, or paid and ad-free.
+        // Advertiser packs are separate (Admin → Advertising → Packages).
+        'accounts' => [
+            // Monthly price of the paid, ad-free account, in minor units. 0 = not on sale.
+            'paid_plan_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'paid_plan_currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
+        ],
+
         'translations' => [
             // fallback: serve the fallback language when the player's language has no approved translation.
             // exclude: skip questions without an approved translation in the player's language.
@@ -110,17 +118,15 @@ return [
     */
     /*
     |--------------------------------------------------------------------------
-    | Payments (abstract until a gateway is chosen)
+    | Payment method
     |--------------------------------------------------------------------------
-    | Driver "manual": no online checkout, admins confirm payments received
-    | outside the platform (php artisan plans:grant). A real gateway is a new
-    | App\Domain\Billing\Contracts\PaymentProvider driver.
+    | "cash" only for now: admins record cash payments (Admin → Paid accounts
+    | or php artisan plans:grant). Another method is a new
+    | App\Domain\Billing\Contracts\PaymentProvider driver. The paid-account
+    | price is a platform setting (accounts group), not an env variable.
     */
     'payments' => [
-        'driver' => env('FAKKROUN_PAYMENT_DRIVER', 'manual'),
-        'currency' => env('FAKKROUN_PAYMENT_CURRENCY', 'TND'),
-        // 0 = the paid plan is not on sale yet ([PLAN PRICE]).
-        'player_plan_price_minor' => (int) env('FAKKROUN_PLAN_PRICE_MINOR', 0),
+        'driver' => env('FAKKROUN_PAYMENT_DRIVER', 'cash'),
     ],
 
     'legal' => [

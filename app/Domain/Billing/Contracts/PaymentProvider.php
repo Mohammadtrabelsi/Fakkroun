@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
  */
 interface PaymentProvider
 {
-    /** Short stable name stored on each payment, e.g. "manual". */
+    /** Short stable name stored on each payment, e.g. "cash". */
     public function name(): string;
 
     /** Whether players can pay online with this driver. */

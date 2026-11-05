@@ -11,7 +11,7 @@ class GrantPlan extends Command
 {
     protected $signature = 'plans:grant {email} {reference : Unique payment reference} {--months=1} {--amount=0 : Amount received, in minor units}';
 
-    protected $description = 'Give a player the paid, ad-free plan after a manual payment';
+    protected $description = 'Give a user the paid, ad-free account after a cash payment';
 
     public function handle(PaymentService $payments): int
     {

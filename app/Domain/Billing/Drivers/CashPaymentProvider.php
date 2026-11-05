@@ -9,15 +9,16 @@ use App\Domain\Billing\PaymentNotification;
 use Illuminate\Http\Request;
 
 /**
- * Placeholder until a gateway is chosen: no online checkout. Payments are
- * received outside the platform and confirmed by an administrator
- * (PaymentService::markPaid), as advertising purchases are today.
+ * Cash only, until another payment method is configured (owner decision
+ * 2026-11-05): no online checkout. The player pays in cash, and an
+ * administrator records it (Admin → Paid accounts, or plans:grant), which
+ * calls PaymentService::grantManually.
  */
-class ManualPaymentProvider implements PaymentProvider
+class CashPaymentProvider implements PaymentProvider
 {
     public function name(): string
     {
-        return 'manual';
+        return 'cash';
     }
 
     public function supportsOnlineCheckout(): bool
@@ -27,7 +28,7 @@ class ManualPaymentProvider implements PaymentProvider
 
     public function startCheckout(Payment $payment, string $returnUrl): CheckoutResult
     {
-        return new CheckoutResult(instructions: __('billing.manual_instructions'));
+        return new CheckoutResult(instructions: __('billing.cash_instructions'));
     }
 
     public function verifyWebhook(Request $request): ?PaymentNotification
@@ -37,6 +38,6 @@ class ManualPaymentProvider implements PaymentProvider
 
     public function refund(Payment $payment): void
     {
-        // Refunds are made outside the platform; PaymentService records them.
+        // Cash refunds are handed back in person.
     }
 }

@@ -76,7 +76,7 @@ return [
                 'Everything in the free account',
                 'No ads while you play',
                 'Rooms you host are ad-free for everyone',
-                'Coming soon: price to be announced',
+                'Paid in cash for now; other payment methods later',
             ],
         ],
     ],
@@ -202,6 +202,7 @@ return [
             ],
         ],
         'rules' => [
+            'Packs are for advertiser accounts only. Player accounts are free or paid (see Accounts) and never buy packs.',
             'Advertisers pay per pack, not per click.',
             'Each pack contains a number of ad displays and sponsored questions or rounds. Only confirmed displays are counted.',
             'Every purchase gets an invoice, and advertisers can see a statement of what was used.',

@@ -70,7 +70,7 @@
 - New account plan on `users`: `free` (default) or `paid`, with `plan_expires_at`. Payment for player plans needs a gateway, which is still to be chosen (assessment D7).
 - A **paid** player is never offered a banner (`reveal`, `post_game`, `lobby`), and no impression is ever billed for them.
 - Rooms (**decided, built**): when the **host** has a paid account, the room has no banners and no sponsored questions or rounds, so a whole class plays ad-free. In a free host's room, a paid guest sees no banners, but sponsored questions and rounds stay (they are shared game content), always labelled "Sponsored".
-- **Built:** `users.plan` / `plan_expires_at`, `User::hasPaidPlan()`, the abstract `PaymentProvider` with a manual driver, and `php artisan plans:grant {email} {reference} --months=N`. Still to build: a player-facing "Go ad-free" page once a gateway is chosen.
+- **Built:** `users.plan` / `plan_expires_at`, `User::hasPaidPlan()`, the abstract `PaymentProvider` with a cash driver, **Admin → Paid accounts** to record cash payments, and `php artisan plans:grant {email} {receipt} --months=N`. Still to build: a player-facing "Go ad-free" page.
 - The Terms page already describes both plans (`/terms#accounts`); the paid plan is marked "coming soon".
 
 ### S7. Safe for young players
@@ -160,13 +160,15 @@ Decided on 2026-11-05 (second round):
 | --- | --- | --- |
 | Policy breaches and unused credits | **1st** breach: written warning. **2nd**: our team calls the advertiser. **3rd**: the advertiser account is suspended. Each breach stops the campaign; credits are kept but **frozen** while suspended. | `PolicyEnforcementService`, Admin → Advertising (breach button, calls to make, reactivate), advertiser notices, Terms |
 | Paid host | **Yes:** a room hosted by a paid account is ad-free for everyone (no banners, no sponsored questions or rounds). | `AdService::offer`, `GameEngine::start` |
-| Payment provider | **Abstract for now**, real gateway later. | `PaymentProvider` interface, `ManualPaymentProvider`, `PaymentService`, `plans:grant` command |
+| Payment provider | **Abstract interface; cash only for now**, other methods later. | `PaymentProvider` interface, `CashPaymentProvider`, `PaymentService`, **Admin → Paid accounts**, `plans:grant` command |
+| Who buys packs | Packs (Essential, Professional, Enterprise) are for **advertiser accounts only**. Player/user accounts are free (with ads) or paid (ad-free). | Terms wording; packs stay in Admin → Advertising |
+| Paid-account price | **A platform setting**, not code or env. | Game settings → Accounts (`accounts.paid_plan_price_minor`, `accounts.paid_plan_currency`) |
 
 Still open:
 
-1. Pack contents and prices (`[PACK DETAILS]`), and the player paid-plan price (`FAKKROUN_PLAN_PRICE_MINOR`; 0 means not on sale).
-2. Which payment gateway to implement behind `PaymentProvider`.
-3. Legal review of the Terms of use before launch (the page shows a draft notice until `FAKKROUN_TERMS_DRAFT=false`).
+1. Pack contents and prices (`[PACK DETAILS]`); set the paid-account price in Game settings (0 means not on sale).
+2. Which non-cash payment method to add later, behind `PaymentProvider`.
+3. Legal review of the Terms of use before launch, planned. This is the first version; the page shows a draft notice until `FAKKROUN_TERMS_DRAFT=false`.
 
 ## 7. Delivery slices
 

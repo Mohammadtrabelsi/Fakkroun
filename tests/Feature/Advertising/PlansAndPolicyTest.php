@@ -12,7 +12,7 @@ use App\Domain\Advertising\PolicyEnforcementService;
 use App\Domain\Advertising\SponsoredQuestionService;
 use App\Domain\Advertising\WalletService;
 use App\Domain\Billing\Contracts\PaymentProvider;
-use App\Domain\Billing\Drivers\ManualPaymentProvider;
+use App\Domain\Billing\Drivers\CashPaymentProvider;
 use App\Domain\Billing\Enums\PaymentStatus;
 use App\Domain\Billing\Models\Payment;
 use App\Domain\Billing\PaymentNotification;
@@ -68,10 +68,50 @@ class PlansAndPolicyTest extends GameplayTestCase
         return [$room->fresh(), $game->gameQuestions()->where('position', 1)->firstOrFail()];
     }
 
-    public function test_the_payment_provider_is_abstract_and_manual_by_default(): void
+    public function test_the_payment_provider_is_abstract_and_cash_only_for_now(): void
     {
-        $this->assertInstanceOf(ManualPaymentProvider::class, app(PaymentProvider::class));
+        $this->assertInstanceOf(CashPaymentProvider::class, app(PaymentProvider::class));
+        $this->assertSame('cash', app(PaymentProvider::class)->name());
         $this->assertFalse(app(PaymentProvider::class)->supportsOnlineCheckout());
+    }
+
+    public function test_the_paid_account_price_is_a_platform_setting(): void
+    {
+        $player = $this->player();
+
+        try {
+            app(PaymentService::class)->startPlanPurchase($player, 1, '/');
+            $this->fail('Not on sale while the price is 0.');
+        } catch (DomainActionException) {
+        }
+
+        app(PlatformSettings::class)->update(['accounts' => ['paid_plan_price_minor' => 1500]]);
+        [$payment] = app(PaymentService::class)->startPlanPurchase($player, 2, '/');
+
+        $this->assertSame(3000, $payment->amount_minor);
+        $this->assertSame('cash', $payment->provider);
+        $this->assertFalse($player->fresh()->hasPaidPlan(), 'Pending until the cash is recorded.');
+    }
+
+    public function test_admins_record_cash_payments_on_the_paid_accounts_screen(): void
+    {
+        app(PlatformSettings::class)->update(['accounts' => ['paid_plan_price_minor' => 1500]]);
+        $player = $this->player();
+
+        \Livewire\Livewire::actingAs($this->admin)->test('pages::admin.plans')
+            ->set('email', $player->email)->set('months', 2)->set('receipt', 'R-001')
+            ->call('record')
+            ->assertHasNoErrors();
+
+        $this->assertTrue($player->fresh()->hasPaidPlan());
+        $this->assertSame(3000, Payment::query()->where('provider_reference', 'R-001')->value('amount_minor'));
+
+        \Livewire\Livewire::actingAs($this->admin)->test('pages::admin.plans')
+            ->set('email', $player->email)->set('receipt', 'R-001')
+            ->call('record')
+            ->assertHasErrors('receipt');
+
+        $this->actingAs($this->player('Other'))->get(route('admin.plans'))->assertForbidden();
     }
 
     public function test_a_manual_payment_grants_the_paid_plan_once(): void
@@ -103,7 +143,7 @@ class PlansAndPolicyTest extends GameplayTestCase
     public function test_verified_notifications_must_match_the_amount(): void
     {
         $player = $this->player();
-        $payment = Payment::query()->create(['user_id' => $player->id, 'purpose' => 'player_plan', 'provider' => 'manual', 'provider_reference' => 'GW-1', 'amount_minor' => 500, 'currency' => 'TND', 'metadata' => ['months' => 1]]);
+        $payment = Payment::query()->create(['user_id' => $player->id, 'purpose' => 'player_plan', 'provider' => 'cash', 'provider_reference' => 'GW-1', 'amount_minor' => 500, 'currency' => 'TND', 'metadata' => ['months' => 1]]);
 
         $this->assertNull(app(PaymentService::class)->handle(new PaymentNotification('GW-1', PaymentStatus::Paid, 1, 'TND')));
         $this->assertFalse($player->fresh()->hasPaidPlan());

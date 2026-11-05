@@ -76,7 +76,7 @@ return [
                 'Tout le compte gratuit',
                 'Aucune publicité pendant le jeu',
                 'Les salles que vous créez sont sans publicité pour tous',
-                'Bientôt disponible : prix communiqué plus tard',
+                'Paiement en espèces pour le moment ; d’autres moyens plus tard',
             ],
         ],
     ],
@@ -202,6 +202,7 @@ return [
             ],
         ],
         'rules' => [
+            'Les offres sont réservées aux comptes annonceurs. Les comptes joueurs sont gratuits ou payants (voir Comptes) et n’achètent jamais d’offre.',
             'Les annonceurs paient par offre, pas au clic.',
             'Chaque offre comprend un nombre d’affichages et de questions ou manches sponsorisées. Seuls les affichages confirmés sont comptés.',
             'Chaque achat donne lieu à une facture, et l’annonceur peut consulter un relevé de sa consommation.',

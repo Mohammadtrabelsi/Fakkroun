@@ -196,6 +196,9 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/partners', 'pages::admin.partners')
                 ->middleware('can:manage advertising')
                 ->name('admin.partners');
+            Route::livewire('/admin/plans', 'pages::admin.plans')
+                ->middleware('can:manage platform settings')
+                ->name('admin.plans');
             Route::livewire('/admin/advertising', 'pages::admin.advertising')
                 ->middleware('can:manage advertising')
                 ->name('admin.advertising');
