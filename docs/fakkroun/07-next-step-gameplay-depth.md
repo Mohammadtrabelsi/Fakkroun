@@ -31,6 +31,7 @@ The MVP plays a complete, fair game. These items bring it to the full spec.
 
 ## 6. History, leaderboards, achievements
 
+- **Done:** `/play/history` lists finished games with a link to each results page. **Done:** achievements (`user_achievements`: first game, first win, 10 games, perfect game, hat-trick, quick thinker). Still to do: per-category leaderboards and a rollup.
 - `/play/history`: past games with per-question review (question text from the revision snapshot at `question_version`, so later edits don't change history).
 - Global and per-category leaderboards (weekly and all-time), computed from `game_results` by a scheduled rollup.
 - Achievements (`user_achievements`): first win, 10 games, perfect game, category streaks.

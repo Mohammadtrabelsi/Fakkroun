@@ -71,6 +71,7 @@ Route::middleware('auth')->group(function () {
         Route::middleware('can:play games')->group(function () {
             Route::livewire('/play', 'pages::rooms.create')->name('rooms.create');
             Route::livewire('/play/join', 'pages::rooms.join')->name('rooms.join');
+            Route::livewire('/play/history', 'pages::rooms.history')->name('rooms.history');
             Route::livewire('/rooms/{room}', 'pages::rooms.show')->name('rooms.show');
             Route::livewire('/rooms/{room}/results', 'pages::rooms.results')->name('rooms.results');
             // Shareable invitation link (spec §12.2); guests are sent to log in first.

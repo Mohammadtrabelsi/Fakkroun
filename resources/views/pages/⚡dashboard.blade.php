@@ -118,17 +118,46 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
                     <a href="{{ route('questions.submit') }}" wire:navigate class="btn">{{ __('questions.submit.title') }}</a>
                 @endcan
             </div>
-            @php($recent = \App\Domain\Gameplay\Models\GameResult::query()->where('user_id', auth()->id())->with('game.room:id,name')->latest('id')->limit(5)->get())
+            @php
+                $playerStats = app(\App\Domain\Gameplay\LeaderboardService::class)->stats(auth()->user());
+                $achievements = app(\App\Domain\Gameplay\AchievementService::class)->for(auth()->user());
+                $recent = \App\Domain\Gameplay\Models\GameResult::query()->where('user_id', auth()->id())->with('game.room:id,ulid,name')->latest('id')->limit(5)->get();
+            @endphp
+            <div class="ms-row-10 ms-wrap">
+                @foreach (['games', 'wins', 'best', 'correct_rate'] as $key)
+                    <div class="card ms-flex-1" style="min-width: 140px;">
+                        <div class="card-kicker">{{ __('play.profile.'.$key) }}</div>
+                        <div class="stat-value">{{ $key === 'correct_rate' ? $playerStats[$key].' %' : number_format($playerStats[$key]) }}</div>
+                    </div>
+                @endforeach
+            </div>
+            <div>
+                <div class="ds-label">{{ __('progress.achievements_title') }}</div>
+                @if ($achievements->isEmpty())
+                    <p class="text-muted ms-fs-13">{{ __('progress.no_achievements') }}</p>
+                @else
+                    <div class="ms-row-10 ms-wrap">
+                        @foreach ($achievements as $achievement)
+                            <span class="tag tag-accent" title="{{ __('progress.achievements.'.$achievement->key.'.description') }}">{{ __('progress.achievements.'.$achievement->key.'.name') }}</span>
+                        @endforeach
+                    </div>
+                @endif
+            </div>
             @if ($recent->isNotEmpty())
                 <div>
                     <div class="ds-label">{{ __('play.dashboard.recent') }}</div>
                     <ul class="ms-stack-16 ms-fs-13">
                         @foreach ($recent as $result)
-                            <li>{{ $result->game?->room?->name }} · #{{ $result->rank }} · {{ __('play.dashboard.points', ['points' => $result->score]) }}</li>
+                            <li>@if ($result->game?->room && $result->game->status === \App\Domain\Gameplay\Models\Game::COMPLETED)<a href="{{ route('rooms.results', $result->game->room) }}" wire:navigate>{{ $result->game->room->name }}</a>@else{{ $result->game?->room?->name }}@endif · #{{ $result->rank }} · {{ __('play.dashboard.points', ['points' => $result->score]) }}</li>
                         @endforeach
                     </ul>
                 </div>
             @endif
+            <div class="ms-row-10 ms-wrap ms-fs-13">
+                <a href="{{ route('rooms.history') }}" wire:navigate>{{ __('progress.history.title') }} &rarr;</a>
+                <a href="{{ route('players.show', auth()->user()) }}" wire:navigate>{{ __('progress.my_profile') }} &rarr;</a>
+                <a href="{{ route('leaderboard') }}" wire:navigate>{{ __('play.leaderboard.title') }} &rarr;</a>
+            </div>
         </div>
     @endcan
 

@@ -442,6 +442,9 @@ class GameEngine
         $game->save();
 
         Room::query()->whereKey($game->room_id)->update(['status' => RoomStatus::Completed->value]);
+
+        // Achievements never block the end of a game: a failure is reported, not thrown.
+        rescue(fn () => app(AchievementService::class)->awardFor($game), report: true);
     }
 
     /**

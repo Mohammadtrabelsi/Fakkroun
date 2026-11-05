@@ -115,6 +115,7 @@ return [
         'join_room' => 'Join :name',
     ],
     'game2' => [
+        'keyboard_hint' => 'Tip: press 1–4 or A–D to answer.',
         'waiting_title' => 'Waiting for players',
         'code_label' => 'Room code',
         'timer' => ':seconds seconds left',
