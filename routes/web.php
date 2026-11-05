@@ -80,6 +80,11 @@ Route::middleware('auth')->group(function () {
                 ->name('rooms.invitation');
         });
 
+        // Advertiser dashboard (spec §20); ownership is checked in the page.
+        Route::livewire('/advertiser', 'pages::advertiser.dashboard')
+            ->middleware('can:manage own campaigns')
+            ->name('advertiser.dashboard');
+
         Route::middleware('can:submit questions')->group(function () {
             Route::livewire('/community/submit', 'pages::questions.submit')->name('questions.submit');
             Route::livewire('/questions/mine', 'pages::questions.mine')->name('questions.mine');
@@ -189,6 +194,12 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/partners', 'pages::admin.partners')
                 ->middleware('can:manage advertising')
                 ->name('admin.partners');
+            Route::livewire('/admin/advertising', 'pages::admin.advertising')
+                ->middleware('can:manage advertising')
+                ->name('admin.advertising');
+            Route::livewire('/admin/analytics', 'pages::admin.analytics')
+                ->middleware('can:view admin dashboard')
+                ->name('admin.analytics');
             Route::livewire('/admin/moderators', 'pages::admin.moderators')
                 ->middleware('can:manage moderators')
                 ->name('admin.moderators');

@@ -60,6 +60,20 @@ return [
             'skip_duplicates' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
         ],
 
+        'advertising' => [
+            'enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            // Never an ad on every question by default (spec §17.2): one reveal in N.
+            'every_n_questions' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100']],
+            'max_per_player_per_game' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:100']],
+            'min_seconds_between' => ['type' => 'int', 'default' => 45, 'rules' => ['integer', 'min:0', 'max:3600']],
+            'max_sponsored_per_game' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:20']],
+            // Prices are data, not code (spec §19): earned per consumed unit, in minor units.
+            'impression_price_minor' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'sponsored_question_price_minor' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
+            'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+        ],
+
         'translations' => [
             // fallback: serve the fallback language when the player's language has no approved translation.
             // exclude: skip questions without an approved translation in the player's language.

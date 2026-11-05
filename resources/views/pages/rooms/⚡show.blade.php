@@ -1,6 +1,8 @@
 <?php
 
+use App\Domain\Advertising\AdService;
 use App\Domain\Gameplay\Enums\RoomStatus;
+use App\Domain\Gameplay\Models\GameQuestion;
 use App\Domain\Gameplay\GameEngine;
 use App\Domain\Gameplay\Models\Room;
 use App\Domain\Gameplay\RoomService;
@@ -73,6 +75,15 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
         }
     }
 
+    /**
+     * Called by the browser once the ad has really been on screen. The
+     * server-issued token makes it single-use; billing happens only here.
+     */
+    public function confirmImpression(string $token, AdService $ads): void
+    {
+        $ads->confirm($token, auth()->user());
+    }
+
     public function leave(RoomService $rooms): void
     {
         $rooms->leave($this->room, auth()->user());
@@ -85,8 +96,17 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
         $rooms = app(RoomService::class);
         $game = $this->room->game;
 
+        $state = $game ? app(GameEngine::class)->state($game, auth()->user()) : null;
+        $ad = null;
+
+        if ($state !== null && $state['phase'] === 'reveal') {
+            $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $state['position'])->with('question')->first();
+            $ad = $gq ? app(AdService::class)->offer($this->room, $gq, auth()->user())?->load('creative') : null;
+        }
+
         return [
-            'state' => $game ? app(GameEngine::class)->state($game, auth()->user()) : null,
+            'ad' => $ad,
+            'state' => $state,
             'players' => $this->room->players()->get(['users.id', 'users.name', 'users.avatar_path']),
             'isHost' => $this->room->host_id === auth()->id(),
             'ready' => $rooms->isReady($this->room),
@@ -175,6 +195,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                     <div class="flex flex-wrap items-center justify-between gap-4">
                         <div class="flex flex-wrap items-center gap-3">
                             <span class="inline-flex items-center gap-2 rounded-full bg-tint-sea px-3.5 py-2 text-[15px] font-semibold text-[#0B5A55]">{{ $state['category'] }} · {{ __('questions.difficulty.'.$state['question']['difficulty']) }}</span>
+                            @if ($state['sponsor'])<span class="rounded-full bg-sun px-3 py-1.5 text-sm font-semibold text-ink">{{ __('advertising.sponsored_by', ['name' => $state['sponsor']]) }}</span>@endif
                             <span class="text-sea-mist">{{ __('play.game.question_of', ['n' => $state['position'], 'total' => $state['total']]) }}</span>
                         </div>
                         @if ($state['phase'] === 'question')
@@ -242,6 +263,22 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                                 <span class="text-sm text-ink-soft">{{ __('play.game.next_soon') }}</span>
                             </div>
                         </section>
+
+                        @if ($ad && $ad->creative)
+                            {{-- Ad below the results, never over answers or the timer (spec §17.2). --}}
+                            <aside aria-label="{{ __('advertising.sponsored') }}" class="flex flex-wrap items-center gap-4 rounded-2xl border border-sea-line bg-sea-deep-2 p-4"
+                                   wire:key="ad-{{ $ad->id }}"
+                                   x-data
+                                   x-init="const seen = new IntersectionObserver((entries) => { if (entries[0].intersectionRatio >= 0.5) { seen.disconnect(); setTimeout(() => $wire.confirmImpression(@js($ad->token)), 1000) } }, { threshold: [0.5] }); seen.observe($el)">
+                                <span class="rounded-full bg-sun px-2.5 py-0.5 text-xs font-bold text-ink uppercase">{{ __('advertising.sponsored') }}</span>
+                                @if ($ad->creative->imageUrl())<img src="{{ $ad->creative->imageUrl() }}" alt="{{ $ad->creative->alt_text }}" class="h-12 w-auto rounded-lg">@endif
+                                <div class="flex min-w-0 flex-1 flex-col">
+                                    <b>{{ $ad->creative->headline }}</b>
+                                    @if ($ad->creative->body)<span class="text-sm text-sea-mist">{{ $ad->creative->body }}</span>@endif
+                                </div>
+                                @if ($ad->creative->link_url)<a href="{{ $ad->creative->link_url }}" target="_blank" rel="noopener noreferrer sponsored" class="fk-btn border-2 border-sea-line text-sand no-underline">{{ __('advertising.learn_more') }}</a>@endif
+                            </aside>
+                        @endif
                     @else
                         <p class="m-0 text-[15px] text-sea-mist">{{ __('play.game2.hint') }}@if ($state['my_choice_id']) · <b class="text-sun">{{ __('play.game.locked_in') }}</b>@endif</p>
                     @endif

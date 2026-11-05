@@ -28,6 +28,8 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
 
     public string $rejectReason = '';
 
+    public string $sponsorCampaign = '';
+
     /** @var array<int, string> */
     public array $warnings = [];
 
@@ -38,6 +40,7 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
 
         if ($question?->exists) {
             $this->question = $question;
+            $this->sponsorCampaign = (string) ($question->campaign_id ?? '');
             $this->fillFromQuestion();
         }
     }
@@ -165,6 +168,20 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
     }
 
     /**
+     * Sponsored question assignment (spec §18.3); never changes the content.
+     */
+    public function saveSponsor(\App\Domain\Advertising\SponsoredQuestionService $sponsored): void
+    {
+        $this->authorize('manage advertising');
+
+        $campaign = $this->sponsorCampaign === '' ? null
+            : \App\Domain\Advertising\Models\Campaign::query()->findOrFail((int) $this->sponsorCampaign);
+
+        $this->question = $sponsored->assign($this->question, $campaign, auth()->user());
+        $this->toast(__('advertising.sponsor_saved'));
+    }
+
+    /**
      * @return array<int, string>
      */
     public function availableActions(): array
@@ -228,6 +245,20 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
                 @endforeach
             </div>
         </div>
+
+        @can('manage advertising')
+            <form wire:submit="saveSponsor" class="card ms-mt16-stack-16">
+                <h3 class="ms-fs-18">{{ __('advertising.sponsorship') }}</h3>
+                <p class="text-muted ms-fs-13">{{ __('advertising.sponsorship_hint') }}</p>
+                <select wire:model="sponsorCampaign" class="input" aria-label="{{ __('advertising.campaign') }}">
+                    <option value="">{{ __('advertising.not_sponsored') }}</option>
+                    @foreach (\App\Domain\Advertising\Models\Campaign::query()->with('advertiser')->whereNotIn('status', ['rejected', 'completed'])->orderBy('name')->get() as $c)
+                        <option value="{{ $c->id }}">{{ $c->advertiser->name }} — {{ $c->name }}</option>
+                    @endforeach
+                </select>
+                <div><button type="submit" class="btn">{{ __('categories.save_changes') }}</button></div>
+            </form>
+        @endcan
 
         @foreach ($translations as $code => $text)
             @php($translation = $question->translation($code))

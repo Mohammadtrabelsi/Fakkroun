@@ -110,7 +110,7 @@ new #[Layout('layouts::app')] #[Title('Game settings')] class extends Component
                             <x-text-input
                                 wire:model="values.{{ $group }}.{{ $name }}"
                                 :id="$id"
-                                type="number"
+                                :type="$definition['type'] === 'int' ? 'number' : 'text'"
                                 :error="$errors->first('values.'.$group.'.'.$name)"
                             />
                         </div>

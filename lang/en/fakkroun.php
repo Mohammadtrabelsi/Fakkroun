@@ -63,6 +63,18 @@ return [
             'status_draft' => 'Draft',
             'status_pending' => 'Waiting for review',
         ],
+        'advertising' => [
+            'title' => 'Advertising',
+            'enabled' => 'Show advertising in games',
+            'every_n_questions' => 'Show an ad after one question in',
+            'max_per_player_per_game' => 'Most ads a player sees per game',
+            'min_seconds_between' => 'Seconds between two ads for the same player',
+            'max_sponsored_per_game' => 'Sponsored questions per game (at most)',
+            'impression_price_minor' => 'Price per impression (minor units)',
+            'sponsored_question_price_minor' => 'Price per sponsored-question delivery (minor units)',
+            'currency' => 'Currency (ISO code)',
+            'low_credit_threshold' => 'Warn advertisers when credits fall below',
+        ],
         'translations' => [
             'title' => 'Question languages',
             'missing_policy' => 'When a question has no approved translation in the player’s language',

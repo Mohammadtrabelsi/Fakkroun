@@ -63,6 +63,18 @@ return [
             'status_draft' => 'Brouillon',
             'status_pending' => 'En attente de validation',
         ],
+        'advertising' => [
+            'title' => 'Publicité',
+            'enabled' => 'Afficher la publicité dans les parties',
+            'every_n_questions' => 'Afficher une publicité après une question sur',
+            'max_per_player_per_game' => 'Nombre maximum de publicités par joueur et par partie',
+            'min_seconds_between' => 'Secondes entre deux publicités pour un même joueur',
+            'max_sponsored_per_game' => 'Questions sponsorisées par partie (au maximum)',
+            'impression_price_minor' => 'Prix par impression (unités mineures)',
+            'sponsored_question_price_minor' => 'Prix par question sponsorisée diffusée (unités mineures)',
+            'currency' => 'Devise (code ISO)',
+            'low_credit_threshold' => 'Prévenir les annonceurs sous ce nombre de crédits',
+        ],
         'translations' => [
             'title' => 'Langues des questions',
             'missing_policy' => 'Si une question n’a pas de traduction approuvée dans la langue du joueur',

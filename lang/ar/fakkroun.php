@@ -63,6 +63,18 @@ return [
             'status_draft' => 'مسودة',
             'status_pending' => 'بانتظار المراجعة',
         ],
+        'advertising' => [
+            'title' => 'الإعلانات',
+            'enabled' => 'عرض الإعلانات في الألعاب',
+            'every_n_questions' => 'عرض إعلان بعد سؤال واحد من كل',
+            'max_per_player_per_game' => 'أقصى عدد إعلانات للاعب في اللعبة',
+            'min_seconds_between' => 'الثواني بين إعلانين للاعب نفسه',
+            'max_sponsored_per_game' => 'الأسئلة المرعية في اللعبة (كحد أقصى)',
+            'impression_price_minor' => 'سعر الظهور (بالوحدات الصغرى)',
+            'sponsored_question_price_minor' => 'سعر بث السؤال المرعي (بالوحدات الصغرى)',
+            'currency' => 'العملة (رمز ISO)',
+            'low_credit_threshold' => 'تنبيه المعلنين عندما يقل الرصيد عن',
+        ],
         'translations' => [
             'title' => 'لغات الأسئلة',
             'missing_policy' => 'عندما لا تتوفر ترجمة معتمدة للسؤال بلغة اللاعب',

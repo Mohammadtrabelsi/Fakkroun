@@ -37,3 +37,6 @@ if (config('backup.schedule.enabled')) {
 // Fakkroun gameplay: advance games nobody is polling, and close stale lobbies.
 Schedule::command('games:advance')->everyFiveSeconds()->withoutOverlapping();
 Schedule::command('rooms:expire')->everyFiveMinutes()->withoutOverlapping();
+
+// Advertising: end finished campaigns and reconcile events, ledger and balances.
+Schedule::command('advertising:reconcile')->hourly()->withoutOverlapping()->onOneServer();

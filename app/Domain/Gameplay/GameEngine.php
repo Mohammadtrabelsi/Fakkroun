@@ -2,6 +2,7 @@
 
 namespace App\Domain\Gameplay;
 
+use App\Domain\Advertising\SponsoredQuestionService;
 use App\Domain\Gameplay\Enums\RoomStatus;
 use App\Domain\Gameplay\Models\Game;
 use App\Domain\Gameplay\Models\GameQuestion;
@@ -62,13 +63,13 @@ class GameEngine
                 }
 
                 $settings = $locked->settings;
-                $questionIds = $this->selector->select(
-                    $settings['language'],
-                    $settings['category_ids'],
-                    $settings['difficulty'] === 'any' ? null : $settings['difficulty'],
-                    (int) $settings['question_count'],
-                    $playerIds,
-                );
+                $difficulty = $settings['difficulty'] === 'any' ? null : $settings['difficulty'];
+                $count = (int) $settings['question_count'];
+                $sponsored = ($settings['include_sponsored'] ?? true) && $this->settings->get('advertising.enabled')
+                    ? app(SponsoredQuestionService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, min($count - 1, (int) $this->settings->get('advertising.max_sponsored_per_game')))
+                    : [];
+                $questionIds = [...$this->selector->select($settings['language'], $settings['category_ids'], $difficulty, $count - count($sponsored), $playerIds), ...$sponsored];
+                shuffle($questionIds);
 
                 if ($questionIds === []) {
                     throw new DomainActionException(__('play.errors.no_questions'));
@@ -242,6 +243,7 @@ class GameEngine
             'category' => $question->category?->name,
             'author' => $question->author?->name,
             'source' => $question->source->value,
+            'sponsor' => $question->is_sponsored ? \App\Domain\Advertising\Models\Campaign::query()->with('advertiser:id,name')->find($question->campaign_id)?->advertiser?->name : null,
             // Who has answered the current question — never which answer.
             'answered_user_ids' => $answers->pluck('user_id')->map(fn ($id) => (int) $id)->values()->all(),
             'duplicate_rule' => (bool) ($game->settings['duplicate_rule'] ?? false),
@@ -342,10 +344,16 @@ class GameEngine
     {
         $now = now();
 
-        GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->whereNull('opened_at')->update([
+        $opened = GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->whereNull('opened_at')->update([
             'opened_at' => $now,
             'deadline_at' => $now->copy()->addSeconds((int) $game->settings['seconds_per_question']),
         ]);
+
+        if ($opened > 0) {
+            // A sponsored question is billed once per room when it is shown.
+            $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->first();
+            app(SponsoredQuestionService::class)->recordDelivery($gq);
+        }
     }
 
     /**
