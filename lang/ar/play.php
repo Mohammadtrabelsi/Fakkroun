@@ -115,6 +115,7 @@ return [
         'join_room' => 'انضم إلى :name',
     ],
     'game2' => [
+        'keyboard_hint' => 'نصيحة: اضغط 1–4 أو أ–د للإجابة.',
         'waiting_title' => 'بانتظار اللاعبين',
         'code_label' => 'رمز الغرفة',
         'timer' => 'بقيت :seconds ثانية',

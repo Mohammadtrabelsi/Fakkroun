@@ -23,6 +23,12 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Player')] class extends Co
     {
         return app(LeaderboardService::class)->stats($this->user);
     }
+
+    #[Computed]
+    public function achievements()
+    {
+        return app(\App\Domain\Gameplay\AchievementService::class)->for($this->user);
+    }
 };
 ?>
 
@@ -42,4 +48,20 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Player')] class extends Co
             </div>
         @endforeach
     </div>
+    <section class="flex flex-col gap-4" aria-labelledby="achievements-title">
+        <h2 id="achievements-title" class="fk-h2 m-0 text-[28px]">{{ __('progress.achievements_title') }}</h2>
+        @if ($this->achievements->isEmpty())
+            <p class="m-0 text-ink-soft">{{ __('progress.no_achievements_public') }}</p>
+        @else
+            <ul class="m-0 grid list-none gap-3 p-0 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]">
+                @foreach ($this->achievements as $achievement)
+                    <li class="flex flex-col gap-1 rounded-3xl border border-sand-300 bg-paper p-5">
+                        <span class="font-display text-xl font-bold text-sea">{{ __('progress.achievements.'.$achievement->key.'.name') }}</span>
+                        <span class="text-sm text-ink-soft">{{ __('progress.achievements.'.$achievement->key.'.description') }}</span>
+                        <span class="text-xs text-ink-soft">{{ $achievement->achieved_at->isoFormat('ll') }}</span>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+    </section>
 </div>

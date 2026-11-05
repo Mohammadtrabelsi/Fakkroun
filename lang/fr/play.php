@@ -115,6 +115,7 @@ return [
         'join_room' => 'Rejoindre :name',
     ],
     'game2' => [
+        'keyboard_hint' => 'Astuce : appuyez sur 1–4 ou A–D pour répondre.',
         'waiting_title' => 'En attente des joueurs',
         'code_label' => 'Code de la salle',
         'timer' => 'Encore :seconds secondes',

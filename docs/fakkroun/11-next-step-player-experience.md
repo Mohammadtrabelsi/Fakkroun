@@ -3,7 +3,7 @@
 > **Priority:** medium, before public launch · **Effort:** medium · **Spec:** §22, §23
 > **Depends on:** 03
 >
-> **Update:** the player inbox, leaderboard, public profiles and 404 page are done. See [`14`](14-final-report.md) for what remains.
+> **Update:** the player inbox, leaderboard, public profiles, 404 page, game history, achievements, stats on the player home and keyboard answering are done. See [`14`](14-final-report.md) for what remains.
 
 ## Notifications for players (spec §23)
 

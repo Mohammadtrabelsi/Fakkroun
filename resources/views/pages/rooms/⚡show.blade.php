@@ -214,7 +214,15 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
 
                     <h1 class="m-0 font-display text-[clamp(26px,3.4vw,44px)] leading-[1.15] font-bold text-balance" dir="{{ $dir }}">{{ $state['question']['body'] }}</h1>
 
-                    <div class="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))]" dir="{{ $dir }}">
+                    {{-- Keyboard play: 1–4, A–D or أ ب ج د pick the answer in display order. --}}
+                    <div class="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))]" dir="{{ $dir }}"
+                         x-data="{ keys: { '1': 0, '2': 1, '3': 2, '4': 3, a: 0, b: 1, c: 2, d: 3, 'أ': 0, 'ب': 1, 'ج': 2, 'د': 3 } }"
+                         x-on:keydown.window="
+                            if ($event.ctrlKey || $event.metaKey || $event.altKey || $event.target.closest('input, textarea, select, [contenteditable]')) return;
+                            const index = keys[$event.key.toLowerCase()];
+                            const button = index === undefined ? null : $el.querySelectorAll('button[data-answer]')[index];
+                            if (button && ! button.disabled) { $event.preventDefault(); button.click(); }
+                         ">
                         @foreach ($state['question']['choices'] as $choice)
                             @php($isCorrect = $reveal && $reveal['correct_choice_id'] === $choice['id'])
                             @php($isMine = $state['my_choice_id'] === $choice['id'])
@@ -229,7 +237,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                                 };
                             @endphp
                             @php($badge = $isCorrect ? 'bg-white text-[#1F6A2C]' : ($reveal && $isMine ? 'bg-white text-wrong' : ($reveal || $state['my_choice_id'] !== null ? 'bg-sea-line text-sea-mist' : 'bg-sand-200 text-ink')))
-                            <button type="button" wire:click="answer({{ $choice['id'] }})" @disabled($state['phase'] !== 'question' || $state['my_choice_id'] !== null)
+                            <button type="button" data-answer wire:click="answer({{ $choice['id'] }})" aria-keyshortcuts="{{ $loop->iteration }}" @disabled($state['phase'] !== 'question' || $state['my_choice_id'] !== null)
                                     class="flex min-h-[76px] w-full cursor-pointer items-center gap-4 rounded-[20px] border-2 px-5 py-3.5 text-[19px] font-semibold disabled:cursor-default {{ $style }}">
                                 <span class="flex h-11 w-11 flex-none items-center justify-center rounded-xl font-display text-[22px] font-extrabold {{ $badge }}">{{ $choice['letter'] }}</span>
                                 <span class="flex-1 text-start">{{ $choice['text'] }}</span>
@@ -238,6 +246,10 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                             </button>
                         @endforeach
                     </div>
+
+                    @if ($state['phase'] === 'question' && $state['my_choice_id'] === null)
+                        <p class="m-0 text-sm text-sea-mist max-[720px]:hidden">{{ __('play.game2.keyboard_hint') }}</p>
+                    @endif
 
                     @if ($reveal)
                         @php($mine = $reveal['mine'])
