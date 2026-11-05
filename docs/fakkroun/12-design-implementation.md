@@ -37,11 +37,10 @@ Tests: `Gameplay/PlayScreensTest`, covering the lobby (create with chips and seg
 
 ## Decisions for you (the brief differs from the master specification or from the current code)
 
+Resolved and removed: B3 ("Request changes" added), B4 (per-language translations kept), B6 (AI drafting built).
+
 | # | Topic | Brief | Current | Proposal |
 | --- | --- | --- | --- | --- |
 | B1 | **Guest players** | Guests join with a nickname and a session token | Master spec §12: registered players only; `room_players.user_id` is required | Allow guests **only to join** (not to host), with a nickname, rate-limited by IP; results are not kept on any profile. Needs your confirmation, since it changes the schema and the anti-abuse model. |
 | B2 | **Room code length** | 4 characters | 6 characters, unique for the platform's lifetime | 4 characters are fine if codes are **recycled** once a room has finished (unique only among open rooms). Confirm and I'll switch. |
-| B3 | **Question statuses** | `draft / needs_review / changes_requested / approved / rejected` | `draft / pending / under_review / approved / rejected / published / unpublished` | Keep the richer lifecycle (spec §7.3) and add a **"Request changes"** action that sends the question back to its author with a note (shown as "Needs changes"). **Done** (`changes_requested`). |
-| B4 | **Questions per locale** | One row per locale | One question with per-language translations approved separately (spec §5.2/§5.4) | Keep the current model; it satisfies the brief's "provide each question in ar, fr and en". |
 | B5 | **Real time** | Reverb + Echo | Polling (MVP) | Reverb is named in the brief, so it's allowed, but it needs `composer require`/`npm install`, which can't run in this environment. Do it as soon as CI or a local PHP 8.4 is available ([`04`](04-next-step-realtime-reverb.md)). |
-| B6 | **"Draft with AI"** | `QuestionDrafter` via the Anthropic API, hidden without `ANTHROPIC_API_KEY` | Not built | **Done** with Laravel's HTTP client (no SDK dependency): `App\Domain\Ai\QuestionDrafter`, hidden without `ANTHROPIC_API_KEY`. |

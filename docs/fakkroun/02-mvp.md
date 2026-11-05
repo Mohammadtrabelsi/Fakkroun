@@ -36,7 +36,7 @@ These are listed so nobody mistakes them for finished features. Each has a next-
 
 1. **Polling instead of WebSockets.** The room page polls every second (`wire:poll`), which is simple and robust but heavier than broadcasting. → [`04`](04-next-step-realtime-reverb.md)
 2. **No QR code image yet.** The invitation link, copy, share and WhatsApp work; the QR picture needs a library. → [`05`](05-next-step-qr-codes.md)
-3. **No import screen.** The service, job and tests exist. → [`06`](06-next-step-question-import-ui.md)
+3. **No import screen.** The service, job and tests exist. (done since: **Admin → Questions → Import**)
 4. **One language per room.** Everyone plays in the room's language. Each player's own question language is a next step. → [`07`](07-next-step-gameplay-depth.md)
 5. **One difficulty or "any".** Difficulty *distribution* (e.g. 50/30/20) is a next step. → [`07`](07-next-step-gameplay-depth.md)
 6. **Game progress is driven by players' polls.** If nobody has the page open, the game simply waits. → [`07`](07-next-step-gameplay-depth.md)
@@ -125,9 +125,9 @@ Invariants the database itself guarantees:
 | 03 | [`03-next-step-run-ci.md`](03-next-step-run-ci.md) | Unblock GitHub Actions, run everything on PHP 8.4, fix what fails. **Blocking.** |
 | 04 | [`04-next-step-realtime-reverb.md`](04-next-step-realtime-reverb.md) | Replace polling with Laravel Reverb broadcasting |
 | 05 | [`05-next-step-qr-codes.md`](05-next-step-qr-codes.md) | QR codes for room invitations |
-| 06 | [`06-next-step-question-import-ui.md`](06-next-step-question-import-ui.md) | Admin import screen on top of the finished import service |
+| 06 | *(removed: done)* | Admin import screen on top of the finished import service |
 | 07 | [`07-next-step-gameplay-depth.md`](07-next-step-gameplay-depth.md) | Per-player languages, difficulty mix, scheduled game driver, history, public rooms, achievements |
-| 08 | [`08-next-step-ai-question-generation.md`](08-next-step-ai-question-generation.md) | Phase 4: AI-assisted question generation |
-| 09 | [`09-next-step-advertising-and-billing.md`](09-next-step-advertising-and-billing.md) | Phase 5: advertising, credits, impressions, ledger |
+| 08 | *(removed: done)* | Phase 4: AI-assisted question generation |
+| 09 | *(removed: done)* | Phase 5: advertising, credits, impressions, ledger |
 | 10 | [`10-next-step-analytics-and-hardening.md`](10-next-step-analytics-and-hardening.md) | Phase 6: analytics, load tests, security review, deployment |
 | 11 | [`11-next-step-player-experience.md`](11-next-step-player-experience.md) | In-app notifications for players, polish, accessibility, remaining copy |
