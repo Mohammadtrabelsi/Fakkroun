@@ -1,0 +1,42 @@
+<?php
+
+return [
+    'title' => 'Analytics',
+    'description' => 'Server-recorded activity from :from to :to. Defaults to the last 30 days.',
+    'metrics' => [
+        'games_completed' => 'Games completed',
+        'active_players' => 'Active players',
+        'answers' => 'Answers',
+        'correct_rate' => 'Correct answers',
+        'rooms_created' => 'Rooms created',
+    ],
+    'of_started' => 'of :count started',
+    'avg_players' => ':count players per game on average',
+    'duplicates' => ':count excluded as duplicates',
+    'avg_response' => 'Average answer time :seconds s',
+    'games_per_day' => 'Games started per day',
+    'peak' => 'Peak: :count',
+    'by' => [
+        'categories' => 'Category',
+        'languages' => 'Language',
+    ],
+    'no_data' => 'No data for this period yet.',
+    'question_title' => 'Questions',
+    'question_hint' => 'Hardest and easiest only include questions answered at least :min times.',
+    'lists' => [
+        'hardest' => 'Hardest',
+        'easiest' => 'Easiest',
+        'most_played' => 'Most played',
+        'most_reported' => 'Most reported',
+    ],
+    'reports' => '{1} :count report|[0,*] :count reports',
+    'bank' => 'Question bank',
+    'open_reports' => 'Open reports',
+    'ai' => 'AI drafting',
+    'ai_batches' => 'Batches / single drafts',
+    'ai_generated' => 'Questions generated',
+    'ai_accepted' => 'Kept after checks',
+    'ai_published' => 'AI questions published',
+    'ai_cost' => 'Estimated cost',
+    'open_advertising' => 'Open advertising',
+];

@@ -1,0 +1,42 @@
+<?php
+
+return [
+    'title' => 'Statistiques',
+    'description' => 'Activité enregistrée par le serveur du :from au :to. Par défaut, les 30 derniers jours.',
+    'metrics' => [
+        'games_completed' => 'Parties terminées',
+        'active_players' => 'Joueurs actifs',
+        'answers' => 'Réponses',
+        'correct_rate' => 'Bonnes réponses',
+        'rooms_created' => 'Salles créées',
+    ],
+    'of_started' => 'sur :count lancées',
+    'avg_players' => ':count joueurs par partie en moyenne',
+    'duplicates' => ':count exclues comme doublons',
+    'avg_response' => 'Temps de réponse moyen :seconds s',
+    'games_per_day' => 'Parties lancées par jour',
+    'peak' => 'Pic : :count',
+    'by' => [
+        'categories' => 'Catégorie',
+        'languages' => 'Langue',
+    ],
+    'no_data' => 'Pas encore de données pour cette période.',
+    'question_title' => 'Questions',
+    'question_hint' => 'Les plus difficiles et les plus faciles ne comptent que les questions répondues au moins :min fois.',
+    'lists' => [
+        'hardest' => 'Plus difficiles',
+        'easiest' => 'Plus faciles',
+        'most_played' => 'Plus jouées',
+        'most_reported' => 'Plus signalées',
+    ],
+    'reports' => '{0,1} :count signalement|[2,*] :count signalements',
+    'bank' => 'Banque de questions',
+    'open_reports' => 'Signalements ouverts',
+    'ai' => 'Rédaction IA',
+    'ai_batches' => 'Lots / brouillons',
+    'ai_generated' => 'Questions générées',
+    'ai_accepted' => 'Conservées après contrôle',
+    'ai_published' => 'Questions IA publiées',
+    'ai_cost' => 'Coût estimé',
+    'open_advertising' => 'Ouvrir la publicité',
+];

@@ -385,6 +385,9 @@ html.theme-ready body { transition: background-color 0.2s ease, color 0.2s ease;
 .ms-mb-0 { margin-bottom: 0; }
 .ms-note { font-size: 13px; margin: 0; }
 .ms-mb-24 { margin-bottom: 24px; }
+.ms-mb-8 { margin-bottom: 8px; }
+.ms-mb-16 { margin-bottom: 16px; }
+.tabular-nums { font-variant-numeric: tabular-nums; }
 .ms-hidden { display: none; }
 .ms-fs-13 { font-size: 13px; }
 .ms-color-text { color: var(--color-text); }

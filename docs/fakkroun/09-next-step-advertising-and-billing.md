@@ -2,6 +2,8 @@
 
 > **Priority:** after gameplay is stable · **Effort:** large · **Spec:** §17–§21
 > **Depends on:** 03, 04 (display acknowledgements ride on the real-time channel)
+>
+> **Update:** implemented in `claude/fakkroun-next-steps` (wallets, ledger, campaigns, confirmed impressions, sponsored questions, reconciliation, dashboards). Impressions are confirmed through Livewire, not Reverb. Not yet executed; see [`14`](14-final-report.md).
 
 ## Non-negotiables (spec §18)
 

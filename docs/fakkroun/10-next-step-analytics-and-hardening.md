@@ -2,6 +2,8 @@
 
 > **Priority:** before public launch · **Effort:** large · **Spec:** §24, §27, §28, §31
 > **Depends on:** 03–07 (09 for advertising analytics)
+>
+> **Update:** the analytics screen (live queries, no roll-ups yet) and the deployment guide [`13`](13-deployment.md) are done. Load tests, roll-ups, anti-cheating, Sentry and the security pass remain. See [`14`](14-final-report.md).
 
 ## Analytics (spec §24)
 
