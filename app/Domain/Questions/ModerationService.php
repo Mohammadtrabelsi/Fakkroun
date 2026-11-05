@@ -61,7 +61,7 @@ class ModerationService
             throw new AuthorizationException;
         }
 
-        return $this->transition($question, $actor, [QuestionStatus::Draft, QuestionStatus::Rejected], QuestionStatus::Pending, 'submitted', function (Question $q): void {
+        return $this->transition($question, $actor, [QuestionStatus::Draft, QuestionStatus::Rejected, QuestionStatus::ChangesRequested], QuestionStatus::Pending, 'submitted', function (Question $q): void {
             $q->submitted_at = now();
             $q->rejection_reason = null;
         });
@@ -124,6 +124,29 @@ class ModerationService
         $this->notifyAuthor($rejected, $actor, 'rejected', trim($reason));
 
         return $rejected;
+    }
+
+    /**
+     * Sends the question back to its author with a note (design brief:
+     * "Needs changes"). The author edits and resubmits it.
+     */
+    public function requestChanges(Question $question, User $actor, string $note): Question
+    {
+        $this->authorizeModeration($actor, $question);
+
+        if (trim($note) === '') {
+            throw new DomainActionException(__('questions.errors.reason_required'));
+        }
+
+        $returned = $this->transition($question, $actor, [QuestionStatus::Pending, QuestionStatus::UnderReview], QuestionStatus::ChangesRequested, 'changes_requested', function (Question $q) use ($actor, $note): void {
+            $q->reviewed_by = $actor->id;
+            $q->reviewed_at = now();
+            $q->rejection_reason = trim($note);
+        }, trim($note));
+
+        $this->notifyAuthor($returned, $actor, 'changes_requested', trim($note));
+
+        return $returned;
     }
 
     public function publish(Question $question, User $actor): Question

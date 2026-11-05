@@ -1,10 +1,13 @@
 <?php
 
+use App\Domain\Advertising\AdService;
 use App\Domain\Gameplay\Enums\RoomStatus;
+use App\Domain\Gameplay\Models\GameQuestion;
 use App\Domain\Gameplay\GameEngine;
 use App\Domain\Gameplay\Models\Room;
 use App\Domain\Gameplay\RoomService;
 use App\Models\Category;
+use App\Services\PlatformSettings;
 use App\Support\Livewire\InteractsWithToasts;
 use Illuminate\Auth\Access\AuthorizationException;
 use Livewire\Attributes\Computed;
@@ -13,11 +16,11 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 
 /**
- * Lobby, live question, answer reveal and final results of one room.
- * MVP transport: the page polls the server every second; the server decides
- * everything (see GameEngine). Reloading the page reconnects.
+ * Live room (fakkroun-design/design/Game.dc.html + Mobile.dc.html): waiting
+ * room, question, reveal; results live on their own page. MVP transport is a
+ * one-second poll; the server decides everything (GameEngine).
  */
-new #[Layout('layouts::app')] #[Title('Room')] class extends Component
+new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Component
 {
     use InteractsWithToasts;
 
@@ -34,7 +37,8 @@ new #[Layout('layouts::app')] #[Title('Room')] class extends Component
     }
 
     /**
-     * Called by wire:poll: heartbeat + let the server advance the game.
+     * wire:poll: heartbeat, let the server advance the game, leave for the
+     * results page once the game is over.
      */
     public function refresh(RoomService $rooms, GameEngine $engine): void
     {
@@ -42,7 +46,9 @@ new #[Layout('layouts::app')] #[Title('Room')] class extends Component
         $rooms->touch($this->room, auth()->user());
 
         if ($game = $this->room->game) {
-            $engine->tick($game);
+            if ($engine->tick($game)->isCompleted()) {
+                $this->redirect(route('rooms.results', $this->room), navigate: true);
+            }
         }
     }
 
@@ -58,9 +64,7 @@ new #[Layout('layouts::app')] #[Title('Room')] class extends Component
 
     public function answer(int $choiceId, GameEngine $engine): void
     {
-        $game = $this->room->game;
-
-        if ($game === null) {
+        if (($game = $this->room->game) === null) {
             return;
         }
 
@@ -69,6 +73,15 @@ new #[Layout('layouts::app')] #[Title('Room')] class extends Component
         } catch (\DomainException|AuthorizationException $e) {
             $this->toast($e->getMessage(), 'error');
         }
+    }
+
+    /**
+     * Called by the browser once the ad has really been on screen. The
+     * server-issued token makes it single-use; billing happens only here.
+     */
+    public function confirmImpression(string $token, AdService $ads): void
+    {
+        $ads->confirm($token, auth()->user());
     }
 
     public function leave(RoomService $rooms): void
@@ -83,12 +96,21 @@ new #[Layout('layouts::app')] #[Title('Room')] class extends Component
         $rooms = app(RoomService::class);
         $game = $this->room->game;
 
+        $state = $game ? app(GameEngine::class)->state($game, auth()->user()) : null;
+        $ad = null;
+
+        if ($state !== null && $state['phase'] === 'reveal') {
+            $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $state['position'])->with('question')->first();
+            $ad = $gq ? app(AdService::class)->offer($this->room, $gq, auth()->user())?->load('creative') : null;
+        }
+
         return [
-            'state' => $game ? app(GameEngine::class)->state($game, auth()->user()) : null,
+            'ad' => $ad,
+            'state' => $state,
             'players' => $this->room->players()->get(['users.id', 'users.name', 'users.avatar_path']),
             'isHost' => $this->room->host_id === auth()->id(),
             'ready' => $rooms->isReady($this->room),
-            'minPlayers' => (int) app(\App\Services\PlatformSettings::class)->get('game.min_players'),
+            'minPlayers' => (int) app(PlatformSettings::class)->get('game.min_players'),
             'categoryNames' => Category::query()->whereIn('id', (array) $this->room->setting('category_ids', []))->get()->pluck('name')->all(),
         ];
     }
@@ -96,161 +118,194 @@ new #[Layout('layouts::app')] #[Title('Room')] class extends Component
 ?>
 
 @php(extract($this->viewData))
-@php($finished = in_array($room->status, [RoomStatus::Completed, RoomStatus::Cancelled], true) && ($state === null || $state['phase'] === 'completed'))
-<div class="ms-mw-720" @unless ($finished) wire:poll.{{ (int) config('fakkroun.gameplay.poll_seconds', 1) }}s="refresh" @endunless>
-    <div class="ms-page-head">
-        <div>
-            <h2 class="ms-mb-0">{{ $room->name }}</h2>
-            <p class="text-muted ms-note">{{ __('play.room.code') }}: <strong class="ms-code-chip">{{ $room->code }}</strong> · {{ __('play.room.players', ['count' => $players->count(), 'max' => $room->max_players]) }}</p>
+@php($finished = $room->status === RoomStatus::Cancelled || ($state !== null && $state['phase'] === 'completed'))
+@php($dir = config('app.available_locales.'.$room->setting('language').'.dir', 'ltr'))
+@php($avatarColors = ['bg-sun text-ink', 'bg-leaf text-ink', 'bg-[#8FC6D0] text-ink', 'bg-[#E7B8A0] text-ink', 'bg-[#C9B6E4] text-ink'])
+<div class="min-h-[calc(100vh-80px)] bg-sea-deep text-sand" @unless ($finished) wire:poll.{{ (int) config('fakkroun.gameplay.poll_seconds', 1) }}s="refresh" @endunless>
+    <div class="mx-auto flex max-w-[1320px] flex-col gap-6 px-6 pt-8 pb-16">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-col">
+                <b class="text-xl">{{ $room->name }}</b>
+                <span class="text-sm text-sea-mist">{{ __('play.game2.code_label') }}: <b class="tracking-[0.2em] text-sun">{{ $room->code }}</b> · {{ __('play.room.players', ['count' => $players->count(), 'max' => $room->max_players]) }}</span>
+            </div>
+            @unless ($finished)
+                <button type="button" wire:click="leave" wire:confirm="{{ __('play.room.leave_confirm') }}" class="fk-btn border-2 border-sea-line text-sand">{{ __('play.room.leave') }}</button>
+            @endunless
         </div>
-        @unless ($finished)
-            <button type="button" wire:click="leave" wire:confirm="{{ __('play.room.leave_confirm') }}" class="btn">{{ __('play.room.leave') }}</button>
-        @endunless
-    </div>
 
-    @if ($room->status === RoomStatus::Cancelled)
-        <div class="card text-muted">{{ __('play.room.cancelled') }}</div>
-    @elseif ($state === null)
-        {{-- Lobby (spec §12.5) --}}
-        <div class="card ms-stack-16">
-            <div>
-                <div class="ds-label">{{ __('play.room.invite') }}</div>
-                <div class="ms-row-10 ms-wrap" x-data="{ copied: false, url: @js($room->invitationUrl()) }">
-                    <x-text-input type="text" readonly :value="$room->invitationUrl()" aria-label="{{ __('play.room.invite') }}" />
-                    <button type="button" class="btn" x-on:click="navigator.clipboard?.writeText(url); copied = true; setTimeout(() => copied = false, 2000)">
-                        <span x-show="! copied">{{ __('play.room.copy') }}</span><span x-show="copied" x-cloak>{{ __('play.room.copied') }}</span>
-                    </button>
-                    <button type="button" class="btn" x-show="navigator.share" x-cloak x-on:click="navigator.share({ title: @js($room->name), text: @js(__('play.room.share_text', ['code' => $room->code])), url })">{{ __('play.room.share') }}</button>
-                    <a class="btn" href="https://wa.me/?text={{ rawurlencode(__('play.room.share_text', ['code' => $room->code]).' '.$room->invitationUrl()) }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                </div>
-            </div>
-
-            <dl class="ms-stack-16 ms-fs-13">
-                <div><dt class="text-muted">{{ __('play.room.host') }}</dt><dd>{{ $room->host?->name }}</dd></div>
-                <div><dt class="text-muted">{{ __('play.create.categories') }}</dt><dd>{{ implode(', ', $categoryNames) }}</dd></div>
-                <div><dt class="text-muted">{{ __('play.create.question_count') }}</dt><dd>{{ $room->setting('question_count') }} · {{ __('play.room.seconds_each', ['seconds' => $room->setting('seconds_per_question')]) }}</dd></div>
-                <div><dt class="text-muted">{{ __('play.create.language') }}</dt><dd>{{ config('app.available_locales.'.$room->setting('language').'.label') }}</dd></div>
-                <div><dt class="text-muted">{{ __('play.rule.title') }}</dt><dd>{{ $room->setting('duplicate_rule') ? __('play.rule.on') : __('play.rule.off') }}</dd></div>
-            </dl>
-
-            @if ($room->setting('duplicate_rule'))
-                <div class="tag tag-neutral ms-notice">{{ __('play.rule.explanation') }}</div>
-            @endif
-
-            <div>
-                <div class="ds-label">{{ __('play.room.joined') }}</div>
-                <ul class="ms-row-10 ms-wrap">
-                    @foreach ($players as $player)
-                        <li class="ms-row-10-center" wire:key="p-{{ $player->id }}"><x-user-avatar :user="$player" /> {{ $player->name }}@if ($player->id === $room->host_id) <span class="tag tag-accent">{{ __('play.room.host') }}</span>@endif</li>
-                    @endforeach
-                </ul>
-            </div>
-
-            @if ($isHost)
-                <div>
-                    <button type="button" wire:click="start" class="btn btn-primary" @disabled(! $ready)>{{ __('play.room.start') }}</button>
-                    @unless ($ready)
-                        <p class="text-muted ms-fs-12">{{ __('play.room.waiting_for_players', ['min' => $minPlayers]) }}</p>
-                    @endunless
-                </div>
-            @else
-                <p class="text-muted">{{ __('play.room.waiting_for_host') }}</p>
-            @endif
-        </div>
-    @elseif ($state['phase'] === 'completed')
-        {{-- Final results (spec §15.1) --}}
-        <div class="card ms-stack-16">
-            <h3 class="ms-fs-18">{{ __('play.results.title') }}</h3>
-            @if ($winner = collect($state['results'])->firstWhere('rank', 1))
-                <p class="ms-fw-500">🏆 {{ __('play.results.winner', ['name' => $winner['name'], 'score' => $winner['score']]) }}</p>
-            @endif
-            <div class="table-wrap">
-                <table class="table">
-                    <thead><tr><th>#</th><th>{{ __('play.results.player') }}</th><th>{{ __('play.results.score') }}</th><th>{{ __('play.results.correct') }}</th><th>{{ __('play.results.incorrect') }}</th><th>{{ __('play.results.excluded') }}</th><th>{{ __('play.results.time') }}</th></tr></thead>
-                    <tbody>
-                        @foreach ($state['results'] as $row)
-                            <tr @class(['ms-fw-500' => $row['user_id'] === auth()->id()])>
-                                <td>{{ $row['rank'] }}</td><td>{{ $row['name'] }}</td><td>{{ $row['score'] }}</td><td>{{ $row['correct'] }}</td><td>{{ $row['incorrect'] }}</td><td>{{ $row['excluded'] }}</td><td>{{ number_format($row['total_response_ms'] / 1000, 1) }} s</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-            <div class="ms-row-10">
-                <a href="{{ route('rooms.create') }}" wire:navigate class="btn btn-primary">{{ __('play.results.play_again') }}</a>
-                <a href="{{ route('dashboard') }}" wire:navigate class="btn">{{ __('app.dashboard') }}</a>
-            </div>
-        </div>
-    @else
-        {{-- Live question / reveal (spec §13.2) --}}
-        @php($dir = config('app.available_locales.'.$room->setting('language').'.dir', 'ltr'))
-        <div class="card ms-stack-16" wire:key="q-{{ $state['position'] }}-{{ $state['phase'] }}">
-            <div class="ms-row-between">
-                <span class="text-muted">{{ __('play.game.question_of', ['n' => $state['position'], 'total' => $state['total']]) }}</span>
-                @if ($state['phase'] === 'question')
-                    <span class="play-timer" role="timer" aria-live="off"
-                          x-data="{ end: Date.now() + {{ $state['remaining_ms'] }}, left: {{ (int) ceil($state['remaining_ms'] / 1000) }} }"
-                          x-init="setInterval(() => left = Math.max(0, Math.ceil((end - Date.now()) / 1000)), 200)"
-                          x-text="left">{{ (int) ceil($state['remaining_ms'] / 1000) }}</span>
-                @else
-                    <span class="tag tag-neutral">{{ __('play.game.next_soon') }}</span>
-                @endif
-            </div>
-
-            <div class="play-question" dir="{{ $dir }}">{{ $state['question']['body'] }}</div>
-
-            <div class="play-answers" dir="{{ $dir }}">
-                @foreach ($state['question']['choices'] as $choice)
-                    @php($reveal = $state['reveal'])
-                    @php($isCorrect = $reveal && $reveal['correct_choice_id'] === $choice['id'])
-                    @php($isMine = $state['my_choice_id'] === $choice['id'])
-                    <button type="button"
-                            wire:click="answer({{ $choice['id'] }})"
-                            @disabled($state['phase'] !== 'question' || $state['my_choice_id'] !== null)
-                            @class(['play-answer', 'is-mine' => $isMine, 'is-correct' => $isCorrect, 'is-wrong' => $reveal && $isMine && ! $isCorrect])>
-                        <b>{{ $choice['letter'] }}</b>
-                        <span>{{ $choice['text'] }}</span>
-                        @if ($reveal)
-                            <small class="text-muted">{{ $reveal['distribution'][$choice['id']] ?? 0 }}@if (in_array($choice['id'], $reveal['excluded_choice_ids'], true)) · {{ __('play.game.excluded_short') }}@endif</small>
-                        @endif
-                    </button>
-                @endforeach
-            </div>
-
-            @if ($state['phase'] === 'question')
-                <p class="text-muted ms-fs-12">{{ __('play.game.answered', ['count' => $state['answered_count'], 'total' => $state['player_count']]) }}@if ($state['my_choice_id']) · {{ __('play.game.locked_in') }}@endif</p>
-            @elseif ($state['reveal'])
-                @php($mine = $state['reveal']['mine'])
-                <div class="tag {{ $mine && $mine['correct'] && ! $mine['excluded'] ? 'tag-accent' : 'tag-outline' }} ms-notice">
-                    @if (! $mine)
-                        {{ __('play.game.no_answer') }}
-                    @elseif ($mine['excluded'])
-                        {{ __('play.game.excluded', ['points' => 0]) }}
-                    @elseif ($mine['correct'])
-                        {{ __('play.game.correct', ['points' => $mine['points'], 'seconds' => number_format($mine['response_ms'] / 1000, 1)]) }}
-                    @else
-                        {{ __('play.game.wrong') }}
+        @if ($room->status === RoomStatus::Cancelled)
+            <p class="rounded-3xl bg-sea-deep-2 p-8 text-lg">{{ __('play.room.cancelled') }}</p>
+        @elseif ($state === null)
+            {{-- Waiting room --}}
+            <div class="flex flex-wrap items-start gap-6">
+                <section class="flex min-w-0 flex-[999_1_620px] flex-col items-start gap-6 rounded-[28px] bg-sea-deep-2 p-[clamp(20px,3vw,36px)]">
+                    <h1 class="fk-h2 m-0 text-[40px]">{{ __('play.game2.waiting_title') }}</h1>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-sm font-semibold tracking-[.08em] text-sun uppercase">{{ __('play.game2.code_label') }}</span>
+                        <span class="font-display text-[clamp(64px,10vw,120px)] leading-none font-extrabold tracking-[0.12em]">{{ $room->code }}</span>
+                    </div>
+                    <div class="flex w-full flex-wrap gap-2" x-data="{ copied: false, url: @js($room->invitationUrl()) }">
+                        <input type="text" readonly value="{{ $room->invitationUrl() }}" aria-label="{{ __('play.room.invite') }}" class="min-h-11 min-w-0 flex-1 rounded-xl border-2 border-sea-line bg-sea-deep px-3 text-sea-mist">
+                        <button type="button" class="fk-btn bg-sun text-ink" x-on:click="navigator.clipboard?.writeText(url); copied = true; setTimeout(() => copied = false, 2000)">
+                            <span x-show="! copied">{{ __('play.room.copy') }}</span><span x-show="copied" x-cloak>{{ __('play.room.copied') }}</span>
+                        </button>
+                        <button type="button" class="fk-btn border-2 border-sea-line text-sand" x-show="navigator.share" x-cloak x-on:click="navigator.share({ title: @js($room->name), text: @js(__('play.room.share_text', ['code' => $room->code])), url })">{{ __('play.room.share') }}</button>
+                        <a class="fk-btn border-2 border-sea-line text-sand no-underline" href="https://wa.me/?text={{ rawurlencode(__('play.room.share_text', ['code' => $room->code]).' '.$room->invitationUrl()) }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <dl class="m-0 grid w-full gap-3 text-[15px] [grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
+                        <div><dt class="text-sea-mist">{{ __('play.create.categories') }}</dt><dd class="m-0 font-semibold">{{ implode(', ', $categoryNames) }}</dd></div>
+                        <div><dt class="text-sea-mist">{{ __('play.lobby.questions') }}</dt><dd class="m-0 font-semibold">{{ $room->setting('question_count') }} · {{ __('play.room.seconds_each', ['seconds' => $room->setting('seconds_per_question')]) }}</dd></div>
+                        <div><dt class="text-sea-mist">{{ __('play.create.language') }}</dt><dd class="m-0 font-semibold">{{ config('app.available_locales.'.$room->setting('language').'.label') }}</dd></div>
+                        <div><dt class="text-sea-mist">{{ __('play.rule.title') }}</dt><dd class="m-0 font-semibold">{{ $room->setting('duplicate_rule') ? __('play.rule.on') : __('play.rule.off') }}</dd></div>
+                    </dl>
+                    @if ($room->setting('duplicate_rule'))
+                        <p class="m-0 rounded-2xl bg-sea-deep p-4 text-[15px] text-sea-mist">{{ __('play.rule.explanation') }}</p>
                     @endif
-                </div>
-                @if ($state['reveal']['explanation'])
-                    <p class="text-muted" dir="{{ $dir }}">{{ $state['reveal']['explanation'] }}</p>
-                @endif
-                @if ($state['reveal']['reference_url'])
-                    <a href="{{ $state['reveal']['reference_url'] }}" target="_blank" rel="noopener noreferrer nofollow" class="ms-fs-12">{{ __('play.game.source') }}</a>
-                @endif
-            @endif
-        </div>
+                    @if ($isHost)
+                        <button type="button" wire:click="start" class="fk-btn fk-btn-primary min-h-14 rounded-2xl px-7 text-lg" @disabled(! $ready)>{{ __('play.room.start') }}</button>
+                        @unless ($ready)<p class="m-0 text-sm text-sea-mist">{{ __('play.room.waiting_for_players', ['min' => $minPlayers]) }}</p>@endunless
+                    @else
+                        <p class="m-0 text-sea-mist">{{ __('play.room.waiting_for_host') }}</p>
+                    @endif
+                </section>
+                <aside aria-labelledby="players-h" class="flex min-w-0 flex-[1_1_300px] flex-col gap-3.5 rounded-3xl bg-sea-deep-2 p-5">
+                    <h2 id="players-h" class="m-0 text-lg font-semibold">{{ __('play.room.joined') }}</h2>
+                    <ul class="m-0 flex list-none flex-col gap-2 p-0">
+                        @foreach ($players as $index => $player)
+                            <li class="flex items-center gap-2.5 rounded-xl bg-sea-deep px-3 py-2" wire:key="p-{{ $player->id }}">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full font-bold {{ $avatarColors[$index % count($avatarColors)] }}">{{ mb_substr($player->name, 0, 1) }}</span>
+                                <span class="flex-1 font-medium">{{ $player->name }}</span>
+                                @if ($player->id === $room->host_id)<span class="rounded-full bg-sun px-2 py-0.5 text-xs font-semibold text-ink">{{ __('play.room.host') }}</span>@endif
+                            </li>
+                        @endforeach
+                    </ul>
+                </aside>
+            </div>
+        @elseif ($state['phase'] === 'completed')
+            <div class="flex flex-col items-start gap-4 rounded-[28px] bg-sea-deep-2 p-8">
+                <h1 class="fk-h2 m-0 text-[40px]">{{ __('play.results2.title') }}</h1>
+                <a href="{{ route('rooms.results', $room) }}" wire:navigate class="fk-btn fk-btn-primary min-h-14 rounded-2xl px-7 text-lg">{{ __('play.game2.see_results') }}</a>
+            </div>
+        @else
+            {{-- Question / reveal --}}
+            @php($reveal = $state['reveal'])
+            @php($answered = count($state['answered_user_ids']))
+            <div class="flex flex-wrap items-start gap-6" wire:key="q-{{ $state['position'] }}-{{ $state['phase'] }}">
+                <main class="flex min-w-0 flex-[999_1_620px] flex-col gap-6">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span class="inline-flex items-center gap-2 rounded-full bg-tint-sea px-3.5 py-2 text-[15px] font-semibold text-[#0B5A55]">{{ $state['category'] }} · {{ __('questions.difficulty.'.$state['question']['difficulty']) }}</span>
+                            @if ($state['sponsor'])<span class="rounded-full bg-sun px-3 py-1.5 text-sm font-semibold text-ink">{{ __('advertising.sponsored_by', ['name' => $state['sponsor']]) }}</span>@endif
+                            <span class="text-sea-mist">{{ __('play.game.question_of', ['n' => $state['position'], 'total' => $state['total']]) }}</span>
+                        </div>
+                        @if ($state['phase'] === 'question')
+                            @php($seconds = (int) ceil($state['remaining_ms'] / 1000))
+                            <div class="relative h-[84px] w-[84px]"
+                                 x-data="{ end: Date.now() + {{ $state['remaining_ms'] }}, total: {{ max(1, $state['duration_ms']) }}, left: {{ $seconds }}, frac: {{ $state['duration_ms'] > 0 ? round($state['remaining_ms'] / $state['duration_ms'], 3) : 0 }} }"
+                                 x-init="setInterval(() => { const ms = Math.max(0, end - Date.now()); left = Math.ceil(ms / 1000); frac = ms / total }, 200)">
+                                <svg viewBox="0 0 84 84" class="absolute inset-0 -rotate-90" aria-hidden="true">
+                                    <circle cx="42" cy="42" r="36" fill="none" stroke="#1E525B" stroke-width="8"/>
+                                    <circle cx="42" cy="42" r="36" fill="none" stroke="#F2A33A" stroke-width="8" stroke-linecap="round" stroke-dasharray="226.2" :stroke-dashoffset="226.2 * (1 - frac)" stroke-dashoffset="{{ 226.2 * (1 - ($state['duration_ms'] > 0 ? $state['remaining_ms'] / $state['duration_ms'] : 0)) }}"/>
+                                </svg>
+                                <span role="timer" :aria-label="@js(__('play.game2.timer', ['seconds' => '__S__'])).replace('__S__', left)" aria-label="{{ __('play.game2.timer', ['seconds' => $seconds]) }}" class="absolute inset-0 flex items-center justify-center font-display text-[30px] font-extrabold" x-text="left">{{ $seconds }}</span>
+                            </div>
+                        @endif
+                    </div>
 
-        <div class="card ms-mt16-stack-16">
-            <h3 class="ms-fs-18">{{ __('play.game.leaderboard') }}</h3>
-            <ol class="ms-stack-16">
-                @foreach ($state['leaderboard'] as $row)
-                    <li class="ms-row-between ms-fs-13" @class(['ms-fw-500' => $row['user_id'] === auth()->id()])>
-                        <span>{{ $loop->iteration }}. {{ $row['name'] }}@if ($row['left']) <span class="text-muted">({{ __('play.game.left') }})</span>@endif</span>
-                        <span>{{ $row['score'] }}</span>
-                    </li>
-                @endforeach
-            </ol>
-        </div>
-    @endif
+                    <h1 class="m-0 font-display text-[clamp(26px,3.4vw,44px)] leading-[1.15] font-bold text-balance" dir="{{ $dir }}">{{ $state['question']['body'] }}</h1>
+
+                    <div class="grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))]" dir="{{ $dir }}">
+                        @foreach ($state['question']['choices'] as $choice)
+                            @php($isCorrect = $reveal && $reveal['correct_choice_id'] === $choice['id'])
+                            @php($isMine = $state['my_choice_id'] === $choice['id'])
+                            @php($tag = $isCorrect ? __('play.game2.correct_tag') : ($isMine ? __('play.game2.your_answer') : null))
+                            @php
+                                $style = match (true) {
+                                    $isCorrect => 'border-correct bg-correct text-white',
+                                    $reveal && $isMine => 'border-wrong bg-wrong text-white',
+                                    ! $reveal && $isMine => 'border-sun bg-sea text-paper',
+                                    $reveal || $state['my_choice_id'] !== null => 'border-sea-line bg-sea-deep-2 text-sea-mist',
+                                    default => 'border-paper bg-paper text-ink shadow-[0_5px_0_#A9B9B5] hover:bg-sand',
+                                };
+                            @endphp
+                            @php($badge = $isCorrect ? 'bg-white text-[#1F6A2C]' : ($reveal && $isMine ? 'bg-white text-wrong' : ($reveal || $state['my_choice_id'] !== null ? 'bg-sea-line text-sea-mist' : 'bg-sand-200 text-ink')))
+                            <button type="button" wire:click="answer({{ $choice['id'] }})" @disabled($state['phase'] !== 'question' || $state['my_choice_id'] !== null)
+                                    class="flex min-h-[76px] w-full cursor-pointer items-center gap-4 rounded-[20px] border-2 px-5 py-3.5 text-[19px] font-semibold disabled:cursor-default {{ $style }}">
+                                <span class="flex h-11 w-11 flex-none items-center justify-center rounded-xl font-display text-[22px] font-extrabold {{ $badge }}">{{ $choice['letter'] }}</span>
+                                <span class="flex-1 text-start">{{ $choice['text'] }}</span>
+                                @if ($tag)<span class="text-sm font-semibold">{{ $tag }}</span>@endif
+                                @if ($reveal)<span class="text-xs opacity-80">{{ $reveal['distribution'][$choice['id']] ?? 0 }}@if (in_array($choice['id'], $reveal['excluded_choice_ids'], true)) · {{ __('play.game.excluded_short') }}@endif</span>@endif
+                            </button>
+                        @endforeach
+                    </div>
+
+                    @if ($reveal)
+                        @php($mine = $reveal['mine'])
+                        @php
+                            [$verdict, $color] = match (true) {
+                                $mine === null => [__('play.game2.verdict_none'), 'text-ink'],
+                                $mine['excluded'] => [__('play.game2.verdict_excluded'), 'text-sun-text'],
+                                $mine['correct'] => [__('play.game2.verdict_right'), 'text-correct'],
+                                default => [__('play.game2.verdict_wrong'), 'text-wrong'],
+                            };
+                        @endphp
+                        <section aria-live="polite" class="flex flex-wrap items-center gap-x-8 gap-y-5 rounded-3xl bg-paper px-7 py-6 text-ink">
+                            <div class="flex flex-[1_1_420px] flex-col gap-2">
+                                <b class="font-display text-[26px] {{ $color }}">{{ $verdict }}</b>
+                                @if ($reveal['explanation'])<p class="m-0 leading-relaxed text-ink-muted" dir="{{ $dir }}">{{ $reveal['explanation'] }}</p>@endif
+                                <span class="text-[13px] text-ink-soft">
+                                    @if ($reveal['reference_url'])<a href="{{ $reveal['reference_url'] }}" target="_blank" rel="noopener noreferrer nofollow" class="fk-link">{{ __('play.game.source') }}</a>@else{{ __('play.game2.source_missing', ['source' => config('fakkroun.brand.source_placeholder')]) }}@endif
+                                    @if ($state['source'] === 'community' && $state['author']) · {{ __('play.game2.question_by', ['author' => $state['author']]) }}@endif
+                                </span>
+                            </div>
+                            <div class="flex flex-col items-end gap-2.5">
+                                <span class="font-display text-[34px] font-extrabold text-sea">{{ __('play.game2.points', ['points' => $mine['points'] ?? 0]) }}</span>
+                                <span class="text-sm text-ink-soft">{{ __('play.game.next_soon') }}</span>
+                            </div>
+                        </section>
+
+                        @if ($ad && $ad->creative)
+                            {{-- Ad below the results, never over answers or the timer (spec §17.2). --}}
+                            <aside aria-label="{{ __('advertising.sponsored') }}" class="flex flex-wrap items-center gap-4 rounded-2xl border border-sea-line bg-sea-deep-2 p-4"
+                                   wire:key="ad-{{ $ad->id }}"
+                                   x-data
+                                   x-init="const seen = new IntersectionObserver((entries) => { if (entries[0].intersectionRatio >= 0.5) { seen.disconnect(); setTimeout(() => $wire.confirmImpression(@js($ad->token)), 1000) } }, { threshold: [0.5] }); seen.observe($el)">
+                                <span class="rounded-full bg-sun px-2.5 py-0.5 text-xs font-bold text-ink uppercase">{{ __('advertising.sponsored') }}</span>
+                                @if ($ad->creative->imageUrl())<img src="{{ $ad->creative->imageUrl() }}" alt="{{ $ad->creative->alt_text }}" class="h-12 w-auto rounded-lg">@endif
+                                <div class="flex min-w-0 flex-1 flex-col">
+                                    <b>{{ $ad->creative->headline }}</b>
+                                    @if ($ad->creative->body)<span class="text-sm text-sea-mist">{{ $ad->creative->body }}</span>@endif
+                                </div>
+                                @if ($ad->creative->link_url)<a href="{{ $ad->creative->link_url }}" target="_blank" rel="noopener noreferrer sponsored" class="fk-btn border-2 border-sea-line text-sand no-underline">{{ __('advertising.learn_more') }}</a>@endif
+                            </aside>
+                        @endif
+                    @else
+                        <p class="m-0 text-[15px] text-sea-mist">{{ __('play.game2.hint') }}@if ($state['my_choice_id']) · <b class="text-sun">{{ __('play.game.locked_in') }}</b>@endif</p>
+                    @endif
+                </main>
+
+                <aside aria-labelledby="players-h" class="flex min-w-0 flex-[1_1_300px] flex-col gap-3.5 rounded-3xl bg-sea-deep-2 p-5">
+                    <div class="flex items-center justify-between">
+                        <h2 id="players-h" class="m-0 text-lg font-semibold">{{ __('play.game2.players') }}</h2>
+                        <span class="text-sm text-sea-mist">{{ __('play.game2.answered_of', ['count' => $answered, 'total' => $state['player_count']]) }}</span>
+                    </div>
+                    {{-- Phones: the compact line above is enough; the full list shows from md up (Mobile.dc.html). --}}
+                    <ol class="m-0 hidden list-none flex-col gap-2 p-0 md:flex">
+                        @foreach ($state['leaderboard'] as $index => $row)
+                            @php($me = $row['user_id'] === auth()->id())
+                            <li class="flex items-center gap-2.5 rounded-xl px-2.5 py-2 {{ $me ? 'bg-sea-line' : '' }}">
+                                <span class="w-[22px] text-sm font-semibold text-sea-mist">{{ $index + 1 }}</span>
+                                <span class="flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold {{ $me ? 'bg-sand text-ink' : $avatarColors[$index % count($avatarColors)] }}">{{ mb_substr($row['name'] ?? '?', 0, 1) }}</span>
+                                <span class="min-w-0 flex-1 font-medium">{{ $me ? __('play.game2.you') : $row['name'] }}@if ($row['left']) <span class="text-sea-mist">({{ __('play.game.left') }})</span>@endif</span>
+                                @if ($state['phase'] === 'question')
+                                    <span class="text-xs text-sea-mist">{{ in_array($row['user_id'], $state['answered_user_ids'], true) ? __('play.game2.answered') : __('play.game2.thinking') }}</span>
+                                @endif
+                                <b class="min-w-[52px] text-end tabular-nums">{{ number_format($row['score']) }}</b>
+                            </li>
+                        @endforeach
+                    </ol>
+                </aside>
+            </div>
+        @endif
+    </div>
 </div>

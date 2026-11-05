@@ -2,6 +2,8 @@
 
 > **Priority:** medium · **Effort:** small–medium · **Spec:** §11
 > **Depends on:** 03
+>
+> **Update:** done in `claude/fakkroun-next-steps` (**Admin → Questions → Import**). Not yet executed; see [`14`](14-final-report.md).
 
 ## Current state
 

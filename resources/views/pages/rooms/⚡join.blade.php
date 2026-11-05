@@ -3,10 +3,13 @@
 use App\Domain\Gameplay\RoomService;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 new #[Layout('layouts::app')] #[Title('Join a room')] class extends Component
 {
+    /** Pre-filled from the home page "Have a code?" form (?code=…). */
+    #[Url]
     public string $code = '';
 
     public function mount(): void

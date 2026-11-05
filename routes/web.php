@@ -38,6 +38,8 @@ Route::get('/health.json', HealthCheckJsonResultsController::class)
 
 Route::get('/language/{locale}', LocaleController::class)->name('locale.switch');
 
+Route::livewire('/leaderboard', 'pages::leaderboard')->name('leaderboard');
+
 Route::middleware('guest')->group(function () {
     Route::livewire('/login', 'pages::auth.login')->name('login');
     Route::livewire('/register', 'pages::auth.register')->name('register');
@@ -63,10 +65,14 @@ Route::middleware('auth')->group(function () {
     Route::middleware('verified')->group(function () {
         Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
 
+        Route::livewire('/notifications', 'pages::notifications')->name('notifications');
+        Route::livewire('/players/{user}', 'pages::players.show')->name('players.show');
+
         Route::middleware('can:play games')->group(function () {
-            Route::livewire('/play/new', 'pages::rooms.create')->name('rooms.create');
+            Route::livewire('/play', 'pages::rooms.create')->name('rooms.create');
             Route::livewire('/play/join', 'pages::rooms.join')->name('rooms.join');
             Route::livewire('/rooms/{room}', 'pages::rooms.show')->name('rooms.show');
+            Route::livewire('/rooms/{room}/results', 'pages::rooms.results')->name('rooms.results');
             // Shareable invitation link (spec §12.2); guests are sent to log in first.
             Route::get('/join/{code}', RoomInvitationController::class)
                 ->middleware('throttle:30,1')
@@ -74,8 +80,13 @@ Route::middleware('auth')->group(function () {
                 ->name('rooms.invitation');
         });
 
+        // Advertiser dashboard (spec §20); ownership is checked in the page.
+        Route::livewire('/advertiser', 'pages::advertiser.dashboard')
+            ->middleware('can:manage own campaigns')
+            ->name('advertiser.dashboard');
+
         Route::middleware('can:submit questions')->group(function () {
-            Route::livewire('/questions/submit', 'pages::questions.submit')->name('questions.submit');
+            Route::livewire('/community/submit', 'pages::questions.submit')->name('questions.submit');
             Route::livewire('/questions/mine', 'pages::questions.mine')->name('questions.mine');
         });
 
@@ -158,6 +169,9 @@ Route::middleware('auth')->group(function () {
                 ->middleware('can:manage questions')
                 ->where('format', 'csv|xlsx|json')
                 ->name('admin.questions.export');
+            Route::livewire('/admin/questions/import', 'pages::admin.questions.import')
+                ->middleware('can:manage questions')
+                ->name('admin.questions.import');
             Route::livewire('/admin/questions', 'pages::admin.questions.index')
                 ->middleware('can:manage questions')
                 ->name('admin.questions.index');
@@ -167,6 +181,9 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/questions/{question}/edit', 'pages::admin.questions.editor')
                 ->middleware('can:manage questions')
                 ->name('admin.questions.edit');
+            Route::livewire('/admin/ai', 'pages::admin.ai')
+                ->middleware('can:manage questions')
+                ->name('admin.ai');
             Route::livewire('/admin/moderation', 'pages::admin.moderation')
                 ->middleware('can:moderate questions')
                 ->name('admin.moderation');
@@ -174,6 +191,15 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/game-settings', 'pages::admin.game-settings')
                 ->middleware('can:manage platform settings')
                 ->name('admin.game-settings');
+            Route::livewire('/admin/partners', 'pages::admin.partners')
+                ->middleware('can:manage advertising')
+                ->name('admin.partners');
+            Route::livewire('/admin/advertising', 'pages::admin.advertising')
+                ->middleware('can:manage advertising')
+                ->name('admin.advertising');
+            Route::livewire('/admin/analytics', 'pages::admin.analytics')
+                ->middleware('can:view admin dashboard')
+                ->name('admin.analytics');
             Route::livewire('/admin/moderators', 'pages::admin.moderators')
                 ->middleware('can:manage moderators')
                 ->name('admin.moderators');

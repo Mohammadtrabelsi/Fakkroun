@@ -28,7 +28,7 @@ One complete loop: **write a question → moderate it → play it live with frie
 | **Duplicate-answer rule** (spec §14) | Per room, explained in the lobby. When ≥ threshold players (admin setting, default 2) give the same answer, none of those answers score, correct or not. The reveal marks excluded answers. |
 | **Scoring and results** (spec §15) | Points by difficulty plus a linear speed bonus (admin settings). Points are stored per answer. There's a running leaderboard and final results with rank, winner, correct/wrong/excluded counts and total time. Questions get `times_played` and `times_correct`. |
 | **Question selection** (spec §16) | An index seek on `random_key` in the pool, never loading the bank. Questions the players answered in the last 30 days are avoided first. Chosen rows are reshuffled and stamped, which spreads usage across rooms. |
-| **Demo content** | `FakkrounDemoQuestionSeeder` (demo tier) provides 18 well-established, referenced questions across 13 topics in en/fr/ar, so a fresh install can play straight away. |
+| **Sample content** | `FakkrounDemoQuestionSeeder` (demo tier) adds the design brief's six sample questions in en/fr/ar. They are **pending review with no source**, so a moderator must verify each one and add its reference before approving and publishing it. Until then, no question is playable on a fresh install. *(Changed after the MVP: the first version published 18 questions I had written, which the brief does not allow.)* |
 
 ### Deliberate MVP simplifications
 
@@ -47,7 +47,7 @@ These are listed so nobody mistakes them for finished features. Each has a next-
 ```bash
 composer install && npm ci && npm run build       # PHP 8.4
 cp .env.example .env && php artisan key:generate
-php artisan migrate --seed                        # roles, admin, 13 categories, 18 demo questions, demo users
+php artisan migrate --seed                        # roles, admin, 13 categories, 6 sample questions (pending review), demo users
 php artisan storage:link
 php artisan queue:work &                          # imports (sync queue also works locally)
 php artisan serve
@@ -55,10 +55,11 @@ php artisan serve
 
 1. Sign in as `admin@fakkroun.test` / `password` (see `AdminUserSeeder`). Admins hold every permission, including `play games`.
 2. Register a second account in another browser (new accounts are players).
-3. **New game** → pick *Marine Biodiversity*, *Blue Economy* and *Geography*, English, 5 questions → *Create room*.
-4. Open the invitation link in the second browser → the player joins the lobby → *Start the game*.
-5. Answer on both screens. Try the same answer on both with the duplicate rule on.
-6. Submit a question as the player, then approve and publish it from **Moderation** as the admin.
+3. **Moderation** → open each sample question, add a source link on its edit page, then *Approve and publish* it (and approve its French and Arabic translations).
+4. **New game** → pick *Marine Biodiversity*, *Blue Economy*, *Renewable Energy* and *Sustainable Development*, English, 6 questions → *Create room*.
+5. Open the invitation link in the second browser → the player joins the lobby → *Start the game*.
+6. Answer on both screens. Try the same answer on both with the duplicate rule on.
+7. Submit a question as the player, then approve and publish it from **Moderation** as the admin.
 
 > Demo users created by `DatabaseSeeder` (before Phase 1) have **no role**. Give them `player` from **Users → Edit**, or register new accounts.
 
@@ -79,7 +80,7 @@ php artisan serve
 
 | Route | Who |
 | --- | --- |
-| `/play/new`, `/play/join`, `/rooms/{ulid}`, `/join/{code}` | `play games` |
+| `/play`, `/play/join`, `/rooms/{ulid}`, `/join/{code}` | `play games` |
 | `/questions/submit`, `/questions/mine` | `submit questions` |
 | `/admin/questions…`, `/admin/questions/export/{csv,xlsx,json}` | `manage questions` |
 | `/admin/moderation` | `moderate questions` (scoped by category) |

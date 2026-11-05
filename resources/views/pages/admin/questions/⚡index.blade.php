@@ -92,6 +92,7 @@ new #[Layout('layouts::app')] #[Title('Questions')] class extends Component
             @foreach (['csv', 'xlsx', 'json'] as $format)
                 <a href="{{ route('admin.questions.export', $format) }}" class="btn">{{ __('questions.admin.export', ['format' => strtoupper($format)]) }}</a>
             @endforeach
+            <a href="{{ route('admin.questions.import') }}" wire:navigate class="btn">{{ __('questions.import.title') }}</a>
             <a href="{{ route('admin.questions.create') }}" wire:navigate class="btn btn-primary">{{ __('questions.admin.new') }}</a>
         </div>
     </div>

@@ -42,6 +42,7 @@ class Category extends Model
         'validation_policy',
         'requires_reference',
         'allow_community_submissions',
+        'is_priority',
     ];
 
     public array $translatable = [
@@ -55,6 +56,7 @@ class Category extends Model
         'validation_policy' => 'admin',
         'requires_reference' => false,
         'allow_community_submissions' => true,
+        'is_priority' => false,
     ];
 
     protected function casts(): array
@@ -65,6 +67,7 @@ class Category extends Model
             'validation_policy' => ValidationPolicy::class,
             'requires_reference' => 'boolean',
             'allow_community_submissions' => 'boolean',
+            'is_priority' => 'boolean',
         ];
     }
 

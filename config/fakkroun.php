@@ -35,11 +35,13 @@ return [
         ],
 
         'scoring' => [
-            'points_easy' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:10000']],
-            'points_medium' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:0', 'max:10000']],
-            'points_hard' => ['type' => 'int', 'default' => 30, 'rules' => ['integer', 'min:0', 'max:10000']],
+            // Design brief: correct ? 50 + round(100 × remaining / duration) : 0, at every
+            // difficulty. Raise medium/hard here to reward harder questions.
+            'points_easy' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'points_medium' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'points_hard' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
             // Extra points for an instant correct answer, decreasing linearly to 0 at the deadline.
-            'speed_bonus_max' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'speed_bonus_max' => ['type' => 'int', 'default' => 100, 'rules' => ['integer', 'min:0', 'max:10000']],
             // Duplicate-answer rule (spec §14): identical answers from this many players or more score nothing.
             'duplicate_rule_default' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             'duplicate_rule_threshold' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:2', 'max:1000']],
@@ -58,6 +60,20 @@ return [
             'skip_duplicates' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
         ],
 
+        'advertising' => [
+            'enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            // Never an ad on every question by default (spec §17.2): one reveal in N.
+            'every_n_questions' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100']],
+            'max_per_player_per_game' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:100']],
+            'min_seconds_between' => ['type' => 'int', 'default' => 45, 'rules' => ['integer', 'min:0', 'max:3600']],
+            'max_sponsored_per_game' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:20']],
+            // Prices are data, not code (spec §19): earned per consumed unit, in minor units.
+            'impression_price_minor' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'sponsored_question_price_minor' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
+            'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+        ],
+
         'translations' => [
             // fallback: serve the fallback language when the player's language has no approved translation.
             // exclude: skip questions without an approved translation in the player's language.
@@ -69,6 +85,55 @@ return [
 
     // Seconds the merged settings stay cached; updates flush the cache immediately.
     'settings_cache_ttl' => 3600,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Brand placeholders (design brief: never invent facts — keep placeholders
+    | until the client provides the real value)
+    |--------------------------------------------------------------------------
+    */
+    'brand' => [
+        'copyright_year' => env('FAKKROUN_COPYRIGHT_YEAR', '[YEAR]'),
+        'partner_placeholder' => '[PARTNER LOGO]',
+        'source_placeholder' => '[ADD SOURCE LINK]',
+        // Shown on the home page partners band when no partner is active.
+        'partner_placeholders' => 4,
+        'partner_contact_url' => env('FAKKROUN_PARTNER_URL'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | AI-assisted question generation (spec §10, design brief "Draft with AI")
+    |--------------------------------------------------------------------------
+    |
+    | AI output is a draft, never a verified fact: generated questions always
+    | enter moderation (draft or pending) and keep source = ai.
+    |
+    */
+    'ai' => [
+        // anthropic | fake | none. "none" (or no key) hides every AI feature.
+        'driver' => env('FAKKROUN_AI_DRIVER', env('ANTHROPIC_API_KEY') ? 'anthropic' : 'none'),
+        'api_key' => env('ANTHROPIC_API_KEY'),
+        'base_url' => env('ANTHROPIC_BASE_URL', 'https://api.anthropic.com'),
+        'api_version' => '2026-10-21',
+        'model' => env('FAKKROUN_AI_MODEL', 'claude-opus-5-5'),
+        'effort' => env('FAKKROUN_AI_EFFORT', 'medium'),
+        'max_tokens' => 16000,
+        'timeout' => 180,
+        // Server-side refusal fallback (re-runs a declined request on a suitable model).
+        'fallbacks' => true,
+        'prompt_version' => 'v1',
+        // USD per million tokens, for the cost estimate shown to admins.
+        'price_input_per_mtok' => (float) env('FAKKROUN_AI_PRICE_IN', 4.0),
+        'price_output_per_mtok' => (float) env('FAKKROUN_AI_PRICE_OUT', 20.0),
+        'batch_max_questions' => 1000,
+        'chunk_size' => 10,
+        // A batch stops once its estimated cost passes this (USD).
+        'batch_cost_ceiling' => (float) env('FAKKROUN_AI_BATCH_COST_CEILING', 20.0),
+        // Status AI questions start in: draft | pending.
+        'initial_status' => 'draft',
+        'drafts_per_hour' => 10,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -92,6 +157,9 @@ return [
     |--------------------------------------------------------------------------
     */
     'questions' => [
+        // Community submissions (design brief): short enough for a phone, source required.
+        'community_body_max' => 160,
+        'community_requires_source' => true,
         'body_min' => 10,
         'body_max' => 500,
         'choice_max' => 200,

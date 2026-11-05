@@ -2,6 +2,8 @@
 
 > **Priority:** after the MVP is verified · **Effort:** large · **Spec:** §10, §8, §21
 > **Depends on:** 03, 06
+>
+> **Update:** implemented in `claude/fakkroun-next-steps` (single drafts, batch generation, cost ceiling, provenance). Not yet executed; see [`14`](14-final-report.md).
 
 ## Principles
 

@@ -89,6 +89,8 @@ class QuestionSelector
     {
         return QuestionPoolEntry::query()
             ->where('language', $language)
+            // Sponsored questions are added separately, within their per-game limit.
+            ->where('is_sponsored', false)
             ->when($categoryIds !== [], fn ($query) => $query->whereIn('category_id', $categoryIds))
             ->when($difficulty !== null && $difficulty !== 'any', fn ($query) => $query->where('difficulty', $difficulty));
     }

@@ -4,114 +4,59 @@ namespace Database\Seeders;
 
 use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
-use App\Domain\Questions\Models\Question;
-use App\Domain\Questions\ModerationService;
-use App\Domain\Questions\QuestionPool;
 use App\Domain\Questions\QuestionService;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Validation\ValidationException;
 
 /**
- * A small, published, trilingual question set so a fresh install can play
- * a game straight away. Demo tier only (DatabaseSeeder::DEMO). Facts are
- * deliberately well established and each has a reference.
+ * The six sample questions from the design brief (fakkroun-design/FAKKROUN_PROMPT.md),
+ * in en, fr and ar. Demo tier only (DatabaseSeeder::DEMO).
  *
- * Each entry: category slug, difficulty, correct (0-based), reference, and
- * per language: question text + four answers in display order.
+ * Per the brief they are NOT published: they enter the moderation queue as
+ * pending ("needs review") without a source, so a moderator must verify the
+ * facts and add the reference before they can be approved (categories that
+ * require a reference refuse approval without one).
+ *
+ * Each entry: category slug, difficulty, correct (0-based), and per
+ * language: question, four answers in display order, explanation (or null).
  */
 class FakkrounDemoQuestionSeeder extends Seeder
 {
+    /** Display orders applied in turn (index into the brief's answer list). */
+    private const ORDERS = [[1, 0, 2, 3], [2, 3, 0, 1], [0, 2, 1, 3], [3, 1, 2, 0], [1, 2, 3, 0], [2, 0, 3, 1]];
+
     public const QUESTIONS = [
-        ['marine-biodiversity', 'easy', 1, 'https://en.wikipedia.org/wiki/Blue_whale', [
-            'en' => ['What is the largest animal known to have ever lived?', ['African elephant', 'Blue whale', 'Whale shark', 'Giant squid']],
-            'fr' => ['Quel est le plus grand animal connu ayant jamais vécu ?', ['L’éléphant d’Afrique', 'La baleine bleue', 'Le requin-baleine', 'Le calmar géant']],
-            'ar' => ['ما أكبر حيوان معروف عاش على الإطلاق؟', ['الفيل الأفريقي', 'الحوت الأزرق', 'القرش الحوتي', 'الحبار العملاق']],
+        ['marine-biodiversity', 'medium', 0, [
+            'en' => ['Which seagrass, found only in the Mediterranean, forms vast meadows in the Gulf of Gabès?', ['Posidonia oceanica', 'Zostera marina', 'Halophila stipulacea', 'Caulerpa taxifolia'], 'Posidonia grows only in the Mediterranean; its meadows shelter young fish, reduce beach erosion and store carbon in the seabed.'],
+            'fr' => ['Quelle plante marine, présente uniquement en Méditerranée, forme de vastes herbiers dans le golfe de Gabès ?', ['Posidonia oceanica', 'Zostera marina', 'Halophila stipulacea', 'Caulerpa taxifolia'], 'La posidonie ne pousse qu’en Méditerranée ; ses herbiers abritent les jeunes poissons, réduisent l’érosion des plages et stockent du carbone dans les fonds marins.'],
+            'ar' => ['ما العشب البحري الذي لا يوجد إلا في البحر المتوسط ويكوّن مروجًا واسعة في خليج قابس؟', ['بوسيدونيا أوسيانيكا', 'زوستيرا مارينا', 'هالوفيلا ستيبولاسيا', 'كوليربا تاكسيفوليا'], 'لا تنمو البوسيدونيا إلا في البحر المتوسط؛ تحمي مروجها صغار الأسماك وتحدّ من انجراف الشواطئ وتخزّن الكربون في قاع البحر.'],
         ]],
-        ['marine-biodiversity', 'medium', 2, 'https://en.wikipedia.org/wiki/Sea_turtle', [
-            'en' => ['How many species of sea turtle live in the world’s oceans today?', ['Three', 'Five', 'Seven', 'Twelve']],
-            'fr' => ['Combien d’espèces de tortues marines vivent aujourd’hui dans les océans ?', ['Trois', 'Cinq', 'Sept', 'Douze']],
-            'ar' => ['كم عدد أنواع السلاحف البحرية التي تعيش اليوم في محيطات العالم؟', ['ثلاثة', 'خمسة', 'سبعة', 'اثنا عشر']],
+        ['marine-biodiversity', 'easy', 0, [
+            'en' => ['Which sea turtle species nests on the Kuriat Islands, off Monastir?', ['Loggerhead (Caretta caretta)', 'Leatherback', 'Green turtle', 'Hawksbill'], null],
+            'fr' => ['Quelle espèce de tortue marine pond sur les îles Kuriat, au large de Monastir ?', ['La caouanne (Caretta caretta)', 'La tortue luth', 'La tortue verte', 'La tortue imbriquée'], null],
+            'ar' => ['أي نوع من السلاحف البحرية يعشّش في جزر قوريا قبالة المنستير؟', ['السلحفاة ضخمة الرأس (كاريتا كاريتا)', 'السلحفاة جلدية الظهر', 'السلحفاة الخضراء', 'سلحفاة منقار الصقر'], null],
         ]],
-        ['marine-biodiversity', 'medium', 0, 'https://en.wikipedia.org/wiki/Coral_bleaching', [
-            'en' => ['What is the main cause of mass coral bleaching?', ['Rising sea temperatures', 'Too many fish on the reef', 'Strong moonlight', 'Low tides alone']],
-            'fr' => ['Quelle est la principale cause du blanchissement massif des coraux ?', ['La hausse de la température de la mer', 'Trop de poissons sur le récif', 'Une forte lumière lunaire', 'Les marées basses seules']],
-            'ar' => ['ما السبب الرئيسي لابيضاض الشعاب المرجانية على نطاق واسع؟', ['ارتفاع درجة حرارة البحر', 'كثرة الأسماك على الشعاب', 'ضوء القمر القوي', 'الجزر وحده']],
+        ['blue-economy', 'easy', 0, [
+            'en' => ['What does the “blue economy” mean?', ['Using ocean resources sustainably for growth and jobs while keeping marine ecosystems healthy', 'An economy based only on offshore oil and gas', 'The total value of goods shipped by sea', 'Banking services for coastal towns'], null],
+            'fr' => ['Que signifie « l’économie bleue » ?', ['Utiliser durablement les ressources de la mer pour la croissance et l’emploi tout en préservant les écosystèmes marins', 'Une économie fondée uniquement sur le pétrole et le gaz en mer', 'La valeur totale des marchandises transportées par mer', 'Les services bancaires des villes côtières'], null],
+            'ar' => ['ماذا يعني «الاقتصاد الأزرق»؟', ['استغلال موارد البحر بشكل مستدام من أجل النمو والتشغيل مع الحفاظ على سلامة النظم البيئية البحرية', 'اقتصاد يقوم فقط على النفط والغاز البحريين', 'القيمة الإجمالية للبضائع المنقولة بحرًا', 'الخدمات المصرفية في المدن الساحلية'], null],
         ]],
-        ['blue-economy', 'easy', 2, 'https://en.wikipedia.org/wiki/Pacific_Ocean', [
-            'en' => ['Which is the largest ocean on Earth?', ['Atlantic Ocean', 'Indian Ocean', 'Pacific Ocean', 'Arctic Ocean']],
-            'fr' => ['Quel est le plus grand océan de la Terre ?', ['L’océan Atlantique', 'L’océan Indien', 'L’océan Pacifique', 'L’océan Arctique']],
-            'ar' => ['ما أكبر محيط على الأرض؟', ['المحيط الأطلسي', 'المحيط الهندي', 'المحيط الهادئ', 'المحيط المتجمد الشمالي']],
+        ['sustainable-development', 'easy', 0, [
+            'en' => ['How many Sustainable Development Goals did the UN adopt in 2015?', ['17', '8', '12', '21'], null],
+            'fr' => ['Combien d’objectifs de développement durable l’ONU a-t-elle adoptés en 2015 ?', ['17', '8', '12', '21'], null],
+            'ar' => ['كم عدد أهداف التنمية المستدامة التي اعتمدتها الأمم المتحدة عام 2015؟', ['17', '8', '12', '21'], null],
         ]],
-        ['blue-economy', 'easy', 1, 'https://en.wikipedia.org/wiki/Ocean', [
-            'en' => ['Roughly what share of the Earth’s surface is covered by oceans?', ['About 50%', 'About 71%', 'About 85%', 'About 30%']],
-            'fr' => ['Quelle part de la surface de la Terre est environ couverte par les océans ?', ['Environ 50 %', 'Environ 71 %', 'Environ 85 %', 'Environ 30 %']],
-            'ar' => ['ما النسبة التقريبية لمساحة سطح الأرض التي تغطيها المحيطات؟', ['نحو 50%', 'نحو 71%', 'نحو 85%', 'نحو 30%']],
+        ['renewable-energy', 'easy', 0, [
+            'en' => ['What does a photovoltaic panel turn into electricity?', ['Sunlight', 'Wind', 'Heat from the ground', 'Tides'], null],
+            'fr' => ['Qu’est-ce qu’un panneau photovoltaïque transforme en électricité ?', ['La lumière du soleil', 'Le vent', 'La chaleur du sol', 'Les marées'], null],
+            'ar' => ['ماذا تحوّل اللوحة الكهروضوئية إلى كهرباء؟', ['ضوء الشمس', 'الرياح', 'حرارة الأرض', 'المد والجزر'], null],
         ]],
-        ['renewable-energy', 'easy', 3, 'https://en.wikipedia.org/wiki/Solar_cell', [
-            'en' => ['Which device turns sunlight directly into electricity?', ['Wind turbine', 'Steam turbine', 'Fuel cell', 'Photovoltaic cell']],
-            'fr' => ['Quel dispositif transforme directement la lumière du soleil en électricité ?', ['L’éolienne', 'La turbine à vapeur', 'La pile à combustible', 'La cellule photovoltaïque']],
-            'ar' => ['ما الجهاز الذي يحوّل ضوء الشمس مباشرة إلى كهرباء؟', ['توربين الرياح', 'التوربين البخاري', 'خلية الوقود', 'الخلية الكهروضوئية']],
-        ]],
-        ['renewable-energy', 'easy', 0, 'https://en.wikipedia.org/wiki/Geothermal_energy', [
-            'en' => ['Which renewable energy uses heat from inside the Earth?', ['Geothermal energy', 'Tidal energy', 'Biomass', 'Wind energy']],
-            'fr' => ['Quelle énergie renouvelable utilise la chaleur de l’intérieur de la Terre ?', ['La géothermie', 'L’énergie marémotrice', 'La biomasse', 'L’énergie éolienne']],
-            'ar' => ['ما الطاقة المتجددة التي تستخدم الحرارة من باطن الأرض؟', ['الطاقة الحرارية الجوفية', 'طاقة المد والجزر', 'الكتلة الحيوية', 'طاقة الرياح']],
-        ]],
-        ['climate-change', 'easy', 1, 'https://en.wikipedia.org/wiki/Greenhouse_gas', [
-            'en' => ['Which gas contributes most to human-caused global warming?', ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Argon']],
-            'fr' => ['Quel gaz contribue le plus au réchauffement climatique d’origine humaine ?', ['L’oxygène', 'Le dioxyde de carbone', 'L’azote', 'L’argon']],
-            'ar' => ['ما الغاز الذي يساهم أكثر من غيره في الاحترار العالمي الناتج عن النشاط البشري؟', ['الأكسجين', 'ثاني أكسيد الكربون', 'النيتروجين', 'الأرغون']],
-        ]],
-        ['climate-change', 'medium', 2, 'https://en.wikipedia.org/wiki/Paris_Agreement', [
-            'en' => ['In which year was the Paris Agreement on climate change adopted?', ['1997', '2009', '2015', '2021']],
-            'fr' => ['En quelle année l’accord de Paris sur le climat a-t-il été adopté ?', ['1997', '2009', '2015', '2021']],
-            'ar' => ['في أي عام اعتُمد اتفاق باريس بشأن تغيّر المناخ؟', ['1997', '2009', '2015', '2021']],
-        ]],
-        ['sustainable-development', 'medium', 0, 'https://sdgs.un.org/goals', [
-            'en' => ['How many Sustainable Development Goals did the United Nations adopt in 2015?', ['17', '8', '12', '25']],
-            'fr' => ['Combien d’objectifs de développement durable les Nations unies ont-elles adoptés en 2015 ?', ['17', '8', '12', '25']],
-            'ar' => ['كم عدد أهداف التنمية المستدامة التي اعتمدتها الأمم المتحدة عام 2015؟', ['17', '8', '12', '25']],
-        ]],
-        ['environmental-protection', 'easy', 3, 'https://en.wikipedia.org/wiki/Waste_hierarchy', [
-            'en' => ['What do the “three Rs” of waste stand for?', ['Repair, rent, return', 'Remove, replace, rebuild', 'Rest, relax, recover', 'Reduce, reuse, recycle']],
-            'fr' => ['Que signifient les « 3 R » des déchets ?', ['Réparer, louer, rendre', 'Retirer, remplacer, reconstruire', 'Reposer, relâcher, récupérer', 'Réduire, réutiliser, recycler']],
-            'ar' => ['ماذا تعني «القواعد الثلاث» للتعامل مع النفايات؟', ['الإصلاح والاستئجار والإرجاع', 'الإزالة والاستبدال وإعادة البناء', 'الراحة والاسترخاء والتعافي', 'التقليل وإعادة الاستخدام وإعادة التدوير']],
-        ]],
-        ['green-economy', 'easy', 1, 'https://en.wikipedia.org/wiki/Circular_economy', [
-            'en' => ['What is the main aim of a circular economy?', ['Extracting more raw materials', 'Keeping materials in use and cutting waste', 'Producing goods that last one season', 'Moving all factories abroad']],
-            'fr' => ['Quel est le principal objectif de l’économie circulaire ?', ['Extraire davantage de matières premières', 'Garder les matériaux en usage et réduire les déchets', 'Produire des biens qui durent une saison', 'Délocaliser toutes les usines']],
-            'ar' => ['ما الهدف الرئيسي للاقتصاد الدائري؟', ['استخراج مزيد من المواد الخام', 'إبقاء المواد قيد الاستخدام وتقليل النفايات', 'إنتاج سلع تدوم موسمًا واحدًا', 'نقل جميع المصانع إلى الخارج']],
-        ]],
-        ['geography', 'easy', 0, 'https://en.wikipedia.org/wiki/Tunis', [
-            'en' => ['What is the capital of Tunisia?', ['Tunis', 'Sfax', 'Sousse', 'Kairouan']],
-            'fr' => ['Quelle est la capitale de la Tunisie ?', ['Tunis', 'Sfax', 'Sousse', 'Kairouan']],
-            'ar' => ['ما عاصمة تونس؟', ['تونس', 'صفاقس', 'سوسة', 'القيروان']],
-        ]],
-        ['geography', 'easy', 2, 'https://en.wikipedia.org/wiki/Nile', [
-            'en' => ['Which is the longest river in Africa?', ['Congo', 'Niger', 'Nile', 'Zambezi']],
-            'fr' => ['Quel est le plus long fleuve d’Afrique ?', ['Le Congo', 'Le Niger', 'Le Nil', 'Le Zambèze']],
-            'ar' => ['ما أطول نهر في أفريقيا؟', ['الكونغو', 'النيجر', 'النيل', 'الزامبيزي']],
-        ]],
-        ['science-technology', 'easy', 1, 'https://en.wikipedia.org/wiki/Properties_of_water', [
-            'en' => ['What is the chemical formula of water?', ['CO2', 'H2O', 'O2', 'NaCl']],
-            'fr' => ['Quelle est la formule chimique de l’eau ?', ['CO2', 'H2O', 'O2', 'NaCl']],
-            'ar' => ['ما الصيغة الكيميائية للماء؟', ['CO2', 'H2O', 'O2', 'NaCl']],
-        ]],
-        ['history', 'medium', 3, 'https://en.wikipedia.org/wiki/Ibn_Khaldun', [
-            'en' => ['In which city was Ibn Khaldun, author of the Muqaddimah, born?', ['Cairo', 'Fez', 'Granada', 'Tunis']],
-            'fr' => ['Dans quelle ville est né Ibn Khaldoun, auteur de la Muqaddima ?', ['Le Caire', 'Fès', 'Grenade', 'Tunis']],
-            'ar' => ['في أي مدينة وُلد ابن خلدون صاحب المقدمة؟', ['القاهرة', 'فاس', 'غرناطة', 'تونس']],
-        ]],
-        ['general-knowledge', 'easy', 0, 'https://en.wikipedia.org/wiki/Leap_year', [
-            'en' => ['How many days are there in a leap year?', ['366', '365', '364', '360']],
-            'fr' => ['Combien de jours compte une année bissextile ?', ['366', '365', '364', '360']],
-            'ar' => ['كم يومًا في السنة الكبيسة؟', ['366', '365', '364', '360']],
-        ]],
-        ['sports', 'easy', 2, 'https://en.wikipedia.org/wiki/Association_football', [
-            'en' => ['How many players does each football (soccer) team have on the pitch?', ['Nine', 'Ten', 'Eleven', 'Twelve']],
-            'fr' => ['Combien de joueurs chaque équipe de football a-t-elle sur le terrain ?', ['Neuf', 'Dix', 'Onze', 'Douze']],
-            'ar' => ['كم لاعبًا لكل فريق كرة قدم على أرض الملعب؟', ['تسعة', 'عشرة', 'أحد عشر', 'اثنا عشر']],
+        ['blue-economy', 'medium', 0, [
+            'en' => ['Which archipelago off Sfax is known for its traditional “charfia” fixed fishing traps?', ['Kerkennah', 'Djerba', 'Zembra', 'Galite'], null],
+            'fr' => ['Quel archipel au large de Sfax est connu pour ses pêcheries fixes traditionnelles, les « charfia » ?', ['Kerkennah', 'Djerba', 'Zembra', 'La Galite'], null],
+            'ar' => ['أي أرخبيل قبالة صفاقس يشتهر بمصائد «الشرفية» الثابتة التقليدية؟', ['قرقنة', 'جربة', 'زمبرة', 'جالطة'], null],
         ]],
     ];
 
@@ -120,45 +65,49 @@ class FakkrounDemoQuestionSeeder extends Seeder
         $admin = User::role('admin')->first();
 
         if ($admin === null) {
-            $this->command?->warn('No admin user: skipping demo questions.');
+            $this->command?->warn('No admin user: skipping sample questions.');
 
             return;
         }
 
         $questions = app(QuestionService::class);
-        $moderation = app(ModerationService::class);
         $created = 0;
 
-        foreach (self::QUESTIONS as [$slug, $difficulty, $correct, $reference, $texts]) {
+        foreach (self::QUESTIONS as $index => [$slug, $difficulty, $correct, $texts]) {
             $category = Category::query()->where('slug', $slug)->first();
 
-            if ($category === null || Question::query()->where('reference_url', $reference)->where('category_id', $category->id)->exists()) {
+            if ($category === null) {
                 continue;
             }
 
-            [$body, $choices] = $texts['en'];
-            $translations = collect($texts)->except('en')->map(fn (array $text) => ['body' => $text[0], 'choices' => $text[1]])->all();
+            // The brief lists the correct answer first; shuffle the display
+            // order (the same way in every language) so it is not always "A".
+            $order = self::ORDERS[$index % count(self::ORDERS)];
+            $reorder = fn (array $answers): array => array_map(fn (int $i) => $answers[$i], $order);
+            $correct = (int) array_search($correct, $order, true);
 
-            $question = $questions->create([
-                'category_id' => $category->id,
-                'difficulty' => $difficulty,
-                'language' => 'en',
-                'body' => $body,
-                'choices' => $choices,
-                'correct' => $correct,
-                'reference_url' => $reference,
-            ], $admin, QuestionSource::Admin, QuestionStatus::Draft, $translations);
+            [$body, $choices, $explanation] = $texts['en'];
+            $choices = $reorder($choices);
+            $translations = collect($texts)->except('en')
+                ->map(fn (array $text) => ['body' => $text[0], 'choices' => $reorder($text[1]), 'explanation' => $text[2]])
+                ->all();
 
-            $moderation->approve($question, $admin, publish: true);
-
-            foreach ($question->translations()->where('language', '!=', 'en')->get() as $translation) {
-                $moderation->approveTranslation($translation, $admin);
+            try {
+                $questions->create([
+                    'category_id' => $category->id,
+                    'difficulty' => $difficulty,
+                    'language' => 'en',
+                    'body' => $body,
+                    'choices' => $choices,
+                    'correct' => $correct,
+                    'explanation' => $explanation,
+                ], $admin, QuestionSource::Admin, QuestionStatus::Pending, $translations);
+                $created++;
+            } catch (ValidationException) {
+                // Already seeded (exact duplicate): re-running the seeder is safe.
             }
-
-            app(QuestionPool::class)->sync($question);
-            $created++;
         }
 
-        $this->command?->info("Demo questions ready: {$created} created.");
+        $this->command?->info("Sample questions waiting for review: {$created}.");
     }
 }

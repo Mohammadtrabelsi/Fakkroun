@@ -2,6 +2,7 @@
 
 namespace App\Domain\Gameplay;
 
+use App\Domain\Advertising\SponsoredQuestionService;
 use App\Domain\Gameplay\Enums\RoomStatus;
 use App\Domain\Gameplay\Models\Game;
 use App\Domain\Gameplay\Models\GameQuestion;
@@ -62,13 +63,13 @@ class GameEngine
                 }
 
                 $settings = $locked->settings;
-                $questionIds = $this->selector->select(
-                    $settings['language'],
-                    $settings['category_ids'],
-                    $settings['difficulty'] === 'any' ? null : $settings['difficulty'],
-                    (int) $settings['question_count'],
-                    $playerIds,
-                );
+                $difficulty = $settings['difficulty'] === 'any' ? null : $settings['difficulty'];
+                $count = (int) $settings['question_count'];
+                $sponsored = ($settings['include_sponsored'] ?? true) && $this->settings->get('advertising.enabled')
+                    ? app(SponsoredQuestionService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, min($count - 1, (int) $this->settings->get('advertising.max_sponsored_per_game')))
+                    : [];
+                $questionIds = [...$this->selector->select($settings['language'], $settings['category_ids'], $difficulty, $count - count($sponsored), $playerIds), ...$sponsored];
+                shuffle($questionIds);
 
                 if ($questionIds === []) {
                     throw new DomainActionException(__('play.errors.no_questions'));
@@ -228,6 +229,8 @@ class GameEngine
         $mine = $answers->firstWhere('user_id', $viewer->id);
         $now = now();
 
+        $question->loadMissing(['category', 'author:id,name']);
+
         $state = [
             'status' => $game->status,
             'phase' => $game->isCompleted() ? 'completed' : ($current->isOpen() ? 'question' : 'reveal'),
@@ -236,13 +239,20 @@ class GameEngine
             'server_now' => $now->getTimestampMs(),
             'deadline_ms' => $current->deadline_at?->getTimestampMs(),
             'remaining_ms' => $current->isOpen() ? max(0, (int) $now->diffInMilliseconds($current->deadline_at, false)) : 0,
+            'duration_ms' => $current->opened_at && $current->deadline_at ? (int) $current->opened_at->diffInMilliseconds($current->deadline_at) : 0,
+            'category' => $question->category?->name,
+            'author' => $question->author?->name,
+            'source' => $question->source->value,
+            'sponsor' => $question->is_sponsored ? \App\Domain\Advertising\Models\Campaign::query()->with('advertiser:id,name')->find($question->campaign_id)?->advertiser?->name : null,
+            // Who has answered the current question — never which answer.
+            'answered_user_ids' => $answers->pluck('user_id')->map(fn ($id) => (int) $id)->values()->all(),
             'duplicate_rule' => (bool) ($game->settings['duplicate_rule'] ?? false),
             'question' => [
                 'body' => $translation?->body,
                 'difficulty' => $question->difficulty->value,
                 'choices' => $question->choices->map(fn ($choice) => [
                     'id' => $choice->id,
-                    'letter' => $choice->letter(),
+                    'letter' => $choice->letter($current->language),
                     'text' => $translation?->choiceText($choice->id),
                 ])->all(),
             ],
@@ -288,6 +298,43 @@ class GameEngine
         return $state;
     }
 
+    /**
+     * "What we learned": every question of a finished game with its correct
+     * answer and the viewer's result. Only available once the game is over.
+     *
+     * @return array<int, array<string, mixed>>
+     */
+    public function recap(Game $game, User $viewer): array
+    {
+        if (! $game->fresh()->isCompleted()) {
+            return [];
+        }
+
+        return GameQuestion::query()
+            ->where('game_id', $game->id)
+            ->orderBy('position')
+            ->with(['question.choices', 'answers' => fn ($query) => $query->where('user_id', $viewer->id)])
+            ->get()
+            ->map(function (GameQuestion $gq): array {
+                $question = $gq->question;
+                $translation = $this->translationFor($question, $gq->language);
+                $mine = $gq->answers->first();
+
+                return [
+                    'position' => $gq->position,
+                    'body' => $translation?->body,
+                    'correct_text' => $translation?->choiceText((int) $question->correct_choice_id),
+                    'explanation' => $translation?->explanation,
+                    'reference_url' => $question->reference_url,
+                    'answered' => $mine !== null,
+                    'correct' => (bool) $mine?->is_correct,
+                    'excluded' => (bool) $mine?->is_duplicate_excluded,
+                    'points' => (int) ($mine?->points ?? 0),
+                ];
+            })
+            ->all();
+    }
+
     private function current(Game $game): GameQuestion
     {
         return GameQuestion::query()->where('game_id', $game->id)->where('position', $game->current_position)->firstOrFail();
@@ -297,10 +344,16 @@ class GameEngine
     {
         $now = now();
 
-        GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->whereNull('opened_at')->update([
+        $opened = GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->whereNull('opened_at')->update([
             'opened_at' => $now,
             'deadline_at' => $now->copy()->addSeconds((int) $game->settings['seconds_per_question']),
         ]);
+
+        if ($opened > 0) {
+            // A sponsored question is billed once per room when it is shown.
+            $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->first();
+            app(SponsoredQuestionService::class)->recordDelivery($gq);
+        }
     }
 
     /**

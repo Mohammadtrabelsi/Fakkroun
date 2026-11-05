@@ -61,6 +61,7 @@ new #[Layout('layouts::app')] #[Title('Moderation')] class extends Component
             'approve' => $moderation->approve($question, $user),
             'approve_publish' => $moderation->approve($question, $user, publish: true),
             'reject' => $moderation->reject($question, $user, (string) ($this->reasons[$questionId] ?? '')),
+            'request_changes' => $moderation->requestChanges($question, $user, (string) ($this->reasons[$questionId] ?? '')),
         });
     }
 
@@ -139,6 +140,7 @@ new #[Layout('layouts::app')] #[Title('Moderation')] class extends Component
                     @endif
                     <button type="button" wire:click="decide({{ $question->id }}, 'approve_publish')" class="btn btn-primary">{{ __('questions.actions.approve_publish') }}</button>
                     <button type="button" wire:click="decide({{ $question->id }}, 'approve')" class="btn">{{ __('questions.actions.approve') }}</button>
+                    <button type="button" wire:click="decide({{ $question->id }}, 'request_changes')" class="btn">{{ __('questions.actions.request_changes') }}</button>
                     <button type="button" wire:click="decide({{ $question->id }}, 'reject')" class="btn ms-outline-danger">{{ __('questions.actions.reject') }}</button>
                 </div>
             </div>

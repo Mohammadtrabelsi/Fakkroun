@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Domain\Ai\Contracts\QuestionGenerator;
+use App\Domain\Ai\Drivers\AnthropicQuestionGenerator;
+use App\Domain\Ai\Drivers\FakeQuestionGenerator;
 use App\Domain\Questions\Contracts\SimilarQuestionFinder;
 use App\Domain\Questions\Support\TokenOverlapFinder;
 use App\Models\Post;
@@ -26,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
         // Near-duplicate question detection; swap for an embedding-based
         // finder (Phase 4) without touching the callers.
         $this->app->bind(SimilarQuestionFinder::class, TokenOverlapFinder::class);
+
+        // AI provider (spec §10.3): swap drivers through fakkroun.ai.driver.
+        $this->app->bind(QuestionGenerator::class, fn () => config('fakkroun.ai.driver') === 'anthropic'
+            ? new AnthropicQuestionGenerator
+            : new FakeQuestionGenerator);
     }
 
     /**

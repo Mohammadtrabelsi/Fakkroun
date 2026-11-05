@@ -49,6 +49,13 @@
                             </a>
                         @endcan
 
+                        @can('manage questions')
+                            <a href="{{ route('admin.ai') }}" wire:navigate class="{{ request()->routeIs('admin.ai') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"></path><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+                                {{ __('ai.title') }}
+                            </a>
+                        @endcan
+
                         @can('moderate questions')
                             <a href="{{ route('admin.moderation') }}" wire:navigate class="{{ request()->routeIs('admin.moderation') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"></path><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"></path></svg>
@@ -81,6 +88,27 @@
                             <a href="{{ route('admin.game-settings') }}" wire:navigate class="{{ request()->routeIs('admin.game-settings') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="4"></rect><path d="M7 11v4M5 13h4"></path><circle cx="16" cy="12" r="1"></circle><circle cx="18" cy="14.5" r="1"></circle></svg>
                                 {{ __('fakkroun.game_settings') }}
+                            </a>
+                        @endcan
+
+                        @can('manage advertising')
+                            <a href="{{ route('admin.partners') }}" wire:navigate class="{{ request()->routeIs('admin.partners') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11l3 3 6-6"></path><rect x="3" y="4" width="18" height="16" rx="3"></rect></svg>
+                                {{ __('partners.title') }}
+                            </a>
+                        @endcan
+
+                        @can('manage advertising')
+                            <a href="{{ route('admin.advertising') }}" wire:navigate class="{{ request()->routeIs('admin.advertising') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"></path><path d="M15 9a3 3 0 0 1 0 6"></path><path d="M18 6a7 7 0 0 1 0 12"></path></svg>
+                                {{ __('advertising.admin_title') }}
+                            </a>
+                        @endcan
+
+                        @can('view admin dashboard')
+                            <a href="{{ route('admin.analytics') }}" wire:navigate class="{{ request()->routeIs('admin.analytics') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-7"></path><path d="M22 20H2"></path></svg>
+                                {{ __('analytics.title') }}
                             </a>
                         @endcan
 
@@ -123,6 +151,12 @@
                             <a href="{{ route('questions.mine') }}" wire:navigate class="{{ request()->routeIs('questions.*') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
                                 {{ __('questions.mine.title') }}
+                            </a>
+                        @endcan
+                        @can('manage own campaigns')
+                            <a href="{{ route('advertiser.dashboard') }}" wire:navigate class="{{ request()->routeIs('advertiser.*') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"></path><path d="M15 9a3 3 0 0 1 0 6"></path></svg>
+                                {{ __('advertising.nav') }}
                             </a>
                         @endcan
 
@@ -220,6 +254,16 @@
                             </span>
                         </a>
                     @endif
+
+                    @unless (auth()->user()?->canAccessBackoffice())
+                        @php($unreadCount = auth()->user()->unreadNotifications()->count())
+                        <a href="{{ route('notifications') }}" wire:navigate class="ms-iconbtn-plain" aria-label="{{ __('play.inbox.title') }}" title="{{ __('play.inbox.title') }}">
+                            <span class="ms-row-12-rel">
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+                                @if ($unreadCount > 0)<span class="btn-badge">{{ min($unreadCount, 99) }}</span>@endif
+                            </span>
+                        </a>
+                    @endunless
 
                     @include('partials.locale-switcher')
                     @include('partials.theme-toggle')

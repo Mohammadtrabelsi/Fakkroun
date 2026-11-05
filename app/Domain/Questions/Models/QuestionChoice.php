@@ -30,11 +30,16 @@ class QuestionChoice extends Model
         return $this->belongsTo(Question::class);
     }
 
+    /** Arabic answer letters (design brief): أ ب ج د. */
+    public const ARABIC_LETTERS = [1 => 'أ', 2 => 'ب', 3 => 'ج', 4 => 'د'];
+
     /**
-     * Letter shown to players: A, B, C, D.
+     * Letter shown to players: A B C D, or أ ب ج د for Arabic.
      */
-    public function letter(): string
+    public function letter(?string $language = null): string
     {
-        return chr(64 + $this->position);
+        return $language === 'ar'
+            ? (self::ARABIC_LETTERS[$this->position] ?? (string) $this->position)
+            : chr(64 + $this->position);
     }
 }
