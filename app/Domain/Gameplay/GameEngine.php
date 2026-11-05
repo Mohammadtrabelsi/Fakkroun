@@ -65,7 +65,8 @@ class GameEngine
                 $settings = $locked->settings;
                 $difficulty = $settings['difficulty'] === 'any' ? null : $settings['difficulty'];
                 $count = (int) $settings['question_count'];
-                $sponsored = ($settings['include_sponsored'] ?? true) && $this->settings->get('advertising.enabled')
+                // No sponsored questions in a room hosted by a paid (ad-free) account.
+                $sponsored = ($settings['include_sponsored'] ?? true) && $this->settings->get('advertising.enabled') && ! $host->hasPaidPlan()
                     ? app(SponsoredQuestionService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, min($count - 1, (int) $this->settings->get('advertising.max_sponsored_per_game')))
                     : [];
                 $questionIds = [...$this->selector->select($settings['language'], $settings['category_ids'], $difficulty, $count - count($sponsored), $playerIds), ...$sponsored];

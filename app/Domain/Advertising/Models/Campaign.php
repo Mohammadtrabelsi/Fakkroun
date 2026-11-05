@@ -53,6 +53,8 @@ class Campaign extends Model
     public function scopeRunning(Builder $query): void
     {
         $query->where('status', CampaignStatus::Active->value)
+            // A suspended advertiser's credits are frozen: nothing runs.
+            ->whereHas('advertiser', fn ($q) => $q->where('status', 'active'))
             ->where(fn ($q) => $q->whereNull('starts_at')->orWhere('starts_at', '<=', now()))
             ->where(fn ($q) => $q->whereNull('ends_at')->orWhere('ends_at', '>', now()));
     }

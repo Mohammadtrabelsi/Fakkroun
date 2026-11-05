@@ -176,6 +176,13 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
         </div>
     </div>
 
+    @if ($advertiser->status === 'suspended')
+        <div role="alert" class="tag tag-outline ms-notice">{{ __('advertising.policy.suspended_notice') }}</div>
+    @endif
+    @php($strikes = \App\Domain\Advertising\Models\PolicyStrike::query()->where('advertiser_id', $advertiser->id)->count())
+    @if ($strikes > 0 && $advertiser->status !== 'suspended')
+        <div role="status" class="tag tag-outline ms-notice">{{ __('advertising.policy.strikes_notice', ['count' => $strikes, 'max' => \App\Domain\Advertising\PolicyEnforcementService::SUSPEND_AT]) }}</div>
+    @endif
     <p role="note" class="ms-fs-13 ms-mb-24">{{ __('advertising.policy_notice') }} <a href="{{ route('terms') }}#advertising">{{ __('advertising.policy_link') }}</a></p>
 
     <div class="stat-cards ms-mb-24">

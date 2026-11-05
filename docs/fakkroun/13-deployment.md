@@ -76,6 +76,8 @@ Required `.env` beyond the Laravel defaults:
 | `APP_ENV=production`, `APP_DEBUG=false`, `APP_URL` | `APP_URL` is used in invitation links. |
 | `DB_*`, `CACHE_STORE`, `SESSION_DRIVER`, `QUEUE_CONNECTION` | `database` for all three works out of the box. Switch to Redis when there are several web servers. |
 | `MAIL_*`, `BACKUP_NOTIFICATION_EMAIL` | Password resets, backup alerts. |
+| `FAKKROUN_PAYMENT_DRIVER` | `manual` (default) until a gateway driver exists. Grant ad-free plans with `php artisan plans:grant {email} {reference} --months=N`. `FAKKROUN_PLAN_PRICE_MINOR` (0 = not on sale) and `FAKKROUN_PAYMENT_CURRENCY`. |
+| `FAKKROUN_TERMS_DRAFT`, `FAKKROUN_TERMS_UPDATED`, `FAKKROUN_CONTACT_EMAIL` | Terms page: draft notice (on by default), update date, contact address. |
 | `ANTHROPIC_API_KEY` (optional) | Enables AI drafting. Without it the AI screens show as disabled. `FAKKROUN_AI_MODEL`, `FAKKROUN_AI_EFFORT` and `FAKKROUN_AI_BATCH_COST_CEILING` tune it. |
 
 Game, scoring, submission, import, translation and **advertising** rules (frequency caps, prices per credit, currency, low-balance threshold) are **not** env vars. Administrators change them in **Admin → Game settings**, and they are stored in `settings.platform`.

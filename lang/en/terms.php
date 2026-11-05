@@ -27,6 +27,7 @@ return [
             'title' => 'Accounts',
             'paragraphs' => [
                 'You need an account to host or join a game. Keep your password private; you are responsible for what happens with your account.',
+                'A room hosted by a paid account is ad-free for every player in it, including free accounts.',
                 'There are two kinds of account:',
             ],
         ],
@@ -42,6 +43,7 @@ return [
             'paragraphs' => [
                 'Ads help keep Fakkroun free. We only accept advertisers whose products, services and messages are halal, respect every religion and belief, respect human dignity, and are suitable for children.',
                 'Every ad is checked by a person before any player sees it. We may refuse, pause or remove any ad that does not follow this policy, at any time.',
+                'Breaches of this policy are handled in three steps: the first breach brings a written warning, the second a call from our team, and the third suspends the advertiser account. Each breach stops the campaign concerned. While an account is suspended, its remaining credits are frozen.',
             ],
         ],
         'privacy' => [
@@ -73,6 +75,7 @@ return [
             'points' => [
                 'Everything in the free account',
                 'No ads while you play',
+                'Rooms you host are ad-free for everyone',
                 'Coming soon: price to be announced',
             ],
         ],

@@ -50,6 +50,7 @@ class User extends Authenticatable implements MustVerifyEmail
             'status' => AccountStatus::class,
             'suspended_at' => 'datetime',
             'last_seen_at' => 'datetime',
+            'plan_expires_at' => 'datetime',
         ];
     }
 
@@ -64,6 +65,14 @@ class User extends Authenticatable implements MustVerifyEmail
     public function canAccessBackoffice(): bool
     {
         return $this->can('access backoffice');
+    }
+
+    /**
+     * Paid, ad-free plan currently running (see App\Domain\Billing\PlanService).
+     */
+    public function hasPaidPlan(): bool
+    {
+        return app(\App\Domain\Billing\PlanService::class)->isPaid($this);
     }
 
     public function isSuspended(): bool

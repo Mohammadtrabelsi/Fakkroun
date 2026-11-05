@@ -27,6 +27,7 @@ return [
             'title' => 'Comptes',
             'paragraphs' => [
                 'Un compte est nécessaire pour créer ou rejoindre une partie. Gardez votre mot de passe secret ; vous êtes responsable de l’usage de votre compte.',
+                'Une salle créée par un compte payant est sans publicité pour tous ses joueurs, y compris les comptes gratuits.',
                 'Il existe deux types de compte :',
             ],
         ],
@@ -42,6 +43,7 @@ return [
             'paragraphs' => [
                 'La publicité permet à Fakkroun de rester gratuit. Nous n’acceptons que des annonceurs dont les produits, services et messages sont halal, respectent toutes les religions et croyances, respectent la dignité humaine et conviennent aux enfants.',
                 'Chaque publicité est vérifiée par une personne avant d’être montrée. Nous pouvons refuser, suspendre ou retirer à tout moment une publicité qui ne respecte pas cette politique.',
+                'Les manquements à cette politique sont traités en trois étapes : le premier entraîne un avertissement écrit, le deuxième un appel de notre équipe, et le troisième la suspension du compte annonceur. Chaque manquement arrête la campagne concernée. Pendant la suspension, les crédits restants sont gelés.',
             ],
         ],
         'privacy' => [
@@ -73,6 +75,7 @@ return [
             'points' => [
                 'Tout le compte gratuit',
                 'Aucune publicité pendant le jeu',
+                'Les salles que vous créez sont sans publicité pour tous',
                 'Bientôt disponible : prix communiqué plus tard',
             ],
         ],

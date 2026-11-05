@@ -1,6 +1,24 @@
 <?php
 
 return [
+    'policy' => [
+        'breach' => 'Manquement à la politique',
+        'confirm' => 'Enregistrer un manquement ? La campagne s’arrête, et l’annonceur est averti, appelé ou suspendu (1er, 2e, 3e manquement).',
+        'strikes' => 'Manquements',
+        'suspended' => 'Suspendu',
+        'reactivate' => 'Réactiver',
+        'reactivated' => 'Annonceur réactivé.',
+        'calls_due' => 'Annonceurs à appeler (deuxième manquement)',
+        'mark_called' => 'Marquer comme appelé',
+        'call_recorded' => 'Appel enregistré.',
+        'recorded' => [
+            '1' => 'Manquement enregistré : avertissement envoyé.',
+            '2' => 'Manquement enregistré : appelez l’annonceur.',
+            '3' => 'Manquement enregistré : annonceur suspendu.',
+        ],
+        'suspended_notice' => 'Votre compte est suspendu après trois manquements. Vos crédits sont gelés. Contactez-nous pour discuter d’une réactivation.',
+        'strikes_notice' => 'Manquements sur votre compte : :count sur :max. À :max, le compte est suspendu.',
+    ],
     'policy_notice' => 'Chaque publicité doit respecter la politique publicitaire : halal, respectueuse de toutes les religions et de la dignité humaine, et adaptée aux enfants.',
     'policy_link' => 'Lire la politique',
     'nav' => 'Publicité',
@@ -137,12 +155,17 @@ return [
         'other' => 'Autre',
     ],
     'notices' => [
+        'policy_warning' => 'Avertissement pour « :campaign » : :reason. La campagne a été arrêtée. Un deuxième manquement entraîne un appel de notre équipe ; un troisième suspend votre compte.',
+        'policy_call' => 'Deuxième manquement (« :campaign ») : :reason. La campagne a été arrêtée et notre équipe va vous appeler. Un troisième manquement suspend votre compte.',
+        'policy_suspended' => 'Troisième manquement (« :campaign ») : :reason. Votre compte annonceur est suspendu ; vos crédits restants sont gelés.',
+        'policy_reactivated' => 'Votre compte annonceur est de nouveau actif. Les campagnes en pause peuvent être soumises à validation.',
         'purchase' => 'Votre achat « :package » a été enregistré et les crédits ajoutés.',
         'low_credits' => 'Solde bas : il reste :balance :type.',
         'activated' => 'Votre campagne « :campaign » a été approuvée et est active.',
         'exhausted' => 'Votre campagne « :campaign » n’a plus de crédits.',
     ],
     'errors' => [
+        'advertiser_suspended' => 'Votre compte annonceur est suspendu.',
         'adjustment' => 'Un ajustement exige une quantité non nulle et une note.',
         'reverse_only_consumption' => 'Seule une consommation de crédits peut être remboursée.',
         'insufficient' => 'Pas assez de :type.',

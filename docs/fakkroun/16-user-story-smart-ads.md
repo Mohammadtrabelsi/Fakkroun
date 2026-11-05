@@ -69,7 +69,8 @@
 
 - New account plan on `users`: `free` (default) or `paid`, with `plan_expires_at`. Payment for player plans needs a gateway, which is still to be chosen (assessment D7).
 - A **paid** player is never offered a banner (`reveal`, `post_game`, `lobby`), and no impression is ever billed for them.
-- Rooms (proposed rule): when the **host** has a paid account, the room has no sponsored questions or rounds either, so a whole class can play ad-free. In a free host's room, a paid guest sees no banners, but sponsored questions and rounds stay (they are shared game content), always labelled "Sponsored".
+- Rooms (**decided, built**): when the **host** has a paid account, the room has no banners and no sponsored questions or rounds, so a whole class plays ad-free. In a free host's room, a paid guest sees no banners, but sponsored questions and rounds stay (they are shared game content), always labelled "Sponsored".
+- **Built:** `users.plan` / `plan_expires_at`, `User::hasPaidPlan()`, the abstract `PaymentProvider` with a manual driver, and `php artisan plans:grant {email} {reference} --months=N`. Still to build: a player-facing "Go ad-free" page once a gateway is chosen.
 - The Terms page already describes both plans (`/terms#accounts`); the paid plan is marked "coming soon".
 
 ### S7. Safe for young players
@@ -120,7 +121,7 @@
 - The policy is part of the general Terms of use: the chart at `/terms#advertising` (halal; respect for every religion; humanity and dignity; kids-friendly; honesty).
 - The advertiser dashboard and the admin review screen link to it.
 - Approving a campaign requires the reviewer to tick "Checked against the advertising policy"; the tick is stored with the review (`reviewed_by`, `reviewed_at`).
-- A campaign found in breach is stopped at once; what happens to unused credits is set in the advertiser agreement (see §6).
+- A campaign found in breach is stopped at once. **Built:** three steps (warning, call, suspension) with frozen credits during suspension; see §6.
 
 ## 4. Non-functional requirements
 
@@ -153,13 +154,19 @@
 | Accepted advertisers | Only **halal** advertisers who respect every religion and human dignity and are **kids-friendly**. Published as a chart in the Terms of use (S13). |
 | Minimum age | No age-gated placement. Players from **8** years; every ad must suit children. |
 
+Decided on 2026-11-05 (second round):
+
+| Question | Decision | Built |
+| --- | --- | --- |
+| Policy breaches and unused credits | **1st** breach: written warning. **2nd**: our team calls the advertiser. **3rd**: the advertiser account is suspended. Each breach stops the campaign; credits are kept but **frozen** while suspended. | `PolicyEnforcementService`, Admin → Advertising (breach button, calls to make, reactivate), advertiser notices, Terms |
+| Paid host | **Yes:** a room hosted by a paid account is ad-free for everyone (no banners, no sponsored questions or rounds). | `AdService::offer`, `GameEngine::start` |
+| Payment provider | **Abstract for now**, real gateway later. | `PaymentProvider` interface, `ManualPaymentProvider`, `PaymentService`, `plans:grant` command |
+
 Still open:
 
-1. Pack contents and prices (`[PACK DETAILS]`), and the player paid-plan price.
-2. A payment gateway for paid player accounts (and, later, advertiser packs).
-3. Unused credits when a campaign breaks the policy: refunded, kept, or lost? (advertiser agreement)
-4. Confirm the room rule in S6: a paid host makes the whole room ad-free.
-5. Legal review of the Terms of use before launch (the page shows a draft notice until `FAKKROUN_TERMS_DRAFT=false`).
+1. Pack contents and prices (`[PACK DETAILS]`), and the player paid-plan price (`FAKKROUN_PLAN_PRICE_MINOR`; 0 means not on sale).
+2. Which payment gateway to implement behind `PaymentProvider`.
+3. Legal review of the Terms of use before launch (the page shows a draft notice until `FAKKROUN_TERMS_DRAFT=false`).
 
 ## 7. Delivery slices
 

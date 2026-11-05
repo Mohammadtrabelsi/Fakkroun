@@ -108,6 +108,21 @@ return [
     | The text lives in lang/{en,fr,ar}/terms.php. Keep "draft" on until a lawyer has
     | reviewed it; the page then shows a visible draft notice.
     */
+    /*
+    |--------------------------------------------------------------------------
+    | Payments (abstract until a gateway is chosen)
+    |--------------------------------------------------------------------------
+    | Driver "manual": no online checkout, admins confirm payments received
+    | outside the platform (php artisan plans:grant). A real gateway is a new
+    | App\Domain\Billing\Contracts\PaymentProvider driver.
+    */
+    'payments' => [
+        'driver' => env('FAKKROUN_PAYMENT_DRIVER', 'manual'),
+        'currency' => env('FAKKROUN_PAYMENT_CURRENCY', 'TND'),
+        // 0 = the paid plan is not on sale yet ([PLAN PRICE]).
+        'player_plan_price_minor' => (int) env('FAKKROUN_PLAN_PRICE_MINOR', 0),
+    ],
+
     'legal' => [
         'terms_draft' => (bool) env('FAKKROUN_TERMS_DRAFT', true),
         'terms_updated' => env('FAKKROUN_TERMS_UPDATED', '[DATE]'),
