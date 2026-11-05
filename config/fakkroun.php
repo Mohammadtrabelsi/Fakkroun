@@ -103,6 +103,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Terms of use (public page /terms)
+    |--------------------------------------------------------------------------
+    | The text lives in lang/{en,fr,ar}/terms.php. Keep "draft" on until a lawyer has
+    | reviewed it; the page then shows a visible draft notice.
+    */
+    'legal' => [
+        'terms_draft' => (bool) env('FAKKROUN_TERMS_DRAFT', true),
+        'terms_updated' => env('FAKKROUN_TERMS_UPDATED', '[DATE]'),
+        'contact_email' => env('FAKKROUN_CONTACT_EMAIL', '[CONTACT EMAIL]'),
+        'minimum_age' => 8,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | AI-assisted question generation (spec §10, design brief "Draft with AI")
     |--------------------------------------------------------------------------
     |

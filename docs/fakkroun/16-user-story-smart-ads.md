@@ -62,14 +62,15 @@
 
 - Track **clicks** on "Learn more" through a server redirect: `/ads/click/{token}`, recorded once per delivery and bound to the same player as the delivery token.
 - Rotation favours creatives with a higher confirmed click-through rate while still showing new creatives (explore/exploit with a minimum share for each). The method and its parameters are admin settings and are documented.
-- Clicks are **not billed** in this story. Pricing per click, if ever wanted, is a separate business decision (§6).
+- Clicks are **never billed**. Advertisers pay per pack (S11); clicks are a reporting and rotation signal only.
 
-### S6. Room-level controls for hosts and schools
-**As a teacher**, I want to run an ad-free room for my class.
+### S6. Free and paid player accounts (ad-free)
+**As a player**, I can keep a free account that shows ads, or pay for an ad-free account.
 
-- New room setting `ads`: `standard` (default), `sponsored_only` (sponsored questions but no banners), or `off`.
-- Admins choose who may set `off`: everyone, verified schools only, or nobody (`advertising.ad_free_rooms` setting).
-- Sponsored questions still respect `include_sponsored`.
+- New account plan on `users`: `free` (default) or `paid`, with `plan_expires_at`. Payment for player plans needs a gateway, which is still to be chosen (assessment D7).
+- A **paid** player is never offered a banner (`reveal`, `post_game`, `lobby`), and no impression is ever billed for them.
+- Rooms (proposed rule): when the **host** has a paid account, the room has no sponsored questions or rounds either, so a whole class can play ad-free. In a free host's room, a paid guest sees no banners, but sponsored questions and rounds stay (they are shared game content), always labelled "Sponsored".
+- The Terms page already describes both plans (`/terms#accounts`); the paid plan is marked "coming soon".
 
 ### S7. Safe for young players
 **As an admin**, I want ads to stay appropriate for every age.
@@ -77,6 +78,7 @@
 - Targeting is **contextual only**: room category, question topic and language. No behavioural profiles and no tracking across games or sites.
 - Advertisers never receive personal data. The dashboard shows only aggregates, and breakdowns under `advertising.min_report_group` players are merged into "Other" so no individual can be identified.
 - Creatives keep the admin review step. Admins can block categories of advertisers or topics platform-wide.
+- Players can be as young as **8** (general-culture content), so **every** ad must be suitable for children. There is no age-gated placement.
 
 ### S8. AI-assisted review (assist, never approve)
 **As an admin**, I want help reviewing creatives quickly.
@@ -96,6 +98,30 @@
 - New placements reuse the delivery-token, confirmation and `billing_reference` pattern. Reconciliation covers them too.
 - Tests prove: one charge per confirmed display; no charge for unconfirmed, expired or other-player tokens; no negative balance; a refresh or reconnect never charges twice.
 
+### S11. Packs and invoices (pay per pack, never per click)
+**As an advertiser**, I buy a pack and receive an invoice; I pay for what the pack contains, not for clicks.
+
+- Three packs, created by admins in **Admin → Advertising → Packages**: **Essential** (associations, schools, small organisations), **Professional** (companies, larger campaigns), **Enterprise** (national campaigns, custom needs). Contents and prices are admin data: `[PACK DETAILS]` until you set them.
+- A pack holds a number of confirmed ad displays plus sponsored questions and/or sponsored rounds (separate balances, as today).
+- **Invoices:** every recorded purchase produces a numbered PDF invoice (`spatie/laravel-pdf` is already installed). Numbers are sequential and never reused; an invoice is never edited, only cancelled by a credit note.
+- **Usage statement:** a monthly PDF per advertiser counting the confirmed displays, sponsored questions and rounds used, from the ledger.
+- Admin can download any invoice; an advertiser only their own.
+
+### S12. Sponsored rounds
+**As an advertiser**, I want a themed round of questions presented by my organisation.
+
+- Depends on rounds ([`07`](07-next-step-gameplay-depth.md) §4). A sponsored round is a set of reviewed questions on one theme, introduced by "This round is presented by …".
+- Billed **once per room** that plays it, from a new `sponsored_round` credit balance, with billing reference `sponsored-round:<game id>:<round>`.
+- At most one sponsored round per game; never in a paid host's room (S6).
+
+### S13. Advertiser policy (halal, respectful, kids-friendly)
+**As an admin**, I accept only advertisers that follow the published policy.
+
+- The policy is part of the general Terms of use: the chart at `/terms#advertising` (halal; respect for every religion; humanity and dignity; kids-friendly; honesty).
+- The advertiser dashboard and the admin review screen link to it.
+- Approving a campaign requires the reviewer to tick "Checked against the advertising policy"; the tick is stored with the review (`reviewed_by`, `reviewed_at`).
+- A campaign found in breach is stopped at once; what happens to unused credits is set in the advertiser agreement (see §6).
+
 ## 4. Non-functional requirements
 
 - **Performance:** picking an ad adds no more than one indexed query per offer. Creative scores are cached per campaign and refreshed by a scheduled job.
@@ -111,28 +137,43 @@
 | `ad_deliveries.placement` values `post_game`, `lobby` | S3 |
 | `ad_clicks` (delivery_id unique, clicked_at) | S5, S9 |
 | `creative_scores` (creative_id, impressions, clicks, score, refreshed_at) | S5 rotation cache |
-| `rooms.settings.ads` | S6 |
-| New settings: `allow_untargeted`, `max_same_creative_per_day`, `ad_free_rooms`, `min_report_group`, per-placement caps | S1, S4, S6, S7 |
+| `users.plan`, `users.plan_expires_at` | S6 |
+| `advertising_invoices` (number unique, advertiser, purchase entry, pdf path, issued_at, cancelled_by) | S11 |
+| `sponsored_round` credit type and deliveries | S12 |
+| `advertising_campaigns.policy_checked` | S13 |
+| New settings: `allow_untargeted`, `max_same_creative_per_day`, `min_report_group`, per-placement caps | S1, S4, S7 |
 
-## 6. Questions for the owner
+## 6. Decisions (owner, 2026-11-05)
 
-1. Should clicks ever be billed (pay per click), or stay a reporting metric only?
-2. Who may create ad-free rooms: everyone, verified schools only, or nobody?
-3. Should the lobby show ads at all, given it's where hosts present the room to a class?
-4. Is there a list of advertiser categories that are never accepted (for example gambling or alcohol)?
-5. Is a minimum player age required for any placement?
+| Question | Decision |
+| --- | --- |
+| Pay per click? | **No.** Advertisers pay **per pack** (Essential, Professional, Enterprise). Confirmed ads are counted and invoiced (S11). |
+| Ad-free rooms | Through **paid player accounts**: free accounts see ads, paid accounts don't (S6). |
+| Formats | Banners at calm moments, **sponsored questions** and **sponsored rounds** (S3, S12). |
+| Accepted advertisers | Only **halal** advertisers who respect every religion and human dignity and are **kids-friendly**. Published as a chart in the Terms of use (S13). |
+| Minimum age | No age-gated placement. Players from **8** years; every ad must suit children. |
+
+Still open:
+
+1. Pack contents and prices (`[PACK DETAILS]`), and the player paid-plan price.
+2. A payment gateway for paid player accounts (and, later, advertiser packs).
+3. Unused credits when a campaign breaks the policy: refunded, kept, or lost? (advertiser agreement)
+4. Confirm the room rule in S6: a paid host makes the whole room ad-free.
+5. Legal review of the Terms of use before launch (the page shows a draft notice until `FAKKROUN_TERMS_DRAFT=false`).
 
 ## 7. Delivery slices
 
 1. **Relevance:** S1 + S4 (contextual scoring and fatigue caps on the existing `reveal` placement).
-2. **Placements:** S3 (`post_game`, then `lobby`) + S6 (room ad controls).
-3. **Learning moments:** S2 + click tracking from S5 + S9 reporting.
-4. **Optimisation:** S5 rotation by performance.
-5. **Assistance:** S8 AI review notes.
-6. **Throughout:** S7 and S10 are acceptance criteria for every slice, not a separate slice.
+2. **Placements and plans:** S3 (`post_game`, then `lobby`) + S6 (free/paid accounts).
+3. **Packs and invoices:** S11 + S13 (policy tick on approval).
+4. **Learning moments:** S2 + click tracking from S5 + S9 reporting.
+5. **Sponsored rounds:** S12 (after rounds in [`07`](07-next-step-gameplay-depth.md)).
+6. **Optimisation:** S5 rotation by performance.
+7. **Assistance:** S8 AI review notes.
+8. **Throughout:** S7 and S10 are acceptance criteria for every slice, not a separate slice.
 
 ## 8. Out of scope
 
 - Third-party ad networks, programmatic bidding, retargeting, or any cross-site tracking.
 - Video or audio ads.
-- Online payment for advertisers (purchases stay admin-recorded until a gateway is chosen).
+- Online payment for advertisers (purchases stay admin-recorded, with invoices, until a gateway is chosen).

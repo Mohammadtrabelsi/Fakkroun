@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'policy_notice' => 'Chaque publicité doit respecter la politique publicitaire : halal, respectueuse de toutes les religions et de la dignité humaine, et adaptée aux enfants.',
+    'policy_link' => 'Lire la politique',
     'nav' => 'Publicité',
     'admin_title' => 'Publicité',
     'admin_description' => 'Annonceurs, offres, crédits, validation des campagnes et rapprochement. Les crédits ne sont consommés que par des événements confirmés et enregistrés côté serveur.',

@@ -275,6 +275,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     </div>
 
     @if ($tab === 'review')
+    <p role="note" class="ms-fs-13 ms-mb-16">{{ __('advertising.policy_notice') }} <a href="{{ route('terms') }}#advertising">{{ __('advertising.policy_link') }}</a></p>
         <div class="card ms-p-0">
             <div class="table-wrap">
                 <table class="table">

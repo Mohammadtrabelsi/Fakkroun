@@ -176,6 +176,8 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
         </div>
     </div>
 
+    <p role="note" class="ms-fs-13 ms-mb-24">{{ __('advertising.policy_notice') }} <a href="{{ route('terms') }}#advertising">{{ __('advertising.policy_link') }}</a></p>
+
     <div class="stat-cards ms-mb-24">
         @foreach ([
             [__('advertising.credit_types.impression'), number_format($advertiser->balance(CreditType::Impression)), __('advertising.available')],

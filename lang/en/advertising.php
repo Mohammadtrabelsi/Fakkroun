@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'policy_notice' => 'Every ad must follow the advertising policy: halal, respectful of every religion and of human dignity, and suitable for children.',
+    'policy_link' => 'Read the policy',
     'nav' => 'Advertising',
     'admin_title' => 'Advertising',
     'admin_description' => 'Advertisers, packages, credits, campaign review and reconciliation. Credits are only used by confirmed, server-recorded events.',

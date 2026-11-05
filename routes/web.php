@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::get('/robots.txt', RobotsController::class)->name('robots');
 
 Route::view('/about', 'about')->name('about');
+Route::view('/terms', 'terms')->name('terms');
 Route::view('/docs', 'docs')->name('docs');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
