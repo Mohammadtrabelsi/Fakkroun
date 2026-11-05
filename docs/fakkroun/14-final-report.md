@@ -2,7 +2,7 @@
 
 > **Spec reference:** §30 (phases), §33 (report format)
 > **Branches:** `ccr-fc788502-hcpb6b` (Phase 1 + MVP, PR #1 → `develop`) and `claude/fakkroun-next-steps` (design brief, phases 4–6, draft PR #2 → `develop`)
-> **Date:** 2026-11-05
+> **Date:** 2026-11-05 · open work: [`15-roadmap.md`](15-roadmap.md)
 
 ## ⚠️ Nothing in this report has been executed
 
@@ -20,8 +20,8 @@ What was checked: `php -l` on every PHP file; the PHP part of every Livewire sin
 | 2–3 MVP | Question bank (statuses, translations, revisions, moderation, reports, import/export, language pool), rooms, server-authoritative game engine, scoring with the duplicate-answer rule, results | [`02`](02-mvp.md) |
 | Design brief | Tokens, mascot, public layout, home; lobby, live room, results; community screen; partners | [`12`](12-design-implementation.md) |
 | Player experience | Game history (`/play/history`), achievements (awarded when a game ends, shown on the profile and home), player home with stats, keyboard answering (1–4, A–D, أ–د). Scheduled game driver (`games:advance` every 5 s), lobby expiry, leaderboard (this week / all time), public player profiles, player inbox and bell, 404 page with the mascot | [`11`](11-next-step-player-experience.md) |
-| 4 AI | `QuestionDrafter` (one draft from a fact, rate-limited) and batch generation (queued, chunked, cost ceiling, duplicate check). Output always lands as **draft** with `source = ai`. Anthropic Messages API over Laravel's HTTP client with structured JSON output and retries. Hidden without `ANTHROPIC_API_KEY`. | [`08`](08-next-step-ai-question-generation.md) |
-| 5 Advertising | See §2 | [`09`](09-next-step-advertising-and-billing.md) |
+| 4 AI | `QuestionDrafter` (one draft from a fact, rate-limited) and batch generation (queued, chunked, cost ceiling, duplicate check). Output always lands as **draft** with `source = ai`. Anthropic Messages API over Laravel's HTTP client with structured JSON output and retries. Hidden without `ANTHROPIC_API_KEY`. | §1 (step 08 removed: done) |
+| 5 Advertising | See §2 | §2 (step 09 removed: done); future work in [`16`](16-user-story-smart-ads.md) |
 | 6 Analytics and operations | Admin analytics (games, players, answers, correct rate, response time, per category and language, hardest/easiest/most played/most reported questions, question bank health, AI usage and cost, advertising). Deployment guide. | [`13`](13-deployment.md), [`10`](10-next-step-analytics-and-hardening.md) |
 
 ## 2. Advertising and billing (Phase 5)
