@@ -33,3 +33,7 @@ if (config('backup.schedule.enabled')) {
     Schedule::command('backup:clean')->dailyAt($backupAt->copy()->addHour()->format('H:i'))->withoutOverlapping()->onOneServer();
     Schedule::command('backup:monitor')->dailyAt($backupAt->copy()->addMinutes(90)->format('H:i'))->onOneServer();
 }
+
+// Fakkroun gameplay: advance games nobody is polling, and close stale lobbies.
+Schedule::command('games:advance')->everyFiveSeconds()->withoutOverlapping();
+Schedule::command('rooms:expire')->everyFiveMinutes()->withoutOverlapping();

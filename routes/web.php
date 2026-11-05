@@ -38,6 +38,8 @@ Route::get('/health.json', HealthCheckJsonResultsController::class)
 
 Route::get('/language/{locale}', LocaleController::class)->name('locale.switch');
 
+Route::livewire('/leaderboard', 'pages::leaderboard')->name('leaderboard');
+
 Route::middleware('guest')->group(function () {
     Route::livewire('/login', 'pages::auth.login')->name('login');
     Route::livewire('/register', 'pages::auth.register')->name('register');
@@ -62,6 +64,9 @@ Route::middleware('auth')->group(function () {
 
     Route::middleware('verified')->group(function () {
         Route::livewire('/dashboard', 'pages::dashboard')->name('dashboard');
+
+        Route::livewire('/notifications', 'pages::notifications')->name('notifications');
+        Route::livewire('/players/{user}', 'pages::players.show')->name('players.show');
 
         Route::middleware('can:play games')->group(function () {
             Route::livewire('/play', 'pages::rooms.create')->name('rooms.create');
