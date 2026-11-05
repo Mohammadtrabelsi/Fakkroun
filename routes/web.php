@@ -76,7 +76,7 @@ Route::middleware('auth')->group(function () {
         });
 
         Route::middleware('can:submit questions')->group(function () {
-            Route::livewire('/questions/submit', 'pages::questions.submit')->name('questions.submit');
+            Route::livewire('/community/submit', 'pages::questions.submit')->name('questions.submit');
             Route::livewire('/questions/mine', 'pages::questions.mine')->name('questions.mine');
         });
 
@@ -168,6 +168,9 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/questions/{question}/edit', 'pages::admin.questions.editor')
                 ->middleware('can:manage questions')
                 ->name('admin.questions.edit');
+            Route::livewire('/admin/ai', 'pages::admin.ai')
+                ->middleware('can:manage questions')
+                ->name('admin.ai');
             Route::livewire('/admin/moderation', 'pages::admin.moderation')
                 ->middleware('can:moderate questions')
                 ->name('admin.moderation');

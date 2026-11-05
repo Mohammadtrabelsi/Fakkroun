@@ -5,6 +5,8 @@ namespace App\Domain\Questions\Enums;
 /**
  * Question lifecycle (spec §7.3):
  * Draft → Pending → Under review → Approved / Rejected → Published ⇄ Unpublished.
+ * A reviewer may instead send it back as "changes requested" with a note;
+ * the author edits and resubmits.
  * Transitions are enforced by ModerationService, never set directly.
  */
 enum QuestionStatus: string
@@ -14,6 +16,7 @@ enum QuestionStatus: string
     case UnderReview = 'under_review';
     case Approved = 'approved';
     case Rejected = 'rejected';
+    case ChangesRequested = 'changes_requested';
     case Published = 'published';
     case Unpublished = 'unpublished';
 

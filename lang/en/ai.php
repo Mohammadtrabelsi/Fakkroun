@@ -1,0 +1,42 @@
+<?php
+
+return [
+    'title' => 'AI generation',
+    'description' => 'Draft questions in bulk with AI. Every question lands as a draft marked “AI-assisted” for moderators to check against a source — nothing is published automatically.',
+    'disabled_notice' => 'AI is not configured. Set ANTHROPIC_API_KEY (or FAKKROUN_AI_DRIVER=fake for local testing).',
+    'count' => 'Number of questions',
+    'topic' => 'Topic (optional)',
+    'audience' => 'Audience (optional)',
+    'audience_placeholder' => 'e.g. secondary-school students',
+    'require_explanation' => 'Require an explanation for every question',
+    'require_reference' => 'Require a source link',
+    'review_notice' => 'Batches run in the background and stop if their estimated cost passes $:ceiling.',
+    'start' => 'Start generating',
+    'started' => 'Generation started. Results appear below.',
+    'batch' => 'Batch',
+    'results' => 'Results',
+    'cost' => 'Estimated cost',
+    'empty' => 'No generations yet.',
+    'counts' => ':accepted accepted · :duplicates duplicates · :rejected rejected / :requested',
+    'kind' => [
+        'batch' => 'Batch',
+        'draft' => 'Player draft',
+    ],
+    'status' => [
+        'pending' => 'Queued',
+        'running' => 'Running',
+        'completed' => 'Completed',
+        'failed' => 'Failed',
+        'stopped' => 'Stopped',
+    ],
+    'errors' => [
+        'disabled' => 'AI drafting is not available.',
+        'provider' => 'The AI provider returned an error (:status).',
+        'unreachable' => 'The AI provider could not be reached.',
+        'refused' => 'The AI declined this request.',
+        'truncated' => 'The AI reply was cut off. Try fewer questions per request.',
+        'malformed' => 'The AI reply could not be read.',
+        'too_many_drafts' => 'You have used AI drafting a lot recently. Please try again later.',
+        'cost_ceiling' => 'Stopped at the cost ceiling ($:ceiling).',
+    ],
+];

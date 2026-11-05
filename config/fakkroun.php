@@ -89,6 +89,40 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | AI-assisted question generation (spec §10, design brief "Draft with AI")
+    |--------------------------------------------------------------------------
+    |
+    | AI output is a draft, never a verified fact: generated questions always
+    | enter moderation (draft or pending) and keep source = ai.
+    |
+    */
+    'ai' => [
+        // anthropic | fake | none. "none" (or no key) hides every AI feature.
+        'driver' => env('FAKKROUN_AI_DRIVER', env('ANTHROPIC_API_KEY') ? 'anthropic' : 'none'),
+        'api_key' => env('ANTHROPIC_API_KEY'),
+        'base_url' => env('ANTHROPIC_BASE_URL', 'https://api.anthropic.com'),
+        'api_version' => '2026-10-21',
+        'model' => env('FAKKROUN_AI_MODEL', 'claude-opus-5-5'),
+        'effort' => env('FAKKROUN_AI_EFFORT', 'medium'),
+        'max_tokens' => 16000,
+        'timeout' => 180,
+        // Server-side refusal fallback (re-runs a declined request on a suitable model).
+        'fallbacks' => true,
+        'prompt_version' => 'v1',
+        // USD per million tokens, for the cost estimate shown to admins.
+        'price_input_per_mtok' => (float) env('FAKKROUN_AI_PRICE_IN', 4.0),
+        'price_output_per_mtok' => (float) env('FAKKROUN_AI_PRICE_OUT', 20.0),
+        'batch_max_questions' => 1000,
+        'chunk_size' => 10,
+        // A batch stops once its estimated cost passes this (USD).
+        'batch_cost_ceiling' => (float) env('FAKKROUN_AI_BATCH_COST_CEILING', 20.0),
+        // Status AI questions start in: draft | pending.
+        'initial_status' => 'draft',
+        'drafts_per_hour' => 10,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Gameplay timing — deployment-level
     |--------------------------------------------------------------------------
     */
@@ -109,6 +143,9 @@ return [
     |--------------------------------------------------------------------------
     */
     'questions' => [
+        // Community submissions (design brief): short enough for a phone, source required.
+        'community_body_max' => 160,
+        'community_requires_source' => true,
         'body_min' => 10,
         'body_max' => 500,
         'choice_max' => 200,

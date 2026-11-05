@@ -49,9 +49,10 @@ class SubmissionsAndReportsTest extends QuestionBankTestCase
             ->set('body', 'How many legs does a spider have?')
             ->set('choices', ['Six', 'Eight', 'Ten', 'Twelve'])
             ->set('correct', '1')
+            ->set('referenceUrl', 'https://en.wikipedia.org/wiki/Spider')
             ->call('submit')
             ->assertHasNoErrors()
-            ->assertRedirect(route('questions.mine'));
+            ->assertRedirect(route('questions.submit'));
 
         $this->actingAs($this->player)->get(route('questions.mine'))->assertOk()->assertSee('How many legs does a spider have?');
     }

@@ -130,6 +130,7 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
                 'publish' => $moderation->publish($this->question, $user),
                 'unpublish' => $moderation->unpublish($this->question, $user),
                 'reject' => $moderation->reject($this->question, $user, $this->rejectReason),
+                'request_changes' => $moderation->requestChanges($this->question, $user, $this->rejectReason),
             };
         } catch (\DomainException|AuthorizationException $e) {
             $this->toast($e->getMessage() ?: __('questions.errors.cannot_approve'), 'error');
@@ -170,11 +171,11 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
     {
         return match ($this->question?->status) {
             QuestionStatus::Draft => ['submit', 'approve', 'approve_publish'],
-            QuestionStatus::Pending, QuestionStatus::UnderReview => ['approve', 'approve_publish', 'reject'],
+            QuestionStatus::Pending, QuestionStatus::UnderReview => ['approve', 'approve_publish', 'request_changes', 'reject'],
             QuestionStatus::Approved => ['publish', 'reject'],
             QuestionStatus::Published => ['unpublish'],
             QuestionStatus::Unpublished => ['publish'],
-            QuestionStatus::Rejected => ['submit'],
+            QuestionStatus::Rejected, QuestionStatus::ChangesRequested => ['submit'],
             default => [],
         };
     }

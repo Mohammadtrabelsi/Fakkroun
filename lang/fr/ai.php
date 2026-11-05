@@ -1,0 +1,42 @@
+<?php
+
+return [
+    'title' => 'Génération IA',
+    'description' => 'Rédigez des questions en lot avec l’IA. Chaque question arrive en brouillon « assistée par IA » que les modérateurs vérifient avec une source — rien n’est publié automatiquement.',
+    'disabled_notice' => 'L’IA n’est pas configurée. Définissez ANTHROPIC_API_KEY (ou FAKKROUN_AI_DRIVER=fake pour tester en local).',
+    'count' => 'Nombre de questions',
+    'topic' => 'Thème (facultatif)',
+    'audience' => 'Public (facultatif)',
+    'audience_placeholder' => 'ex. élèves du secondaire',
+    'require_explanation' => 'Exiger une explication pour chaque question',
+    'require_reference' => 'Exiger un lien vers la source',
+    'review_notice' => 'Les lots tournent en arrière-plan et s’arrêtent si leur coût estimé dépasse :ceiling $.',
+    'start' => 'Lancer la génération',
+    'started' => 'Génération lancée. Les résultats apparaissent ci-dessous.',
+    'batch' => 'Lot',
+    'results' => 'Résultats',
+    'cost' => 'Coût estimé',
+    'empty' => 'Aucune génération pour l’instant.',
+    'counts' => ':accepted acceptées · :duplicates doublons · :rejected rejetées / :requested',
+    'kind' => [
+        'batch' => 'Lot',
+        'draft' => 'Brouillon joueur',
+    ],
+    'status' => [
+        'pending' => 'En file',
+        'running' => 'En cours',
+        'completed' => 'Terminé',
+        'failed' => 'Échec',
+        'stopped' => 'Arrêté',
+    ],
+    'errors' => [
+        'disabled' => 'La rédaction par IA n’est pas disponible.',
+        'provider' => 'Le fournisseur d’IA a renvoyé une erreur (:status).',
+        'unreachable' => 'Le fournisseur d’IA est injoignable.',
+        'refused' => 'L’IA a refusé cette demande.',
+        'truncated' => 'La réponse de l’IA a été coupée. Demandez moins de questions à la fois.',
+        'malformed' => 'La réponse de l’IA est illisible.',
+        'too_many_drafts' => 'Vous avez beaucoup utilisé la rédaction par IA récemment. Réessayez plus tard.',
+        'cost_ceiling' => 'Arrêté au plafond de coût (:ceiling $).',
+    ],
+];
