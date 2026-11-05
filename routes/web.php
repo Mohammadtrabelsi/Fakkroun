@@ -159,6 +159,9 @@ Route::middleware('auth')->group(function () {
                 ->middleware('can:manage questions')
                 ->where('format', 'csv|xlsx|json')
                 ->name('admin.questions.export');
+            Route::livewire('/admin/questions/import', 'pages::admin.questions.import')
+                ->middleware('can:manage questions')
+                ->name('admin.questions.import');
             Route::livewire('/admin/questions', 'pages::admin.questions.index')
                 ->middleware('can:manage questions')
                 ->name('admin.questions.index');
@@ -178,6 +181,9 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/game-settings', 'pages::admin.game-settings')
                 ->middleware('can:manage platform settings')
                 ->name('admin.game-settings');
+            Route::livewire('/admin/partners', 'pages::admin.partners')
+                ->middleware('can:manage advertising')
+                ->name('admin.partners');
             Route::livewire('/admin/moderators', 'pages::admin.moderators')
                 ->middleware('can:manage moderators')
                 ->name('admin.moderators');
