@@ -167,6 +167,11 @@ class CampaignService
         if ($advertiser->user_id !== $actor->id && ! $actor->can('manage advertising')) {
             throw new AuthorizationException;
         }
+
+        // A suspended advertiser (third policy breach) can't change campaigns.
+        if ($advertiser->status === 'suspended' && ! $actor->can('manage advertising')) {
+            throw new DomainActionException(__('advertising.errors.advertiser_suspended'));
+        }
     }
 
     private function authorizeAdmin(User $admin): void

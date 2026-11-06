@@ -34,6 +34,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(QuestionGenerator::class, fn () => config('fakkroun.ai.driver') === 'anthropic'
             ? new AnthropicQuestionGenerator
             : new FakeQuestionGenerator);
+
+        // Payment method: cash only for now. Add a gateway driver and map it here.
+        $this->app->bind(\App\Domain\Billing\Contracts\PaymentProvider::class, fn () => match (config('fakkroun.payments.driver')) {
+            default => new \App\Domain\Billing\Drivers\CashPaymentProvider,
+        });
     }
 
     /**

@@ -42,6 +42,11 @@ class AdService
             return $existing;
         }
 
+        // Paid accounts are ad-free, and so is every room a paid account hosts.
+        if ($player->hasPaidPlan() || $room->host?->hasPaidPlan()) {
+            return null;
+        }
+
         $ads = $this->settings->all()['advertising'];
 
         if (! $ads['enabled'] || $gq->position % max(1, (int) $ads['every_n_questions']) !== 0) {

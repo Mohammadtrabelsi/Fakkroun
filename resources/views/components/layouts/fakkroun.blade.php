@@ -76,7 +76,7 @@
                     @foreach ([
                         [__('home.footer.play'), [[__('home.footer.create'), $playUrl], [__('home.footer.join'), auth()->check() ? route('rooms.join') : route('login')]]],
                         [__('home.footer.contribute'), [[__('home.footer.submit'), route('questions.submit')], [__('home.footer.schools'), url('/#partners')], [__('home.footer.partners'), url('/#partners')]]],
-                        [__('home.footer.about'), [[__('home.footer.mission'), route('about')]]],
+                        [__('home.footer.about'), [[__('home.footer.mission'), route('about')], [__('home.footer.terms'), route('terms')]]],
                     ] as [$heading, $links])
                         <nav aria-label="{{ $heading }}" class="flex flex-col gap-1">
                             <b class="mb-1.5 text-sand">{{ $heading }}</b>

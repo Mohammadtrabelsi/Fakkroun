@@ -74,6 +74,14 @@ return [
             'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
         ],
 
+        // Player/user accounts (not advertisers): free with ads, or paid and ad-free.
+        // Advertiser packs are separate (Admin → Advertising → Packages).
+        'accounts' => [
+            // Monthly price of the paid, ad-free account, in minor units. 0 = not on sale.
+            'paid_plan_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'paid_plan_currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
+        ],
+
         'translations' => [
             // fallback: serve the fallback language when the player's language has no approved translation.
             // exclude: skip questions without an approved translation in the player's language.
@@ -99,6 +107,33 @@ return [
         // Shown on the home page partners band when no partner is active.
         'partner_placeholders' => 4,
         'partner_contact_url' => env('FAKKROUN_PARTNER_URL'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Terms of use (public page /terms)
+    |--------------------------------------------------------------------------
+    | The text lives in lang/{en,fr,ar}/terms.php. Keep "draft" on until a lawyer has
+    | reviewed it; the page then shows a visible draft notice.
+    */
+    /*
+    |--------------------------------------------------------------------------
+    | Payment method
+    |--------------------------------------------------------------------------
+    | "cash" only for now: admins record cash payments (Admin → Paid accounts
+    | or php artisan plans:grant). Another method is a new
+    | App\Domain\Billing\Contracts\PaymentProvider driver. The paid-account
+    | price is a platform setting (accounts group), not an env variable.
+    */
+    'payments' => [
+        'driver' => env('FAKKROUN_PAYMENT_DRIVER', 'cash'),
+    ],
+
+    'legal' => [
+        'terms_draft' => (bool) env('FAKKROUN_TERMS_DRAFT', true),
+        'terms_updated' => env('FAKKROUN_TERMS_UPDATED', '[DATE]'),
+        'contact_email' => env('FAKKROUN_CONTACT_EMAIL', '[CONTACT EMAIL]'),
+        'minimum_age' => 8,
     ],
 
     /*

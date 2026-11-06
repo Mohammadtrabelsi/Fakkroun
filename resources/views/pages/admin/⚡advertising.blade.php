@@ -72,7 +72,15 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     #[Computed]
     public function advertisers()
     {
-        return Advertiser::query()->with(['user', 'wallets'])->withCount('campaigns')->orderBy('name')->get();
+        return Advertiser::query()->with(['user', 'wallets'])->withCount('campaigns')
+            ->addSelect(['strikes_count' => \App\Domain\Advertising\Models\PolicyStrike::query()->selectRaw('count(*)')->whereColumn('advertiser_id', 'advertisers.id')])
+            ->orderBy('name')->get();
+    }
+
+    #[Computed]
+    public function callsDue()
+    {
+        return app(\App\Domain\Advertising\PolicyEnforcementService::class)->callsDue()->load('campaign.advertiser');
     }
 
     #[Computed]
@@ -219,6 +227,27 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         unset($this->pending);
     }
 
+    public function breach(int $id, \App\Domain\Advertising\PolicyEnforcementService $policy): void
+    {
+        $this->attempt(function () use ($id, $policy): void {
+            $strike = $policy->recordBreach(Campaign::query()->findOrFail($id), auth()->user(), (string) ($this->rejectNotes[$id] ?? ''));
+            $this->toast(__('advertising.policy.recorded.'.min($strike->level, 3)));
+        }, null);
+        unset($this->pending, $this->advertisers, $this->callsDue);
+    }
+
+    public function recordCall(int $strikeId, \App\Domain\Advertising\PolicyEnforcementService $policy): void
+    {
+        $this->attempt(fn () => $policy->recordCall(\App\Domain\Advertising\Models\PolicyStrike::query()->findOrFail($strikeId), auth()->user()), __('advertising.policy.call_recorded'));
+        unset($this->callsDue);
+    }
+
+    public function reactivate(int $id, \App\Domain\Advertising\PolicyEnforcementService $policy): void
+    {
+        $this->attempt(fn () => $policy->reactivate(Advertiser::query()->findOrFail($id), auth()->user()), __('advertising.policy.reactivated'));
+        unset($this->advertisers);
+    }
+
     public function pause(int $id, CampaignService $campaigns): void
     {
         $this->attempt(fn () => $campaigns->pause(Campaign::query()->findOrFail($id), auth()->user()), __('advertising.paused'));
@@ -232,11 +261,13 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         $this->toast($report['ok'] ? __('advertising.reconciled_ok') : __('advertising.reconciled_issues'), $report['ok'] ? 'success' : 'error');
     }
 
-    private function attempt(callable $action, string $done): void
+    private function attempt(callable $action, ?string $done): void
     {
         try {
             $action();
-            $this->toast($done);
+            if ($done !== null) {
+                $this->toast($done);
+            }
         } catch (\DomainException $e) {
             $this->toast($e->getMessage(), 'error');
         }
@@ -275,6 +306,18 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     </div>
 
     @if ($tab === 'review')
+        @if ($this->callsDue->isNotEmpty())
+            <div class="card ms-stack-16 ms-mb-16" role="status">
+                <b>{{ __('advertising.policy.calls_due') }}</b>
+                @foreach ($this->callsDue as $strike)
+                    <div class="ms-row-between ms-fs-13" wire:key="call-{{ $strike->id }}">
+                        <span>{{ $strike->campaign?->advertiser?->name ?? '—' }} · {{ $strike->campaign?->advertiser?->contact_email }} · {{ $strike->note }}</span>
+                        <button type="button" wire:click="recordCall({{ $strike->id }})" class="btn ms-btn-sm">{{ __('advertising.policy.mark_called') }}</button>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    <p role="note" class="ms-fs-13 ms-mb-16">{{ __('advertising.policy_notice') }} <a href="{{ route('terms') }}#advertising">{{ __('advertising.policy_link') }}</a></p>
         <div class="card ms-p-0">
             <div class="table-wrap">
                 <table class="table">
@@ -303,6 +346,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                     @if ($campaign->status !== CampaignStatus::Exhausted)
                                         <input type="text" wire:model="rejectNotes.{{ $campaign->id }}" class="input ms-btn-sm" placeholder="{{ __('advertising.reject_reason') }}" aria-label="{{ __('advertising.reject_reason') }}">
                                         <button type="button" wire:click="reject({{ $campaign->id }})" class="btn ms-btn-sm">{{ __('advertising.reject') }}</button>
+                                        <button type="button" wire:click="breach({{ $campaign->id }})" wire:confirm="{{ __('advertising.policy.confirm') }}" class="btn ms-btn-sm ms-outline-danger">{{ __('advertising.policy.breach') }}</button>
                                     @endif
                                 </div></td>
                             </tr>
@@ -319,7 +363,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         <div class="card ms-p-0 ms-mb-24">
             <div class="table-wrap">
                 <table class="table">
-                    <thead><tr><th>{{ __('advertising.advertiser') }}</th><th>{{ __('advertising.account') }}</th><th>{{ __('advertising.credit_types.impression') }}</th><th>{{ __('advertising.credit_types.sponsored_question') }}</th><th>{{ __('advertising.campaigns') }}</th></tr></thead>
+                    <thead><tr><th>{{ __('advertising.advertiser') }}</th><th>{{ __('advertising.account') }}</th><th>{{ __('advertising.credit_types.impression') }}</th><th>{{ __('advertising.credit_types.sponsored_question') }}</th><th>{{ __('advertising.campaigns') }}</th><th>{{ __('advertising.policy.strikes') }}</th><th></th></tr></thead>
                     <tbody>
                         @forelse ($this->advertisers as $advertiser)
                             <tr wire:key="a-{{ $advertiser->id }}">
@@ -328,9 +372,11 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                 <td class="tabular-nums">{{ number_format((int) $advertiser->wallets->firstWhere('credit_type', CreditType::Impression)?->balance) }}</td>
                                 <td class="tabular-nums">{{ number_format((int) $advertiser->wallets->firstWhere('credit_type', CreditType::SponsoredQuestion)?->balance) }}</td>
                                 <td>{{ $advertiser->campaigns_count }}</td>
+                                <td>{{ (int) $advertiser->strikes_count }} / {{ \App\Domain\Advertising\PolicyEnforcementService::SUSPEND_AT }}@if ($advertiser->status === 'suspended') <span class="tag tag-neutral">{{ __('advertising.policy.suspended') }}</span>@endif</td>
+                                <td class="ms-text-right">@if ($advertiser->status === 'suspended')<button type="button" wire:click="reactivate({{ $advertiser->id }})" class="btn ms-btn-sm">{{ __('advertising.policy.reactivate') }}</button>@endif</td>
                             </tr>
                         @empty
-                            <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.no_advertisers') }}</td></tr>
+                            <tr><td colspan="7" class="text-muted ms-empty">{{ __('advertising.no_advertisers') }}</td></tr>
                         @endforelse
                     </tbody>
                 </table>

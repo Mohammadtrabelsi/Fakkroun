@@ -105,6 +105,13 @@
                             </a>
                         @endcan
 
+                        @can('manage platform settings')
+                            <a href="{{ route('admin.plans') }}" wire:navigate class="{{ request()->routeIs('admin.plans') ? 'active' : '' }}">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg>
+                                {{ __('billing.plans.title') }}
+                            </a>
+                        @endcan
+
                         @can('view admin dashboard')
                             <a href="{{ route('admin.analytics') }}" wire:navigate class="{{ request()->routeIs('admin.analytics') ? 'active' : '' }}">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-7"></path><path d="M22 20H2"></path></svg>

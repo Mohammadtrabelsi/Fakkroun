@@ -75,6 +75,11 @@ return [
             'currency' => 'Devise (code ISO)',
             'low_credit_threshold' => 'Prévenir les annonceurs sous ce nombre de crédits',
         ],
+        'accounts' => [
+            'title' => 'Comptes (joueurs)',
+            'paid_plan_price_minor' => 'Compte payant sans publicité : prix mensuel (unités mineures, 0 = pas en vente)',
+            'paid_plan_currency' => 'Devise du compte payant (code ISO)',
+        ],
         'translations' => [
             'title' => 'Langues des questions',
             'missing_policy' => 'Si une question n’a pas de traduction approuvée dans la langue du joueur',

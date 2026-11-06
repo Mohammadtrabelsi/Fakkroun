@@ -11,7 +11,7 @@
 | 4 | [`12`](12-design-implementation.md) Open decisions B1, B2 | Guest players, 4-character codes | Your decision |
 | 5 | [`07`](07-next-step-gameplay-depth.md) Gameplay depth | Per-player language, difficulty mix, rounds, reconnection | 1 |
 | 6 | [`11`](11-next-step-player-experience.md) Player experience | Notifications, labels, accessibility | 1 |
-| 7 | [`16`](16-user-story-smart-ads.md) Smart ads in the game | Relevant, well-timed, safe ads | 1, and the questions in its §6 |
+| 7 | [`16`](16-user-story-smart-ads.md) Smart ads in the game | Relevant, well-timed, safe ads | 1, and the open items in its §6 (pack contents and prices; a non-cash payment method later) |
 | 8 | [`10`](10-next-step-analytics-and-hardening.md) Launch readiness | Load tests, security, monitoring, hosting | 1, hosting choice |
 
 Removed because they are done: `06` (import screen), `08` (AI question generation), `09` (advertising and billing).

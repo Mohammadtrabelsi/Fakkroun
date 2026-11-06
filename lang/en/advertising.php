@@ -1,6 +1,26 @@
 <?php
 
 return [
+    'policy' => [
+        'breach' => 'Policy breach',
+        'confirm' => 'Record a policy breach? The campaign stops, and the advertiser is warned, called or suspended (1st, 2nd, 3rd breach).',
+        'strikes' => 'Breaches',
+        'suspended' => 'Suspended',
+        'reactivate' => 'Reactivate',
+        'reactivated' => 'Advertiser reactivated.',
+        'calls_due' => 'Advertisers to call (second breach)',
+        'mark_called' => 'Mark as called',
+        'call_recorded' => 'Call recorded.',
+        'recorded' => [
+            '1' => 'Breach recorded: warning sent.',
+            '2' => 'Breach recorded: call the advertiser.',
+            '3' => 'Breach recorded: advertiser suspended.',
+        ],
+        'suspended_notice' => 'Your account is suspended after three policy breaches. Your credits are frozen. Contact us to discuss reactivation.',
+        'strikes_notice' => 'Policy breaches on your account: :count of :max. At :max, the account is suspended.',
+    ],
+    'policy_notice' => 'Every ad must follow the advertising policy: halal, respectful of every religion and of human dignity, and suitable for children.',
+    'policy_link' => 'Read the policy',
     'nav' => 'Advertising',
     'admin_title' => 'Advertising',
     'admin_description' => 'Advertisers, packages, credits, campaign review and reconciliation. Credits are only used by confirmed, server-recorded events.',
@@ -135,12 +155,17 @@ return [
         'other' => 'Other',
     ],
     'notices' => [
+        'policy_warning' => 'Policy warning for “:campaign”: :reason. The campaign was stopped. A second breach means a call from our team; a third suspends your account.',
+        'policy_call' => 'Second policy breach (“:campaign”): :reason. The campaign was stopped and our team will call you. A third breach suspends your account.',
+        'policy_suspended' => 'Third policy breach (“:campaign”): :reason. Your advertiser account is suspended; your remaining credits are frozen.',
+        'policy_reactivated' => 'Your advertiser account is active again. Paused campaigns can be submitted for review.',
         'purchase' => 'Your purchase of “:package” was recorded and credits were added.',
         'low_credits' => 'Low balance: :balance :type left.',
         'activated' => 'Your campaign “:campaign” was approved and is now active.',
         'exhausted' => 'Your campaign “:campaign” has run out of credits.',
     ],
     'errors' => [
+        'advertiser_suspended' => 'Your advertiser account is suspended.',
         'adjustment' => 'An adjustment needs a non-zero quantity and a note.',
         'reverse_only_consumption' => 'Only credit usage can be refunded.',
         'insufficient' => 'Not enough :type.',
