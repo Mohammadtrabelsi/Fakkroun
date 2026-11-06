@@ -10,7 +10,12 @@ class Creative extends Model
 {
     protected $table = 'advertising_creatives';
 
-    protected $fillable = ['campaign_id', 'format', 'language', 'headline', 'body', 'image_path', 'link_url', 'alt_text'];
+    protected $fillable = ['campaign_id', 'format', 'language', 'headline', 'body', 'image_path', 'link_url', 'alt_text', 'keywords'];
+
+    protected function casts(): array
+    {
+        return ['keywords' => 'array'];
+    }
 
     protected $attributes = ['status' => 'pending', 'format' => 'banner'];
 

@@ -74,6 +74,8 @@ return [
             'sponsored_question_price_minor' => 'Prix par question sponsorisée diffusée (unités mineures)',
             'currency' => 'Devise (code ISO)',
             'low_credit_threshold' => 'Prévenir les annonceurs sous ce nombre de crédits',
+            'allow_untargeted' => 'Afficher aussi les publicités sans thème correspondant (campagnes sans ciblage)',
+            'max_same_creative_per_day' => 'Nombre maximal d’affichages de la même publicité par joueur et par jour',
         ],
         'accounts' => [
             'title' => 'Comptes (joueurs)',

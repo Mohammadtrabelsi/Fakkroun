@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'keywords' => 'Mots-clés',
+    'keywords_placeholder' => 'Mots-clés séparés par des virgules (ex. océan, recyclage)',
+    'keywords_hint' => 'Votre publicité est privilégiée après les questions qui contiennent ces mots ou appartiennent aux thèmes ciblés par la campagne. 10 mots au maximum.',
+    'policy_checked' => 'Vérifiée selon la politique publicitaire',
     'policy' => [
         'breach' => 'Manquement à la politique',
         'confirm' => 'Enregistrer un manquement ? La campagne s’arrête, et l’annonceur est averti, appelé ou suspendu (1er, 2e, 3e manquement).',
@@ -165,6 +169,7 @@ return [
         'exhausted' => 'Votre campagne « :campaign » n’a plus de crédits.',
     ],
     'errors' => [
+        'policy_unchecked' => 'Cochez « Vérifiée selon la politique publicitaire » avant d’approuver.',
         'advertiser_suspended' => 'Votre compte annonceur est suspendu.',
         'adjustment' => 'Un ajustement exige une quantité non nulle et une note.',
         'reverse_only_consumption' => 'Seule une consommation de crédits peut être remboursée.',

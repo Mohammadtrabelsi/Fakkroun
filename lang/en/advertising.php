@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'keywords' => 'Topic words',
+    'keywords_placeholder' => 'Topic words, separated by commas (e.g. ocean, recycling)',
+    'keywords_hint' => 'Your ad is preferred after questions that contain these words or belong to the topics your campaign targets. Up to 10 words.',
+    'policy_checked' => 'Checked against the advertising policy',
     'policy' => [
         'breach' => 'Policy breach',
         'confirm' => 'Record a policy breach? The campaign stops, and the advertiser is warned, called or suspended (1st, 2nd, 3rd breach).',
@@ -165,6 +169,7 @@ return [
         'exhausted' => 'Your campaign “:campaign” has run out of credits.',
     ],
     'errors' => [
+        'policy_unchecked' => 'Tick “Checked against the advertising policy” before approving.',
         'advertiser_suspended' => 'Your advertiser account is suspended.',
         'adjustment' => 'An adjustment needs a non-zero quantity and a note.',
         'reverse_only_consumption' => 'Only credit usage can be refunded.',

@@ -48,7 +48,7 @@ class CampaignService
     }
 
     /**
-     * @param  array<string, mixed>  $data  headline, body?, link_url?, alt_text?, language?, format?
+     * @param  array<string, mixed>  $data  headline, body?, link_url?, alt_text?, language?, format?, keywords?[]
      */
     public function addCreative(Campaign $campaign, User $actor, array $data, ?UploadedFile $image = null): Creative
     {
@@ -62,6 +62,9 @@ class CampaignService
             'language' => ['nullable', Rule::in(array_keys((array) config('app.available_locales')))],
             'format' => ['nullable', Rule::in(['banner', 'logo', 'post_game'])],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,webp', 'max:1024'],
+            // Topic words matched against questions (story 16 S1).
+            'keywords' => ['nullable', 'array', 'max:10'],
+            'keywords.*' => ['string', 'min:2', 'max:40'],
         ])->validate();
 
         unset($validated['image']);
@@ -89,10 +92,20 @@ class CampaignService
         return $this->setStatus($campaign, CampaignStatus::PendingReview);
     }
 
-    public function approve(Campaign $campaign, User $admin): Campaign
+    /**
+     * $policyChecked: the reviewer confirms the campaign was checked against
+     * the advertising policy (story 16 S13). Approval is refused without it.
+     */
+    public function approve(Campaign $campaign, User $admin, bool $policyChecked = false): Campaign
     {
         $this->authorizeAdmin($admin);
         $this->assertStatus($campaign, [CampaignStatus::PendingReview]);
+
+        if (! $policyChecked) {
+            throw new DomainActionException(__('advertising.errors.policy_unchecked'));
+        }
+
+        $campaign->forceFill(['policy_checked_at' => now(), 'policy_checked_by' => $admin->id]);
 
         $campaign->creatives()->where('status', 'pending')->update(['status' => 'approved']);
         $campaign->forceFill(['reviewed_by' => $admin->id, 'reviewed_at' => now(), 'review_note' => null]);

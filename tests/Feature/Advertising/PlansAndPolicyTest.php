@@ -52,7 +52,7 @@ class PlansAndPolicyTest extends GameplayTestCase
         $campaigns->addCreative($campaign, $this->owner, ['headline' => 'Plant a tree']);
         $campaigns->submit($campaign, $this->owner);
 
-        return $campaigns->approve($campaign, $this->admin);
+        return $campaigns->approve($campaign, $this->admin, true);
     }
 
     /**

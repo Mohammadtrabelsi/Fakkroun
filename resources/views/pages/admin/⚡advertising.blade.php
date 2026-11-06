@@ -64,6 +64,9 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     /** @var array<int, string> */
     public array $rejectNotes = [];
 
+    /** @var array<int, bool> Story 16 S13: "checked against the advertising policy" per campaign. */
+    public array $policyChecked = [];
+
     public function mount(): void
     {
         $this->authorize('manage advertising');
@@ -217,7 +220,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     public function approve(int $id, CampaignService $campaigns): void
     {
-        $this->attempt(fn () => $campaigns->approve(Campaign::query()->findOrFail($id), auth()->user()), __('advertising.approved'));
+        $this->attempt(fn () => $campaigns->approve(Campaign::query()->findOrFail($id), auth()->user(), (bool) ($this->policyChecked[$id] ?? false)), __('advertising.approved'));
         unset($this->pending);
     }
 
@@ -333,11 +336,13 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                         <div>
                                             @if ($creative->image_path)<img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($creative->image_path) }}" alt="{{ $creative->alt_text }}" style="height: 28px; display: inline-block; vertical-align: middle;">@endif
                                             <b>{{ $creative->headline }}</b> @if ($creative->link_url)<span class="text-muted">{{ $creative->link_url }}</span>@endif
+                                            @if ($creative->keywords)<div class="text-muted ms-fs-12">{{ __('advertising.keywords') }}: {{ implode(', ', $creative->keywords) }}</div>@endif
                                         </div>
                                     @endforeach
                                 </td>
                                 <td class="ms-text-right"><div class="ms-actions-end ms-wrap">
                                     @if ($campaign->status === CampaignStatus::PendingReview)
+                                        <label class="ms-check-row ms-fs-12"><input type="checkbox" class="checkbox" wire:model="policyChecked.{{ $campaign->id }}"> <a href="{{ route('terms') }}#advertising" target="_blank" rel="noopener">{{ __('advertising.policy_checked') }}</a></label>
                                         <button type="button" wire:click="approve({{ $campaign->id }})" class="btn btn-primary ms-btn-sm">{{ __('advertising.approve') }}</button>
                                     @endif
                                     @if ($campaign->status === CampaignStatus::Active)

@@ -59,12 +59,12 @@ class Campaign extends Model
             ->where(fn ($q) => $q->whereNull('ends_at')->orWhere('ends_at', '>', now()));
     }
 
-    public function targets(?int $categoryId, ?string $language): bool
+    public function targets(?int $categoryId, ?string $language, ?int $subcategoryId = null): bool
     {
-        $categories = (array) ($this->target_category_ids ?? []);
+        $categories = array_map('intval', (array) ($this->target_category_ids ?? []));
         $languages = (array) ($this->target_languages ?? []);
 
-        return ($categories === [] || $categoryId === null || in_array($categoryId, array_map('intval', $categories), true))
+        return ($categories === [] || $categoryId === null || in_array($categoryId, $categories, true) || ($subcategoryId !== null && in_array($subcategoryId, $categories, true)))
             && ($languages === [] || $language === null || in_array($language, $languages, true));
     }
 }

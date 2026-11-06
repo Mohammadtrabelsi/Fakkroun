@@ -72,6 +72,10 @@ return [
             'sponsored_question_price_minor' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
             'currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
             'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            // Story 16 S1: campaigns with no targeting and no keyword match may still run.
+            'allow_untargeted' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            // Story 16 S4: the same creative at most this many times a day per player.
+            'max_same_creative_per_day' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100']],
         ],
 
         // Player/user accounts (not advertisers): free with ads, or paid and ad-free.

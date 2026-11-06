@@ -55,6 +55,9 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
 
     public string $creativeLanguage = '';
 
+    /** Comma-separated topic words (story 16 S1). */
+    public string $keywords = '';
+
     /** @var \Illuminate\Http\UploadedFile|null */
     public $image = null;
 
@@ -125,6 +128,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             $campaigns->addCreative($campaign, auth()->user(), [
                 'headline' => $this->headline, 'body' => $this->body ?: null, 'link_url' => $this->linkUrl ?: null,
                 'language' => $this->creativeLanguage ?: null, 'alt_text' => $this->headline,
+                'keywords' => array_values(array_unique(array_filter(array_map('trim', preg_split('/[,،]/u', $this->keywords) ?: [])))),
             ], $this->image);
         } catch (ValidationException $e) {
             foreach ($e->errors() as $key => $messages) {
@@ -134,7 +138,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             return;
         }
 
-        $this->reset(['creativeFor', 'headline', 'body', 'linkUrl', 'creativeLanguage', 'image']);
+        $this->reset(['creativeFor', 'headline', 'body', 'linkUrl', 'creativeLanguage', 'image', 'keywords']);
         $this->toast(__('advertising.creative_added'));
     }
 
@@ -256,6 +260,9 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             <x-text-input wire:model="linkUrl" type="url" placeholder="https://" :error="$errors->first('creative_link_url')" />
             <x-input-error :message="$errors->first('creative_link_url')" />
             <select wire:model="creativeLanguage" class="input"><option value="">{{ __('advertising.every_language') }}</option>@foreach (config('app.available_locales') as $code => $meta)<option value="{{ $code }}">{{ $meta['label'] }}</option>@endforeach</select>
+            <x-text-input wire:model="keywords" type="text" :placeholder="__('advertising.keywords_placeholder')" :error="$errors->first('creative_keywords')" />
+            <p class="text-muted ms-fs-12">{{ __('advertising.keywords_hint') }}</p>
+            <x-input-error :message="$errors->first('creative_keywords') ?: $errors->first('creative_keywords.0')" />
             <input type="file" wire:model="image" accept="image/*" class="input">
             <x-input-error :message="$errors->first('creative_image')" />
             <p class="text-muted ms-fs-12">{{ __('advertising.review_notice') }}</p>

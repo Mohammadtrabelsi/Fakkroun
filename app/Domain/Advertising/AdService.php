@@ -66,10 +66,21 @@ class AdService
             return null;
         }
 
+        $question = $gq->question;
         $language = (string) $gq->language;
-        $categoryId = $gq->question?->category_id;
+        $context = [
+            'category_id' => $question?->category_id,
+            'subcategory_id' => $question?->subcategory_id,
+            'language' => $language,
+            // Words of the question and its topic names, for keyword matching (S1).
+            'text' => implode(' ', array_filter([
+                $question?->translation($language)?->body,
+                $question?->category?->getTranslation('name', $language, false),
+                $question?->subcategory?->getTranslation('name', $language, false),
+            ])),
+        ];
 
-        $creative = $this->pick($language, $categoryId, $player, $gameQuestionIds->all());
+        $creative = $this->pick($context, $player, $gameQuestionIds->all(), $ads);
 
         if ($creative === null) {
             return null;
@@ -148,25 +159,54 @@ class AdService
     /**
      * @param  array<int, int>  $gameQuestionIds
      */
-    private function pick(string $language, ?int $categoryId, User $player, array $gameQuestionIds): ?Creative
+    /**
+     * The most relevant creative for this question (story 16 S1), skipping
+     * creatives this player has already seen too often today (S4). Ties go
+     * to the creative this player has seen least today, then at random, so
+     * a campaign's creatives rotate.
+     *
+     * @param  array{category_id: ?int, subcategory_id: ?int, language: string, text: string}  $context
+     * @param  array<int, int>  $gameQuestionIds
+     * @param  array<string, mixed>  $ads
+     */
+    private function pick(array $context, User $player, array $gameQuestionIds, array $ads): ?Creative
     {
+        $language = $context['language'];
         $campaigns = Campaign::query()->running()
             ->whereHas('advertiser.wallets', fn ($q) => $q->where('credit_type', CreditType::Impression->value)->where('balance', '>', 0))
-            ->with(['creatives' => fn ($q) => $q->where('status', 'approved')->whereIn('format', ['banner', 'logo'])])
+            ->with(['creatives' => fn ($q) => $q->where('status', 'approved')->whereIn('format', ['banner', 'logo'])
+                ->where(fn ($w) => $w->whereNull('language')->orWhere('language', $language))])
             ->get()
-            ->filter(fn (Campaign $c) => $c->targets($categoryId, $language))
-            ->filter(fn (Campaign $c) => AdDelivery::query()->where('campaign_id', $c->id)->where('player_id', $player->id)->whereIn('game_question_id', $gameQuestionIds)->count() < $c->max_per_player_per_game)
-            ->shuffle();
+            ->filter(fn (Campaign $c) => $c->targets($context['category_id'], $language, $context['subcategory_id']))
+            ->filter(fn (Campaign $c) => AdDelivery::query()->where('campaign_id', $c->id)->where('player_id', $player->id)->whereIn('game_question_id', $gameQuestionIds)->count() < $c->max_per_player_per_game);
 
-        foreach ($campaigns as $campaign) {
-            $creative = $campaign->creatives->first(fn (Creative $cr) => $cr->language === $language)
-                ?? $campaign->creatives->first(fn (Creative $cr) => $cr->language === null);
+        $creativeIds = $campaigns->flatMap(fn (Campaign $c) => $c->creatives->pluck('id'))->all();
 
-            if ($creative) {
-                return $creative;
-            }
+        if ($creativeIds === []) {
+            return null;
         }
 
-        return null;
+        $seenToday = AdDelivery::query()
+            ->where('player_id', $player->id)
+            ->whereIn('creative_id', $creativeIds)
+            ->where('issued_at', '>=', now()->startOfDay())
+            ->selectRaw('creative_id, count(*) as total')
+            ->groupBy('creative_id')
+            ->pluck('total', 'creative_id');
+
+        $cap = max(1, (int) ($ads['max_same_creative_per_day'] ?? 3));
+        $allowUntargeted = (bool) ($ads['allow_untargeted'] ?? true);
+        $relevance = app(AdRelevance::class);
+
+        return $campaigns
+            ->flatMap(fn (Campaign $c) => $c->creatives->map(fn (Creative $creative) => [
+                'creative' => $creative,
+                'score' => $relevance->score($c, $creative, $context),
+                'seen' => (int) ($seenToday[$creative->id] ?? 0),
+                'tiebreak' => random_int(0, PHP_INT_MAX),
+            ]))
+            ->filter(fn (array $row) => $row['seen'] < $cap && ($row['score'] > 0 || $allowUntargeted))
+            ->sort(fn (array $a, array $b) => [$b['score'], $a['seen'], $a['tiebreak']] <=> [$a['score'], $b['seen'], $b['tiebreak']])
+            ->first()['creative'] ?? null;
     }
 }

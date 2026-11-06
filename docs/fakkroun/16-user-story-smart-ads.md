@@ -172,7 +172,7 @@ Still open:
 
 ## 7. Delivery slices
 
-1. **Relevance:** S1 + S4 (contextual scoring and fatigue caps on the existing `reveal` placement).
+1. **Relevance:** S1 + S4 (contextual scoring and fatigue caps on the existing `reveal` placement). **Built**, together with the S13 policy tick: see §9.
 2. **Placements and plans:** S3 (`post_game`, then `lobby`) + S6 (free/paid accounts).
 3. **Packs and invoices:** S11 + S13 (policy tick on approval).
 4. **Learning moments:** S2 + click tracking from S5 + S9 reporting.
@@ -186,3 +186,14 @@ Still open:
 - Third-party ad networks, programmatic bidding, retargeting, or any cross-site tracking.
 - Video or audio ads.
 - Online payment for advertisers (purchases stay admin-recorded, with invoices, until a gateway is chosen).
+
+## 9. Built so far
+
+| Slice | What exists | Where |
+| --- | --- | --- |
+| 1 (S1) | Relevance score per creative: +4 campaign targets the question's category or subcategory, +1 targets the room language, +1 creative written in that language, +2 per keyword found in the question or its topic names (at most 3). Highest score wins; untargeted ads (score 0) run only while `advertising.allow_untargeted` is on. Arabic diacritics are ignored when matching. | `AdRelevance`, `AdService::pick`, creative keywords on the advertiser dashboard |
+| 1 (S4) | `advertising.max_same_creative_per_day` (default 3); ties go to the creative the player has seen least today, so a campaign's creatives rotate. | `AdService::pick`, Game settings |
+| S13 | Approval needs the "Checked against the advertising policy" tick; who and when are stored. | `CampaignService::approve`, Admin → Advertising |
+| S6, S13 enforcement | Free/paid accounts, ad-free rooms for paid hosts, cash payments, three-strike policy. | See §6 |
+
+Next slices, in order: 2 (post-game and lobby placements), 3 (invoices), 4 ("Learn more" and click tracking), 5 (sponsored rounds), 6 (rotation by performance), 7 (AI review notes).

@@ -74,6 +74,8 @@ return [
             'sponsored_question_price_minor' => 'Price per sponsored-question delivery (minor units)',
             'currency' => 'Currency (ISO code)',
             'low_credit_threshold' => 'Warn advertisers when credits fall below',
+            'allow_untargeted' => 'Also show ads that match no topic (campaigns without targeting)',
+            'max_same_creative_per_day' => 'Most times a player sees the same ad per day',
         ],
         'accounts' => [
             'title' => 'Accounts (players)',
