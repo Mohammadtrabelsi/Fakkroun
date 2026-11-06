@@ -79,6 +79,18 @@ return [
             // Story 16 S3: calm placements besides the answer reveal, one per player and room.
             'post_game_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             'lobby_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            'reveal_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            // How an impression is confirmed: share of the ad visible, for how long.
+            'view_ratio_percent' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:10', 'max:100']],
+            'view_seconds' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:1', 'max:30']],
+            // A delivery token must be confirmed within this many minutes.
+            'delivery_minutes' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:1', 'max:120']],
+            'max_keywords_per_creative' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:50']],
+            // Relevance weights (story 16 S1).
+            'weight_topic' => ['type' => 'int', 'default' => 4, 'rules' => ['integer', 'min:0', 'max:100']],
+            'weight_language' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:100']],
+            'weight_keyword' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100']],
+            'max_keyword_hits' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:20']],
         ],
 
         // Player/user accounts (not advertisers): free with ads, or paid and ad-free.

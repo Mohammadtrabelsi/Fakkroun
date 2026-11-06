@@ -63,7 +63,7 @@ class CampaignService
             'format' => ['nullable', Rule::in(['banner', 'logo', 'post_game'])],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,webp', 'max:1024'],
             // Topic words matched against questions (story 16 S1).
-            'keywords' => ['nullable', 'array', 'max:10'],
+            'keywords' => ['nullable', 'array', 'max:'.(int) app(\App\Services\PlatformSettings::class)->get('advertising.max_keywords_per_creative')],
             'keywords.*' => ['string', 'min:2', 'max:40'],
         ])->validate();
 

@@ -10,17 +10,18 @@ use App\Domain\Advertising\Models\Creative;
  * (story 16 S1). Context only (topic, language, words of the question):
  * never anything about the player.
  *
- * Score, higher is better:
- *   +4  the campaign explicitly targets the question's category or subcategory
- *       (for room-level placements: one of the room's categories)
- *   +1  the campaign explicitly targets the room language
- *   +1  the creative is written in the room language (not "every language")
- *   +2  per creative keyword found in the question or its category names (at most 3 counted)
+ * Score, higher is better (weights are platform settings, defaults shown):
+ *   +4  weight_topic: the campaign explicitly targets the question's category
+ *       or subcategory (room-level placements: one of the room's categories)
+ *   +1  weight_language: the campaign explicitly targets the room language
+ *   +1  weight_language: the creative is written in the room language
+ *   +2  weight_keyword: per creative keyword found in the question or its
+ *       category names (at most max_keyword_hits counted)
  * A score of 0 means "untargeted": eligible only when advertising.allow_untargeted is on.
  */
 class AdRelevance
 {
-    public const MAX_KEYWORD_HITS = 3;
+    public function __construct(private readonly \App\Services\PlatformSettings $settings) {}
 
     /**
      * @param  array{category_ids: array<int, int>, language: string, text: string}  $context
@@ -30,21 +31,22 @@ class AdRelevance
         $categories = array_map('intval', (array) ($campaign->target_category_ids ?? []));
         $languages = (array) ($campaign->target_languages ?? []);
 
+        $w = $this->settings->all()['advertising'];
         $score = 0;
 
         if ($categories !== [] && array_intersect($categories, array_map('intval', $context['category_ids'])) !== []) {
-            $score += 4;
+            $score += (int) $w['weight_topic'];
         }
 
         if ($languages !== [] && in_array($context['language'], $languages, true)) {
-            $score += 1;
+            $score += (int) $w['weight_language'];
         }
 
         if ($creative->language !== null && $creative->language === $context['language']) {
-            $score += 1;
+            $score += (int) $w['weight_language'];
         }
 
-        return $score + 2 * min(self::MAX_KEYWORD_HITS, $this->keywordHits((array) ($creative->keywords ?? []), $context['text']));
+        return $score + (int) $w['weight_keyword'] * min((int) $w['max_keyword_hits'], $this->keywordHits((array) ($creative->keywords ?? []), $context['text']));
     }
 
     /**

@@ -169,4 +169,47 @@ class SmartAdsTest extends GameplayTestCase
 
         $this->assertSame(['ocean', 'sea', 'بحر'], $campaign->creatives()->first()->keywords);
     }
+
+    public function test_every_ad_rule_is_a_setting(): void
+    {
+        // Weights: with topic targeting worth nothing, keywords decide.
+        app(PlatformSettings::class)->update(['advertising' => ['weight_topic' => 0, 'weight_keyword' => 5, 'delivery_minutes' => 3]]);
+        $this->campaign('Topic', ['target_category_ids' => [$this->category->id]]);
+        $words = $this->campaign('Words', [], [['headline' => 'Matched', 'keywords' => ['zzqword']]]);
+        [$room, $gqs, $host] = $this->game(1);
+        $gqs[0]->question->translation($gqs[0]->language)->forceFill(['body' => 'A zzqword question'])->save();
+
+        $delivery = app(AdService::class)->offer($room, $gqs[0]->fresh(), $host);
+        $this->assertSame($words->id, $delivery->campaign_id);
+        $this->assertTrue($delivery->expires_at->between(now()->addMinutes(3)->subSecond(), now()->addMinutes(3)->addSecond()), 'Token lifetime comes from settings.');
+
+        // The answer-reveal placement can be switched off too.
+        app(PlatformSettings::class)->update(['advertising' => ['reveal_enabled' => false]]);
+        [$room2, $gqs2, $host2] = $this->game(1);
+        $this->assertNull(app(AdService::class)->offer($room2, $gqs2[0], $host2));
+    }
+
+    public function test_the_keyword_limit_is_a_setting(): void
+    {
+        app(PlatformSettings::class)->update(['advertising' => ['max_keywords_per_creative' => 2]]);
+        $owner = tap(User::factory()->create(), fn (User $u) => $u->assignRole(UserRole::Advertiser->value));
+        $advertiser = Advertiser::query()->create(['user_id' => $owner->id, 'name' => 'NGO']);
+        $campaign = app(CampaignService::class)->create($advertiser, $owner, ['name' => 'Limit']);
+
+        $this->expectException(\Illuminate\Validation\ValidationException::class);
+        app(CampaignService::class)->addCreative($campaign, $owner, ['headline' => 'Hi', 'keywords' => ['a1', 'b2', 'c3']]);
+    }
+
+    public function test_the_ad_card_uses_the_view_settings(): void
+    {
+        app(PlatformSettings::class)->update(['advertising' => ['view_ratio_percent' => 80, 'view_seconds' => 3, 'every_n_questions' => 1]]);
+        $this->campaign('Anyone');
+        [$room, , $host] = $this->game(1);
+
+        $this->actingAs($host)->get(route('rooms.show', $room))->assertOk();
+        $html = view('partials.ads.card', ['ad' => app(AdService::class)->offerLobby($room, $host)?->load('creative') ?? \App\Domain\Advertising\Models\AdDelivery::query()->with('creative')->firstOrFail(), 'dark' => true])->render();
+
+        $this->assertStringContainsString('>= 0.8', $html);
+        $this->assertStringContainsString('3000', $html);
+    }
 }

@@ -100,7 +100,7 @@ class AdService
                 'slot' => $slot,
                 'token' => Str::random(48),
                 'issued_at' => now(),
-                'expires_at' => now()->addMinutes(10),
+                'expires_at' => now()->addMinutes(max(1, (int) ($ads['delivery_minutes'] ?? 10))),
             ]);
         } catch (UniqueConstraintViolationException) {
             return $this->delivery($player, $slot);

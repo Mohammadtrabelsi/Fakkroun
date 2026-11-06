@@ -9,7 +9,7 @@ return [
     ],
     'keywords' => 'Mots-clés',
     'keywords_placeholder' => 'Mots-clés séparés par des virgules (ex. océan, recyclage)',
-    'keywords_hint' => 'Votre publicité est privilégiée après les questions qui contiennent ces mots ou appartiennent aux thèmes ciblés par la campagne. 10 mots au maximum.',
+    'keywords_hint' => 'Votre publicité est privilégiée après les questions qui contiennent ces mots ou appartiennent aux thèmes ciblés par la campagne. :max mots au maximum.',
     'policy_checked' => 'Vérifiée selon la politique publicitaire',
     'policy' => [
         'breach' => 'Manquement à la politique',

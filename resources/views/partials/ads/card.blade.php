@@ -1,17 +1,23 @@
 {{--
     One sponsored card (story 16 S3). $ad: AdDelivery with creative loaded; $dark: bool.
-    The browser confirms the display only after the card was at least half visible
-    for one second; billing happens on the server, once per delivery token.
+    The browser confirms the display only after the card stayed visible enough, long
+    enough (advertising.view_ratio_percent / view_seconds); billing happens on the
+    server, once per delivery token.
 --}}
-@php($dark = $dark ?? true)
+@php
+    $dark = $dark ?? true;
+    $adRules = app(\App\Services\PlatformSettings::class)->all()['advertising'];
+    $ratio = max(0.1, min(1, ((int) $adRules['view_ratio_percent']) / 100));
+    $delay = max(1, (int) $adRules['view_seconds']) * 1000;
+@endphp
 <aside aria-label="{{ __('advertising.sponsored') }}"
        @class(['flex flex-wrap items-center gap-4 rounded-2xl border p-4', 'border-sea-line bg-sea-deep-2 text-sand' => $dark, 'border-sand-300 bg-paper text-ink' => ! $dark])
        wire:key="ad-{{ $ad->id }}"
        x-data="{ timer: null }"
        x-init="const seen = new IntersectionObserver((entries) => {
-                   if (entries[0].intersectionRatio >= 0.5) { timer ??= setTimeout(() => { seen.disconnect(); $wire.confirmImpression(@js($ad->token)) }, 1000) }
+                   if (entries[0].intersectionRatio >= {{ $ratio }}) { timer ??= setTimeout(() => { seen.disconnect(); $wire.confirmImpression(@js($ad->token)) }, {{ $delay }}) }
                    else { clearTimeout(timer); timer = null }
-               }, { threshold: [0, 0.5] }); seen.observe($el)">
+               }, { threshold: [0, {{ $ratio }}] }); seen.observe($el)">
     <span class="rounded-full bg-sun px-2.5 py-0.5 text-xs font-bold text-ink uppercase">{{ __('advertising.sponsored') }}</span>
     @if ($ad->creative->imageUrl())<img src="{{ $ad->creative->imageUrl() }}" alt="{{ $ad->creative->alt_text }}" class="h-12 w-auto rounded-lg">@endif
     <div class="flex min-w-0 flex-1 flex-col">

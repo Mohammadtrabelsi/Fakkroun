@@ -261,7 +261,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             <x-input-error :message="$errors->first('creative_link_url')" />
             <select wire:model="creativeLanguage" class="input"><option value="">{{ __('advertising.every_language') }}</option>@foreach (config('app.available_locales') as $code => $meta)<option value="{{ $code }}">{{ $meta['label'] }}</option>@endforeach</select>
             <x-text-input wire:model="keywords" type="text" :placeholder="__('advertising.keywords_placeholder')" :error="$errors->first('creative_keywords')" />
-            <p class="text-muted ms-fs-12">{{ __('advertising.keywords_hint') }}</p>
+            <p class="text-muted ms-fs-12">{{ __('advertising.keywords_hint', ['max' => app(\App\Services\PlatformSettings::class)->get('advertising.max_keywords_per_creative')]) }}</p>
             <x-input-error :message="$errors->first('creative_keywords') ?: $errors->first('creative_keywords.0')" />
             <input type="file" wire:model="image" accept="image/*" class="input">
             <x-input-error :message="$errors->first('creative_image')" />

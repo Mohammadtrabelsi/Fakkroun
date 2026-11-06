@@ -9,7 +9,7 @@ return [
     ],
     'keywords' => 'Topic words',
     'keywords_placeholder' => 'Topic words, separated by commas (e.g. ocean, recycling)',
-    'keywords_hint' => 'Your ad is preferred after questions that contain these words or belong to the topics your campaign targets. Up to 10 words.',
+    'keywords_hint' => 'Your ad is preferred after questions that contain these words or belong to the topics your campaign targets. Up to :max words.',
     'policy_checked' => 'Checked against the advertising policy',
     'policy' => [
         'breach' => 'Policy breach',
