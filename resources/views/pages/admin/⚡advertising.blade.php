@@ -64,6 +64,9 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     /** @var array<int, string> */
     public array $rejectNotes = [];
 
+    /** @var array<int, string> Reasons for credit notes, per invoice. */
+    public array $cancelReasons = [];
+
     /** @var array<int, bool> Story 16 S13: "checked against the advertising policy" per campaign. */
     public array $policyChecked = [];
 
@@ -98,6 +101,18 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         return Campaign::query()->with(['advertiser', 'creatives'])
             ->whereIn('status', [CampaignStatus::PendingReview->value, CampaignStatus::Active->value, CampaignStatus::Paused->value, CampaignStatus::Exhausted->value])
             ->orderByRaw("case when status = 'pending_review' then 0 else 1 end")->latest('id')->limit(50)->get();
+    }
+
+    #[Computed]
+    public function invoices()
+    {
+        return \App\Domain\Advertising\Models\Invoice::query()->with(['advertiser:id,name', 'creditNote:id,cancels_invoice_id,number'])->orderByDesc('id')->limit(100)->get();
+    }
+
+    public function cancelInvoice(int $id, \App\Domain\Advertising\InvoiceService $invoices): void
+    {
+        $this->attempt(fn () => $invoices->cancel(\App\Domain\Advertising\Models\Invoice::query()->findOrFail($id), auth()->user(), (string) ($this->cancelReasons[$id] ?? '')), __('advertising.invoices.cancelled'));
+        unset($this->invoices);
     }
 
     #[Computed]
@@ -303,7 +318,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     </div>
 
     <div class="ms-row-10 ms-wrap ms-mb-24" role="tablist">
-        @foreach (['review', 'advertisers', 'packages', 'credits', 'reconciliation'] as $t)
+        @foreach (['review', 'advertisers', 'packages', 'credits', 'invoices', 'reconciliation'] as $t)
             <button type="button" role="tab" aria-selected="{{ $tab === $t ? 'true' : 'false' }}" wire:click="$set('tab', '{{ $t }}')" class="btn {{ $tab === $t ? 'btn-primary' : '' }}">{{ __('advertising.tabs.'.$t) }}</button>
         @endforeach
     </div>
@@ -463,6 +478,35 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                 <x-input-error :message="$errors->first('adjustNote')" />
                 <div><button type="submit" class="btn">{{ __('advertising.adjust') }}</button></div>
             </form>
+        </div>
+    @endif
+
+    @if ($tab === 'invoices')
+        <div class="card ms-p-0">
+            <div class="table-wrap">
+                <table class="table">
+                    <thead><tr><th>{{ __('advertising.invoices.number') }}</th><th>{{ __('advertising.advertiser') }}</th><th>{{ __('advertising.date') }}</th><th>{{ __('advertising.invoices.amount') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
+                    <tbody>
+                        @forelse ($this->invoices as $invoice)
+                            <tr wire:key="ai-{{ $invoice->id }}">
+                                <td><div class="ms-fw-500">{{ $invoice->number }}</div><div class="text-muted ms-fs-12">{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}@if ($invoice->creditNote) · {{ __('advertising.invoices.cancelled_by') }} {{ $invoice->creditNote->number }}@endif</div></td>
+                                <td>{{ $invoice->advertiser?->name }}</td>
+                                <td class="text-muted ms-nowrap">{{ $invoice->issued_at->isoFormat('ll') }}</td>
+                                <td class="tabular-nums">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</td>
+                                <td class="ms-text-right"><div class="ms-actions-end ms-wrap">
+                                    <a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a>
+                                    @if (! $invoice->isCreditNote() && ! $invoice->creditNote)
+                                        <input type="text" wire:model="cancelReasons.{{ $invoice->id }}" class="input ms-btn-sm" placeholder="{{ __('advertising.invoices.cancel_reason') }}" aria-label="{{ __('advertising.invoices.cancel_reason') }}">
+                                        <button type="button" wire:click="cancelInvoice({{ $invoice->id }})" wire:confirm="{{ __('advertising.invoices.cancel') }}?" class="btn ms-btn-sm">{{ __('advertising.invoices.cancel') }}</button>
+                                    @endif
+                                </div></td>
+                            </tr>
+                        @empty
+                            <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.invoices.none') }}</td></tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
         </div>
     @endif
 

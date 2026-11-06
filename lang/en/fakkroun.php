@@ -93,6 +93,14 @@ return [
             'paid_plan_price_minor' => 'Paid ad-free account: monthly price (minor units, 0 = not on sale)',
             'paid_plan_currency' => 'Paid account currency (ISO code)',
         ],
+        'invoices' => [
+            'title' => 'Invoices (advertiser packs)',
+            'number_prefix' => 'Invoice number prefix (capital letters, digits, dashes)',
+            'seller_name' => 'Seller name',
+            'seller_address' => 'Seller address',
+            'seller_tax_id' => 'Seller tax number',
+            'payment_terms' => 'Payment terms printed on invoices',
+        ],
         'translations' => [
             'title' => 'Question languages',
             'missing_policy' => 'When a question has no approved translation in the player’s language',

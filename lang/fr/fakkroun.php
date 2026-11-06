@@ -93,6 +93,14 @@ return [
             'paid_plan_price_minor' => 'Compte payant sans publicité : prix mensuel (unités mineures, 0 = pas en vente)',
             'paid_plan_currency' => 'Devise du compte payant (code ISO)',
         ],
+        'invoices' => [
+            'title' => 'Factures (offres annonceurs)',
+            'number_prefix' => 'Préfixe des numéros de facture (majuscules, chiffres, tirets)',
+            'seller_name' => 'Nom du vendeur',
+            'seller_address' => 'Adresse du vendeur',
+            'seller_tax_id' => 'Matricule fiscal du vendeur',
+            'payment_terms' => 'Conditions de paiement imprimées sur les factures',
+        ],
         'translations' => [
             'title' => 'Langues des questions',
             'missing_policy' => 'Si une question n’a pas de traduction approuvée dans la langue du joueur',

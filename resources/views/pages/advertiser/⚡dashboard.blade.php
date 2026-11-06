@@ -93,6 +93,14 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     }
 
     #[Computed]
+    public function invoices()
+    {
+        return \App\Domain\Advertising\Models\Invoice::query()->where('advertiser_id', $this->advertiser()->id)->orderByDesc('id')->limit(50)->get();
+    }
+
+    public string $statementMonth = '';
+
+    #[Computed]
     public function categories(): array
     {
         return app(CategoryService::class)->parentOptions();
@@ -283,6 +291,32 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
         <div class="ms-row-10 ms-wrap">@foreach (config('app.available_locales') as $code => $meta)<label class="ms-check-row"><input type="checkbox" class="checkbox" value="{{ $code }}" wire:model="newLanguages"> {{ $meta['label'] }}</label>@endforeach</div>
         <div><button type="submit" class="btn btn-primary">{{ __('advertising.create_campaign') }}</button></div>
     </form>
+
+    <h3 class="ms-fs-18 ms-mb-8">{{ __('advertising.invoices.title') }}</h3>
+    <div class="card ms-p-0 ms-mb-16">
+        <div class="table-wrap">
+            <table class="table">
+                <thead><tr><th>{{ __('advertising.invoices.number') }}</th><th>{{ __('advertising.date') }}</th><th>{{ __('advertising.invoices.kind') }}</th><th>{{ __('advertising.invoices.amount') }}</th><th></th></tr></thead>
+                <tbody>
+                    @forelse ($this->invoices as $invoice)
+                        <tr wire:key="inv-{{ $invoice->id }}">
+                            <td class="ms-fw-500">{{ $invoice->number }}</td>
+                            <td class="text-muted ms-nowrap">{{ $invoice->issued_at->isoFormat('ll') }}</td>
+                            <td>{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}</td>
+                            <td class="tabular-nums">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</td>
+                            <td class="ms-text-right"><a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a></td>
+                        </tr>
+                    @empty
+                        <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.invoices.none') }}</td></tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="ms-row-10 ms-wrap ms-mb-24">
+        <input type="month" wire:model.live="statementMonth" class="input" aria-label="{{ __('advertising.invoices.month') }}" max="{{ now()->format('Y-m') }}">
+        <a href="{{ route('advertiser.statements.pdf', [$advertiser, $statementMonth ?: now()->format('Y-m')]) }}" class="btn">{{ __('advertising.invoices.statement_download') }}</a>
+    </div>
 
     <div class="card ms-p-0">
         <div class="table-wrap">

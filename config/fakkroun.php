@@ -101,6 +101,15 @@ return [
             'paid_plan_currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
         ],
 
+        // Invoices for advertiser packs (story 16 S11). Placeholders until you fill them in.
+        'invoices' => [
+            'number_prefix' => ['type' => 'string', 'default' => 'FK', 'rules' => ['string', 'max:10', 'regex:/^[A-Z0-9-]+$/']],
+            'seller_name' => ['type' => 'string', 'default' => '[COMPANY NAME]', 'rules' => ['string', 'max:200']],
+            'seller_address' => ['type' => 'string', 'default' => '[ADDRESS]', 'rules' => ['string', 'max:500']],
+            'seller_tax_id' => ['type' => 'string', 'default' => '[TAX ID]', 'rules' => ['string', 'max:100']],
+            'payment_terms' => ['type' => 'string', 'default' => '[PAYMENT TERMS]', 'rules' => ['string', 'max:500']],
+        ],
+
         'translations' => [
             // fallback: serve the fallback language when the player's language has no approved translation.
             // exclude: skip questions without an approved translation in the player's language.

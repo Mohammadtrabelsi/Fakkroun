@@ -1,6 +1,40 @@
 <?php
 
 return [
+    'invoices' => [
+        'title' => 'Factures',
+        'invoice' => 'Facture',
+        'credit_note' => 'Avoir',
+        'issued_at' => 'Date',
+        'cancels' => 'Annule la facture',
+        'cancelled_by' => 'Annulée par l’avoir',
+        'seller' => 'Vendeur',
+        'buyer' => 'Facturé à',
+        'tax_id' => 'Matricule fiscal',
+        'description' => 'Désignation',
+        'pack' => 'Offre publicitaire « :name »',
+        'total' => 'Total',
+        'reason' => 'Motif',
+        'paid_per_pack' => 'La publicité se paie par offre, jamais au clic. Seuls les affichages confirmés consomment des crédits.',
+        'statement' => 'Relevé de consommation',
+        'statement_title' => 'Relevé de consommation — :month',
+        'total_used' => 'Total consommé',
+        'statement_note' => 'Seuls les affichages confirmés et les diffusions sponsorisées inscrits au registre sont comptés.',
+        'none' => 'Aucune facture pour le moment.',
+        'download' => 'PDF',
+        'cancel' => 'Annuler par un avoir',
+        'cancel_reason' => 'Motif de l’annulation',
+        'cancelled' => 'Avoir émis.',
+        'statement_download' => 'Télécharger le relevé mensuel',
+        'month' => 'Mois',
+        'number' => 'Numéro',
+        'kind' => 'Type',
+        'amount' => 'Montant',
+        'errors' => [
+            'not_a_payment' => 'Seul un achat enregistré peut être facturé.',
+            'already_cancelled' => 'Cette facture est déjà annulée.',
+        ],
+    ],
     'by_placement' => 'Impressions par emplacement',
     'placements' => [
         'reveal' => 'Après une réponse',
@@ -124,6 +158,7 @@ return [
     'not_sponsored' => 'Non sponsorisée',
     'sponsor_saved' => 'Sponsoring enregistré.',
     'tabs' => [
+        'invoices' => 'Factures',
         'review' => 'Validation des campagnes',
         'advertisers' => 'Annonceurs',
         'packages' => 'Offres',

@@ -1,6 +1,40 @@
 <?php
 
 return [
+    'invoices' => [
+        'title' => 'Invoices',
+        'invoice' => 'Invoice',
+        'credit_note' => 'Credit note',
+        'issued_at' => 'Date',
+        'cancels' => 'Cancels invoice',
+        'cancelled_by' => 'Cancelled by credit note',
+        'seller' => 'Seller',
+        'buyer' => 'Billed to',
+        'tax_id' => 'Tax number',
+        'description' => 'Description',
+        'pack' => 'Advertising pack “:name”',
+        'total' => 'Total',
+        'reason' => 'Reason',
+        'paid_per_pack' => 'Advertising is paid per pack, never per click. Only confirmed displays use credits.',
+        'statement' => 'Usage statement',
+        'statement_title' => 'Usage statement — :month',
+        'total_used' => 'Total used',
+        'statement_note' => 'Only confirmed ad displays and sponsored deliveries recorded in the ledger are counted.',
+        'none' => 'No invoices yet.',
+        'download' => 'PDF',
+        'cancel' => 'Cancel with a credit note',
+        'cancel_reason' => 'Reason for cancelling',
+        'cancelled' => 'Credit note issued.',
+        'statement_download' => 'Download the monthly statement',
+        'month' => 'Month',
+        'number' => 'Number',
+        'kind' => 'Type',
+        'amount' => 'Amount',
+        'errors' => [
+            'not_a_payment' => 'Only a recorded purchase can be invoiced.',
+            'already_cancelled' => 'This invoice is already cancelled.',
+        ],
+    ],
     'by_placement' => 'Impressions by placement',
     'placements' => [
         'reveal' => 'After an answer',
@@ -124,6 +158,7 @@ return [
     'not_sponsored' => 'Not sponsored',
     'sponsor_saved' => 'Sponsorship saved.',
     'tabs' => [
+        'invoices' => 'Invoices',
         'review' => 'Campaign review',
         'advertisers' => 'Advertisers',
         'packages' => 'Packages',

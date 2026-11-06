@@ -86,6 +86,12 @@ Route::middleware('auth')->group(function () {
         Route::livewire('/advertiser', 'pages::advertiser.dashboard')
             ->middleware('can:manage own campaigns')
             ->name('advertiser.dashboard');
+        // Invoice and statement PDFs: the owning advertiser or an advertising manager.
+        Route::get('/advertiser/invoices/{invoice}/pdf', [\App\Http\Controllers\AdvertisingDocumentController::class, 'invoice'])
+            ->name('advertiser.invoices.pdf');
+        Route::get('/advertiser/{advertiser}/statements/{month}/pdf', [\App\Http\Controllers\AdvertisingDocumentController::class, 'statement'])
+            ->where('month', '\d{4}-\d{2}')
+            ->name('advertiser.statements.pdf');
 
         Route::middleware('can:submit questions')->group(function () {
             Route::livewire('/community/submit', 'pages::questions.submit')->name('questions.submit');
