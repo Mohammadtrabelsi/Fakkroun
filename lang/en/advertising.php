@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'by_placement' => 'Impressions by placement',
+    'placements' => [
+        'reveal' => 'After an answer',
+        'post_game' => 'Results page',
+        'lobby' => 'Waiting room',
+    ],
     'keywords' => 'Topic words',
     'keywords_placeholder' => 'Topic words, separated by commas (e.g. ocean, recycling)',
     'keywords_hint' => 'Your ad is preferred after questions that contain these words or belong to the topics your campaign targets. Up to 10 words.',

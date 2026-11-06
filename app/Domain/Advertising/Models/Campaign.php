@@ -59,6 +59,21 @@ class Campaign extends Model
             ->where(fn ($q) => $q->whereNull('ends_at')->orWhere('ends_at', '>', now()));
     }
 
+    /**
+     * Like targets(), for several topics at once (a question's category and
+     * subcategory, or a room's categories): any overlap is enough.
+     *
+     * @param  array<int, int>  $categoryIds
+     */
+    public function targetsAny(array $categoryIds, ?string $language): bool
+    {
+        $categories = array_map('intval', (array) ($this->target_category_ids ?? []));
+        $languages = (array) ($this->target_languages ?? []);
+
+        return ($categories === [] || $categoryIds === [] || array_intersect($categories, array_map('intval', $categoryIds)) !== [])
+            && ($languages === [] || $language === null || in_array($language, $languages, true));
+    }
+
     public function targets(?int $categoryId, ?string $language, ?int $subcategoryId = null): bool
     {
         $categories = array_map('intval', (array) ($this->target_category_ids ?? []));

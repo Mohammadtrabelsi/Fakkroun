@@ -12,6 +12,7 @@ use App\Domain\Advertising\Models\Creative;
  *
  * Score, higher is better:
  *   +4  the campaign explicitly targets the question's category or subcategory
+ *       (for room-level placements: one of the room's categories)
  *   +1  the campaign explicitly targets the room language
  *   +1  the creative is written in the room language (not "every language")
  *   +2  per creative keyword found in the question or its category names (at most 3 counted)
@@ -22,7 +23,7 @@ class AdRelevance
     public const MAX_KEYWORD_HITS = 3;
 
     /**
-     * @param  array{category_id: ?int, subcategory_id: ?int, language: string, text: string}  $context
+     * @param  array{category_ids: array<int, int>, language: string, text: string}  $context
      */
     public function score(Campaign $campaign, Creative $creative, array $context): int
     {
@@ -31,7 +32,7 @@ class AdRelevance
 
         $score = 0;
 
-        if ($categories !== [] && array_intersect($categories, array_filter([$context['category_id'], $context['subcategory_id']])) !== []) {
+        if ($categories !== [] && array_intersect($categories, array_map('intval', $context['category_ids'])) !== []) {
             $score += 4;
         }
 

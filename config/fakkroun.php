@@ -76,6 +76,9 @@ return [
             'allow_untargeted' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             // Story 16 S4: the same creative at most this many times a day per player.
             'max_same_creative_per_day' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100']],
+            // Story 16 S3: calm placements besides the answer reveal, one per player and room.
+            'post_game_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            'lobby_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
         ],
 
         // Player/user accounts (not advertisers): free with ads, or paid and ad-free.

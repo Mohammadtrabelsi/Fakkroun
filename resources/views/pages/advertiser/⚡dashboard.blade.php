@@ -212,12 +212,12 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     </div>
 
     <div class="ms-row-10 ms-wrap ms-mb-24">
-        @foreach (['by_category' => __('advertising.by_category'), 'by_language' => __('advertising.by_language'), 'daily' => __('advertising.daily')] as $key => $title)
+        @foreach (['by_category' => __('advertising.by_category'), 'by_language' => __('advertising.by_language'), 'by_placement' => __('advertising.by_placement'), 'daily' => __('advertising.daily')] as $key => $title)
             <div class="card ms-flex-1" style="min-width: 240px;">
                 <div class="card-kicker">{{ $title }}</div>
                 <ul class="ms-fs-13">
                     @forelse ($stats[$key] as $label => $count)
-                        <li class="ms-row-between"><span>{{ $key === 'by_category' ? (\App\Models\Category::find($label)?->name ?? '—') : ($label ?: '—') }}</span><b>{{ number_format($count) }}</b></li>
+                        <li class="ms-row-between"><span>{{ match ($key) { 'by_category' => \App\Models\Category::find($label)?->name ?? '—', 'by_placement' => __('advertising.placements.'.$label), default => $label ?: '—' } }}</span><b>{{ number_format($count) }}</b></li>
                     @empty
                         <li class="text-muted">—</li>
                     @endforelse

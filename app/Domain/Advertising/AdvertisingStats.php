@@ -45,6 +45,7 @@ class AdvertisingStats
             'by_campaign' => (clone $impressions)->selectRaw('campaign_id, count(*) as total')->groupBy('campaign_id')->pluck('total', 'campaign_id')->all(),
             'by_category' => (clone $impressions)->selectRaw('category_id, count(*) as total')->groupBy('category_id')->pluck('total', 'category_id')->all(),
             'by_language' => (clone $impressions)->selectRaw('language, count(*) as total')->groupBy('language')->pluck('total', 'language')->all(),
+            'by_placement' => (clone $impressions)->selectRaw('placement, count(*) as total')->groupBy('placement')->pluck('total', 'placement')->all(),
             'daily' => (clone $impressions)->selectRaw('date(displayed_at) as day, count(*) as total')->groupBy(DB::raw('date(displayed_at)'))->orderBy('day')->pluck('total', 'day')->all(),
             'monthly_spend' => (clone $consumption)->get(['created_at', 'amount_minor'])->groupBy(fn ($e) => $e->created_at->format('Y-m'))->map->sum('amount_minor')->all(),
         ];

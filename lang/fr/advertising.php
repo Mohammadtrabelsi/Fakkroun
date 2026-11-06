@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'by_placement' => 'Impressions par emplacement',
+    'placements' => [
+        'reveal' => 'Après une réponse',
+        'post_game' => 'Page des résultats',
+        'lobby' => 'Salle d’attente',
+    ],
     'keywords' => 'Mots-clés',
     'keywords_placeholder' => 'Mots-clés séparés par des virgules (ex. océan, recyclage)',
     'keywords_hint' => 'Votre publicité est privilégiée après les questions qui contiennent ces mots ou appartiennent aux thèmes ciblés par la campagne. 10 mots au maximum.',

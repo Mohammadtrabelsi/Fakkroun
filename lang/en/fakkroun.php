@@ -76,6 +76,8 @@ return [
             'low_credit_threshold' => 'Warn advertisers when credits fall below',
             'allow_untargeted' => 'Also show ads that match no topic (campaigns without targeting)',
             'max_same_creative_per_day' => 'Most times a player sees the same ad per day',
+            'post_game_enabled' => 'Show an ad on the results page (once per player and room)',
+            'lobby_enabled' => 'Show an ad in the waiting room (once per player and room)',
         ],
         'accounts' => [
             'title' => 'Accounts (players)',
