@@ -81,6 +81,7 @@ return [
         'play_again' => 'Play again',
     ],
     'errors' => [
+        'min_categories' => 'Pick at least :min categories.',
         'too_many_rooms' => 'Too many rooms are open right now. Please try again in a few minutes.',
         'room_not_found' => 'No room has this code.',
         'room_closed' => 'This room is closed.',
@@ -98,6 +99,7 @@ return [
         'title' => 'Let’s play.',
         'lead' => 'Set up a room for your group, or jump into one that’s already open.',
         'categories_hint' => '· pick one or more',
+        'categories_hint_min' => '· pick at least :min',
         'difficulty' => 'Difficulty',
         'mixed' => 'Mixed',
         'questions' => 'Questions',

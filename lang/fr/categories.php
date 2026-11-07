@@ -47,4 +47,7 @@ return [
     'requires_reference_hint' => 'Recommandé pour les sujets factuels comme les sciences et l’environnement.',
     'allow_community_submissions' => 'Les joueurs peuvent proposer des questions',
     'allow_community_submissions_hint' => 'Les questions proposées passent toujours d’abord par la modération.',
+    'default_selected' => 'Présélectionnée à la création d’un salon',
+    'default_selected_hint' => 'Catégories principales uniquement. Cochée par défaut dans le formulaire « Créer un salon » ; l’hôte peut la décocher.',
+    'default_selected_tag' => 'Présélectionnée',
 ];

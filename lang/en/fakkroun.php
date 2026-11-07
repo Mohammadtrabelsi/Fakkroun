@@ -35,6 +35,7 @@ return [
             'title' => 'Rooms and games',
             'min_players' => 'Minimum players to start a game',
             'max_players' => 'Maximum players per room',
+            'min_categories' => 'Minimum categories to pick when creating a room',
             'max_players_per_round' => 'Maximum players per round',
             'max_concurrent_rooms' => 'Maximum rooms open at the same time',
             'default_question_count' => 'Default number of questions',

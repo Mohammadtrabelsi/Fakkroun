@@ -50,6 +50,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
         $this->maxPlayers = (int) min($game['max_players'], 10);
         $this->duplicateRule = (bool) $settings->get('scoring.duplicate_rule_default');
         $this->language = auth()->user()->preferredQuestionLocale();
+        $this->categoryIds = app(RoomService::class)->defaultCategoryIds();
     }
 
     /** Question counts offered by the design, limited by the platform maximum. */
@@ -79,6 +80,12 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
     public function categories(): array
     {
         return app(RoomService::class)->categoryOptions();
+    }
+
+    #[Computed]
+    public function minCategories(): int
+    {
+        return app(RoomService::class)->minCategories();
     }
 
     #[Computed]
@@ -167,7 +174,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
             </div>
 
             <fieldset class="m-0 flex flex-col gap-3 border-0 p-0">
-                <legend class="mb-3 p-0 font-semibold">{{ __('play.create.categories') }} <span class="font-normal text-ink-soft">{{ __('play.lobby.categories_hint') }}</span></legend>
+                <legend class="mb-3 p-0 font-semibold">{{ __('play.create.categories') }} <span class="font-normal text-ink-soft">{{ $this->minCategories > 1 ? __('play.lobby.categories_hint_min', ['min' => $this->minCategories]) : __('play.lobby.categories_hint') }}</span></legend>
                 <div class="flex flex-wrap gap-2.5">
                     @foreach ($this->categories as $id => $label)
                         @php($on = in_array($id, $categoryIds, true))

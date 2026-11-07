@@ -35,6 +35,8 @@ new class extends Component
 
     public bool $allowCommunitySubmissions = true;
 
+    public bool $isDefaultSelected = false;
+
     /** @var array<string, string> code => label, from config('app.available_locales') */
     public array $locales = [];
 
@@ -55,6 +57,7 @@ new class extends Component
         $this->validationPolicy = $category?->validation_policy->value ?? ValidationPolicy::Admin->value;
         $this->requiresReference = $category?->requires_reference ?? false;
         $this->allowCommunitySubmissions = $category?->allow_community_submissions ?? true;
+        $this->isDefaultSelected = $category?->is_default_selected ?? false;
 
         foreach (array_keys($this->locales) as $locale) {
             $this->name[$locale] = $category?->getTranslation('name', $locale, false) ?? '';
@@ -82,6 +85,7 @@ new class extends Component
             'validationPolicy' => ['required', Rule::in(ValidationPolicy::values())],
             'requiresReference' => ['boolean'],
             'allowCommunitySubmissions' => ['boolean'],
+            'isDefaultSelected' => ['boolean'],
         ];
 
         foreach (array_keys($this->locales) as $locale) {
@@ -102,6 +106,7 @@ new class extends Component
             'validation_policy' => $this->validationPolicy,
             'requires_reference' => $this->requiresReference,
             'allow_community_submissions' => $this->allowCommunitySubmissions,
+            'is_default_selected' => $this->isDefaultSelected,
         ];
 
         try {
@@ -242,6 +247,14 @@ new class extends Component
             <span>
                 <span class="ms-block-strong">{{ __('categories.allow_community_submissions') }}</span>
                 <span class="text-muted ms-block-fs12">{{ __('categories.allow_community_submissions_hint') }}</span>
+            </span>
+        </label>
+
+        <label class="ms-option-card">
+            <input wire:model="isDefaultSelected" type="checkbox" class="checkbox ms-mt-2">
+            <span>
+                <span class="ms-block-strong">{{ __('categories.default_selected') }}</span>
+                <span class="text-muted ms-block-fs12">{{ __('categories.default_selected_hint') }}</span>
             </span>
         </label>
     </div>

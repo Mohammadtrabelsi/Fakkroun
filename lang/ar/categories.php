@@ -47,4 +47,7 @@ return [
     'requires_reference_hint' => 'يُنصح به للمواضيع الواقعية مثل العلوم والبيئة.',
     'allow_community_submissions' => 'يمكن للاعبين اقتراح أسئلة',
     'allow_community_submissions_hint' => 'تمر الأسئلة المقترحة دائمًا بالإشراف أولًا.',
+    'default_selected' => 'محددة مسبقًا عند إنشاء غرفة',
+    'default_selected_hint' => 'للفئات الرئيسية فقط. تكون محددة افتراضيًا في نموذج «إنشاء غرفة»، ويمكن للمضيف إلغاء تحديدها.',
+    'default_selected_tag' => 'محددة مسبقًا',
 ];
