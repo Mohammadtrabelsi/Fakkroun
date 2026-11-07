@@ -238,15 +238,13 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                             @php($isCorrect = $reveal && $reveal['correct_choice_id'] === $choice['id'])
                             @php($isMine = $state['my_choice_id'] === $choice['id'])
                             @php($tag = $isCorrect ? __('play.game2.correct_tag') : ($isMine ? __('play.game2.your_answer') : null))
-                            @php
-                                $style = match (true) {
+                            @php($style = match (true) {
                                     $isCorrect => 'border-correct bg-correct text-white',
                                     $reveal && $isMine => 'border-wrong bg-wrong text-white',
                                     ! $reveal && $isMine => 'border-sun bg-sea text-paper',
                                     $reveal || $state['my_choice_id'] !== null => 'border-sea-line bg-sea-deep-2 text-sea-mist',
                                     default => 'border-paper bg-paper text-ink shadow-[0_5px_0_#A9B9B5] hover:bg-sand',
-                                };
-                            @endphp
+                                })
                             @php($badge = $isCorrect ? 'bg-white text-[#1F6A2C]' : ($reveal && $isMine ? 'bg-white text-wrong' : ($reveal || $state['my_choice_id'] !== null ? 'bg-sea-line text-sea-mist' : 'bg-sand-200 text-ink')))
                             <button type="button" data-answer wire:click="answer({{ $choice['id'] }})" aria-keyshortcuts="{{ $loop->iteration }}" @disabled($state['phase'] !== 'question' || $state['my_choice_id'] !== null)
                                     class="flex min-h-[76px] w-full cursor-pointer items-center gap-4 rounded-[20px] border-2 px-5 py-3.5 text-[19px] font-semibold disabled:cursor-default {{ $style }}">
@@ -264,14 +262,12 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
 
                     @if ($reveal)
                         @php($mine = $reveal['mine'])
-                        @php
-                            [$verdict, $color] = match (true) {
+                        @php([$verdict, $color] = match (true) {
                                 $mine === null => [__('play.game2.verdict_none'), 'text-ink'],
                                 $mine['excluded'] => [__('play.game2.verdict_excluded'), 'text-sun-text'],
                                 $mine['correct'] => [__('play.game2.verdict_right'), 'text-correct'],
                                 default => [__('play.game2.verdict_wrong'), 'text-wrong'],
-                            };
-                        @endphp
+                            })
                         <section aria-live="polite" class="flex flex-wrap items-center gap-x-8 gap-y-5 rounded-3xl bg-paper px-7 py-6 text-ink">
                             <div class="flex flex-[1_1_420px] flex-col gap-2">
                                 <b class="font-display text-[26px] {{ $color }}">{{ $verdict }}</b>
