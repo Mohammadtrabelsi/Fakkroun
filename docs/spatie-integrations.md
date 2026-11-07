@@ -70,7 +70,7 @@ Rendering: `<x-seo.structured-data :graph="$graph" />` (JSON is encoded with
 wired into the marketing layout; pages pass `description`, `canonical`,
 `image`, `og-type` and `structured-data` to `<x-layouts.marketing>`. Static
 pages get their graph from a view composer in `AppServiceProvider`, blog pages
-from `BlogController`.
+from their Livewire components (`pages/blog/⚡index`, `pages/blog/⚡show`).
 
 Validate with Google's Rich Results Test or https://validator.schema.org.
 

@@ -1,12 +1,41 @@
-<x-layouts.marketing
-    :title="$post->title.' — '.config('app.name')"
-    :description="$post->summary(160)"
-    :canonical="$post->publicUrl()"
-    :image="$post->coverImageUrl()"
-    og-type="article"
-    :structured-data="$structuredData"
->
-    @push('styles')
+<?php
+
+use App\Models\Post;
+use App\Services\PostService;
+use App\Services\StructuredDataService;
+use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Locked;
+use Livewire\Component;
+
+/**
+ * Public detail page of a published post.
+ */
+new class extends Component
+{
+    #[Locked]
+    public Post $post;
+
+    public function mount(string $slug, PostService $posts): void
+    {
+        $this->post = $posts->findPublishedBySlug($slug) ?? abort(404);
+    }
+
+    public function render(): View
+    {
+        return $this->view()->layout('components.layouts.marketing', [
+            'title' => $this->post->title.' — '.config('app.name'),
+            'description' => $this->post->summary(160),
+            'canonical' => $this->post->publicUrl(),
+            'image' => $this->post->coverImageUrl(),
+            'ogType' => 'article',
+            'structuredData' => app(StructuredDataService::class)->forPost($this->post),
+        ]);
+    }
+};
+?>
+
+<div>
+@push('styles')
         <style>
             .post-page { padding: 72px 48px 96px; max-width: 720px; }
             .post-page .post-meta { font-size: 13px; color: rgba(var(--ink), 0.6); margin-bottom: 16px; }
@@ -44,4 +73,4 @@
 
         <x-blog.tag-list :tags="$post->tags" />
     </article>
-</x-layouts.marketing>
+</div>

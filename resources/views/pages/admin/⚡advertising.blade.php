@@ -1,5 +1,6 @@
 <?php
 
+use App\Domain\Advertising\AdvertisingDocuments;
 use App\Domain\Advertising\AdvertisingStats;
 use App\Domain\Advertising\CampaignService;
 use App\Domain\Advertising\Enums\CampaignStatus;
@@ -18,6 +19,7 @@ use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /** Advertising back office (spec §18–§21): advertisers, packages, credits, review, reconciliation. */
 new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
@@ -113,6 +115,11 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     public function invoices()
     {
         return \App\Domain\Advertising\Models\Invoice::query()->with(['advertiser:id,name', 'creditNote:id,cancels_invoice_id,number'])->orderByDesc('id')->limit(100)->get();
+    }
+
+    public function downloadInvoice(int $id, AdvertisingDocuments $documents): StreamedResponse
+    {
+        return $documents->invoice(\App\Domain\Advertising\Models\Invoice::query()->findOrFail($id), auth()->user());
     }
 
     public function cancelInvoice(int $id, \App\Domain\Advertising\InvoiceService $invoices): void
@@ -548,7 +555,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                 <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('advertising.date') }}">{{ $invoice->issued_at->isoFormat('ll') }}</div>
                                 <div class="row-card-field tabular-nums" data-label="{{ __('advertising.invoices.amount') }}">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</div>
                                 <div class="row-card-actions"><div class="ms-actions-end ms-wrap">
-                                    <a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a>
+                                    <button type="button" wire:click="downloadInvoice({{ $invoice->id }})" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</button>
                                     @if (! $invoice->isCreditNote() && ! $invoice->creditNote)
                                         <input type="text" wire:model="cancelReasons.{{ $invoice->id }}" class="input ms-btn-sm" placeholder="{{ __('advertising.invoices.cancel_reason') }}" aria-label="{{ __('advertising.invoices.cancel_reason') }}">
                                         <button type="button" wire:click="cancelInvoice({{ $invoice->id }})" wire:confirm="{{ __('advertising.invoices.cancel') }}?" class="btn ms-btn-sm">{{ __('advertising.invoices.cancel') }}</button>

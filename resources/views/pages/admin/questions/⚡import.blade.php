@@ -1,5 +1,6 @@
 <?php
 
+use App\Domain\Questions\Imports\QuestionExportService;
 use App\Domain\Questions\Imports\QuestionImportService;
 use App\Domain\Questions\Models\QuestionImportBatch;
 use App\Support\Livewire\InteractsWithToasts;
@@ -10,6 +11,7 @@ use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
  * Question import (spec §11): upload → map columns → preview → start → history.
@@ -36,6 +38,13 @@ new #[Layout('layouts::app')] #[Title('Import questions')] class extends Compone
     public array $preview = [];
 
     public ?int $openBatch = null;
+
+    public function export(string $format, QuestionExportService $exports): StreamedResponse
+    {
+        $this->authorize('manage questions');
+
+        return $exports->download($format);
+    }
 
     public function mount(): void
     {
@@ -124,7 +133,7 @@ new #[Layout('layouts::app')] #[Title('Import questions')] class extends Compone
             <h2 class="ms-mb-0">{{ __('questions.import.title') }}</h2>
             <p class="text-muted ms-note">{{ __('questions.import.description') }}</p>
         </div>
-        <a href="{{ route('admin.questions.export', 'csv') }}" class="btn">{{ __('questions.import.template') }}</a>
+        <button type="button" wire:click="export('csv')" class="btn">{{ __('questions.import.template') }}</button>
     </div>
 
     <div class="card ms-stack-16">

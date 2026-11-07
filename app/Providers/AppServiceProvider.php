@@ -67,8 +67,8 @@ class AppServiceProvider extends ServiceProvider
      * config is all it takes to start notifying — no per-model wiring here.
      */
     /**
-     * JSON-LD for the public pages that have no controller of their own
-     * (the blog pages get theirs from BlogController).
+     * JSON-LD for the static public pages (the blog pages are Livewire
+     * components that pass their own to the marketing layout).
      */
     private function registerStructuredData(): void
     {

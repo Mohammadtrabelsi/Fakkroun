@@ -299,13 +299,7 @@
                                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.3 3-5 7-5s7 1.7 7 5"></path></svg>
                                 {{ __('app.profile') }}
                             </a>
-                            <form method="POST" action="{{ route('logout') }}" class="ms-border-top">
-                                @csrf
-                                <button type="submit" class="ms-menu-btn-danger">
-                                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                                    {{ __('app.logout') }}
-                                </button>
-                            </form>
+                            <livewire:logout variant="menu" />
                         </div>
                     </div>
                 </div>

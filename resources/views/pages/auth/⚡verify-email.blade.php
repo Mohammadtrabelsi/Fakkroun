@@ -51,9 +51,6 @@ new #[Layout('layouts::guest')] #[Title('Verify email')] class extends Component
             {{ __('verify-email.resend_verification_email') }}
         </button>
 
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="btn">{{ __('verify-email.log_out') }}</button>
-        </form>
+        <livewire:logout :label="__('verify-email.log_out')" />
     </div>
 </div>

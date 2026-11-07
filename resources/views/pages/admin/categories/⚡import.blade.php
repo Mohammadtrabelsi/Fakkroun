@@ -7,6 +7,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 new #[Layout('layouts::app')] #[Title('Import categories')] class extends Component
 {
@@ -16,6 +17,13 @@ new #[Layout('layouts::app')] #[Title('Import categories')] class extends Compon
 
     /** @var array<string, mixed>|null */
     public ?array $result = null;
+
+    public function export(string $format, CategoryService $categories, SpreadsheetService $spreadsheets): StreamedResponse
+    {
+        $this->authorize('viewAny', Category::class);
+
+        return $spreadsheets->download($categories->exportRows(), 'categories', $format);
+    }
 
     public function mount(): void
     {
@@ -86,7 +94,7 @@ new #[Layout('layouts::app')] #[Title('Import categories')] class extends Compon
                 <span wire:loading.remove wire:target="import">{{ __('imports.start') }}</span>
                 <span wire:loading wire:target="import">{{ __('imports.importing') }}</span>
             </button>
-            <a href="{{ route('admin.categories.export', 'csv') }}" class="btn">{{ __('imports.download_template') }}</a>
+            <button type="button" wire:click="export('csv')" class="btn">{{ __('imports.download_template') }}</button>
         </div>
     </form>
 

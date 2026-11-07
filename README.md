@@ -178,11 +178,8 @@ app/
 ├── Exceptions/            # DomainActionException (returns a 422 JSON response to JSON requests)
 ├── Http/
 │   ├── Controllers/
-│   │   ├── Api/           # JSON API controllers, one per service
-│   │   ├── Auth/          # Logout
-│   │   ├── ActivityLogExportController.php
-│   │   ├── BlogController.php     # Public /blog listing and post detail
-│   │   └── LocaleController.php
+│   │   └── Api/           # JSON API controllers, one per service (the only controllers;
+│   │                      #   every web page, download and redirect is a Livewire component)
 │   └── Middleware/
 │       ├── EnforceMaintenanceMode.php  # 503 for non-admins while maintenance is on
 │       ├── EnsureUserIsAdmin.php       # Guards admin routes ('admin' alias)
@@ -331,7 +328,7 @@ These features work out of the box, but are easy to miss in the code.
 - **Maintenance mode.** Toggled from **Admin → Settings**. `EnforceMaintenanceMode` serves a 503 page to visitors and JSON on `/api`. Administrators, the login and two-factor pages, language switching and `/up` stay reachable.
 - **Date format.** The admin settings choose one format for dates shown in the activity log and the users list. The choices are defined in `Setting::DATE_FORMATS`.
 - **Cover images.** Posts can have a cover image, uploaded in the post form and stored on the `public` disk. It is shown on `/blog` and on the post page. Run `php artisan storage:link` first.
-- **XML sitemap.** `php artisan sitemap:generate` (`SitemapService`) lists the named routes in `config/sitemap.php` (`home`, `about`, `docs`, `blog`) and every post that `/blog/{slug}` actually serves (published, not trashed). URLs are built from `APP_URL`, never contain query strings and are de-duplicated. `<lastmod>` is the post's `updated_at` (and the newest one for `/blog`); static pages get none, and `changefreq`/`priority` are omitted. Files are rendered, validated and written to a temp file, then renamed into place, so a failed run leaves the previous sitemap intact and the command exits non-zero. Above 50,000 URLs it writes `sitemap-1.xml`, `sitemap-2.xml`, … behind a sitemap index. It is regenerated hourly (`SITEMAP_SCHEDULE`, `withoutOverlapping`) and `PostSitemapObserver` queues a de-duplicated `GenerateSitemapJob` whenever a published post changes. Auth, account, admin, API and language routes are never listed; categories have no public page, so they are not listed either. `/robots.txt` is served by `RobotsController` and adds the `Sitemap:` line once the file exists.
+- **XML sitemap.** `php artisan sitemap:generate` (`SitemapService`) lists the named routes in `config/sitemap.php` (`home`, `about`, `docs`, `blog`) and every post that `/blog/{slug}` actually serves (published, not trashed). URLs are built from `APP_URL`, never contain query strings and are de-duplicated. `<lastmod>` is the post's `updated_at` (and the newest one for `/blog`); static pages get none, and `changefreq`/`priority` are omitted. Files are rendered, validated and written to a temp file, then renamed into place, so a failed run leaves the previous sitemap intact and the command exits non-zero. Above 50,000 URLs it writes `sitemap-1.xml`, `sitemap-2.xml`, … behind a sitemap index. It is regenerated hourly (`SITEMAP_SCHEDULE`, `withoutOverlapping`) and `PostSitemapObserver` queues a de-duplicated `GenerateSitemapJob` whenever a published post changes. Auth, account, admin, API and language routes are never listed; categories have no public page, so they are not listed either. `/robots.txt` is served by a route closure in `routes/web.php` and adds the `Sitemap:` line once the file exists.
 - **Support email.** Set in admin settings and stored with the site settings.
 
 ## Localization
@@ -346,7 +343,7 @@ Available locales are configured in `config/app.php` under `available_locales`:
 ],
 ```
 
-The `SetLocale` middleware applies the session's chosen locale on every request, the `LocaleController` handles switching, and text direction (`ltr`/`rtl`) is derived automatically for correct RTL rendering. To add a language, add an entry here and a matching `lang/{locale}` directory with the same files as `lang/en`.
+The `SetLocale` middleware applies the session's chosen locale on every request, the `pages::locale` Livewire page (`/language/{locale}`) handles switching, and text direction (`ltr`/`rtl`) is derived automatically for correct RTL rendering. To add a language, add an entry here and a matching `lang/{locale}` directory with the same files as `lang/en`.
 
 `php artisan translations:sync` (`app/Console/Commands/SyncTranslationKeys.php`) scans `resources/` for translation keys, creates missing lang files, and fills in keys missing from other locales. Options:
 
