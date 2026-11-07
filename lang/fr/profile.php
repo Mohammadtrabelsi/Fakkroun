@@ -13,4 +13,5 @@ return [
     'update_name_email' => 'Mettez à jour votre nom et votre adresse e-mail',
     'update_password' => 'Mettre à jour le mot de passe',
     'update_password_description' => 'Assurez-vous d’utiliser un mot de passe long et aléatoire pour garantir la sécurité de votre compte.',
+    'phone' => 'Numéro de téléphone',
 ];

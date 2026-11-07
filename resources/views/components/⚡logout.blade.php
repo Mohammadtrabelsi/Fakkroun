@@ -34,6 +34,8 @@ new class extends Component
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
             {{ $label ?: __('app.logout') }}
         </button>
+    @elseif ($variant === 'link')
+        <button type="submit" class="cursor-pointer bg-transparent p-0 font-semibold text-sea underline-offset-2 hover:underline">{{ $label ?: __('app.logout') }}</button>
     @else
         <button type="submit" class="btn">{{ $label ?: __('app.logout') }}</button>
     @endif
