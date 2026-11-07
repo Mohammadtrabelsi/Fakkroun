@@ -111,6 +111,18 @@ return [
             'paid_plan_currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
         ],
 
+        // Next step 10: fair play and question calibration.
+        'quality' => [
+            // Answers faster than this are flagged for review (never a score change). 0 = off.
+            'fast_answer_ms' => ['type' => 'int', 'default' => 400, 'rules' => ['integer', 'min:0', 'max:10000']],
+            // A player is listed for review once they have this many flagged answers in the period.
+            'fast_answer_review_threshold' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:1', 'max:1000']],
+            // Difficulty calibration: flag questions whose correct rate contradicts their difficulty.
+            'calibration_min_answers' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:100000']],
+            'easy_min_correct_rate' => ['type' => 'int', 'default' => 30, 'rules' => ['integer', 'min:0', 'max:100']],
+            'hard_max_correct_rate' => ['type' => 'int', 'default' => 80, 'rules' => ['integer', 'min:0', 'max:100']],
+        ],
+
         // Invoices for advertiser packs (story 16 S11). Placeholders until you fill them in.
         'invoices' => [
             'number_prefix' => ['type' => 'string', 'default' => 'FK', 'rules' => ['string', 'max:10', 'regex:/^[A-Z0-9-]+$/']],

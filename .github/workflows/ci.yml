@@ -63,6 +63,10 @@ jobs:
       - name: Run tests
         run: php artisan test
 
+      # Next step 10: fail on known vulnerabilities in production front-end dependencies.
+      - name: Audit npm dependencies
+        run: npm audit --omit=dev --audit-level=high
+
   code-quality:
     name: Code Quality
     runs-on: ubuntu-latest
@@ -81,6 +85,10 @@ jobs:
 
       - name: Install PHP dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
+
+      # Next step 10: fail on known vulnerabilities in PHP dependencies.
+      - name: Audit Composer dependencies
+        run: composer audit --no-interaction
 
       - name: Check code style (Pint)
         run: vendor/bin/pint --test

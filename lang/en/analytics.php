@@ -1,6 +1,24 @@
 <?php
 
 return [
+    'moderation' => [
+        'title' => 'Moderation',
+        'waiting' => 'Questions waiting for review',
+        'oldest' => 'Oldest waiting',
+        'hours' => ':count h',
+        'week_of' => 'Decisions, week of :date',
+    ],
+    'fair_play' => [
+        'title' => 'Fair play',
+        'flagged' => ':count answers faster than a person can read (flagged, still scored)',
+        'none' => 'Nobody above the review threshold.',
+        'note' => 'Flags are for review only. Threshold and speed are in Game settings → Fair play.',
+    ],
+    'calibration' => [
+        'title' => 'Difficulty to check',
+        'none' => 'No question contradicts its difficulty yet.',
+        'note' => '“Easy” questions most players miss, and “hard” ones most get right, over all plays.',
+    ],
     'title' => 'Analytics',
     'description' => 'Server-recorded activity from :from to :to. Defaults to the last 30 days.',
     'metrics' => [

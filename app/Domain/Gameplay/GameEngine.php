@@ -211,6 +211,8 @@ class GameEngine
             }
 
             $duration = max(1, (int) $current->opened_at->diffInMilliseconds($current->deadline_at));
+            $responseMs = min($duration, max(0, (int) $current->opened_at->diffInMilliseconds($now)));
+            $fastMs = (int) $this->settings->get('quality.fast_answer_ms');
 
             try {
                 return PlayerAnswer::query()->create([
@@ -218,7 +220,9 @@ class GameEngine
                     'user_id' => $player->id,
                     'choice_id' => $choiceId,
                     'received_at' => $now,
-                    'response_ms' => min($duration, max(0, (int) $current->opened_at->diffInMilliseconds($now))),
+                    'response_ms' => $responseMs,
+                    // Faster than a person can read the question: flagged for review, scored as usual.
+                    'flagged_fast' => $fastMs > 0 && $responseMs < $fastMs,
                 ]);
             } catch (UniqueConstraintViolationException) {
                 throw new DomainActionException(__('play.errors.already_answered'));

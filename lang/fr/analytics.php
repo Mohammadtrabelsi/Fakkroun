@@ -1,6 +1,24 @@
 <?php
 
 return [
+    'moderation' => [
+        'title' => 'Modération',
+        'waiting' => 'Questions en attente de validation',
+        'oldest' => 'Plus ancienne en attente',
+        'hours' => ':count h',
+        'week_of' => 'Décisions, semaine du :date',
+    ],
+    'fair_play' => [
+        'title' => 'Fair-play',
+        'flagged' => ':count réponses plus rapides qu’une lecture humaine (signalées, toujours comptées)',
+        'none' => 'Personne au-dessus du seuil d’examen.',
+        'note' => 'Les signalements servent uniquement à l’examen. Seuil et vitesse : Paramètres du jeu → Fair-play.',
+    ],
+    'calibration' => [
+        'title' => 'Difficulté à vérifier',
+        'none' => 'Aucune question ne contredit encore sa difficulté.',
+        'note' => 'Questions « faciles » que la plupart ratent et « difficiles » que la plupart réussissent, sur toutes les parties.',
+    ],
     'title' => 'Statistiques',
     'description' => 'Activité enregistrée par le serveur du :from au :to. Par défaut, les 30 derniers jours.',
     'metrics' => [

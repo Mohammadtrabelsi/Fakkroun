@@ -40,3 +40,6 @@ Schedule::command('rooms:expire')->everyFiveMinutes()->withoutOverlapping();
 
 // Advertising: end finished campaigns and reconcile events, ledger and balances.
 Schedule::command('advertising:reconcile')->hourly()->withoutOverlapping()->onOneServer();
+
+// Analytics: store yesterday's platform figures (and re-check the two days before, in case of late games).
+Schedule::command('analytics:rollup --days=3')->dailyAt('00:20')->withoutOverlapping()->onOneServer();

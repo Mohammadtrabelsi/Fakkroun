@@ -64,6 +64,8 @@ class PlatformAnalytics
      */
     public function dailyGames(Carbon $from, Carbon $to): array
     {
+        // Past days come from the daily rollup when stored; today and missing days are counted live.
+        $stored = app(DailyRollup::class)->rows($from, $to);
         $counts = Game::query()->whereBetween('started_at', [$from, $to])
             ->selectRaw('date(started_at) as day, count(*) as total')
             ->groupBy(DB::raw('date(started_at)'))
@@ -72,7 +74,8 @@ class PlatformAnalytics
         $days = [];
 
         for ($day = $from->copy(); $day->lte($to); $day->addDay()) {
-            $days[$day->toDateString()] = (int) ($counts[$day->toDateString()] ?? 0);
+            $key = $day->toDateString();
+            $days[$key] = isset($stored[$key]) ? (int) $stored[$key]->games_started : (int) ($counts[$key] ?? 0);
         }
 
         return $days;
@@ -180,6 +183,83 @@ class PlatformAnalytics
             'accepted_rate' => $generated > 0 ? round(100 * (int) (clone $batches)->sum('accepted_count') / $generated, 1) : null,
             'published' => Question::query()->where('source', 'ai')->where('status', 'published')->whereBetween('created_at', [$from, $to])->count(),
             'estimated_cost' => round((float) (clone $batches)->sum('estimated_cost'), 2),
+        ];
+    }
+
+    /**
+     * Fair play (next step 10): answers flagged as faster than a person can
+     * read, and the players with the most of them. For review only.
+     *
+     * @return array{flagged: int, players: array<int, array{id: int, name: string, flagged: int, answers: int}>}
+     */
+    public function fairPlay(Carbon $from, Carbon $to): array
+    {
+        $threshold = (int) app(\App\Services\PlatformSettings::class)->get('quality.fast_answer_review_threshold');
+        $rows = $this->answers($from, $to)
+            ->selectRaw('user_id, count(*) as answers, sum(case when flagged_fast then 1 else 0 end) as flagged')
+            ->groupBy('user_id')
+            ->havingRaw('sum(case when flagged_fast then 1 else 0 end) >= ?', [$threshold])
+            ->orderByDesc('flagged')
+            ->limit(20)
+            ->get();
+        $names = \App\Models\User::query()->whereIn('id', $rows->pluck('user_id'))->pluck('name', 'id');
+
+        return [
+            'flagged' => $this->answers($from, $to)->where('flagged_fast', true)->count(),
+            'players' => $rows->map(fn ($r) => ['id' => (int) $r->user_id, 'name' => (string) ($names[$r->user_id] ?? '—'), 'flagged' => (int) $r->flagged, 'answers' => (int) $r->answers])->all(),
+        ];
+    }
+
+    /**
+     * Difficulty calibration over all plays: "easy" questions most players
+     * miss, "hard" ones most get right. Thresholds are quality settings.
+     *
+     * @return array<int, array{uuid: string, body: string, difficulty: string, correct_rate: float, played: int}>
+     */
+    public function calibration(int $limit = 15): array
+    {
+        $q = app(\App\Services\PlatformSettings::class)->all()['quality'];
+        $rate = 'times_correct * 100.0 / times_played';
+
+        return Question::query()
+            ->with('translations:id,question_id,language,body')
+            ->where('times_played', '>=', max(1, (int) $q['calibration_min_answers']))
+            ->where(fn ($w) => $w
+                ->where(fn ($e) => $e->where('difficulty', 'easy')->whereRaw("$rate < ?", [(int) $q['easy_min_correct_rate']]))
+                ->orWhere(fn ($h) => $h->where('difficulty', 'hard')->whereRaw("$rate > ?", [(int) $q['hard_max_correct_rate']])))
+            ->orderByDesc('times_played')
+            ->limit($limit)
+            ->get()
+            ->map(fn (Question $question) => [
+                'uuid' => $question->uuid,
+                'body' => $question->translations->firstWhere('language', $question->origin_language)?->body ?? '—',
+                'difficulty' => $question->difficulty->value,
+                'correct_rate' => round(100 * $question->times_correct / max(1, $question->times_played), 1),
+                'played' => (int) $question->times_played,
+            ])->all();
+    }
+
+    /**
+     * Moderation health: queue size, oldest waiting item, decisions per week.
+     *
+     * @return array{waiting: int, oldest_hours: ?int, weekly: array<string, int>}
+     */
+    public function moderation(): array
+    {
+        $oldest = Question::query()->awaitingReview()->min(DB::raw('coalesce(submitted_at, created_at)'));
+        $decisions = \App\Domain\Questions\Models\QuestionModerationLog::query()
+            ->whereIn('action', ['approved', 'rejected', 'changes_requested'])
+            ->where('created_at', '>=', now()->subWeeks(4)->startOfWeek())
+            ->get(['created_at'])
+            ->groupBy(fn ($log) => $log->created_at->startOfWeek()->toDateString())
+            ->map->count()
+            ->sortKeys()
+            ->all();
+
+        return [
+            'waiting' => Question::query()->awaitingReview()->count(),
+            'oldest_hours' => $oldest ? (int) Carbon::parse($oldest)->diffInHours(now(), true) : null,
+            'weekly' => $decisions,
         ];
     }
 

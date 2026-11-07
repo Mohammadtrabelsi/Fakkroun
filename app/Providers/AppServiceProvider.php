@@ -55,6 +55,7 @@ class AppServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
         $this->registerCrudNotifications();
         $this->registerStructuredData();
+        $this->alertOnFailedJobs();
 
         // Keeps sitemap.xml fresh between scheduled runs (see config/sitemap.php).
         Post::observe(PostSitemapObserver::class);
@@ -124,6 +125,24 @@ class AppServiceProvider extends ServiceProvider
             $key = mb_strtolower((string) $request->input('email')).'|'.$request->ip();
 
             return Limit::perMinute(6)->by($key);
+        });
+    }
+
+    /**
+     * Next step 10: a failed queued job notifies administrators (database
+     * notification), at most once per job type every ten minutes.
+     */
+    private function alertOnFailedJobs(): void
+    {
+        \Illuminate\Support\Facades\Queue::failing(function (\Illuminate\Queue\Events\JobFailed $event): void {
+            $name = (string) ($event->job->resolveName() ?: 'job');
+
+            if (! \Illuminate\Support\Facades\Cache::add('job-failed-alert:'.md5($name), true, 600)) {
+                return;
+            }
+
+            rescue(fn () => \App\Models\User::permission('view admin dashboard')->get()
+                ->each(fn (\App\Models\User $admin) => $admin->notify(new \App\Notifications\JobFailedAlert($name, $event->exception->getMessage()))), report: true);
         });
     }
 }

@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'ops' => [
+        'job_failed' => 'A background task failed: :job',
+    ],
     'tagline' => 'Think, Answer, Learn, Win!',
     'preview_category' => 'Marine Biodiversity',
     'sample_question' => 'Sample question',
@@ -99,6 +102,14 @@ return [
             'title' => 'Accounts (players)',
             'paid_plan_price_minor' => 'Paid ad-free account: monthly price (minor units, 0 = not on sale)',
             'paid_plan_currency' => 'Paid account currency (ISO code)',
+        ],
+        'quality' => [
+            'title' => 'Fair play and question quality',
+            'fast_answer_ms' => 'Flag answers faster than (ms, 0 = off)',
+            'fast_answer_review_threshold' => 'List a player for review after this many flagged answers',
+            'calibration_min_answers' => 'Answers a question needs before its difficulty is checked',
+            'easy_min_correct_rate' => 'Flag “easy” questions answered correctly less often than (%)',
+            'hard_max_correct_rate' => 'Flag “hard” questions answered correctly more often than (%)',
         ],
         'invoices' => [
             'title' => 'Invoices (advertiser packs)',
