@@ -136,6 +136,38 @@ class PlatformSettingsTest extends TestCase
             ->assertHasErrors('consistency');
     }
 
+    public function test_every_numeric_setting_has_a_translated_unit(): void
+    {
+        foreach ($this->settings->definitions() as $group => $fields) {
+            foreach ($fields as $name => $definition) {
+                if ($definition['type'] !== 'int') {
+                    continue;
+                }
+
+                $this->assertArrayHasKey('unit', $definition, "{$group}.{$name} has no unit.");
+                $key = str_starts_with($definition['unit'], 'minor:') ? 'minor' : $definition['unit'];
+
+                foreach (array_keys((array) config('app.available_locales')) as $locale) {
+                    $this->assertTrue(
+                        trans()->hasForLocale('fakkroun.settings_units.'.$key, $locale),
+                        "Unit [{$key}] is missing in [{$locale}].",
+                    );
+                }
+            }
+        }
+    }
+
+    public function test_admin_page_shows_units_next_to_numeric_settings(): void
+    {
+        $admin = User::factory()->admin()->create();
+
+        Livewire::actingAs($admin)
+            ->test('pages::admin.game-settings')
+            ->assertSeeHtml('id="game-default_question_seconds-unit"')
+            ->assertSee(__('fakkroun.settings_units.seconds'))
+            ->assertSee('1/100 TND');
+    }
+
     public function test_only_platform_setting_managers_can_open_the_page(): void
     {
         $moderator = tap(User::factory()->create(), fn (User $u) => $u->assignRole(UserRole::Moderator->value));
