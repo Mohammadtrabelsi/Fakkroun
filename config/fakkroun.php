@@ -21,34 +21,34 @@ return [
     'settings' => [
 
         'game' => [
-            'min_players' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:1', 'max:1000']],
-            'max_players' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:1000']],
-            'max_players_per_round' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:1000']],
-            'max_concurrent_rooms' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:1', 'max:100000']],
-            'default_question_count' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:1', 'max:200']],
-            'max_question_count' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:1', 'max:200']],
-            'default_question_seconds' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:3', 'max:600']],
-            'min_question_seconds' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:3', 'max:600']],
-            'max_question_seconds' => ['type' => 'int', 'default' => 60, 'rules' => ['integer', 'min:3', 'max:600']],
-            'reconnect_grace_seconds' => ['type' => 'int', 'default' => 60, 'rules' => ['integer', 'min:0', 'max:3600']],
-            'room_expiry_minutes' => ['type' => 'int', 'default' => 120, 'rules' => ['integer', 'min:5', 'max:10080']],
+            'min_players' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:1', 'max:1000'], 'unit' => 'players'],
+            'max_players' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:1000'], 'unit' => 'players'],
+            'max_players_per_round' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:1000'], 'unit' => 'players'],
+            'max_concurrent_rooms' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:1', 'max:100000'], 'unit' => 'rooms'],
+            'default_question_count' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:1', 'max:200'], 'unit' => 'questions'],
+            'max_question_count' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:1', 'max:200'], 'unit' => 'questions'],
+            'default_question_seconds' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:3', 'max:600'], 'unit' => 'seconds'],
+            'min_question_seconds' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:3', 'max:600'], 'unit' => 'seconds'],
+            'max_question_seconds' => ['type' => 'int', 'default' => 60, 'rules' => ['integer', 'min:3', 'max:600'], 'unit' => 'seconds'],
+            'reconnect_grace_seconds' => ['type' => 'int', 'default' => 60, 'rules' => ['integer', 'min:0', 'max:3600'], 'unit' => 'seconds'],
+            'room_expiry_minutes' => ['type' => 'int', 'default' => 120, 'rules' => ['integer', 'min:5', 'max:10080'], 'unit' => 'minutes'],
         ],
 
         'scoring' => [
             // Design brief: correct ? 50 + round(100 × remaining / duration) : 0, at every
             // difficulty. Raise medium/hard here to reward harder questions.
-            'points_easy' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
-            'points_medium' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
-            'points_hard' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'points_easy' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000'], 'unit' => 'points'],
+            'points_medium' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000'], 'unit' => 'points'],
+            'points_hard' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:0', 'max:10000'], 'unit' => 'points'],
             // Extra points for an instant correct answer, decreasing linearly to 0 at the deadline.
-            'speed_bonus_max' => ['type' => 'int', 'default' => 100, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'speed_bonus_max' => ['type' => 'int', 'default' => 100, 'rules' => ['integer', 'min:0', 'max:10000'], 'unit' => 'points'],
             // Duplicate-answer rule (spec §14): identical answers from this many players or more score nothing.
             'duplicate_rule_default' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
-            'duplicate_rule_threshold' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:2', 'max:1000']],
+            'duplicate_rule_threshold' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:2', 'max:1000'], 'unit' => 'answers'],
         ],
 
         'submissions' => [
-            'daily_limit_per_player' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:1000']],
+            'daily_limit_per_player' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:1000'], 'unit' => 'questions_per_day'],
             // Spec §9: never publish community questions without moderation unless an admin opts in.
             'auto_publish' => ['type' => 'bool', 'default' => false, 'rules' => ['boolean']],
         ],
@@ -63,42 +63,42 @@ return [
         'advertising' => [
             'enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             // Never an ad on every question by default (spec §17.2): one reveal in N.
-            'every_n_questions' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100']],
-            'max_per_player_per_game' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:100']],
-            'min_seconds_between' => ['type' => 'int', 'default' => 45, 'rules' => ['integer', 'min:0', 'max:3600']],
-            'max_sponsored_per_game' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:20']],
+            'every_n_questions' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100'], 'unit' => 'questions'],
+            'max_per_player_per_game' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:100'], 'unit' => 'ads'],
+            'min_seconds_between' => ['type' => 'int', 'default' => 45, 'rules' => ['integer', 'min:0', 'max:3600'], 'unit' => 'seconds'],
+            'max_sponsored_per_game' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:20'], 'unit' => 'questions'],
             // Prices are data, not code (spec §19): earned per consumed unit, in minor units.
-            'impression_price_minor' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:0', 'max:100000000']],
-            'sponsored_question_price_minor' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'impression_price_minor' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:0', 'max:100000000'], 'unit' => 'minor:advertising.currency'],
+            'sponsored_question_price_minor' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000'], 'unit' => 'minor:advertising.currency'],
             // Story 16 S12: sponsored rounds (a block of consecutive sponsored questions).
-            'sponsored_round_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'sponsored_round_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000'], 'unit' => 'minor:advertising.currency'],
             'sponsored_rounds_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
-            'sponsored_round_size' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:2', 'max:10']],
-            'sponsored_round_min_game_questions' => ['type' => 'int', 'default' => 6, 'rules' => ['integer', 'min:3', 'max:100']],
+            'sponsored_round_size' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:2', 'max:10'], 'unit' => 'questions'],
+            'sponsored_round_min_game_questions' => ['type' => 'int', 'default' => 6, 'rules' => ['integer', 'min:3', 'max:100'], 'unit' => 'questions'],
             'currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
-            'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000'], 'unit' => 'credits'],
             // Story 16 S1: campaigns with no targeting and no keyword match may still run.
             'allow_untargeted' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             // Story 16 S4: the same creative at most this many times a day per player.
-            'max_same_creative_per_day' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100']],
+            'max_same_creative_per_day' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100'], 'unit' => 'views_per_day'],
             // Story 16 S3: calm placements besides the answer reveal, one per player and room.
             'post_game_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             'lobby_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             'reveal_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
             // How an impression is confirmed: share of the ad visible, for how long.
-            'view_ratio_percent' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:10', 'max:100']],
-            'view_seconds' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:1', 'max:30']],
+            'view_ratio_percent' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:10', 'max:100'], 'unit' => 'percent'],
+            'view_seconds' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:1', 'max:30'], 'unit' => 'seconds'],
             // A delivery token must be confirmed within this many minutes.
-            'delivery_minutes' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:1', 'max:120']],
-            'max_keywords_per_creative' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:50']],
+            'delivery_minutes' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:1', 'max:120'], 'unit' => 'minutes'],
+            'max_keywords_per_creative' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:50'], 'unit' => 'keywords'],
             // Relevance weights (story 16 S1).
-            'weight_topic' => ['type' => 'int', 'default' => 4, 'rules' => ['integer', 'min:0', 'max:100']],
-            'weight_language' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:100']],
-            'weight_keyword' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100']],
-            'max_keyword_hits' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:20']],
+            'weight_topic' => ['type' => 'int', 'default' => 4, 'rules' => ['integer', 'min:0', 'max:100'], 'unit' => 'points'],
+            'weight_language' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:100'], 'unit' => 'points'],
+            'weight_keyword' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100'], 'unit' => 'points'],
+            'max_keyword_hits' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:20'], 'unit' => 'keywords'],
             // Story 16 S5: rotation by performance (click-through rate on "Learn more").
-            'weight_performance' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100']],
-            'performance_min_impressions' => ['type' => 'int', 'default' => 100, 'rules' => ['integer', 'min:1', 'max:1000000']],
+            'weight_performance' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100'], 'unit' => 'points'],
+            'performance_min_impressions' => ['type' => 'int', 'default' => 100, 'rules' => ['integer', 'min:1', 'max:1000000'], 'unit' => 'impressions'],
             // Story 16 S8: AI notes for the reviewer when a campaign is submitted (needs AI configured).
             'ai_review_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
         ],
@@ -107,20 +107,20 @@ return [
         // Advertiser packs are separate (Admin → Advertising → Packages).
         'accounts' => [
             // Monthly price of the paid, ad-free account, in minor units. 0 = not on sale.
-            'paid_plan_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'paid_plan_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000'], 'unit' => 'minor:accounts.paid_plan_currency'],
             'paid_plan_currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
         ],
 
         // Next step 10: fair play and question calibration.
         'quality' => [
             // Answers faster than this are flagged for review (never a score change). 0 = off.
-            'fast_answer_ms' => ['type' => 'int', 'default' => 400, 'rules' => ['integer', 'min:0', 'max:10000']],
+            'fast_answer_ms' => ['type' => 'int', 'default' => 400, 'rules' => ['integer', 'min:0', 'max:10000'], 'unit' => 'milliseconds'],
             // A player is listed for review once they have this many flagged answers in the period.
-            'fast_answer_review_threshold' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:1', 'max:1000']],
+            'fast_answer_review_threshold' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:1', 'max:1000'], 'unit' => 'answers'],
             // Difficulty calibration: flag questions whose correct rate contradicts their difficulty.
-            'calibration_min_answers' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:100000']],
-            'easy_min_correct_rate' => ['type' => 'int', 'default' => 30, 'rules' => ['integer', 'min:0', 'max:100']],
-            'hard_max_correct_rate' => ['type' => 'int', 'default' => 80, 'rules' => ['integer', 'min:0', 'max:100']],
+            'calibration_min_answers' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:100000'], 'unit' => 'answers'],
+            'easy_min_correct_rate' => ['type' => 'int', 'default' => 30, 'rules' => ['integer', 'min:0', 'max:100'], 'unit' => 'percent'],
+            'hard_max_correct_rate' => ['type' => 'int', 'default' => 80, 'rules' => ['integer', 'min:0', 'max:100'], 'unit' => 'percent'],
         ],
 
         // Invoices for advertiser packs (story 16 S11). Placeholders until you fill them in.
