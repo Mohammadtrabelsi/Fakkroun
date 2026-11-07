@@ -111,7 +111,8 @@ return new class extends Migration
             $table->timestamp('created_at');
 
             $table->index(['advertiser_id', 'created_at']);
-            $table->index(['campaign_id', 'credit_type', 'created_at']);
+            // Explicit name: the auto-generated one exceeds MySQL's 64-character identifier limit.
+            $table->index(['campaign_id', 'credit_type', 'created_at'], 'adv_ledger_campaign_credit_created_idx');
         });
 
         Schema::create('ad_deliveries', function (Blueprint $table) {
