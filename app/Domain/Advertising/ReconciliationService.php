@@ -6,6 +6,7 @@ use App\Domain\Advertising\Models\AdvertiserWallet;
 use App\Domain\Advertising\Models\Impression;
 use App\Domain\Advertising\Models\LedgerEntry;
 use App\Domain\Advertising\Models\SponsoredDelivery;
+use App\Domain\Advertising\Models\SponsoredRoundDelivery;
 use Illuminate\Support\Facades\Cache;
 
 /**
@@ -17,7 +18,7 @@ class ReconciliationService
     public const CACHE_KEY = 'advertising.reconciliation';
 
     /**
-     * @return array{checked_at: string, impressions_without_entry: array<int, int>, deliveries_without_entry: array<int, int>, entries_without_event: array<int, string>, wallet_mismatches: array<int, array<string, mixed>>, ok: bool}
+     * @return array{checked_at: string, impressions_without_entry: array<int, int>, deliveries_without_entry: array<int, int|string>, entries_without_event: array<int, string>, wallet_mismatches: array<int, array<string, mixed>>, ok: bool}
      */
     public function run(): array
     {
@@ -31,7 +32,15 @@ class ReconciliationService
             ->filter(fn (SponsoredDelivery $d) => ($entryRefs[$d->billing_reference] ?? null) !== $d->ledger_entry_id)
             ->pluck('id')->all();
 
-        $eventRefs = Impression::query()->pluck('billing_reference')->merge(SponsoredDelivery::query()->pluck('billing_reference'))->flip();
+        // Sponsored rounds (story 16 S12) are checked the same way as single sponsored questions.
+        $deliveriesWithout = array_merge($deliveriesWithout, SponsoredRoundDelivery::query()->select(['id', 'billing_reference', 'ledger_entry_id'])->get()
+            ->filter(fn (SponsoredRoundDelivery $d) => ($entryRefs[$d->billing_reference] ?? null) !== $d->ledger_entry_id)
+            ->map(fn (SponsoredRoundDelivery $d) => 'round:'.$d->id)->values()->all());
+
+        $eventRefs = Impression::query()->pluck('billing_reference')
+            ->merge(SponsoredDelivery::query()->pluck('billing_reference'))
+            ->merge(SponsoredRoundDelivery::query()->pluck('billing_reference'))
+            ->flip();
         $entriesWithout = $entryRefs->keys()->reject(fn (string $ref) => $eventRefs->has($ref))->values()->all();
 
         $ledgerTotals = LedgerEntry::query()->whereNotNull('credit_type')

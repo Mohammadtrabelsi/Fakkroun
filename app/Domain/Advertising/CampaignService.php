@@ -89,7 +89,15 @@ class CampaignService
             throw new DomainActionException(__('advertising.errors.no_creative'));
         }
 
-        return $this->setStatus($campaign, CampaignStatus::PendingReview);
+        $campaign = $this->setStatus($campaign, CampaignStatus::PendingReview);
+        $campaign->forceFill(['ai_review' => null])->save();
+
+        // Story 16 S8: AI notes for the reviewer, when AI is configured and the setting is on.
+        if (app(\App\Domain\Ai\QuestionDrafter::class)->enabled() && app(\App\Services\PlatformSettings::class)->get('advertising.ai_review_enabled')) {
+            \App\Domain\Advertising\Jobs\ReviewCampaignWithAi::dispatch($campaign->id);
+        }
+
+        return $campaign;
     }
 
     /**

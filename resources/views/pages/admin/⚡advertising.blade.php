@@ -44,6 +44,8 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     public int $pkgSponsored = 0;
 
+    public int $pkgRounds = 0;
+
     public string $pkgPrice = '';
 
     public bool $pkgActive = true;
@@ -159,6 +161,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         $this->pkgName = $p->name;
         $this->pkgImpressions = $p->impression_credits;
         $this->pkgSponsored = $p->sponsored_question_credits;
+        $this->pkgRounds = $p->sponsored_round_credits;
         $this->pkgPrice = number_format($p->price_minor / 100, 2, '.', '');
         $this->pkgActive = $p->is_active;
     }
@@ -169,11 +172,12 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             'pkgName' => ['required', 'string', 'max:120'],
             'pkgImpressions' => ['required', 'integer', 'min:0', 'max:100000000'],
             'pkgSponsored' => ['required', 'integer', 'min:0', 'max:1000000'],
+            'pkgRounds' => ['required', 'integer', 'min:0', 'max:1000000'],
             'pkgPrice' => ['required', 'numeric', 'min:0', 'max:10000000'],
             'pkgActive' => ['boolean'],
         ]);
 
-        if ($data['pkgImpressions'] + $data['pkgSponsored'] === 0) {
+        if ($data['pkgImpressions'] + $data['pkgSponsored'] + $data['pkgRounds'] === 0) {
             $this->addError('pkgImpressions', __('advertising.errors.empty_package'));
 
             return;
@@ -183,12 +187,13 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             'name' => $data['pkgName'],
             'impression_credits' => $data['pkgImpressions'],
             'sponsored_question_credits' => $data['pkgSponsored'],
+            'sponsored_round_credits' => $data['pkgRounds'],
             'price_minor' => (int) round(((float) $data['pkgPrice']) * 100),
             'currency' => (string) $settings->get('advertising.currency'),
             'is_active' => $data['pkgActive'],
         ]);
 
-        $this->reset(['packageId', 'pkgName', 'pkgImpressions', 'pkgSponsored', 'pkgPrice', 'pkgActive']);
+        $this->reset(['packageId', 'pkgName', 'pkgImpressions', 'pkgSponsored', 'pkgRounds', 'pkgPrice', 'pkgActive']);
         unset($this->packages);
         $this->toast(__('advertising.package_saved'));
     }
@@ -354,6 +359,24 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                             @if ($creative->keywords)<div class="text-muted ms-fs-12">{{ __('advertising.keywords') }}: {{ implode(', ', $creative->keywords) }}</div>@endif
                                         </div>
                                     @endforeach
+                                    @if ($campaign->ai_review)
+                                        {{-- Story 16 S8: advisory notes only; the reviewer decides. --}}
+                                        <div class="ms-fs-12 ms-mt-8" role="note">
+                                            <b>{{ __('advertising.ai_review.title') }}</b>
+                                            @if (! empty($campaign->ai_review['error']))
+                                                <span class="text-muted">{{ __('advertising.ai_review.failed') }}</span>
+                                            @elseif (empty($campaign->ai_review['concerns']))
+                                                <span class="text-muted">{{ __('advertising.ai_review.none') }}</span>
+                                            @else
+                                                <ul>
+                                                    @foreach ($campaign->ai_review['concerns'] as $concern)
+                                                        <li>{{ __('advertising.ai_review.principles.'.$concern['principle']) }} · #{{ $concern['creative'] }}: {{ $concern['explanation'] }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                            <div class="text-muted">{{ __('advertising.ai_review.advisory') }}</div>
+                                        </div>
+                                    @endif
                                 </td>
                                 <td class="ms-text-right"><div class="ms-actions-end ms-wrap">
                                     @if ($campaign->status === CampaignStatus::PendingReview)
@@ -421,18 +444,19 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         <div class="card ms-p-0 ms-mb-24">
             <div class="table-wrap">
                 <table class="table">
-                    <thead><tr><th>{{ __('advertising.package') }}</th><th>{{ __('advertising.credit_types.impression') }}</th><th>{{ __('advertising.credit_types.sponsored_question') }}</th><th>{{ __('advertising.price') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
+                    <thead><tr><th>{{ __('advertising.package') }}</th><th>{{ __('advertising.credit_types.impression') }}</th><th>{{ __('advertising.credit_types.sponsored_question') }}</th><th>{{ __('advertising.credit_types.sponsored_round') }}</th><th>{{ __('advertising.price') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
                     <tbody>
                         @forelse ($this->packages as $package)
                             <tr wire:key="p-{{ $package->id }}">
                                 <td><span class="ms-fw-500">{{ $package->name }}</span> @unless ($package->is_active)<span class="tag tag-neutral">{{ __('advertising.inactive') }}</span>@endunless</td>
                                 <td class="tabular-nums">{{ number_format($package->impression_credits) }}</td>
                                 <td class="tabular-nums">{{ number_format($package->sponsored_question_credits) }}</td>
+                                <td class="tabular-nums">{{ number_format($package->sponsored_round_credits) }}</td>
                                 <td class="tabular-nums">{{ number_format($package->price_minor / 100, 2) }} {{ $package->currency }}</td>
                                 <td class="ms-text-right"><button type="button" wire:click="editPackage({{ $package->id }})" class="btn ms-btn-sm">{{ __('categories.edit') }}</button></td>
                             </tr>
                         @empty
-                            <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.no_packages') }}</td></tr>
+                            <tr><td colspan="6" class="text-muted ms-empty">{{ __('advertising.no_packages') }}</td></tr>
                         @endforelse
                     </tbody>
                 </table>
@@ -446,6 +470,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             <label class="ms-fs-13">{{ __('advertising.credit_types.impression') }} <input type="number" min="0" wire:model="pkgImpressions" class="input"></label>
             <x-input-error :message="$errors->first('pkgImpressions')" />
             <label class="ms-fs-13">{{ __('advertising.credit_types.sponsored_question') }} <input type="number" min="0" wire:model="pkgSponsored" class="input"></label>
+            <label class="ms-fs-13">{{ __('advertising.credit_types.sponsored_round') }} <input type="number" min="0" wire:model="pkgRounds" class="input"></label>
             <label class="ms-fs-13">{{ __('advertising.price') }} ({{ $currency }}) <input type="number" min="0" step="0.01" wire:model="pkgPrice" class="input"></label>
             <x-input-error :message="$errors->first('pkgPrice')" />
             <label class="ms-check-row"><input type="checkbox" class="checkbox" wire:model="pkgActive"> {{ __('advertising.active') }}</label>

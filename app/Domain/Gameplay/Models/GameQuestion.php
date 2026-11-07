@@ -22,7 +22,7 @@ class GameQuestion extends Model
 {
     public $timestamps = false;
 
-    protected $fillable = ['game_id', 'question_id', 'position', 'question_version', 'language', 'opened_at', 'deadline_at', 'closed_at'];
+    protected $fillable = ['game_id', 'question_id', 'position', 'question_version', 'language', 'opened_at', 'deadline_at', 'closed_at', 'sponsored_round_campaign_id'];
 
     protected function casts(): array
     {

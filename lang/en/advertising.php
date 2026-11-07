@@ -1,6 +1,29 @@
 <?php
 
 return [
+    'ai_review' => [
+        'title' => 'AI notes:',
+        'failed' => 'the check could not run; review as usual.',
+        'none' => 'nothing flagged in the text.',
+        'advisory' => 'Advisory only: images and context are yours to check, and you decide.',
+        'principles' => [
+            'halal' => 'Halal',
+            'religions' => 'Respect for religions',
+            'dignity' => 'Humanity and dignity',
+            'kids' => 'Kids-friendly',
+            'honesty' => 'Honesty',
+        ],
+    ],
+    'rounds_hint' => ':count rounds played',
+    'round_presented_by' => 'This round is presented by :name',
+    'round_intro' => 'Sponsored round · This round is presented by :name',
+    'sponsored_rounds' => 'Sponsored rounds shown',
+    'offered_hint' => 'Confirmed on screen (:count shown)',
+    'clicks' => '“Learn more” clicks',
+    'ctr' => ':rate % of impressions (never billed)',
+    'ctr_short' => 'Click rate',
+    'players_reached' => 'Players reached',
+    'by_creative' => 'Results per ad',
     'invoices' => [
         'title' => 'Invoices',
         'invoice' => 'Invoice',
@@ -172,6 +195,7 @@ return [
         'wallet_mismatches' => 'Wallets that differ from the ledger',
     ],
     'credit_types' => [
+        'sponsored_round' => 'Sponsored-round credits',
         'impression' => 'Impression credits',
         'sponsored_question' => 'Sponsored-question credits',
     ],

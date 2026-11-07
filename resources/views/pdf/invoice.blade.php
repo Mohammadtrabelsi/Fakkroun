@@ -60,6 +60,7 @@
                     <div class="small muted">
                         {{ __('advertising.credit_types.impression') }}: {{ number_format($invoice->impression_credits) }}
                         · {{ __('advertising.credit_types.sponsored_question') }}: {{ number_format($invoice->sponsored_question_credits) }}
+                        @if ($invoice->sponsored_round_credits)· {{ __('advertising.credit_types.sponsored_round') }}: {{ number_format($invoice->sponsored_round_credits) }}@endif
                     </div>
                 </td>
                 <td class="num">1</td>

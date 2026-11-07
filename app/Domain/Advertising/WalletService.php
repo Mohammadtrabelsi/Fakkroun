@@ -60,9 +60,12 @@ class WalletService
                 'note' => $package->name,
             ]);
 
-            foreach ([CreditType::Impression->value => $package->impression_credits, CreditType::SponsoredQuestion->value => $package->sponsored_question_credits] as $type => $quantity) {
+            foreach (CreditType::cases() as $creditType) {
+                $quantity = (int) $package->{$creditType->packageColumn()};
+                $type = $creditType->value;
+
                 if ($quantity > 0) {
-                    $this->move($advertiser, CreditType::from($type), $quantity, 'credit', $reference.':'.$type, ['package_id' => $package->id, 'created_by' => $actor->id, 'currency' => $package->currency]);
+                    $this->move($advertiser, $creditType, $quantity, 'credit', $reference.':'.$type, ['package_id' => $package->id, 'created_by' => $actor->id, 'currency' => $package->currency]);
                 }
             }
 
@@ -89,7 +92,7 @@ class WalletService
             return $existing;
         }
 
-        $price = (int) $this->settings->get($type === CreditType::Impression ? 'advertising.impression_price_minor' : 'advertising.sponsored_question_price_minor');
+        $price = (int) $this->settings->get($type->priceSetting());
 
         try {
             $entry = DB::transaction(fn () => $this->move($advertiser, $type, -$quantity, 'consumption', $billingReference, $context + [

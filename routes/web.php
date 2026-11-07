@@ -86,6 +86,12 @@ Route::middleware('auth')->group(function () {
         Route::livewire('/advertiser', 'pages::advertiser.dashboard')
             ->middleware('can:manage own campaigns')
             ->name('advertiser.dashboard');
+        // "Learn more" on an ad: counts one click per delivery, then leaves the site.
+        Route::get('/ads/click/{token}', \App\Http\Controllers\AdClickController::class)
+            ->middleware('throttle:60,1')
+            ->where('token', '[A-Za-z0-9]{48}')
+            ->name('ads.click');
+
         // Invoice and statement PDFs: the owning advertiser or an advertising manager.
         Route::get('/advertiser/invoices/{invoice}/pdf', [\App\Http\Controllers\AdvertisingDocumentController::class, 'invoice'])
             ->name('advertiser.invoices.pdf');

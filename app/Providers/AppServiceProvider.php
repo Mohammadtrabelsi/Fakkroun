@@ -35,6 +35,11 @@ class AppServiceProvider extends ServiceProvider
             ? new AnthropicQuestionGenerator
             : new FakeQuestionGenerator);
 
+        // AI notes on advertising campaigns (story 16 S8), same driver switch as drafting.
+        $this->app->bind(\App\Domain\Ai\Contracts\AdReviewer::class, fn () => config('fakkroun.ai.driver') === 'anthropic'
+            ? new \App\Domain\Ai\Drivers\AnthropicAdReviewer
+            : new \App\Domain\Ai\Drivers\FakeAdReviewer);
+
         // Payment method: cash only for now. Add a gateway driver and map it here.
         $this->app->bind(\App\Domain\Billing\Contracts\PaymentProvider::class, fn () => match (config('fakkroun.payments.driver')) {
             default => new \App\Domain\Billing\Drivers\CashPaymentProvider,
