@@ -27,6 +27,29 @@ new #[Layout('layouts::app')] #[Title('Game settings')] class extends Component
         return app(PlatformSettings::class)->definitions();
     }
 
+    /**
+     * Display unit for a numeric setting, e.g. "seconds" or "1/100 TND".
+     *
+     * @param  array{unit?: string}  $definition
+     */
+    public function unitLabel(array $definition): ?string
+    {
+        $unit = $definition['unit'] ?? null;
+
+        if ($unit === null) {
+            return null;
+        }
+
+        // "minor:group.field" = hundredths of the currency stored in that setting.
+        if (str_starts_with($unit, 'minor:')) {
+            $currency = (string) data_get($this->values, substr($unit, 6), '');
+
+            return __('fakkroun.settings_units.minor', ['currency' => strtoupper($currency)]);
+        }
+
+        return __('fakkroun.settings_units.'.$unit);
+    }
+
     public function save(PlatformSettings $settings): void
     {
         $this->authorize('manage platform settings');
@@ -107,12 +130,26 @@ new #[Layout('layouts::app')] #[Title('Game settings')] class extends Component
                     @else
                         <div class="field ms-mb-0">
                             <x-input-label :for="$id" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
-                            <x-text-input
-                                wire:model="values.{{ $group }}.{{ $name }}"
-                                :id="$id"
-                                :type="$definition['type'] === 'int' ? 'number' : 'text'"
-                                :error="$errors->first('values.'.$group.'.'.$name)"
-                            />
+                            @php($unit = $this->unitLabel($definition))
+                            @if ($unit)
+                                <div class="ms-input-unit">
+                                    <x-text-input
+                                        wire:model="values.{{ $group }}.{{ $name }}"
+                                        :id="$id"
+                                        type="number"
+                                        :error="$errors->first('values.'.$group.'.'.$name)"
+                                        aria-describedby="{{ $id }}-unit"
+                                    />
+                                    <span id="{{ $id }}-unit" class="ms-input-unit-label">{{ $unit }}</span>
+                                </div>
+                            @else
+                                <x-text-input
+                                    wire:model="values.{{ $group }}.{{ $name }}"
+                                    :id="$id"
+                                    :type="$definition['type'] === 'int' ? 'number' : 'text'"
+                                    :error="$errors->first('values.'.$group.'.'.$name)"
+                                />
+                            @endif
                         </div>
                     @endif
                     <x-input-error :message="$errors->first('values.'.$group.'.'.$name)" />
