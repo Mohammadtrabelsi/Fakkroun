@@ -156,6 +156,47 @@ return [
     */
     /*
     |--------------------------------------------------------------------------
+    | Default advertiser packs (story 16 S11)
+    |--------------------------------------------------------------------------
+    | Starting values only: the packs are AdvertisingPackage records, created
+    | once (migration / AdvertisingPackageSeeder) and then edited by admins in
+    | Admin → Advertising → Packages. Later changes here never overwrite them;
+    | "Reset to default values" on a pack copies these values back.
+    | Prices are in hundredths of advertising.currency, as everywhere in the
+    | app: 30000 = 300.00.
+    */
+    'advertising_packs' => [
+        'essential' => [
+            'name' => 'Essential',
+            'description' => 'For associations, schools and small organisations.',
+            'impression_credits' => 10000,
+            'sponsored_question_credits' => 5,
+            'sponsored_round_credits' => 0,
+            'price_minor' => 30000,
+            'sort_order' => 1,
+        ],
+        'professional' => [
+            'name' => 'Professional',
+            'description' => 'For companies and larger campaigns.',
+            'impression_credits' => 50000,
+            'sponsored_question_credits' => 25,
+            'sponsored_round_credits' => 3,
+            'price_minor' => 120000,
+            'sort_order' => 2,
+        ],
+        'enterprise' => [
+            'name' => 'Enterprise',
+            'description' => 'For national campaigns and custom needs.',
+            'impression_credits' => 200000,
+            'sponsored_question_credits' => 100,
+            'sponsored_round_credits' => 15,
+            'price_minor' => 400000,
+            'sort_order' => 3,
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Payment method
     |--------------------------------------------------------------------------
     | "cash" only for now: admins record cash payments (Admin → Paid accounts

@@ -46,6 +46,10 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     public int $pkgRounds = 0;
 
+    public string $pkgDescription = '';
+
+    public int $pkgOrder = 0;
+
     public string $pkgPrice = '';
 
     public bool $pkgActive = true;
@@ -94,7 +98,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     #[Computed]
     public function packages()
     {
-        return AdvertisingPackage::query()->orderBy('price_minor')->get();
+        return AdvertisingPackage::query()->ordered()->get();
     }
 
     #[Computed]
@@ -162,6 +166,8 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         $this->pkgImpressions = $p->impression_credits;
         $this->pkgSponsored = $p->sponsored_question_credits;
         $this->pkgRounds = $p->sponsored_round_credits;
+        $this->pkgDescription = (string) $p->description;
+        $this->pkgOrder = $p->sort_order;
         $this->pkgPrice = number_format($p->price_minor / 100, 2, '.', '');
         $this->pkgActive = $p->is_active;
     }
@@ -173,6 +179,8 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             'pkgImpressions' => ['required', 'integer', 'min:0', 'max:100000000'],
             'pkgSponsored' => ['required', 'integer', 'min:0', 'max:1000000'],
             'pkgRounds' => ['required', 'integer', 'min:0', 'max:1000000'],
+            'pkgDescription' => ['nullable', 'string', 'max:500'],
+            'pkgOrder' => ['required', 'integer', 'min:0', 'max:1000'],
             'pkgPrice' => ['required', 'numeric', 'min:0', 'max:10000000'],
             'pkgActive' => ['boolean'],
         ]);
@@ -188,14 +196,35 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             'impression_credits' => $data['pkgImpressions'],
             'sponsored_question_credits' => $data['pkgSponsored'],
             'sponsored_round_credits' => $data['pkgRounds'],
+            'description' => $data['pkgDescription'] ?: null,
+            'sort_order' => $data['pkgOrder'],
             'price_minor' => (int) round(((float) $data['pkgPrice']) * 100),
             'currency' => (string) $settings->get('advertising.currency'),
             'is_active' => $data['pkgActive'],
         ]);
 
-        $this->reset(['packageId', 'pkgName', 'pkgImpressions', 'pkgSponsored', 'pkgRounds', 'pkgPrice', 'pkgActive']);
+        $this->reset(['packageId', 'pkgName', 'pkgImpressions', 'pkgSponsored', 'pkgRounds', 'pkgDescription', 'pkgOrder', 'pkgPrice', 'pkgActive']);
         unset($this->packages);
         $this->toast(__('advertising.package_saved'));
+    }
+
+    /** Copies the default values (config fakkroun.advertising_packs) back onto a standard pack. */
+    public function resetPackage(int $id): void
+    {
+        $package = AdvertisingPackage::query()->findOrFail($id);
+
+        if ($package->resetToDefault()) {
+            unset($this->packages);
+            $this->toast(__('advertising.package_reset'));
+        }
+    }
+
+    /** Re-creates any standard pack that was deleted from the database. */
+    public function restoreDefaultPackages(): void
+    {
+        AdvertisingPackage::ensureDefaults();
+        unset($this->packages);
+        $this->toast(__('advertising.packages_restored'));
     }
 
     public function recordPurchase(WalletService $wallets): void
@@ -448,12 +477,18 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                     <tbody>
                         @forelse ($this->packages as $package)
                             <tr wire:key="p-{{ $package->id }}">
-                                <td><span class="ms-fw-500">{{ $package->name }}</span> @unless ($package->is_active)<span class="tag tag-neutral">{{ __('advertising.inactive') }}</span>@endunless</td>
+                                <td><span class="ms-fw-500">{{ $package->name }}</span>
+                                    @if ($package->slug)<span class="tag tag-accent">{{ __('advertising.standard_pack') }}</span>@endif
+                                    @unless ($package->is_active)<span class="tag tag-neutral">{{ __('advertising.inactive') }}</span>@endunless
+                                    @if ($package->description)<div class="text-muted ms-fs-12">{{ $package->description }}</div>@endif</td>
                                 <td class="tabular-nums">{{ number_format($package->impression_credits) }}</td>
                                 <td class="tabular-nums">{{ number_format($package->sponsored_question_credits) }}</td>
                                 <td class="tabular-nums">{{ number_format($package->sponsored_round_credits) }}</td>
                                 <td class="tabular-nums">{{ number_format($package->price_minor / 100, 2) }} {{ $package->currency }}</td>
-                                <td class="ms-text-right"><button type="button" wire:click="editPackage({{ $package->id }})" class="btn ms-btn-sm">{{ __('categories.edit') }}</button></td>
+                                <td class="ms-text-right"><div class="ms-actions-end">
+                                    <button type="button" wire:click="editPackage({{ $package->id }})" class="btn ms-btn-sm">{{ __('categories.edit') }}</button>
+                                    @if ($package->slug)<button type="button" wire:click="resetPackage({{ $package->id }})" wire:confirm="{{ __('advertising.reset_package_confirm') }}" class="btn ms-btn-sm">{{ __('advertising.reset_package') }}</button>@endif
+                                </div></td>
                             </tr>
                         @empty
                             <tr><td colspan="6" class="text-muted ms-empty">{{ __('advertising.no_packages') }}</td></tr>
@@ -463,6 +498,9 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             </div>
         </div>
 
+        <div class="ms-mb-16"><button type="button" wire:click="restoreDefaultPackages" class="btn ms-btn-sm">{{ __('advertising.restore_packages') }}</button>
+            <span class="text-muted ms-fs-12">{{ __('advertising.restore_packages_hint') }}</span></div>
+
         <form wire:submit="savePackage" class="card ms-stack-16">
             <h3 class="ms-fs-18">{{ $packageId ? __('advertising.edit_package') : __('advertising.new_package') }}</h3>
             <x-text-input wire:model="pkgName" type="text" :placeholder="__('advertising.package_name')" :error="$errors->first('pkgName')" />
@@ -471,6 +509,8 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             <x-input-error :message="$errors->first('pkgImpressions')" />
             <label class="ms-fs-13">{{ __('advertising.credit_types.sponsored_question') }} <input type="number" min="0" wire:model="pkgSponsored" class="input"></label>
             <label class="ms-fs-13">{{ __('advertising.credit_types.sponsored_round') }} <input type="number" min="0" wire:model="pkgRounds" class="input"></label>
+            <x-text-input wire:model="pkgDescription" type="text" :placeholder="__('advertising.package_description')" />
+            <label class="ms-fs-13">{{ __('advertising.package_order') }} <input type="number" min="0" wire:model="pkgOrder" class="input"></label>
             <label class="ms-fs-13">{{ __('advertising.price') }} ({{ $currency }}) <input type="number" min="0" step="0.01" wire:model="pkgPrice" class="input"></label>
             <x-input-error :message="$errors->first('pkgPrice')" />
             <label class="ms-check-row"><input type="checkbox" class="checkbox" wire:model="pkgActive"> {{ __('advertising.active') }}</label>

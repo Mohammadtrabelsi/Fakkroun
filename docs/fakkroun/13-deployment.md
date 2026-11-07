@@ -19,6 +19,7 @@ php artisan key:generate            # first time only
 php artisan migrate --force
 php artisan db:seed --class=RolesAndPermissionsSeeder --force
 php artisan db:seed --class=FakkrounCategorySeeder --force
+php artisan db:seed --class=AdvertisingPackageSeeder --force   # standard packs (also created by a migration)
 php artisan storage:link
 php artisan optimize                # config, route, view and event caches
 ```
