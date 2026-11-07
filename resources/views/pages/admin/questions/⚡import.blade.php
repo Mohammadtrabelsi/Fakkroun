@@ -163,37 +163,32 @@ new #[Layout('layouts::app')] #[Title('Import questions')] class extends Compone
             </div>
 
             @if ($preview !== [])
-                <div class="table-wrap">
-                    <table class="table">
-                        <thead><tr><th>#</th><th>{{ __('questions.fields.body') }}</th><th>{{ __('questions.import.checks') }}</th></tr></thead>
-                        <tbody>
+                <div class="row-cards-wrap">
+                    <div class="row-cards">
                             @foreach ($preview as $row)
-                                <tr>
-                                    <td class="text-muted">{{ $row['row'] }}</td>
-                                    <td>{{ $row['question'] }}</td>
-                                    <td class="ms-fs-12">
+                                <div class="row-card">
+                                    <div class="row-card-kicker">#{{ $row['row'] }}</div>
+                                    <div class="row-card-field" data-label="{{ __('questions.fields.body') }}">{{ $row['question'] }}</div>
+                                    <div class="row-card-field ms-fs-12" data-label="{{ __('questions.import.checks') }}">
                                         @if ($row['errors'] !== [])<span class="tag tag-outline">{{ implode(' · ', $row['errors']) }}</span>
                                         @elseif ($row['duplicate'])<span class="tag tag-neutral">{{ __('questions.import.duplicate') }}</span>
                                         @else<span class="tag tag-accent">{{ __('questions.import.ok') }}</span>@endif
                                         @foreach ($row['warnings'] as $warning)<div class="text-muted">{{ $warning }}</div>@endforeach
-                                    </td>
-                                </tr>
+                                    </div>
+                                </div>
                             @endforeach
-                        </tbody>
-                    </table>
+                    </div>
                 </div>
             @endif
         @endif
     </div>
 
     <div class="card ms-p-0 ms-mt-18" wire:poll.5s>
-        <div class="table-wrap">
-            <table class="table">
-                <thead><tr><th>{{ __('questions.import.file') }}</th><th>{{ __('questions.fields.status') }}</th><th>{{ __('questions.import.counts_header') }}</th></tr></thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->batches as $batch)
-                        <tr wire:key="ib-{{ $batch->id }}">
-                            <td>
+                        <div class="row-card" wire:key="ib-{{ $batch->id }}">
+                            <div class="row-card-title">
                                 <button type="button" wire:click="$set('openBatch', {{ $openBatch === $batch->id ? 'null' : $batch->id }})" class="ms-fw-500 ms-linkbtn">{{ $batch->original_name }}</button>
                                 <div class="text-muted ms-fs-12">{{ $batch->user?->name }} · {{ $batch->created_at->diffForHumans() }}</div>
                                 @if ($batch->error)<div class="text-muted ms-fs-12">{{ $batch->error }}</div>@endif
@@ -204,15 +199,14 @@ new #[Layout('layouts::app')] #[Title('Import questions')] class extends Compone
                                         @endforeach
                                     </ul>
                                 @endif
-                            </td>
-                            <td><span class="tag {{ $batch->status === 'completed' ? 'tag-accent' : 'tag-neutral' }}">{{ __('questions.import.status.'.$batch->status) }}</span></td>
-                            <td class="text-muted ms-fs-12">{{ __('questions.import.counts', ['created' => $batch->created_count, 'duplicates' => $batch->duplicate_count, 'failed' => $batch->failed_count, 'skipped' => $batch->skipped_count]) }}</td>
-                        </tr>
+                            </div>
+                            <div class="row-card-field" data-label="{{ __('questions.fields.status') }}"><span class="tag {{ $batch->status === 'completed' ? 'tag-accent' : 'tag-neutral' }}">{{ __('questions.import.status.'.$batch->status) }}</span></div>
+                            <div class="row-card-field text-muted ms-fs-12" data-label="{{ __('questions.import.counts_header') }}">{{ __('questions.import.counts', ['created' => $batch->created_count, 'duplicates' => $batch->duplicate_count, 'failed' => $batch->failed_count, 'skipped' => $batch->skipped_count]) }}</div>
+                        </div>
                     @empty
-                        <tr><td colspan="3" class="text-muted ms-empty">{{ __('questions.import.empty') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('questions.import.empty') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
         <div class="ms-cell-top">{{ $this->batches->links() }}</div>
     </div>

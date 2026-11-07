@@ -371,16 +371,14 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         @endif
     <p role="note" class="ms-fs-13 ms-mb-16">{{ __('advertising.policy_notice') }} <a href="{{ route('terms') }}#advertising">{{ __('advertising.policy_link') }}</a></p>
         <div class="card ms-p-0">
-            <div class="table-wrap">
-                <table class="table">
-                    <thead><tr><th>{{ __('advertising.campaign') }}</th><th>{{ __('advertising.advertiser') }}</th><th>{{ __('questions.fields.status') }}</th><th>{{ __('advertising.creatives') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
-                    <tbody>
+            <div class="row-cards-wrap">
+                <div class="row-cards">
                         @forelse ($this->pending as $campaign)
-                            <tr wire:key="rc-{{ $campaign->id }}">
-                                <td class="ms-fw-500">{{ $campaign->name }}</td>
-                                <td>{{ $campaign->advertiser->name }}</td>
-                                <td><span class="tag {{ $campaign->status === CampaignStatus::PendingReview ? 'tag-accent' : 'tag-neutral' }}">{{ __('advertising.status.'.$campaign->status->value) }}</span></td>
-                                <td class="ms-fs-13">
+                            <div class="row-card" wire:key="rc-{{ $campaign->id }}">
+                                <div class="row-card-title ms-fw-500">{{ $campaign->name }}</div>
+                                <div class="row-card-field" data-label="{{ __('advertising.advertiser') }}">{{ $campaign->advertiser->name }}</div>
+                                <div class="row-card-field" data-label="{{ __('questions.fields.status') }}"><span class="tag {{ $campaign->status === CampaignStatus::PendingReview ? 'tag-accent' : 'tag-neutral' }}">{{ __('advertising.status.'.$campaign->status->value) }}</span></div>
+                                <div class="row-card-field ms-fs-13" data-label="{{ __('advertising.creatives') }}">
                                     @foreach ($campaign->creatives as $creative)
                                         <div>
                                             @if ($creative->image_path)<img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($creative->image_path) }}" alt="{{ $creative->alt_text }}" style="height: 28px; display: inline-block; vertical-align: middle;">@endif
@@ -406,8 +404,8 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                             <div class="text-muted">{{ __('advertising.ai_review.advisory') }}</div>
                                         </div>
                                     @endif
-                                </td>
-                                <td class="ms-text-right"><div class="ms-actions-end ms-wrap">
+                                </div>
+                                <div class="row-card-actions"><div class="ms-actions-end ms-wrap">
                                     @if ($campaign->status === CampaignStatus::PendingReview)
                                         <label class="ms-check-row ms-fs-12"><input type="checkbox" class="checkbox" wire:model="policyChecked.{{ $campaign->id }}"> <a href="{{ route('terms') }}#advertising" target="_blank" rel="noopener">{{ __('advertising.policy_checked') }}</a></label>
                                         <button type="button" wire:click="approve({{ $campaign->id }})" class="btn btn-primary ms-btn-sm">{{ __('advertising.approve') }}</button>
@@ -420,38 +418,34 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                         <button type="button" wire:click="reject({{ $campaign->id }})" class="btn ms-btn-sm">{{ __('advertising.reject') }}</button>
                                         <button type="button" wire:click="breach({{ $campaign->id }})" wire:confirm="{{ __('advertising.policy.confirm') }}" class="btn ms-btn-sm ms-outline-danger">{{ __('advertising.policy.breach') }}</button>
                                     @endif
-                                </div></td>
-                            </tr>
+                                </div></div>
+                            </div>
                         @empty
-                            <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.no_campaigns') }}</td></tr>
+                            <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.no_campaigns') }}</div>
                         @endforelse
-                    </tbody>
-                </table>
+                </div>
             </div>
         </div>
     @endif
 
     @if ($tab === 'advertisers')
         <div class="card ms-p-0 ms-mb-24">
-            <div class="table-wrap">
-                <table class="table">
-                    <thead><tr><th>{{ __('advertising.advertiser') }}</th><th>{{ __('advertising.account') }}</th><th>{{ __('advertising.credit_types.impression') }}</th><th>{{ __('advertising.credit_types.sponsored_question') }}</th><th>{{ __('advertising.campaigns') }}</th><th>{{ __('advertising.policy.strikes') }}</th><th></th></tr></thead>
-                    <tbody>
+            <div class="row-cards-wrap">
+                <div class="row-cards">
                         @forelse ($this->advertisers as $advertiser)
-                            <tr wire:key="a-{{ $advertiser->id }}">
-                                <td><div class="ms-fw-500">{{ $advertiser->name }}</div><div class="text-muted ms-fs-12">{{ __('advertising.types.'.$advertiser->type) }}</div></td>
-                                <td class="text-muted">{{ $advertiser->user?->email }}</td>
-                                <td class="tabular-nums">{{ number_format((int) $advertiser->wallets->firstWhere('credit_type', CreditType::Impression)?->balance) }}</td>
-                                <td class="tabular-nums">{{ number_format((int) $advertiser->wallets->firstWhere('credit_type', CreditType::SponsoredQuestion)?->balance) }}</td>
-                                <td>{{ $advertiser->campaigns_count }}</td>
-                                <td>{{ (int) $advertiser->strikes_count }} / {{ \App\Domain\Advertising\PolicyEnforcementService::SUSPEND_AT }}@if ($advertiser->status === 'suspended') <span class="tag tag-neutral">{{ __('advertising.policy.suspended') }}</span>@endif</td>
-                                <td class="ms-text-right">@if ($advertiser->status === 'suspended')<button type="button" wire:click="reactivate({{ $advertiser->id }})" class="btn ms-btn-sm">{{ __('advertising.policy.reactivate') }}</button>@endif</td>
-                            </tr>
+                            <div class="row-card" wire:key="a-{{ $advertiser->id }}">
+                                <div class="row-card-title"><div class="ms-fw-500">{{ $advertiser->name }}</div><div class="text-muted ms-fs-12">{{ __('advertising.types.'.$advertiser->type) }}</div></div>
+                                <div class="row-card-field text-muted" data-label="{{ __('advertising.account') }}">{{ $advertiser->user?->email }}</div>
+                                <div class="row-card-field tabular-nums" data-label="{{ __('advertising.credit_types.impression') }}">{{ number_format((int) $advertiser->wallets->firstWhere('credit_type', CreditType::Impression)?->balance) }}</div>
+                                <div class="row-card-field tabular-nums" data-label="{{ __('advertising.credit_types.sponsored_question') }}">{{ number_format((int) $advertiser->wallets->firstWhere('credit_type', CreditType::SponsoredQuestion)?->balance) }}</div>
+                                <div class="row-card-field" data-label="{{ __('advertising.campaigns') }}">{{ $advertiser->campaigns_count }}</div>
+                                <div class="row-card-field" data-label="{{ __('advertising.policy.strikes') }}">{{ (int) $advertiser->strikes_count }} / {{ \App\Domain\Advertising\PolicyEnforcementService::SUSPEND_AT }}@if ($advertiser->status === 'suspended') <span class="tag tag-neutral">{{ __('advertising.policy.suspended') }}</span>@endif</div>
+                                <div class="row-card-field ms-text-right">@if ($advertiser->status === 'suspended')<button type="button" wire:click="reactivate({{ $advertiser->id }})" class="btn ms-btn-sm">{{ __('advertising.policy.reactivate') }}</button>@endif</div>
+                            </div>
                         @empty
-                            <tr><td colspan="7" class="text-muted ms-empty">{{ __('advertising.no_advertisers') }}</td></tr>
+                            <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.no_advertisers') }}</div>
                         @endforelse
-                    </tbody>
-                </table>
+                </div>
             </div>
         </div>
 
@@ -471,30 +465,27 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     @if ($tab === 'packages')
         <div class="card ms-p-0 ms-mb-24">
-            <div class="table-wrap">
-                <table class="table">
-                    <thead><tr><th>{{ __('advertising.package') }}</th><th>{{ __('advertising.credit_types.impression') }}</th><th>{{ __('advertising.credit_types.sponsored_question') }}</th><th>{{ __('advertising.credit_types.sponsored_round') }}</th><th>{{ __('advertising.price') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
-                    <tbody>
+            <div class="row-cards-wrap">
+                <div class="row-cards">
                         @forelse ($this->packages as $package)
-                            <tr wire:key="p-{{ $package->id }}">
-                                <td><span class="ms-fw-500">{{ $package->name }}</span>
+                            <div class="row-card" wire:key="p-{{ $package->id }}">
+                                <div class="row-card-title"><span class="ms-fw-500">{{ $package->name }}</span>
                                     @if ($package->slug)<span class="tag tag-accent">{{ __('advertising.standard_pack') }}</span>@endif
                                     @unless ($package->is_active)<span class="tag tag-neutral">{{ __('advertising.inactive') }}</span>@endunless
-                                    @if ($package->description)<div class="text-muted ms-fs-12">{{ $package->description }}</div>@endif</td>
-                                <td class="tabular-nums">{{ number_format($package->impression_credits) }}</td>
-                                <td class="tabular-nums">{{ number_format($package->sponsored_question_credits) }}</td>
-                                <td class="tabular-nums">{{ number_format($package->sponsored_round_credits) }}</td>
-                                <td class="tabular-nums">{{ number_format($package->price_minor / 100, 2) }} {{ $package->currency }}</td>
-                                <td class="ms-text-right"><div class="ms-actions-end">
+                                    @if ($package->description)<div class="text-muted ms-fs-12">{{ $package->description }}</div>@endif</div>
+                                <div class="row-card-field tabular-nums" data-label="{{ __('advertising.credit_types.impression') }}">{{ number_format($package->impression_credits) }}</div>
+                                <div class="row-card-field tabular-nums" data-label="{{ __('advertising.credit_types.sponsored_question') }}">{{ number_format($package->sponsored_question_credits) }}</div>
+                                <div class="row-card-field tabular-nums" data-label="{{ __('advertising.credit_types.sponsored_round') }}">{{ number_format($package->sponsored_round_credits) }}</div>
+                                <div class="row-card-field tabular-nums" data-label="{{ __('advertising.price') }}">{{ number_format($package->price_minor / 100, 2) }} {{ $package->currency }}</div>
+                                <div class="row-card-actions"><div class="ms-actions-end">
                                     <button type="button" wire:click="editPackage({{ $package->id }})" class="btn ms-btn-sm">{{ __('categories.edit') }}</button>
                                     @if ($package->slug)<button type="button" wire:click="resetPackage({{ $package->id }})" wire:confirm="{{ __('advertising.reset_package_confirm') }}" class="btn ms-btn-sm">{{ __('advertising.reset_package') }}</button>@endif
-                                </div></td>
-                            </tr>
+                                </div></div>
+                            </div>
                         @empty
-                            <tr><td colspan="6" class="text-muted ms-empty">{{ __('advertising.no_packages') }}</td></tr>
+                            <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.no_packages') }}</div>
                         @endforelse
-                    </tbody>
-                </table>
+                </div>
             </div>
         </div>
 
@@ -548,29 +539,26 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     @if ($tab === 'invoices')
         <div class="card ms-p-0">
-            <div class="table-wrap">
-                <table class="table">
-                    <thead><tr><th>{{ __('advertising.invoices.number') }}</th><th>{{ __('advertising.advertiser') }}</th><th>{{ __('advertising.date') }}</th><th>{{ __('advertising.invoices.amount') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
-                    <tbody>
+            <div class="row-cards-wrap">
+                <div class="row-cards">
                         @forelse ($this->invoices as $invoice)
-                            <tr wire:key="ai-{{ $invoice->id }}">
-                                <td><div class="ms-fw-500">{{ $invoice->number }}</div><div class="text-muted ms-fs-12">{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}@if ($invoice->creditNote) · {{ __('advertising.invoices.cancelled_by') }} {{ $invoice->creditNote->number }}@endif</div></td>
-                                <td>{{ $invoice->advertiser?->name }}</td>
-                                <td class="text-muted ms-nowrap">{{ $invoice->issued_at->isoFormat('ll') }}</td>
-                                <td class="tabular-nums">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</td>
-                                <td class="ms-text-right"><div class="ms-actions-end ms-wrap">
+                            <div class="row-card" wire:key="ai-{{ $invoice->id }}">
+                                <div class="row-card-title"><div class="ms-fw-500">{{ $invoice->number }}</div><div class="text-muted ms-fs-12">{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}@if ($invoice->creditNote) · {{ __('advertising.invoices.cancelled_by') }} {{ $invoice->creditNote->number }}@endif</div></div>
+                                <div class="row-card-field" data-label="{{ __('advertising.advertiser') }}">{{ $invoice->advertiser?->name }}</div>
+                                <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('advertising.date') }}">{{ $invoice->issued_at->isoFormat('ll') }}</div>
+                                <div class="row-card-field tabular-nums" data-label="{{ __('advertising.invoices.amount') }}">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</div>
+                                <div class="row-card-actions"><div class="ms-actions-end ms-wrap">
                                     <a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a>
                                     @if (! $invoice->isCreditNote() && ! $invoice->creditNote)
                                         <input type="text" wire:model="cancelReasons.{{ $invoice->id }}" class="input ms-btn-sm" placeholder="{{ __('advertising.invoices.cancel_reason') }}" aria-label="{{ __('advertising.invoices.cancel_reason') }}">
                                         <button type="button" wire:click="cancelInvoice({{ $invoice->id }})" wire:confirm="{{ __('advertising.invoices.cancel') }}?" class="btn ms-btn-sm">{{ __('advertising.invoices.cancel') }}</button>
                                     @endif
-                                </div></td>
-                            </tr>
+                                </div></div>
+                            </div>
                         @empty
-                            <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.invoices.none') }}</td></tr>
+                            <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.invoices.none') }}</div>
                         @endforelse
-                    </tbody>
-                </table>
+                </div>
             </div>
         </div>
     @endif

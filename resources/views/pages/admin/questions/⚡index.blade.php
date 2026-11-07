@@ -138,45 +138,33 @@ new #[Layout('layouts::app')] #[Title('Questions')] class extends Component
     </div>
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>{{ __('questions.fields.body') }}</th>
-                        <th>{{ __('questions.fields.category') }}</th>
-                        <th>{{ __('questions.fields.difficulty') }}</th>
-                        <th>{{ __('questions.fields.languages') }}</th>
-                        <th>{{ __('questions.fields.status') }}</th>
-                        <th class="ms-text-right">{{ __('categories.actions') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->questions as $question)
-                        <tr wire:key="question-{{ $question->id }}">
-                            <td>
+                        <div class="row-card" wire:key="question-{{ $question->id }}">
+                            <div class="row-card-title">
                                 <div class="ms-fw-500">{{ \Illuminate\Support\Str::limit($question->translations->firstWhere('language', $question->origin_language)?->body ?? '—', 90) }}</div>
                                 <div class="text-muted ms-fs-12">{{ __('questions.source.'.$question->source->value) }}@if ($question->author) · {{ $question->author->name }}@endif · v{{ $question->version }}</div>
-                            </td>
-                            <td class="text-muted">{{ $question->category?->name }}</td>
-                            <td class="text-muted">{{ __('questions.difficulty.'.$question->difficulty->value) }}</td>
-                            <td>
+                            </div>
+                            <div class="row-card-field text-muted" data-label="{{ __('questions.fields.category') }}">{{ $question->category?->name }}</div>
+                            <div class="row-card-field text-muted" data-label="{{ __('questions.fields.difficulty') }}">{{ __('questions.difficulty.'.$question->difficulty->value) }}</div>
+                            <div class="row-card-field" data-label="{{ __('questions.fields.languages') }}">
                                 @foreach ($question->translations->sortBy('language') as $translation)
                                     <span class="tag {{ $translation->status->value === 'approved' ? 'tag-accent' : 'tag-neutral' }}" title="{{ __('questions.translation_status.'.$translation->status->value) }}">{{ strtoupper($translation->language) }}</span>
                                 @endforeach
-                            </td>
-                            <td><x-questions.status-tag :status="$question->status" /></td>
-                            <td class="ms-text-right">
+                            </div>
+                            <div class="row-card-field" data-label="{{ __('questions.fields.status') }}"><x-questions.status-tag :status="$question->status" /></div>
+                            <div class="row-card-actions">
                                 <div class="ms-actions-end">
                                     <a href="{{ route('admin.questions.edit', $question) }}" wire:navigate class="btn ms-btn-sm">{{ __('questions.admin.edit') }}</a>
                                     <button type="button" wire:click="deleteQuestion('{{ $question->uuid }}')" wire:confirm="{{ __('questions.admin.delete_confirm') }}" class="btn ms-btn-sm-danger">{{ __('questions.admin.delete') }}</button>
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     @empty
-                        <tr><td colspan="6" class="text-muted ms-empty">{{ __('questions.admin.empty') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('questions.admin.empty') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
         <div class="ms-cell-top">{{ $this->questions->links() }}</div>
     </div>

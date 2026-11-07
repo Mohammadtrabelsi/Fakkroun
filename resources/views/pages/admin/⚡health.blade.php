@@ -52,41 +52,30 @@ new #[Layout('layouts::app')] #[Title('Application health')] class extends Compo
     </div>
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>{{ __('health.check') }}</th>
-                        <th>{{ __('health.status') }}</th>
-                        <th>{{ __('health.summary') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->results?->storedCheckResults ?? [] as $result)
-                        <tr wire:key="check-{{ $result->name }}">
-                            <td class="ms-fw-500">{{ $result->label ?: $result->name }}</td>
-                            <td>
+                        <div class="row-card" wire:key="check-{{ $result->name }}">
+                            <div class="row-card-title ms-fw-500">{{ $result->label ?: $result->name }}</div>
+                            <div class="row-card-field" data-label="{{ __('health.status') }}">
                                 <span @class([
                                     'tag',
                                     'tag-accent' => $result->status === 'ok',
                                     'tag-neutral' => in_array($result->status, ['warning', 'skipped'], true),
                                     'tag-outline' => in_array($result->status, ['failed', 'crashed'], true),
                                 ])>{{ __('health.status_'.$result->status) }}</span>
-                            </td>
-                            <td class="text-muted">
+                            </div>
+                            <div class="row-card-field text-muted" data-label="{{ __('health.summary') }}">
                                 {{ $result->shortSummary }}
                                 @if ($result->status !== 'ok' && $result->notificationMessage)
                                     <div class="ms-fs-12">{{ $result->notificationMessage }}</div>
                                 @endif
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     @empty
-                        <tr>
-                            <td colspan="3" class="text-muted ms-empty">{{ __('health.no_results') }}</td>
-                        </tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('health.no_results') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
 </div>

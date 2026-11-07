@@ -23,23 +23,15 @@
     @endif
 
     @if ($result['errors'] !== [])
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th style="width:80px">{{ __('imports.row') }}</th>
-                        <th>{{ __('imports.problem') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @foreach ($result['errors'] as $error)
-                        <tr>
-                            <td class="text-muted">{{ $error['row'] }}</td>
-                            <td>{{ implode(' ', $error['messages']) }}</td>
-                        </tr>
+                        <div class="row-card">
+                            <div class="row-card-field text-muted" data-label="{{ __('imports.row') }}">{{ $error['row'] }}</div>
+                            <div class="row-card-field" data-label="{{ __('imports.problem') }}">{{ implode(' ', $error['messages']) }}</div>
+                        </div>
                     @endforeach
-                </tbody>
-            </table>
+            </div>
         </div>
         @if ($result['unreported'] > 0)
             <p class="text-muted ms-fs-13">{{ __('imports.more_errors', ['count' => $result['unreported']]) }}</p>
