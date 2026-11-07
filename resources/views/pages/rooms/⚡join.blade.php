@@ -1,20 +1,26 @@
 <?php
 
+use App\Domain\Gameplay\GuestPlayers;
 use App\Domain\Gameplay\RoomService;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 
 /*
- * Front-office "Join a room" page. Open to guests: a valid code sends them to
- * the player sign-in, then on to the room through its invitation link.
+ * Front-office "Join a room" page. Playing needs no account: visitors without
+ * a session pick a nickname and are signed in as a guest player (GuestPlayers).
+ * Only creating a room needs a real account.
  */
 new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class extends Component
 {
-    /** Pre-filled from the home page "Have a code?" form (?code=…). */
+    /** Pre-filled from the home page "Have a code?" form and invitation links (?code=…). */
     #[Url]
     public string $code = '';
+
+    /** Display name for visitors joining without an account. */
+    public string $nickname = '';
 
     public function mount(): void
     {
@@ -23,9 +29,15 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
         }
     }
 
-    public function join(RoomService $rooms): void
+    public function join(RoomService $rooms, GuestPlayers $guests): void
     {
-        $this->validate(['code' => ['required', 'string', 'max:12']]);
+        $rules = ['code' => ['required', 'string', 'max:12']];
+
+        if (auth()->guest()) {
+            $rules['nickname'] = ['required', 'string', 'min:2', 'max:24'];
+        }
+
+        $this->validate($rules, [], ['nickname' => __('play.join.nickname')]);
 
         $room = $rooms->findByCode($this->code);
 
@@ -35,12 +47,12 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
             return;
         }
 
-        if (auth()->guest()) {
-            // Come back through the invitation link once signed in.
-            session()->put('url.intended', route('rooms.invitation', $room->code));
-            $this->redirect(route('login'));
+        $guest = null;
 
-            return;
+        if (auth()->guest()) {
+            $guest = $guests->create($this->nickname);
+            Auth::login($guest);
+            session()->regenerate();
         }
 
         $this->authorize('play games');
@@ -48,6 +60,12 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
         try {
             $rooms->join($room, auth()->user());
         } catch (\DomainException $e) {
+            if ($guest !== null) {
+                // Nothing to keep: the guest never got into a room.
+                Auth::guard('web')->logout();
+                $guest->forceDelete();
+            }
+
             $this->addError('code', $e->getMessage());
 
             return;
@@ -71,6 +89,13 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
 
         <form wire:submit="join" aria-labelledby="join-h" class="flex flex-col gap-4 rounded-[28px] bg-ink p-7 text-sand">
             <h2 id="join-h" class="m-0 text-2xl font-semibold">{{ __('play.lobby.join_title') }}</h2>
+            @guest
+                <label for="nickname" class="text-[15px] text-[#C9D3D0]">{{ __('play.join.nickname') }}</label>
+                <input wire:model="nickname" id="nickname" type="text" autocomplete="nickname" minlength="2" maxlength="24" placeholder="{{ __('play.join.nickname_placeholder') }}"
+                       @error('nickname') aria-invalid="true" aria-describedby="nickname-error" @enderror
+                       class="min-h-14 rounded-[14px] border-2 border-[#3C5A62] bg-[#183740] px-4 text-lg text-sand">
+                @error('nickname') <span id="nickname-error" role="alert" class="text-sm font-semibold text-sun">{{ $message }}</span> @enderror
+            @endguest
             <label for="code" class="text-[15px] text-[#C9D3D0]">{{ __('play.lobby.join_hint') }}</label>
             <div class="flex gap-2">
                 <input wire:model="code" id="code" type="text" autocomplete="off" autocapitalize="characters" maxlength="12" placeholder="7KQ2AB"
@@ -80,13 +105,17 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
             </div>
             @error('code') <span id="code-error" role="alert" class="text-sm font-semibold text-sun">{{ $message }}</span> @enderror
             @guest
-                <p class="m-0 text-sm text-[#C9D3D0]">{{ __('play.join.guest_hint') }}</p>
+                <p class="m-0 text-sm text-[#C9D3D0]">
+                    {{ __('play.join.guest_hint') }}
+                    <a href="{{ route('login') }}" class="font-semibold text-sun">{{ __('play.join.sign_in') }}</a>
+                </p>
             @endguest
         </form>
 
         <p class="m-0 text-ink-muted">
             {{ __('play.join.or_create') }}
-            <a href="{{ auth()->check() ? route('rooms.create') : route('login') }}" class="font-semibold text-sea">{{ __('play.create.title') }}</a>
+            <a href="{{ auth()->check() && ! auth()->user()->isGuest() ? route('rooms.create') : route('login') }}" class="font-semibold text-sea">{{ __('play.create.title') }}</a>
+            <span class="text-sm">{{ __('play.join.create_needs_account') }}</span>
         </p>
     </div>
 </div>

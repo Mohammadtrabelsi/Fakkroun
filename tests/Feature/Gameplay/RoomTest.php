@@ -70,12 +70,12 @@ class RoomTest extends GameplayTestCase
         }
     }
 
-    public function test_invitation_link_sends_guests_to_login_then_joins(): void
+    public function test_invitation_link_sends_visitors_to_the_join_page_then_joins(): void
     {
         $room = $this->room($this->player());
         $guest = $this->player();
 
-        $this->get(route('rooms.invitation', $room->code))->assertRedirect(route('login'));
+        $this->get(route('rooms.invitation', $room->code))->assertRedirect(route('rooms.join', ['code' => $room->code]));
 
         $this->actingAs($guest)->get(route('rooms.invitation', $room->code))->assertRedirect(route('rooms.show', $room));
         $this->assertTrue(app(RoomService::class)->isMember($room, $guest));
@@ -102,20 +102,21 @@ class RoomTest extends GameplayTestCase
         $this->get(route('rooms.join'))->assertOk()->assertSee(__('play.join.title'));
     }
 
-    public function test_guest_joining_with_a_code_signs_in_then_enters_the_room(): void
+    public function test_visitor_joining_with_a_code_needs_a_nickname_not_an_account(): void
     {
         $room = $this->room($this->player());
-        $guest = $this->player();
-        $guest->forceFill(['password' => bcrypt('password')])->save();
 
-        Livewire::test('pages::rooms.join')->set('code', 'NOPE99')->call('join')->assertHasErrors('code');
-        Livewire::test('pages::rooms.join')->set('code', $room->code)->call('join')->assertRedirect(route('login'));
+        Livewire::test('pages::rooms.join')->set('code', $room->code)->call('join')->assertHasErrors('nickname');
+        Livewire::test('pages::rooms.join')->set('nickname', 'Sami')->set('code', 'NOPE99')->call('join')->assertHasErrors('code');
+        $this->assertSame(0, User::query()->where('is_guest', true)->count());
 
-        Livewire::test('pages::auth.login')
-            ->set('email', $guest->email)
-            ->set('password', 'password')
-            ->call('login')
-            ->assertRedirect(route('rooms.invitation', $room->code));
+        Livewire::test('pages::rooms.join')->set('nickname', 'Sami')->set('code', $room->code)->call('join')
+            ->assertRedirect(route('rooms.show', $room));
+
+        $guest = User::query()->where('is_guest', true)->sole();
+        $this->assertSame('Sami', $guest->name);
+        $this->assertAuthenticatedAs($guest);
+        $this->assertTrue(app(RoomService::class)->isMember($room, $guest));
     }
 
     public function test_host_leaving_the_lobby_hands_over_or_cancels(): void
