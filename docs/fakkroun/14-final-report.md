@@ -55,6 +55,12 @@ What was checked: `php -l` on every PHP file; the PHP part of every Livewire sin
 
 **Payments** are recorded by an administrator after they arrive outside the platform. No payment gateway is integrated (none was specified or chosen).
 
+## 2b. Later additions (PRs #3–#7)
+
+- **Player progress:** game history, achievements, player home, keyboard play.
+- **Terms of use** with the advertiser policy chart; **paid ad-free accounts** (cash payments, price in settings); **three-strike** advertiser policy.
+- **Smart ads (story 16)**, all seven slices: relevance and fatigue, results-page and waiting-room placements, every ad rule configurable, invoices and statements, "Learn more" clicks and reporting, sponsored rounds, rotation by performance, and AI review notes. Details in [`16`](16-user-story-smart-ads.md) §9.
+
 ## 3. Tests written (not executed)
 
 Phase 1 and the MVP: 132 new tests (reports [`01`](01-phase-1-report.md), [`02`](02-mvp.md)). This branch adds 53 more:

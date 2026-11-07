@@ -1,6 +1,29 @@
 <?php
 
 return [
+    'ai_review' => [
+        'title' => 'Remarques de l’IA :',
+        'failed' => 'la vérification n’a pas pu s’exécuter ; révisez comme d’habitude.',
+        'none' => 'rien de signalé dans le texte.',
+        'advisory' => 'Indicatif seulement : les images et le contexte restent à vérifier, et vous décidez.',
+        'principles' => [
+            'halal' => 'Halal',
+            'religions' => 'Respect des religions',
+            'dignity' => 'Humanité et dignité',
+            'kids' => 'Adapté aux enfants',
+            'honesty' => 'Honnêteté',
+        ],
+    ],
+    'rounds_hint' => ':count manches jouées',
+    'round_presented_by' => 'Cette manche vous est présentée par :name',
+    'round_intro' => 'Manche sponsorisée · Cette manche vous est présentée par :name',
+    'sponsored_rounds' => 'Manches sponsorisées diffusées',
+    'offered_hint' => 'Confirmées à l’écran (:count affichées)',
+    'clicks' => 'Clics « En savoir plus »',
+    'ctr' => ':rate % des impressions (jamais facturés)',
+    'ctr_short' => 'Taux de clic',
+    'players_reached' => 'Joueurs atteints',
+    'by_creative' => 'Résultats par publicité',
     'invoices' => [
         'title' => 'Factures',
         'invoice' => 'Facture',
@@ -172,6 +195,7 @@ return [
         'wallet_mismatches' => 'Portefeuilles différents du registre',
     ],
     'credit_types' => [
+        'sponsored_round' => 'Crédits de manche sponsorisée',
         'impression' => 'Crédits d’impression',
         'sponsored_question' => 'Crédits de question sponsorisée',
     ],

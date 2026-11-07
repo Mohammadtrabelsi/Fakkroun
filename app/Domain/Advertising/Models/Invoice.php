@@ -28,6 +28,7 @@ class Invoice extends Model
             'amount_minor' => 'integer',
             'impression_credits' => 'integer',
             'sponsored_question_credits' => 'integer',
+            'sponsored_round_credits' => 'integer',
         ];
     }
 

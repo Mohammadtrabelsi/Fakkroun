@@ -202,6 +202,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                         <div class="flex flex-wrap items-center gap-3">
                             <span class="inline-flex items-center gap-2 rounded-full bg-tint-sea px-3.5 py-2 text-[15px] font-semibold text-[#0B5A55]">{{ $state['category'] }} · {{ __('questions.difficulty.'.$state['question']['difficulty']) }}</span>
                             @if ($state['sponsor'])<span class="rounded-full bg-sun px-3 py-1.5 text-sm font-semibold text-ink">{{ __('advertising.sponsored_by', ['name' => $state['sponsor']]) }}</span>@endif
+                            @if ($state['round_sponsor'] ?? null)<span class="rounded-full bg-sun px-3 py-1.5 text-sm font-semibold text-ink">{{ __('advertising.round_presented_by', ['name' => $state['round_sponsor']]) }}</span>@endif
                             <span class="text-sea-mist">{{ __('play.game.question_of', ['n' => $state['position'], 'total' => $state['total']]) }}</span>
                         </div>
                         @if ($state['phase'] === 'question')
@@ -218,6 +219,10 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                         @endif
                     </div>
 
+                    @if (($state['round_intro'] ?? false) && $state['phase'] === 'question')
+                        {{-- Sponsored round intro (story 16 S12): labelled, never covering answers or the timer. --}}
+                        <p role="note" class="m-0 rounded-2xl border-2 border-sun bg-sea-deep-2 px-4 py-2 text-[15px] font-semibold text-sun">{{ __('advertising.round_intro', ['name' => $state['round_sponsor']]) }}</p>
+                    @endif
                     <h1 class="m-0 font-display text-[clamp(26px,3.4vw,44px)] leading-[1.15] font-bold text-balance" dir="{{ $dir }}">{{ $state['question']['body'] }}</h1>
 
                     {{-- Keyboard play: 1–4, A–D or أ ب ج د pick the answer in display order. --}}

@@ -70,6 +70,11 @@ return [
             // Prices are data, not code (spec §19): earned per consumed unit, in minor units.
             'impression_price_minor' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:0', 'max:100000000']],
             'sponsored_question_price_minor' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            // Story 16 S12: sponsored rounds (a block of consecutive sponsored questions).
+            'sponsored_round_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            'sponsored_rounds_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            'sponsored_round_size' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:2', 'max:10']],
+            'sponsored_round_min_game_questions' => ['type' => 'int', 'default' => 6, 'rules' => ['integer', 'min:3', 'max:100']],
             'currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
             'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
             // Story 16 S1: campaigns with no targeting and no keyword match may still run.
@@ -91,6 +96,11 @@ return [
             'weight_language' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:100']],
             'weight_keyword' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100']],
             'max_keyword_hits' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:20']],
+            // Story 16 S5: rotation by performance (click-through rate on "Learn more").
+            'weight_performance' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100']],
+            'performance_min_impressions' => ['type' => 'int', 'default' => 100, 'rules' => ['integer', 'min:1', 'max:1000000']],
+            // Story 16 S8: AI notes for the reviewer when a campaign is submitted (needs AI configured).
+            'ai_review_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
         ],
 
         // Player/user accounts (not advertisers): free with ads, or paid and ad-free.

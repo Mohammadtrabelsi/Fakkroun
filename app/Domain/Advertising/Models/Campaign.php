@@ -25,6 +25,7 @@ class Campaign extends Model
             'reviewed_at' => 'datetime',
             'target_category_ids' => 'array',
             'target_languages' => 'array',
+            'ai_review' => 'array',
             'max_per_player_per_game' => 'integer',
         ];
     }

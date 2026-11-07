@@ -65,12 +65,28 @@ class GameEngine
                 $settings = $locked->settings;
                 $difficulty = $settings['difficulty'] === 'any' ? null : $settings['difficulty'];
                 $count = (int) $settings['question_count'];
-                // No sponsored questions in a room hosted by a paid (ad-free) account.
-                $sponsored = ($settings['include_sponsored'] ?? true) && $this->settings->get('advertising.enabled') && ! $host->hasPaidPlan()
-                    ? app(SponsoredQuestionService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, min($count - 1, (int) $this->settings->get('advertising.max_sponsored_per_game')))
+                // No sponsored content in a room hosted by a paid (ad-free) account.
+                $ads = $this->settings->all()['advertising'];
+                $sponsorable = ($settings['include_sponsored'] ?? true) && $ads['enabled'] && ! $host->hasPaidPlan();
+
+                // Sponsored round (story 16 S12): a block of consecutive questions from one campaign.
+                $round = $sponsorable && $ads['sponsored_rounds_enabled'] && $count >= (int) $ads['sponsored_round_min_game_questions']
+                    ? app(\App\Domain\Advertising\SponsoredRoundService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, (int) $ads['sponsored_round_size'])
+                    : null;
+                $roundIds = $round['question_ids'] ?? [];
+
+                $sponsored = $sponsorable
+                    ? array_values(array_diff(app(SponsoredQuestionService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, min($count - 1 - count($roundIds), (int) $ads['max_sponsored_per_game']) + count($roundIds)), $roundIds))
                     : [];
-                $questionIds = [...$this->selector->select($settings['language'], $settings['category_ids'], $difficulty, $count - count($sponsored), $playerIds), ...$sponsored];
+                $sponsored = array_slice($sponsored, 0, max(0, min($count - 1 - count($roundIds), (int) $ads['max_sponsored_per_game'])));
+
+                $questionIds = [...$this->selector->select($settings['language'], $settings['category_ids'], $difficulty, $count - count($sponsored) - count($roundIds), $playerIds), ...$sponsored];
                 shuffle($questionIds);
+
+                // The round goes in one piece, never as the very first question.
+                if ($roundIds !== []) {
+                    array_splice($questionIds, random_int(min(1, count($questionIds)), count($questionIds)), 0, $roundIds);
+                }
 
                 if ($questionIds === []) {
                     throw new DomainActionException(__('play.errors.no_questions'));
@@ -101,6 +117,7 @@ class GameEngine
                         'position' => $index + 1,
                         'question_version' => (int) ($versions[$questionId] ?? 1),
                         'language' => $settings['language'],
+                        'sponsored_round_campaign_id' => in_array($questionId, $roundIds, true) ? $round['campaign_id'] : null,
                     ]);
                 }
 
@@ -244,7 +261,10 @@ class GameEngine
             'category' => $question->category?->name,
             'author' => $question->author?->name,
             'source' => $question->source->value,
-            'sponsor' => $question->is_sponsored ? \App\Domain\Advertising\Models\Campaign::query()->with('advertiser:id,name')->find($question->campaign_id)?->advertiser?->name : null,
+            'sponsor' => $question->is_sponsored && $current->sponsored_round_campaign_id === null ? \App\Domain\Advertising\Models\Campaign::query()->with('advertiser:id,name')->find($question->campaign_id)?->advertiser?->name : null,
+            // Sponsored round: who presents it, and whether this is its first question (intro).
+            'round_sponsor' => app(\App\Domain\Advertising\SponsoredRoundService::class)->sponsorName($current->sponsored_round_campaign_id),
+            'round_intro' => $current->sponsored_round_campaign_id !== null && app(\App\Domain\Advertising\SponsoredRoundService::class)->isRoundStart($current),
             // Who has answered the current question — never which answer.
             'answered_user_ids' => $answers->pluck('user_id')->map(fn ($id) => (int) $id)->values()->all(),
             'duplicate_rule' => (bool) ($game->settings['duplicate_rule'] ?? false),
@@ -351,9 +371,14 @@ class GameEngine
         ]);
 
         if ($opened > 0) {
-            // A sponsored question is billed once per room when it is shown.
+            // A sponsored question, or a sponsored round (at its first question), is billed once per room.
             $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->first();
-            app(SponsoredQuestionService::class)->recordDelivery($gq);
+
+            if ($gq->sponsored_round_campaign_id !== null) {
+                app(\App\Domain\Advertising\SponsoredRoundService::class)->recordDelivery($gq);
+            } else {
+                app(SponsoredQuestionService::class)->recordDelivery($gq);
+            }
         }
     }
 

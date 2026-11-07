@@ -3,10 +3,14 @@
 namespace App\Domain\Advertising;
 
 use App\Domain\Advertising\Enums\CreditType;
+use App\Domain\Advertising\Models\AdClick;
+use App\Domain\Advertising\Models\AdDelivery;
 use App\Domain\Advertising\Models\Advertiser;
+use App\Domain\Advertising\Models\Creative;
 use App\Domain\Advertising\Models\Impression;
 use App\Domain\Advertising\Models\LedgerEntry;
 use App\Domain\Advertising\Models\SponsoredDelivery;
+use App\Domain\Advertising\Models\SponsoredRoundDelivery;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -35,9 +39,30 @@ class AdvertisingStats
             ->when(filled($filters['from'] ?? null), fn ($q) => $q->where('created_at', '>=', Carbon::parse($filters['from'])->startOfDay()))
             ->when(filled($filters['to'] ?? null), fn ($q) => $q->where('created_at', '<=', Carbon::parse($filters['to'])->endOfDay()));
 
+        $offered = $this->filter(AdDelivery::query(), $advertiser, $filters, 'issued_at', withTopic: false);
+        $clicks = $this->filter(AdClick::query(), $advertiser, $filters, 'clicked_at', withTopic: false);
+        $impressionCount = (clone $impressions)->count();
+        $clickCount = (clone $clicks)->count();
+
+        $perCreative = (clone $impressions)->selectRaw('creative_id, count(*) as total')->groupBy('creative_id')->pluck('total', 'creative_id');
+        $clicksPerCreative = (clone $clicks)->selectRaw('creative_id, count(*) as total')->groupBy('creative_id')->pluck('total', 'creative_id');
+        $headlines = Creative::query()->whereIn('id', $perCreative->keys()->merge($clicksPerCreative->keys())->unique())->pluck('headline', 'id');
+
         return [
-            'impressions' => (clone $impressions)->count(),
+            // Offered = an ad was placed on the page; impressions = confirmed on screen (S9: kept apart).
+            'offered' => (clone $offered)->count(),
+            'impressions' => $impressionCount,
+            'clicks' => $clickCount,
+            'ctr' => $impressionCount > 0 ? round(100 * $clickCount / $impressionCount, 2) : null,
+            'reach' => (clone $impressions)->distinct()->count('player_id'),
+            'by_creative' => $headlines->map(fn ($headline, $id) => [
+                'headline' => $headline,
+                'impressions' => (int) ($perCreative[$id] ?? 0),
+                'clicks' => (int) ($clicksPerCreative[$id] ?? 0),
+                'ctr' => ($perCreative[$id] ?? 0) > 0 ? round(100 * ($clicksPerCreative[$id] ?? 0) / $perCreative[$id], 2) : null,
+            ])->sortByDesc('impressions')->all(),
             'sponsored_deliveries' => (clone $deliveries)->count(),
+            'sponsored_rounds' => $this->filter(SponsoredRoundDelivery::query(), $advertiser, $filters, 'delivered_at')->count(),
             'sponsored_reach' => (int) (clone $deliveries)->sum('players_count'),
             'consumed_impression_credits' => -(int) (clone $consumption)->where('credit_type', CreditType::Impression->value)->sum('quantity'),
             'consumed_sponsored_credits' => -(int) (clone $consumption)->where('credit_type', CreditType::SponsoredQuestion->value)->sum('quantity'),
@@ -73,13 +98,14 @@ class AdvertisingStats
      * @param  array<string, mixed>  $filters
      * @return Builder<TModel>
      */
-    private function filter(Builder $query, ?Advertiser $advertiser, array $filters, string $dateColumn): Builder
+    private function filter(Builder $query, ?Advertiser $advertiser, array $filters, string $dateColumn, bool $withTopic = true): Builder
     {
         return $query
             ->when($advertiser, fn ($q) => $q->whereIn('campaign_id', $advertiser->campaigns()->select('id')))
             ->when(filled($filters['campaign_id'] ?? null), fn ($q) => $q->where('campaign_id', (int) $filters['campaign_id']))
-            ->when(filled($filters['category_id'] ?? null), fn ($q) => $q->where('category_id', (int) $filters['category_id']))
-            ->when(filled($filters['language'] ?? null), fn ($q) => $q->where('language', $filters['language']))
+            // Deliveries and clicks have no topic columns: those filters apply to impressions only.
+            ->when($withTopic && filled($filters['category_id'] ?? null), fn ($q) => $q->where('category_id', (int) $filters['category_id']))
+            ->when($withTopic && filled($filters['language'] ?? null), fn ($q) => $q->where('language', $filters['language']))
             ->when(filled($filters['from'] ?? null), fn ($q) => $q->where($dateColumn, '>=', Carbon::parse($filters['from'])->startOfDay()))
             ->when(filled($filters['to'] ?? null), fn ($q) => $q->where($dateColumn, '<=', Carbon::parse($filters['to'])->endOfDay()));
     }

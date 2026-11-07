@@ -262,16 +262,21 @@ class AdService
         $cap = max(1, (int) ($ads['max_same_creative_per_day'] ?? 3));
         $allowUntargeted = (bool) ($ads['allow_untargeted'] ?? true);
         $relevance = app(AdRelevance::class);
+        // S5: better-performing creatives get a bonus; new ones count as average.
+        $performance = app(CreativePerformance::class)->ratios(array_map('intval', $creativeIds), (int) ($ads['performance_min_impressions'] ?? 100));
+        $performanceWeight = (float) ($ads['weight_performance'] ?? 0);
 
         return $campaigns
             ->flatMap(fn (Campaign $c) => $c->creatives->map(fn (Creative $creative) => [
                 'creative' => $creative,
-                'score' => $relevance->score($c, $creative, $context),
+                'score' => $score = $relevance->score($c, $creative, $context),
+                // Relevance decides eligibility; performance only reorders.
+                'rank' => $score + $performanceWeight * ($performance[$creative->id] ?? 1.0),
                 'seen' => (int) ($seenToday[$creative->id] ?? 0),
                 'tiebreak' => random_int(0, PHP_INT_MAX),
             ]))
             ->filter(fn (array $row) => $row['seen'] < $cap && ($row['score'] > 0 || $allowUntargeted))
-            ->sort(fn (array $a, array $b) => [$b['score'], $a['seen'], $a['tiebreak']] <=> [$a['score'], $b['seen'], $b['tiebreak']])
+            ->sort(fn (array $a, array $b) => [$b['rank'], $a['seen'], $a['tiebreak']] <=> [$a['rank'], $b['seen'], $b['tiebreak']])
             ->first()['creative'] ?? null;
     }
 }

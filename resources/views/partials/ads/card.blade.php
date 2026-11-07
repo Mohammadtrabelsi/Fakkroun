@@ -24,5 +24,5 @@
         <b>{{ $ad->creative->headline }}</b>
         @if ($ad->creative->body)<span @class(['text-sm', 'text-sea-mist' => $dark, 'text-ink-soft' => ! $dark])>{{ $ad->creative->body }}</span>@endif
     </div>
-    @if ($ad->creative->link_url)<a href="{{ $ad->creative->link_url }}" target="_blank" rel="noopener noreferrer sponsored" @class(['fk-btn border-2 no-underline', 'border-sea-line text-sand' => $dark, 'border-sand-300 text-ink' => ! $dark])>{{ __('advertising.learn_more') }}</a>@endif
+    @if ($ad->creative->link_url)<a href="{{ route('ads.click', $ad->token) }}" target="_blank" rel="noopener noreferrer sponsored" @class(['fk-btn border-2 no-underline', 'border-sea-line text-sand' => $dark, 'border-sand-300 text-ink' => ! $dark])>{{ __('advertising.learn_more') }}</a>@endif
 </aside>

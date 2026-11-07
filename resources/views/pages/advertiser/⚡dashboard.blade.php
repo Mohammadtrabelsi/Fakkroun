@@ -201,7 +201,10 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
         @foreach ([
             [__('advertising.credit_types.impression'), number_format($advertiser->balance(CreditType::Impression)), __('advertising.available')],
             [__('advertising.credit_types.sponsored_question'), number_format($advertiser->balance(CreditType::SponsoredQuestion)), __('advertising.available')],
-            [__('advertising.impressions'), number_format($stats['impressions']), __('advertising.consumed', ['count' => number_format($stats['consumed_impression_credits'])])],
+            [__('advertising.credit_types.sponsored_round'), number_format($advertiser->balance(CreditType::SponsoredRound)), __('advertising.rounds_hint', ['count' => number_format($stats['sponsored_rounds'])])],
+            [__('advertising.impressions'), number_format($stats['impressions']), __('advertising.offered_hint', ['count' => number_format($stats['offered'])])],
+            [__('advertising.clicks'), number_format($stats['clicks']), $stats['ctr'] === null ? '—' : __('advertising.ctr', ['rate' => $stats['ctr']])],
+            [__('advertising.players_reached'), number_format($stats['reach']), __('advertising.consumed', ['count' => number_format($stats['consumed_impression_credits'])])],
             [__('advertising.sponsored_deliveries'), number_format($stats['sponsored_deliveries']), __('advertising.reach', ['count' => number_format($stats['sponsored_reach'])])],
             [__('advertising.spend'), $money($stats['spend_minor']), __('advertising.spend_hint')],
         ] as [$label, $value, $hint])
@@ -233,6 +236,22 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             </div>
         @endforeach
     </div>
+
+    @if ($stats['by_creative'] !== [])
+        <div class="card ms-p-0 ms-mb-24">
+            <div class="table-wrap">
+                <table class="table">
+                    <caption class="ms-fs-13 ms-fw-500" style="text-align: start; padding: 12px 16px 0;">{{ __('advertising.by_creative') }}</caption>
+                    <thead><tr><th>{{ __('advertising.headline') }}</th><th>{{ __('advertising.impressions') }}</th><th>{{ __('advertising.clicks') }}</th><th>{{ __('advertising.ctr_short') }}</th></tr></thead>
+                    <tbody>
+                        @foreach ($stats['by_creative'] as $row)
+                            <tr><td>{{ $row['headline'] }}</td><td class="tabular-nums">{{ number_format($row['impressions']) }}</td><td class="tabular-nums">{{ number_format($row['clicks']) }}</td><td class="tabular-nums">{{ $row['ctr'] === null ? '—' : $row['ctr'].' %' }}</td></tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    @endif
 
     <div class="card ms-p-0 ms-mb-24">
         <div class="table-wrap">
