@@ -120,7 +120,8 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
 };
 ?>
 
-@php(extract($this->viewData))
+@php($viewData = $this->viewData)
+@php(extract($viewData))
 @php($finished = $room->status === RoomStatus::Cancelled || ($state !== null && $state['phase'] === 'completed'))
 @php($dir = config('app.available_locales.'.$room->setting('language').'.dir', 'ltr'))
 @php($avatarColors = ['bg-sun text-ink', 'bg-leaf text-ink', 'bg-[#8FC6D0] text-ink', 'bg-[#E7B8A0] text-ink', 'bg-[#C9B6E4] text-ink'])
