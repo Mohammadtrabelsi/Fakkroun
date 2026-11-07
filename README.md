@@ -143,7 +143,7 @@ These are the keys that change the starter kit's own behaviour. Everything else 
 
 ### Admin login
 
-Sign in at `/login` with the seeded admin account:
+Staff (admins, question writers and reviewers) sign in through the back-office portal at `/admin/login`; players use `/login` in the front office. Each portal refuses the other kind of account. Sign in at `/admin/login` with the seeded admin account:
 
 | Field    | Default value            |
 | -------- | ------------------------ |
@@ -254,7 +254,8 @@ docs/
 ### Web
 
 - **Public** — `/` (landing), `/about`, `/docs`, `/blog` (listing, `?q=` search, `?tag=` filter), `/feed` (RSS), `/health.json` (token-protected), `/blog/{slug}` (published post), `/up` (health check), `/robots.txt`, `/sitemap.xml` (static file written by `sitemap:generate`)
-- **Guest routes** — `/login`, `/register`, `/forgot-password`, `/reset-password/{token}`, `/two-factor-challenge` (second step of sign-in)
+- **Public** (front office) — `/play/join` (join a room with a code; guests are asked to sign in after a valid code)
+- **Guest routes** — `/login` (players, front office), `/admin/login` (staff, back office), `/register`, `/forgot-password`, `/reset-password/{token}`, `/two-factor-challenge` (second step of sign-in)
 - **Authenticated routes** — `/verify-email`, `/verify-email/{id}/{hash}` (signed link), `/settings/profile`, `/settings/two-factor`, `/logout`
 - **Verified routes** — `/dashboard`
 - **Admin routes** (`verified` + `admin` middleware) —

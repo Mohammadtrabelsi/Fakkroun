@@ -97,6 +97,27 @@ class RoomTest extends GameplayTestCase
         Livewire::actingAs($guest)->test('pages::rooms.join')->set('code', $room->code)->call('join')->assertRedirect(route('rooms.show', $room));
     }
 
+    public function test_join_page_is_a_public_front_office_page(): void
+    {
+        $this->get(route('rooms.join'))->assertOk()->assertSee(__('play.join.title'));
+    }
+
+    public function test_guest_joining_with_a_code_signs_in_then_enters_the_room(): void
+    {
+        $room = $this->room($this->player());
+        $guest = $this->player();
+        $guest->forceFill(['password' => bcrypt('password')])->save();
+
+        Livewire::test('pages::rooms.join')->set('code', 'NOPE99')->call('join')->assertHasErrors('code');
+        Livewire::test('pages::rooms.join')->set('code', $room->code)->call('join')->assertRedirect(route('login'));
+
+        Livewire::test('pages::auth.login')
+            ->set('email', $guest->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertRedirect(route('rooms.invitation', $room->code));
+    }
+
     public function test_host_leaving_the_lobby_hands_over_or_cancels(): void
     {
         $host = $this->player();

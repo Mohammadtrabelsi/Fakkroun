@@ -30,6 +30,12 @@ return Application::configure(basePath: dirname(__DIR__))
             EnforceMaintenanceMode::class,
         ]);
 
+        // Guests hitting the back office go to the staff portal; everyone
+        // else to the player sign-in in the front office.
+        $middleware->redirectGuestsTo(
+            fn (Request $request) => $request->is('admin', 'admin/*') ? route('admin.login') : route('login'),
+        );
+
         $middleware->alias([
             'admin' => EnsureUserIsAdmin::class,
             'backoffice' => EnsureBackofficeAccess::class,

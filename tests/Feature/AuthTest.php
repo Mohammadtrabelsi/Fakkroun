@@ -60,7 +60,37 @@ class AuthTest extends TestCase
         $this->assertGuest();
     }
 
-    public function test_admin_is_redirected_to_admin_dashboard_on_login(): void
+    public function test_staff_login_page_renders_separately(): void
+    {
+        $this->get('/admin/login')->assertOk()->assertSee(__('login.staff_title'));
+    }
+
+    public function test_admin_signs_in_through_the_staff_portal(): void
+    {
+        $admin = User::factory()->admin()->create(['password' => bcrypt('password')]);
+
+        Livewire::test('pages::auth.admin-login')
+            ->set('email', $admin->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertRedirect(route('admin.dashboard'));
+
+        $this->assertAuthenticatedAs($admin);
+    }
+
+    public function test_reviewer_lands_on_the_moderation_queue(): void
+    {
+        $moderator = User::factory()->create(['password' => bcrypt('password')]);
+        $moderator->assignRole('moderator');
+
+        Livewire::test('pages::auth.admin-login')
+            ->set('email', $moderator->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertRedirect(route('admin.moderation'));
+    }
+
+    public function test_staff_cannot_sign_in_through_the_player_login(): void
     {
         $admin = User::factory()->admin()->create(['password' => bcrypt('password')]);
 
@@ -68,7 +98,28 @@ class AuthTest extends TestCase
             ->set('email', $admin->email)
             ->set('password', 'password')
             ->call('login')
-            ->assertRedirect(route('admin.dashboard'));
+            ->assertHasErrors('email');
+
+        $this->assertGuest();
+    }
+
+    public function test_players_cannot_sign_in_through_the_staff_portal(): void
+    {
+        $user = User::factory()->create(['password' => bcrypt('password')]);
+
+        Livewire::test('pages::auth.admin-login')
+            ->set('email', $user->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertHasErrors('email');
+
+        $this->assertGuest();
+    }
+
+    public function test_guests_are_sent_to_the_matching_login(): void
+    {
+        $this->get('/admin/dashboard')->assertRedirect('/admin/login');
+        $this->get('/play')->assertRedirect('/login');
     }
 
     public function test_user_can_register(): void
@@ -151,6 +202,13 @@ class AuthTest extends TestCase
             ->assertForbidden();
 
         $this->assertFalse($other->fresh()->hasRole('admin'));
+    }
+
+    public function test_staff_return_to_the_staff_portal_after_logging_out(): void
+    {
+        $admin = User::factory()->admin()->create();
+
+        $this->actingAs($admin)->post('/logout')->assertRedirect(route('admin.login'));
     }
 
     public function test_user_can_log_out(): void

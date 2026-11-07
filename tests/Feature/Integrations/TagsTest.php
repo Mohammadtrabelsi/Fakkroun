@@ -182,7 +182,7 @@ class TagsTest extends TestCase
 
     public function test_tag_page_requires_the_manage_tags_permission(): void
     {
-        $this->get('/admin/tags')->assertRedirect('/login');
+        $this->get('/admin/tags')->assertRedirect('/admin/login');
         $this->actingAs(User::factory()->create())->get('/admin/tags')->assertForbidden();
         $this->actingAs(User::factory()->admin()->create())->get('/admin/tags')->assertOk()->assertSee('Tags');
     }

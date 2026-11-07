@@ -88,7 +88,7 @@ class SpreadsheetTest extends TestCase
 
     public function test_exports_require_authorization_and_a_known_format(): void
     {
-        $this->get(route('admin.posts.export', 'csv'))->assertRedirect('/login');
+        $this->get(route('admin.posts.export', 'csv'))->assertRedirect('/admin/login');
         $this->actingAs(User::factory()->create())->get(route('admin.categories.export', 'csv'))->assertForbidden();
         $this->actingAs($this->admin)->get('/admin/posts/export/pdf')->assertNotFound();
 

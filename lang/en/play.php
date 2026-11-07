@@ -30,6 +30,8 @@ return [
         'description' => 'Enter the code the host shared with you.',
         'code' => 'Room code',
         'submit' => 'Join',
+        'guest_hint' => 'You will be asked to sign in before entering the room.',
+        'or_create' => 'Hosting a game instead?',
     ],
     'room' => [
         'code' => 'Code',

@@ -11,11 +11,13 @@ class LogoutController extends Controller
 {
     public function __invoke(Request $request): RedirectResponse
     {
+        $wasStaff = (bool) $request->user()?->canAccessBackoffice();
+
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return $wasStaff ? redirect()->route('admin.login') : redirect('/');
     }
 }
