@@ -1,5 +1,6 @@
 <?php
 
+use App\Domain\Advertising\AdService;
 use App\Domain\Gameplay\GameEngine;
 use App\Domain\Gameplay\Models\Room;
 use App\Domain\Gameplay\RoomService;
@@ -43,6 +44,23 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
     public function recap(): array
     {
         return $this->room->game ? app(GameEngine::class)->recap($this->room->game, auth()->user()) : [];
+    }
+
+    /**
+     * Results-page ad (story 16 S3): once per player and room, below
+     * "What we learned". Nothing is billed until confirmImpression().
+     */
+    #[Computed]
+    public function ad()
+    {
+        return $this->room->game?->isCompleted()
+            ? app(AdService::class)->offerPostGame($this->room, auth()->user())?->load('creative')
+            : null;
+    }
+
+    public function confirmImpression(string $token, AdService $ads): void
+    {
+        $ads->confirm($token, auth()->user());
     }
 
     public function playAgain(RoomService $rooms): void
@@ -138,6 +156,11 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
                     </div>
                 </article>
             @endforeach
+
+            @php($ad = $this->ad)
+            @if ($ad && $ad->creative)
+                @include('partials.ads.card', ['ad' => $ad, 'dark' => false])
+            @endif
         </section>
     </div>
 </div>

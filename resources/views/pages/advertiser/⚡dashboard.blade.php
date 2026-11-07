@@ -55,6 +55,9 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
 
     public string $creativeLanguage = '';
 
+    /** Comma-separated topic words (story 16 S1). */
+    public string $keywords = '';
+
     /** @var \Illuminate\Http\UploadedFile|null */
     public $image = null;
 
@@ -88,6 +91,14 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     {
         return LedgerEntry::query()->where('advertiser_id', $this->advertiser()->id)->orderByDesc('id')->paginate(15, pageName: 'ledger');
     }
+
+    #[Computed]
+    public function invoices()
+    {
+        return \App\Domain\Advertising\Models\Invoice::query()->where('advertiser_id', $this->advertiser()->id)->orderByDesc('id')->limit(50)->get();
+    }
+
+    public string $statementMonth = '';
 
     #[Computed]
     public function categories(): array
@@ -125,6 +136,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             $campaigns->addCreative($campaign, auth()->user(), [
                 'headline' => $this->headline, 'body' => $this->body ?: null, 'link_url' => $this->linkUrl ?: null,
                 'language' => $this->creativeLanguage ?: null, 'alt_text' => $this->headline,
+                'keywords' => array_values(array_unique(array_filter(array_map('trim', preg_split('/[,،]/u', $this->keywords) ?: [])))),
             ], $this->image);
         } catch (ValidationException $e) {
             foreach ($e->errors() as $key => $messages) {
@@ -134,7 +146,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             return;
         }
 
-        $this->reset(['creativeFor', 'headline', 'body', 'linkUrl', 'creativeLanguage', 'image']);
+        $this->reset(['creativeFor', 'headline', 'body', 'linkUrl', 'creativeLanguage', 'image', 'keywords']);
         $this->toast(__('advertising.creative_added'));
     }
 
@@ -208,12 +220,12 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     </div>
 
     <div class="ms-row-10 ms-wrap ms-mb-24">
-        @foreach (['by_category' => __('advertising.by_category'), 'by_language' => __('advertising.by_language'), 'daily' => __('advertising.daily')] as $key => $title)
+        @foreach (['by_category' => __('advertising.by_category'), 'by_language' => __('advertising.by_language'), 'by_placement' => __('advertising.by_placement'), 'daily' => __('advertising.daily')] as $key => $title)
             <div class="card ms-flex-1" style="min-width: 240px;">
                 <div class="card-kicker">{{ $title }}</div>
                 <ul class="ms-fs-13">
                     @forelse ($stats[$key] as $label => $count)
-                        <li class="ms-row-between"><span>{{ $key === 'by_category' ? (\App\Models\Category::find($label)?->name ?? '—') : ($label ?: '—') }}</span><b>{{ number_format($count) }}</b></li>
+                        <li class="ms-row-between"><span>{{ match ($key) { 'by_category' => \App\Models\Category::find($label)?->name ?? '—', 'by_placement' => __('advertising.placements.'.$label), default => $label ?: '—' } }}</span><b>{{ number_format($count) }}</b></li>
                     @empty
                         <li class="text-muted">—</li>
                     @endforelse
@@ -256,6 +268,9 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             <x-text-input wire:model="linkUrl" type="url" placeholder="https://" :error="$errors->first('creative_link_url')" />
             <x-input-error :message="$errors->first('creative_link_url')" />
             <select wire:model="creativeLanguage" class="input"><option value="">{{ __('advertising.every_language') }}</option>@foreach (config('app.available_locales') as $code => $meta)<option value="{{ $code }}">{{ $meta['label'] }}</option>@endforeach</select>
+            <x-text-input wire:model="keywords" type="text" :placeholder="__('advertising.keywords_placeholder')" :error="$errors->first('creative_keywords')" />
+            <p class="text-muted ms-fs-12">{{ __('advertising.keywords_hint', ['max' => app(\App\Services\PlatformSettings::class)->get('advertising.max_keywords_per_creative')]) }}</p>
+            <x-input-error :message="$errors->first('creative_keywords') ?: $errors->first('creative_keywords.0')" />
             <input type="file" wire:model="image" accept="image/*" class="input">
             <x-input-error :message="$errors->first('creative_image')" />
             <p class="text-muted ms-fs-12">{{ __('advertising.review_notice') }}</p>
@@ -276,6 +291,32 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
         <div class="ms-row-10 ms-wrap">@foreach (config('app.available_locales') as $code => $meta)<label class="ms-check-row"><input type="checkbox" class="checkbox" value="{{ $code }}" wire:model="newLanguages"> {{ $meta['label'] }}</label>@endforeach</div>
         <div><button type="submit" class="btn btn-primary">{{ __('advertising.create_campaign') }}</button></div>
     </form>
+
+    <h3 class="ms-fs-18 ms-mb-8">{{ __('advertising.invoices.title') }}</h3>
+    <div class="card ms-p-0 ms-mb-16">
+        <div class="table-wrap">
+            <table class="table">
+                <thead><tr><th>{{ __('advertising.invoices.number') }}</th><th>{{ __('advertising.date') }}</th><th>{{ __('advertising.invoices.kind') }}</th><th>{{ __('advertising.invoices.amount') }}</th><th></th></tr></thead>
+                <tbody>
+                    @forelse ($this->invoices as $invoice)
+                        <tr wire:key="inv-{{ $invoice->id }}">
+                            <td class="ms-fw-500">{{ $invoice->number }}</td>
+                            <td class="text-muted ms-nowrap">{{ $invoice->issued_at->isoFormat('ll') }}</td>
+                            <td>{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}</td>
+                            <td class="tabular-nums">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</td>
+                            <td class="ms-text-right"><a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a></td>
+                        </tr>
+                    @empty
+                        <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.invoices.none') }}</td></tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="ms-row-10 ms-wrap ms-mb-24">
+        <input type="month" wire:model.live="statementMonth" class="input" aria-label="{{ __('advertising.invoices.month') }}" max="{{ now()->format('Y-m') }}">
+        <a href="{{ route('advertiser.statements.pdf', [$advertiser, $statementMonth ?: now()->format('Y-m')]) }}" class="btn">{{ __('advertising.invoices.statement_download') }}</a>
+    </div>
 
     <div class="card ms-p-0">
         <div class="table-wrap">

@@ -56,7 +56,7 @@ class AdvertisingTest extends GameplayTestCase
         $campaigns->addCreative($campaign, $this->owner, ['headline' => 'Plant a tree']);
         $campaigns->submit($campaign, $this->owner);
 
-        return $campaigns->approve($campaign, $this->admin);
+        return $campaigns->approve($campaign, $this->admin, true);
     }
 
     public function test_a_purchase_fills_two_separate_balances_once(): void
@@ -289,6 +289,9 @@ class AdvertisingTest extends GameplayTestCase
         $campaigns->submit($campaign, $this->owner);
 
         $page->call('approve', $campaign->id);
+        $this->assertSame(CampaignStatus::PendingReview, $campaign->fresh()->status, 'No approval without the policy tick.');
+
+        $page->set('policyChecked.'.$campaign->id, true)->call('approve', $campaign->id);
         $this->assertSame(CampaignStatus::Active, $campaign->fresh()->status);
         $this->assertSame(1, $this->owner->notifications()->count());
 

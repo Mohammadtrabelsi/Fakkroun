@@ -102,6 +102,9 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
         if ($state !== null && $state['phase'] === 'reveal') {
             $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $state['position'])->with('question')->first();
             $ad = $gq ? app(AdService::class)->offer($this->room, $gq, auth()->user())?->load('creative') : null;
+        } elseif ($state === null && $this->room->status === RoomStatus::Waiting) {
+            // Waiting room (story 16 S3): once per player and room.
+            $ad = app(AdService::class)->offerLobby($this->room, auth()->user())?->load('creative');
         }
 
         return [
@@ -166,6 +169,9 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                         @unless ($ready)<p class="m-0 text-sm text-sea-mist">{{ __('play.room.waiting_for_players', ['min' => $minPlayers]) }}</p>@endunless
                     @else
                         <p class="m-0 text-sea-mist">{{ __('play.room.waiting_for_host') }}</p>
+                    @endif
+                    @if ($ad && $ad->creative)
+                        <div class="w-full">@include('partials.ads.card', ['ad' => $ad, 'dark' => false])</div>
                     @endif
                 </section>
                 <aside aria-labelledby="players-h" class="flex min-w-0 flex-[1_1_300px] flex-col gap-3.5 rounded-3xl bg-sea-deep-2 p-5">
@@ -278,18 +284,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
 
                         @if ($ad && $ad->creative)
                             {{-- Ad below the results, never over answers or the timer (spec §17.2). --}}
-                            <aside aria-label="{{ __('advertising.sponsored') }}" class="flex flex-wrap items-center gap-4 rounded-2xl border border-sea-line bg-sea-deep-2 p-4"
-                                   wire:key="ad-{{ $ad->id }}"
-                                   x-data
-                                   x-init="const seen = new IntersectionObserver((entries) => { if (entries[0].intersectionRatio >= 0.5) { seen.disconnect(); setTimeout(() => $wire.confirmImpression(@js($ad->token)), 1000) } }, { threshold: [0.5] }); seen.observe($el)">
-                                <span class="rounded-full bg-sun px-2.5 py-0.5 text-xs font-bold text-ink uppercase">{{ __('advertising.sponsored') }}</span>
-                                @if ($ad->creative->imageUrl())<img src="{{ $ad->creative->imageUrl() }}" alt="{{ $ad->creative->alt_text }}" class="h-12 w-auto rounded-lg">@endif
-                                <div class="flex min-w-0 flex-1 flex-col">
-                                    <b>{{ $ad->creative->headline }}</b>
-                                    @if ($ad->creative->body)<span class="text-sm text-sea-mist">{{ $ad->creative->body }}</span>@endif
-                                </div>
-                                @if ($ad->creative->link_url)<a href="{{ $ad->creative->link_url }}" target="_blank" rel="noopener noreferrer sponsored" class="fk-btn border-2 border-sea-line text-sand no-underline">{{ __('advertising.learn_more') }}</a>@endif
-                            </aside>
+                            @include('partials.ads.card', ['ad' => $ad, 'dark' => true])
                         @endif
                     @else
                         <p class="m-0 text-[15px] text-sea-mist">{{ __('play.game2.hint') }}@if ($state['my_choice_id']) · <b class="text-sun">{{ __('play.game.locked_in') }}</b>@endif</p>

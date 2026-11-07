@@ -72,6 +72,25 @@ return [
             'sponsored_question_price_minor' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
             'currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
             'low_credit_threshold' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:0', 'max:100000000']],
+            // Story 16 S1: campaigns with no targeting and no keyword match may still run.
+            'allow_untargeted' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            // Story 16 S4: the same creative at most this many times a day per player.
+            'max_same_creative_per_day' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:1', 'max:100']],
+            // Story 16 S3: calm placements besides the answer reveal, one per player and room.
+            'post_game_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            'lobby_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            'reveal_enabled' => ['type' => 'bool', 'default' => true, 'rules' => ['boolean']],
+            // How an impression is confirmed: share of the ad visible, for how long.
+            'view_ratio_percent' => ['type' => 'int', 'default' => 50, 'rules' => ['integer', 'min:10', 'max:100']],
+            'view_seconds' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:1', 'max:30']],
+            // A delivery token must be confirmed within this many minutes.
+            'delivery_minutes' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:1', 'max:120']],
+            'max_keywords_per_creative' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:0', 'max:50']],
+            // Relevance weights (story 16 S1).
+            'weight_topic' => ['type' => 'int', 'default' => 4, 'rules' => ['integer', 'min:0', 'max:100']],
+            'weight_language' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:0', 'max:100']],
+            'weight_keyword' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:0', 'max:100']],
+            'max_keyword_hits' => ['type' => 'int', 'default' => 3, 'rules' => ['integer', 'min:0', 'max:20']],
         ],
 
         // Player/user accounts (not advertisers): free with ads, or paid and ad-free.
@@ -80,6 +99,15 @@ return [
             // Monthly price of the paid, ad-free account, in minor units. 0 = not on sale.
             'paid_plan_price_minor' => ['type' => 'int', 'default' => 0, 'rules' => ['integer', 'min:0', 'max:100000000']],
             'paid_plan_currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
+        ],
+
+        // Invoices for advertiser packs (story 16 S11). Placeholders until you fill them in.
+        'invoices' => [
+            'number_prefix' => ['type' => 'string', 'default' => 'FK', 'rules' => ['string', 'max:10', 'regex:/^[A-Z0-9-]+$/']],
+            'seller_name' => ['type' => 'string', 'default' => '[COMPANY NAME]', 'rules' => ['string', 'max:200']],
+            'seller_address' => ['type' => 'string', 'default' => '[ADDRESS]', 'rules' => ['string', 'max:500']],
+            'seller_tax_id' => ['type' => 'string', 'default' => '[TAX ID]', 'rules' => ['string', 'max:100']],
+            'payment_terms' => ['type' => 'string', 'default' => '[PAYMENT TERMS]', 'rules' => ['string', 'max:500']],
         ],
 
         'translations' => [

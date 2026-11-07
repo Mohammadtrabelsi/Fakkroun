@@ -48,8 +48,8 @@ class WalletService
             throw new DomainActionException(__('advertising.errors.duplicate_payment'));
         }
 
-        DB::transaction(function () use ($advertiser, $package, $actor, $reference): void {
-            $this->insert([
+        $payment = DB::transaction(function () use ($advertiser, $package, $actor, $reference): LedgerEntry {
+            $payment = $this->insert([
                 'advertiser_id' => $advertiser->id,
                 'entry_type' => 'payment',
                 'amount_minor' => $package->price_minor,
@@ -65,7 +65,12 @@ class WalletService
                     $this->move($advertiser, CreditType::from($type), $quantity, 'credit', $reference.':'.$type, ['package_id' => $package->id, 'created_by' => $actor->id, 'currency' => $package->currency]);
                 }
             }
+
+            return $payment;
         });
+
+        // Every purchase gets an invoice (story 16 S11).
+        app(InvoiceService::class)->issueForPurchase($payment, $actor);
 
         $advertiser->user?->notify(new AdvertiserNotice('purchase', ['package' => $package->name]));
     }
