@@ -11,6 +11,7 @@ return [
         'play_now' => 'Jouer maintenant',
         'language' => 'Langue',
         'main' => 'Principale',
+        'menu' => 'Menu',
     ],
     'hero' => [
         'pill' => 'Quiz multijoueur en direct · Économie verte et bleue',
