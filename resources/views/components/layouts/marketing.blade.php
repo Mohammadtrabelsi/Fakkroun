@@ -106,8 +106,7 @@
                 </nav>
             </div>
             <div class="container footer-bottom">
-                <div class="text-muted ms-fs-12">© {{ date('Y') }} {{ config('app.name') }}.</div>
-                <span class="footer-status">{{ __('marketing.in_memory') }}</span>
+                <div class="text-muted ms-fs-12">{{ __('home.footer.made_in', ['year' => config('fakkroun.brand.copyright_year')]) }}</div>
             </div>
         </footer>
     </body>

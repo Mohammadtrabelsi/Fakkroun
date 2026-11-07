@@ -32,13 +32,17 @@ class DatabaseSeeder extends Seeder
     ];
 
     /**
-     * Demo / sample seeders: a playable trilingual question set. Sample users
-     * are created inline in run() below.
+     * Demo / sample seeders: trilingual questions (a moderation queue sample
+     * and a published, playable set) and one finished demo game with its
+     * game_questions, answers and results. Sample users are created inline in
+     * run() below, before these run.
      *
      * @var array<int, class-string>
      */
     public const DEMO = [
         FakkrounDemoQuestionSeeder::class,
+        FakkrounPlayableQuestionSeeder::class,
+        FakkrounDemoGameSeeder::class,
     ];
 
     /**
@@ -49,15 +53,16 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ...self::MINIMAL,
             ...self::REFERENCE,
-            ...self::DEMO,
         ]);
 
-        // Demo users - full mode only.
+        // Demo users - full mode only. Created first: the demo game seats them.
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
 
         User::factory(10)->create();
+
+        $this->call(self::DEMO);
     }
 }
