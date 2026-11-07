@@ -76,10 +76,10 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
 };
 ?>
 
-<div class="fk-container flex justify-center pt-12 pb-20">
+<div class="fk-container flex justify-center pt-8 pb-14 max-sm:px-4 sm:pt-12 sm:pb-20">
     <div class="flex w-full max-w-[520px] flex-col gap-6">
         <div class="flex flex-col gap-2">
-            <h1 class="fk-h2 m-0 text-[52px] leading-none">{{ __('play.join.title') }}</h1>
+            <h1 class="fk-h2 m-0 text-[clamp(36px,10vw,52px)] leading-none">{{ __('play.join.title') }}</h1>
             <p class="m-0 text-lg text-ink-muted">{{ __('play.join.description') }}</p>
         </div>
 

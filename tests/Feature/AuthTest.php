@@ -126,7 +126,7 @@ class AuthTest extends TestCase
     {
         Livewire::test('pages::auth.register')
             ->set('name', 'Jane Doe')
-            ->set('email', 'jane@example.com')
+            ->set('login', 'jane@example.com')
             ->set('password', 'password123')
             ->set('password_confirmation', 'password123')
             ->call('register')
@@ -140,7 +140,7 @@ class AuthTest extends TestCase
     {
         Livewire::test('pages::auth.register')
             ->set('name', 'Jane Doe')
-            ->set('email', 'jane@example.com')
+            ->set('login', 'jane@example.com')
             ->set('password', 'password123')
             ->set('password_confirmation', 'nope')
             ->call('register')

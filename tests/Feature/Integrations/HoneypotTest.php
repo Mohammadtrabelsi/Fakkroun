@@ -17,7 +17,7 @@ class HoneypotTest extends TestCase
     {
         return $component
             ->set('name', 'Real Person')
-            ->set('email', 'person@example.com')
+            ->set('login', 'person@example.com')
             ->set('password', 'password123')
             ->set('password_confirmation', 'password123');
     }

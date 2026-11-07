@@ -19,7 +19,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 
 ## Highlights
 
-- **Full authentication flow** — registration, login, logout, password reset, and email verification, all built as single-file Livewire components. Login is rate-limited per email and IP.
+- **Full authentication flow** — registration, login, logout, password reset, and optional email verification, all built as single-file Livewire components. Players sign up and sign in with an email address **or** a phone number and can play straight away (no verification step). Login is rate-limited per email/phone and IP.
 - **Two-factor authentication** — TOTP apps (RFC 6238) with single-use recovery codes, managed from **Settings → Two-factor** and enforced at web and API sign-in once confirmed. No extra dependency is needed.
 - **Admin panel** — a dedicated, permission-gated back office for managing users, posts, categories, reviewing activity, and editing site settings.
 - **Content module** — full CRUD for **posts** and **categories** in the admin panel. Published posts appear on a public `/blog` with search, detail pages and cover images; `/docs` is the in-app guide. Deletes go to a **trash** and can be restored; bulk publish/delete and filters/sorting are built into the admin lists.
@@ -167,6 +167,7 @@ ADMIN_PASSWORD=change-me-now
 | Role | Email              | Password   | Notes                  |
 | ---- | ------------------ | ---------- | ---------------------- |
 | User | `test@example.com` | `password` | Standard verified user |
+| Advertiser | `ads@carthage-books.test`, `communication@univ-sousse.test`, `contact@ecole-ibnkhaldoun.test`, `hello@green-tunisia.test`, `club@jeunes-savants.test` | `password` | Sample advertisers (one per type), from `AdvertiserDemoSeeder`; shown under Admin → Advertising → Advertisers |
 
 Ten additional random users are created with the same `password`. Their details come from `UserFactory`.
 
@@ -240,7 +241,7 @@ app/Services/
 └── VisitService.php       # Visit recording and dashboard statistics
 
 routes/
-├── web.php                # Public, guest, authenticated, verified, and admin route groups
+├── web.php                # Public, guest, authenticated and admin route groups
 ├── api.php                # JSON API endpoints (see below)
 └── console.php            # Scheduled tasks (activitylog:clean, sitemap:generate)
 
@@ -260,8 +261,8 @@ docs/
 - **Public** (front office) — `/play/join` (join a room with a code; guests are asked to sign in after a valid code)
 - **Guest routes** — `/login` (players, front office), `/admin/login` (staff, back office), `/register`, `/forgot-password`, `/reset-password/{token}`, `/two-factor-challenge` (second step of sign-in)
 - **Authenticated routes** — `/verify-email`, `/verify-email/{id}/{hash}` (signed link), `/settings/profile`, `/settings/two-factor`, `/logout`
-- **Verified routes** — `/dashboard`
-- **Admin routes** (`verified` + `admin` middleware) —
+- **Signed-in routes** — `/dashboard`, play and rooms (no email verification required)
+- **Admin routes** (`backoffice` middleware) —
   `/admin/dashboard`,
   `/admin/users`, `/admin/users/create`, `/admin/users/{user}/edit`,
   `/admin/categories`, `/admin/categories/create`, `/admin/categories/{category}/edit`,

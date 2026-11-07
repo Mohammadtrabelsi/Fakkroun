@@ -93,8 +93,8 @@ class RoomTest extends GameplayTestCase
         $room = $this->room($this->player());
         $guest = $this->player();
 
-        Livewire::actingAs($guest)->test('pages::rooms.join')->set('code', 'NOPE99')->call('join')->assertHasErrors('code');
-        Livewire::actingAs($guest)->test('pages::rooms.join')->set('code', $room->code)->call('join')->assertRedirect(route('rooms.show', $room));
+        Livewire::actingAs($guest)->test('rooms.join-form')->set('code', 'NOPE99')->call('join')->assertHasErrors('code');
+        Livewire::actingAs($guest)->test('rooms.join-form')->set('code', $room->code)->call('join')->assertRedirect(route('rooms.show', $room));
     }
 
     public function test_join_page_is_a_public_front_office_page(): void

@@ -25,33 +25,55 @@
         <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-paper focus:px-4 focus:py-2">{{ __('home.nav.main') }}</a>
 
         <header class="border-b border-sand-300 bg-sand">
-            <div class="fk-container flex flex-wrap items-center gap-x-8 gap-y-3 py-3.5">
+            <div class="fk-container flex flex-wrap items-center gap-x-8 gap-y-3 py-3.5 max-sm:px-4">
                 <x-fakkroun.logo />
 
-                <nav aria-label="{{ __('home.nav.main') }}" class="flex flex-wrap gap-0.5">
-                    @foreach ([
-                        [__('home.nav.play'), $playUrl],
-                        [__('home.nav.categories'), url('/#categories')],
-                        [__('home.nav.learn'), url('/#learn')],
-                        [__('home.nav.community'), route('questions.submit')],
-                    ] as [$label, $href])
-                        <a href="{{ $href }}" class="flex min-h-11 items-center rounded-[10px] px-3.5 font-medium text-ink no-underline hover:bg-sand-200">{{ $label }}</a>
-                    @endforeach
-                    @if (Route::has('leaderboard'))
-                        <a href="{{ route('leaderboard') }}" class="flex min-h-11 items-center rounded-[10px] px-3.5 font-medium text-ink no-underline hover:bg-sand-200">{{ __('home.nav.leaderboard') }}</a>
-                    @endif
-                </nav>
+                {{-- Small screens: Play now + menu toggle stay visible, the rest folds into the panel below. --}}
+                <div class="ms-auto flex items-center gap-2 lg:hidden">
+                    <a href="{{ $playUrl }}" class="fk-btn min-h-11 bg-sea px-4 text-paper hover:bg-sea-dark hover:text-paper">{{ __('home.nav.play_now') }}</a>
+                    <button type="button" data-nav-toggle aria-controls="fk-site-nav" aria-expanded="false" aria-label="{{ __('home.nav.menu') }}"
+                            class="group flex size-11 items-center justify-center rounded-xl border-2 border-sand-300 bg-paper text-ink hover:bg-sand-200">
+                        <svg class="group-aria-expanded:hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                        <svg class="hidden group-aria-expanded:block" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                    </button>
+                </div>
 
-                <div class="ms-auto flex flex-wrap items-center gap-2.5">
-                    <div role="group" aria-label="{{ __('home.nav.language') }}" class="flex gap-0.5 rounded-xl bg-sand-200 p-[3px]">
-                        @foreach (['en' => 'EN', 'fr' => 'FR', 'ar' => 'عربي'] as $code => $label)
-                            @if (array_key_exists($code, config('app.available_locales')))
-                                <a href="{{ route('locale.switch', $code) }}"
-                                   @if ($code === 'ar') lang="ar" @endif
-                                   aria-current="{{ $locale === $code ? 'true' : 'false' }}"
-                                   class="flex min-h-[38px] min-w-11 items-center justify-center rounded-[9px] px-2 text-sm font-semibold no-underline {{ $locale === $code ? 'bg-paper text-ink' : 'text-ink-soft' }}">{{ $label }}</a>
-                            @endif
+                <div id="fk-site-nav" data-nav-panel
+                     class="hidden w-full flex-col gap-4 border-t border-sand-300 pt-3 pb-2 [&.is-open]:flex lg:flex lg:w-auto lg:flex-1 lg:flex-row lg:flex-wrap lg:items-center lg:gap-x-8 lg:gap-y-3 lg:border-0 lg:p-0">
+                    <nav aria-label="{{ __('home.nav.main') }}" class="flex flex-col gap-0.5 lg:flex-row lg:flex-wrap">
+                        @foreach ([
+                            [__('home.nav.play'), $playUrl],
+                            [__('home.nav.categories'), url('/#categories')],
+                            [__('home.nav.learn'), url('/#learn')],
+                            [__('home.nav.community'), route('questions.submit')],
+                        ] as [$label, $href])
+                            <a href="{{ $href }}" class="flex min-h-11 items-center rounded-[10px] px-3.5 font-medium text-ink no-underline hover:bg-sand-200">{{ $label }}</a>
                         @endforeach
+                        @if (Route::has('leaderboard'))
+                            <a href="{{ route('leaderboard') }}" class="flex min-h-11 items-center rounded-[10px] px-3.5 font-medium text-ink no-underline hover:bg-sand-200">{{ __('home.nav.leaderboard') }}</a>
+                        @endif
+                    </nav>
+
+                    <div class="flex flex-wrap items-center justify-between gap-2.5 border-t border-sand-300 pt-3 lg:ms-auto lg:justify-start lg:border-0 lg:pt-0">
+                        <div role="group" aria-label="{{ __('home.nav.language') }}" class="flex gap-0.5 rounded-xl bg-sand-200 p-[3px]">
+                            @foreach (['en' => 'EN', 'fr' => 'FR', 'ar' => 'عربي'] as $code => $label)
+                                @if (array_key_exists($code, config('app.available_locales')))
+                                    <a href="{{ route('locale.switch', $code) }}"
+                                       @if ($code === 'ar') lang="ar" @endif
+                                       aria-current="{{ $locale === $code ? 'true' : 'false' }}"
+                                       class="flex min-h-[38px] min-w-11 items-center justify-center rounded-[9px] px-2 text-sm font-semibold no-underline {{ $locale === $code ? 'bg-paper text-ink' : 'text-ink-soft' }}">{{ $label }}</a>
+                                @endif
+                            @endforeach
+                        </div>
+                        @auth
+                            <a href="{{ route('dashboard') }}" class="flex min-h-11 min-w-0 items-center px-3.5 font-semibold text-ink no-underline"><span class="truncate">{{ auth()->user()->name }}</span></a>
+                        @else
+                            <a href="{{ route('login') }}" class="flex min-h-11 items-center px-3.5 font-semibold text-ink no-underline">{{ __('home.nav.sign_in') }}</a>
+                        @endauth
+                        {{-- Already shown next to the menu toggle on small screens. --}}
+                        <div class="hidden lg:block">
+                            <a href="{{ $playUrl }}" class="fk-btn bg-sea text-paper hover:bg-sea-dark hover:text-paper">{{ __('home.nav.play_now') }}</a>
+                        </div>
                     </div>
                     @if (auth()->user()?->isGuest())
                         <span class="flex min-h-11 items-center px-3.5 font-semibold text-ink">{{ auth()->user()->name }}</span>
