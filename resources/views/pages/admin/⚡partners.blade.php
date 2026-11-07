@@ -156,25 +156,22 @@ new #[Layout('layouts::app')] #[Title('Partners')] class extends Component
     </form>
 
     <div class="card ms-p-0 ms-mt-18">
-        <div class="table-wrap">
-            <table class="table">
-                <thead><tr><th>{{ __('partners.name') }}</th><th>{{ __('partners.type') }}</th><th>{{ __('questions.fields.status') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->partners as $partner)
-                        <tr wire:key="partner-{{ $partner->id }}">
-                            <td><div class="ms-row-10-center">@if ($partner->logoUrl())<img src="{{ $partner->logoUrl() }}" alt="" class="h-8 w-auto">@endif<span class="ms-fw-500">{{ $partner->name }}</span></div></td>
-                            <td class="text-muted">{{ __('partners.types.'.$partner->type) }}</td>
-                            <td><span class="tag {{ $partner->is_active ? 'tag-accent' : 'tag-neutral' }}">{{ $partner->is_active ? __('account.status_active') : __('partners.hidden') }}</span></td>
-                            <td class="ms-text-right"><div class="ms-actions-end">
+                        <div class="row-card" wire:key="partner-{{ $partner->id }}">
+                            <div class="row-card-title"><div class="ms-row-10-center">@if ($partner->logoUrl())<img src="{{ $partner->logoUrl() }}" alt="" class="h-8 w-auto">@endif<span class="ms-fw-500">{{ $partner->name }}</span></div></div>
+                            <div class="row-card-field text-muted" data-label="{{ __('partners.type') }}">{{ __('partners.types.'.$partner->type) }}</div>
+                            <div class="row-card-field" data-label="{{ __('questions.fields.status') }}"><span class="tag {{ $partner->is_active ? 'tag-accent' : 'tag-neutral' }}">{{ $partner->is_active ? __('account.status_active') : __('partners.hidden') }}</span></div>
+                            <div class="row-card-actions"><div class="ms-actions-end">
                                 <button type="button" wire:click="edit({{ $partner->id }})" class="btn ms-btn-sm">{{ __('questions.admin.edit') }}</button>
                                 <button type="button" wire:click="delete({{ $partner->id }})" wire:confirm="{{ __('partners.delete_confirm') }}" class="btn ms-btn-sm-danger">{{ __('questions.admin.delete') }}</button>
-                            </div></td>
-                        </tr>
+                            </div></div>
+                        </div>
                     @empty
-                        <tr><td colspan="4" class="text-muted ms-empty">{{ __('partners.empty') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('partners.empty') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
 </div>

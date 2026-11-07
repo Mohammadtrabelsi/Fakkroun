@@ -175,23 +175,14 @@ new #[Layout('layouts::app')] #[Title('Tags')] class extends Component
     </div>
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>{{ __('tags.name') }}</th>
-                        <th>{{ __('tags.slug') }}</th>
-                        <th>{{ __('tags.posts') }}</th>
-                        <th class="ms-text-right">{{ __('tags.actions') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->tags as $tag)
-                        <tr wire:key="tag-{{ $tag->id }}">
-                            <td class="ms-fw-500">{{ $tag->name }}</td>
-                            <td class="text-muted">{{ $tag->getTranslation('slug', \App\Models\Tag::getLocale(), false) }}</td>
-                            <td class="text-muted">{{ $tag->posts_count }}</td>
-                            <td class="ms-text-right">
+                        <div class="row-card" wire:key="tag-{{ $tag->id }}">
+                            <div class="row-card-title ms-fw-500">{{ $tag->name }}</div>
+                            <div class="row-card-field text-muted" data-label="{{ __('tags.slug') }}">{{ $tag->getTranslation('slug', \App\Models\Tag::getLocale(), false) }}</div>
+                            <div class="row-card-field text-muted" data-label="{{ __('tags.posts') }}">{{ $tag->posts_count }}</div>
+                            <div class="row-card-actions">
                                 <div class="ms-actions-end">
                                     <button type="button" wire:click="edit({{ $tag->id }})" class="btn ms-btn-sm">{{ __('tags.edit') }}</button>
                                     <button
@@ -201,15 +192,12 @@ new #[Layout('layouts::app')] #[Title('Tags')] class extends Component
                                         class="btn ms-btn-sm-danger"
                                     >{{ __('tags.delete') }}</button>
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     @empty
-                        <tr>
-                            <td colspan="4" class="text-muted ms-empty">{{ __('tags.none') }}</td>
-                        </tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('tags.none') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
 
         <div class="ms-cell-top">

@@ -312,46 +312,33 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
     @endif
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th style="width:32px">
-                            <input type="checkbox" class="checkbox" aria-label="Select all on this page" wire:click="selectPage">
-                        </th>
-                        <th>
-                            <button type="button" wire:click="sortBy('title')" class="ms-sort-btn">{{ __('posts.title') }}</button>
-                        </th>
-                        <th>{{ __('posts.category') }}</th>
-                        <th>{{ __('posts.author') }}</th>
-                        <th>
-                            <button type="button" wire:click="sortBy('published_at')" class="ms-sort-btn">Published</button>
-                        </th>
-                        <th>{{ __('posts.status') }}</th>
-                        <th class="ms-text-right">{{ __('posts.actions') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
+                <div class="row-cards-toolbar">
+                    <div class="row-cards-control"><input type="checkbox" class="checkbox" aria-label="Select all on this page" wire:click="selectPage"></div>
+                    <div class="row-cards-control"><button type="button" wire:click="sortBy('title')" class="ms-sort-btn">{{ __('posts.title') }}</button></div>
+                    <div class="row-cards-control"><button type="button" wire:click="sortBy('published_at')" class="ms-sort-btn">Published</button></div>
+                </div>
                     @forelse ($this->posts as $post)
-                        <tr wire:key="post-{{ $post->id }}">
-                            <td>
+                        <div class="row-card" wire:key="post-{{ $post->id }}">
+                            <div class="row-card-select">
                                 <input type="checkbox" class="checkbox" value="{{ $post->id }}" wire:model.live="selected" aria-label="Select post">
-                            </td>
-                            <td>
+                            </div>
+                            <div class="row-card-title">
                                 <div class="ms-fw-500">{{ $post->title }}</div>
                                 <div class="text-muted ms-fs-12">{{ $post->slug }}</div>
-                            </td>
-                            <td class="text-muted">{{ $post->category?->name ?? '—' }}</td>
-                            <td class="text-muted">{{ $post->author?->name ?? '—' }}</td>
-                            <td class="text-muted ms-nowrap">{{ $post->published_at?->format($this->dateFormat) ?? '—' }}</td>
-                            <td>
+                            </div>
+                            <div class="row-card-field text-muted" data-label="{{ __('posts.category') }}">{{ $post->category?->name ?? '—' }}</div>
+                            <div class="row-card-field text-muted" data-label="{{ __('posts.author') }}">{{ $post->author?->name ?? '—' }}</div>
+                            <div class="row-card-field text-muted ms-nowrap" data-label="Published">{{ $post->published_at?->format($this->dateFormat) ?? '—' }}</div>
+                            <div class="row-card-field" data-label="{{ __('posts.status') }}">
                                 @if ($post->trashed())
                                     <span class="tag tag-outline">Trashed</span>
                                 @else
                                     <span class="tag {{ $post->isPublished() ? 'tag-accent' : 'tag-neutral' }}">{{ \App\Models\Post::statuses()[$post->status] ?? $post->status }}</span>
                                 @endif
-                            </td>
-                            <td class="ms-text-right">
+                            </div>
+                            <div class="row-card-actions">
                                 <div class="ms-actions-end">
                                     @if ($post->trashed())
                                         @can('restore', $post)
@@ -382,15 +369,12 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
                                         @endcan
                                     @endif
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     @empty
-                        <tr>
-                            <td colspan="7" class="text-muted ms-empty">{{ __('posts.no_posts_found') }}</td>
-                        </tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('posts.no_posts_found') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
 
         <div class="ms-cell-top">

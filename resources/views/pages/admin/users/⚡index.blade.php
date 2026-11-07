@@ -191,24 +191,15 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
     @enderror
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>
-                            <button type="button" wire:click="sortBy('name')" class="ms-sort-btn">{{ __('dashboard.user') }}</button>
-                        </th>
-                        <th>
-                            <button type="button" wire:click="sortBy('created_at')" class="ms-sort-btn">{{ __('dashboard.joined') }}</button>
-                        </th>
-                        <th>{{ __('dashboard.role') }}</th>
-                        <th class="ms-text-right">{{ __('dashboard.actions') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
+                <div class="row-cards-toolbar">
+                    <div class="row-cards-control"><button type="button" wire:click="sortBy('name')" class="ms-sort-btn">{{ __('dashboard.user') }}</button></div>
+                    <div class="row-cards-control"><button type="button" wire:click="sortBy('created_at')" class="ms-sort-btn">{{ __('dashboard.joined') }}</button></div>
+                </div>
                     @forelse ($this->users as $user)
-                        <tr wire:key="user-{{ $user->id }}">
-                            <td>
+                        <div class="row-card" wire:key="user-{{ $user->id }}">
+                            <div class="row-card-title">
                                 <div class="ms-row-10-center">
                                     <x-user-avatar :user="$user" />
                                     <div class="ms-minw-0">
@@ -216,9 +207,9 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                                         <div class="text-muted ms-fs-12">{{ $user->email }}</div>
                                     </div>
                                 </div>
-                            </td>
-                            <td class="text-muted ms-nowrap">{{ $user->created_at->format($this->dateFormat) }}</td>
-                            <td>
+                            </div>
+                            <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('dashboard.joined') }}">{{ $user->created_at->format($this->dateFormat) }}</div>
+                            <div class="row-card-field" data-label="{{ __('dashboard.role') }}">
                                 @if ($user->trashed())
                                     <span class="tag tag-outline">Trashed</span>
                                 @else
@@ -231,8 +222,8 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                                         <span class="tag tag-outline">{{ __('account.status_suspended') }}</span>
                                     @endif
                                 @endif
-                            </td>
-                            <td class="ms-text-right">
+                            </div>
+                            <div class="row-card-actions">
                                 <div class="ms-actions-end">
                                     @if ($user->trashed())
                                         <button type="button" wire:click="restoreUser({{ $user->id }})" class="btn ms-btn-sm">Restore</button>
@@ -278,15 +269,12 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                                         >Move to trash</button>
                                     @endif
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     @empty
-                        <tr>
-                            <td colspan="4" class="text-muted ms-empty">{{ __('dashboard.no_users_found') }}</td>
-                        </tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('dashboard.no_users_found') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
 
         <div class="ms-cell-top">

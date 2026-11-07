@@ -146,26 +146,23 @@ new #[Layout('layouts::app')] #[Title('AI generation')] class extends Component
     </form>
 
     <div class="card ms-p-0 ms-mt-18" wire:poll.5s>
-        <div class="table-wrap">
-            <table class="table">
-                <thead><tr><th>{{ __('ai.batch') }}</th><th>{{ __('questions.fields.status') }}</th><th>{{ __('ai.results') }}</th><th>{{ __('ai.cost') }}</th></tr></thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->batches as $batch)
-                        <tr wire:key="b-{{ $batch->id }}">
-                            <td>
+                        <div class="row-card" wire:key="b-{{ $batch->id }}">
+                            <div class="row-card-title">
                                 <div class="ms-fw-500">#{{ $batch->id }} · {{ __('ai.kind.'.$batch->kind) }} · {{ strtoupper($batch->parameters['language'] ?? '') }}</div>
                                 <div class="text-muted ms-fs-12">{{ $batch->model }} · {{ $batch->user?->name }} · {{ $batch->created_at->diffForHumans() }}</div>
                                 @if ($batch->error)<div class="text-muted ms-fs-12">{{ $batch->error }}</div>@endif
-                            </td>
-                            <td><span class="tag {{ $batch->status === 'completed' ? 'tag-accent' : 'tag-neutral' }}">{{ __('ai.status.'.$batch->status) }}</span></td>
-                            <td class="text-muted ms-fs-12">{{ __('ai.counts', ['accepted' => $batch->accepted_count, 'duplicates' => $batch->duplicate_count, 'rejected' => $batch->rejected_count, 'requested' => $batch->requested_count]) }}</td>
-                            <td class="text-muted ms-nowrap">${{ number_format($batch->estimated_cost, 4) }}</td>
-                        </tr>
+                            </div>
+                            <div class="row-card-field" data-label="{{ __('questions.fields.status') }}"><span class="tag {{ $batch->status === 'completed' ? 'tag-accent' : 'tag-neutral' }}">{{ __('ai.status.'.$batch->status) }}</span></div>
+                            <div class="row-card-field text-muted ms-fs-12" data-label="{{ __('ai.results') }}">{{ __('ai.counts', ['accepted' => $batch->accepted_count, 'duplicates' => $batch->duplicate_count, 'rejected' => $batch->rejected_count, 'requested' => $batch->requested_count]) }}</div>
+                            <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('ai.cost') }}">${{ number_format($batch->estimated_cost, 4) }}</div>
+                        </div>
                     @empty
-                        <tr><td colspan="4" class="text-muted ms-empty">{{ __('ai.empty') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('ai.empty') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
         <div class="ms-cell-top">{{ $this->batches->links() }}</div>
     </div>

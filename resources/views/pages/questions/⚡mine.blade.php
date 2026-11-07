@@ -53,38 +53,28 @@ new #[Layout('layouts::app')] #[Title('My questions')] class extends Component
     @endif
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>{{ __('questions.fields.body') }}</th>
-                        <th>{{ __('questions.fields.category') }}</th>
-                        <th>{{ __('questions.fields.status') }}</th>
-                        <th class="ms-text-right">{{ __('categories.actions') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->submissions as $question)
-                        <tr wire:key="q-{{ $question->id }}">
-                            <td>
+                        <div class="row-card" wire:key="q-{{ $question->id }}">
+                            <div class="row-card-title">
                                 <div class="ms-fw-500">{{ $question->label() }}</div>
                                 @if ($question->rejection_reason)
                                     <div class="text-muted ms-fs-12">{{ __('questions.mine.reason') }}: {{ $question->rejection_reason }}</div>
                                 @endif
-                            </td>
-                            <td class="text-muted">{{ $question->category?->name }}</td>
-                            <td><x-questions.status-tag :status="$question->status" /></td>
-                            <td class="ms-text-right">
+                            </div>
+                            <div class="row-card-field text-muted" data-label="{{ __('questions.fields.category') }}">{{ $question->category?->name }}</div>
+                            <div class="row-card-field" data-label="{{ __('questions.fields.status') }}"><x-questions.status-tag :status="$question->status" /></div>
+                            <div class="row-card-actions">
                                 @if (in_array($question->status->value, ['draft', 'pending', 'rejected'], true))
                                     <button type="button" wire:click="withdraw('{{ $question->uuid }}')" wire:confirm="{{ __('questions.mine.withdraw_confirm') }}" class="btn ms-btn-sm-danger">{{ __('questions.mine.withdraw') }}</button>
                                 @endif
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     @empty
-                        <tr><td colspan="4" class="text-muted ms-empty">{{ __('questions.mine.empty') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('questions.mine.empty') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
         <div class="ms-cell-top">{{ $this->submissions->links() }}</div>
     </div>
