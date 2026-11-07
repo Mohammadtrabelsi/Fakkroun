@@ -47,4 +47,7 @@ return [
     'requires_reference_hint' => 'Recommended for factual topics such as science and the environment.',
     'allow_community_submissions' => 'Players may submit questions',
     'allow_community_submissions_hint' => 'Submitted questions always go through moderation first.',
+    'default_selected' => 'Pre-selected when creating a room',
+    'default_selected_hint' => 'Top-level categories only. Ticked by default in the “Create a room” form; hosts can still untick them.',
+    'default_selected_tag' => 'Pre-selected',
 ];

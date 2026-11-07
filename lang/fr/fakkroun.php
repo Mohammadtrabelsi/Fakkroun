@@ -35,6 +35,7 @@ return [
             'title' => 'Salles et parties',
             'min_players' => 'Nombre minimum de joueurs pour lancer une partie',
             'max_players' => 'Nombre maximum de joueurs par salle',
+            'min_categories' => 'Nombre minimum de catégories à choisir pour créer un salon',
             'max_players_per_round' => 'Nombre maximum de joueurs par manche',
             'max_concurrent_rooms' => 'Nombre maximum de salles ouvertes simultanément',
             'default_question_count' => 'Nombre de questions par défaut',

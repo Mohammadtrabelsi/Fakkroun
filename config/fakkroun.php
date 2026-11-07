@@ -23,6 +23,8 @@ return [
         'game' => [
             'min_players' => ['type' => 'int', 'default' => 2, 'rules' => ['integer', 'min:1', 'max:1000']],
             'max_players' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:1000']],
+            // "Create a room": how many categories a host must pick (at least one).
+            'min_categories' => ['type' => 'int', 'default' => 1, 'rules' => ['integer', 'min:1', 'max:50']],
             'max_players_per_round' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:1000']],
             'max_concurrent_rooms' => ['type' => 'int', 'default' => 500, 'rules' => ['integer', 'min:1', 'max:100000']],
             'default_question_count' => ['type' => 'int', 'default' => 10, 'rules' => ['integer', 'min:1', 'max:200']],

@@ -43,6 +43,7 @@ class Category extends Model
         'requires_reference',
         'allow_community_submissions',
         'is_priority',
+        'is_default_selected',
     ];
 
     public array $translatable = [
@@ -57,6 +58,7 @@ class Category extends Model
         'requires_reference' => false,
         'allow_community_submissions' => true,
         'is_priority' => false,
+        'is_default_selected' => false,
     ];
 
     protected function casts(): array
@@ -68,6 +70,7 @@ class Category extends Model
             'requires_reference' => 'boolean',
             'allow_community_submissions' => 'boolean',
             'is_priority' => 'boolean',
+            'is_default_selected' => 'boolean',
         ];
     }
 
@@ -143,7 +146,7 @@ class Category extends Model
         return LogOptions::defaults()
             ->logOnly([
                 'name', 'description', 'slug', 'is_active', 'parent_id', 'sort_order', 'icon', 'color',
-                'validation_policy', 'requires_reference', 'allow_community_submissions',
+                'validation_policy', 'requires_reference', 'allow_community_submissions', 'is_default_selected',
             ])
             ->logOnlyDirty()
             ->useLogName('categories');

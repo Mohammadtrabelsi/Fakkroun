@@ -81,6 +81,7 @@ return [
         'play_again' => 'العب مجددًا',
     ],
     'errors' => [
+        'min_categories' => 'اختر :min فئات على الأقل.',
         'too_many_rooms' => 'هناك غرف كثيرة مفتوحة حاليًا. حاول بعد بضع دقائق.',
         'room_not_found' => 'لا توجد غرفة بهذا الرمز.',
         'room_closed' => 'هذه الغرفة مغلقة.',
@@ -98,6 +99,7 @@ return [
         'title' => 'هيا نلعب.',
         'lead' => 'جهّز غرفة لمجموعتك، أو انضم إلى غرفة مفتوحة.',
         'categories_hint' => '· اختر واحدة أو أكثر',
+        'categories_hint_min' => '· اختر :min على الأقل',
         'difficulty' => 'الصعوبة',
         'mixed' => 'مختلطة',
         'questions' => 'الأسئلة',

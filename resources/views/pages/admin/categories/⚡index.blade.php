@@ -289,6 +289,9 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
                                     <span class="tag tag-outline">Trashed</span>
                                 @else
                                     <span class="tag {{ $category->is_active ? 'tag-accent' : 'tag-neutral' }}">{{ $category->is_active ? 'Active' : 'Inactive' }}</span>
+                                    @if ($category->is_default_selected && $category->parent_id === null)
+                                        <span class="tag tag-outline">{{ __('categories.default_selected_tag') }}</span>
+                                    @endif
                                 @endif
                             </td>
                             <td class="ms-text-right">

@@ -296,6 +296,7 @@ class CategoryService
             'validation_policy' => $category->validation_policy->value,
             'requires_reference' => $category->requires_reference ? 1 : 0,
             'allow_community_submissions' => $category->allow_community_submissions ? 1 : 0,
+            'is_default_selected' => $category->is_default_selected ? 1 : 0,
             'is_active' => $category->is_active ? 1 : 0,
             'posts_count' => $category->posts_count,
         ];
@@ -318,6 +319,7 @@ class CategoryService
             'validation_policy' => ['nullable', 'in:'.implode(',', ValidationPolicy::values())],
             'requires_reference' => ['nullable', 'in:0,1,true,false,yes,no'],
             'allow_community_submissions' => ['nullable', 'in:0,1,true,false,yes,no'],
+            'is_default_selected' => ['nullable', 'in:0,1,true,false,yes,no'],
         ];
 
         foreach ($this->importLocales() as $locale) {
@@ -367,7 +369,7 @@ class CategoryService
             }
         }
 
-        foreach (['is_active', 'requires_reference', 'allow_community_submissions'] as $flag) {
+        foreach (['is_active', 'requires_reference', 'allow_community_submissions', 'is_default_selected'] as $flag) {
             if (array_key_exists($flag, $row) && $row[$flag] !== null && $row[$flag] !== '') {
                 $data[$flag] = in_array(strtolower((string) $row[$flag]), ['1', 'true', 'yes'], true);
             }
