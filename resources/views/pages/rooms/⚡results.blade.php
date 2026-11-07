@@ -65,6 +65,13 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
 
     public function playAgain(RoomService $rooms): void
     {
+        if (auth()->user()->isGuest()) {
+            // Hosting needs an account.
+            $this->redirect(route('register'));
+
+            return;
+        }
+
         try {
             $room = $rooms->replay($this->room, auth()->user());
         } catch (\DomainException|\Illuminate\Validation\ValidationException $e) {
@@ -102,8 +109,13 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
     @endif
 
     <div class="flex flex-wrap justify-center gap-3" x-data="{ copied: false }">
-        <button type="button" wire:click="playAgain" class="fk-btn fk-btn-primary min-h-14 rounded-2xl px-7 text-[17px]">{{ __('play.results2.play_again') }}</button>
-        <a href="{{ route('rooms.create') }}" wire:navigate class="fk-btn fk-btn-outline min-h-14 rounded-2xl">{{ __('play.results2.new_room') }}</a>
+        @if (auth()->user()->isGuest())
+            <p class="m-0 basis-full text-center text-ink-muted">{{ __('play.join.guest_cta') }}</p>
+            <a href="{{ route('register') }}" class="fk-btn fk-btn-primary min-h-14 rounded-2xl px-7 text-[17px]">{{ __('play.join.guest_cta_button') }}</a>
+        @else
+            <button type="button" wire:click="playAgain" class="fk-btn fk-btn-primary min-h-14 rounded-2xl px-7 text-[17px]">{{ __('play.results2.play_again') }}</button>
+            <a href="{{ route('rooms.create') }}" wire:navigate class="fk-btn fk-btn-outline min-h-14 rounded-2xl">{{ __('play.results2.new_room') }}</a>
+        @endif
         <button type="button" class="fk-btn fk-btn-outline min-h-14 rounded-2xl"
                 x-on:click="navigator.share ? navigator.share({ title: @js($room->name), text: @js(__('play.results2.share_text')), url: location.href }) : (navigator.clipboard?.writeText(location.href), copied = true)">
             <span x-show="! copied">{{ __('play.results2.share') }}</span><span x-show="copied" x-cloak>{{ __('play.results2.copied') }}</span>

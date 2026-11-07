@@ -36,6 +36,11 @@ class RoomService
     public function create(User $host, array $input): Room
     {
         $this->authorizePlay($host);
+
+        // Playing needs no account, hosting does.
+        if ($host->isGuest()) {
+            throw new AuthorizationException;
+        }
         $game = $this->settings->all()['game'];
         $scoring = $this->settings->all()['scoring'];
 

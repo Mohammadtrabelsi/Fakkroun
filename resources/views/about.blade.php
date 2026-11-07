@@ -1,6 +1,6 @@
 {{-- About page, built on the public Fakkroun layout and tokens (see welcome.blade.php). --}}
 @php
-    $playUrl = auth()->check() ? route('rooms.create') : route('register');
+    $playUrl = auth()->user()?->isGuest() === false ? route('rooms.create') : route('rooms.join');
     $check = 'M20 6 9 17l-5-5';
     $icons = [
         'leaf' => 'M11 20A7 7 0 0 1 4 13c0-6 6-9 16-9 0 10-3 16-9 16zM4 20c4-4 7-7 11-10',

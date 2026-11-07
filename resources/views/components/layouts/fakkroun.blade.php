@@ -3,7 +3,8 @@
 @php
     $locale = app()->getLocale();
     $pageTitle = $title ?? config('app.name').' — '.__('fakkroun.tagline');
-    $playUrl = auth()->check() ? route('rooms.create') : route('login');
+    // Joining and playing needs no account; hosting does.
+    $playUrl = auth()->user()?->isGuest() === false ? route('rooms.create') : route('rooms.join');
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', $locale) }}" dir="{{ config('app.available_locales.'.$locale.'.dir', 'ltr') }}">
@@ -74,6 +75,14 @@
                             <a href="{{ $playUrl }}" class="fk-btn bg-sea text-paper hover:bg-sea-dark hover:text-paper">{{ __('home.nav.play_now') }}</a>
                         </div>
                     </div>
+                    @if (auth()->user()?->isGuest())
+                        <span class="flex min-h-11 items-center px-3.5 font-semibold text-ink">{{ auth()->user()->name }}</span>
+                    @elseif (auth()->check())
+                        <a href="{{ route('dashboard') }}" class="flex min-h-11 items-center px-3.5 font-semibold text-ink no-underline">{{ auth()->user()->name }}</a>
+                    @else
+                        <a href="{{ route('login') }}" class="flex min-h-11 items-center px-3.5 font-semibold text-ink no-underline">{{ __('home.nav.sign_in') }}</a>
+                    @endif
+                    <a href="{{ $playUrl }}" class="fk-btn bg-sea text-paper hover:bg-sea-dark hover:text-paper">{{ __('home.nav.play_now') }}</a>
                 </div>
             </div>
         </header>
