@@ -1,10 +1,24 @@
 <?php
 
 return [
-    'tag' => 'Our mission',
+    'tag' => 'About Fakkroun',
     'title' => 'About',
     'hero_title' => 'Fakkroun – فكّرون',
     'hero_lead' => 'Fakkroun turns learning into friendly competition. In Tunisian Arabic, a fakkroun (فكّرون) is a turtle, and the word sounds like فكّر, “think”. Our turtle mascot takes a breath before every answer — patient, curious and at home on land and at sea.',
+
+    'hero_play' => 'Start playing',
+    'hero_more' => 'Read our story',
+    'hero_think' => 'think',
+    'nav_label' => 'On this page',
+    'nav_story' => 'Our story',
+    'nav_mission' => 'Mission',
+    'nav_audience' => 'Who it is for',
+    'nav_values' => 'Our values',
+    'nav_how' => 'How a game works',
+    'nav_rules' => 'Rules',
+    'nav_questions' => 'Questions',
+    'nav_partners' => 'Partners',
+    'nav_faq' => 'FAQ',
 
     'stat_free_value' => 'Free',
     'stat_free_label' => 'to play with friends, family or a class',
