@@ -85,7 +85,7 @@ new #[Layout('layouts::app')] #[Title('Questions')] class extends Component
     public function deleteQuestion(string $uuid, QuestionService $questions): void
     {
         $this->authorize('manage questions');
-        $questions->delete(Question::query()->where('uuid', $uuid)->firstOrFail(), auth()->user());
+        $questions->delete(app(\App\Domain\Questions\QuestionService::class)->query()->where('uuid', $uuid)->firstOrFail(), auth()->user());
         $this->toast(__('questions.admin.deleted'));
     }
 };

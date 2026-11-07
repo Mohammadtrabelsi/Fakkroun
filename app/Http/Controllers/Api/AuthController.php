@@ -76,7 +76,7 @@ class AuthController extends Controller
         $user = $this->authenticatedUser($validated);
 
         return response()->json([
-            'token' => $user->createToken($validated['device_name'])->plainTextToken,
+            'token' => $this->users->issueToken($user, $validated['device_name']),
             'token_type' => 'Bearer',
         ], 201);
     }
@@ -86,7 +86,7 @@ class AuthController extends Controller
      */
     public function revokeToken(Request $request): JsonResponse
     {
-        $request->user()?->currentAccessToken()?->delete();
+        $this->users->revokeCurrentToken($request->user());
 
         return response()->json(null, 204);
     }

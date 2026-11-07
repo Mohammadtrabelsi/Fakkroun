@@ -6,8 +6,8 @@ use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Models\Question;
 use App\Exceptions\DomainActionException;
-use App\Models\Category;
 use App\Models\User;
+use App\Services\CategoryService;
 use App\Services\PlatformSettings;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -25,6 +25,7 @@ class SubmissionService
         private readonly QuestionService $questions,
         private readonly ModerationService $moderation,
         private readonly PlatformSettings $settings,
+        private readonly CategoryService $categories,
     ) {}
 
     /** Statuses in which the author may still edit their own question. */
@@ -100,7 +101,7 @@ class SubmissionService
             throw new AuthorizationException;
         }
 
-        $category = Category::query()->find($data['category_id'] ?? null);
+        $category = $this->categories->query()->find($data['category_id'] ?? null);
 
         if ($category === null || ! $category->is_active || ! $category->allow_community_submissions) {
             throw ValidationException::withMessages(['category_id' => __('questions.errors.category_closed')]);
@@ -136,7 +137,7 @@ class SubmissionService
 
     public function remainingToday(User $player): int
     {
-        $today = Question::withTrashed()
+        $today = $this->questions->withTrashed()
             ->where('creator_id', $player->id)
             ->where('source', QuestionSource::Community->value)
             ->where('created_at', '>=', now()->startOfDay())
@@ -150,7 +151,7 @@ class SubmissionService
      */
     public function mine(User $player, int $perPage = 10): LengthAwarePaginator
     {
-        return Question::query()
+        return $this->questions->query()
             ->where('creator_id', $player->id)
             ->where('source', QuestionSource::Community->value)
             ->with(['category', 'translations'])

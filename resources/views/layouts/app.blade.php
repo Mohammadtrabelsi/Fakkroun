@@ -249,7 +249,7 @@
                     <div class="ms-flex-1"></div>
 
                     @if (auth()->user()?->canAccessBackoffice())
-                        @php($unreadCount = auth()->user()->unreadNotifications()->count())
+                        @php($unreadCount = app(\App\Services\NotificationService::class)->unreadCount(auth()->user()))
                         <a
                             href="{{ route('admin.notifications.index') }}"
                             wire:navigate
@@ -267,7 +267,7 @@
                     @endif
 
                     @unless (auth()->user()?->canAccessBackoffice())
-                        @php($unreadCount = auth()->user()->unreadNotifications()->count())
+                        @php($unreadCount = app(\App\Services\NotificationService::class)->unreadCount(auth()->user()))
                         <a href="{{ route('notifications') }}" wire:navigate class="ms-iconbtn-plain" aria-label="{{ __('play.inbox.title') }}" title="{{ __('play.inbox.title') }}">
                             <span class="ms-row-12-rel">
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>

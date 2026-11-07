@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Visit;
+use App\Services\Concerns\ManagesModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,9 @@ use Throwable;
 
 class VisitService
 {
+    /** @use ManagesModel<Visit> */
+    use ManagesModel;
+
     /** Paths that are never counted as page visits. */
     protected array $ignoredPaths = [
         'admin', 'admin/*', 'livewire/*', 'api/*', 'up', 'language/*', 'logout',
@@ -118,5 +122,10 @@ class VisitService
     {
         return $userAgent === null
             || (bool) preg_match('/bot|crawl|spider|slurp|curl|wget|python|headless|lighthouse/i', $userAgent);
+    }
+
+    protected function model(): string
+    {
+        return Visit::class;
     }
 }

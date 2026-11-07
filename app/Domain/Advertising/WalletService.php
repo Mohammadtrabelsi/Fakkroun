@@ -10,7 +10,9 @@ use App\Domain\Advertising\Models\LedgerEntry;
 use App\Domain\Advertising\Notifications\AdvertiserNotice;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
 use App\Services\PlatformSettings;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Support\Facades\DB;
 
@@ -25,7 +27,14 @@ use Illuminate\Support\Facades\DB;
  */
 class WalletService
 {
-    public function __construct(private readonly PlatformSettings $settings) {}
+    /** @use ManagesModel<AdvertiserWallet> */
+    use ManagesModel;
+
+    public function __construct(
+        private readonly PlatformSettings $settings,
+        private readonly LedgerEntryService $ledgerEntries,
+        private readonly AdvertiserService $advertisers,
+    ) {}
 
     public function currency(): string
     {
@@ -39,12 +48,12 @@ class WalletService
     public function purchase(Advertiser $advertiser, AdvertisingPackage $package, User $actor, string $paymentReference): void
     {
         if (! $actor->can('manage advertising')) {
-            throw new \Illuminate\Auth\Access\AuthorizationException;
+            throw new AuthorizationException;
         }
 
         $reference = 'purchase:'.$paymentReference;
 
-        if (LedgerEntry::query()->where('billing_reference', $reference)->exists()) {
+        if ($this->ledgerEntries->query()->where('billing_reference', $reference)->exists()) {
             throw new DomainActionException(__('advertising.errors.duplicate_payment'));
         }
 
@@ -88,7 +97,7 @@ class WalletService
      */
     public function consume(Advertiser $advertiser, CreditType $type, int $quantity, string $billingReference, array $context = []): LedgerEntry
     {
-        if ($existing = LedgerEntry::query()->where('billing_reference', $billingReference)->first()) {
+        if ($existing = $this->ledgerEntries->query()->where('billing_reference', $billingReference)->first()) {
             return $existing;
         }
 
@@ -102,7 +111,7 @@ class WalletService
             ]));
         } catch (UniqueConstraintViolationException) {
             // A concurrent worker billed the same event first: same outcome, no double charge.
-            return LedgerEntry::query()->where('billing_reference', $billingReference)->firstOrFail();
+            return $this->ledgerEntries->query()->where('billing_reference', $billingReference)->firstOrFail();
         }
 
         $this->warnIfLow($advertiser, $type, $quantity);
@@ -116,7 +125,7 @@ class WalletService
     public function adjust(Advertiser $advertiser, CreditType $type, int $quantity, User $actor, string $note): LedgerEntry
     {
         if (! $actor->can('manage advertising')) {
-            throw new \Illuminate\Auth\Access\AuthorizationException;
+            throw new AuthorizationException;
         }
 
         if ($quantity === 0 || trim($note) === '') {
@@ -136,14 +145,14 @@ class WalletService
     public function reverse(LedgerEntry $entry, User $actor, string $note): LedgerEntry
     {
         if (! $actor->can('manage advertising')) {
-            throw new \Illuminate\Auth\Access\AuthorizationException;
+            throw new AuthorizationException;
         }
 
         if ($entry->entry_type !== 'consumption') {
             throw new DomainActionException(__('advertising.errors.reverse_only_consumption'));
         }
 
-        $advertiser = Advertiser::query()->findOrFail($entry->advertiser_id);
+        $advertiser = $this->advertisers->query()->findOrFail($entry->advertiser_id);
 
         return DB::transaction(fn () => $this->move($advertiser, CreditType::from($entry->credit_type), -$entry->quantity, 'reversal', 'reverse:'.$entry->billing_reference, [
             'campaign_id' => $entry->campaign_id,
@@ -192,7 +201,7 @@ class WalletService
      */
     private function insert(array $attributes): LedgerEntry
     {
-        return LedgerEntry::query()->create($attributes + ['created_at' => now()]);
+        return $this->ledgerEntries->query()->create($attributes + ['created_at' => now()]);
     }
 
     private function warnIfLow(Advertiser $advertiser, CreditType $type, int $used): void
@@ -203,5 +212,10 @@ class WalletService
         if ($threshold > 0 && $balance < $threshold && $balance + $used >= $threshold) {
             $advertiser->user?->notify(new AdvertiserNotice('low_credits', ['type' => __('advertising.credit_types.'.$type->value), 'balance' => $balance]));
         }
+    }
+
+    protected function model(): string
+    {
+        return AdvertiserWallet::class;
     }
 }

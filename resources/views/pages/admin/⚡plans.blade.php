@@ -30,7 +30,7 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
     #[Computed]
     public function paidUsers()
     {
-        return User::query()->where('plan', PlanService::PAID)->orderByDesc('plan_expires_at')->limit(200)->get(['id', 'name', 'email', 'plan', 'plan_expires_at']);
+        return app(\App\Services\UserService::class)->query()->where('plan', PlanService::PAID)->orderByDesc('plan_expires_at')->limit(200)->get(['id', 'name', 'email', 'plan', 'plan_expires_at']);
     }
 
     public function record(PaymentService $payments): void
@@ -42,7 +42,7 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
             'amount' => ['nullable', 'integer', 'min:0', 'max:100000000'],
         ]);
 
-        $user = User::query()->where('email', $this->email)->first();
+        $user = app(\App\Services\UserService::class)->query()->where('email', $this->email)->first();
 
         if ($user === null) {
             $this->addError('email', __('billing.plans.unknown_user'));
@@ -65,7 +65,7 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
 
     public function cancel(int $id, PlanService $plans): void
     {
-        $plans->cancel(User::query()->findOrFail($id));
+        $plans->cancel(app(\App\Services\UserService::class)->query()->findOrFail($id));
         $this->toast(__('billing.plans.cancelled'));
         unset($this->paidUsers);
     }

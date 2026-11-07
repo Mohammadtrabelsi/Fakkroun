@@ -60,7 +60,7 @@ trait EditsQuestionContent
             return [];
         }
 
-        return Category::query()
+        return app(CategoryService::class)->query()
             ->where('parent_id', (int) $this->categoryId)
             ->where('is_active', true)
             ->ordered()

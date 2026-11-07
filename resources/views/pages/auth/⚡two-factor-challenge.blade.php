@@ -28,7 +28,7 @@ new #[Layout('layouts::guest')] #[Title('Two-factor authentication')] class exte
         $this->validate(['code' => ['required', 'string', 'max:64']]);
 
         $pending = session(TwoFactorService::CHALLENGE_SESSION_KEY);
-        $user = $pending ? User::query()->find($pending['id']) : null;
+        $user = $pending ? app(\App\Services\UserService::class)->query()->find($pending['id']) : null;
 
         if ($user === null) {
             $this->redirect(route('login'));

@@ -16,11 +16,11 @@ new #[Layout('components.layouts.fakkroun')] #[Title('My games')] class extends 
     #[Computed]
     public function results()
     {
-        return GameResult::query()
+        return app(\App\Domain\Gameplay\GameResultService::class)->query()
             ->where('user_id', auth()->id())
             ->whereHas('game', fn ($q) => $q->where('status', Game::COMPLETED))
             ->with(['game:id,room_id,total_questions,ended_at', 'game.room:id,ulid,name,settings'])
-            ->addSelect(['players_count' => GameResult::query()->from('game_results as gr')->selectRaw('count(*)')->whereColumn('gr.game_id', 'game_results.game_id')])
+            ->addSelect(['players_count' => app(\App\Domain\Gameplay\GameResultService::class)->query()->from('game_results as gr')->selectRaw('count(*)')->whereColumn('gr.game_id', 'game_results.game_id')])
             ->orderByDesc('id')
             ->paginate(15);
     }

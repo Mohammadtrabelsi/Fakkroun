@@ -53,7 +53,7 @@ new #[Layout('layouts::app')] #[Title('Tags')] class extends Component
     {
         $this->authorize('manage tags');
 
-        $tag = Tag::findOrFail($tagId);
+        $tag = app(\App\Services\TagService::class)->findOrFail($tagId);
         $this->editingId = $tag->id;
 
         foreach (array_keys($this->locales) as $locale) {
@@ -68,7 +68,7 @@ new #[Layout('layouts::app')] #[Title('Tags')] class extends Component
         $this->authorize('manage tags');
 
         $default = Tag::getLocale();
-        $editing = $this->editingId ? Tag::findOrFail($this->editingId) : null;
+        $editing = $this->editingId ? app(\App\Services\TagService::class)->findOrFail($this->editingId) : null;
 
         $this->validate([
             "name.{$default}" => ['required', 'string', 'max:'.TagService::MAX_LENGTH, function ($attribute, $value, $fail) use ($tags, $editing) {
@@ -99,7 +99,7 @@ new #[Layout('layouts::app')] #[Title('Tags')] class extends Component
     {
         $this->authorize('manage tags');
 
-        $tags->delete(Tag::findOrFail($tagId));
+        $tags->delete(app(\App\Services\TagService::class)->findOrFail($tagId));
 
         if ($this->editingId === $tagId) {
             $this->resetForm();

@@ -2,11 +2,12 @@
 
 namespace App\Domain\Analytics;
 
+use App\Domain\Gameplay\GameResultService;
+use App\Domain\Gameplay\GameService;
 use App\Domain\Gameplay\Models\Game;
-use App\Domain\Gameplay\Models\GameResult;
-use App\Domain\Gameplay\Models\PlayerAnswer;
-use App\Domain\Gameplay\Models\Room;
-use App\Models\User;
+use App\Domain\Gameplay\PlayerAnswerService;
+use App\Domain\Gameplay\RoomService;
+use App\Services\UserService;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -17,18 +18,26 @@ use Illuminate\Support\Facades\DB;
  */
 class DailyRollup
 {
+    public function __construct(
+        private readonly PlayerAnswerService $playerAnswers,
+        private readonly GameService $games,
+        private readonly UserService $users,
+        private readonly RoomService $rooms,
+        private readonly GameResultService $gameResults,
+    ) {}
+
     public function compute(Carbon $day): array
     {
         $start = $day->copy()->startOfDay();
         $end = $day->copy()->endOfDay();
-        $answers = PlayerAnswer::query()->whereBetween('received_at', [$start, $end]);
-        $games = Game::query()->whereBetween('started_at', [$start, $end]);
-        $completed = Game::query()->where('status', Game::COMPLETED)->whereBetween('ended_at', [$start, $end]);
+        $answers = $this->playerAnswers->query()->whereBetween('received_at', [$start, $end]);
+        $games = $this->games->query()->whereBetween('started_at', [$start, $end]);
+        $completed = $this->games->query()->where('status', Game::COMPLETED)->whereBetween('ended_at', [$start, $end]);
 
         return [
             'day' => $start->toDateString(),
-            'registrations' => User::query()->whereBetween('created_at', [$start, $end])->count(),
-            'rooms_created' => Room::query()->whereBetween('created_at', [$start, $end])->count(),
+            'registrations' => $this->users->query()->whereBetween('created_at', [$start, $end])->count(),
+            'rooms_created' => $this->rooms->query()->whereBetween('created_at', [$start, $end])->count(),
             'games_started' => (clone $games)->count(),
             'games_completed' => (clone $completed)->count(),
             'active_players' => (clone $answers)->distinct()->count('user_id'),
@@ -37,7 +46,7 @@ class DailyRollup
             'duplicate_exclusions' => (clone $answers)->where('is_duplicate_excluded', true)->count(),
             'fast_answers' => (clone $answers)->where('flagged_fast', true)->count(),
             'total_response_ms' => (int) (clone $answers)->sum('response_ms'),
-            'player_slots' => GameResult::query()->whereIn('game_id', (clone $completed)->select('id'))->count(),
+            'player_slots' => $this->gameResults->query()->whereIn('game_id', (clone $completed)->select('id'))->count(),
             'computed_at' => now(),
         ];
     }

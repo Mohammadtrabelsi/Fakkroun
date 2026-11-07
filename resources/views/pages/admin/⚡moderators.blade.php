@@ -29,7 +29,7 @@ new #[Layout('layouts::app')] #[Title('Moderators')] class extends Component
     #[Computed]
     public function moderators()
     {
-        return User::query()
+        return app(\App\Services\UserService::class)->query()
             ->role(UserRole::Moderator->value)
             ->with('moderatedCategories:id')
             ->orderBy('name')
@@ -46,7 +46,7 @@ new #[Layout('layouts::app')] #[Title('Moderators')] class extends Component
     {
         $this->authorize('manage moderators');
 
-        $moderator = User::query()->findOrFail($userId);
+        $moderator = app(\App\Services\UserService::class)->query()->findOrFail($userId);
 
         try {
             $categories->syncModeratedCategories($moderator, $this->assignments[$userId] ?? []);

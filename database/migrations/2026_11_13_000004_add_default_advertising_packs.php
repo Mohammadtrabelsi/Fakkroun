@@ -1,6 +1,6 @@
 <?php
 
-use App\Domain\Advertising\Models\AdvertisingPackage;
+use App\Domain\Advertising\AdvertisingPackageService;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('sort_order')->default(0)->after('is_custom');
         });
 
-        AdvertisingPackage::ensureDefaults();
+        app(AdvertisingPackageService::class)->ensureDefaults();
     }
 
     public function down(): void

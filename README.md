@@ -231,7 +231,11 @@ app/Services/
 ├── SystemHealthService.php# Probes for the admin health card
 ├── TwoFactorService.php   # TOTP setup, verification, recovery codes
 ├── UserService.php        # Registration, CRUD, role toggling, stats
-└── VisitService.php       # Visit recording and dashboard statistics
+├── VisitService.php       # Visit recording and dashboard statistics
+├── PartnerService.php     # Partners & sponsors, logo files
+├── NotificationService.php # A user's database notifications (list, unread count, mark read)
+├── RoleService.php / PermissionService.php # Spatie roles and permissions
+└── Concerns/ManagesModel.php # Shared data-access methods of every model service
 
 routes/
 ├── web.php                # Public, guest, authenticated, verified, and admin route groups
@@ -245,6 +249,28 @@ docs/
 ├── feature-audit-and-improvements.md  # Feature audit and improvement backlog
 └── spatie-integrations.md             # Slugs, SEO, tags, RSS, honeypot, backups, health, PDF, spreadsheets
 ```
+
+## Service Layer
+
+Every model is read and written **only through its own service**. No
+component, controller, command, job, seeder or other service calls a model
+statically (`Post::query()`, `Post::create()`, `Post::find()`, ...): it asks
+the model's service instead.
+
+- Each service declares the model it owns and uses the
+  `App\Services\Concerns\ManagesModel` trait, which provides `query()`,
+  `find()`, `findOrFail()`, `findBy()`, `all()`, `count()`, `create()`,
+  `firstOrCreate()`, `updateOrCreate()`, `update()`, `save()`, `delete()`,
+  `withTrashed()` and `onlyTrashed()`. A service overrides any of them with a
+  domain-specific version (e.g. `PostService::create()` also syncs tags).
+- App-wide models live in `app/Services` (`PostService`, `UserService`, ...);
+  domain models have their service next to them, e.g.
+  `App\Domain\Gameplay\GameService` for `Game`, or `QuestionService` for
+  `Question`.
+- Domain classes receive the services they need through the constructor;
+  Livewire components inject them into actions or resolve them with `app()`.
+- `tests/Feature/Architecture/ServiceLayerTest.php` fails when a model has no
+  service, or when code outside that service queries it directly.
 
 ## Routing Overview
 

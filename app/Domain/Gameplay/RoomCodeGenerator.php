@@ -2,8 +2,6 @@
 
 namespace App\Domain\Gameplay;
 
-use App\Domain\Gameplay\Models\Room;
-
 /**
  * Six-character join codes without look-alike characters (0/O, 1/I/L).
  */
@@ -22,7 +20,8 @@ class RoomCodeGenerator
                 $code .= self::ALPHABET[random_int(0, strlen(self::ALPHABET) - 1)];
             }
 
-            if (! Room::query()->where('code', $code)->exists()) {
+            // Resolved lazily: RoomService itself depends on this generator.
+            if (! app(RoomService::class)->query()->where('code', $code)->exists()) {
                 return $code;
             }
         }

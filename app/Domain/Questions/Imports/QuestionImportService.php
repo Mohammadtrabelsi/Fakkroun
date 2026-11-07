@@ -6,11 +6,12 @@ use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Jobs\ProcessQuestionImport;
 use App\Domain\Questions\Models\QuestionImportBatch;
-use App\Domain\Questions\Models\QuestionImportError;
+use App\Domain\Questions\QuestionImportBatchService;
+use App\Domain\Questions\QuestionImportErrorService;
 use App\Domain\Questions\QuestionService;
 use App\Exceptions\DomainActionException;
-use App\Models\Category;
 use App\Models\User;
+use App\Services\CategoryService;
 use App\Services\PlatformSettings;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
@@ -51,6 +52,9 @@ class QuestionImportService
     public function __construct(
         private readonly QuestionService $questions,
         private readonly PlatformSettings $settings,
+        private readonly QuestionImportBatchService $importBatches,
+        private readonly QuestionImportErrorService $importErrors,
+        private readonly CategoryService $categories,
     ) {}
 
     /**
@@ -179,7 +183,7 @@ class QuestionImportService
 
         $path = $file->store('question-imports', self::DISK);
 
-        $batch = QuestionImportBatch::query()->create([
+        $batch = $this->importBatches->query()->create([
             'user_id' => $user->id,
             'format' => $format,
             'original_name' => mb_substr($file->getClientOriginalName(), 0, 255),
@@ -296,7 +300,7 @@ class QuestionImportService
 
         if ($counts['stored_errors'] < self::MAX_STORED_ERRORS) {
             $counts['stored_errors']++;
-            QuestionImportError::query()->create(['import_batch_id' => $batch->id, 'row_number' => $line, 'messages' => $messages]);
+            $this->importErrors->query()->create(['import_batch_id' => $batch->id, 'row_number' => $line, 'messages' => $messages]);
         }
     }
 
@@ -471,7 +475,7 @@ class QuestionImportService
         $slug = Str::lower(trim((string) $slug));
 
         if (! array_key_exists($slug, $this->categoryIds)) {
-            $this->categoryIds[$slug] = Category::query()->where('slug', $slug)->value('id');
+            $this->categoryIds[$slug] = $this->categories->query()->where('slug', $slug)->value('id');
         }
 
         if ($this->categoryIds[$slug] === null) {

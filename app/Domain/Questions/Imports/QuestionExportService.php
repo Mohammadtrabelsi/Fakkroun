@@ -5,6 +5,7 @@ namespace App\Domain\Questions\Imports;
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\Models\QuestionTranslation;
+use App\Domain\Questions\QuestionService;
 use App\Services\SpreadsheetService;
 use Illuminate\Support\LazyCollection;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -18,7 +19,10 @@ class QuestionExportService
 {
     public const FORMATS = ['csv', 'xlsx', 'json'];
 
-    public function __construct(private readonly SpreadsheetService $spreadsheets) {}
+    public function __construct(
+        private readonly SpreadsheetService $spreadsheets,
+        private readonly QuestionService $questions,
+    ) {}
 
     /**
      * @param  array<string, mixed>  $filters  category_id?, status? (approved|published)
@@ -62,7 +66,7 @@ class QuestionExportService
             ? [$filters['status']]
             : [QuestionStatus::Approved->value, QuestionStatus::Published->value];
 
-        return Question::query()
+        return $this->questions->query()
             ->whereIn('status', $statuses)
             ->when(filled($filters['category_id'] ?? null), fn ($query) => $query->inCategories([(int) $filters['category_id']]))
             ->with(['category:id,slug', 'subcategory:id,slug', 'choices', 'translations'])

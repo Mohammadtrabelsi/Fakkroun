@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Domain\Billing\PaymentService;
-use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Console\Command;
 
 /** Grants the paid (ad-free) plan for a payment received outside the platform. */
@@ -15,7 +15,7 @@ class GrantPlan extends Command
 
     public function handle(PaymentService $payments): int
     {
-        $user = User::query()->where('email', $this->argument('email'))->first();
+        $user = app(UserService::class)->query()->where('email', $this->argument('email'))->first();
 
         if ($user === null) {
             $this->error('No user with that e-mail.');

@@ -173,16 +173,23 @@ PHP,
 namespace App\Services;
 
 use App\Models\{{ name }};
+use App\Services\Concerns\ManagesModel;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 
+/**
+ * Single entry point for reading and writing {{ name }} records.
+ */
 class {{ name }}Service
 {
+    /** @use ManagesModel<{{ name }}> */
+    use ManagesModel;
+
     public function create(array $data): {{ name }}
     {
         $data['slug'] = $this->uniqueSlug($data['slug'] ?? null, $data['name'] ?? null);
 
-        return {{ name }}::create($data);
+        return $this->query()->create($data);
     }
 
     public function update({{ name }} ${{ variable }}, array $data): {{ name }}
@@ -217,7 +224,7 @@ class {{ name }}Service
 
     public function searchPaginated(?string $search, int $perPage = 10): LengthAwarePaginator
     {
-        return {{ name }}::query()
+        return $this->query()
             ->when($search, fn ($query) => $query->where(fn ($q) => $q
                 ->where('name', 'like', "%{$search}%")
                 ->orWhere('slug', 'like', "%{$search}%")
@@ -230,8 +237,8 @@ class {{ name }}Service
     public function stats(): array
     {
         return [
-            'total' => {{ name }}::count(),
-            'trashed' => {{ name }}::onlyTrashed()->count(),
+            'total' => $this->query()->count(),
+            'trashed' => $this->onlyTrashed()->count(),
         ];
     }
 
@@ -244,7 +251,7 @@ class {{ name }}Service
         $candidate = $base;
         $suffix = 2;
 
-        while ({{ name }}::withTrashed()
+        while ($this->withTrashed()
             ->where('slug', $candidate)
             ->when($ignore, fn ($query) => $query->whereKeyNot($ignore->getKey()))
             ->exists()
@@ -254,6 +261,11 @@ class {{ name }}Service
         }
 
         return $candidate;
+    }
+
+    protected function model(): string
+    {
+        return {{ name }}::class;
     }
 }
 
@@ -341,7 +353,7 @@ class {{ name }}ModuleTest extends TestCase
         $service->delete(${{ variable }});
         $this->assertSoftDeleted(${{ variable }});
 
-        $service->restore({{ name }}::withTrashed()->findOrFail(${{ variable }}->id));
+        $service->restore($service->withTrashed()->findOrFail(${{ variable }}->id));
         $this->assertNull(${{ variable }}->fresh()->deleted_at);
     }
 }

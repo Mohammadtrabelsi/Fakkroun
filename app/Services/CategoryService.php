@@ -7,6 +7,7 @@ use App\Enums\ValidationPolicy;
 use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +16,9 @@ use Spatie\Activitylog\Models\Activity;
 
 class CategoryService
 {
+    /** @use ManagesModel<Category> */
+    use ManagesModel;
+
     /** @var array<int, string> */
     private const SORTABLE = ['name', 'created_at'];
 
@@ -418,5 +422,10 @@ class CategoryService
     protected function importLocales(): array
     {
         return array_keys(config('app.available_locales'));
+    }
+
+    protected function model(): string
+    {
+        return Category::class;
     }
 }

@@ -27,7 +27,7 @@ new #[Layout('layouts::app')] #[Title('My questions')] class extends Component
 
     public function withdraw(string $uuid, SubmissionService $submissions): void
     {
-        $question = Question::query()->where('uuid', $uuid)->firstOrFail();
+        $question = app(\App\Domain\Questions\QuestionService::class)->query()->where('uuid', $uuid)->firstOrFail();
 
         try {
             $submissions->withdraw(auth()->user(), $question);

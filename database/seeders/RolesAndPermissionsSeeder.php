@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use App\Enums\UserRole;
+use App\Services\PermissionService;
+use App\Services\RoleService;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 
 class RolesAndPermissionsSeeder extends Seeder
@@ -57,10 +57,12 @@ class RolesAndPermissionsSeeder extends Seeder
 
     public function run(): void
     {
+        $permissions = app(PermissionService::class);
+        $roles = app(RoleService::class);
         $all = collect(self::ROLE_PERMISSIONS)->flatten()->unique()->values()->all();
 
         foreach ($all as $permission) {
-            Permission::findOrCreate($permission, 'web');
+            $permissions->findOrCreate($permission, 'web');
         }
 
         // Seeders run with model events muted, which skips the cache-busting
@@ -69,9 +71,9 @@ class RolesAndPermissionsSeeder extends Seeder
         app(PermissionRegistrar::class)->forgetCachedPermissions();
 
         foreach (UserRole::cases() as $role) {
-            $permissions = $role === UserRole::Admin ? $all : self::ROLE_PERMISSIONS[$role->value];
+            $granted = $role === UserRole::Admin ? $all : self::ROLE_PERMISSIONS[$role->value];
 
-            Role::findOrCreate($role->value, 'web')->syncPermissions($permissions);
+            $roles->findOrCreate($role->value, 'web')->syncPermissions($granted);
         }
 
         app(PermissionRegistrar::class)->forgetCachedPermissions();

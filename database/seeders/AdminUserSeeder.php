@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Services\RoleService;
+use App\Services\UserService;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 
 class AdminUserSeeder extends Seeder
@@ -21,7 +21,7 @@ class AdminUserSeeder extends Seeder
 
         $email = env('ADMIN_EMAIL', 'admin@fakkroun.test');
 
-        $user = User::updateOrCreate(
+        $user = app(UserService::class)->updateOrCreate(
             ['email' => $email],
             [
                 'name' => env('ADMIN_NAME', 'Admin User'),
@@ -30,7 +30,7 @@ class AdminUserSeeder extends Seeder
             ]
         );
 
-        $user->assignRole(Role::findOrCreate('admin', 'web'));
+        $user->assignRole(app(RoleService::class)->findOrCreate('admin', 'web'));
 
         $this->command?->info("Admin user ready: {$email}");
     }

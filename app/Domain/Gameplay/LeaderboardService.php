@@ -3,10 +3,9 @@
 namespace App\Domain\Gameplay;
 
 use App\Domain\Gameplay\Models\Game;
-use App\Domain\Gameplay\Models\GameResult;
 use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
-use App\Domain\Questions\Models\Question;
+use App\Domain\Questions\QuestionService;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
@@ -19,6 +18,12 @@ use Illuminate\Support\Facades\DB;
  */
 class LeaderboardService
 {
+    public function __construct(
+        private readonly GameResultService $gameResults,
+        private readonly QuestionService $questions,
+        private readonly GameService $games,
+    ) {}
+
     /**
      * @return Collection<int, object{user_id: int, name: string, score: int, games: int, wins: int}>
      */
@@ -26,7 +31,7 @@ class LeaderboardService
     {
         $period = in_array($period, ['week', 'all'], true) ? $period : 'week';
 
-        return Cache::remember("leaderboard:{$period}:{$limit}", 60, fn () => GameResult::query()
+        return Cache::remember("leaderboard:{$period}:{$limit}", 60, fn () => $this->gameResults->query()
             ->join('games', 'games.id', '=', 'game_results.game_id')
             ->join('users', 'users.id', '=', 'game_results.user_id')
             ->where('games.status', Game::COMPLETED)
@@ -52,7 +57,7 @@ class LeaderboardService
      */
     public function stats(User $user): array
     {
-        $row = GameResult::query()
+        $row = $this->gameResults->query()
             ->join('games', 'games.id', '=', 'game_results.game_id')
             ->where('games.status', Game::COMPLETED)
             ->where('game_results.user_id', $user->id)
@@ -68,7 +73,7 @@ class LeaderboardService
             'score' => (int) $row->score,
             'best' => (int) $row->best,
             'correct_rate' => $answered > 0 ? round(100 * (int) $row->correct / $answered, 1) : 0.0,
-            'questions_live' => Question::query()->where('creator_id', $user->id)->where('source', QuestionSource::Community->value)->where('status', QuestionStatus::Published->value)->count(),
+            'questions_live' => $this->questions->query()->where('creator_id', $user->id)->where('source', QuestionSource::Community->value)->where('status', QuestionStatus::Published->value)->count(),
         ];
     }
 
@@ -81,7 +86,7 @@ class LeaderboardService
     {
         $reveal = (int) config('fakkroun.gameplay.reveal_seconds', 6);
 
-        return Game::query()
+        return $this->games->query()
             ->where('status', Game::IN_PROGRESS)
             ->whereExists(fn ($query) => $query->select(DB::raw(1))
                 ->from('game_questions')

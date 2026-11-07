@@ -5,11 +5,12 @@ namespace App\Domain\Advertising;
 use App\Domain\Advertising\Enums\CreditType;
 use App\Domain\Advertising\Models\Campaign;
 use App\Domain\Advertising\Models\SponsoredRoundDelivery;
-use App\Domain\Gameplay\Models\Game;
+use App\Domain\Gameplay\GameQuestionService;
+use App\Domain\Gameplay\GameService;
 use App\Domain\Gameplay\Models\GameQuestion;
-use App\Domain\Gameplay\Models\RoomPlayer;
-use App\Domain\Questions\Models\Question;
-use App\Domain\Questions\Models\QuestionPoolEntry;
+use App\Domain\Gameplay\RoomPlayerService;
+use App\Domain\Questions\QuestionPoolEntryService;
+use App\Domain\Questions\QuestionService;
 use Illuminate\Database\UniqueConstraintViolationException;
 
 /**
@@ -25,6 +26,12 @@ class SponsoredRoundService
     public function __construct(
         private readonly WalletService $wallets,
         private readonly CampaignService $campaigns,
+        private readonly QuestionPoolEntryService $poolEntries,
+        private readonly QuestionService $questions,
+        private readonly GameQuestionService $gameQuestions,
+        private readonly SponsoredRoundDeliveryService $sponsoredRoundDeliveries,
+        private readonly GameService $games,
+        private readonly RoomPlayerService $roomPlayers,
     ) {}
 
     /**
@@ -39,19 +46,19 @@ class SponsoredRoundService
             return null;
         }
 
-        $campaigns = Campaign::query()->running()
+        $campaigns = $this->campaigns->query()->running()
             ->whereHas('advertiser.wallets', fn ($q) => $q->where('credit_type', CreditType::SponsoredRound->value)->where('balance', '>', 0))
             ->get()
             ->filter(fn (Campaign $c) => $c->targetsAny($categoryIds, $language))
             ->shuffle();
 
         foreach ($campaigns as $campaign) {
-            $ids = QuestionPoolEntry::query()
+            $ids = $this->poolEntries->query()
                 ->where('language', $language)
                 ->where('is_sponsored', true)
                 ->when($categoryIds !== [], fn ($q) => $q->whereIn('category_id', $categoryIds))
                 ->when($difficulty !== null, fn ($q) => $q->where('difficulty', $difficulty))
-                ->whereIn('question_id', Question::query()->where('campaign_id', $campaign->id)->select('id'))
+                ->whereIn('question_id', $this->questions->query()->where('campaign_id', $campaign->id)->select('id'))
                 ->inRandomOrder()
                 ->limit($size)
                 ->pluck('question_id')
@@ -72,14 +79,14 @@ class SponsoredRoundService
     public function isRoundStart(GameQuestion $gq): bool
     {
         return $gq->sponsored_round_campaign_id !== null
-            && ! GameQuestion::query()->where('game_id', $gq->game_id)
+            && ! $this->gameQuestions->query()->where('game_id', $gq->game_id)
                 ->where('sponsored_round_campaign_id', $gq->sponsored_round_campaign_id)
                 ->where('position', '<', $gq->position)->exists();
     }
 
     public function sponsorName(?int $campaignId): ?string
     {
-        return $campaignId ? Campaign::query()->with('advertiser:id,name')->find($campaignId)?->advertiser?->name : null;
+        return $campaignId ? $this->campaigns->query()->with('advertiser:id,name')->find($campaignId)?->advertiser?->name : null;
     }
 
     /**
@@ -92,19 +99,19 @@ class SponsoredRoundService
             return null;
         }
 
-        if ($existing = SponsoredRoundDelivery::query()->where('game_id', $gq->game_id)->first()) {
+        if ($existing = $this->sponsoredRoundDeliveries->query()->where('game_id', $gq->game_id)->first()) {
             return $existing;
         }
 
-        $campaign = Campaign::query()->with('advertiser')->find($gq->sponsored_round_campaign_id);
-        $game = Game::query()->find($gq->game_id);
+        $campaign = $this->campaigns->query()->with('advertiser')->find($gq->sponsored_round_campaign_id);
+        $game = $this->games->query()->find($gq->game_id);
 
         if ($campaign === null || $game === null) {
             return null;
         }
 
         $reference = 'sponsored-round:'.$game->id;
-        $question = Question::withTrashed()->find($gq->question_id);
+        $question = $this->questions->withTrashed()->find($gq->question_id);
 
         try {
             $entry = $this->wallets->consume($campaign->advertiser, CreditType::SponsoredRound, 1, $reference, [
@@ -115,12 +122,12 @@ class SponsoredRoundService
                 'question_id' => $gq->question_id,
             ]);
 
-            return SponsoredRoundDelivery::query()->create([
+            return $this->sponsoredRoundDeliveries->query()->create([
                 'game_id' => $game->id,
                 'campaign_id' => $campaign->id,
                 'room_id' => $game->room_id,
-                'questions_count' => GameQuestion::query()->where('game_id', $game->id)->where('sponsored_round_campaign_id', $campaign->id)->count(),
-                'players_count' => RoomPlayer::query()->where('room_id', $game->room_id)->whereNull('left_at')->count(),
+                'questions_count' => $this->gameQuestions->query()->where('game_id', $game->id)->where('sponsored_round_campaign_id', $campaign->id)->count(),
+                'players_count' => $this->roomPlayers->query()->where('room_id', $game->room_id)->whereNull('left_at')->count(),
                 'language' => $gq->language,
                 'category_id' => $question?->category_id,
                 'billing_reference' => $reference,
@@ -132,7 +139,7 @@ class SponsoredRoundService
 
             return null;
         } catch (UniqueConstraintViolationException) {
-            return SponsoredRoundDelivery::query()->where('game_id', $game->id)->first();
+            return $this->sponsoredRoundDeliveries->query()->where('game_id', $game->id)->first();
         }
     }
 }

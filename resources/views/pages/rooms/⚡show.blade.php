@@ -100,7 +100,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
         $ad = null;
 
         if ($state !== null && $state['phase'] === 'reveal') {
-            $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $state['position'])->with('question')->first();
+            $gq = app(\App\Domain\Gameplay\GameQuestionService::class)->query()->where('game_id', $game->id)->where('position', $state['position'])->with('question')->first();
             $ad = $gq ? app(AdService::class)->offer($this->room, $gq, auth()->user())?->load('creative') : null;
         } elseif ($state === null && $this->room->status === RoomStatus::Waiting) {
             // Waiting room (story 16 S3): once per player and room.
@@ -114,7 +114,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
             'isHost' => $this->room->host_id === auth()->id(),
             'ready' => $rooms->isReady($this->room),
             'minPlayers' => (int) app(PlatformSettings::class)->get('game.min_players'),
-            'categoryNames' => Category::query()->whereIn('id', (array) $this->room->setting('category_ids', []))->get()->pluck('name')->all(),
+            'categoryNames' => app(\App\Services\CategoryService::class)->query()->whereIn('id', (array) $this->room->setting('category_ids', []))->get()->pluck('name')->all(),
         ];
     }
 };

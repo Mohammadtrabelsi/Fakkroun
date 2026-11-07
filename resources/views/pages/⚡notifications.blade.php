@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\NotificationService;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -14,18 +15,17 @@ new #[Layout('layouts::app')] #[Title('Notifications')] class extends Component
     #[Computed]
     public function notifications()
     {
-        return auth()->user()->notifications()->latest()->paginate(15);
+        return app(NotificationService::class)->paginateFor(auth()->user());
     }
 
-    public function markAllRead(): void
+    public function markAllRead(NotificationService $notifications): void
     {
-        auth()->user()->unreadNotifications->markAsRead();
+        $notifications->markAllAsRead(auth()->user());
     }
 
-    public function open(string $id): void
+    public function open(string $id, NotificationService $notifications): void
     {
-        $notification = auth()->user()->notifications()->whereKey($id)->firstOrFail();
-        $notification->markAsRead();
+        $notification = $notifications->markAsRead(auth()->user(), $id);
 
         $url = $notification->data['url'] ?? null;
 

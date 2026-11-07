@@ -85,7 +85,7 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
 
     public function deleteCategory(int $categoryId, CategoryService $categories): void
     {
-        $category = Category::findOrFail($categoryId);
+        $category = app(\App\Services\CategoryService::class)->findOrFail($categoryId);
         $this->authorize('delete', $category);
 
         $categories->delete($category);
@@ -95,7 +95,7 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
 
     public function restoreCategory(int $categoryId, CategoryService $categories): void
     {
-        $category = Category::onlyTrashed()->findOrFail($categoryId);
+        $category = app(\App\Services\CategoryService::class)->onlyTrashed()->findOrFail($categoryId);
         $this->authorize('restore', $category);
 
         $categories->restore($category);
@@ -105,7 +105,7 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
 
     public function forceDeleteCategory(int $categoryId, CategoryService $categories): void
     {
-        $category = Category::onlyTrashed()->findOrFail($categoryId);
+        $category = app(\App\Services\CategoryService::class)->onlyTrashed()->findOrFail($categoryId);
         $this->authorize('forceDelete', $category);
 
         $categories->forceDelete($category);
@@ -125,7 +125,7 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
         $user = auth()->user();
         $done = 0;
 
-        foreach (Category::withTrashed()->whereIn('id', $this->selected)->get() as $category) {
+        foreach (app(\App\Services\CategoryService::class)->withTrashed()->whereIn('id', $this->selected)->get() as $category) {
             if ($user->cannot($ability, $category)) {
                 continue;
             }

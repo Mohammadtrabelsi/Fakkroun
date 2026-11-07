@@ -3,6 +3,7 @@
 namespace App\Support\Notifications;
 
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Database\Eloquent\Collection;
 
 /**
@@ -20,7 +21,7 @@ class CrudNotificationRecipients
     {
         $roles = array_values(array_filter((array) config('crud_notifications.recipients.roles', [])));
 
-        return User::query()
+        return app(UserService::class)->query()
             ->when($roles !== [], fn ($query) => $query->whereHas(
                 'roles',
                 fn ($role) => $role->whereIn('name', $roles)

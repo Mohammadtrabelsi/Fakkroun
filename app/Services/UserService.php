@@ -6,6 +6,7 @@ use App\Enums\AccountStatus;
 use App\Enums\UserRole;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
@@ -14,11 +15,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Spatie\Permission\Models\Role;
 
 class UserService
 {
+    /** @use ManagesModel<User> */
+    use ManagesModel;
+
+    public function __construct(
+        private readonly RoleService $roles,
+    ) {}
+
     public function register(array $data): User
     {
         $user = User::create([
@@ -31,7 +40,7 @@ class UserService
                 : null,
         ]);
 
-        $user->assignRole(Role::findOrCreate(UserRole::default()->value, 'web'));
+        $user->assignRole($this->roles->findOrCreate(UserRole::default()->value, 'web'));
 
         event(new Registered($user));
 
@@ -270,6 +279,49 @@ class UserService
         return $user;
     }
 
+    /**
+     * Sets a new password from a reset link and rotates the remember token,
+     * so "remember me" sessions on other devices stop working.
+     */
+    public function resetPassword(User $user, string $password): User
+    {
+        $user->forceFill([
+            'password' => Hash::make($password),
+            'remember_token' => Str::random(60),
+        ])->save();
+
+        return $user;
+    }
+
+    /**
+     * Records that the user is active, at most once a minute. Quiet update:
+     * no activity-log entry and no updated_at bump.
+     */
+    public function touchLastSeen(User $user): void
+    {
+        if ($user->last_seen_at !== null && $user->last_seen_at->gte(now()->subMinute())) {
+            return;
+        }
+
+        $this->query()->whereKey($user->getKey())->update(['last_seen_at' => now()]);
+    }
+
+    /**
+     * Issues a personal API token and returns its plain-text value.
+     */
+    public function issueToken(User $user, string $deviceName): string
+    {
+        return $user->createToken($deviceName)->plainTextToken;
+    }
+
+    /**
+     * Revokes the bearer token of the current request, if it used one.
+     */
+    public function revokeCurrentToken(?User $user): void
+    {
+        $user?->currentAccessToken()?->delete();
+    }
+
     public function deleteOwnAccount(User $user): void
     {
         Auth::logout();
@@ -286,7 +338,7 @@ class UserService
 
     public function roleNames(): array
     {
-        return Role::query()
+        return $this->roles->query()
             ->orderBy('name')
             ->pluck('name')
             ->all();
@@ -378,7 +430,7 @@ class UserService
      */
     public function roleDistribution(): array
     {
-        $rows = Role::query()
+        $rows = $this->roles->query()
             ->withCount('users')
             ->orderByDesc('users_count')
             ->orderBy('name')
@@ -393,5 +445,10 @@ class UserService
         }
 
         return $rows;
+    }
+
+    protected function model(): string
+    {
+        return User::class;
     }
 }

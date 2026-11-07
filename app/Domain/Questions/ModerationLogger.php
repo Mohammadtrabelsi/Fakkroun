@@ -10,6 +10,10 @@ use App\Models\User;
 
 class ModerationLogger
 {
+    public function __construct(
+        private readonly QuestionModerationLogService $moderationLogs,
+    ) {}
+
     /**
      * @param  array<string, mixed>|null  $meta
      */
@@ -23,7 +27,7 @@ class ModerationLogger
         ?array $meta = null,
         ?QuestionTranslation $translation = null,
     ): QuestionModerationLog {
-        return QuestionModerationLog::query()->create([
+        return $this->moderationLogs->query()->create([
             'question_id' => $question->id,
             'translation_id' => $translation?->id,
             'actor_id' => $actor?->id,

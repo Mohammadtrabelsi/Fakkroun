@@ -24,6 +24,12 @@ use Illuminate\Support\Facades\DB;
  */
 class PolicyEnforcementService
 {
+    public function __construct(
+        private readonly AdvertiserService $advertisers,
+        private readonly PolicyStrikeService $policyStrikes,
+        private readonly CampaignService $campaigns,
+    ) {}
+
     public const SUSPEND_AT = 3;
 
     public function recordBreach(Campaign $campaign, User $admin, string $note): PolicyStrike
@@ -36,10 +42,10 @@ class PolicyEnforcementService
 
         $strike = DB::transaction(function () use ($campaign, $admin, $note): PolicyStrike {
             /** @var Advertiser $advertiser */
-            $advertiser = Advertiser::query()->whereKey($campaign->advertiser_id)->lockForUpdate()->firstOrFail();
-            $level = PolicyStrike::query()->where('advertiser_id', $advertiser->id)->count() + 1;
+            $advertiser = $this->advertisers->query()->whereKey($campaign->advertiser_id)->lockForUpdate()->firstOrFail();
+            $level = $this->policyStrikes->query()->where('advertiser_id', $advertiser->id)->count() + 1;
 
-            $strike = PolicyStrike::query()->create([
+            $strike = $this->policyStrikes->query()->create([
                 'advertiser_id' => $advertiser->id,
                 'campaign_id' => $campaign->id,
                 'level' => $level,
@@ -56,7 +62,7 @@ class PolicyEnforcementService
 
             if ($level >= self::SUSPEND_AT) {
                 $advertiser->forceFill(['status' => 'suspended'])->save();
-                Campaign::query()->where('advertiser_id', $advertiser->id)
+                $this->campaigns->query()->where('advertiser_id', $advertiser->id)
                     ->whereIn('status', [CampaignStatus::Active->value, CampaignStatus::PendingReview->value])
                     ->update(['status' => CampaignStatus::Paused->value]);
             }
@@ -100,7 +106,7 @@ class PolicyEnforcementService
     /** Strikes still waiting for the second-breach call. */
     public function callsDue()
     {
-        return PolicyStrike::query()->where('level', 2)->whereNull('called_at')->get();
+        return $this->policyStrikes->query()->where('level', 2)->whereNull('called_at')->get();
     }
 
     private function authorize(User $admin): void

@@ -1,9 +1,8 @@
 <?php
 
+use App\Services\UserService;
 use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Password as PasswordRule;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -45,10 +44,7 @@ new #[Layout('layouts::guest')] #[Title('Reset password')] class extends Compone
                 'password_confirmation' => $this->password_confirmation,
             ],
             function ($user) {
-                $user->forceFill([
-                    'password' => Hash::make($this->password),
-                    'remember_token' => Str::random(60),
-                ])->save();
+                app(UserService::class)->resetPassword($user, $this->password);
 
                 event(new PasswordReset($user));
             }

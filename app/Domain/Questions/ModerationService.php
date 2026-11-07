@@ -33,6 +33,8 @@ class ModerationService
         private readonly QuestionValidator $validator,
         private readonly QuestionPool $pool,
         private readonly ModerationLogger $logger,
+        private readonly QuestionTranslationService $questionTranslations,
+        private readonly QuestionService $questions,
     ) {}
 
     public function canModerate(User $user, Question $question): bool
@@ -227,7 +229,7 @@ class ModerationService
 
         return DB::transaction(function () use ($translation, $question, $actor, $status, $reason): QuestionTranslation {
             /** @var QuestionTranslation $locked */
-            $locked = QuestionTranslation::query()->whereKey($translation->id)->lockForUpdate()->firstOrFail();
+            $locked = $this->questionTranslations->query()->whereKey($translation->id)->lockForUpdate()->firstOrFail();
 
             if ($locked->status !== TranslationStatus::Pending) {
                 throw new DomainActionException(__('questions.errors.translation_not_pending'));
@@ -254,7 +256,7 @@ class ModerationService
     {
         return DB::transaction(function () use ($question, $actor, $from, $to, $action, $apply, $reason): Question {
             /** @var Question $locked */
-            $locked = Question::query()->with('category')->whereKey($question->id)->lockForUpdate()->firstOrFail();
+            $locked = $this->questions->query()->with('category')->whereKey($question->id)->lockForUpdate()->firstOrFail();
             $current = $locked->status;
 
             if (! in_array($current, $from, true)) {

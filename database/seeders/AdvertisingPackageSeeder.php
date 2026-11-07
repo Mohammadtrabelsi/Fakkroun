@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Domain\Advertising\Models\AdvertisingPackage;
+use App\Domain\Advertising\AdvertisingPackageService;
 use Illuminate\Database\Seeder;
 
 /**
@@ -13,6 +13,6 @@ class AdvertisingPackageSeeder extends Seeder
 {
     public function run(): void
     {
-        AdvertisingPackage::ensureDefaults();
+        app(AdvertisingPackageService::class)->ensureDefaults();
     }
 }

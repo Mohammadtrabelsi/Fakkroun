@@ -53,7 +53,7 @@ new #[Layout('layouts::app')] #[Title('Moderation')] class extends Component
 
     public function decide(int $questionId, string $action, ModerationService $moderation): void
     {
-        $question = Question::query()->findOrFail($questionId);
+        $question = app(\App\Domain\Questions\QuestionService::class)->query()->findOrFail($questionId);
         $user = auth()->user();
 
         $this->attempt(fn () => match ($action) {
@@ -67,7 +67,7 @@ new #[Layout('layouts::app')] #[Title('Moderation')] class extends Component
 
     public function decideTranslation(int $translationId, bool $approve, ModerationService $moderation): void
     {
-        $translation = QuestionTranslation::query()->findOrFail($translationId);
+        $translation = app(\App\Domain\Questions\QuestionTranslationService::class)->query()->findOrFail($translationId);
         $user = auth()->user();
 
         $this->attempt(fn () => $approve
@@ -77,7 +77,7 @@ new #[Layout('layouts::app')] #[Title('Moderation')] class extends Component
 
     public function resolveReport(int $reportId, bool $dismiss, ReportService $reports): void
     {
-        $report = QuestionReport::query()->findOrFail($reportId);
+        $report = app(\App\Domain\Questions\ReportService::class)->query()->findOrFail($reportId);
 
         $this->attempt(fn () => $reports->resolve($report, auth()->user(), $dismiss ? ReportStatus::Dismissed : ReportStatus::Resolved));
     }

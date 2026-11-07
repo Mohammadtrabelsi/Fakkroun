@@ -43,7 +43,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Write a question')] class 
 
     private function editableQuestion(): ?Question
     {
-        $question = Question::query()->where('uuid', $this->editing)->first();
+        $question = app(\App\Domain\Questions\QuestionService::class)->query()->where('uuid', $this->editing)->first();
 
         try {
             return $question ? app(SubmissionService::class)->editable(auth()->user(), $question) : null;
