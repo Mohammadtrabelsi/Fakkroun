@@ -170,6 +170,12 @@ ADMIN_PASSWORD=change-me-now
 
 Ten additional random users are created with the same `password`. Their details come from `UserFactory`.
 
+`OwnerUserSeeder` creates a verified player account for `mohammad.trabelsi@gmail.com`. It is not part of any seeder tier; run it on its own. Set `OWNER_PASSWORD` to choose the password, or leave it unset to have a random one generated and printed once. Re-running keeps the existing password unless `OWNER_PASSWORD` is set.
+
+```bash
+OWNER_PASSWORD='choose-a-strong-password' php artisan db:seed --class=OwnerUserSeeder --force
+```
+
 ## Project Structure
 
 ```
