@@ -2,8 +2,10 @@
 
 use App\Models\Post;
 use App\Services\CategoryService;
+use App\Services\PdfService;
 use App\Services\PostService;
 use App\Services\SettingService;
+use App\Services\SpreadsheetService;
 use App\Services\TagService;
 use App\Support\Livewire\InteractsWithToasts;
 use Livewire\Attributes\Computed;
@@ -12,6 +14,7 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
 {
@@ -92,6 +95,36 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
     public function updatedCategory(): void
     {
         $this->resetPage();
+    }
+
+    /**
+     * Spreadsheet download honouring the current filters (q, status, category, tag).
+     */
+    public function export(string $format, PostService $posts, SpreadsheetService $spreadsheets): StreamedResponse
+    {
+        $this->authorize('viewAny', Post::class);
+
+        $rows = $posts->exportRows(trim($this->search) ?: null, [
+            'status' => in_array($this->status, [Post::STATUS_DRAFT, Post::STATUS_PUBLISHED], true) ? $this->status : null,
+            'trashed' => $this->status === 'trashed' ? 'only' : null,
+            'category_id' => ctype_digit($this->category) ? (int) $this->category : null,
+            'tag' => ctype_digit($this->tag) ? (int) $this->tag : null,
+        ]);
+
+        return $spreadsheets->download($rows, 'posts', $format);
+    }
+
+    /**
+     * The post as a PDF, generated on the fly and never stored.
+     */
+    public function downloadPdf(int $postId, PdfService $pdf): StreamedResponse
+    {
+        $post = Post::findOrFail($postId);
+        $this->authorize('view', $post);
+
+        $post->loadMissing(['author', 'category', 'tags']);
+
+        return $pdf->download($pdf->document('pdf.post', ['post' => $post], 'post-'.$post->slug));
     }
 
     public function deletePost(int $postId, PostService $posts): void
@@ -218,11 +251,12 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
         </div>
         <div class="ms-row-10 ms-wrap">
             @foreach (config('spreadsheets.export_formats') as $format)
-                <a
-                    href="{{ route('admin.posts.export', ['format' => $format] + array_filter(['q' => $search, 'status' => $status !== 'all' ? $status : null, 'category' => $category, 'tag' => $tag])) }}"
+                <button
+                    type="button"
+                    wire:click="export('{{ $format }}')"
                     class="btn"
                     title="{{ __('imports.export_filtered') }}"
-                >{{ __('imports.export', ['format' => strtoupper($format)]) }}</a>
+                >{{ __('imports.export', ['format' => strtoupper($format)]) }}</button>
             @endforeach
         <a href="{{ route('admin.posts.create') }}" wire:navigate class="btn btn-primary">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" d="M12 5v14M5 12h14"></path></svg>
@@ -357,7 +391,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
                                             <a href="{{ route('admin.posts.edit', $post) }}" wire:navigate class="btn ms-btn-sm">Edit</a>
                                         @endcan
                                         @can('view', $post)
-                                            <a href="{{ route('admin.posts.pdf', $post) }}" class="btn ms-btn-sm" title="{{ __('pdf.download') }}">PDF</a>
+                                            <button type="button" wire:click="downloadPdf({{ $post->id }})" class="btn ms-btn-sm" title="{{ __('pdf.download') }}">PDF</button>
                                         @endcan
                                         @can('delete', $post)
                                             <button

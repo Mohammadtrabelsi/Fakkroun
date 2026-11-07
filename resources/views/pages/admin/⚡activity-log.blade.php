@@ -8,6 +8,7 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 new #[Layout('layouts::app')] #[Title('Activity Log')] class extends Component
 {
@@ -22,6 +23,16 @@ new #[Layout('layouts::app')] #[Title('Activity Log')] class extends Component
     public function mount(): void
     {
         $this->authorize('view activity log');
+    }
+
+    /**
+     * Download of the log with the current search and log-name filters.
+     */
+    public function export(string $format): StreamedResponse
+    {
+        $this->authorize('view activity log');
+
+        return app(ActivityLogService::class)->export($format, trim($this->search), trim($this->logName));
     }
 
     public function updatedSearch(): void
@@ -83,8 +94,8 @@ new #[Layout('layouts::app')] #[Title('Activity Log')] class extends Component
         </div>
 
         <div class="ms-row-10">
-            <a href="{{ route('admin.activity-log.export', ['format' => 'csv', 'q' => $search, 'log' => $logName]) }}" class="btn ms-btn-sm">Export CSV</a>
-            <a href="{{ route('admin.activity-log.export', ['format' => 'json', 'q' => $search, 'log' => $logName]) }}" class="btn ms-btn-sm">Export JSON</a>
+            <button type="button" wire:click="export('csv')" class="btn ms-btn-sm">Export CSV</button>
+            <button type="button" wire:click="export('json')" class="btn ms-btn-sm">Export JSON</button>
         </div>
 
         <div class="ms-search-field-right">

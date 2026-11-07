@@ -11,6 +11,7 @@ use App\Enums\UserRole;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
+use Livewire\Livewire;
 use Spatie\SimpleExcel\SimpleExcelReader;
 
 class QuestionImportExportTest extends QuestionBankTestCase
@@ -117,9 +118,9 @@ class QuestionImportExportTest extends QuestionBankTestCase
             ->create(['category_id' => $this->category->id]);
         Question::factory()->pending()->create(['category_id' => $this->category->id]);
 
-        $response = $this->actingAs($this->admin)->get(route('admin.questions.export', 'csv'))->assertOk();
+        $component = Livewire::actingAs($this->admin)->test('pages::admin.questions.index')->call('export', 'csv');
         $path = tempnam(sys_get_temp_dir(), 'x').'.csv';
-        file_put_contents($path, $response->streamedContent());
+        file_put_contents($path, $this->downloadedContent($component));
         $rows = SimpleExcelReader::create($path)->getRows()->all();
 
         $this->assertCount(1, $rows);
@@ -127,7 +128,7 @@ class QuestionImportExportTest extends QuestionBankTestCase
         $this->assertSame(1, (int) $rows[0]['correct']);
         $this->assertSame('Libyque', $rows[0]['choice_4_fr']);
 
-        $this->actingAs($this->admin)->get(route('admin.questions.export', 'json'))->assertOk();
-        $this->actingAs($this->userWithRole(UserRole::Player))->get(route('admin.questions.export', 'csv'))->assertForbidden();
+        Livewire::actingAs($this->admin)->test('pages::admin.questions.import')->call('export', 'json')->assertFileDownloaded();
+        Livewire::actingAs($this->userWithRole(UserRole::Player))->test('pages::admin.questions.index')->assertForbidden();
     }
 }

@@ -120,13 +120,23 @@ class InvoicesTest extends TestCase
         Pdf::fake();
         $invoice = $this->buy('CASH-6');
 
-        $this->actingAs($this->owner)->get(route('advertiser.invoices.pdf', $invoice))->assertOk();
+        Livewire::actingAs($this->owner)->test('pages::advertiser.dashboard')
+            ->call('downloadInvoice', $invoice->id)
+            ->assertFileDownloaded();
         Pdf::assertRespondedWithPdf(fn (PdfBuilder $pdf) => $pdf->viewName === 'pdf.invoice' && $pdf->isDownload() && $pdf->contains([$invoice->number, 'Green School']));
 
-        $this->actingAs($this->admin)->get(route('advertiser.invoices.pdf', $invoice))->assertOk();
+        Livewire::actingAs($this->admin)->test('pages::admin.advertising')
+            ->call('downloadInvoice', $invoice->id)
+            ->assertFileDownloaded();
 
+        // Another advertiser only ever reaches their own invoices.
         $stranger = tap(User::factory()->create(), fn (User $u) => $u->assignRole(UserRole::Advertiser->value));
-        $this->actingAs($stranger)->get(route('advertiser.invoices.pdf', $invoice))->assertForbidden();
+        Advertiser::query()->create(['user_id' => $stranger->id, 'name' => 'Other Co', 'contact_email' => 'other@example.org']);
+        Livewire::actingAs($stranger)->test('pages::advertiser.dashboard')
+            ->call('downloadInvoice', $invoice->id)
+            ->assertNotFound();
+        $this->expectException(\Symfony\Component\HttpKernel\Exception\HttpException::class);
+        app(\App\Domain\Advertising\AdvertisingDocuments::class)->invoice($invoice, $stranger);
     }
 
     public function test_statement_pdfs(): void
@@ -134,10 +144,15 @@ class InvoicesTest extends TestCase
         Pdf::fake();
         $this->buy('CASH-7');
 
-        $this->actingAs($this->owner)->get(route('advertiser.statements.pdf', [$this->advertiser, now()->format('Y-m')]))->assertOk();
+        Livewire::actingAs($this->owner)->test('pages::advertiser.dashboard')
+            ->call('downloadStatement')
+            ->assertFileDownloaded();
         Pdf::assertRespondedWithPdf(fn (PdfBuilder $pdf) => $pdf->viewName === 'pdf.statement');
 
-        $this->actingAs($this->owner)->get('/advertiser/'.$this->advertiser->id.'/statements/2026-13/pdf')->assertNotFound();
+        Livewire::actingAs($this->owner)->test('pages::advertiser.dashboard')
+            ->set('statementMonth', '2026-13')
+            ->call('downloadStatement')
+            ->assertNotFound();
     }
 
     public function test_admins_cancel_invoices_from_the_advertising_screen(): void
@@ -160,6 +175,6 @@ class InvoicesTest extends TestCase
         $this->actingAs($this->owner)->get(route('advertiser.dashboard'))
             ->assertOk()
             ->assertSee($invoice->number)
-            ->assertSee(route('advertiser.invoices.pdf', $invoice), false);
+            ->assertSee('downloadInvoice('.$invoice->id.')', false);
     }
 }

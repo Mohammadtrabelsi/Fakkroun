@@ -1,11 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
-
 use App\Domain\Advertising\Models\AdClick;
 use App\Domain\Advertising\Models\AdDelivery;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use Livewire\Component;
 
 /**
  * "Learn more" (story 16 S2/S5): records one click per delivery, then sends
@@ -13,16 +10,16 @@ use Illuminate\Http\Request;
  * ad was delivered to is counted; anyone else is just redirected. Clicks are
  * never billed.
  */
-class AdClickController extends Controller
+new class extends Component
 {
-    public function __invoke(Request $request, string $token): RedirectResponse
+    public function mount(string $token): void
     {
         $delivery = AdDelivery::query()->with('creative')->where('token', $token)->first();
         $url = $delivery?->creative?->link_url;
 
         abort_if($delivery === null || ! is_string($url) || ! str_starts_with($url, 'https://'), 404);
 
-        if ($request->user()?->id === $delivery->player_id) {
+        if (auth()->id() === $delivery->player_id) {
             AdClick::query()->insertOrIgnore([
                 'delivery_id' => $delivery->id,
                 'campaign_id' => $delivery->campaign_id,
@@ -33,6 +30,9 @@ class AdClickController extends Controller
             ]);
         }
 
-        return redirect()->away($url);
+        $this->redirect($url);
     }
-}
+};
+?>
+
+<div></div>

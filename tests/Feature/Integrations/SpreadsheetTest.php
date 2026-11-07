@@ -49,12 +49,14 @@ class SpreadsheetTest extends TestCase
         app(TagService::class)->syncTo($tagged, ['Csv']);
         Post::factory()->create(['title' => ['en' => 'Draft post'], 'status' => Post::STATUS_DRAFT]);
 
-        $response = $this->actingAs($this->admin)->get(route('admin.posts.export', ['format' => 'csv', 'status' => 'published']));
+        $component = Livewire::actingAs($this->admin)->test('pages::admin.posts.index')
+            ->set('status', 'published')
+            ->call('export', 'csv');
 
-        $response->assertOk()->assertHeader('Content-Type', 'text/csv; charset=UTF-8');
-        $this->assertStringContainsString('attachment; filename=posts-', $response->headers->get('Content-Disposition'));
+        $this->assertSame('text/csv; charset=UTF-8', $component->effects['download']['contentType']);
+        $this->assertStringStartsWith('posts-', $component->effects['download']['name']);
 
-        $rows = $this->csvRows($response->streamedContent());
+        $rows = $this->csvRows($this->downloadedContent($component));
         $this->assertCount(1, $rows);
         $this->assertSame('Exported post', $rows[0]['title_en']);
         $this->assertSame('Csv', $rows[0]['tags']);
@@ -65,11 +67,10 @@ class SpreadsheetTest extends TestCase
     {
         Category::factory()->count(3)->create();
 
-        $response = $this->actingAs($this->admin)->get(route('admin.categories.export', 'xlsx'));
-        $response->assertOk();
+        $component = Livewire::actingAs($this->admin)->test('pages::admin.categories.index')->call('export', 'xlsx');
 
         $path = tempnam(sys_get_temp_dir(), 'x').'.xlsx';
-        file_put_contents($path, $response->streamedContent());
+        file_put_contents($path, $this->downloadedContent($component));
 
         $this->assertStringStartsWith('PK', file_get_contents($path));
         $this->assertCount(3, SimpleExcelReader::create($path)->getRows()->all());
@@ -79,7 +80,9 @@ class SpreadsheetTest extends TestCase
     {
         Post::factory()->create(['title' => ['en' => '=HYPERLINK("http://evil.test","click")']]);
 
-        $rows = $this->csvRows($this->actingAs($this->admin)->get(route('admin.posts.export', 'csv'))->streamedContent());
+        $rows = $this->csvRows($this->downloadedContent(
+            Livewire::actingAs($this->admin)->test('pages::admin.posts.index')->call('export', 'csv'),
+        ));
 
         $this->assertStringStartsWith("'=", $rows[0]['title_en']);
         $this->assertSame("'@x", app(SpreadsheetService::class)->sanitizeCell('@x'));
@@ -88,19 +91,19 @@ class SpreadsheetTest extends TestCase
 
     public function test_exports_require_authorization_and_a_known_format(): void
     {
-        $this->get(route('admin.posts.export', 'csv'))->assertRedirect('/login');
-        $this->actingAs(User::factory()->create())->get(route('admin.categories.export', 'csv'))->assertForbidden();
-        $this->actingAs($this->admin)->get('/admin/posts/export/pdf')->assertNotFound();
+        $this->get(route('admin.posts.index'))->assertRedirect('/login');
+        Livewire::actingAs(User::factory()->create())->test('pages::admin.categories.index')->assertForbidden();
+        Livewire::actingAs($this->admin)->test('pages::admin.posts.index')->call('export', 'pdf')->assertNotFound();
 
         config(['spreadsheets.export_formats' => ['csv']]);
-        $this->actingAs($this->admin)->get(route('admin.posts.export', 'xlsx'))->assertNotFound();
+        Livewire::actingAs($this->admin)->test('pages::admin.posts.index')->call('export', 'xlsx')->assertNotFound();
     }
 
     public function test_category_export_can_be_imported_back(): void
     {
         Category::factory()->create(['name' => ['en' => 'Roundtrip', 'fr' => 'Aller-retour'], 'slug' => 'roundtrip']);
 
-        $csv = $this->actingAs($this->admin)->get(route('admin.categories.export', 'csv'))->streamedContent();
+        $csv = $this->downloadedContent(Livewire::actingAs($this->admin)->test('pages::admin.categories.import')->call('export', 'csv'));
 
         Livewire::actingAs($this->admin)->test('pages::admin.categories.import')
             ->set('file', $this->csvUpload($csv))

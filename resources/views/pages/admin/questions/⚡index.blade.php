@@ -3,6 +3,7 @@
 use App\Domain\Questions\Enums\Difficulty;
 use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
+use App\Domain\Questions\Imports\QuestionExportService;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\QuestionQueries;
 use App\Domain\Questions\QuestionService;
@@ -14,6 +15,7 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 new #[Layout('layouts::app')] #[Title('Questions')] class extends Component
 {
@@ -37,6 +39,13 @@ new #[Layout('layouts::app')] #[Title('Questions')] class extends Component
 
     #[Url(history: true)]
     public string $source = '';
+
+    public function export(string $format, QuestionExportService $exports): StreamedResponse
+    {
+        $this->authorize('manage questions');
+
+        return $exports->download($format);
+    }
 
     public function mount(): void
     {
@@ -90,7 +99,7 @@ new #[Layout('layouts::app')] #[Title('Questions')] class extends Component
         </div>
         <div class="ms-row-10 ms-wrap">
             @foreach (['csv', 'xlsx', 'json'] as $format)
-                <a href="{{ route('admin.questions.export', $format) }}" class="btn">{{ __('questions.admin.export', ['format' => strtoupper($format)]) }}</a>
+                <button type="button" wire:click="export('{{ $format }}')" class="btn">{{ __('questions.admin.export', ['format' => strtoupper($format)]) }}</button>
             @endforeach
             <a href="{{ route('admin.questions.import') }}" wire:navigate class="btn">{{ __('questions.import.title') }}</a>
             <a href="{{ route('admin.questions.create') }}" wire:navigate class="btn btn-primary">{{ __('questions.admin.new') }}</a>

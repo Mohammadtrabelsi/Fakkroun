@@ -1,15 +1,7 @@
 <?php
 
-use App\Http\Controllers\ActivityLogExportController;
-use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ExportController;
-use App\Http\Controllers\LocaleController;
-use App\Http\Controllers\PostPdfController;
-use App\Http\Controllers\QuestionExportController;
-use App\Http\Controllers\RobotsController;
-use App\Http\Controllers\RoomInvitationController;
 use App\Http\Middleware\RequireHealthToken;
+use App\Services\SitemapService;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckJsonResultsController;
@@ -18,13 +10,24 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/robots.txt', RobotsController::class)->name('robots');
+// Served dynamically so the Sitemap line always uses the configured APP_URL
+// instead of a domain hardcoded into a static file.
+Route::get('/robots.txt', function (SitemapService $sitemap) {
+    $lines = ['User-agent: *', 'Disallow:'];
+
+    if ($url = $sitemap->publicUrl()) {
+        $lines[] = '';
+        $lines[] = "Sitemap: {$url}";
+    }
+
+    return response(implode("\n", $lines)."\n", 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
+})->name('robots');
 
 Route::view('/about', 'about')->name('about');
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/docs', 'docs')->name('docs');
-Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::livewire('/blog', 'pages::blog.index')->name('blog');
+Route::livewire('/blog/{slug}', 'pages::blog.show')->name('blog.show');
 
 // RSS feed(s) from config/feed.php ("feeds.blog" → /feed).
 if (config('feed.enabled')) {
@@ -37,7 +40,7 @@ Route::get('/health.json', HealthCheckJsonResultsController::class)
     ->middleware([RequireHealthToken::class, 'throttle:30,1'])
     ->name('health.json');
 
-Route::get('/language/{locale}', LocaleController::class)->name('locale.switch');
+Route::livewire('/language/{locale}', 'pages::locale')->name('locale.switch');
 
 Route::livewire('/leaderboard', 'pages::leaderboard')->name('leaderboard');
 
@@ -76,7 +79,7 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/rooms/{room}', 'pages::rooms.show')->name('rooms.show');
             Route::livewire('/rooms/{room}/results', 'pages::rooms.results')->name('rooms.results');
             // Shareable invitation link (spec §12.2); guests are sent to log in first.
-            Route::get('/join/{code}', RoomInvitationController::class)
+            Route::livewire('/join/{code}', 'pages::rooms.invitation')
                 ->middleware('throttle:30,1')
                 ->where('code', '[A-Za-z0-9-]{4,12}')
                 ->name('rooms.invitation');
@@ -87,17 +90,10 @@ Route::middleware('auth')->group(function () {
             ->middleware('can:manage own campaigns')
             ->name('advertiser.dashboard');
         // "Learn more" on an ad: counts one click per delivery, then leaves the site.
-        Route::get('/ads/click/{token}', \App\Http\Controllers\AdClickController::class)
+        Route::livewire('/ads/click/{token}', 'pages::ads.click')
             ->middleware('throttle:60,1')
             ->where('token', '[A-Za-z0-9]{48}')
             ->name('ads.click');
-
-        // Invoice and statement PDFs: the owning advertiser or an advertising manager.
-        Route::get('/advertiser/invoices/{invoice}/pdf', [\App\Http\Controllers\AdvertisingDocumentController::class, 'invoice'])
-            ->name('advertiser.invoices.pdf');
-        Route::get('/advertiser/{advertiser}/statements/{month}/pdf', [\App\Http\Controllers\AdvertisingDocumentController::class, 'statement'])
-            ->where('month', '\d{4}-\d{2}')
-            ->name('advertiser.statements.pdf');
 
         Route::middleware('can:submit questions')->group(function () {
             Route::livewire('/community/submit', 'pages::questions.submit')->name('questions.submit');
@@ -120,10 +116,6 @@ Route::middleware('auth')->group(function () {
                 ->middleware('can:manage users')
                 ->name('admin.users.edit');
 
-            Route::get('/admin/categories/export/{format}', [ExportController::class, 'categories'])
-                ->middleware('can:manage categories')
-                ->where('format', 'csv|xlsx')
-                ->name('admin.categories.export');
             Route::livewire('/admin/categories/import', 'pages::admin.categories.import')
                 ->middleware('can:manage categories')
                 ->name('admin.categories.import');
@@ -137,13 +129,6 @@ Route::middleware('auth')->group(function () {
                 ->middleware('can:manage categories')
                 ->name('admin.categories.edit');
 
-            Route::get('/admin/posts/export/{format}', [ExportController::class, 'posts'])
-                ->middleware('can:manage posts')
-                ->where('format', 'csv|xlsx')
-                ->name('admin.posts.export');
-            Route::get('/admin/posts/{post}/pdf', PostPdfController::class)
-                ->middleware('can:manage posts')
-                ->name('admin.posts.pdf');
             Route::livewire('/admin/posts', 'pages::admin.posts.index')
                 ->middleware('can:manage posts')
                 ->name('admin.posts.index');
@@ -171,18 +156,10 @@ Route::middleware('auth')->group(function () {
             Route::livewire('/admin/activity-log', 'pages::admin.activity-log')
                 ->middleware('can:view activity log')
                 ->name('admin.activity-log');
-            Route::get('/admin/activity-log/export/{format}', ActivityLogExportController::class)
-                ->middleware('can:view activity log')
-                ->where('format', 'csv|json')
-                ->name('admin.activity-log.export');
             Route::livewire('/admin/settings', 'pages::admin.settings')
                 ->middleware('can:manage settings')
                 ->name('admin.settings');
 
-            Route::get('/admin/questions/export/{format}', QuestionExportController::class)
-                ->middleware('can:manage questions')
-                ->where('format', 'csv|xlsx|json')
-                ->name('admin.questions.export');
             Route::livewire('/admin/questions/import', 'pages::admin.questions.import')
                 ->middleware('can:manage questions')
                 ->name('admin.questions.import');
@@ -222,6 +199,4 @@ Route::middleware('auth')->group(function () {
                 ->name('admin.moderators');
         });
     });
-
-    Route::post('/logout', LogoutController::class)->name('logout');
 });

@@ -157,8 +157,9 @@ class AuthTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $this->actingAs($user)
-            ->post('/logout')
+        Livewire::actingAs($user)
+            ->test('logout')
+            ->call('logout')
             ->assertRedirect('/');
 
         $this->assertGuest();

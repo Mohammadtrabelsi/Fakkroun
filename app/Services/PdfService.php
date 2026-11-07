@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Spatie\LaravelPdf\Enums\Unit;
 use Spatie\LaravelPdf\Facades\Pdf;
 use Spatie\LaravelPdf\PdfBuilder;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
  * Single entry point for generated PDF documents (spatie/laravel-pdf).
@@ -25,8 +26,8 @@ class PdfService
     public function __construct(private readonly SettingService $settings) {}
 
     /**
-     * A PDF ready to be returned from a controller (Responsable). Use
-     * ->inline() on the result to preview instead of download.
+     * A PDF builder for the given view. Hand it to download() to return it
+     * from a Livewire action.
      *
      * @param  array<string, mixed>  $data
      */
@@ -45,6 +46,22 @@ class PdfService
                 Unit::Millimeter,
             )
             ->name($this->filename($filename));
+    }
+
+    /**
+     * The rendered document as a download a Livewire action can return.
+     * Never cached, since documents may hold private data.
+     */
+    public function download(PdfBuilder $document): StreamedResponse
+    {
+        $content = $document->download()->toResponse(request())->getContent();
+
+        return response()->streamDownload(function () use ($content): void {
+            echo $content;
+        }, $document->downloadName, [
+            'Content-Type' => 'application/pdf',
+            'Cache-Control' => 'private, no-store',
+        ]);
     }
 
     /**

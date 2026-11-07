@@ -36,7 +36,7 @@ class DashboardStatsTest extends TestCase
 
         $this->actingAs($admin)->get('/admin/activity-log')->assertOk();
         $this->withHeader('User-Agent', 'Googlebot/2.1')->get('/docs');
-        $this->post('/logout');
+        $this->post('/docs');
 
         $this->assertSame(0, Visit::count());
     }

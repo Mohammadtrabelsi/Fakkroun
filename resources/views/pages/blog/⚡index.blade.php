@@ -1,9 +1,60 @@
-<x-layouts.marketing
-    :title="config('app.name').' — '.__('blog.title').($tag ? ' — #'.$tag->name : '')"
-    :description="__('blog.description')"
-    :canonical="$canonical"
-    :structured-data="$structuredData"
->
+<?php
+
+use App\Models\Tag;
+use App\Services\PostService;
+use App\Services\StructuredDataService;
+use App\Services\TagService;
+use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Url;
+use Livewire\Component;
+
+/**
+ * Public reader-facing blog: published posts, searchable and filterable by tag.
+ * Search and tag filters are plain GET query strings (?q=, ?tag=), so links
+ * the search form and the (crawlable) pagination links keep working without
+ * JavaScript.
+ */
+new class extends Component
+{
+    #[Url(except: '')]
+    public string $q = '';
+
+    #[Url(as: 'tag', except: '')]
+    public string $tagSlug = '';
+
+    public function mount(): void
+    {
+        // An unknown tag is a dead link, not an empty listing.
+        abort_if($this->tagSlug !== '' && $this->tag() === null, 404);
+    }
+
+    private function tag(): ?Tag
+    {
+        $slug = trim($this->tagSlug);
+
+        return $slug === '' ? null : app(TagService::class)->findBySlug($slug);
+    }
+
+    public function render(): View
+    {
+        $tag = $this->tag();
+        $search = trim($this->q) ?: null;
+
+        return $this->view([
+            'posts' => app(PostService::class)->publishedPaginated($search, tag: $tag),
+            'search' => $search,
+            'tag' => $tag,
+        ])->layout('components.layouts.marketing', [
+            'title' => config('app.name').' — '.__('blog.title').($tag ? ' — #'.$tag->name : ''),
+            'description' => __('blog.description'),
+            'canonical' => $tag ? route('blog', ['tag' => trim($this->tagSlug)]) : route('blog'),
+            'structuredData' => app(StructuredDataService::class)->forPage([__('marketing.blog') => route('blog')]),
+        ]);
+    }
+};
+?>
+
+<div>
     @push('styles')
         <style>
             .page-head { padding: 72px 48px 40px; }
@@ -32,7 +83,7 @@
         <form method="GET" action="{{ route('blog') }}" class="blog-search">
             <input type="search" name="q" value="{{ $search }}" class="input" placeholder="{{ __('blog.search_placeholder') }}" aria-label="{{ __('blog.search_placeholder') }}">
             @if ($tag)
-                <input type="hidden" name="tag" value="{{ request('tag') }}">
+                <input type="hidden" name="tag" value="{{ $tagSlug }}">
             @endif
             <button type="submit" class="btn">{{ __('blog.search') }}</button>
         </form>
@@ -78,4 +129,4 @@
             {{ $posts->links() }}
         </div>
     </div>
-</x-layouts.marketing>
+</div>

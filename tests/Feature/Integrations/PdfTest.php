@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Services\PdfService;
 use Database\Seeders\RolesAndPermissionsSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Livewire\Livewire;
 use Spatie\LaravelPdf\Facades\Pdf;
 use Spatie\LaravelPdf\PdfBuilder;
 use Tests\TestCase;
@@ -28,7 +29,7 @@ class PdfTest extends TestCase
         $admin = User::factory()->admin()->create();
         $post = Post::factory()->create(['title' => ['en' => 'Quarterly update'], 'body' => ['en' => "Line one\nLine two"]]);
 
-        $this->actingAs($admin)->get(route('admin.posts.pdf', $post))->assertOk();
+        Livewire::actingAs($admin)->test('pages::admin.posts.index')->call('downloadPdf', $post->id)->assertFileDownloaded('post-'.$post->slug.'.pdf');
 
         Pdf::assertRespondedWithPdf(function (PdfBuilder $pdf) use ($post) {
             return $pdf->viewName === 'pdf.post'
@@ -38,33 +39,27 @@ class PdfTest extends TestCase
         });
     }
 
-    public function test_preview_is_served_inline(): void
-    {
-        Pdf::fake();
-        $post = Post::factory()->create();
-
-        $this->actingAs(User::factory()->admin()->create())->get(route('admin.posts.pdf', $post).'?preview=1')->assertOk();
-
-        Pdf::assertRespondedWithPdf(fn (PdfBuilder $pdf) => $pdf->isInline() && $pdf->downloadName === 'post-'.$post->slug.'.pdf');
-    }
-
     public function test_pdf_requires_authorization(): void
     {
         $post = Post::factory()->create();
 
-        $this->get(route('admin.posts.pdf', $post))->assertRedirect('/login');
-        $this->actingAs(User::factory()->create())->get(route('admin.posts.pdf', $post))->assertForbidden();
+        $this->get(route('admin.posts.index'))->assertRedirect('/login');
+        Livewire::actingAs(User::factory()->create())->test('pages::admin.posts.index')->assertForbidden();
+        Livewire::actingAs(User::factory()->admin()->create())->test('pages::admin.posts.index')->call('downloadPdf', 999_999)->assertNotFound();
     }
 
     public function test_dompdf_renders_a_real_document(): void
     {
         $post = Post::factory()->create(['title' => ['en' => 'Real render']]);
 
-        $response = $this->actingAs(User::factory()->admin()->create())->get(route('admin.posts.pdf', $post));
+        $component = Livewire::actingAs(User::factory()->admin()->create())
+            ->test('pages::admin.posts.index')
+            ->call('downloadPdf', $post->id)
+            ->assertFileDownloaded('post-'.$post->slug.'.pdf', contentType: 'application/pdf');
 
-        $response->assertOk()->assertHeader('Content-Type', 'application/pdf');
-        $this->assertStringStartsWith('%PDF-', $response->getContent());
-        $this->assertStringContainsString('attachment; filename="post-'.$post->slug.'.pdf"', $response->headers->get('Content-Disposition'));
+        $this->assertStringStartsWith('%PDF-', $this->downloadedContent($component));
+
+        $response = app(PdfService::class)->download(app(PdfService::class)->document('pdf.post', ['post' => $post], 'x'));
         $this->assertStringContainsString('no-store', $response->headers->get('Cache-Control'));
     }
 

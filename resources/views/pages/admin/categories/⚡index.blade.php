@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Services\CategoryService;
+use App\Services\SpreadsheetService;
 use App\Support\Livewire\InteractsWithToasts;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
@@ -9,6 +10,7 @@ use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
 {
@@ -44,6 +46,13 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
     public string $bulkAction = '';
 
     public ?string $notice = null;
+
+    public function export(string $format, CategoryService $categories, SpreadsheetService $spreadsheets): StreamedResponse
+    {
+        $this->authorize('viewAny', Category::class);
+
+        return $spreadsheets->download($categories->exportRows(), 'categories', $format);
+    }
 
     public function mount(): void
     {
@@ -173,7 +182,7 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
         </div>
         <div class="ms-row-10 ms-wrap">
             @foreach (config('spreadsheets.export_formats') as $format)
-                <a href="{{ route('admin.categories.export', $format) }}" class="btn">{{ __('imports.export', ['format' => strtoupper($format)]) }}</a>
+                <button type="button" wire:click="export('{{ $format }}')" class="btn">{{ __('imports.export', ['format' => strtoupper($format)]) }}</button>
             @endforeach
             @can('create', \App\Models\Category::class)
                 <a href="{{ route('admin.categories.import') }}" wire:navigate class="btn">{{ __('imports.import') }}</a>

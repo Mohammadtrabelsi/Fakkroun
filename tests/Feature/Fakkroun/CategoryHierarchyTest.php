@@ -150,7 +150,7 @@ class CategoryHierarchyTest extends TestCase
         $parent = Category::factory()->create(['slug' => 'oceans']);
         Category::factory()->create(['slug' => 'coral', 'parent_id' => $parent->id, 'validation_policy' => 'community']);
 
-        $csv = $this->actingAs($this->admin)->get(route('admin.categories.export', 'csv'))->streamedContent();
+        $csv = $this->downloadedContent(Livewire::actingAs($this->admin)->test('pages::admin.categories.index')->call('export', 'csv'));
 
         $path = tempnam(sys_get_temp_dir(), 'csv').'.csv';
         file_put_contents($path, $csv);

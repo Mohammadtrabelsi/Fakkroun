@@ -1,5 +1,6 @@
 <?php
 
+use App\Domain\Advertising\AdvertisingDocuments;
 use App\Domain\Advertising\AdvertisingStats;
 use App\Domain\Advertising\CampaignService;
 use App\Domain\Advertising\Enums\CreditType;
@@ -15,6 +16,7 @@ use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /** Advertiser dashboard (spec §20). */
 new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Component
@@ -99,6 +101,20 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     }
 
     public string $statementMonth = '';
+
+    public function downloadInvoice(int $invoiceId, AdvertisingDocuments $documents): StreamedResponse
+    {
+        $invoice = \App\Domain\Advertising\Models\Invoice::query()
+            ->where('advertiser_id', $this->advertiser()->id)
+            ->findOrFail($invoiceId);
+
+        return $documents->invoice($invoice, auth()->user());
+    }
+
+    public function downloadStatement(AdvertisingDocuments $documents): StreamedResponse
+    {
+        return $documents->statement($this->advertiser(), $this->statementMonth ?: now()->format('Y-m'), auth()->user());
+    }
 
     #[Computed]
     public function categories(): array
@@ -315,7 +331,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
                             <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('advertising.date') }}">{{ $invoice->issued_at->isoFormat('ll') }}</div>
                             <div class="row-card-field" data-label="{{ __('advertising.invoices.kind') }}">{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}</div>
                             <div class="row-card-field tabular-nums" data-label="{{ __('advertising.invoices.amount') }}">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</div>
-                            <div class="row-card-field ms-text-right"><a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a></div>
+                            <div class="row-card-field ms-text-right"><button type="button" wire:click="downloadInvoice({{ $invoice->id }})" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</button></div>
                         </div>
                     @empty
                         <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.invoices.none') }}</div>
@@ -325,7 +341,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     </div>
     <div class="ms-row-10 ms-wrap ms-mb-24">
         <input type="month" wire:model.live="statementMonth" class="input" aria-label="{{ __('advertising.invoices.month') }}" max="{{ now()->format('Y-m') }}">
-        <a href="{{ route('advertiser.statements.pdf', [$advertiser, $statementMonth ?: now()->format('Y-m')]) }}" class="btn">{{ __('advertising.invoices.statement_download') }}</a>
+        <button type="button" wire:click="downloadStatement" class="btn">{{ __('advertising.invoices.statement_download') }}</button>
     </div>
 
     <div class="card ms-p-0">
