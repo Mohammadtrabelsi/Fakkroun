@@ -30,6 +30,8 @@ return [
         'description' => 'Saisissez le code partagé par l’hôte.',
         'code' => 'Code de la salle',
         'submit' => 'Rejoindre',
+        'guest_hint' => 'Vous devrez vous connecter avant d’entrer dans la salle.',
+        'or_create' => 'Vous préférez organiser une partie ?',
     ],
     'room' => [
         'code' => 'Code',

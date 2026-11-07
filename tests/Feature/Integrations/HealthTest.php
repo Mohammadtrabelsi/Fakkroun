@@ -55,7 +55,7 @@ class HealthTest extends TestCase
 
     public function test_health_page_requires_permission_and_shows_results(): void
     {
-        $this->get('/admin/health')->assertRedirect('/login');
+        $this->get('/admin/health')->assertRedirect('/admin/login');
         $this->actingAs(User::factory()->create())->get('/admin/health')->assertForbidden();
 
         $admin = User::factory()->admin()->create();

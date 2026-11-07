@@ -2,11 +2,23 @@
 
 return [
     'create_one' => 'Créez-en un',
+    'email' => 'E-mail',
     'email_placeholder' => 'vous@entreprise.com',
     'forgot_password' => 'Mot de passe oublié ?',
+    'go_to_player_login' => 'Connexion joueur',
+    'go_to_staff_portal' => 'Utiliser la connexion équipe',
     'no_account' => 'Vous n\'avez pas de compte ?',
+    'not_staff' => 'Ce compte n’a pas accès au back-office. Les joueurs se connectent sur le site principal.',
     'password' => 'Mot de passe',
+    'player_hint' => 'Vous venez jouer ?',
+    'player_lead' => 'Connectez-vous pour jouer, rejoindre des salles et suivre vos progrès.',
+    'player_title' => 'Bon retour',
     'remember_me' => 'Se souvenir de moi',
     'sign_in' => 'Se connecter',
     'sign_in_to_continue' => 'Connectez-vous pour continuer.',
+    'staff_badge' => 'Équipe',
+    'staff_hint' => 'Administrateur, rédacteur de questions ou relecteur ?',
+    'staff_lead' => 'Pour les administrateurs, rédacteurs de questions et relecteurs.',
+    'staff_title' => 'Connexion équipe',
+    'use_staff_portal' => 'Les comptes de l’équipe se connectent via l’espace équipe.',
 ];

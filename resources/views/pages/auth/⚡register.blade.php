@@ -122,6 +122,6 @@ new #[Layout('layouts::guest')] #[Title('Create account')] class extends Compone
 
     <p class="text-muted ms-form-foot">
         {{ __('register.already_have_account') }}
-        <a href="{{ route('login') }}" wire:navigate>{{ __('register.sign_in') }}</a>
+        <a href="{{ route('login') }}">{{ __('register.sign_in') }}</a>
     </p>
 </div>

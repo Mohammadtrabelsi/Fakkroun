@@ -52,7 +52,7 @@ class PdfTest extends TestCase
     {
         $post = Post::factory()->create();
 
-        $this->get(route('admin.posts.pdf', $post))->assertRedirect('/login');
+        $this->get(route('admin.posts.pdf', $post))->assertRedirect('/admin/login');
         $this->actingAs(User::factory()->create())->get(route('admin.posts.pdf', $post))->assertForbidden();
     }
 
