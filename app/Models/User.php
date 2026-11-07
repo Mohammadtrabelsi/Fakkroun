@@ -68,6 +68,20 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     /**
+     * First back-office screen this user may open (admins: the dashboard;
+     * reviewers: the moderation queue).
+     */
+    public function backofficeHomeUrl(): string
+    {
+        return match (true) {
+            $this->can('view admin dashboard') => route('admin.dashboard'),
+            $this->can('manage questions') => route('admin.questions.index'),
+            $this->can('moderate questions') => route('admin.moderation'),
+            default => route('admin.notifications.index'),
+        };
+    }
+
+    /**
      * Paid, ad-free plan currently running (see App\Domain\Billing\PlanService).
      */
     public function hasPaidPlan(): bool

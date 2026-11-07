@@ -91,7 +91,7 @@ class SpreadsheetTest extends TestCase
 
     public function test_exports_require_authorization_and_a_known_format(): void
     {
-        $this->get(route('admin.posts.index'))->assertRedirect('/login');
+        $this->get(route('admin.posts.index'))->assertRedirect('/admin/login');
         Livewire::actingAs(User::factory()->create())->test('pages::admin.categories.index')->assertForbidden();
         Livewire::actingAs($this->admin)->test('pages::admin.posts.index')->call('export', 'pdf')->assertNotFound();
 

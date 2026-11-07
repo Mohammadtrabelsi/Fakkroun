@@ -30,6 +30,8 @@ return [
         'description' => 'Saisissez le code partagé par l’hôte.',
         'code' => 'Code de la salle',
         'submit' => 'Rejoindre',
+        'guest_hint' => 'Vous devrez vous connecter avant d’entrer dans la salle.',
+        'or_create' => 'Vous préférez organiser une partie ?',
     ],
     'room' => [
         'code' => 'Code',
@@ -81,6 +83,7 @@ return [
         'play_again' => 'Rejouer',
     ],
     'errors' => [
+        'min_categories' => 'Choisissez au moins :min catégories.',
         'too_many_rooms' => 'Trop de salles sont ouvertes en ce moment. Réessayez dans quelques minutes.',
         'room_not_found' => 'Aucune salle ne porte ce code.',
         'room_closed' => 'Cette salle est fermée.',
@@ -98,6 +101,7 @@ return [
         'title' => 'On joue ?',
         'lead' => 'Préparez une salle pour votre groupe, ou rejoignez-en une déjà ouverte.',
         'categories_hint' => '· une ou plusieurs',
+        'categories_hint_min' => '· au moins :min',
         'difficulty' => 'Difficulté',
         'mixed' => 'Mélangée',
         'questions' => 'Questions',

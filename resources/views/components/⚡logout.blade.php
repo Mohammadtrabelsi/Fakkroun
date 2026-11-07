@@ -15,12 +15,15 @@ new class extends Component
 
     public function logout(): void
     {
+        $wasStaff = (bool) auth()->user()?->canAccessBackoffice();
+
         Auth::guard('web')->logout();
 
         session()->invalidate();
         session()->regenerateToken();
 
-        $this->redirect('/');
+        // Staff return to the staff portal, players to the front office.
+        $this->redirect($wasStaff ? route('admin.login') : '/');
     }
 };
 ?>

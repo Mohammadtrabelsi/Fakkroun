@@ -55,7 +55,7 @@ class BackupTest extends TestCase
 
     public function test_backups_page_requires_the_manage_backups_permission(): void
     {
-        $this->get('/admin/backups')->assertRedirect('/login');
+        $this->get('/admin/backups')->assertRedirect('/admin/login');
         $this->actingAs(User::factory()->create())->get('/admin/backups')->assertForbidden();
         $this->actingAs(User::factory()->admin()->create())->get('/admin/backups')->assertOk()->assertSee(__('backups.title'));
     }

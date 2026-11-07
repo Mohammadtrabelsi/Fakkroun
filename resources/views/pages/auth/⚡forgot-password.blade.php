@@ -77,6 +77,6 @@ new #[Layout('layouts::guest')] #[Title('Forgot password')] class extends Compon
 
     <p class="text-muted ms-form-foot">
         {{ __('forgot-password.remembered_your_password') }}
-        <a href="{{ route('login') }}" wire:navigate>{{ __('forgot-password.back_to_sign_in') }}</a>
+        <a href="{{ route('login') }}">{{ __('forgot-password.back_to_sign_in') }}</a>
     </p>
 </div>

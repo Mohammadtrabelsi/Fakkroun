@@ -1,18 +1,19 @@
 <?php
 
-use App\Services\TwoFactorService;
-use App\Services\UserService;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
+use App\Support\Auth\AuthenticatesIntoPortal;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-new #[Layout('layouts::guest')] #[Title('Log in')] class extends Component
+/*
+ * Player sign-in (front office). Admins, question writers and reviewers use
+ * the separate staff portal at /admin/login (pages::auth.admin-login).
+ */
+new #[Layout('components.layouts.fakkroun')] #[Title('Log in')] class extends Component
 {
+    use AuthenticatesIntoPortal;
+
     #[Validate('required|string|email')]
     public string $email = '';
 
@@ -23,106 +24,67 @@ new #[Layout('layouts::guest')] #[Title('Log in')] class extends Component
 
     public function login(): void
     {
-        $this->validate();
-
-        $throttleKey = Str::lower($this->email).'|'.request()->ip();
-
-        if (RateLimiter::tooManyAttempts($throttleKey, 5)) {
-            $seconds = RateLimiter::availableIn($throttleKey);
-
-            throw ValidationException::withMessages([
-                'email' => __('Too many login attempts. Please try again in :seconds seconds.', ['seconds' => $seconds]),
-            ]);
-        }
-
-        $user = app(UserService::class)->authenticate($this->email, $this->password);
-
-        if ($user === null) {
-            RateLimiter::hit($throttleKey);
-
-            throw ValidationException::withMessages([
-                'email' => __('These credentials do not match our records.'),
-            ]);
-        }
-
-        RateLimiter::clear($throttleKey);
-
-        // With two-factor enabled the session is not established yet: the user
-        // must first prove possession of the second factor on the challenge page.
-        if ($user->hasTwoFactorEnabled()) {
-            session()->put(TwoFactorService::CHALLENGE_SESSION_KEY, [
-                'id' => $user->id,
-                'remember' => $this->remember,
-            ]);
-
-            $this->redirect(route('two-factor.challenge'), navigate: true);
-
-            return;
-        }
-
-        Auth::login($user, $this->remember);
-
-        if (request()->hasSession()) {
-            request()->session()->regenerate();
-        }
-
-        $this->redirect($user->isAdmin() ? route('admin.dashboard') : route('dashboard'), navigate: true);
+        $this->attemptPortalLogin(self::PORTAL_PLAYER);
     }
 };
 ?>
 
-<div>
-    <h1>Welcome back</h1>
-    <p class="text-muted ms-mb-28">{{ __('login.sign_in_to_continue') }}</p>
-
-    @if (session('status'))
-        <div class="tag tag-accent ms-notice">{{ session('status') }}</div>
-    @endif
-
-    <form wire:submit="login">
-        <div class="field">
-            <x-input-label for="email" value="Email" />
-            <x-text-input
-                wire:model="email"
-                id="email"
-                type="email"
-                placeholder="{{ __('login.email_placeholder') }}"
-                autofocus
-                autocomplete="username"
-                :error="$errors->first('email')"
-            />
-            <x-input-error :message="$errors->first('email')" />
+<div class="fk-container flex justify-center pt-12 pb-20">
+    <div class="flex w-full max-w-[480px] flex-col gap-6 rounded-[28px] border border-sand-300 bg-paper p-[clamp(20px,4vw,40px)]">
+        <div class="flex flex-col gap-2">
+            <h1 class="fk-h2 m-0 text-[40px] leading-none">{{ __('login.player_title') }}</h1>
+            <p class="m-0 text-lg text-ink-muted">{{ __('login.player_lead') }}</p>
         </div>
 
-        <div class="field ms-mb-12">
-            <div class="ms-row-between">
-                <label for="password" class="ds-label ms-mb-0">{{ __('login.password') }}</label>
-                <a href="{{ route('password.request') }}" wire:navigate class="ms-fs-12">{{ __('login.forgot_password') }}</a>
+        @if (session('status'))
+            <p role="status" class="m-0 rounded-xl bg-tint-green p-3 font-semibold text-[#0B5A55]">{{ session('status') }}</p>
+        @endif
+
+        <form wire:submit="login" class="flex flex-col gap-5">
+            <div class="flex flex-col gap-2">
+                <label for="email" class="font-semibold">{{ __('login.email') }}</label>
+                <input wire:model="email" id="email" type="email" autofocus autocomplete="username"
+                       placeholder="{{ __('login.email_placeholder') }}"
+                       @error('email') aria-invalid="true" aria-describedby="email-error" @enderror
+                       class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
+                @error('email')
+                    <span id="email-error" role="alert" class="text-sm text-wrong">
+                        {{ $message }}
+                        @if ($message === __('login.use_staff_portal'))
+                            <a href="{{ route('admin.login') }}" class="font-semibold">{{ __('login.go_to_staff_portal') }}</a>
+                        @endif
+                    </span>
+                @enderror
             </div>
-            <x-text-input
-                wire:model="password"
-                id="password"
-                type="password"
-                placeholder="••••••••"
-                autocomplete="current-password"
-                class="ms-mt-5"
-                :error="$errors->first('password')"
-            />
-            <x-input-error :message="$errors->first('password')" />
-        </div>
 
-        <label class="ms-check-label-22">
-            <input wire:model="remember" type="checkbox" class="checkbox"> {{ __('login.remember_me') }}
-        </label>
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center justify-between gap-3">
+                    <label for="password" class="font-semibold">{{ __('login.password') }}</label>
+                    <a href="{{ route('password.request') }}" class="text-sm font-semibold text-sea">{{ __('login.forgot_password') }}</a>
+                </div>
+                <input wire:model="password" id="password" type="password" autocomplete="current-password" placeholder="••••••••"
+                       @error('password') aria-invalid="true" @enderror
+                       class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
+                @error('password') <span role="alert" class="text-sm text-wrong">{{ $message }}</span> @enderror
+            </div>
 
-        <x-primary-button wire:loading.attr="disabled" wire:target="login">
-            <svg wire:loading wire:target="login" class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/></svg>
-            {{ __('login.sign_in') }}
-        </x-primary-button>
-    </form>
+            <label class="flex min-h-11 items-center gap-2.5">
+                <input wire:model="remember" type="checkbox" class="h-5 w-5 accent-[#0B6E69]"> {{ __('login.remember_me') }}
+            </label>
 
-    <p class="text-muted ms-form-foot">
-        {{ __('login.no_account') }}
-        <a href="{{ route('register') }}" wire:navigate>{{ __('login.create_one') }}</a>
-    </p>
+            <button type="submit" wire:loading.attr="disabled" wire:target="login" class="fk-btn fk-btn-primary min-h-14 rounded-2xl text-lg">
+                {{ __('login.sign_in') }}
+            </button>
+        </form>
+
+        <p class="m-0 text-ink-muted">
+            {{ __('login.no_account') }}
+            <a href="{{ route('register') }}" class="font-semibold text-sea">{{ __('login.create_one') }}</a>
+        </p>
+
+        <p class="m-0 border-t border-sand-300 pt-4 text-sm text-ink-soft">
+            {{ __('login.staff_hint') }}
+            <a href="{{ route('admin.login') }}" class="font-semibold">{{ __('login.go_to_staff_portal') }}</a>
+        </p>
+    </div>
 </div>

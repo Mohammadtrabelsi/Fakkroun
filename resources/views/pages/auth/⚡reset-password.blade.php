@@ -61,7 +61,7 @@ new #[Layout('layouts::guest')] #[Title('Reset password')] class extends Compone
         }
 
         session()->flash('status', __($status));
-        $this->redirect(route('login'), navigate: true);
+        $this->redirect(route('login'));
     }
 };
 ?>

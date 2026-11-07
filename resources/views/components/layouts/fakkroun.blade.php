@@ -74,14 +74,14 @@
                         <span class="leading-relaxed">{{ __('home.footer.tagline') }}</span>
                     </div>
                     @foreach ([
-                        [__('home.footer.play'), [[__('home.footer.create'), $playUrl], [__('home.footer.join'), auth()->check() ? route('rooms.join') : route('login')]]],
+                        [__('home.footer.play'), [[__('home.footer.create'), $playUrl], [__('home.footer.join'), route('rooms.join')]]],
                         [__('home.footer.contribute'), [[__('home.footer.submit'), route('questions.submit')], [__('home.footer.schools'), url('/#partners')], [__('home.footer.partners'), url('/#partners')]]],
                         [__('home.footer.about'), [[__('home.footer.mission'), route('about')], [__('home.footer.terms'), route('terms')]]],
                     ] as [$heading, $links])
                         <nav aria-label="{{ $heading }}" class="flex flex-col gap-1">
                             <b class="mb-1.5 text-sand">{{ $heading }}</b>
                             @foreach ($links as [$label, $href])
-                                <a href="{{ $href }}" class="flex min-h-8 items-center text-[#C9D3D0] hover:text-sand">{{ $label }}</a>
+                                <a href="{{ $href }}" @if (url()->current() === $href) aria-current="page" @endif class="flex min-h-8 items-center text-[#C9D3D0] hover:text-sand">{{ $label }}</a>
                             @endforeach
                         </nav>
                     @endforeach

@@ -1,10 +1,24 @@
 <?php
 
 return [
-    'tag' => 'Notre mission',
+    'tag' => 'À propos de Fakkroun',
     'title' => 'À propos',
     'hero_title' => 'Fakkroun – فكّرون',
     'hero_lead' => 'Fakkroun transforme l’apprentissage en compétition amicale. En arabe tunisien, un fakkroun (فكّرون) est une tortue, et le mot sonne comme فكّر, « réfléchis ». Notre tortue mascotte prend une respiration avant chaque réponse — patiente, curieuse et à l’aise sur terre comme en mer.',
+
+    'hero_play' => 'Commencer à jouer',
+    'hero_more' => 'Lire notre histoire',
+    'hero_think' => 'réfléchis',
+    'nav_label' => 'Sur cette page',
+    'nav_story' => 'Notre histoire',
+    'nav_mission' => 'Mission',
+    'nav_audience' => 'Pour qui',
+    'nav_values' => 'Nos valeurs',
+    'nav_how' => 'Déroulement',
+    'nav_rules' => 'Règles',
+    'nav_questions' => 'Questions',
+    'nav_partners' => 'Partenaires',
+    'nav_faq' => 'FAQ',
 
     'stat_free_value' => 'Gratuit',
     'stat_free_label' => 'pour jouer entre amis, en famille ou en classe',

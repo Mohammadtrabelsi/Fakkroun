@@ -43,7 +43,7 @@ class PdfTest extends TestCase
     {
         $post = Post::factory()->create();
 
-        $this->get(route('admin.posts.index'))->assertRedirect('/login');
+        $this->get(route('admin.posts.index'))->assertRedirect('/admin/login');
         Livewire::actingAs(User::factory()->create())->test('pages::admin.posts.index')->assertForbidden();
         Livewire::actingAs(User::factory()->admin()->create())->test('pages::admin.posts.index')->call('downloadPdf', 999_999)->assertNotFound();
     }

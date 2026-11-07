@@ -39,9 +39,11 @@ class RoomService
         $game = $this->settings->all()['game'];
         $scoring = $this->settings->all()['scoring'];
 
+        $minCategories = $this->minCategories();
+
         $validated = Validator::make($input, [
             'name' => ['required', 'string', 'max:80'],
-            'category_ids' => ['required', 'array', 'min:1'],
+            'category_ids' => ['required', 'array', 'min:'.$minCategories],
             'category_ids.*' => ['integer', Rule::exists('categories', 'id')->whereNull('parent_id')->where('is_active', true)->whereNull('deleted_at')],
             'question_count' => ['required', 'integer', 'min:1', 'max:'.$game['max_question_count']],
             'seconds_per_question' => ['required', 'integer', 'min:'.$game['min_question_seconds'], 'max:'.$game['max_question_seconds']],
@@ -50,6 +52,8 @@ class RoomService
             'duplicate_rule' => ['required', 'boolean'],
             'max_players' => ['required', 'integer', 'min:'.max(1, $game['min_players']), 'max:'.$game['max_players']],
             'visibility' => ['nullable', Rule::in(['private', 'public'])],
+        ], [
+            'category_ids.min' => __('play.errors.min_categories', ['min' => $minCategories]),
         ])->validate();
 
         $open = Room::query()
@@ -249,6 +253,29 @@ class RoomService
         return Category::query()->roots()->where('is_active', true)->ordered()->get()
             ->mapWithKeys(fn (Category $category) => [$category->id => $category->name])
             ->all();
+    }
+
+    /**
+     * Categories the back office marks as pre-selected for new rooms.
+     *
+     * @return array<int, int>
+     */
+    public function defaultCategoryIds(): array
+    {
+        return Category::query()->roots()->where('is_active', true)->where('is_default_selected', true)->ordered()
+            ->pluck('id')->map(fn ($id) => (int) $id)->all();
+    }
+
+    /**
+     * How many categories a host must pick (game.min_categories), capped at
+     * the number of active categories so rooms can always be created.
+     */
+    public function minCategories(): int
+    {
+        $configured = max(1, (int) $this->settings->get('game.min_categories'));
+        $available = Category::query()->roots()->where('is_active', true)->count();
+
+        return max(1, min($configured, $available));
     }
 
     private function authorizePlay(User $user): void

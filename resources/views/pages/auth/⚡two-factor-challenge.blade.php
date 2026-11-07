@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Support\Auth\PostLoginRedirect;
 use App\Services\TwoFactorService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
@@ -60,7 +61,7 @@ new #[Layout('layouts::guest')] #[Title('Two-factor authentication')] class exte
             request()->session()->regenerate();
         }
 
-        $this->redirect($user->isAdmin() ? route('admin.dashboard') : route('dashboard'));
+        $this->redirect(PostLoginRedirect::urlFor($user));
     }
 
     public function toggleRecovery(): void

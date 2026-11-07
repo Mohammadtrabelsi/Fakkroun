@@ -44,8 +44,15 @@ Route::livewire('/language/{locale}', 'pages::locale')->name('locale.switch');
 
 Route::livewire('/leaderboard', 'pages::leaderboard')->name('leaderboard');
 
+// Front office: anyone can open the join form; guests are asked to sign in
+// (player login) once they submit a valid code.
+Route::livewire('/play/join', 'pages::rooms.join')->name('rooms.join');
+
 Route::middleware('guest')->group(function () {
+    // Player sign-in (front office).
     Route::livewire('/login', 'pages::auth.login')->name('login');
+    // Staff sign-in (back office): admins, question writers and reviewers.
+    Route::livewire('/admin/login', 'pages::auth.admin-login')->name('admin.login');
     Route::livewire('/register', 'pages::auth.register')->name('register');
     Route::livewire('/forgot-password', 'pages::auth.forgot-password')->name('password.request');
     Route::livewire('/reset-password/{token}', 'pages::auth.reset-password')->name('password.reset');
@@ -74,7 +81,6 @@ Route::middleware('auth')->group(function () {
 
         Route::middleware('can:play games')->group(function () {
             Route::livewire('/play', 'pages::rooms.create')->name('rooms.create');
-            Route::livewire('/play/join', 'pages::rooms.join')->name('rooms.join');
             Route::livewire('/play/history', 'pages::rooms.history')->name('rooms.history');
             Route::livewire('/rooms/{room}', 'pages::rooms.show')->name('rooms.show');
             Route::livewire('/rooms/{room}/results', 'pages::rooms.results')->name('rooms.results');
