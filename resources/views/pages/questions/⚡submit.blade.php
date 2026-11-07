@@ -151,14 +151,12 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Write a question')] class 
 @php($dir = config('app.available_locales.'.($language ?: app()->getLocale()).'.dir', 'ltr'))
 @php($letters = $language === 'ar' ? ['أ', 'ب', 'ج', 'د'] : ['A', 'B', 'C', 'D'])
 @php($max = (int) config('fakkroun.questions.community_body_max', 160))
-@php
-    $badge = fn (string $status) => match ($status) {
+@php($badge = fn (string $status) => match ($status) {
         'published' => ['bg-tint-green text-[#1F6A2C]', __('questions.community.live')],
         'draft' => ['bg-sand-200 text-ink', __('questions.status.draft')],
         'changes_requested', 'rejected' => ['bg-tint-sun text-[#5A3618]', __('questions.status.'.$status)],
         default => ['bg-tint-sea text-[#0B5A55]', __('questions.community.in_review')],
-    };
-@endphp
+    })
 <div class="fk-container flex flex-col gap-8 pt-12 pb-20">
     <div class="flex max-w-[44rem] flex-col gap-2">
         <h1 class="fk-h2 m-0 text-[52px] leading-none">{{ __('questions.community.title') }}</h1>

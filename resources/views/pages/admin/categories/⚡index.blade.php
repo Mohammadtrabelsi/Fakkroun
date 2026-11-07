@@ -252,39 +252,28 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
     @endif
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th style="width:32px">
-                            <input type="checkbox" class="checkbox" aria-label="Select all on this page" wire:click="selectPage">
-                        </th>
-                        <th>
-                            <button type="button" wire:click="sortBy('name')" class="ms-sort-btn">{{ __('categories.name') }}</button>
-                        </th>
-                        <th>{{ __('categories.slug') }}</th>
-                        <th>{{ __('categories.posts') }}</th>
-                        <th>{{ __('categories.status') }}</th>
-                        <th class="ms-text-right">{{ __('categories.actions') }}</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
+                <div class="row-cards-toolbar">
+                    <div class="row-cards-control"><input type="checkbox" class="checkbox" aria-label="Select all on this page" wire:click="selectPage"></div>
+                    <div class="row-cards-control"><button type="button" wire:click="sortBy('name')" class="ms-sort-btn">{{ __('categories.name') }}</button></div>
+                </div>
                     @forelse ($this->categories as $category)
-                        <tr wire:key="category-{{ $category->id }}">
-                            <td>
+                        <div class="row-card" wire:key="category-{{ $category->id }}">
+                            <div class="row-card-select">
                                 <input type="checkbox" class="checkbox" value="{{ $category->id }}" wire:model.live="selected" aria-label="Select category">
-                            </td>
-                            <td>
+                            </div>
+                            <div class="row-card-title">
                                 <div class="ms-fw-500">{{ $category->name }}</div>
                                 @if ($category->parent)
                                     <div class="text-muted ms-fs-12">{{ __('categories.subcategory_of', ['name' => $category->parent->name]) }}</div>
                                 @elseif ($category->children_count > 0)
                                     <div class="text-muted ms-fs-12">{{ __('categories.subcategories') }}: {{ $category->children_count }}</div>
                                 @endif
-                            </td>
-                            <td class="text-muted">{{ $category->slug }}</td>
-                            <td class="text-muted">{{ $category->posts_count }}</td>
-                            <td>
+                            </div>
+                            <div class="row-card-field text-muted" data-label="{{ __('categories.slug') }}">{{ $category->slug }}</div>
+                            <div class="row-card-field text-muted" data-label="{{ __('categories.posts') }}">{{ $category->posts_count }}</div>
+                            <div class="row-card-field" data-label="{{ __('categories.status') }}">
                                 @if ($category->trashed())
                                     <span class="tag tag-outline">Trashed</span>
                                 @else
@@ -293,8 +282,8 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
                                         <span class="tag tag-outline">{{ __('categories.default_selected_tag') }}</span>
                                     @endif
                                 @endif
-                            </td>
-                            <td class="ms-text-right">
+                            </div>
+                            <div class="row-card-actions">
                                 <div class="ms-actions-end">
                                     @if ($category->trashed())
                                         @can('restore', $category)
@@ -322,15 +311,12 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
                                         @endcan
                                     @endif
                                 </div>
-                            </td>
-                        </tr>
+                            </div>
+                        </div>
                     @empty
-                        <tr>
-                            <td colspan="6" class="text-muted ms-empty">{{ __('categories.no_categories_found') }}</td>
-                        </tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('categories.no_categories_found') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
 
         <div class="ms-cell-top">

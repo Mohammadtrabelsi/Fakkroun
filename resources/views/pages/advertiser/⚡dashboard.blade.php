@@ -239,42 +239,36 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
 
     @if ($stats['by_creative'] !== [])
         <div class="card ms-p-0 ms-mb-24">
-            <div class="table-wrap">
-                <table class="table">
+            <div class="row-cards-wrap">
+                <div class="row-cards">
                     <caption class="ms-fs-13 ms-fw-500" style="text-align: start; padding: 12px 16px 0;">{{ __('advertising.by_creative') }}</caption>
-                    <thead><tr><th>{{ __('advertising.headline') }}</th><th>{{ __('advertising.impressions') }}</th><th>{{ __('advertising.clicks') }}</th><th>{{ __('advertising.ctr_short') }}</th></tr></thead>
-                    <tbody>
                         @foreach ($stats['by_creative'] as $row)
-                            <tr><td>{{ $row['headline'] }}</td><td class="tabular-nums">{{ number_format($row['impressions']) }}</td><td class="tabular-nums">{{ number_format($row['clicks']) }}</td><td class="tabular-nums">{{ $row['ctr'] === null ? '—' : $row['ctr'].' %' }}</td></tr>
+                            <div class="row-card"><div class="row-card-title">{{ $row['headline'] }}</div><div class="row-card-field tabular-nums" data-label="{{ __('advertising.impressions') }}">{{ number_format($row['impressions']) }}</div><div class="row-card-field tabular-nums" data-label="{{ __('advertising.clicks') }}">{{ number_format($row['clicks']) }}</div><div class="row-card-field tabular-nums" data-label="{{ __('advertising.ctr_short') }}">{{ $row['ctr'] === null ? '—' : $row['ctr'].' %' }}</div></div>
                         @endforeach
-                    </tbody>
-                </table>
+                </div>
             </div>
         </div>
     @endif
 
     <div class="card ms-p-0 ms-mb-24">
-        <div class="table-wrap">
-            <table class="table">
-                <thead><tr><th>{{ __('advertising.campaign') }}</th><th>{{ __('questions.fields.status') }}</th><th>{{ __('advertising.dates') }}</th><th>{{ __('advertising.impressions') }}</th><th class="ms-text-right">{{ __('categories.actions') }}</th></tr></thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->campaigns as $campaign)
-                        <tr wire:key="c-{{ $campaign->id }}">
-                            <td><div class="ms-fw-500">{{ $campaign->name }}</div><div class="text-muted ms-fs-12">{{ trans_choice('advertising.creatives_count', $campaign->creatives_count, ['count' => $campaign->creatives_count]) }}@if ($campaign->review_note) · {{ $campaign->review_note }}@endif</div></td>
-                            <td><span class="tag {{ $campaign->status->value === 'active' ? 'tag-accent' : 'tag-neutral' }}">{{ __('advertising.status.'.$campaign->status->value) }}</span></td>
-                            <td class="text-muted ms-fs-12">{{ $campaign->starts_at?->isoFormat('ll') ?? '—' }} → {{ $campaign->ends_at?->isoFormat('ll') ?? '—' }}</td>
-                            <td>{{ number_format($stats['by_campaign'][$campaign->id] ?? 0) }}</td>
-                            <td class="ms-text-right"><div class="ms-actions-end">
+                        <div class="row-card" wire:key="c-{{ $campaign->id }}">
+                            <div class="row-card-title"><div class="ms-fw-500">{{ $campaign->name }}</div><div class="text-muted ms-fs-12">{{ trans_choice('advertising.creatives_count', $campaign->creatives_count, ['count' => $campaign->creatives_count]) }}@if ($campaign->review_note) · {{ $campaign->review_note }}@endif</div></div>
+                            <div class="row-card-field" data-label="{{ __('questions.fields.status') }}"><span class="tag {{ $campaign->status->value === 'active' ? 'tag-accent' : 'tag-neutral' }}">{{ __('advertising.status.'.$campaign->status->value) }}</span></div>
+                            <div class="row-card-field text-muted ms-fs-12" data-label="{{ __('advertising.dates') }}">{{ $campaign->starts_at?->isoFormat('ll') ?? '—' }} → {{ $campaign->ends_at?->isoFormat('ll') ?? '—' }}</div>
+                            <div class="row-card-field" data-label="{{ __('advertising.impressions') }}">{{ number_format($stats['by_campaign'][$campaign->id] ?? 0) }}</div>
+                            <div class="row-card-actions"><div class="ms-actions-end">
                                 <button type="button" wire:click="$set('creativeFor', {{ $campaign->id }})" class="btn ms-btn-sm">{{ __('advertising.add_creative') }}</button>
                                 @if (in_array($campaign->status->value, ['draft', 'rejected', 'paused'], true))<button type="button" wire:click="submit({{ $campaign->id }})" class="btn ms-btn-sm">{{ __('advertising.submit') }}</button>@endif
                                 @if ($campaign->status->value === 'active')<button type="button" wire:click="pause({{ $campaign->id }})" class="btn ms-btn-sm">{{ __('advertising.pause') }}</button>@endif
-                            </div></td>
-                        </tr>
+                            </div></div>
+                        </div>
                     @empty
-                        <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.no_campaigns') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.no_campaigns') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
 
@@ -313,23 +307,20 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
 
     <h3 class="ms-fs-18 ms-mb-8">{{ __('advertising.invoices.title') }}</h3>
     <div class="card ms-p-0 ms-mb-16">
-        <div class="table-wrap">
-            <table class="table">
-                <thead><tr><th>{{ __('advertising.invoices.number') }}</th><th>{{ __('advertising.date') }}</th><th>{{ __('advertising.invoices.kind') }}</th><th>{{ __('advertising.invoices.amount') }}</th><th></th></tr></thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->invoices as $invoice)
-                        <tr wire:key="inv-{{ $invoice->id }}">
-                            <td class="ms-fw-500">{{ $invoice->number }}</td>
-                            <td class="text-muted ms-nowrap">{{ $invoice->issued_at->isoFormat('ll') }}</td>
-                            <td>{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}</td>
-                            <td class="tabular-nums">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</td>
-                            <td class="ms-text-right"><a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a></td>
-                        </tr>
+                        <div class="row-card" wire:key="inv-{{ $invoice->id }}">
+                            <div class="row-card-title ms-fw-500">{{ $invoice->number }}</div>
+                            <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('advertising.date') }}">{{ $invoice->issued_at->isoFormat('ll') }}</div>
+                            <div class="row-card-field" data-label="{{ __('advertising.invoices.kind') }}">{{ $invoice->isCreditNote() ? __('advertising.invoices.credit_note') : __('advertising.invoices.invoice') }}</div>
+                            <div class="row-card-field tabular-nums" data-label="{{ __('advertising.invoices.amount') }}">{{ number_format($invoice->amount_minor / 100, 2) }} {{ $invoice->currency }}</div>
+                            <div class="row-card-field ms-text-right"><a href="{{ route('advertiser.invoices.pdf', $invoice) }}" class="btn ms-btn-sm">{{ __('advertising.invoices.download') }}</a></div>
+                        </div>
                     @empty
-                        <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.invoices.none') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.invoices.none') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
     <div class="ms-row-10 ms-wrap ms-mb-24">
@@ -338,23 +329,20 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     </div>
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead><tr><th>{{ __('advertising.date') }}</th><th>{{ __('advertising.entry') }}</th><th>{{ __('advertising.quantity') }}</th><th>{{ __('advertising.amount') }}</th><th>{{ __('advertising.reference') }}</th></tr></thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->ledger as $entry)
-                        <tr>
-                            <td class="text-muted ms-nowrap">{{ $entry->created_at->isoFormat('lll') }}</td>
-                            <td>{{ __('advertising.entry_types.'.$entry->entry_type) }}@if ($entry->credit_type) · {{ __('advertising.credit_types.'.$entry->credit_type) }}@endif</td>
-                            <td class="tabular-nums">{{ $entry->quantity }}</td>
-                            <td class="tabular-nums">{{ $money($entry->amount_minor) }}</td>
-                            <td class="text-muted ms-fs-12">{{ $entry->billing_reference }}</td>
-                        </tr>
+                        <div class="row-card">
+                            <div class="row-card-title text-muted ms-nowrap">{{ $entry->created_at->isoFormat('lll') }}</div>
+                            <div class="row-card-field" data-label="{{ __('advertising.entry') }}">{{ __('advertising.entry_types.'.$entry->entry_type) }}@if ($entry->credit_type) · {{ __('advertising.credit_types.'.$entry->credit_type) }}@endif</div>
+                            <div class="row-card-field tabular-nums" data-label="{{ __('advertising.quantity') }}">{{ $entry->quantity }}</div>
+                            <div class="row-card-field tabular-nums" data-label="{{ __('advertising.amount') }}">{{ $money($entry->amount_minor) }}</div>
+                            <div class="row-card-field text-muted ms-fs-12" data-label="{{ __('advertising.reference') }}">{{ $entry->billing_reference }}</div>
+                        </div>
                     @empty
-                        <tr><td colspan="5" class="text-muted ms-empty">{{ __('advertising.no_ledger') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('advertising.no_ledger') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
         <div class="ms-cell-top">{{ $this->ledger->links() }}</div>
     </div>

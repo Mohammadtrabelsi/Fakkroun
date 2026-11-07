@@ -82,27 +82,18 @@ new #[Layout('layouts::app')] #[Title('Backups')] class extends Component
                     </div>
                 </div>
 
-                <div class="table-wrap">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>{{ __('backups.file') }}</th>
-                                <th>{{ __('backups.date') }}</th>
-                                <th class="ms-text-right">{{ __('backups.size') }}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <div class="row-cards-wrap">
+                    <div class="row-cards">
                             @forelse ($destination['backups'] as $backup)
-                                <tr>
-                                    <td>{{ $backup['file'] }}</td>
-                                    <td class="text-muted ms-nowrap">{{ $backup['date']->toDayDateTimeString() }}</td>
-                                    <td class="text-muted ms-text-right">{{ $this->humanSize($backup['sizeBytes']) }}</td>
-                                </tr>
+                                <div class="row-card">
+                                    <div class="row-card-title">{{ $backup['file'] }}</div>
+                                    <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('backups.date') }}">{{ $backup['date']->toDayDateTimeString() }}</div>
+                                    <div class="row-card-actions text-muted">{{ $this->humanSize($backup['sizeBytes']) }}</div>
+                                </div>
                             @empty
-                                <tr><td colspan="3" class="text-muted ms-empty">{{ __('backups.none') }}</td></tr>
+                                <div class="row-card row-card-empty text-muted ms-empty">{{ __('backups.none') }}</div>
                             @endforelse
-                        </tbody>
-                    </table>
+                    </div>
                 </div>
             @endif
         </section>

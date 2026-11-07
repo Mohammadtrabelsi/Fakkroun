@@ -90,17 +90,14 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
     <div class="ms-row-10 ms-wrap ms-mb-24">
         @foreach (['categories' => 'name', 'languages' => 'language'] as $key => $labelKey)
             <div class="card ms-p-0 ms-flex-1" style="min-width: 280px;">
-                <div class="table-wrap">
-                    <table class="table">
-                        <thead><tr><th>{{ __('analytics.by.'.$key) }}</th><th>{{ __('analytics.metrics.answers') }}</th><th>{{ __('analytics.metrics.correct_rate') }}</th></tr></thead>
-                        <tbody>
+                <div class="row-cards-wrap">
+                    <div class="row-cards">
                             @forelse ($d['breakdown'][$key] as $row)
-                                <tr><td>{{ $key === 'languages' ? (config('app.available_locales.'.$row['language'].'.label') ?? strtoupper($row['language'])) : $row['name'] }}</td><td class="tabular-nums">{{ number_format($row['answers']) }}</td><td class="tabular-nums">{{ $row['correct_rate'] }} %</td></tr>
+                                <div class="row-card"><div class="row-card-title">{{ $key === 'languages' ? (config('app.available_locales.'.$row['language'].'.label') ?? strtoupper($row['language'])) : $row['name'] }}</div><div class="row-card-field tabular-nums" data-label="{{ __('analytics.metrics.answers') }}">{{ number_format($row['answers']) }}</div><div class="row-card-field tabular-nums" data-label="{{ __('analytics.metrics.correct_rate') }}">{{ $row['correct_rate'] }} %</div></div>
                             @empty
-                                <tr><td colspan="3" class="text-muted ms-empty">{{ __('analytics.no_data') }}</td></tr>
+                                <div class="row-card row-card-empty text-muted ms-empty">{{ __('analytics.no_data') }}</div>
                             @endforelse
-                        </tbody>
-                    </table>
+                    </div>
                 </div>
             </div>
         @endforeach

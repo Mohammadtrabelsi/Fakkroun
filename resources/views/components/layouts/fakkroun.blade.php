@@ -81,7 +81,7 @@
                         <nav aria-label="{{ $heading }}" class="flex flex-col gap-1">
                             <b class="mb-1.5 text-sand">{{ $heading }}</b>
                             @foreach ($links as [$label, $href])
-                                <a href="{{ $href }}" class="flex min-h-8 items-center text-[#C9D3D0] hover:text-sand">{{ $label }}</a>
+                                <a href="{{ $href }}" @if (url()->current() === $href) aria-current="page" @endif class="flex min-h-8 items-center text-[#C9D3D0] hover:text-sand">{{ $label }}</a>
                             @endforeach
                         </nav>
                     @endforeach

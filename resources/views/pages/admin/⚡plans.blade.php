@@ -101,21 +101,18 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
     </form>
 
     <div class="card ms-p-0">
-        <div class="table-wrap">
-            <table class="table">
-                <thead><tr><th>{{ __('billing.plans.user') }}</th><th>{{ __('billing.plans.until') }}</th><th></th></tr></thead>
-                <tbody>
+        <div class="row-cards-wrap">
+            <div class="row-cards">
                     @forelse ($this->paidUsers as $user)
-                        <tr wire:key="pu-{{ $user->id }}">
-                            <td><div class="ms-fw-500">{{ $user->name }}</div><div class="text-muted ms-fs-12">{{ $user->email }}</div></td>
-                            <td @class(['text-muted' => ! $user->hasPaidPlan()])>{{ $user->plan_expires_at?->isoFormat('ll') ?? '—' }}</td>
-                            <td class="ms-text-right"><button type="button" wire:click="cancel({{ $user->id }})" wire:confirm="{{ __('billing.plans.cancel') }}?" class="btn ms-btn-sm">{{ __('billing.plans.cancel') }}</button></td>
-                        </tr>
+                        <div class="row-card" wire:key="pu-{{ $user->id }}">
+                            <div class="row-card-title"><div class="ms-fw-500">{{ $user->name }}</div><div class="text-muted ms-fs-12">{{ $user->email }}</div></div>
+                            <div @class(['row-card-field', 'text-muted' = data-label="{{ __('billing.plans.until') }}"> ! $user->hasPaidPlan()])>{{ $user->plan_expires_at?->isoFormat('ll') ?? '—' }}</div>
+                            <div class="row-card-field ms-text-right"><button type="button" wire:click="cancel({{ $user->id }})" wire:confirm="{{ __('billing.plans.cancel') }}?" class="btn ms-btn-sm">{{ __('billing.plans.cancel') }}</button></div>
+                        </div>
                     @empty
-                        <tr><td colspan="3" class="text-muted ms-empty">{{ __('billing.plans.none') }}</td></tr>
+                        <div class="row-card row-card-empty text-muted ms-empty">{{ __('billing.plans.none') }}</div>
                     @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
 </div>
