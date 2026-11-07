@@ -21,4 +21,6 @@ return [
     'staff_lead' => 'للمشرفين وكتّاب الأسئلة والمراجعين.',
     'staff_title' => 'دخول الفريق',
     'use_staff_portal' => 'حسابات الفريق تسجّل الدخول عبر بوابة الفريق.',
+    'email_or_phone' => 'البريد الإلكتروني أو رقم الهاتف',
+    'email_or_phone_placeholder' => 'you@example.com أو ‎+216 22 123 456',
 ];

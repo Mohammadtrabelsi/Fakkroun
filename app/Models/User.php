@@ -7,7 +7,6 @@ use App\Models\Concerns\TracksUserActions;
 use App\Notifications\QueuedResetPassword;
 use App\Notifications\QueuedVerifyEmail;
 use Database\Factories\UserFactory;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,9 +20,15 @@ use Spatie\Activitylog\Models\Concerns\LogsActivity;
 use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Permission\Traits\HasRoles;
 
-#[Fillable(['name', 'email', 'password', 'locale', 'question_locale'])]
+#[Fillable(['name', 'email', 'phone', 'password', 'locale', 'question_locale'])]
 #[Hidden(['password', 'remember_token', 'two_factor_secret', 'two_factor_recovery_codes'])]
-class User extends Authenticatable implements MustVerifyEmail
+/**
+ * Email verification is optional: players sign up with an email address or a
+ * phone number and can play straight away, so the model does not implement
+ * MustVerifyEmail (no verification mail on sign-up, no "verified" gate).
+ * Verifying an email address is still possible from the verify-email page.
+ */
+class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasApiTokens, HasFactory, HasRoles, LogsActivity, Notifiable, SoftDeletes, TracksUserActions;

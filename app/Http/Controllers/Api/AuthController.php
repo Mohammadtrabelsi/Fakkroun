@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Services\TwoFactorService;
 use App\Services\UserService;
+use App\Support\Auth\LoginIdentifier;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +27,9 @@ class AuthController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            // Email or phone number; no email verification before playing.
+            'email' => ['nullable', 'required_without:phone', 'string', 'email', 'max:255', 'unique:users,email'],
+            'phone' => ['nullable', 'required_without:email', 'string', 'max:32', $this->phoneRule()],
             'password' => ['required', 'confirmed', Password::defaults()],
         ]);
 
@@ -41,7 +44,8 @@ class AuthController extends Controller
     public function login(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'email' => ['required', 'string', 'email'],
+            'email' => ['nullable', 'required_without:phone', 'string', 'email'],
+            'phone' => ['nullable', 'required_without:email', 'string', 'max:32'],
             'password' => ['required', 'string'],
             'remember' => ['boolean'],
             'two_factor_code' => ['nullable', 'string'],
@@ -67,7 +71,8 @@ class AuthController extends Controller
     public function token(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'email' => ['required', 'string', 'email'],
+            'email' => ['nullable', 'required_without:phone', 'string', 'email'],
+            'phone' => ['nullable', 'required_without:email', 'string', 'max:32'],
             'password' => ['required', 'string'],
             'device_name' => ['required', 'string', 'max:255'],
             'two_factor_code' => ['nullable', 'string'],
@@ -91,12 +96,26 @@ class AuthController extends Controller
         return response()->json(null, 204);
     }
 
+    /** Valid and not already registered (stored in normalized form). */
+    private function phoneRule(): \Closure
+    {
+        return function (string $attribute, mixed $value, \Closure $fail): void {
+            if (! LoginIdentifier::isValidPhone((string) $value)) {
+                $fail(__('register.invalid_login'));
+            } elseif (User::withTrashed()->where('phone', LoginIdentifier::normalizePhone((string) $value))->exists()) {
+                $fail(__('register.phone_taken'));
+            }
+        };
+    }
+
     /**
      * @param  array<string, mixed>  $validated
      */
     private function authenticatedUser(array $validated): User
     {
-        $user = $this->users->authenticate($validated['email'], $validated['password']);
+        $login = filled($validated['email'] ?? null) ? $validated['email'] : (string) ($validated['phone'] ?? '');
+
+        $user = $this->users->authenticate($login, $validated['password']);
 
         if ($user === null) {
             throw ValidationException::withMessages([

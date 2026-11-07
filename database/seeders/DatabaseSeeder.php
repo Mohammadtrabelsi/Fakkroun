@@ -32,13 +32,14 @@ class DatabaseSeeder extends Seeder
     ];
 
     /**
-     * Demo / sample seeders: a playable trilingual question set. Sample users
-     * are created inline in run() below.
+     * Demo / sample seeders: a playable trilingual question set and sample
+     * advertisers. Sample users are created inline in run() below.
      *
      * @var array<int, class-string>
      */
     public const DEMO = [
         FakkrounDemoQuestionSeeder::class,
+        AdvertiserDemoSeeder::class,
     ];
 
     /**

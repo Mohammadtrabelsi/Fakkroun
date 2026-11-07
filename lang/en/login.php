@@ -21,4 +21,6 @@ return [
     'staff_lead' => 'For admins, question writers and reviewers.',
     'staff_title' => 'Staff sign in',
     'use_staff_portal' => 'Staff accounts sign in through the staff portal.',
+    'email_or_phone' => 'Email or phone number',
+    'email_or_phone_placeholder' => 'you@example.com or +216 22 123 456',
 ];
