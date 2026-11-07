@@ -19,6 +19,7 @@ php artisan key:generate            # first time only
 php artisan migrate --force
 php artisan db:seed --class=RolesAndPermissionsSeeder --force
 php artisan db:seed --class=FakkrounCategorySeeder --force
+php artisan db:seed --class=AdvertisingPackageSeeder --force   # standard packs (also created by a migration)
 php artisan storage:link
 php artisan optimize                # config, route, view and event caches
 ```
@@ -60,6 +61,7 @@ WantedBy=multi-user.target
 | --- | --- | --- |
 | `games:advance` | every 5 s | Closes expired questions, opens the next one, finishes games (idempotent `GameEngine::tick`). |
 | `rooms:expire` | every 5 min | Cancels lobbies past `game.room_expiry_minutes`. |
+| `analytics:rollup --days=3` | daily 00:20, one server | Stores yesterday's platform figures (re-checks the two days before). Safe to re-run; `--days=90` back-fills. |
 | `advertising:reconcile` | hourly, one server | Completes ended campaigns, then checks impressions/deliveries against the ledger and wallets against ledger totals. The report is shown in **Admin → Advertising → Reconciliation**. |
 | `health:check` + heartbeats | every minute | Feeds `/admin/health` (queue and schedule checks fail if those processes stop). |
 | `backup:run`, `backup:clean`, `backup:monitor` | daily, when `BACKUP_SCHEDULE_ENABLED` | spatie/laravel-backup (database + `storage/app/public`). |
@@ -111,3 +113,11 @@ Game, scoring, submission, import, translation and **advertising** rules (freque
 - Polling is the main load: one Livewire request per player per second in a running game. Plan for `players × 1 req/s` until Reverb lands.
 - `games:advance` touches only running games due for a transition (`LeaderboardService::gamesDue`), so its cost scales with live games, not history.
 - The analytics page queries raw tables over the selected period (default 30 days). That's fine for a launch-sized platform. Add the daily roll-ups from [`10`](10-next-step-analytics-and-hardening.md) when `player_answers` passes a few million rows.
+
+## 9. Load tests
+
+k6 scripts live in `tests/load/`. Run them against a **staging** copy only:
+
+- `k6 run -e BASE_URL=https://staging.example.org tests/load/public-pages.js`: public pages and `/up`, ramping to 200 virtual users.
+- `tests/load/room-polling.js`: players sitting in live rooms. It needs prepared sessions (see the file header). It loads the full room page once a second, which is heavier than the real Livewire poll, so treat its results as an upper bound.
+

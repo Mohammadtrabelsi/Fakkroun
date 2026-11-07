@@ -166,7 +166,7 @@ Decided on 2026-11-05 (second round):
 
 Still open:
 
-1. Pack contents and prices (`[PACK DETAILS]`); set the paid-account price in Game settings (0 means not on sale).
+1. ~~Pack contents and prices~~ **Done:** Essential, Professional and Enterprise exist as editable records with default values (see §10). Set the paid-account price in Game settings (0 means not on sale).
 2. Which non-cash payment method to add later, behind `PaymentProvider`.
 3. Legal review of the Terms of use before launch, planned. This is the first version; the page shows a draft notice until `FAKKROUN_TERMS_DRAFT=false`.
 
@@ -205,3 +205,19 @@ Still open:
 | S6, S13 enforcement | Free/paid accounts, ad-free rooms for paid hosts, cash payments, three-strike policy. | See §6 |
 
 All seven delivery slices are built. Still open: the pack contents and prices, a non-cash payment method, and the legal review of the Terms (see §6).
+
+## 10. Standard packs (owner, 2026-11-07)
+
+Packs belong to **advertiser accounts only**. The three standard packs are `AdvertisingPackage` records (slugs `essential`, `professional`, `enterprise`) created by a migration and by `AdvertisingPackageSeeder`, with these **default values**, which admins then change freely in **Admin → Advertising → Packages**:
+
+| Pack | Impressions | Sponsored questions | Sponsored rounds | Price |
+| --- | --- | --- | --- | --- |
+| Essential | 10,000 | 5 | 0 | 300.00 TND |
+| Professional | 50,000 | 25 | 3 | 1,200.00 TND |
+| Enterprise | 200,000 | 100 | 15 | 4,000.00 TND |
+
+- These are starting values, not market prices: adjust them before selling.
+- Defaults live in `config('fakkroun.advertising_packs')`. Seeding again never overwrites an edited pack; "Reset to default values" copies them back onto one pack, and "Re-create missing standard packs" restores a deleted one.
+- Packs bought earlier keep what they were sold with (the invoice copies the contents).
+- The Terms page is unchanged: it still shows `[PACK DETAILS]`.
+

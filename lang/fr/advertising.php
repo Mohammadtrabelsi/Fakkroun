@@ -1,6 +1,15 @@
 <?php
 
 return [
+    'standard_pack' => 'Standard',
+    'package_reset' => 'Valeurs par défaut rétablies pour cette offre.',
+    'packages_restored' => 'Offres standard vérifiées : celles qui manquaient ont été recréées.',
+    'reset_package' => 'Rétablir les valeurs par défaut',
+    'reset_package_confirm' => 'Remplacer le contenu et le prix de cette offre par les valeurs par défaut ? Les achats déjà faits ne changent pas.',
+    'package_description' => 'Courte description (facultative)',
+    'package_order' => 'Ordre d’affichage',
+    'restore_packages' => 'Recréer les offres standard manquantes',
+    'restore_packages_hint' => 'Essentiel, Professionnel et Entreprise démarrent avec des valeurs par défaut ; modifiez-les librement. Les offres existantes ne sont jamais écrasées.',
     'ai_review' => [
         'title' => 'Remarques de l’IA :',
         'failed' => 'la vérification n’a pas pu s’exécuter ; révisez comme d’habitude.',

@@ -35,6 +35,9 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
             'questions' => $analytics->questions($from, $to),
             'bank' => $analytics->bank(),
             'ai' => $analytics->ai($from, $to),
+            'fairPlay' => $analytics->fairPlay($from, $to),
+            'calibration' => $analytics->calibration(),
+            'moderation' => $analytics->moderation(),
             'ads' => auth()->user()->can('manage advertising')
                 ? app(AdvertisingStats::class)->platform(['from' => $from->toDateString(), 'to' => $to->toDateString()])
                 : null,
@@ -159,5 +162,46 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
                 <a href="{{ route('admin.advertising') }}" wire:navigate class="ms-fs-13">{{ __('analytics.open_advertising') }} &rarr;</a>
             </div>
         @endif
+    </div>
+
+    <div class="ms-row-10 ms-wrap" style="margin-top: 16px;">
+        <div class="card ms-flex-1" style="min-width: 260px;">
+            <div class="card-kicker">{{ __('analytics.moderation.title') }}</div>
+            <ul class="ms-fs-13">
+                <li class="ms-row-between"><span>{{ __('analytics.moderation.waiting') }}</span><b>{{ number_format($d['moderation']['waiting']) }}</b></li>
+                <li class="ms-row-between"><span>{{ __('analytics.moderation.oldest') }}</span><b>{{ $d['moderation']['oldest_hours'] === null ? '—' : __('analytics.moderation.hours', ['count' => $d['moderation']['oldest_hours']]) }}</b></li>
+                @foreach ($d['moderation']['weekly'] as $week => $count)
+                    <li class="ms-row-between"><span>{{ __('analytics.moderation.week_of', ['date' => \Illuminate\Support\Carbon::parse($week)->isoFormat('ll')]) }}</span><b>{{ number_format($count) }}</b></li>
+                @endforeach
+            </ul>
+        </div>
+
+        <div class="card ms-flex-1" style="min-width: 260px;">
+            <div class="card-kicker">{{ __('analytics.fair_play.title') }}</div>
+            <p class="ms-fs-13">{{ __('analytics.fair_play.flagged', ['count' => number_format($d['fairPlay']['flagged'])]) }}</p>
+            <ul class="ms-fs-13">
+                @forelse ($d['fairPlay']['players'] as $row)
+                    <li class="ms-row-between"><a href="{{ route('players.show', $row['id']) }}" wire:navigate>{{ $row['name'] }}</a><b>{{ $row['flagged'] }} / {{ $row['answers'] }}</b></li>
+                @empty
+                    <li class="text-muted">{{ __('analytics.fair_play.none') }}</li>
+                @endforelse
+            </ul>
+            <p class="text-muted ms-fs-12">{{ __('analytics.fair_play.note') }}</p>
+        </div>
+
+        <div class="card ms-flex-1" style="min-width: 280px;">
+            <div class="card-kicker">{{ __('analytics.calibration.title') }}</div>
+            <ol class="ms-fs-13 ms-stack-8">
+                @forelse ($d['calibration'] as $row)
+                    <li class="ms-row-between">
+                        <a href="{{ route('admin.questions.edit', $row['uuid']) }}" wire:navigate>{{ \Illuminate\Support\Str::limit($row['body'], 60) }}</a>
+                        <b class="ms-nowrap">{{ __('questions.difficulty.'.$row['difficulty']) }} · {{ $row['correct_rate'] }} %</b>
+                    </li>
+                @empty
+                    <li class="text-muted">{{ __('analytics.calibration.none') }}</li>
+                @endforelse
+            </ol>
+            <p class="text-muted ms-fs-12">{{ __('analytics.calibration.note') }}</p>
+        </div>
     </div>
 </div>

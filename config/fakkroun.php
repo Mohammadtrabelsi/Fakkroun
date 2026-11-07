@@ -111,6 +111,18 @@ return [
             'paid_plan_currency' => ['type' => 'string', 'default' => 'TND', 'rules' => ['string', 'size:3']],
         ],
 
+        // Next step 10: fair play and question calibration.
+        'quality' => [
+            // Answers faster than this are flagged for review (never a score change). 0 = off.
+            'fast_answer_ms' => ['type' => 'int', 'default' => 400, 'rules' => ['integer', 'min:0', 'max:10000']],
+            // A player is listed for review once they have this many flagged answers in the period.
+            'fast_answer_review_threshold' => ['type' => 'int', 'default' => 5, 'rules' => ['integer', 'min:1', 'max:1000']],
+            // Difficulty calibration: flag questions whose correct rate contradicts their difficulty.
+            'calibration_min_answers' => ['type' => 'int', 'default' => 20, 'rules' => ['integer', 'min:1', 'max:100000']],
+            'easy_min_correct_rate' => ['type' => 'int', 'default' => 30, 'rules' => ['integer', 'min:0', 'max:100']],
+            'hard_max_correct_rate' => ['type' => 'int', 'default' => 80, 'rules' => ['integer', 'min:0', 'max:100']],
+        ],
+
         // Invoices for advertiser packs (story 16 S11). Placeholders until you fill them in.
         'invoices' => [
             'number_prefix' => ['type' => 'string', 'default' => 'FK', 'rules' => ['string', 'max:10', 'regex:/^[A-Z0-9-]+$/']],
@@ -154,6 +166,47 @@ return [
     | The text lives in lang/{en,fr,ar}/terms.php. Keep "draft" on until a lawyer has
     | reviewed it; the page then shows a visible draft notice.
     */
+    /*
+    |--------------------------------------------------------------------------
+    | Default advertiser packs (story 16 S11)
+    |--------------------------------------------------------------------------
+    | Starting values only: the packs are AdvertisingPackage records, created
+    | once (migration / AdvertisingPackageSeeder) and then edited by admins in
+    | Admin → Advertising → Packages. Later changes here never overwrite them;
+    | "Reset to default values" on a pack copies these values back.
+    | Prices are in hundredths of advertising.currency, as everywhere in the
+    | app: 30000 = 300.00.
+    */
+    'advertising_packs' => [
+        'essential' => [
+            'name' => 'Essential',
+            'description' => 'For associations, schools and small organisations.',
+            'impression_credits' => 10000,
+            'sponsored_question_credits' => 5,
+            'sponsored_round_credits' => 0,
+            'price_minor' => 30000,
+            'sort_order' => 1,
+        ],
+        'professional' => [
+            'name' => 'Professional',
+            'description' => 'For companies and larger campaigns.',
+            'impression_credits' => 50000,
+            'sponsored_question_credits' => 25,
+            'sponsored_round_credits' => 3,
+            'price_minor' => 120000,
+            'sort_order' => 2,
+        ],
+        'enterprise' => [
+            'name' => 'Enterprise',
+            'description' => 'For national campaigns and custom needs.',
+            'impression_credits' => 200000,
+            'sponsored_question_credits' => 100,
+            'sponsored_round_credits' => 15,
+            'price_minor' => 400000,
+            'sort_order' => 3,
+        ],
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Payment method

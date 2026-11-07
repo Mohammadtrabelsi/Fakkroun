@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'ops' => [
+        'job_failed' => 'Une tâche de fond a échoué : :job',
+    ],
     'tagline' => 'Réfléchis, réponds, apprends, gagne !',
     'preview_category' => 'Biodiversité marine',
     'sample_question' => 'Exemple de question',
@@ -99,6 +102,14 @@ return [
             'title' => 'Comptes (joueurs)',
             'paid_plan_price_minor' => 'Compte payant sans publicité : prix mensuel (unités mineures, 0 = pas en vente)',
             'paid_plan_currency' => 'Devise du compte payant (code ISO)',
+        ],
+        'quality' => [
+            'title' => 'Fair-play et qualité des questions',
+            'fast_answer_ms' => 'Signaler les réponses plus rapides que (ms, 0 = désactivé)',
+            'fast_answer_review_threshold' => 'Lister un joueur pour examen après ce nombre de réponses signalées',
+            'calibration_min_answers' => 'Réponses nécessaires avant de vérifier la difficulté d’une question',
+            'easy_min_correct_rate' => 'Signaler les questions « faciles » réussies moins souvent que (%)',
+            'hard_max_correct_rate' => 'Signaler les questions « difficiles » réussies plus souvent que (%)',
         ],
         'invoices' => [
             'title' => 'Factures (offres annonceurs)',

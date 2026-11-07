@@ -1,6 +1,6 @@
 # Roadmap: what's left
 
-> **Updated:** 2026-11-07, after PRs #1–#6 were merged into `develop`
+> **Updated:** 2026-11-07, after PRs #1–#7 were merged into `develop`
 > What is built is listed in [`14-final-report.md`](14-final-report.md). This file lists only open work, in order.
 
 | Order | Step | Why | Blocked by |
@@ -12,6 +12,6 @@
 | 5 | [`07`](07-next-step-gameplay-depth.md) Gameplay depth | Per-player language, difficulty mix, rounds, reconnection | 1 |
 | 6 | [`11`](11-next-step-player-experience.md) Player experience | Notifications, labels, accessibility | 1 |
 | 7 | [`16`](16-user-story-smart-ads.md) Smart ads in the game (all 7 slices built; open: pack details, non-cash payments, legal review) | Relevant, well-timed, safe ads | 1, and the open items in its §6 (pack contents and prices; a non-cash payment method later) |
-| 8 | [`10`](10-next-step-analytics-and-hardening.md) Launch readiness | Load tests, security, monitoring, hosting | 1, hosting choice |
+| 8 | [`10`](10-next-step-analytics-and-hardening.md) Launch readiness (roll-ups, calibration, fair-play flags, job alerts, audits, load scripts, security pass done; open: running load tests, Sentry, hosting) | Load tests, security, monitoring, hosting | 1, hosting choice, a staging server |
 
 Removed because they are done: `06` (import screen), `08` (AI question generation), `09` (advertising and billing).

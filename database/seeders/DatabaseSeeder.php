@@ -21,12 +21,14 @@ class DatabaseSeeder extends Seeder
     ];
 
     /**
-     * Structural configuration / lookups: the initial Fakkroun categories.
+     * Structural configuration / lookups: the initial Fakkroun categories and
+     * the standard advertiser packs.
      *
      * @var array<int, class-string>
      */
     public const REFERENCE = [
         FakkrounCategorySeeder::class,
+        AdvertisingPackageSeeder::class,
     ];
 
     /**

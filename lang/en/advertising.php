@@ -1,6 +1,15 @@
 <?php
 
 return [
+    'standard_pack' => 'Standard',
+    'package_reset' => 'Default values restored for this pack.',
+    'packages_restored' => 'Standard packs checked: any missing one was re-created.',
+    'reset_package' => 'Reset to default values',
+    'reset_package_confirm' => 'Replace this pack’s contents and price with the default values? Purchases already made are not affected.',
+    'package_description' => 'Short description (optional)',
+    'package_order' => 'Display order',
+    'restore_packages' => 'Re-create missing standard packs',
+    'restore_packages_hint' => 'Essential, Professional and Enterprise start with default values; edit them freely. Existing packs are never overwritten.',
     'ai_review' => [
         'title' => 'AI notes:',
         'failed' => 'the check could not run; review as usual.',
