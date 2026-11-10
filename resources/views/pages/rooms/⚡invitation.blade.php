@@ -5,8 +5,8 @@ use Livewire\Component;
 
 /**
  * Target of shared invitation links and (later) QR codes: /join/{code}.
- * The auth middleware sends guests to sign in and back here afterwards
- * (spec §12.2 steps 1–7).
+ * Visitors without a session go to the join page with the code filled in,
+ * where they pick a nickname and play as a guest (spec §12.2).
  */
 new class extends Component
 {
@@ -17,6 +17,12 @@ new class extends Component
         if ($room === null) {
             session()->flash('error', __('play.errors.room_not_found'));
             $this->redirectRoute('rooms.join');
+
+            return;
+        }
+
+        if (auth()->guest()) {
+            $this->redirectRoute('rooms.join', ['code' => $room->code]);
 
             return;
         }

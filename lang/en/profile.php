@@ -13,4 +13,5 @@ return [
     'update_name_email' => 'Update your name and email address',
     'update_password' => 'Update password',
     'update_password_description' => 'Update password description',
+    'phone' => 'Phone number',
 ];

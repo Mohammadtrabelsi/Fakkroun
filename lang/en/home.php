@@ -11,6 +11,7 @@ return [
         'play_now' => 'Play now',
         'language' => 'Language',
         'main' => 'Main',
+        'menu' => 'Menu',
     ],
     'hero' => [
         'pill' => 'Live multiplayer quiz · Green & Blue economy',

@@ -31,11 +31,23 @@ class EmailVerificationTest extends TestCase
         $this->actingAs($user)->get('/verify-email')->assertOk();
     }
 
-    public function test_unverified_user_is_redirected_from_dashboard_to_notice(): void
+    public function test_unverified_user_can_use_the_dashboard_without_verifying(): void
     {
         $user = User::factory()->unverified()->create();
 
-        $this->actingAs($user)->get('/dashboard')->assertRedirect(route('verification.notice'));
+        $this->actingAs($user)->get('/dashboard')->assertOk();
+    }
+
+    public function test_phone_only_user_is_sent_on_from_the_notice(): void
+    {
+        $user = User::factory()->unverified()->create(['email' => null, 'phone' => '+21622123456']);
+
+        $this->actingAs($user)->get('/verify-email')->assertRedirect(route('dashboard'));
+    }
+
+    public function test_verified_user_is_sent_on_from_the_notice(): void
+    {
+        $this->actingAs(User::factory()->create())->get('/verify-email')->assertRedirect(route('dashboard'));
     }
 
     public function test_verified_user_can_access_dashboard(): void
@@ -69,7 +81,7 @@ class EmailVerificationTest extends TestCase
         $this->assertInstanceOf(ShouldQueue::class, new QueuedVerifyEmail);
     }
 
-    public function test_registration_sends_queued_verification_notification(): void
+    public function test_registration_sends_no_verification_notification(): void
     {
         Notification::fake();
 
@@ -82,7 +94,8 @@ class EmailVerificationTest extends TestCase
 
         $user = User::where('email', 'fresh@example.com')->firstOrFail();
 
-        Notification::assertSentTo($user, QueuedVerifyEmail::class);
+        Notification::assertNotSentTo($user, QueuedVerifyEmail::class);
+        $this->actingAs($user)->get('/dashboard')->assertOk();
     }
 
     public function test_email_is_not_verified_with_invalid_hash(): void

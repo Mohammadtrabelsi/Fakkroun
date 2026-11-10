@@ -63,12 +63,12 @@
                     @endforeach
                 </nav>
                 <div class="nav-actions">
-                    @auth
+                    @if (auth()->user()?->isGuest() === false)
                         <a href="{{ route('dashboard') }}" class="btn btn-primary">{{ __('marketing.dashboard') }}</a>
                     @else
                         <a href="{{ route('login') }}" class="btn btn-ghost">{{ __('marketing.sign_in') }}</a>
                         <a href="{{ route('register') }}" class="btn btn-primary">{{ __('marketing.get_started') }}</a>
-                    @endauth
+                    @endif
                 </div>
             </div>
             @include('partials.locale-switcher-static')

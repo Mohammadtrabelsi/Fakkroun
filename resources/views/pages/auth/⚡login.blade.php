@@ -14,7 +14,8 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Log in')] class extends Co
 {
     use AuthenticatesIntoPortal;
 
-    #[Validate('required|string|email')]
+    /** Email address or phone number (players can sign up with either). */
+    #[Validate('required|string|max:255')]
     public string $email = '';
 
     #[Validate('required|string')]
@@ -42,9 +43,9 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Log in')] class extends Co
 
         <form wire:submit="login" class="flex flex-col gap-5">
             <div class="flex flex-col gap-2">
-                <label for="email" class="font-semibold">{{ __('login.email') }}</label>
-                <input wire:model="email" id="email" type="email" autofocus autocomplete="username"
-                       placeholder="{{ __('login.email_placeholder') }}"
+                <label for="email" class="font-semibold">{{ __('login.email_or_phone') }}</label>
+                <input wire:model="email" id="email" type="text" inputmode="email" autofocus autocomplete="username"
+                       placeholder="{{ __('login.email_or_phone_placeholder') }}"
                        @error('email') aria-invalid="true" aria-describedby="email-error" @enderror
                        class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
                 @error('email')

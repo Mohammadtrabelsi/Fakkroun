@@ -44,9 +44,27 @@ Route::livewire('/language/{locale}', 'pages::locale')->name('locale.switch');
 
 Route::livewire('/leaderboard', 'pages::leaderboard')->name('leaderboard');
 
-// Front office: anyone can open the join form; guests are asked to sign in
-// (player login) once they submit a valid code.
+// Playing needs no account: anyone can join with a code and a nickname (the
+// join page signs visitors in as guest players, see GuestPlayers). Only
+// creating a room, and every account page below, needs a real account.
 Route::livewire('/play/join', 'pages::rooms.join')->name('rooms.join');
+// Shareable invitation link (spec §12.2); visitors without a session pick a
+// nickname on the join page first.
+Route::livewire('/join/{code}', 'pages::rooms.invitation')
+    ->middleware('throttle:30,1')
+    ->where('code', '[A-Za-z0-9-]{4,12}')
+    ->name('rooms.invitation');
+
+Route::middleware(['auth', 'verified', 'can:play games'])->group(function () {
+    Route::livewire('/rooms/{room}', 'pages::rooms.show')->name('rooms.show');
+    Route::livewire('/rooms/{room}/results', 'pages::rooms.results')->name('rooms.results');
+});
+
+// "Learn more" on an ad: counts one click per delivery, then leaves the site.
+Route::livewire('/ads/click/{token}', 'pages::ads.click')
+    ->middleware(['auth', 'verified', 'throttle:60,1'])
+    ->where('token', '[A-Za-z0-9]{48}')
+    ->name('ads.click');
 
 Route::middleware('guest')->group(function () {
     // Player sign-in (front office).
@@ -59,7 +77,8 @@ Route::middleware('guest')->group(function () {
     Route::livewire('/two-factor-challenge', 'pages::auth.two-factor-challenge')->name('two-factor.challenge');
 });
 
-Route::middleware('auth')->group(function () {
+// Account pages: guest players are signed out and sent to the player sign-in.
+Route::middleware(['auth', 'registered'])->group(function () {
     // Email verification
     Route::livewire('/verify-email', 'pages::auth.verify-email')->name('verification.notice');
 
@@ -82,24 +101,12 @@ Route::middleware('auth')->group(function () {
         Route::middleware('can:play games')->group(function () {
             Route::livewire('/play', 'pages::rooms.create')->name('rooms.create');
             Route::livewire('/play/history', 'pages::rooms.history')->name('rooms.history');
-            Route::livewire('/rooms/{room}', 'pages::rooms.show')->name('rooms.show');
-            Route::livewire('/rooms/{room}/results', 'pages::rooms.results')->name('rooms.results');
-            // Shareable invitation link (spec §12.2); guests are sent to log in first.
-            Route::livewire('/join/{code}', 'pages::rooms.invitation')
-                ->middleware('throttle:30,1')
-                ->where('code', '[A-Za-z0-9-]{4,12}')
-                ->name('rooms.invitation');
         });
 
         // Advertiser dashboard (spec §20); ownership is checked in the page.
         Route::livewire('/advertiser', 'pages::advertiser.dashboard')
             ->middleware('can:manage own campaigns')
             ->name('advertiser.dashboard');
-        // "Learn more" on an ad: counts one click per delivery, then leaves the site.
-        Route::livewire('/ads/click/{token}', 'pages::ads.click')
-            ->middleware('throttle:60,1')
-            ->where('token', '[A-Za-z0-9]{48}')
-            ->name('ads.click');
 
         Route::middleware('can:submit questions')->group(function () {
             Route::livewire('/community/submit', 'pages::questions.submit')->name('questions.submit');

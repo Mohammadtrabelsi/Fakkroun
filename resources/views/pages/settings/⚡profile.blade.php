@@ -25,6 +25,8 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
 
     public string $email = '';
 
+    public string $phone = '';
+
     public string $current_password = '';
 
     public string $password = '';
@@ -36,7 +38,8 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
     public function mount(): void
     {
         $this->name = auth()->user()->name;
-        $this->email = auth()->user()->email;
+        $this->email = (string) auth()->user()->email;
+        $this->phone = (string) auth()->user()->phone;
         $this->locale = (string) auth()->user()->locale;
         $this->question_locale = (string) auth()->user()->question_locale;
     }
@@ -82,10 +85,21 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
 
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user->id)],
+            // Players may keep just one of the two.
+            'email' => ['nullable', 'required_without:phone', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($user->id)],
+            'phone' => ['nullable', 'required_without:email', 'string', 'max:32',
+                function (string $attribute, mixed $value, \Closure $fail) use ($user): void {
+                    if (! \App\Support\Auth\LoginIdentifier::isValidPhone((string) $value)) {
+                        $fail(__('register.invalid_login'));
+                    } elseif (\App\Models\User::withTrashed()->whereKeyNot($user->id)->where('phone', \App\Support\Auth\LoginIdentifier::normalizePhone((string) $value))->exists()) {
+                        $fail(__('register.phone_taken'));
+                    }
+                },
+            ],
         ]);
 
         $users->updateProfile($user, $validated);
+        $this->phone = (string) $user->phone;
 
         $this->dispatch('profile-updated');
     }
@@ -213,7 +227,7 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
             <x-text-input wire:model="email" id="email" type="email" autocomplete="username" :error="$errors->first('email')" />
             <x-input-error :message="$errors->first('email')" />
 
-            @if (! auth()->user()->hasVerifiedEmail())
+            @if (filled(auth()->user()->email) && ! auth()->user()->hasVerifiedEmail())
                 <p class="text-muted ms-fs12-mt8">
                     {{ __('profile.unverified_email') }}
                     <button type="button" wire:click="resendVerification" class="btn-ghost ms-linkbtn">
@@ -225,6 +239,12 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
                     >— a new link has been sent.</span>
                 </p>
             @endif
+        </div>
+
+        <div class="field ms-mb-0">
+            <x-input-label for="phone" :value="__('profile.phone')" />
+            <x-text-input wire:model="phone" id="phone" type="tel" autocomplete="tel" :error="$errors->first('phone')" />
+            <x-input-error :message="$errors->first('phone')" />
         </div>
 
         <div>

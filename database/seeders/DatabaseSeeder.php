@@ -33,9 +33,9 @@ class DatabaseSeeder extends Seeder
 
     /**
      * Demo / sample seeders: trilingual questions (a moderation queue sample
-     * and a published, playable set) and one finished demo game with its
-     * game_questions, answers and results. Sample users are created inline in
-     * run() below, before these run.
+     * and a published, playable set), one finished demo game with its
+     * game_questions, answers and results, and sample advertisers. Sample
+     * users are created inline in run() below, before these run.
      *
      * @var array<int, class-string>
      */
@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
         FakkrounDemoQuestionSeeder::class,
         FakkrounPlayableQuestionSeeder::class,
         FakkrounDemoGameSeeder::class,
+        AdvertiserDemoSeeder::class,
     ];
 
     /**
