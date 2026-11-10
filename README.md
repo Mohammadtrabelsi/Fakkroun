@@ -19,7 +19,7 @@ MajidaStarter is a batteries-included **Laravel 13 + Livewire 4** starter kit. I
 
 ## Highlights
 
-- **Full authentication flow** — registration, login, logout, password reset, and email verification, all built as single-file Livewire components. Login is rate-limited per email and IP.
+- **Full authentication flow** — registration, login, logout, password reset, and optional email verification, all built as single-file Livewire components. Players sign up and sign in with an email address **or** a phone number and can play straight away (no verification step). Login is rate-limited per email/phone and IP.
 - **Two-factor authentication** — TOTP apps (RFC 6238) with single-use recovery codes, managed from **Settings → Two-factor** and enforced at web and API sign-in once confirmed. No extra dependency is needed.
 - **Admin panel** — a dedicated, permission-gated back office for managing users, posts, categories, reviewing activity, and editing site settings.
 - **Content module** — full CRUD for **posts** and **categories** in the admin panel. Published posts appear on a public `/blog` with search, detail pages and cover images; `/docs` is the in-app guide. Deletes go to a **trash** and can be restored; bulk publish/delete and filters/sorting are built into the admin lists.
@@ -167,8 +167,15 @@ ADMIN_PASSWORD=change-me-now
 | Role | Email              | Password   | Notes                  |
 | ---- | ------------------ | ---------- | ---------------------- |
 | User | `test@example.com` | `password` | Standard verified user |
+| Advertiser | `ads@carthage-books.test`, `communication@univ-sousse.test`, `contact@ecole-ibnkhaldoun.test`, `hello@green-tunisia.test`, `club@jeunes-savants.test` | `password` | Sample advertisers (one per type), from `AdvertiserDemoSeeder`; shown under Admin → Advertising → Advertisers |
 
 Ten additional random users are created with the same `password`. Their details come from `UserFactory`.
+
+`OwnerUserSeeder` creates a verified player account for `mohammad.trabelsi@gmail.com`. It is not part of any seeder tier; run it on its own. Set `OWNER_PASSWORD` to choose the password, or leave it unset to have a random one generated and printed once. Re-running keeps the existing password unless `OWNER_PASSWORD` is set.
+
+```bash
+OWNER_PASSWORD='choose-a-strong-password' php artisan db:seed --class=OwnerUserSeeder --force
+```
 
 ## Project Structure
 
@@ -238,7 +245,7 @@ app/Services/
 └── Concerns/ManagesModel.php # Shared data-access methods of every model service
 
 routes/
-├── web.php                # Public, guest, authenticated, verified, and admin route groups
+├── web.php                # Public, guest, authenticated and admin route groups
 ├── api.php                # JSON API endpoints (see below)
 └── console.php            # Scheduled tasks (activitylog:clean, sitemap:generate)
 
@@ -280,8 +287,8 @@ the model's service instead.
 - **Public** (front office) — `/play/join` (join a room with a code; guests are asked to sign in after a valid code)
 - **Guest routes** — `/login` (players, front office), `/admin/login` (staff, back office), `/register`, `/forgot-password`, `/reset-password/{token}`, `/two-factor-challenge` (second step of sign-in)
 - **Authenticated routes** — `/verify-email`, `/verify-email/{id}/{hash}` (signed link), `/settings/profile`, `/settings/two-factor`, `/logout`
-- **Verified routes** — `/dashboard`
-- **Admin routes** (`verified` + `admin` middleware) —
+- **Signed-in routes** — `/dashboard`, play and rooms (no email verification required)
+- **Admin routes** (`backoffice` middleware) —
   `/admin/dashboard`,
   `/admin/users`, `/admin/users/create`, `/admin/users/{user}/edit`,
   `/admin/categories`, `/admin/categories/create`, `/admin/categories/{category}/edit`,
@@ -356,6 +363,7 @@ These features work out of the box, but are easy to miss in the code.
 - **Cover images.** Posts can have a cover image, uploaded in the post form and stored on the `public` disk. It is shown on `/blog` and on the post page. Run `php artisan storage:link` first.
 - **XML sitemap.** `php artisan sitemap:generate` (`SitemapService`) lists the named routes in `config/sitemap.php` (`home`, `about`, `docs`, `blog`) and every post that `/blog/{slug}` actually serves (published, not trashed). URLs are built from `APP_URL`, never contain query strings and are de-duplicated. `<lastmod>` is the post's `updated_at` (and the newest one for `/blog`); static pages get none, and `changefreq`/`priority` are omitted. Files are rendered, validated and written to a temp file, then renamed into place, so a failed run leaves the previous sitemap intact and the command exits non-zero. Above 50,000 URLs it writes `sitemap-1.xml`, `sitemap-2.xml`, … behind a sitemap index. It is regenerated hourly (`SITEMAP_SCHEDULE`, `withoutOverlapping`) and `PostSitemapObserver` queues a de-duplicated `GenerateSitemapJob` whenever a published post changes. Auth, account, admin, API and language routes are never listed; categories have no public page, so they are not listed either. `/robots.txt` is served by a route closure in `routes/web.php` and adds the `Sitemap:` line once the file exists.
 - **Support email.** Set in admin settings and stored with the site settings.
+- **Guest players.** Playing needs no account; creating a room does. On `/play/join` (and invitation links `/join/{code}`), visitors without a session enter a nickname and the room code. `GuestPlayers` then creates a throwaway, signed-in user flagged `is_guest` with the `player` role, so the game engine keeps working on user ids. The `registered` middleware (`EnsureUserIsRegistered`) signs guests out and sends them to `/login` from every account page, including `/play` (create a room). `RoomService::create` refuses them as well. Guests are kept off the leaderboard, earn no achievements and have no profile page. `model:prune` deletes them a week after they joined (scheduled daily).
 
 ## Localization
 

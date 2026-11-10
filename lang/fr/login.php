@@ -21,4 +21,6 @@ return [
     'staff_lead' => 'Pour les administrateurs, rédacteurs de questions et relecteurs.',
     'staff_title' => 'Connexion équipe',
     'use_staff_portal' => 'Les comptes de l’équipe se connectent via l’espace équipe.',
+    'email_or_phone' => 'E-mail ou numéro de téléphone',
+    'email_or_phone_placeholder' => 'vous@exemple.com ou +216 22 123 456',
 ];

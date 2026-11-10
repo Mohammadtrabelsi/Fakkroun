@@ -14,7 +14,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Player')] class extends Co
 
     public function mount(User $user): void
     {
-        abort_if($user->isSuspended(), 404);
+        abort_if($user->isSuspended() || $user->isGuest(), 404);
         $this->user = $user;
     }
 

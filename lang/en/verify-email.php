@@ -9,4 +9,8 @@ return [
     'verification_link_sent' => 'A new verification link has been sent to your email address.',
     'verify_your_email' => 'Verify your email',
     'will_gladly_send' => 'We\'ll gladly send you another.',
+    'optional_lead' => 'Optional: you can already play. Verifying just confirms your address so we can send you password resets.',
+    'send_link_to' => 'We will send a verification link to',
+    'continue_to_play' => 'Continue to play',
+    'send_verification_email' => 'Send verification email',
 ];

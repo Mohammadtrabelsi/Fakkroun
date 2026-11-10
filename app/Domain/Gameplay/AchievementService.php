@@ -37,7 +37,10 @@ class AchievementService
 
     public function awardFor(Game $game): void
     {
-        $results = $this->gameResults->query()->where('game_id', $game->id)->get();
+        // Guest players have no profile to show achievements on.
+        $results = $this->gameResults->query()->where('game_id', $game->id)
+            ->whereHas('user', fn ($query) => $query->where('is_guest', false))
+            ->get();
 
         foreach ($results as $result) {
             foreach ($this->earned($result, $game) as $key) {

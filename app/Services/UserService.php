@@ -7,6 +7,7 @@ use App\Enums\UserRole;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
 use App\Services\Concerns\ManagesModel;
+use App\Support\Auth\LoginIdentifier;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
@@ -30,9 +31,12 @@ class UserService
 
     public function register(array $data): User
     {
+        // Email or phone: at least one is given (checked by the caller's
+        // validation). No email verification is needed before playing.
         $user = User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'email' => filled($data['email'] ?? null) ? trim($data['email']) : null,
+            'phone' => filled($data['phone'] ?? null) ? LoginIdentifier::normalizePhone($data['phone']) : null,
             'password' => Hash::make($data['password']),
             // Remember the language the visitor signed up in.
             'locale' => array_key_exists(app()->getLocale(), (array) config('app.available_locales', []))
@@ -47,9 +51,9 @@ class UserService
         return $user;
     }
 
-    public function attempt(string $email, string $password, bool $remember = false): bool
+    public function attempt(string $login, string $password, bool $remember = false): bool
     {
-        $user = $this->authenticate($email, $password);
+        $user = $this->authenticate($login, $password);
 
         if ($user === null) {
             return false;
@@ -63,14 +67,19 @@ class UserService
     /**
      * Checks the credentials without logging the user in. Used by flows that
      * must verify a second factor before the session is established.
+     *
+     * $login is an email address or a phone number.
      */
-    public function authenticate(string $email, string $password): ?User
+    public function authenticate(string $login, string $password): ?User
     {
-        if (! Auth::validate(['email' => $email, 'password' => $password])) {
+        $column = LoginIdentifier::column($login);
+        $value = LoginIdentifier::normalize($login);
+
+        if ($value === '' || ! Auth::validate([$column => $value, 'password' => $password])) {
             return null;
         }
 
-        $user = User::query()->where('email', $email)->first();
+        $user = User::query()->where($column, $value)->first();
 
         // Only reported after the password matched, so it reveals nothing to
         // someone guessing addresses.
@@ -255,12 +264,17 @@ class UserService
 
     public function updateProfile(User $user, array $data): User
     {
-        $emailChanged = $data['email'] !== $user->email;
+        $email = filled($data['email'] ?? null) ? trim($data['email']) : null;
+        $emailChanged = $email !== $user->email;
 
         $user->fill([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'email' => $email,
         ]);
+
+        if (array_key_exists('phone', $data)) {
+            $user->phone = filled($data['phone']) ? LoginIdentifier::normalizePhone($data['phone']) : null;
+        }
 
         if ($emailChanged) {
             $user->email_verified_at = null;
@@ -320,6 +334,18 @@ class UserService
     public function revokeCurrentToken(?User $user): void
     {
         $user?->currentAccessToken()?->delete();
+    }
+
+    /**
+     * Whether another account (trashed ones included) already uses this
+     * phone number. The number is normalised before comparing.
+     */
+    public function phoneTaken(string $phone, ?User $ignore = null): bool
+    {
+        return $this->withTrashed()
+            ->when($ignore, fn ($query) => $query->whereKeyNot($ignore->getKey()))
+            ->where('phone', LoginIdentifier::normalizePhone($phone))
+            ->exists();
     }
 
     public function deleteOwnAccount(User $user): void

@@ -1,7 +1,10 @@
 <?php
 
 use App\Services\UserService;
+use App\Support\Auth\LoginIdentifier;
+use App\Support\Auth\PostLoginRedirect;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -9,7 +12,11 @@ use Livewire\Component;
 use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
 use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 
-new #[Layout('layouts::guest')] #[Title('Create account')] class extends Component
+/*
+ * Player sign-up (front office). A player gives an email address OR a phone
+ * number and can play right away: there is no email verification step.
+ */
+new #[Layout('components.layouts.fakkroun')] #[Title('Create account')] class extends Component
 {
     use UsesSpamProtection;
 
@@ -23,7 +30,8 @@ new #[Layout('layouts::guest')] #[Title('Create account')] class extends Compone
 
     public string $name = '';
 
-    public string $email = '';
+    /** Email address or phone number. */
+    public string $login = '';
 
     public string $password = '';
 
@@ -31,11 +39,31 @@ new #[Layout('layouts::guest')] #[Title('Create account')] class extends Compone
 
     protected function rules(): array
     {
+        $login = LoginIdentifier::isEmail($this->login)
+            ? ['required', 'string', 'email', 'max:255', Rule::unique('users', 'email')]
+            : ['required', 'string', 'max:32',
+                function (string $attribute, mixed $value, \Closure $fail): void {
+                    if (! LoginIdentifier::isValidPhone((string) $value)) {
+                        $fail(__('register.invalid_login'));
+                    }
+                },
+                function (string $attribute, mixed $value, \Closure $fail): void {
+                    if (app(\App\Services\UserService::class)->phoneTaken((string) $value)) {
+                        $fail(__('register.phone_taken'));
+                    }
+                },
+            ];
+
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'login' => $login,
             'password' => ['required', 'confirmed', Password::defaults()],
         ];
+    }
+
+    protected function validationAttributes(): array
+    {
+        return ['login' => __('register.email_or_phone')];
     }
 
     public function register(): void
@@ -44,7 +72,13 @@ new #[Layout('layouts::guest')] #[Title('Create account')] class extends Compone
 
         $validated = $this->validate();
 
-        $user = app(UserService::class)->register($validated);
+        $column = LoginIdentifier::column($validated['login']);
+
+        $user = app(UserService::class)->register([
+            'name' => $validated['name'],
+            $column => $validated['login'],
+            'password' => $validated['password'],
+        ]);
 
         Auth::login($user);
 
@@ -52,76 +86,64 @@ new #[Layout('layouts::guest')] #[Title('Create account')] class extends Compone
             request()->session()->regenerate();
         }
 
-        $this->redirect(route('dashboard'), navigate: true);
+        // Straight to the game (or the invitation that sent them here).
+        $this->redirect(PostLoginRedirect::urlFor($user));
     }
 };
 ?>
 
-<div>
-    <h1>{{ __('register.create_account') }}</h1>
-    <p class="text-muted ms-mb-28">{{ __('register.start_building') }} {{ config('app.name') }} {{ __('register.today') }}.</p>
-
-    <form wire:submit="register">
-        <x-honeypot livewire-model="extraFields" />
-        <div class="field">
-            <x-input-label for="name" value="Full name" />
-            <x-text-input
-                wire:model="name"
-                id="name"
-                type="text"
-                autofocus
-                autocomplete="name"
-                placeholder="{{ __('register.name_placeholder') }}"
-                :error="$errors->first('name')"
-            />
-            <x-input-error :message="$errors->first('name')" />
+<div class="fk-container flex justify-center pt-12 pb-20">
+    <div class="flex w-full max-w-[480px] flex-col gap-6 rounded-[28px] border border-sand-300 bg-paper p-[clamp(20px,4vw,40px)]">
+        <div class="flex flex-col gap-2">
+            <h1 class="fk-h2 m-0 text-[40px] leading-none">{{ __('register.create_account') }}</h1>
+            <p class="m-0 text-lg text-ink-muted">{{ __('register.player_lead') }}</p>
         </div>
 
-        <div class="field">
-            <x-input-label for="email" value="Email" />
-            <x-text-input
-                wire:model="email"
-                id="email"
-                type="email"
-                autocomplete="username"
-                placeholder="{{ __('register.email_placeholder') }}"
-                :error="$errors->first('email')"
-            />
-            <x-input-error :message="$errors->first('email')" />
-        </div>
+        <form wire:submit="register" class="flex flex-col gap-5">
+            <x-honeypot livewire-model="extraFields" />
 
-        <div class="field">
-            <x-input-label for="password" value="Password" />
-            <x-text-input
-                wire:model="password"
-                id="password"
-                type="password"
-                autocomplete="new-password"
-                placeholder="••••••••"
-                :error="$errors->first('password')"
-            />
-            <x-input-error :message="$errors->first('password')" />
-        </div>
+            <div class="flex flex-col gap-2">
+                <label for="name" class="font-semibold">{{ __('register.name') }}</label>
+                <input wire:model="name" id="name" type="text" autofocus autocomplete="name"
+                       placeholder="{{ __('register.name_placeholder') }}"
+                       @error('name') aria-invalid="true" aria-describedby="name-error" @enderror
+                       class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
+                @error('name') <span id="name-error" role="alert" class="text-sm text-wrong">{{ $message }}</span> @enderror
+            </div>
 
-        <div class="field ms-mb-22">
-            <x-input-label for="password_confirmation" value="Confirm password" />
-            <x-text-input
-                wire:model="password_confirmation"
-                id="password_confirmation"
-                type="password"
-                autocomplete="new-password"
-                placeholder="••••••••"
-            />
-        </div>
+            <div class="flex flex-col gap-2">
+                <label for="login" class="font-semibold">{{ __('register.email_or_phone') }}</label>
+                <input wire:model="login" id="login" type="text" inputmode="email" autocomplete="username"
+                       placeholder="{{ __('register.email_or_phone_placeholder') }}"
+                       aria-describedby="login-hint @error('login') login-error @enderror"
+                       @error('login') aria-invalid="true" @enderror
+                       class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
+                <span id="login-hint" class="text-sm text-ink-soft">{{ __('register.email_or_phone_hint') }}</span>
+                @error('login') <span id="login-error" role="alert" class="text-sm text-wrong">{{ $message }}</span> @enderror
+            </div>
 
-        <x-primary-button wire:loading.attr="disabled" wire:target="register">
-            <svg wire:loading wire:target="register" class="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"/></svg>
-            Create account
-        </x-primary-button>
-    </form>
+            <div class="flex flex-col gap-2">
+                <label for="password" class="font-semibold">{{ __('register.password') }}</label>
+                <input wire:model="password" id="password" type="password" autocomplete="new-password" placeholder="••••••••"
+                       @error('password') aria-invalid="true" aria-describedby="password-error" @enderror
+                       class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
+                @error('password') <span id="password-error" role="alert" class="text-sm text-wrong">{{ $message }}</span> @enderror
+            </div>
 
-    <p class="text-muted ms-form-foot">
-        {{ __('register.already_have_account') }}
-        <a href="{{ route('login') }}">{{ __('register.sign_in') }}</a>
-    </p>
+            <div class="flex flex-col gap-2">
+                <label for="password_confirmation" class="font-semibold">{{ __('register.confirm_password') }}</label>
+                <input wire:model="password_confirmation" id="password_confirmation" type="password" autocomplete="new-password" placeholder="••••••••"
+                       class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
+            </div>
+
+            <button type="submit" wire:loading.attr="disabled" wire:target="register" class="fk-btn fk-btn-primary min-h-14 rounded-2xl text-lg">
+                {{ __('register.create_and_play') }}
+            </button>
+        </form>
+
+        <p class="m-0 text-ink-muted">
+            {{ __('register.already_have_account') }}
+            <a href="{{ route('login') }}" class="font-semibold text-sea">{{ __('register.sign_in') }}</a>
+        </p>
+    </div>
 </div>

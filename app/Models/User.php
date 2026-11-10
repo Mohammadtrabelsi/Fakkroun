@@ -7,10 +7,11 @@ use App\Models\Concerns\TracksUserActions;
 use App\Notifications\QueuedResetPassword;
 use App\Notifications\QueuedVerifyEmail;
 use Database\Factories\UserFactory;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Prunable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -21,12 +22,18 @@ use Spatie\Activitylog\Models\Concerns\LogsActivity;
 use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Permission\Traits\HasRoles;
 
-#[Fillable(['name', 'email', 'password', 'locale', 'question_locale'])]
+#[Fillable(['name', 'email', 'phone', 'password', 'locale', 'question_locale'])]
 #[Hidden(['password', 'remember_token', 'two_factor_secret', 'two_factor_recovery_codes'])]
-class User extends Authenticatable implements MustVerifyEmail
+/**
+ * Email verification is optional: players sign up with an email address or a
+ * phone number and can play straight away, so the model does not implement
+ * MustVerifyEmail (no verification mail on sign-up, no "verified" gate).
+ * Verifying an email address is still possible from the verify-email page.
+ */
+class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasApiTokens, HasFactory, HasRoles, LogsActivity, Notifiable, SoftDeletes, TracksUserActions;
+    use HasApiTokens, HasFactory, HasRoles, LogsActivity, Notifiable, Prunable, SoftDeletes, TracksUserActions;
 
     protected string $guard_name = 'web';
 
@@ -50,8 +57,28 @@ class User extends Authenticatable implements MustVerifyEmail
             'status' => AccountStatus::class,
             'suspended_at' => 'datetime',
             'last_seen_at' => 'datetime',
+            'is_guest' => 'boolean',
             'plan_expires_at' => 'datetime',
         ];
+    }
+
+    /**
+     * Nickname-only player created by the join page: may play in rooms but
+     * has no account (cannot create rooms or open account pages).
+     */
+    public function isGuest(): bool
+    {
+        return (bool) $this->is_guest;
+    }
+
+    /**
+     * Guest players are removed a week after they joined (model:prune).
+     *
+     * @return Builder<static>
+     */
+    public function prunable(): Builder
+    {
+        return static::withTrashed()->where('is_guest', true)->where('created_at', '<', now()->subDays(7));
     }
 
     public function isAdmin(): bool

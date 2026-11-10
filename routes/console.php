@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Artisan;
@@ -37,6 +38,8 @@ if (config('backup.schedule.enabled')) {
 // Fakkroun gameplay: advance games nobody is polling, and close stale lobbies.
 Schedule::command('games:advance')->everyFiveSeconds()->withoutOverlapping();
 Schedule::command('rooms:expire')->everyFiveMinutes()->withoutOverlapping();
+// Guest players (nickname only, no account) are removed a week after joining.
+Schedule::command('model:prune', ['--model' => [User::class]])->dailyAt('03:40')->withoutOverlapping()->onOneServer();
 
 // Advertising: end finished campaigns and reconcile events, ledger and balances.
 Schedule::command('advertising:reconcile')->hourly()->withoutOverlapping()->onOneServer();

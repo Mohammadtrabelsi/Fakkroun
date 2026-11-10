@@ -36,6 +36,7 @@ class LeaderboardService
             ->join('users', 'users.id', '=', 'game_results.user_id')
             ->where('games.status', Game::COMPLETED)
             ->whereNull('users.deleted_at')
+            ->where('users.is_guest', false)
             ->when($period === 'week', fn ($query) => $query->where('games.ended_at', '>=', now()->startOfWeek()))
             ->groupBy('game_results.user_id', 'users.name')
             ->selectRaw('game_results.user_id, users.name, sum(game_results.score) as score, count(*) as games, sum(case when game_results.rank = 1 then 1 else 0 end) as wins')
