@@ -35,7 +35,7 @@
                 <form method="GET" action="{{ route('rooms.join') }}" class="flex flex-col gap-1.5">
                     <label for="join-code" class="text-[13px] font-semibold text-ink-muted">{{ __('home.hero.have_code') }}</label>
                     <div class="flex gap-2">
-                        <input id="join-code" name="code" placeholder="{{ __('home.hero.code_placeholder') }}" maxlength="8" autocomplete="off" autocapitalize="characters" class="fk-input w-[130px] uppercase tracking-[0.15em]">
+                        <input id="join-code" name="code" placeholder="{{ __('home.hero.code_placeholder') }}" maxlength="8" autocomplete="off" autocapitalize="characters" class="fk-input w-[170px] uppercase tracking-[0.15em] placeholder:normal-case placeholder:tracking-normal placeholder:font-medium">
                         <button type="submit" class="fk-btn fk-btn-outline min-h-[52px] rounded-[14px]">{{ __('home.hero.join') }}</button>
                     </div>
                 </form>
