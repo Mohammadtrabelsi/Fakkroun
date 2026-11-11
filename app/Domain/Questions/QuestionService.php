@@ -11,6 +11,7 @@ use App\Domain\Questions\Models\QuestionTranslation;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
 use App\Services\Concerns\ManagesModel;
+use App\Services\Concerns\ManagesSoftDeletes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
@@ -31,6 +32,9 @@ class QuestionService
 {
     /** @use ManagesModel<Question> */
     use ManagesModel;
+
+    /** @use ManagesSoftDeletes<Question> */
+    use ManagesSoftDeletes;
 
     /** Statuses that must be re-validated after a content change. */
     private const REVALIDATE = [

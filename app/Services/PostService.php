@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Services\Concerns\ManagesModel;
+use App\Services\Concerns\ManagesSoftDeletes;
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
@@ -18,6 +19,9 @@ class PostService
 {
     /** @use ManagesModel<Post> */
     use ManagesModel;
+
+    /** @use ManagesSoftDeletes<Post> */
+    use ManagesSoftDeletes;
 
     public const COVER_DIRECTORY = 'posts';
 

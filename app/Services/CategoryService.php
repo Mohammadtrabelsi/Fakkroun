@@ -8,6 +8,7 @@ use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use App\Models\User;
 use App\Services\Concerns\ManagesModel;
+use App\Services\Concerns\ManagesSoftDeletes;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +19,9 @@ class CategoryService
 {
     /** @use ManagesModel<Category> */
     use ManagesModel;
+
+    /** @use ManagesSoftDeletes<Category> */
+    use ManagesSoftDeletes;
 
     /** @var array<int, string> */
     private const SORTABLE = ['name', 'created_at'];

@@ -7,6 +7,7 @@ use App\Enums\UserRole;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
 use App\Services\Concerns\ManagesModel;
+use App\Services\Concerns\ManagesSoftDeletes;
 use App\Support\Auth\LoginIdentifier;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -24,6 +25,9 @@ class UserService
 {
     /** @use ManagesModel<User> */
     use ManagesModel;
+
+    /** @use ManagesSoftDeletes<User> */
+    use ManagesSoftDeletes;
 
     public function __construct(
         private readonly RoleService $roles,
