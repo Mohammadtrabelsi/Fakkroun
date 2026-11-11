@@ -1,7 +1,3 @@
-@php
-    $legal = config('fakkroun.legal');
-    $age = $legal['minimum_age'];
-@endphp
 <x-layouts.fakkroun :title="__('terms.title').' — '.config('app.name')" :canonical="route('terms')">
     <article class="fk-container flex max-w-[960px] flex-col gap-10 pt-12 pb-20">
         <header class="flex flex-col gap-3">

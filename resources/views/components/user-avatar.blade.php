@@ -1,8 +1,7 @@
 @props(['user', 'size' => null])
-{{-- Profile picture when one is uploaded, otherwise the user's initials. --}}
-@php($style = $size ? "width: {$size}px; height: {$size}px; font-size: ".max(12, (int) round($size * 0.38)).'px;' : null)
-@if ($url = $user->avatarUrl())
-    <img src="{{ $url }}" alt="" {{ $attributes->merge(['class' => 'avatar avatar-img', 'style' => $style]) }}>
+{{-- Profile picture when one is uploaded, otherwise the user's initials. A given size is passed as a CSS variable. --}}
+@if ($user->avatarUrl())
+    <img src="{{ $user->avatarUrl() }}" alt="" {{ $attributes->merge(['class' => 'avatar avatar-img'.($size ? ' avatar-sized' : ''), 'style' => $size ? '--avatar-size: '.$size.'px' : null]) }}>
 @else
-    <span {{ $attributes->merge(['class' => 'avatar', 'style' => $style]) }}>{{ $user->initials() }}</span>
+    <span {{ $attributes->merge(['class' => 'avatar'.($size ? ' avatar-sized' : ''), 'style' => $size ? '--avatar-size: '.$size.'px' : null]) }}>{{ $user->initials() }}</span>
 @endif

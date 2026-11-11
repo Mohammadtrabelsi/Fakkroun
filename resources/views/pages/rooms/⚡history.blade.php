@@ -44,11 +44,10 @@ new #[Layout('components.layouts.fakkroun')] #[Title('My games')] class extends 
     @else
         <ul class="m-0 flex list-none flex-col gap-3 p-0">
             @foreach ($this->results as $result)
-                @php($room = $result->game?->room)
                 <li wire:key="h-{{ $result->id }}" class="flex flex-wrap items-center gap-4 rounded-3xl border border-sand-300 bg-paper px-6 py-4">
                     <span @class(['flex h-12 w-12 flex-none items-center justify-center rounded-2xl font-display text-2xl font-extrabold', 'bg-sun text-ink' => $result->rank === 1, 'bg-sand-200 text-ink' => $result->rank !== 1])>#{{ $result->rank }}</span>
                     <div class="flex min-w-0 flex-1 flex-col">
-                        <span class="truncate text-lg font-semibold">{{ $room?->name ?? '—' }}</span>
+                        <span class="truncate text-lg font-semibold">{{ $result->game?->room?->name ?? '—' }}</span>
                         <span class="text-sm text-ink-soft">
                             {{ $result->game?->ended_at?->isoFormat('lll') }}
                             · {{ __('progress.history.players', ['count' => $result->players_count]) }}
@@ -56,8 +55,8 @@ new #[Layout('components.layouts.fakkroun')] #[Title('My games')] class extends 
                         </span>
                     </div>
                     <span class="font-display text-2xl font-extrabold text-sea">{{ __('play.dashboard.points', ['points' => number_format($result->score)]) }}</span>
-                    @if ($room)
-                        <a href="{{ route('rooms.results', $room) }}" wire:navigate class="fk-btn">{{ __('progress.history.review') }}</a>
+                    @if ($result->game?->room)
+                        <a href="{{ route('rooms.results', $result->game->room) }}" wire:navigate class="fk-btn">{{ __('progress.history.review') }}</a>
                     @endif
                 </li>
             @endforeach

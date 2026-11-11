@@ -199,6 +199,16 @@ class CategoryService
     }
 
     /**
+     * Active top-level categories for the home page: the priority themes, or the rest.
+     *
+     * @return Collection<int, Category>
+     */
+    public function homeCategories(bool $priority): Collection
+    {
+        return $this->query()->roots()->where('is_active', true)->where('is_priority', $priority)->ordered()->get();
+    }
+
+    /**
      * @return array<int, string>
      */
     public function options(): array

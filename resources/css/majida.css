@@ -620,7 +620,7 @@ a.side-user:hover { background: rgba(255, 255, 255, 0.04); color: #ffffff; }
 .ov-donut { width: 140px; height: 140px; flex: none; }
 .ov-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; font-size: 13px; min-width: 150px; max-width: 240px; flex: 1; }
 .ov-legend li { display: flex; align-items: center; gap: 10px; }
-.ov-swatch { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+.ov-swatch { width: 11px; height: 11px; border-radius: 50%; flex: none; background: var(--swatch); }
 .ov-health-row { display: flex; align-items: center; gap: 12px; font-size: 14px; padding: 2px 0; }
 .ov-health-row svg { flex: none; }
 .ov-ok { color: var(--color-accent); font-weight: 500; }
@@ -681,3 +681,38 @@ html.dark .btn-primary:hover { background: #196a6e; }
     .play-answers { grid-template-columns: minmax(0, 1fr); }
     .play-question { font-size: 19px; }
 }
+
+/* — Member dashboard (pages/dashboard) — */
+.dash-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.dash-section { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(var(--ink), 0.6); margin: 32px 0 12px; }
+.dash-link { display: block; color: inherit; text-decoration: none; }
+.dash-link:hover { background: rgba(var(--ink), 0.04); }
+.dash-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(var(--ink), 0.08); font-size: 14px; }
+.dash-row:last-child { border-bottom: 0; }
+.dash-ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dash-chart { display: flex; align-items: flex-end; gap: 2px; height: 140px; margin-top: 12px; border-bottom: 1px solid var(--color-divider); }
+.dash-bar-col { position: relative; flex: 1; height: 100%; display: flex; align-items: flex-end; outline: none; }
+.dash-bar { width: 100%; height: var(--h, 0%); background: var(--color-accent); border-radius: 4px 4px 0 0; }
+.dash-bar-col:hover .dash-bar, .dash-bar-col:focus .dash-bar { background: var(--color-accent-700); }
+.dash-tip { display: none; position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 12px; padding: 4px 8px; background: var(--color-text); color: var(--color-bg); z-index: 2; pointer-events: none; }
+.dash-bar-col:hover .dash-tip, .dash-bar-col:focus .dash-tip { display: block; }
+.dash-bar-col:first-child .dash-tip { left: 0; transform: none; }
+.dash-bar-col:last-child .dash-tip { left: auto; right: 0; transform: none; }
+.dash-axis { display: flex; justify-content: space-between; margin-top: 6px; }
+.ms-mt-16 { margin-top: 16px; }
+@media (max-width: 640px) { .dash-cards { grid-template-columns: 1fr; } }
+.ms-minw-140 { min-width: 140px; }
+
+/* — Admin analytics (pages/admin/analytics) — */
+.an-chart { display: flex; align-items: flex-end; gap: 2px; height: 120px; margin-top: 12px; }
+.an-bar { flex: 1; min-width: 2px; height: var(--h, 2%); border-radius: 2px 2px 0 0; background: var(--color-accent, currentColor); }
+.an-bar.is-empty { background: var(--color-border, #ddd); }
+.ms-minw-260 { min-width: min(260px, 100%); }
+.ms-minw-280 { min-width: min(280px, 100%); }
+.ms-thumb-inline { height: 28px; display: inline-block; vertical-align: middle; }
+.ms-minw-240 { min-width: min(240px, 100%); }
+.ms-card-caption { text-align: start; padding: 12px 16px 0; }
+
+/* — Toasts and sized avatars (were inline styles) — */
+#toast-hub, [data-toast-hub] { position: fixed; top: 1rem; inset-inline-end: 1rem; z-index: 60; display: flex; flex-direction: column; gap: .5rem; max-width: 22rem; }
+.avatar-sized { width: var(--avatar-size); height: var(--avatar-size); font-size: max(12px, calc(var(--avatar-size) * .38)); }

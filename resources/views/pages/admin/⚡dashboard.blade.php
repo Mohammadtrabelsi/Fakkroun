@@ -27,7 +27,15 @@ new #[Layout('layouts::app')] #[Title('Admin Dashboard')] class extends Componen
     #[Computed]
     public function signups(): array
     {
-        return app(UserService::class)->dailySignups(14);
+        $days = app(UserService::class)->dailySignups(14);
+        $peak = max(1, ...array_column($days, 'count'), ...[0]);
+
+        // Bar heights and tooltips are decided here; the template only draws them.
+        return array_map(fn (array $day, int $i): array => $day + [
+            'percent' => max(4, (int) round($day['count'] / $peak * 100)),
+            'title' => $day['date']->format('M j').': '.$day['count'],
+            'accent' => $i % 3 === 1,
+        ], $days, array_keys($days));
     }
 
     #[Computed]
@@ -111,14 +119,9 @@ new #[Layout('layouts::app')] #[Title('Admin Dashboard')] class extends Componen
             <h3 class="ov-title">{{ __('dashboard.users_overview') }}</h3>
             <div class="stat-value ov-big">{{ number_format($this->newThisMonth) }}</div>
             <div class="text-muted ms-fs-13">{{ __('dashboard.new_users_month') }}</div>
-            @php($peak = max(1, max(array_column($this->signups, 'count'))))
             <div class="ov-bars" role="img" aria-label="{{ __('dashboard.signups_chart', ['days' => count($this->signups)]) }}">
-                @foreach ($this->signups as $i => $day)
-                    <span
-                        class="ov-bar {{ $i % 3 === 1 ? 'is-accent' : '' }}"
-                        style="--h: {{ max(4, round($day['count'] / $peak * 100)) }}%"
-                        title="{{ $day['date']->format('M j') }}: {{ $day['count'] }}"
-                    ></span>
+                @foreach ($this->signups as $day)
+                    <span @class(['ov-bar', 'is-accent' => $day['accent']]) style="--h: {{ $day['percent'] }}%" title="{{ $day['title'] }}"></span>
                 @endforeach
             </div>
         </section>
@@ -166,7 +169,7 @@ new #[Layout('layouts::app')] #[Title('Admin Dashboard')] class extends Componen
                 <ul class="ov-legend">
                     @foreach ($this->roleSlices as $slice)
                         <li>
-                            <span class="ov-swatch" style="background: {{ $slice['color'] }}"></span>
+                            <span class="ov-swatch" style="--swatch: {{ $slice['color'] }}"></span>
                             <span class="ms-flex-1">{{ $slice['label'] }}</span>
                             <span class="text-muted">{{ $slice['percent'] }}%</span>
                         </li>

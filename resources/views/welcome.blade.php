@@ -1,21 +1,4 @@
 {{-- Home (fakkroun-design/design/Main.dc.html), sections in the design's order. --}}
-@php
-    $locale = app()->getLocale();
-    $priority = app(\App\Services\CategoryService::class)->query()->roots()->where('is_active', true)->where('is_priority', true)->ordered()->get();
-    $others = app(\App\Services\CategoryService::class)->query()->roots()->where('is_active', true)->where('is_priority', false)->ordered()->get();
-    $partners = app(\App\Services\PartnerService::class)->visible();
-    $playUrl = auth()->user()?->isGuest() === false ? route('rooms.create') : route('rooms.join');
-    $tiles = ['bg-tint-green text-sea', 'bg-tint-sea text-sea', 'bg-tint-green text-sea', 'bg-tint-sun text-sun-text', 'bg-tint-sun text-sun-text', 'bg-tint-sea text-sea', 'bg-tint-green text-sea'];
-    $icons = [
-        'leaf' => 'M11 20A7 7 0 0 1 4 13c0-6 6-9 16-9 0 10-3 16-9 16zM4 20c4-4 7-7 11-10',
-        'wave' => 'M2 12c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 18c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 6c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2',
-        'shield-leaf' => 'M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6zM9 13c0-3 2-5 6-5 0 4-2 6-5 6',
-        'thermometer' => 'M14 14.8V4a2 2 0 0 0-4 0v10.8a4 4 0 1 0 4 0zM12 8v7',
-        'sun' => 'M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4',
-        'turtle' => 'M12 6c4.4 0 8 2.7 8 6s-3.6 6-8 6-8-2.7-8-6 3.6-6 8-6zM20 12h2M7 17l-2 3M17 17l2 3M7 7 5 4M17 7l2-3',
-        'globe' => 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20',
-    ];
-@endphp
 <x-layouts.fakkroun :structured-data="$structuredData ?? null" :canonical="route('home')">
 
     {{-- 1. Hero --}}

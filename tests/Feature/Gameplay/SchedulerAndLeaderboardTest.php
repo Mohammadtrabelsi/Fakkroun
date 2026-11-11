@@ -46,6 +46,21 @@ class SchedulerAndLeaderboardTest extends GameplayTestCase
         $this->assertSame(RoomStatus::Cancelled, $room->fresh()->status);
     }
 
+    public function test_leaderboard_survives_a_serialising_cache_store(): void
+    {
+        // Tests use the array store, which keeps objects as they are. Real stores serialise,
+        // and objects are refused on the way back (cache.serializable_classes = false).
+        config(['cache.default' => 'file', 'cache.stores.file.path' => sys_get_temp_dir().'/fakkroun-cache-'.uniqid()]);
+
+        $leaderboard = app(LeaderboardService::class);
+        $leaderboard->top('all');
+        $cached = $leaderboard->top('all');
+
+        $this->assertCount(0, $cached);
+        $this->get(route('leaderboard', ['period' => 'all']))->assertOk();
+        $this->get(route('leaderboard', ['period' => 'all']))->assertOk();
+    }
+
     public function test_leaderboard_and_profile_reflect_finished_games(): void
     {
         $host = $this->player('Amira');

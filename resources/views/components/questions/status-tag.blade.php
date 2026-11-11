@@ -1,7 +1,6 @@
 @props(['status'])
-@php($value = $status instanceof \BackedEnum ? $status->value : (string) $status)
-<span {{ $attributes->merge(['class' => 'tag '.match ($value) {
+<span {{ $attributes->merge(['class' => 'tag '.match (\Illuminate\Support\enum_value($status)) {
     'published', 'approved' => 'tag-accent',
     'rejected', 'unpublished', 'changes_requested' => 'tag-outline',
     default => 'tag-neutral',
-}]) }}>{{ __('questions.status.'.$value) }}</span>
+}]) }}>{{ __('questions.status.'.\Illuminate\Support\enum_value($status)) }}</span>

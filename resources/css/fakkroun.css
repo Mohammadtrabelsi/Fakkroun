@@ -1,0 +1,93 @@
+/*
+ * Fakkroun play screens: component classes whose look depends on a state the
+ * server decides. Views set data-state / data-tone; the styling lives here
+ * (house rule: no presentation logic and no inline styles in Blade).
+ */
+
+/* — Answer button (room): data-state = open | picked | correct | wrong | dim — */
+.fk-answer {
+    display: flex; align-items: center; gap: 16px; width: 100%; min-height: 76px;
+    padding: 14px 20px; border: 2px solid var(--color-paper); border-radius: 20px;
+    background: var(--color-paper); color: var(--color-ink);
+    font-size: 19px; font-weight: 600; cursor: pointer;
+    box-shadow: 0 5px 0 #A9B9B5;
+}
+.fk-answer:disabled { cursor: default; }
+.fk-answer[data-state='open']:hover { background: var(--color-sand); }
+.fk-answer[data-state='picked'] { border-color: var(--color-sun); background: var(--color-sea); color: var(--color-paper); box-shadow: none; }
+.fk-answer[data-state='correct'] { border-color: var(--color-correct); background: var(--color-correct); color: #fff; box-shadow: none; }
+.fk-answer[data-state='wrong'] { border-color: var(--color-wrong); background: var(--color-wrong); color: #fff; box-shadow: none; }
+.fk-answer[data-state='dim'] { border-color: var(--color-sea-line); background: var(--color-sea-deep-2); color: var(--color-sea-mist); box-shadow: none; }
+
+.fk-answer-letter {
+    display: flex; flex: none; align-items: center; justify-content: center; width: 44px; height: 44px;
+    border-radius: 12px; background: var(--color-sand-200); color: var(--color-ink);
+    font-family: var(--font-display); font-size: 22px; font-weight: 800;
+}
+.fk-answer[data-state='correct'] .fk-answer-letter { background: #fff; color: #1F6A2C; }
+.fk-answer[data-state='wrong'] .fk-answer-letter { background: #fff; color: var(--color-wrong); }
+.fk-answer[data-state='picked'] .fk-answer-letter,
+.fk-answer[data-state='dim'] .fk-answer-letter { background: var(--color-sea-line); color: var(--color-sea-mist); }
+
+@media (max-width: 480px) {
+    .fk-answer { gap: 12px; min-height: 64px; padding: 12px 14px; font-size: 17px; border-radius: 16px; }
+    .fk-answer-letter { width: 38px; height: 38px; font-size: 19px; border-radius: 10px; }
+}
+
+/* — Player initial: data-tone = 0…4 (rotating colours) | me — */
+.fk-avatar {
+    display: flex; flex: none; align-items: center; justify-content: center; width: 32px; height: 32px;
+    border-radius: 9999px; font-weight: 700; color: var(--color-ink); background: var(--color-sun);
+}
+.fk-avatar[data-tone='1'] { background: var(--color-leaf); }
+.fk-avatar[data-tone='2'] { background: #8FC6D0; }
+.fk-avatar[data-tone='3'] { background: #E7B8A0; }
+.fk-avatar[data-tone='4'] { background: #C9B6E4; }
+.fk-avatar[data-tone='me'] { background: var(--color-sand); }
+
+/* — Reveal verdict: data-tone = right | wrong | excluded | none — */
+.fk-verdict { font-family: var(--font-display); font-size: 26px; color: var(--color-ink); }
+.fk-verdict[data-tone='right'] { color: var(--color-correct); }
+.fk-verdict[data-tone='wrong'] { color: var(--color-wrong); }
+.fk-verdict[data-tone='excluded'] { color: var(--color-sun-text); }
+
+/* — Results podium: data-place = 1 | 2 | 3 — */
+.fk-podium-step {
+    display: flex; align-items: flex-start; justify-content: center; width: 100%; height: 110px; padding-top: 12px;
+    border-radius: 24px 24px 0 0; background: var(--color-tint-sun); color: var(--color-ink);
+    font-family: var(--font-display); font-size: 36px; font-weight: 800;
+}
+.fk-podium-step[data-place='1'] { height: 180px; background: var(--color-sun); }
+.fk-podium-step[data-place='2'] { height: 140px; background: var(--color-tint-sea); }
+
+/* — Standings (results, leaderboard): rank · player · two figures — */
+.fk-standings-head, .fk-standings-row {
+    display: grid; grid-template-columns: 2.25rem minmax(0, 1fr) minmax(3.5rem, auto) minmax(4rem, auto);
+    align-items: center; column-gap: 8px; padding: 12px 6px;
+}
+.fk-standings-head { padding-block: 8px; font-size: 13px; font-weight: 600; color: var(--color-ink-soft); }
+.fk-standings-head > :nth-child(n+3) { text-align: end; }
+.fk-standings-row { border-top: 1px solid var(--color-sand-300); }
+
+/* — Lobby: topic chips and segmented choices. The pressed look follows aria-pressed. — */
+.fk-chip {
+    min-height: 44px; padding-inline: 16px; border: 2px solid var(--color-sand-300); border-radius: 9999px;
+    background: var(--color-sand); color: var(--color-ink); font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.fk-chip[aria-pressed='true'] { border-color: var(--color-sea); background: var(--color-sea); color: var(--color-paper); }
+.fk-chip[aria-pressed='true']::before { content: '✓ '; }
+
+.fk-seg {
+    display: flex; flex: 1; align-items: center; justify-content: center; min-height: 44px; padding-inline: 8px;
+    border-radius: 11px; color: var(--color-ink-soft); font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.fk-seg[aria-pressed='true'] { background: var(--color-paper); color: var(--color-ink); box-shadow: 0 1px 2px rgba(16, 38, 46, .12); }
+
+/* — Community question status: data-tone = live | draft | attention | review — */
+.fk-status {
+    align-self: flex-start; padding: 2px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600;
+    background: var(--color-tint-sea); color: #0B5A55;
+}
+.fk-status[data-tone='live'] { background: var(--color-tint-green); color: #1F6A2C; }
+.fk-status[data-tone='draft'] { background: var(--color-sand-200); color: var(--color-ink); }
+.fk-status[data-tone='attention'] { background: var(--color-tint-sun); color: #5A3618; }

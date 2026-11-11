@@ -101,18 +101,17 @@ new #[Layout('layouts::app')] #[Title('Game settings')] class extends Component
                 <h3 class="ms-fs-18">{{ __('fakkroun.settings.'.$group.'.title') }}</h3>
 
                 @foreach ($fields as $name => $definition)
-                    @php($id = $group.'-'.$name)
                     @if ($definition['type'] === 'bool')
                         <label class="ms-option-card">
-                            <input wire:model="values.{{ $group }}.{{ $name }}" id="{{ $id }}" type="checkbox" class="checkbox ms-mt-2">
+                            <input wire:model="values.{{ $group }}.{{ $name }}" id="{{ $group }}-{{ $name }}" type="checkbox" class="checkbox ms-mt-2">
                             <span>
                                 <span class="ms-block-strong">{{ __('fakkroun.settings.'.$group.'.'.$name) }}</span>
                             </span>
                         </label>
                     @elseif (isset($definition['options']))
                         <div class="field ms-mb-0">
-                            <x-input-label :for="$id" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
-                            <select wire:model="values.{{ $group }}.{{ $name }}" id="{{ $id }}" class="input">
+                            <x-input-label :for="$group.'-'.$name" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
+                            <select wire:model="values.{{ $group }}.{{ $name }}" id="{{ $group }}-{{ $name }}" class="input">
                                 @foreach ($definition['options'] as $optionValue => $optionLabel)
                                     <option value="{{ $optionValue }}">{{ __('fakkroun.settings.'.$group.'.'.$optionLabel) }}</option>
                                 @endforeach
@@ -120,8 +119,8 @@ new #[Layout('layouts::app')] #[Title('Game settings')] class extends Component
                         </div>
                     @elseif ($group === 'translations' && $name === 'fallback_locale')
                         <div class="field ms-mb-0">
-                            <x-input-label :for="$id" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
-                            <select wire:model="values.{{ $group }}.{{ $name }}" id="{{ $id }}" class="input">
+                            <x-input-label :for="$group.'-'.$name" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
+                            <select wire:model="values.{{ $group }}.{{ $name }}" id="{{ $group }}-{{ $name }}" class="input">
                                 @foreach (config('app.available_locales') as $code => $meta)
                                     <option value="{{ $code }}">{{ $meta['label'] }}</option>
                                 @endforeach
@@ -129,23 +128,22 @@ new #[Layout('layouts::app')] #[Title('Game settings')] class extends Component
                         </div>
                     @else
                         <div class="field ms-mb-0">
-                            <x-input-label :for="$id" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
-                            @php($unit = $this->unitLabel($definition))
-                            @if ($unit)
+                            <x-input-label :for="$group.'-'.$name" :value="__('fakkroun.settings.'.$group.'.'.$name)" />
+                            @if ($this->unitLabel($definition))
                                 <div class="ms-input-unit">
                                     <x-text-input
                                         wire:model="values.{{ $group }}.{{ $name }}"
-                                        :id="$id"
+                                        :id="$group.'-'.$name"
                                         type="number"
                                         :error="$errors->first('values.'.$group.'.'.$name)"
-                                        aria-describedby="{{ $id }}-unit"
+                                        aria-describedby="{{ $group }}-{{ $name }}-unit"
                                     />
-                                    <span id="{{ $id }}-unit" class="ms-input-unit-label">{{ $unit }}</span>
+                                    <span id="{{ $group }}-{{ $name }}-unit" class="ms-input-unit-label">{{ $this->unitLabel($definition) }}</span>
                                 </div>
                             @else
                                 <x-text-input
                                     wire:model="values.{{ $group }}.{{ $name }}"
-                                    :id="$id"
+                                    :id="$group.'-'.$name"
                                     :type="$definition['type'] === 'int' ? 'number' : 'text'"
                                     :error="$errors->first('values.'.$group.'.'.$name)"
                                 />

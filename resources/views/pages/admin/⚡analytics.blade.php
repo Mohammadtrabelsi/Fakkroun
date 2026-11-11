@@ -43,16 +43,34 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
                 : null,
         ];
     }
+
+    /**
+     * View data: the figures plus formatters and the chart bars, so the
+     * template only prints.
+     *
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        $data = $this->data;
+        $peak = max(1, ...array_values($data['daily']), ...[0]);
+
+        return [
+            'd' => $data,
+            'o' => $data['overview'],
+            'fmt' => fn (int|float|null $value, string $suffix = ''): string => $value === null ? '—' : number_format($value, is_float($value) ? 1 : 0).$suffix,
+            'peak' => max($data['daily'] ?: [0]),
+            'bars' => collect($data['daily'])->map(fn (int $count, string $day): array => [
+                'title' => \Illuminate\Support\Carbon::parse($day)->isoFormat('ll').': '.$count,
+                'percent' => max(2, (int) round(100 * $count / $peak)),
+                'empty' => $count === 0,
+            ])->values()->all(),
+            'currency' => (string) app(\App\Services\PlatformSettings::class)->get('advertising.currency'),
+        ];
+    }
 };
 ?>
 
-@php
-    $d = $this->data;
-    $o = $d['overview'];
-    $fmt = fn ($v, $suffix = '') => $v === null ? '—' : number_format($v, is_float($v) ? 1 : 0).$suffix;
-    $peak = max(1, ...array_values($d['daily']));
-    $currency = app(\App\Services\PlatformSettings::class)->get('advertising.currency');
-@endphp
 <div>
     <div class="ms-page-head">
         <div>
@@ -79,17 +97,17 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
 
     <div class="card ms-mb-24">
         <div class="card-kicker">{{ __('analytics.games_per_day') }}</div>
-        <div role="img" aria-label="{{ __('analytics.games_per_day') }}" style="display: flex; align-items: flex-end; gap: 2px; height: 120px; margin-top: 12px;">
-            @foreach ($d['daily'] as $day => $count)
-                <div title="{{ \Illuminate\Support\Carbon::parse($day)->isoFormat('ll') }}: {{ $count }}" style="flex: 1; min-width: 2px; height: {{ max(2, round(100 * $count / $peak)) }}%; background: {{ $count ? 'var(--color-accent, currentColor)' : 'var(--color-border, #ddd)' }}; border-radius: 2px 2px 0 0;"></div>
+        <div class="an-chart" role="img" aria-label="{{ __('analytics.games_per_day') }}">
+            @foreach ($bars as $bar)
+                <div @class(['an-bar', 'is-empty' => $bar['empty']]) title="{{ $bar['title'] }}" style="--h: {{ $bar['percent'] }}%"></div>
             @endforeach
         </div>
-        <div class="ms-row-between text-muted ms-fs-12"><span>{{ $d['from']->isoFormat('ll') }}</span><span>{{ __('analytics.peak', ['count' => max($d['daily'] ?: [0])]) }}</span><span>{{ $d['to']->isoFormat('ll') }}</span></div>
+        <div class="ms-row-between text-muted ms-fs-12"><span>{{ $d['from']->isoFormat('ll') }}</span><span>{{ __('analytics.peak', ['count' => $peak]) }}</span><span>{{ $d['to']->isoFormat('ll') }}</span></div>
     </div>
 
     <div class="ms-row-10 ms-wrap ms-mb-24">
         @foreach (['categories' => 'name', 'languages' => 'language'] as $key => $labelKey)
-            <div class="card ms-p-0 ms-flex-1" style="min-width: 280px;">
+            <div class="card ms-p-0 ms-flex-1 ms-minw-280">
                 <div class="row-cards-wrap">
                     <div class="row-cards">
                             @forelse ($d['breakdown'][$key] as $row)
@@ -107,7 +125,7 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
     <p class="text-muted ms-fs-13 ms-mb-16">{{ __('analytics.question_hint', ['min' => \App\Domain\Analytics\PlatformAnalytics::MIN_ANSWERS]) }}</p>
     <div class="ms-row-10 ms-wrap ms-mb-24">
         @foreach (['hardest', 'easiest', 'most_played', 'most_reported'] as $list)
-            <div class="card ms-flex-1" style="min-width: 280px;">
+            <div class="card ms-flex-1 ms-minw-260">
                 <div class="card-kicker">{{ __('analytics.lists.'.$list) }}</div>
                 <ol class="ms-fs-13 ms-stack-8">
                     @forelse ($d['questions'][$list] as $row)
@@ -124,7 +142,7 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
     </div>
 
     <div class="ms-row-10 ms-wrap">
-        <div class="card ms-flex-1" style="min-width: 260px;">
+        <div class="card ms-flex-1 ms-minw-260">
             <div class="card-kicker">{{ __('analytics.bank') }}</div>
             <ul class="ms-fs-13">
                 @foreach ($d['bank']['by_status'] as $status => $total)
@@ -137,7 +155,7 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
             </div>
         </div>
 
-        <div class="card ms-flex-1" style="min-width: 260px;">
+        <div class="card ms-flex-1 ms-minw-260">
             <div class="card-kicker">{{ __('analytics.ai') }}</div>
             <ul class="ms-fs-13">
                 <li class="ms-row-between"><span>{{ __('analytics.ai_batches') }}</span><b>{{ number_format($d['ai']['batches']) }} / {{ number_format($d['ai']['drafts']) }}</b></li>
@@ -149,7 +167,7 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
         </div>
 
         @if ($d['ads'])
-            <div class="card ms-flex-1" style="min-width: 260px;">
+            <div class="card ms-flex-1 ms-minw-260">
                 <div class="card-kicker">{{ __('advertising.admin_title') }}</div>
                 <ul class="ms-fs-13">
                     <li class="ms-row-between"><span>{{ __('advertising.impressions') }}</span><b>{{ number_format($d['ads']['impressions']) }}</b></li>
@@ -161,8 +179,8 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
         @endif
     </div>
 
-    <div class="ms-row-10 ms-wrap" style="margin-top: 16px;">
-        <div class="card ms-flex-1" style="min-width: 260px;">
+    <div class="ms-row-10 ms-wrap ms-mt-16">
+        <div class="card ms-flex-1 ms-minw-260">
             <div class="card-kicker">{{ __('analytics.moderation.title') }}</div>
             <ul class="ms-fs-13">
                 <li class="ms-row-between"><span>{{ __('analytics.moderation.waiting') }}</span><b>{{ number_format($d['moderation']['waiting']) }}</b></li>
@@ -173,7 +191,7 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
             </ul>
         </div>
 
-        <div class="card ms-flex-1" style="min-width: 260px;">
+        <div class="card ms-flex-1 ms-minw-260">
             <div class="card-kicker">{{ __('analytics.fair_play.title') }}</div>
             <p class="ms-fs-13">{{ __('analytics.fair_play.flagged', ['count' => number_format($d['fairPlay']['flagged'])]) }}</p>
             <ul class="ms-fs-13">
@@ -186,7 +204,7 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
             <p class="text-muted ms-fs-12">{{ __('analytics.fair_play.note') }}</p>
         </div>
 
-        <div class="card ms-flex-1" style="min-width: 280px;">
+        <div class="card ms-flex-1 ms-minw-260">
             <div class="card-kicker">{{ __('analytics.calibration.title') }}</div>
             <ol class="ms-fs-13 ms-stack-8">
                 @forelse ($d['calibration'] as $row)

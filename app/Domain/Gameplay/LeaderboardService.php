@@ -31,7 +31,9 @@ class LeaderboardService
     {
         $period = in_array($period, ['week', 'all'], true) ? $period : 'week';
 
-        return Cache::remember("leaderboard:{$period}:{$limit}", 60, fn () => $this->gameResults->query()
+        // Cached as plain arrays: stores that serialise (file, database, Redis) refuse objects
+        // (cache.serializable_classes is false) and would hand back __PHP_Incomplete_Class.
+        $rows = Cache::remember("leaderboard:{$period}:{$limit}", 60, fn (): array => $this->gameResults->query()
             ->join('games', 'games.id', '=', 'game_results.game_id')
             ->join('users', 'users.id', '=', 'game_results.user_id')
             ->where('games.status', Game::COMPLETED)
@@ -44,13 +46,16 @@ class LeaderboardService
             ->orderBy('game_results.user_id')
             ->limit($limit)
             ->get()
-            ->map(fn ($row) => (object) [
+            ->map(fn ($row): array => [
                 'user_id' => (int) $row->user_id,
                 'name' => (string) $row->name,
                 'score' => (int) $row->score,
                 'games' => (int) $row->games,
                 'wins' => (int) $row->wins,
-            ]));
+            ])
+            ->all());
+
+        return collect($rows)->map(fn (array $row): object => (object) $row);
     }
 
     /**

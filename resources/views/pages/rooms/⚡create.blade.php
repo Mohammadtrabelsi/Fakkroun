@@ -154,10 +154,9 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
 };
 ?>
 
-@php($seg = fn (bool $on) => 'flex min-h-11 flex-1 items-center justify-center rounded-[11px] px-2 text-[15px] font-semibold '.($on ? 'bg-paper text-ink shadow-[0_1px_2px_rgba(16,38,46,.12)]' : 'text-ink-soft'))
 <div class="fk-container flex flex-col gap-8 pt-12 pb-20">
     <div class="flex flex-col gap-2">
-        <h1 class="fk-h2 m-0 text-[52px] leading-none">{{ __('play.lobby.title') }}</h1>
+        <h1 class="fk-h2 m-0 text-[clamp(36px,9vw,52px)] leading-none">{{ __('play.lobby.title') }}</h1>
         <p class="m-0 text-lg text-ink-muted">{{ __('play.lobby.lead') }}</p>
     </div>
 
@@ -177,11 +176,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                 <legend class="mb-3 p-0 font-semibold">{{ __('play.create.categories') }} <span class="font-normal text-ink-soft">{{ $this->minCategories > 1 ? __('play.lobby.categories_hint_min', ['min' => $this->minCategories]) : __('play.lobby.categories_hint') }}</span></legend>
                 <div class="flex flex-wrap gap-2.5">
                     @foreach ($this->categories as $id => $label)
-                        @php($on = in_array($id, $categoryIds, true))
-                        <button type="button" wire:click="toggleCategory({{ $id }})" aria-pressed="{{ $on ? 'true' : 'false' }}"
-                                class="min-h-11 rounded-full border-2 px-4 text-[15px] font-semibold {{ $on ? 'border-sea bg-sea text-paper' : 'border-sand-300 bg-sand text-ink' }}">
-                            @if ($on) ✓ @endif{{ $label }}
-                        </button>
+                        <button type="button" wire:click="toggleCategory({{ $id }})" aria-pressed="{{ in_array($id, $categoryIds, true) ? 'true' : 'false' }}" class="fk-chip">{{ $label }}</button>
                     @endforeach
                 </div>
                 @error('category_ids') <span class="text-sm text-wrong">{{ $message }}</span> @enderror
@@ -192,7 +187,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                     <legend class="mb-3 p-0 font-semibold">{{ __('play.lobby.difficulty') }}</legend>
                     <div class="flex gap-1 rounded-[14px] bg-sand-200 p-1">
                         @foreach (['any' => __('play.lobby.mixed'), 'easy' => __('questions.difficulty.easy'), 'medium' => __('questions.difficulty.medium'), 'hard' => __('questions.difficulty.hard')] as $value => $label)
-                            <button type="button" wire:click="$set('difficulty', '{{ $value }}')" aria-pressed="{{ $difficulty === $value ? 'true' : 'false' }}" class="{{ $seg($difficulty === $value) }}">{{ $label }}</button>
+                            <button type="button" wire:click="$set('difficulty', '{{ $value }}')" aria-pressed="{{ $difficulty === $value ? 'true' : 'false' }}" class="fk-seg">{{ $label }}</button>
                         @endforeach
                     </div>
                 </fieldset>
@@ -200,7 +195,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                     <legend class="mb-3 p-0 font-semibold">{{ __('play.lobby.questions') }}</legend>
                     <div class="flex gap-1 rounded-[14px] bg-sand-200 p-1">
                         @foreach ($this->counts() as $count)
-                            <button type="button" wire:click="$set('questionCount', {{ $count }})" aria-pressed="{{ $questionCount === $count ? 'true' : 'false' }}" class="{{ $seg($questionCount === $count) }}">{{ $count }}</button>
+                            <button type="button" wire:click="$set('questionCount', {{ $count }})" aria-pressed="{{ $questionCount === $count ? 'true' : 'false' }}" class="fk-seg">{{ $count }}</button>
                         @endforeach
                     </div>
                 </fieldset>
@@ -208,7 +203,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                     <legend class="mb-3 p-0 font-semibold">{{ __('play.lobby.time') }}</legend>
                     <div class="flex gap-1 rounded-[14px] bg-sand-200 p-1">
                         @foreach ($this->times() as $seconds)
-                            <button type="button" wire:click="$set('secondsPerQuestion', {{ $seconds }})" aria-pressed="{{ $secondsPerQuestion === $seconds ? 'true' : 'false' }}" class="{{ $seg($secondsPerQuestion === $seconds) }}">{{ __('play.lobby.seconds_short', ['seconds' => $seconds]) }}</button>
+                            <button type="button" wire:click="$set('secondsPerQuestion', {{ $seconds }})" aria-pressed="{{ $secondsPerQuestion === $seconds ? 'true' : 'false' }}" class="fk-seg">{{ __('play.lobby.seconds_short', ['seconds' => $seconds]) }}</button>
                         @endforeach
                     </div>
                 </fieldset>
@@ -217,7 +212,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                     <div class="flex gap-1 rounded-[14px] bg-sand-200 p-1">
                         @foreach (['en' => 'EN', 'fr' => 'FR', 'ar' => 'عربي'] as $value => $label)
                             @if (array_key_exists($value, config('app.available_locales')))
-                                <button type="button" wire:click="$set('language', '{{ $value }}')" aria-pressed="{{ $language === $value ? 'true' : 'false' }}" @if ($value === 'ar') lang="ar" @endif class="{{ $seg($language === $value) }}">{{ $label }}</button>
+                                <button type="button" wire:click="$set('language', '{{ $value }}')" aria-pressed="{{ $language === $value ? 'true' : 'false' }}" @if ($value === 'ar') lang="ar" @endif class="fk-seg">{{ $label }}</button>
                             @endif
                         @endforeach
                     </div>

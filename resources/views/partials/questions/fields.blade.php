@@ -4,7 +4,6 @@
     choices[4], correct, explanation, referenceUrl, referenceText, and the
     computed $this->categoryOptions / $this->subcategoryOptions.
 --}}
-@php($dir = config('app.available_locales.'.($language ?? app()->getLocale()).'.dir', 'ltr'))
 
 <div class="ms-row-10 ms-wrap">
     <div class="field ms-mb-0">
@@ -56,7 +55,7 @@
 
 <div class="field ms-mb-0">
     <x-input-label for="body" :value="__('questions.fields.body')" />
-    <textarea wire:model="body" id="body" rows="3" dir="{{ $dir }}" class="textarea"></textarea>
+    <textarea wire:model="body" id="body" rows="3" dir="{{ config('app.available_locales.'.($language ?? app()->getLocale()).'.dir', 'ltr') }}" class="textarea"></textarea>
     <x-input-error :message="$errors->first('body')" />
 </div>
 
@@ -66,7 +65,7 @@
         <div class="ms-row-10-center" wire:key="choice-{{ $i }}">
             <input type="radio" wire:model="correct" value="{{ $i }}" id="correct-{{ $i }}" class="checkbox" aria-label="{{ __('questions.fields.mark_correct', ['letter' => chr(65 + $i)]) }}">
             <span class="ms-fw-500">{{ chr(65 + $i) }}</span>
-            <x-text-input wire:model="choices.{{ $i }}" id="choice-{{ $i }}" type="text" :dir="$dir" :error="$errors->first('choices.'.$i)" />
+            <x-text-input wire:model="choices.{{ $i }}" id="choice-{{ $i }}" type="text" :dir="config('app.available_locales.'.($language ?? app()->getLocale()).'.dir', 'ltr')" :error="$errors->first('choices.'.$i)" />
         </div>
         <x-input-error :message="$errors->first('choices.'.$i)" />
     @endforeach
@@ -76,7 +75,7 @@
 
 <div class="field ms-mb-0">
     <x-input-label for="explanation" :value="__('questions.fields.explanation')" />
-    <textarea wire:model="explanation" id="explanation" rows="2" dir="{{ $dir }}" class="textarea"></textarea>
+    <textarea wire:model="explanation" id="explanation" rows="2" dir="{{ config('app.available_locales.'.($language ?? app()->getLocale()).'.dir', 'ltr') }}" class="textarea"></textarea>
     <x-input-error :message="$errors->first('explanation')" />
 </div>
 

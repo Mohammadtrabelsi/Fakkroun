@@ -21,6 +21,12 @@ class Tag extends SpatieTag
      * locale, which would split one tag into several depending on the
      * editor's language; the fallback locale keeps a single canonical name.
      */
+    /** Slug in the locale tags are stored in, or null when the tag has none. */
+    public function localSlug(): ?string
+    {
+        return $this->getTranslation('slug', static::getLocale(), false) ?: null;
+    }
+
     public static function getLocale(): string
     {
         return (string) config('app.fallback_locale', 'en');
