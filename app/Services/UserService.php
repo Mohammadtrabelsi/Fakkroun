@@ -350,7 +350,8 @@ class UserService
 
     public function deleteOwnAccount(User $user): void
     {
-        Auth::logout();
+        // Token (API) guards are stateless and have no logout(): only end the browser session.
+        Auth::guard('web')->logout();
 
         // Fully tear down the session (not just the auth state) so no stale
         // session/CSRF token survives the account deletion.

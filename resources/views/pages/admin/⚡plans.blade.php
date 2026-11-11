@@ -106,7 +106,7 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
                     @forelse ($this->paidUsers as $user)
                         <div class="row-card" wire:key="pu-{{ $user->id }}">
                             <div class="row-card-title"><div class="ms-fw-500">{{ $user->name }}</div><div class="text-muted ms-fs-12">{{ $user->email }}</div></div>
-                            <div @class(['row-card-field', 'text-muted' = data-label="{{ __('billing.plans.until') }}"> ! $user->hasPaidPlan()])>{{ $user->plan_expires_at?->isoFormat('ll') ?? '—' }}</div>
+                            <div @class(['row-card-field', 'text-muted' => ! $user->hasPaidPlan()]) data-label="{{ __('billing.plans.until') }}">{{ $user->plan_expires_at?->isoFormat('ll') ?? '—' }}</div>
                             <div class="row-card-field ms-text-right"><button type="button" wire:click="cancel({{ $user->id }})" wire:confirm="{{ __('billing.plans.cancel') }}?" class="btn ms-btn-sm">{{ __('billing.plans.cancel') }}</button></div>
                         </div>
                     @empty

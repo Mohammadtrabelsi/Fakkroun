@@ -154,7 +154,7 @@ class PostManagementTest extends TestCase
 
         $this->actingAs($admin)
             ->get('/admin/posts')
-            ->assertSee('wire:confirm="Permanently delete this post? This cannot be undone."', false);
+            ->assertSee('wire:confirm="Move this post to the trash?"', false);
     }
 
     public function test_deleting_category_nulls_post_category(): void
@@ -162,8 +162,11 @@ class PostManagementTest extends TestCase
         $category = Category::factory()->create();
         $post = Post::factory()->create(['category_id' => $category->id]);
 
+        // Categories go to the trash first: the post keeps its category until it is really removed.
         $category->delete();
+        $this->assertSame($category->id, $post->fresh()->category_id);
 
+        $category->forceDelete();
         $this->assertNull($post->fresh()->category_id);
     }
 }

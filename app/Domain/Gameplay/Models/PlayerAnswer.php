@@ -10,6 +10,9 @@ class PlayerAnswer extends Model
 {
     public $timestamps = false;
 
+    /** received_at keeps its milliseconds. */
+    protected $dateFormat = GameQuestion::CLOCK_FORMAT;
+
     protected $fillable = ['game_question_id', 'user_id', 'choice_id', 'received_at', 'response_ms', 'is_correct', 'is_duplicate_excluded', 'points', 'flagged_fast'];
 
     protected function casts(): array

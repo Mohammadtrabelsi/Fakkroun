@@ -121,7 +121,7 @@ class UserManagementTest extends TestCase
 
         $this->actingAs($admin)
             ->get('/admin/users')
-            ->assertSee('wire:confirm="Permanently delete Confirm User? This cannot be undone."', false);
+            ->assertSee('wire:confirm="Move Confirm User to the trash? They will not be able to sign in until restored."', false);
     }
 
     public function test_admin_cannot_delete_themselves(): void
@@ -143,7 +143,7 @@ class UserManagementTest extends TestCase
 
         Livewire::actingAs($user)
             ->test('pages::admin.users.index')
-            ->call('deleteUser', $other->id)
+            // The screen itself refuses to mount, so no action can be called on it.
             ->assertForbidden();
 
         $this->assertNotNull($other->fresh());

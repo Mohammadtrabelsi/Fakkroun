@@ -8,8 +8,8 @@ use App\Domain\Gameplay\GameEngine;
 use App\Domain\Gameplay\Models\Game;
 use App\Domain\Gameplay\Models\PlayerAnswer;
 use App\Domain\Gameplay\RoomService;
-use App\Domain\Questions\ModerationService;
 use App\Domain\Questions\Models\Question;
+use App\Domain\Questions\ModerationService;
 use App\Enums\UserRole;
 use App\Models\User;
 use App\Notifications\JobFailedAlert;
@@ -26,6 +26,9 @@ class LaunchReadinessTest extends GameplayTestCase
 {
     private function playOne(): Game
     {
+        // Stop the clock: the host's "0 ms" answer must not depend on how fast this machine runs.
+        $this->freezeTime();
+
         $host = $this->player('Host');
         $guest = $this->player('Guest');
         $this->publishQuestions(1);

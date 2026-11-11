@@ -22,6 +22,8 @@ class SettingServiceTest extends TestCase
 
     public function test_current_creates_a_singleton_with_defaults(): void
     {
+        // A data migration may already have read the settings (which creates the row): start empty.
+        Setting::query()->delete();
         $this->assertSame(0, Setting::count());
 
         $setting = $this->service->current();

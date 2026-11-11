@@ -131,6 +131,7 @@ return [
     // Units shown next to numeric game settings.
     'settings_units' => [
         'players' => 'players',
+        'categories' => 'categories',
         'rooms' => 'rooms',
         'questions' => 'questions',
         'questions_per_day' => 'questions / day',

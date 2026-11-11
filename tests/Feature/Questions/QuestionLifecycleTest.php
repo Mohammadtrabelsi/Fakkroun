@@ -115,7 +115,7 @@ class QuestionLifecycleTest extends QuestionBankTestCase
 
         $moderation->rejectTranslation($question->translation('ar'), $this->admin, 'Wrong term');
         $this->assertSame(['en', 'fr'], app(QuestionPool::class)->languages($question));
-        $this->assertSame(TranslationStatus::Rejected, $question->translation('ar')->status);
+        $this->assertSame(TranslationStatus::Rejected, $question->fresh()->translation('ar')->status);
     }
 
     public function test_editing_an_approved_question_sends_it_back_for_review(): void

@@ -148,6 +148,9 @@ class WalletService
             throw new AuthorizationException;
         }
 
+        // Read the stored row: the caller's copy may carry unsaved (refused) changes.
+        $entry = $this->ledgerEntries->query()->findOrFail($entry->getKey());
+
         if ($entry->entry_type !== 'consumption') {
             throw new DomainActionException(__('advertising.errors.reverse_only_consumption'));
         }

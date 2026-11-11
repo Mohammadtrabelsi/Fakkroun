@@ -22,6 +22,11 @@ class GameQuestion extends Model
 {
     public $timestamps = false;
 
+    /** Question clocks are stored to the millisecond (see GameEngine). */
+    public const CLOCK_FORMAT = 'Y-m-d H:i:s.v';
+
+    protected $dateFormat = self::CLOCK_FORMAT;
+
     protected $fillable = ['game_id', 'question_id', 'position', 'question_version', 'language', 'opened_at', 'deadline_at', 'closed_at', 'sponsored_round_campaign_id'];
 
     protected function casts(): array

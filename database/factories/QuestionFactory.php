@@ -12,6 +12,8 @@ use App\Domain\Questions\Models\QuestionChoice;
 use App\Domain\Questions\QuestionPool;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 /**
  * Builds a complete question: four choices, the correct one set, and an
@@ -52,41 +54,53 @@ class QuestionFactory extends Factory
         ];
     }
 
-    public function configure(): static
+    /**
+     * Runs on the factory that actually creates the models. An afterCreating()
+     * closure registered in configure() would stay bound to the first
+     * instance and miss texts added later with withText().
+     *
+     * @param  Collection<int, Question>  $instances
+     */
+    protected function callAfterCreating(Collection $instances, ?Model $parent = null): void
     {
-        return $this->afterCreating(function (Question $question): void {
-            $choices = collect(range(1, 4))->map(fn (int $position) => QuestionChoice::query()->create([
-                'question_id' => $question->id,
-                'position' => $position,
-            ]));
+        $instances->each(fn (Question $question) => $this->complete($question));
 
-            $question->forceFill(['correct_choice_id' => $choices[0]->id])->saveQuietly();
+        parent::callAfterCreating($instances, $parent);
+    }
 
-            $status = $this->translationStatus
-                ?? ($question->status === QuestionStatus::Published || $question->status === QuestionStatus::Approved
-                    ? TranslationStatus::Approved->value
-                    : TranslationStatus::Pending->value);
+    private function complete(Question $question): void
+    {
+        $choices = collect(range(1, 4))->map(fn (int $position) => QuestionChoice::query()->create([
+            'question_id' => $question->id,
+            'position' => $position,
+        ]));
 
-            $languages = array_unique([$question->origin_language, ...array_keys($this->texts)]);
+        $question->forceFill(['correct_choice_id' => $choices[0]->id])->saveQuietly();
 
-            foreach ($languages as $language) {
-                $text = $this->texts[$language] ?? [];
-                $body = $text['body'] ?? fake()->unique()->sentence(8).'?';
-                $answers = $text['choices'] ?? [fake()->word().' one', fake()->word().' two', fake()->word().' three', fake()->word().' four'];
-                $map = $choices->values()->mapWithKeys(fn (QuestionChoice $choice, int $i) => [(string) $choice->id => $answers[$i]])->all();
+        $status = $this->translationStatus
+            ?? ($question->status === QuestionStatus::Published || $question->status === QuestionStatus::Approved
+                ? TranslationStatus::Approved->value
+                : TranslationStatus::Pending->value);
 
-                $translation = $question->translations()->create([
-                    'language' => $language,
-                    'body' => $body,
-                    'choices' => $map,
-                    'explanation' => $text['explanation'] ?? fake()->sentence(),
-                    'content_hash' => app(DuplicateDetector::class)->hash($body, $answers),
-                ]);
-                $translation->forceFill(['status' => $text['status'] ?? $status])->save();
-            }
+        $languages = array_unique([$question->origin_language, ...array_keys($this->texts)]);
 
-            app(QuestionPool::class)->sync($question->fresh());
-        });
+        foreach ($languages as $language) {
+            $text = $this->texts[$language] ?? [];
+            $body = $text['body'] ?? fake()->unique()->sentence(8).'?';
+            $answers = $text['choices'] ?? [fake()->word().' one', fake()->word().' two', fake()->word().' three', fake()->word().' four'];
+            $map = $choices->values()->mapWithKeys(fn (QuestionChoice $choice, int $i) => [(string) $choice->id => $answers[$i]])->all();
+
+            $translation = $question->translations()->create([
+                'language' => $language,
+                'body' => $body,
+                'choices' => $map,
+                'explanation' => $text['explanation'] ?? fake()->sentence(),
+                'content_hash' => app(DuplicateDetector::class)->hash($body, $answers),
+            ]);
+            $translation->forceFill(['status' => $text['status'] ?? $status])->save();
+        }
+
+        app(QuestionPool::class)->sync($question->fresh());
     }
 
     public function status(QuestionStatus $status): static

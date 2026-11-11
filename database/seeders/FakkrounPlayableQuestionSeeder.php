@@ -87,22 +87,22 @@ class FakkrounPlayableQuestionSeeder extends Seeder
             'fr' => ['Quelle part de la surface de la Terre est couverte par les océans, environ ?', ['30 %', '50 %', '71 %', '90 %'], null],
             'ar' => ['ما النسبة التقريبية لسطح الأرض التي تغطيها المحيطات؟', ['30%', '50%', '71%', '90%'], null],
         ]],
-        ['general-knowledge', 'easy', 0, null, [
+        ['general-knowledge', 'easy', 0, 'https://en.wikipedia.org/wiki/Tunis', [
             'en' => ['What is the capital city of Tunisia?', ['Tunis', 'Sousse', 'Sfax', 'Kairouan'], null],
             'fr' => ['Quelle est la capitale de la Tunisie ?', ['Tunis', 'Sousse', 'Sfax', 'Kairouan'], null],
             'ar' => ['ما هي عاصمة تونس؟', ['تونس', 'سوسة', 'صفاقس', 'القيروان'], null],
         ]],
-        ['geography', 'easy', 1, null, [
+        ['geography', 'easy', 1, 'https://en.wikipedia.org/wiki/Nile', [
             'en' => ['Which is the longest river in Africa?', ['Congo', 'Nile', 'Niger', 'Zambezi'], null],
             'fr' => ['Quel est le plus long fleuve d’Afrique ?', ['Le Congo', 'Le Nil', 'Le Niger', 'Le Zambèze'], null],
             'ar' => ['ما أطول نهر في إفريقيا؟', ['الكونغو', 'النيل', 'النيجر', 'الزمبيزي'], null],
         ]],
-        ['science-technology', 'easy', 3, null, [
+        ['science-technology', 'easy', 3, 'https://en.wikipedia.org/wiki/Water', [
             'en' => ['What is the chemical formula of water?', ['CO₂', 'O₂', 'NaCl', 'H₂O'], null],
             'fr' => ['Quelle est la formule chimique de l’eau ?', ['CO₂', 'O₂', 'NaCl', 'H₂O'], null],
             'ar' => ['ما الصيغة الكيميائية للماء؟', ['CO₂', 'O₂', 'NaCl', 'H₂O'], null],
         ]],
-        ['history', 'medium', 2, null, [
+        ['history', 'medium', 2, 'https://en.wikipedia.org/wiki/History_of_Tunisia', [
             'en' => ['In which year did Tunisia gain its independence?', ['1946', '1952', '1956', '1962'], null],
             'fr' => ['En quelle année la Tunisie a-t-elle obtenu son indépendance ?', ['1946', '1952', '1956', '1962'], null],
             'ar' => ['في أي سنة نالت تونس استقلالها؟', ['1946', '1952', '1956', '1962'], null],
