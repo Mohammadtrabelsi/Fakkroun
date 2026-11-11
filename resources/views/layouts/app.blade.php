@@ -309,8 +309,7 @@
                 </main>
 
                 <footer class="shell-footer">
-                    <div class="text-muted ms-fs-12">© {{ date('Y') }} {{ config('app.name') }}.</div>
-                    <span class="footer-status">{{ __('marketing.in_memory') }}</span>
+                    <div class="text-muted ms-fs-12">{{ __('home.footer.made_in', ['year' => config('fakkroun.brand.copyright_year')]) }}</div>
                 </footer>
             </div>
         </div>

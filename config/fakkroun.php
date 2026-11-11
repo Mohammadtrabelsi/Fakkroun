@@ -153,7 +153,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'brand' => [
-        'copyright_year' => env('FAKKROUN_COPYRIGHT_YEAR', '[YEAR]'),
+        'copyright_year' => env('FAKKROUN_COPYRIGHT_YEAR', '2026'),
         'partner_placeholder' => '[PARTNER LOGO]',
         'source_placeholder' => '[ADD SOURCE LINK]',
         // Shown on the home page partners band when no partner is active.
