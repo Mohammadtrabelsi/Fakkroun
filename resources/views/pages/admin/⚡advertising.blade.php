@@ -331,14 +331,24 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             $this->toast($e->getMessage(), 'error');
         }
     }
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        $currency = (string) app(\App\Services\PlatformSettings::class)->get('advertising.currency');
+
+        return [
+            'stats' => $this->stats,
+            'currency' => $currency,
+            'money' => fn (int|string|null $minor): string => number_format(((int) $minor) / 100, 2).' '.$currency,
+            'report' => $this->reconciliation,
+        ];
+    }
 };
 ?>
 
-@php
-    $stats = $this->stats;
-    $currency = app(\App\Services\PlatformSettings::class)->get('advertising.currency');
-    $money = fn ($minor) => number_format(((int) $minor) / 100, 2).' '.$currency;
-@endphp
 <div>
     <div class="ms-page-head">
         <div>
@@ -388,7 +398,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                                 <div class="row-card-field ms-fs-13" data-label="{{ __('advertising.creatives') }}">
                                     @foreach ($campaign->creatives as $creative)
                                         <div>
-                                            @if ($creative->image_path)<img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($creative->image_path) }}" alt="{{ $creative->alt_text }}" style="height: 28px; display: inline-block; vertical-align: middle;">@endif
+                                            @if ($creative->image_path)<img src="{{ $creative->imageUrl() }}" alt="{{ $creative->alt_text }}" class="ms-thumb-inline">@endif
                                             <b>{{ $creative->headline }}</b> @if ($creative->link_url)<span class="text-muted">{{ $creative->link_url }}</span>@endif
                                             @if ($creative->keywords)<div class="text-muted ms-fs-12">{{ __('advertising.keywords') }}: {{ implode(', ', $creative->keywords) }}</div>@endif
                                         </div>
@@ -518,7 +528,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     @if ($tab === 'credits')
         <div class="ms-row-10 ms-wrap">
-            <form wire:submit="recordPurchase" class="card ms-stack-16 ms-flex-1" style="min-width: 280px;">
+            <form wire:submit="recordPurchase" class="card ms-stack-16 ms-flex-1 ms-minw-280">
                 <h3 class="ms-fs-18">{{ __('advertising.record_purchase') }}</h3>
                 <p class="text-muted ms-fs-13">{{ __('advertising.record_purchase_hint') }}</p>
                 <select wire:model="walletAdvertiser" class="input"><option value="">{{ __('advertising.choose_advertiser') }}</option>@foreach ($this->advertisers as $a)<option value="{{ $a->id }}">{{ $a->name }}</option>@endforeach</select>
@@ -530,7 +540,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
                 <div><button type="submit" class="btn btn-primary">{{ __('advertising.record_purchase') }}</button></div>
             </form>
 
-            <form wire:submit="adjustCredits" class="card ms-stack-16 ms-flex-1" style="min-width: 280px;">
+            <form wire:submit="adjustCredits" class="card ms-stack-16 ms-flex-1 ms-minw-280">
                 <h3 class="ms-fs-18">{{ __('advertising.adjust') }}</h3>
                 <p class="text-muted ms-fs-13">{{ __('advertising.adjust_hint') }}</p>
                 <select wire:model="walletAdvertiser" class="input"><option value="">{{ __('advertising.choose_advertiser') }}</option>@foreach ($this->advertisers as $a)<option value="{{ $a->id }}">{{ $a->name }}</option>@endforeach</select>
@@ -571,7 +581,6 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     @endif
 
     @if ($tab === 'reconciliation')
-        @php($report = $this->reconciliation)
         <div class="card ms-stack-16">
             <div class="ms-row-between">
                 <h3 class="ms-fs-18">{{ __('advertising.reconciliation') }}</h3>

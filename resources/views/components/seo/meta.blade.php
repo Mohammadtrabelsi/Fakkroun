@@ -10,12 +10,9 @@
     'type' => 'website',
 ])
 
-@php
-    $description = $description ? \Illuminate\Support\Str::limit(trim(strip_tags($description)), 160) : null;
-@endphp
 
-@if ($description)
-    <meta name="description" content="{{ $description }}">
+@if (filled($description))
+    <meta name="description" content="{{ Str::limit(trim(strip_tags($description)), 160) }}">
 @endif
 @if ($canonical)
     <link rel="canonical" href="{{ $canonical }}">
@@ -27,8 +24,8 @@
 @if ($canonical)
     <meta property="og:url" content="{{ $canonical }}">
 @endif
-@if ($description)
-    <meta property="og:description" content="{{ $description }}">
+@if (filled($description))
+    <meta property="og:description" content="{{ Str::limit(trim(strip_tags($description)), 160) }}">
 @endif
 @if ($image)
     <meta property="og:image" content="{{ $image }}">

@@ -110,28 +110,26 @@ new #[Layout('layouts::app')] #[Title('Moderation')] class extends Component
 
     @if ($tab === 'questions')
         @forelse ($this->queue as $question)
-            @php($origin = $question->originTranslation())
-            @php($meta = $question->moderationLogs->first()?->meta ?? [])
             <div class="card ms-mt16-stack-16" wire:key="mq-{{ $question->id }}">
                 <div class="ms-row-between">
                     <span class="text-muted ms-fs-12">{{ $question->category?->name }}@if ($question->subcategory) › {{ $question->subcategory->name }}@endif · {{ __('questions.difficulty.'.$question->difficulty->value) }} · {{ strtoupper($question->origin_language) }} · {{ __('questions.source.'.$question->source->value) }}@if ($question->author) · {{ $question->author->name }}@endif</span>
                     <x-questions.status-tag :status="$question->status" />
                 </div>
-                <div class="ms-fw-500" dir="{{ config('app.available_locales.'.$question->origin_language.'.dir', 'ltr') }}">{{ $origin?->body }}</div>
+                <div class="ms-fw-500" dir="{{ config('app.available_locales.'.$question->origin_language.'.dir', 'ltr') }}">{{ $question->originTranslation()?->body }}</div>
                 <ol class="ms-stack-16" dir="{{ config('app.available_locales.'.$question->origin_language.'.dir', 'ltr') }}">
                     @foreach ($question->choices as $choice)
                         <li @class(['ms-fw-500' => $choice->id === $question->correct_choice_id])>
-                            {{ $choice->letter() }}. {{ $origin?->choiceText($choice->id) }} @if ($choice->id === $question->correct_choice_id) ✓ @endif
+                            {{ $choice->letter() }}. {{ $question->originTranslation()?->choiceText($choice->id) }} @if ($choice->id === $question->correct_choice_id) ✓ @endif
                         </li>
                     @endforeach
                 </ol>
-                @if ($origin?->explanation) <p class="text-muted ms-fs-13">{{ $origin->explanation }}</p> @endif
+                @if ($question->originTranslation()?->explanation) <p class="text-muted ms-fs-13">{{ $question->originTranslation()->explanation }}</p> @endif
                 <p class="text-muted ms-fs-12">{{ __('questions.fields.reference_url') }}: {{ $question->reference_url ?: ($question->reference_text ?: '—') }}</p>
-                @foreach ((array) ($meta['warnings'] ?? []) as $warning)
+                @foreach ($question->creationNotes('warnings') as $warning)
                     <div class="tag tag-outline">{{ $warning }}</div>
                 @endforeach
-                @if (! empty($meta['possible_duplicates']))
-                    <div class="tag tag-outline">{{ __('questions.moderation.possible_duplicates', ['count' => count($meta['possible_duplicates'])]) }}</div>
+                @if ($question->creationNotes('possible_duplicates') !== [])
+                    <div class="tag tag-outline">{{ __('questions.moderation.possible_duplicates', ['count' => count($question->creationNotes('possible_duplicates'))]) }}</div>
                 @endif
                 <x-text-input wire:model="reasons.{{ $question->id }}" type="text" :placeholder="__('questions.admin.reason')" />
                 <div class="ms-row-10 ms-wrap">
@@ -150,17 +148,15 @@ new #[Layout('layouts::app')] #[Title('Moderation')] class extends Component
         <div class="ms-cell-top">{{ $this->queue->links() }}</div>
     @elseif ($tab === 'translations')
         @forelse ($this->translationQueue as $translation)
-            @php($question = $translation->question)
-            @php($origin = $question->originTranslation())
             <div class="card ms-mt16-stack-16" wire:key="mt-{{ $translation->id }}">
-                <span class="text-muted ms-fs-12">{{ $question->category?->name }} · {{ strtoupper($question->origin_language) }} → {{ strtoupper($translation->language) }}</span>
+                <span class="text-muted ms-fs-12">{{ $translation->question->category?->name }} · {{ strtoupper($translation->question->origin_language) }} → {{ strtoupper($translation->language) }}</span>
                 <div class="ms-row-10 ms-wrap">
-                    @foreach ([$origin, $translation] as $side)
+                    @foreach ([$translation->question->originTranslation(), $translation] as $side)
                         <div class="ms-flex-1 ms-minw-0" dir="{{ config('app.available_locales.'.$side?->language.'.dir', 'ltr') }}">
                             <div class="ms-fw-500">{{ $side?->body }}</div>
                             <ol>
-                                @foreach ($question->choices as $choice)
-                                    <li @class(['ms-fw-500' => $choice->id === $question->correct_choice_id])>{{ $choice->letter() }}. {{ $side?->choiceText($choice->id) }}</li>
+                                @foreach ($translation->question->choices as $choice)
+                                    <li @class(['ms-fw-500' => $choice->id === $translation->question->correct_choice_id])>{{ $choice->letter() }}. {{ $side?->choiceText($choice->id) }}</li>
                                 @endforeach
                             </ol>
                         </div>

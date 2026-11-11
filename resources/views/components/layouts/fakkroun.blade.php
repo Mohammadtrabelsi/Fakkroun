@@ -1,18 +1,12 @@
 @props(['title' => null, 'description' => null, 'canonical' => null, 'structuredData' => null])
 {{-- Public Fakkroun layout (fakkroun-design/design/Main.dc.html header + footer). --}}
-@php
-    $locale = app()->getLocale();
-    $pageTitle = $title ?? config('app.name').' — '.__('fakkroun.tagline');
-    // Joining and playing needs no account; hosting does.
-    $playUrl = auth()->user()?->isGuest() === false ? route('rooms.create') : route('rooms.join');
-@endphp
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', $locale) }}" dir="{{ config('app.available_locales.'.$locale.'.dir', 'ltr') }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ config('app.available_locales.'.app()->getLocale().'.dir', 'ltr') }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ $pageTitle }}</title>
-        <x-seo.meta :title="$pageTitle" :description="$description ?? __('marketing.tagline')" :canonical="$canonical" :image="null" type="website" />
+        <title>{{ $title ?? config('app.name').' — '.__('fakkroun.tagline') }}</title>
+        <x-seo.meta :title="($title ?? config('app.name').' — '.__('fakkroun.tagline'))" :description="$description ?? __('marketing.tagline')" :canonical="$canonical" :image="null" type="website" />
         <x-seo.structured-data :graph="$structuredData" />
         @include('partials.favicons')
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,12 +19,12 @@
         <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-paper focus:px-4 focus:py-2">{{ __('home.nav.main') }}</a>
 
         <header class="border-b border-sand-300 bg-sand">
-            <div class="fk-container flex flex-wrap items-center gap-x-8 gap-y-3 py-3.5 max-sm:px-4">
+            <div class="fk-container flex flex-wrap items-center gap-x-3 gap-y-3 py-2.5 max-sm:px-4 sm:py-3.5 lg:gap-x-8">
                 <x-fakkroun.logo />
 
                 {{-- Small screens: Play now + menu toggle stay visible, the rest folds into the panel below. --}}
                 <div class="ms-auto flex items-center gap-2 lg:hidden">
-                    <a href="{{ $playUrl }}" class="fk-btn min-h-11 bg-sea px-4 text-paper hover:bg-sea-dark hover:text-paper">{{ __('home.nav.play_now') }}</a>
+                    <a href="{{ $playUrl }}" class="fk-btn min-h-11 bg-sea px-3 text-[15px] whitespace-nowrap text-paper hover:bg-sea-dark hover:text-paper sm:px-4 sm:text-base">{{ __('home.nav.play_now') }}</a>
                     <button type="button" data-nav-toggle aria-controls="fk-site-nav" aria-expanded="false" aria-label="{{ __('home.nav.menu') }}"
                             class="group flex size-11 items-center justify-center rounded-xl border-2 border-sand-300 bg-paper text-ink hover:bg-sand-200">
                         <svg class="group-aria-expanded:hidden" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -60,8 +54,8 @@
                                 @if (array_key_exists($code, config('app.available_locales')))
                                     <a href="{{ route('locale.switch', $code) }}"
                                        @if ($code === 'ar') lang="ar" @endif
-                                       aria-current="{{ $locale === $code ? 'true' : 'false' }}"
-                                       class="flex min-h-[38px] min-w-11 items-center justify-center rounded-[9px] px-2 text-sm font-semibold no-underline {{ $locale === $code ? 'bg-paper text-ink' : 'text-ink-soft' }}">{{ $label }}</a>
+                                       aria-current="{{ app()->getLocale() === $code ? 'true' : 'false' }}"
+                                       class="flex min-h-[38px] min-w-11 items-center justify-center rounded-[9px] px-2 text-sm font-semibold no-underline {{ app()->getLocale() === $code ? 'bg-paper text-ink' : 'text-ink-soft' }}">{{ $label }}</a>
                                 @endif
                             @endforeach
                         </div>

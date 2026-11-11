@@ -9,7 +9,8 @@
 
         <title>{{ $title ?? config('app.name') }}</title>
 
-        @include('partials.theme-script')
+        {{-- Blocking on purpose: sets the theme before first paint (resources/js/theme.js). --}}
+        @themeScript
 
         @include('partials.favicons')
 

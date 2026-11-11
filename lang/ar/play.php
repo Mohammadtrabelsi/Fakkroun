@@ -80,6 +80,7 @@ return [
     'results' => [
         'title' => 'النتائج النهائية',
         'winner' => 'فاز :name بـ :score نقطة!',
+        'rank' => 'المرتبة',
         'player' => 'اللاعب',
         'score' => 'النقاط',
         'correct' => 'صحيحة',

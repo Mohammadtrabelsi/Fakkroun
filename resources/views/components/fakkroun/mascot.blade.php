@@ -5,7 +5,6 @@
     cheeks, tail and shell rim used by the big hero mascot. `dark` uses the
     lighter shell for dark backgrounds.
 --}}
-@php($shell = $dark ? '#13857E' : '#0B6E69')
 <svg width="{{ $size }}" height="{{ (int) round($size * 110 / 140) }}" viewBox="0 0 140 110"
      @if ($label) role="img" aria-label="{{ $label }}" @else aria-hidden="true" @endif
      {{ $attributes }}>
@@ -16,7 +15,7 @@
     @if ($details)
         <path d="M22 64 l-10 4 l10 3 z" fill="#7DB57A"/>
     @endif
-    <ellipse cx="64" cy="60" rx="42" ry="34" fill="{{ $shell }}"/>
+    <ellipse cx="64" cy="60" rx="42" ry="34" fill="{{ $dark ? '#13857E' : '#0B6E69' }}"/>
     @if ($details)
         <ellipse cx="64" cy="60" rx="42" ry="34" fill="none" stroke="#084F4B" stroke-width="3"/>
     @endif

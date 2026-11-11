@@ -4,6 +4,7 @@ namespace Tests\Feature\Gameplay;
 
 use App\Domain\Gameplay\GuestPlayers;
 use App\Domain\Gameplay\LeaderboardService;
+use App\Domain\Gameplay\RoomService;
 use App\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Livewire\Livewire;
@@ -61,7 +62,7 @@ class GuestPlayTest extends GameplayTestCase
     public function test_joining_a_closed_room_leaves_no_guest_behind(): void
     {
         $room = $this->room($this->player(), ['max_players' => 2]);
-        app(\App\Domain\Gameplay\RoomService::class)->join($room, $this->player());
+        app(RoomService::class)->join($room, $this->player());
 
         Livewire::test('pages::rooms.join')->set('nickname', 'Sami')->set('code', $room->code)->call('join')
             ->assertHasErrors('code');

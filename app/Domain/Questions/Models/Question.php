@@ -168,6 +168,17 @@ class Question extends Model
     }
 
     /**
+     * Notes recorded when the question was created (validator warnings,
+     * possible duplicates), read from the loaded moderation logs.
+     *
+     * @return array<int|string, mixed>
+     */
+    public function creationNotes(string $key): array
+    {
+        return (array) (($this->moderationLogs->first()?->meta ?? [])[$key] ?? []);
+    }
+
+    /**
      * @return HasMany<QuestionReport, $this>
      */
     public function reports(): HasMany

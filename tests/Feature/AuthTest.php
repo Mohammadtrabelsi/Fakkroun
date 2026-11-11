@@ -198,7 +198,7 @@ class AuthTest extends TestCase
 
         Livewire::actingAs($user)
             ->test('pages::admin.users.index')
-            ->call('toggleAdmin', $other->id)
+            // The screen itself refuses to mount, so no action can be called on it.
             ->assertForbidden();
 
         $this->assertFalse($other->fresh()->hasRole('admin'));

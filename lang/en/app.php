@@ -21,4 +21,5 @@ return [
     'tags' => 'Tags',
     'health' => 'Health',
     'backups' => 'Backups',
+    'too_many_attempts' => 'Too many attempts. Please try again in :seconds seconds.',
 ];

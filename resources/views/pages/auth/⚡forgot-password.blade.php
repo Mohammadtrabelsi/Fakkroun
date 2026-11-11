@@ -10,6 +10,8 @@ use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 
 new #[Layout('layouts::guest')] #[Title('Forgot password')] class extends Component
 {
+    use \App\Support\Livewire\ThrottlesSubmissions;
+
     use UsesSpamProtection;
 
     /** Honeypot + timing fields (spatie/laravel-honeypot); bots that fill them get a 403. */
@@ -27,6 +29,8 @@ new #[Layout('layouts::guest')] #[Title('Forgot password')] class extends Compon
 
     public function sendResetLink(): void
     {
+        $this->throttleSubmission('forgot-password', 'email');
+
         $this->protectAgainstSpam();
 
         $this->validate();

@@ -6,6 +6,7 @@ use App\Domain\Questions\SubmissionService;
 use App\Models\Category;
 use App\Support\Livewire\EditsQuestionContent;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Support\Str;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -145,21 +146,57 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Write a question')] class 
 
         $this->redirect($draft ? route('questions.submit', ['question' => $question->uuid]) : route('questions.submit'), navigate: true);
     }
+
+    /**
+     * View-ready data for the form and the "your questions" list.
+     *
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        $language = $this->language ?: app()->getLocale();
+        $letters = $language === 'ar' ? ['أ', 'ب', 'ج', 'د'] : ['A', 'B', 'C', 'D'];
+
+        return [
+            'dir' => (string) config('app.available_locales.'.$language.'.dir', 'ltr'),
+            'max' => (int) config('fakkroun.questions.community_body_max', 160),
+            'bodyLength' => mb_strlen($this->body),
+            'answers' => array_map(fn (int $i): array => [
+                'index' => $i,
+                'letter' => $letters[$i],
+                'isCorrect' => (string) $i === (string) $this->correct,
+            ], range(0, 3)),
+            'mineRows' => $this->mine->map(function ($question): array {
+                $status = $question->status->value;
+                [$tone, $label] = match ($status) {
+                    'published' => ['live', __('questions.community.live')],
+                    'draft' => ['draft', __('questions.status.draft')],
+                    'changes_requested', 'rejected' => ['attention', __('questions.status.'.$status)],
+                    default => ['review', __('questions.community.in_review')],
+                };
+
+                return [
+                    'id' => $question->id,
+                    'tone' => $tone,
+                    'label' => $label,
+                    'title' => Str::limit($question->label(), 110),
+                    'meta' => $question->category?->name.' · '.($status === 'published'
+                        ? __('questions.community.played', ['count' => $question->times_played])
+                        : __('questions.community.submitted', ['date' => $question->created_at->isoFormat('ll')])),
+                    'editUrl' => in_array($status, ['draft', 'changes_requested', 'rejected'], true)
+                        ? route('questions.submit', ['question' => $question->uuid])
+                        : null,
+                    'editLabel' => $question->rejection_reason ? __('questions.community.read_note') : __('questions.admin.edit'),
+                ];
+            })->all(),
+        ];
+    }
 };
 ?>
 
-@php($dir = config('app.available_locales.'.($language ?: app()->getLocale()).'.dir', 'ltr'))
-@php($letters = $language === 'ar' ? ['أ', 'ب', 'ج', 'د'] : ['A', 'B', 'C', 'D'])
-@php($max = (int) config('fakkroun.questions.community_body_max', 160))
-@php($badge = fn (string $status) => match ($status) {
-        'published' => ['bg-tint-green text-[#1F6A2C]', __('questions.community.live')],
-        'draft' => ['bg-sand-200 text-ink', __('questions.status.draft')],
-        'changes_requested', 'rejected' => ['bg-tint-sun text-[#5A3618]', __('questions.status.'.$status)],
-        default => ['bg-tint-sea text-[#0B5A55]', __('questions.community.in_review')],
-    })
 <div class="fk-container flex flex-col gap-8 pt-12 pb-20">
     <div class="flex max-w-[44rem] flex-col gap-2">
-        <h1 class="fk-h2 m-0 text-[52px] leading-none">{{ __('questions.community.title') }}</h1>
+        <h1 class="fk-h2 m-0 text-[clamp(36px,9vw,52px)] leading-none">{{ __('questions.community.title') }}</h1>
         <p class="m-0 text-lg leading-relaxed text-ink-muted">{{ __('questions.community.lead') }}</p>
         <p class="m-0 text-sm text-ink-soft">{{ __('questions.submit.remaining', ['count' => $this->remaining]) }}</p>
     </div>
@@ -213,24 +250,23 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Write a question')] class 
                 </div>
             </div>
 
-            <div class="flex flex-col gap-2" x-data="{ n: @js(mb_strlen($body)) }">
+            <div class="flex flex-col gap-2" x-data="{ n: {{ $bodyLength }} }">
                 <label for="q" class="font-semibold">{{ __('questions.fields.body') }}</label>
                 <textarea id="q" wire:model="body" rows="3" maxlength="{{ $max + 40 }}" dir="{{ $dir }}" x-on:input="n = $event.target.value.length" aria-describedby="q-hint" class="rounded-[14px] border-2 border-sand-400 bg-white p-3 text-[17px]"></textarea>
                 <span id="q-hint" class="text-sm text-ink-soft">{{ __('questions.community.length_hint', ['max' => $max]) }} · <span x-text="n" :class="n > {{ $max }} ? 'font-bold text-wrong' : ''"></span>/{{ $max }}</span>
                 @error('body') <span class="text-sm text-wrong">{{ $message }}</span> @enderror
             </div>
 
-            <fieldset class="m-0 flex flex-col gap-2.5 border-0 p-0" dir="{{ $dir }}">
+            <fieldset class="m-0 flex min-w-0 flex-col gap-2.5 border-0 p-0" dir="{{ $dir }}">
                 <legend class="mb-2.5 p-0 font-semibold">{{ __('questions.community.answers') }} <span class="font-normal text-ink-soft">{{ __('questions.community.answers_hint') }}</span></legend>
-                @foreach (range(0, 3) as $i)
-                    @php($isCorrect = (string) $i === (string) $correct)
-                    <label class="flex items-center gap-3 rounded-2xl border-2 p-2.5 {{ $isCorrect ? 'border-correct bg-tint-green' : 'border-sand-300 bg-white' }}" wire:key="answer-{{ $i }}">
-                        <input type="radio" wire:model.live="correct" value="{{ $i }}" class="h-5 w-5 accent-correct" aria-label="{{ __('questions.fields.mark_correct', ['letter' => $letters[$i]]) }}">
-                        <span class="flex h-9 w-9 flex-none items-center justify-center rounded-[10px] bg-sand-200 font-display text-lg font-extrabold">{{ $letters[$i] }}</span>
-                        <input wire:model="choices.{{ $i }}" aria-label="{{ __('questions.community.answer_n', ['letter' => $letters[$i]]) }}" class="min-h-11 min-w-0 flex-1 rounded-xl border-0 bg-transparent px-2 text-base">
-                        @if ($isCorrect)<span class="text-sm font-semibold text-correct">{{ __('play.game2.correct_tag') }}</span>@endif
+                @foreach ($answers as $answer)
+                    <label @class(['flex min-w-0 items-center gap-2.5 rounded-2xl border-2 p-2.5', 'border-correct bg-tint-green' => $answer['isCorrect'], 'border-sand-300 bg-white' => ! $answer['isCorrect']]) wire:key="answer-{{ $answer['index'] }}">
+                        <input type="radio" wire:model.live="correct" value="{{ $answer['index'] }}" class="h-5 w-5 flex-none accent-correct" aria-label="{{ __('questions.fields.mark_correct', ['letter' => $answer['letter']]) }}">
+                        <span class="flex h-9 w-9 flex-none items-center justify-center rounded-[10px] bg-sand-200 font-display text-lg font-extrabold">{{ $answer['letter'] }}</span>
+                        <input wire:model="choices.{{ $answer['index'] }}" aria-label="{{ __('questions.community.answer_n', ['letter' => $answer['letter']]) }}" class="min-h-11 w-0 min-w-0 flex-1 rounded-xl border-0 bg-transparent px-2 text-base">
+                        @if ($answer['isCorrect'])<span class="flex-none text-sm font-semibold text-correct max-[400px]:sr-only">{{ __('play.game2.correct_tag') }}</span>@endif
                     </label>
-                    @error('choices.'.$i) <span class="text-sm text-wrong">{{ $message }}</span> @enderror
+                    @error('choices.'.$answer['index']) <span class="text-sm text-wrong">{{ $message }}</span> @enderror
                 @endforeach
                 @error('choices') <span class="text-sm text-wrong">{{ $message }}</span> @enderror
             </fieldset>
@@ -266,14 +302,13 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Write a question')] class 
             <section aria-labelledby="mine-h" class="flex flex-col gap-3.5 rounded-[28px] border border-sand-300 bg-paper p-6">
                 <h2 id="mine-h" class="m-0 text-[22px] font-semibold">{{ __('questions.community.yours') }}</h2>
                 <ul class="m-0 flex list-none flex-col gap-2.5 p-0">
-                    @forelse ($this->mine as $question)
-                        @php([$cls, $label] = $badge($question->status->value))
-                        <li class="flex flex-col gap-1 rounded-2xl bg-sand p-3" wire:key="mine-{{ $question->id }}">
-                            <span class="self-start rounded-full px-2.5 py-0.5 text-xs font-semibold {{ $cls }}">{{ $label }}</span>
-                            <b class="text-[15px] leading-snug">{{ \Illuminate\Support\Str::limit($question->label(), 110) }}</b>
-                            <span class="text-[13px] text-ink-soft">{{ $question->category?->name }} · {{ $question->status->value === 'published' ? __('questions.community.played', ['count' => $question->times_played]) : __('questions.community.submitted', ['date' => $question->created_at->isoFormat('ll')]) }}</span>
-                            @if (in_array($question->status->value, ['draft', 'changes_requested', 'rejected'], true))
-                                <a href="{{ route('questions.submit', ['question' => $question->uuid]) }}" wire:navigate class="fk-link text-sm font-semibold">{{ $question->rejection_reason ? __('questions.community.read_note') : __('questions.admin.edit') }}</a>
+                    @forelse ($mineRows as $row)
+                        <li class="flex flex-col gap-1 rounded-2xl bg-sand p-3" wire:key="mine-{{ $row['id'] }}">
+                            <span class="fk-status" data-tone="{{ $row['tone'] }}">{{ $row['label'] }}</span>
+                            <b class="text-[15px] leading-snug break-words">{{ $row['title'] }}</b>
+                            <span class="text-[13px] text-ink-soft">{{ $row['meta'] }}</span>
+                            @if ($row['editUrl'])
+                                <a href="{{ $row['editUrl'] }}" wire:navigate class="fk-link text-sm font-semibold">{{ $row['editLabel'] }}</a>
                             @endif
                         </li>
                     @empty

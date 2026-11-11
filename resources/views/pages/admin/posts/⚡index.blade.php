@@ -246,7 +246,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
 <div>
     <div class="ms-page-head">
         <div>
-            <h2>Posts</h2>
+            <h2>{{ __('posts.list.title') }}</h2>
             <p class="text-muted ms-note">{{ __('posts.write_and_publish_content') }}</p>
         </div>
         <div class="ms-row-10 ms-wrap">
@@ -290,13 +290,13 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
         </div>
 
         <div class="ms-row-10">
-            <select wire:model.live="status" class="input" aria-label="Status">
+            <select wire:model.live="status" class="input" aria-label="{{ __('actions.status') }}">
                 <option value="all">{{ __('posts.all_statuses') }}</option>
-                <option value="published">Published</option>
-                <option value="draft">Drafts</option>
-                <option value="trashed">Trashed</option>
+                <option value="published">{{ __('actions.published') }}</option>
+                <option value="draft">{{ __('actions.drafts') }}</option>
+                <option value="trashed">{{ __('actions.trashed') }}</option>
             </select>
-            <select wire:model.live="category" class="input" aria-label="Category">
+            <select wire:model.live="category" class="input" aria-label="{{ __('actions.category') }}">
                 <option value="">{{ __('posts.all_categories') }}</option>
                 @foreach ($this->categories as $id => $name)
                     <option value="{{ $id }}">{{ $name }}</option>
@@ -317,27 +317,27 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
         <div class="ms-toolbar">
             <div class="ms-row-10">
                 <span class="text-muted ms-fs-13">{{ count($selected) }} selected</span>
-                <select wire:model="bulkAction" class="input" aria-label="Bulk action">
-                    <option value="">Choose action…</option>
+                <select wire:model="bulkAction" class="input" aria-label="{{ __('actions.bulk_action') }}">
+                    <option value="">{{ __('actions.choose_action') }}</option>
                     @if ($status === 'trashed')
-                        <option value="restore">Restore</option>
-                        <option value="forceDelete">Delete permanently</option>
+                        <option value="restore">{{ __('actions.restore') }}</option>
+                        <option value="forceDelete">{{ __('actions.delete_permanently') }}</option>
                     @else
-                        <option value="publish">Publish</option>
-                        <option value="draft">Move to drafts</option>
-                        <option value="delete">Move to trash</option>
+                        <option value="publish">{{ __('actions.publish') }}</option>
+                        <option value="draft">{{ __('actions.move_to_drafts') }}</option>
+                        <option value="delete">{{ __('actions.move_to_trash') }}</option>
                     @endif
                 </select>
                 <button
                     type="button"
                     wire:click="applyBulk"
-                    wire:confirm="Apply this action to the selected posts?"
+                    wire:confirm="{{ __('posts.list.confirm_bulk') }}"
                     wire:loading.attr="disabled"
                     class="btn"
                     @disabled($bulkAction === '')
-                >Apply</button>
+                >{{ __('actions.apply') }}</button>
             </div>
-            <button type="button" wire:click="$set('selected', [])" class="btn ms-btn-sm">Clear selection</button>
+            <button type="button" wire:click="$set('selected', [])" class="btn ms-btn-sm">{{ __('actions.clear_selection') }}</button>
         </div>
     @endif
 
@@ -349,14 +349,14 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
         <div class="row-cards-wrap">
             <div class="row-cards">
                 <div class="row-cards-toolbar">
-                    <div class="row-cards-control"><input type="checkbox" class="checkbox" aria-label="Select all on this page" wire:click="selectPage"></div>
+                    <div class="row-cards-control"><input type="checkbox" class="checkbox" aria-label="{{ __('actions.select_page') }}" wire:click="selectPage"></div>
                     <div class="row-cards-control"><button type="button" wire:click="sortBy('title')" class="ms-sort-btn">{{ __('posts.title') }}</button></div>
-                    <div class="row-cards-control"><button type="button" wire:click="sortBy('published_at')" class="ms-sort-btn">Published</button></div>
+                    <div class="row-cards-control"><button type="button" wire:click="sortBy('published_at')" class="ms-sort-btn">{{ __('actions.published') }}</button></div>
                 </div>
                     @forelse ($this->posts as $post)
                         <div class="row-card" wire:key="post-{{ $post->id }}">
                             <div class="row-card-select">
-                                <input type="checkbox" class="checkbox" value="{{ $post->id }}" wire:model.live="selected" aria-label="Select post">
+                                <input type="checkbox" class="checkbox" value="{{ $post->id }}" wire:model.live="selected" aria-label="{{ __('posts.list.select') }}">
                             </div>
                             <div class="row-card-title">
                                 <div class="ms-fw-500">{{ $post->title }}</div>
@@ -367,7 +367,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
                             <div class="row-card-field text-muted ms-nowrap" data-label="Published">{{ $post->published_at?->format($this->dateFormat) ?? '—' }}</div>
                             <div class="row-card-field" data-label="{{ __('posts.status') }}">
                                 @if ($post->trashed())
-                                    <span class="tag tag-outline">Trashed</span>
+                                    <span class="tag tag-outline">{{ __('actions.trashed') }}</span>
                                 @else
                                     <span class="tag {{ $post->isPublished() ? 'tag-accent' : 'tag-neutral' }}">{{ \App\Models\Post::statuses()[$post->status] ?? $post->status }}</span>
                                 @endif
@@ -376,19 +376,19 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
                                 <div class="ms-actions-end">
                                     @if ($post->trashed())
                                         @can('restore', $post)
-                                            <button type="button" wire:click="restorePost({{ $post->id }})" class="btn ms-btn-sm">Restore</button>
+                                            <button type="button" wire:click="restorePost({{ $post->id }})" class="btn ms-btn-sm">{{ __('actions.restore') }}</button>
                                         @endcan
                                         @can('forceDelete', $post)
                                             <button
                                                 type="button"
                                                 wire:click="forceDeletePost({{ $post->id }})"
-                                                wire:confirm="Permanently delete this post? This cannot be undone."
+                                                wire:confirm="{{ __('posts.list.confirm_force_delete') }}"
                                                 class="btn ms-btn-sm-danger"
-                                            >Delete permanently</button>
+                                            >{{ __('actions.delete_permanently') }}</button>
                                         @endcan
                                     @else
                                         @can('update', $post)
-                                            <a href="{{ route('admin.posts.edit', $post) }}" wire:navigate class="btn ms-btn-sm">Edit</a>
+                                            <a href="{{ route('admin.posts.edit', $post) }}" wire:navigate class="btn ms-btn-sm">{{ __('actions.edit') }}</a>
                                         @endcan
                                         @can('view', $post)
                                             <button type="button" wire:click="downloadPdf({{ $post->id }})" class="btn ms-btn-sm" title="{{ __('pdf.download') }}">PDF</button>
@@ -397,7 +397,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
                                             <button
                                                 type="button"
                                                 wire:click="deletePost({{ $post->id }})"
-                                                wire:confirm="Move this post to the trash?"
+                                                wire:confirm="{{ __('posts.list.confirm_trash') }}"
                                                 class="btn ms-btn-sm-danger"
                                             >{{ __('posts.delete') }}</button>
                                         @endcan
@@ -416,5 +416,4 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
         </div>
     </div>
 
-    <link rel="stylesheet" href="{{ asset('css/admin/posts/index.css') }}">
 </div>

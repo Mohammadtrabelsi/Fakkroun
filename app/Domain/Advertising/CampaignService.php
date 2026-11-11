@@ -168,6 +168,21 @@ class CampaignService
     }
 
     /**
+     * Campaigns a question can still be sponsored by, labelled "Advertiser — Campaign".
+     *
+     * @return array<int, string>
+     */
+    public function sponsorOptions(): array
+    {
+        return $this->query()->with('advertiser:id,name')
+            ->whereNotIn('status', [CampaignStatus::Rejected->value, CampaignStatus::Completed->value])
+            ->orderBy('name')
+            ->get()
+            ->mapWithKeys(fn (Campaign $campaign): array => [$campaign->id => $campaign->advertiser->name.' — '.$campaign->name])
+            ->all();
+    }
+
+    /**
      * Exhausted campaigns come back once credits are added; ended ones complete.
      */
     public function refreshStatuses(): void

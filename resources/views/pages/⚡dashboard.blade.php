@@ -82,6 +82,32 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
     {
         return app(\App\Services\ActivityLogService::class)->query()->with('causer')->latest()->limit(6)->get();
     }
+
+    /**
+     * View data. Site figures are only computed for administrators, player
+     * figures only for accounts that may play.
+     *
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        $user = auth()->user();
+        $plays = $user->can('play games');
+        $visits = $this->isAdmin ? $this->dailyVisits : [];
+        $peak = max(1, ...array_column($visits, 'count'), ...[0]);
+
+        return [
+            's' => $this->isAdmin ? $this->siteStats : [],
+            'visitsPeak' => number_format($peak),
+            'visitBars' => array_map(fn (array $day): array => [
+                'percent' => $day['count'] ? max(2, (int) round($day['count'] / $peak * 100)) : 0,
+                'tip' => $day['date']->format('M j').' · '.number_format($day['count']),
+            ], $visits),
+            'playerStats' => $plays ? app(\App\Domain\Gameplay\LeaderboardService::class)->stats($user) : [],
+            'achievements' => $plays ? app(\App\Domain\Gameplay\AchievementService::class)->for($user) : collect(),
+            'recent' => $plays ? app(\App\Domain\Gameplay\GameResultService::class)->recentFor($user, 5) : collect(),
+        ];
+    }
 };
 ?>
 
@@ -118,14 +144,9 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
                     <a href="{{ route('questions.submit') }}" wire:navigate class="btn">{{ __('questions.submit.title') }}</a>
                 @endcan
             </div>
-            @php
-                $playerStats = app(\App\Domain\Gameplay\LeaderboardService::class)->stats(auth()->user());
-                $achievements = app(\App\Domain\Gameplay\AchievementService::class)->for(auth()->user());
-                $recent = app(\App\Domain\Gameplay\GameResultService::class)->query()->where('user_id', auth()->id())->with('game.room:id,ulid,name')->latest('id')->limit(5)->get();
-            @endphp
             <div class="ms-row-10 ms-wrap">
                 @foreach (['games', 'wins', 'best', 'correct_rate'] as $key)
-                    <div class="card ms-flex-1" style="min-width: 140px;">
+                    <div class="card ms-flex-1 ms-minw-140">
                         <div class="card-kicker">{{ __('play.profile.'.$key) }}</div>
                         <div class="stat-value">{{ $key === 'correct_rate' ? $playerStats[$key].' %' : number_format($playerStats[$key]) }}</div>
                     </div>
@@ -178,7 +199,6 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
     </div>
 
     @if ($this->isAdmin)
-        @php($s = $this->siteStats)
 
         {{-- Visits --}}
         <h3 class="dash-section">{{ __('dashboard.visits') }}</h3>
@@ -200,18 +220,18 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
         <div class="dash-cards ms-mt-16">
             <div class="card">
                 <div class="card-kicker">{{ __('dashboard.visits_per_day') }}</div>
-                @php($max = max(1, max(array_column($this->dailyVisits, 'count'))))
                 <div class="dash-chart" role="img" aria-label="{{ __('dashboard.visits_per_day') }}">
-                    @foreach ($this->dailyVisits as $day)
+                    @foreach ($visitBars as $bar)
                         <div class="dash-bar-col" tabindex="0">
-                            <div class="dash-bar" style="height: {{ $day['count'] ? max(2, round($day['count'] / $max * 100)) : 0 }}%"></div>
-                            <span class="dash-tip">{{ $day['date']->format('M j') }} · {{ number_format($day['count']) }}</span>
+                            {{-- Data-driven height: the one inline value the house rules allow. --}}
+                            <div class="dash-bar" style="--h: {{ $bar['percent'] }}%"></div>
+                            <span class="dash-tip">{{ $bar['tip'] }}</span>
                         </div>
                     @endforeach
                 </div>
                 <div class="dash-axis text-muted ms-fs-12">
                     <span>{{ $this->dailyVisits[0]['date']->format('M j') }}</span>
-                    <span>{{ __('dashboard.peak', ['count' => number_format($max)]) }}</span>
+                    <span>{{ __('dashboard.peak', ['count' => $visitsPeak]) }}</span>
                     <span>{{ __('dashboard.today') }}</span>
                 </div>
             </div>
@@ -302,25 +322,4 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
             </p>
         </div>
     </div>
-
-    <style>
-        .dash-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-        .dash-section { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(var(--ink), 0.6); margin: 32px 0 12px; }
-        .dash-link { display: block; color: inherit; text-decoration: none; }
-        .dash-link:hover { background: rgba(var(--ink), 0.04); }
-        .dash-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(var(--ink), 0.08); font-size: 14px; }
-        .dash-row:last-child { border-bottom: 0; }
-        .dash-ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .dash-chart { display: flex; align-items: flex-end; gap: 2px; height: 140px; margin-top: 12px; border-bottom: 1px solid var(--color-divider); }
-        .dash-bar-col { position: relative; flex: 1; height: 100%; display: flex; align-items: flex-end; outline: none; }
-        .dash-bar { width: 100%; background: var(--color-accent); border-radius: 4px 4px 0 0; }
-        .dash-bar-col:hover .dash-bar, .dash-bar-col:focus .dash-bar { background: var(--color-accent-700); }
-        .dash-tip { display: none; position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 12px; padding: 4px 8px; background: var(--color-text); color: var(--color-bg); z-index: 2; pointer-events: none; }
-        .dash-bar-col:hover .dash-tip, .dash-bar-col:focus .dash-tip { display: block; }
-        .dash-bar-col:first-child .dash-tip { left: 0; transform: none; }
-        .dash-bar-col:last-child .dash-tip { left: auto; right: 0; transform: none; }
-        .dash-axis { display: flex; justify-content: space-between; margin-top: 6px; }
-        .ms-mt-16 { margin-top: 16px; }
-        @media (max-width: 640px) { .dash-cards { grid-template-columns: 1fr; } }
-    </style>
 </div>

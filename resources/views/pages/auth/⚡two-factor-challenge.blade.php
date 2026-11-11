@@ -103,7 +103,7 @@ new #[Layout('layouts::guest')] #[Title('Two-factor authentication')] class exte
     </form>
 
     <p class="text-muted ms-form-foot">
-        <button type="button" wire:click="toggleRecovery" class="ms-fs-12" style="background:none;border:0;padding:0;color:var(--color-accent);cursor:pointer;font:inherit">
+        <button type="button" wire:click="toggleRecovery" class="ms-fs-12 ms-textbtn">
             {{ $useRecovery ? __('two_factor.use_code') : __('two_factor.use_recovery') }}
         </button>
     </p>

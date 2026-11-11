@@ -196,6 +196,37 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
             default => [],
         };
     }
+
+    /**
+     * View data for the parts the form itself does not hold.
+     *
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        $question = $this->question;
+
+        return [
+            'playableIn' => $question
+                ? (implode(', ', array_map('strtoupper', app(\App\Domain\Questions\QuestionPool::class)->languages($question))) ?: '—')
+                : '—',
+            'sponsorOptions' => auth()->user()->can('manage advertising')
+                ? app(\App\Domain\Advertising\CampaignService::class)->sponsorOptions()
+                : [],
+            'translationMeta' => collect(array_keys($this->translations))->mapWithKeys(function (string $code) use ($question): array {
+                $translation = $question?->translation($code);
+
+                return [$code => [
+                    'dir' => (string) config('app.available_locales.'.$code.'.dir', 'ltr'),
+                    'label' => (string) config('app.available_locales.'.$code.'.label', strtoupper($code)),
+                    'status' => $translation ? __('questions.translation_status.'.$translation->status->value) : null,
+                    'approved' => (bool) $translation?->isApproved(),
+                    'pending' => $translation?->status->value === 'pending',
+                ]];
+            })->all(),
+            'history' => $question ? $question->moderationLogs()->with('actor:id,name')->limit(20)->get() : collect(),
+        ];
+    }
 };
 ?>
 
@@ -207,7 +238,7 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
             <p class="text-muted ms-note">
                 <x-questions.status-tag :status="$question->status" />
                 v{{ $question->version }} · {{ __('questions.source.'.$question->source->value) }}
-                · {{ __('questions.admin.playable_in') }}: {{ implode(', ', array_map('strtoupper', app(\App\Domain\Questions\QuestionPool::class)->languages($question))) ?: '—' }}
+                · {{ __('questions.admin.playable_in') }}: {{ $playableIn }}
             </p>
         @endif
     </div>
@@ -252,8 +283,8 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
                 <p class="text-muted ms-fs-13">{{ __('advertising.sponsorship_hint') }}</p>
                 <select wire:model="sponsorCampaign" class="input" aria-label="{{ __('advertising.campaign') }}">
                     <option value="">{{ __('advertising.not_sponsored') }}</option>
-                    @foreach (app(\App\Domain\Advertising\CampaignService::class)->query()->with('advertiser')->whereNotIn('status', ['rejected', 'completed'])->orderBy('name')->get() as $c)
-                        <option value="{{ $c->id }}">{{ $c->advertiser->name }} — {{ $c->name }}</option>
+                    @foreach ($sponsorOptions as $id => $label)
+                        <option value="{{ $id }}">{{ $label }}</option>
                     @endforeach
                 </select>
                 <div><button type="submit" class="btn">{{ __('categories.save_changes') }}</button></div>
@@ -261,28 +292,26 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
         @endcan
 
         @foreach ($translations as $code => $text)
-            @php($translation = $question->translation($code))
-            @php($dir = config('app.available_locales.'.$code.'.dir', 'ltr'))
             <form wire:submit="saveTranslation('{{ $code }}')" class="card ms-mt16-stack-16" wire:key="translation-{{ $code }}">
                 <div class="ms-row-between">
-                    <h3 class="ms-fs-18">{{ __('questions.admin.translation', ['language' => config('app.available_locales.'.$code.'.label')]) }}</h3>
-                    @if ($translation)
-                        <span class="tag {{ $translation->isApproved() ? 'tag-accent' : 'tag-neutral' }}">{{ __('questions.translation_status.'.$translation->status->value) }}</span>
+                    <h3 class="ms-fs-18">{{ __('questions.admin.translation', ['language' => $translationMeta[$code]['label']]) }}</h3>
+                    @if ($translationMeta[$code]['status'])
+                        <span @class(['tag', 'tag-accent' => $translationMeta[$code]['approved'], 'tag-neutral' => ! $translationMeta[$code]['approved']])>{{ $translationMeta[$code]['status'] }}</span>
                     @endif
                 </div>
-                <textarea wire:model="translations.{{ $code }}.body" rows="2" dir="{{ $dir }}" class="textarea" aria-label="{{ __('questions.fields.body') }}"></textarea>
+                <textarea wire:model="translations.{{ $code }}.body" rows="2" dir="{{ $translationMeta[$code]['dir'] }}" class="textarea" aria-label="{{ __('questions.fields.body') }}"></textarea>
                 <x-input-error :message="$errors->first('translations.'.$code.'.body')" />
                 @foreach (range(0, 3) as $i)
                     <div class="ms-row-10-center">
                         <span @class(['ms-fw-500', 'text-accent' => (int) $correct === $i])>{{ chr(65 + $i) }}</span>
-                        <x-text-input wire:model="translations.{{ $code }}.choices.{{ $i }}" type="text" :dir="$dir" />
+                        <x-text-input wire:model="translations.{{ $code }}.choices.{{ $i }}" type="text" :dir="$translationMeta[$code]['dir']" />
                     </div>
                 @endforeach
                 <x-input-error :message="$errors->first('translations.'.$code.'.choices') ?: $errors->first('translations.'.$code.'.choices.0')" />
-                <textarea wire:model="translations.{{ $code }}.explanation" rows="2" dir="{{ $dir }}" class="textarea" aria-label="{{ __('questions.fields.explanation') }}"></textarea>
+                <textarea wire:model="translations.{{ $code }}.explanation" rows="2" dir="{{ $translationMeta[$code]['dir'] }}" class="textarea" aria-label="{{ __('questions.fields.explanation') }}"></textarea>
                 <div class="ms-row-10 ms-wrap">
                     <button type="submit" class="btn">{{ __('questions.admin.save_translation') }}</button>
-                    @if ($translation && $translation->status->value === 'pending')
+                    @if ($translationMeta[$code]['pending'])
                         <button type="button" wire:click="reviewTranslation('{{ $code }}', true)" class="btn btn-primary">{{ __('questions.actions.approve') }}</button>
                         <button type="button" wire:click="reviewTranslation('{{ $code }}', false)" class="btn ms-outline-danger">{{ __('questions.actions.reject') }}</button>
                     @endif
@@ -293,7 +322,7 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
         <div class="card ms-mt16-stack-16">
             <h3 class="ms-fs-18">{{ __('questions.admin.history') }}</h3>
             <ul class="ms-stack-16">
-                @foreach ($question->moderationLogs()->with('actor:id,name')->limit(20)->get() as $log)
+                @foreach ($history as $log)
                     <li class="ms-fs-13">
                         <span class="ms-fw-500">{{ __('questions.log.'.$log->action) }}</span>
                         @if ($log->to_status) → {{ __('questions.status.'.$log->to_status) }} @endif

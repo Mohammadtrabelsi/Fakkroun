@@ -82,34 +82,78 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
 
         $this->redirect(route('rooms.show', $room), navigate: true);
     }
+
+    /**
+     * View-ready data: podium in 2-1-3 order, standings and the recap, with
+     * every label and number already formatted.
+     *
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        $me = (int) auth()->id();
+        $results = collect($this->results)->values();
+        $recap = collect($this->recap);
+        $medals = [1 => '🥇', 2 => '🥈', 3 => '🥉'];
+
+        return [
+            'podium' => collect([1, 0, 2])
+                ->filter(fn (int $slot): bool => $results->has($slot))
+                ->map(fn (int $slot): array => [
+                    'place' => $slot + 1,
+                    'medal' => $medals[$slot + 1],
+                    'name' => $results[$slot]['name'],
+                    'score' => number_format($results[$slot]['score']),
+                    'rank' => $results[$slot]['rank'],
+                ])->values()->all(),
+            'standings' => $results->map(fn (array $row): array => [
+                'rank' => $row['rank'],
+                'name' => $row['name'],
+                'correct' => $row['correct'],
+                'score' => number_format($row['score']),
+                'isMe' => $row['user_id'] === $me,
+            ])->all(),
+            'recap' => $recap->map(function (array $item): array {
+                $ok = $item['correct'] && ! $item['excluded'];
+
+                return $item + [
+                    'ok' => $ok,
+                    'mark' => $ok ? '✓' : '✗',
+                    'label' => match (true) {
+                        ! $item['answered'] => __('play.results2.not_answered'),
+                        $item['excluded'] => __('play.results2.excluded'),
+                        $ok => __('play.results2.you_got_it'),
+                        default => __('play.results2.you_missed'),
+                    },
+                ];
+            })->all(),
+            'right' => $recap->where('correct', true)->where('excluded', false)->count(),
+            'dir' => (string) config('app.available_locales.'.$this->room->setting('language').'.dir', 'ltr'),
+            'isGuest' => auth()->user()->isGuest(),
+            'ad' => $this->ad,
+        ];
+    }
 };
 ?>
 
-@php($results = $this->results)
-@php($recap = $this->recap)
-@php($podium = collect($results)->take(3)->values())
-@php($right = collect($recap)->where('correct', true)->where('excluded', false)->count())
 <div class="fk-container flex flex-col gap-8 pt-10 pb-20">
-    <h1 class="fk-h2 m-0 text-center text-[52px] leading-none">{{ __('play.results.title') }}</h1>
+    <h1 class="fk-h2 m-0 text-center text-[clamp(36px,9vw,52px)] leading-none">{{ __('play.results.title') }}</h1>
 
-    @if ($podium->isNotEmpty())
+    @if ($podium !== [])
         <section aria-label="{{ __('play.results2.podium') }}" class="mx-auto flex w-full max-w-[720px] items-end justify-center gap-3">
-            @foreach ([1, 0, 2] as $slot)
-                @if ($row = $podium->get($slot))
-                    @php([$height, $bg, $medal] = [[0 => 'h-[180px]', 1 => 'h-[140px]', 2 => 'h-[110px]'][$slot], [0 => 'bg-sun', 1 => 'bg-tint-sea', 2 => 'bg-tint-sun'][$slot], [0 => '🥇', 1 => '🥈', 2 => '🥉'][$slot]])
-                    <div class="flex flex-1 flex-col items-center gap-2">
-                        <span class="text-3xl" aria-hidden="true">{{ $medal }}</span>
-                        <b class="text-center text-lg">{{ $row['name'] }}</b>
-                        <span class="font-display text-2xl font-extrabold text-sea">{{ number_format($row['score']) }}</span>
-                        <div class="flex w-full items-start justify-center rounded-t-3xl pt-3 font-display text-4xl font-extrabold text-ink {{ $height }} {{ $bg }}">{{ $row['rank'] }}</div>
-                    </div>
-                @endif
+            @foreach ($podium as $step)
+                <div class="flex min-w-0 flex-1 flex-col items-center gap-2">
+                    <span class="text-3xl" aria-hidden="true">{{ $step['medal'] }}</span>
+                    <b class="max-w-full truncate text-center text-lg">{{ $step['name'] }}</b>
+                    <span class="font-display text-2xl font-extrabold text-sea">{{ $step['score'] }}</span>
+                    <div class="fk-podium-step" data-place="{{ $step['place'] }}">{{ $step['rank'] }}</div>
+                </div>
             @endforeach
         </section>
     @endif
 
     <div class="flex flex-wrap justify-center gap-3" x-data="{ copied: false }">
-        @if (auth()->user()->isGuest())
+        @if ($isGuest)
             <p class="m-0 basis-full text-center text-ink-muted">{{ __('play.join.guest_cta') }}</p>
             <a href="{{ route('register') }}" class="fk-btn fk-btn-primary min-h-14 rounded-2xl px-7 text-[17px]">{{ __('play.join.guest_cta_button') }}</a>
         @else
@@ -125,28 +169,20 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
     <div class="flex flex-wrap items-start gap-6">
         <section aria-labelledby="lb-h" class="flex min-w-0 flex-[1_1_360px] flex-col gap-3.5 rounded-[28px] border border-sand-300 bg-paper p-6">
             <h2 id="lb-h" class="m-0 text-[22px] font-semibold">{{ __('play.results2.title') }}</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse text-base">
-                    <thead>
-                        <tr class="text-start text-[13px] text-ink-soft">
-                            <th scope="col" class="px-1.5 py-2 text-start font-semibold">#</th>
-                            <th scope="col" class="px-1.5 py-2 text-start font-semibold">{{ __('play.results.player') }}</th>
-                            <th scope="col" class="px-1.5 py-2 text-end font-semibold">{{ __('play.results.correct') }}</th>
-                            <th scope="col" class="px-1.5 py-2 text-end font-semibold">{{ __('play.results.score') }}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($results as $row)
-                            <tr class="{{ $row['user_id'] === auth()->id() ? 'bg-tint-green' : '' }} border-t border-sand-300">
-                                <td class="px-1.5 py-3 font-semibold text-ink-soft">{{ $row['rank'] }}</td>
-                                <td class="px-1.5 py-3 font-medium">{{ $row['name'] }}</td>
-                                <td class="px-1.5 py-3 text-end tabular-nums">{{ $row['correct'] }}</td>
-                                <td class="px-1.5 py-3 text-end font-semibold tabular-nums">{{ number_format($row['score']) }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+            {{-- A list, not a table: each row is one player and fits a phone without scrolling. --}}
+            <div class="fk-standings-head" aria-hidden="true">
+                <span>#</span><span>{{ __('play.results.player') }}</span><span>{{ __('play.results.correct') }}</span><span>{{ __('play.results.score') }}</span>
             </div>
+            <ol class="m-0 list-none p-0">
+                @foreach ($standings as $row)
+                    <li @class(['fk-standings-row', 'bg-tint-green' => $row['isMe']])>
+                        <span class="font-semibold text-ink-soft"><span class="sr-only">{{ __('play.results.rank') }} </span>{{ $row['rank'] }}</span>
+                        <span class="min-w-0 truncate font-medium">{{ $row['name'] }}</span>
+                        <span class="text-end tabular-nums"><span class="sr-only">{{ __('play.results.correct') }}: </span>{{ $row['correct'] }}</span>
+                        <span class="text-end font-semibold tabular-nums"><span class="sr-only">{{ __('play.results.score') }}: </span>{{ $row['score'] }}</span>
+                    </li>
+                @endforeach
+            </ol>
         </section>
 
         <section aria-labelledby="recap-h" class="flex min-w-0 flex-[999_1_560px] flex-col gap-3.5">
@@ -154,14 +190,11 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
                 <h2 id="recap-h" class="fk-h2 m-0 text-[34px]">{{ __('play.results2.recap') }}</h2>
                 <span class="text-ink-soft">{{ __('play.results2.got_right', ['right' => $right, 'total' => count($recap)]) }}</span>
             </div>
-            @php($dir = config('app.available_locales.'.$room->setting('language').'.dir', 'ltr'))
             @foreach ($recap as $item)
-                @php($ok = $item['correct'] && ! $item['excluded'])
-                @php($label = ! $item['answered'] ? __('play.results2.not_answered') : ($item['excluded'] ? __('play.results2.excluded') : ($ok ? __('play.results2.you_got_it') : __('play.results2.you_missed'))))
-                <article class="flex items-start gap-4 rounded-[22px] border border-sand-300 bg-paper px-[22px] py-5">
-                    <span class="flex h-10 w-10 flex-none items-center justify-center rounded-full text-lg font-bold text-white {{ $ok ? 'bg-correct' : 'bg-wrong' }}" role="img" aria-label="{{ $label }}">{{ $ok ? '✓' : '✗' }}</span>
+                <article class="flex items-start gap-3 rounded-[22px] border border-sand-300 bg-paper px-4 py-4 sm:gap-4 sm:px-[22px] sm:py-5">
+                    <span @class(['flex h-10 w-10 flex-none items-center justify-center rounded-full text-lg font-bold text-white', 'bg-correct' => $item['ok'], 'bg-wrong' => ! $item['ok']]) role="img" aria-label="{{ $item['label'] }}">{{ $item['mark'] }}</span>
                     <div class="flex min-w-0 flex-1 flex-col gap-1.5" dir="{{ $dir }}">
-                        <span class="text-[13px] font-semibold text-[#0B5A55]">{{ __('play.results2.question_n', ['n' => $item['position']]) }} · {{ $label }}</span>
+                        <span class="text-[13px] font-semibold text-[#0B5A55]">{{ __('play.results2.question_n', ['n' => $item['position']]) }} · {{ $item['label'] }}</span>
                         <b class="text-[17px] leading-snug">{{ $item['body'] }}</b>
                         <span class="leading-normal text-ink-muted">{{ __('play.results2.answer', ['answer' => '']) }}<b class="text-ink">{{ $item['correct_text'] }}</b>@if ($item['explanation']) — {{ $item['explanation'] }}@endif</span>
                         @if ($item['reference_url'])<a href="{{ $item['reference_url'] }}" target="_blank" rel="noopener noreferrer nofollow" class="fk-link text-[13px]">{{ __('play.game.source') }}</a>@endif
@@ -169,7 +202,6 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Results')] class extends C
                 </article>
             @endforeach
 
-            @php($ad = $this->ad)
             @if ($ad && $ad->creative)
                 @include('partials.ads.card', ['ad' => $ad, 'dark' => false])
             @endif

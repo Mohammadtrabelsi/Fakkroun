@@ -10,6 +10,8 @@ use Livewire\Component;
 
 new #[Layout('layouts::guest')] #[Title('Reset password')] class extends Component
 {
+    use \App\Support\Livewire\ThrottlesSubmissions;
+
     public string $token = '';
 
     public string $email = '';
@@ -34,6 +36,8 @@ new #[Layout('layouts::guest')] #[Title('Reset password')] class extends Compone
 
     public function resetPassword(): void
     {
+        $this->throttleSubmission('reset-password', 'email');
+
         $this->validate();
 
         $status = Password::reset(
@@ -63,8 +67,8 @@ new #[Layout('layouts::guest')] #[Title('Reset password')] class extends Compone
 ?>
 
 <div>
-    <h1>Reset your password</h1>
-    <p class="text-muted ms-mb-28">Choose a new password for your account.</p>
+    <h1>{{ __('actions.reset_heading') }}</h1>
+    <p class="text-muted ms-mb-28">{{ __('actions.reset_lead') }}</p>
 
     <form wire:submit="resetPassword">
         <div class="field">

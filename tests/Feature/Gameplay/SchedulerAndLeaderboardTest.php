@@ -8,6 +8,7 @@ use App\Domain\Gameplay\LeaderboardService;
 use App\Domain\Gameplay\RoomService;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\Notifications\QuestionReviewed;
+use App\Services\PlatformSettings;
 
 class SchedulerAndLeaderboardTest extends GameplayTestCase
 {
@@ -38,11 +39,26 @@ class SchedulerAndLeaderboardTest extends GameplayTestCase
     public function test_expired_lobbies_are_cancelled(): void
     {
         $room = $this->room($this->player());
-        $this->travel((int) app(\App\Services\PlatformSettings::class)->get('game.room_expiry_minutes') + 1)->minutes();
+        $this->travel((int) app(PlatformSettings::class)->get('game.room_expiry_minutes') + 1)->minutes();
 
         $this->artisan('rooms:expire')->assertSuccessful();
 
         $this->assertSame(RoomStatus::Cancelled, $room->fresh()->status);
+    }
+
+    public function test_leaderboard_survives_a_serialising_cache_store(): void
+    {
+        // Tests use the array store, which keeps objects as they are. Real stores serialise,
+        // and objects are refused on the way back (cache.serializable_classes = false).
+        config(['cache.default' => 'file', 'cache.stores.file.path' => sys_get_temp_dir().'/fakkroun-cache-'.uniqid()]);
+
+        $leaderboard = app(LeaderboardService::class);
+        $leaderboard->top('all');
+        $cached = $leaderboard->top('all');
+
+        $this->assertCount(0, $cached);
+        $this->get(route('leaderboard', ['period' => 'all']))->assertOk();
+        $this->get(route('leaderboard', ['period' => 'all']))->assertOk();
     }
 
     public function test_leaderboard_and_profile_reflect_finished_games(): void

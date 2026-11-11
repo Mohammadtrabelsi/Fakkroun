@@ -50,4 +50,11 @@ return [
     'default_selected' => 'Présélectionnée à la création d’un salon',
     'default_selected_hint' => 'Catégories principales uniquement. Cochée par défaut dans le formulaire « Créer un salon » ; l’hôte peut la décocher.',
     'default_selected_tag' => 'Présélectionnée',
+    // List screen (admin).
+    'list' => [
+        'select' => 'Sélectionner la catégorie',
+        'confirm_bulk' => 'Appliquer cette action aux catégories sélectionnées ?',
+        'confirm_force_delete' => 'Supprimer définitivement cette catégorie ? Cette action est irréversible.',
+        'confirm_trash' => 'Mettre cette catégorie à la corbeille ?',
+    ],
 ];

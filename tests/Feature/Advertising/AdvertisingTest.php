@@ -17,6 +17,9 @@ use App\Domain\Advertising\ReconciliationService;
 use App\Domain\Advertising\SponsoredQuestionService;
 use App\Domain\Advertising\WalletService;
 use App\Domain\Gameplay\GameEngine;
+use App\Domain\Gameplay\Models\GameQuestion;
+use App\Domain\Gameplay\Models\Room;
+use App\Domain\Gameplay\QuestionSelector;
 use App\Domain\Gameplay\RoomService;
 use App\Domain\Questions\Models\Question;
 use App\Enums\UserRole;
@@ -207,7 +210,7 @@ class AdvertisingTest extends GameplayTestCase
         $question = Question::factory()->published()->create(['category_id' => $this->category->id]);
         app(SponsoredQuestionService::class)->assign($question, $campaign, $this->admin);
 
-        $ids = app(\App\Domain\Gameplay\QuestionSelector::class)->select('en', [$this->category->id], null, 5, []);
+        $ids = app(QuestionSelector::class)->select('en', [$this->category->id], null, 5, []);
 
         $this->assertNotContains($question->id, $ids);
     }
@@ -306,7 +309,7 @@ class AdvertisingTest extends GameplayTestCase
     }
 
     /**
-     * @return array{0: \App\Domain\Gameplay\Models\Room, 1: \App\Domain\Gameplay\Models\GameQuestion, 2: User, 3: User}
+     * @return array{0: Room, 1: GameQuestion, 2: User, 3: User}
      */
     private function runningGame(): array
     {

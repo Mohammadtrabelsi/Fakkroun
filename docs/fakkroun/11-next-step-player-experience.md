@@ -14,7 +14,7 @@ Already done and removed from this list: the player inbox and bell, the leaderbo
 
 - Show "submissions waiting for review" on the player home.
 - Turtle mascot illustrations for lobby waiting and results.
-- Labels from the starter partials that are hard-coded in English (for example "Full name", "Save"): move them to translation files and run `php artisan translations:sync`.
+- ~~Labels from the starter partials that are hard-coded in English~~ (done 2026-11-11: moved to `lang/*/actions.php` and the feature bundles; `TranslationCoverageTest` guards it).
 - Update the in-app guide (`/docs`), which still describes starter-kit features.
 - **Your decision:** the About page dedication (see [`01-phase-1-report.md`](01-phase-1-report.md) §9).
 

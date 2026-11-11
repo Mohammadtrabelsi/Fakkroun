@@ -174,6 +174,7 @@ namespace App\Services;
 
 use App\Models\{{ name }};
 use App\Services\Concerns\ManagesModel;
+use App\Services\Concerns\ManagesSoftDeletes;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 
@@ -184,6 +185,9 @@ class {{ name }}Service
 {
     /** @use ManagesModel<{{ name }}> */
     use ManagesModel;
+
+    /** @use ManagesSoftDeletes<{{ name }}> */
+    use ManagesSoftDeletes;
 
     public function create(array $data): {{ name }}
     {

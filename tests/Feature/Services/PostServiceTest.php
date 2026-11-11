@@ -132,10 +132,11 @@ class PostServiceTest extends TestCase
 
     public function test_search_paginated_matches_translated_title(): void
     {
-        Post::factory()->create(['title' => ['en' => 'Distinct Headline', 'ar' => 'عنوان'], 'slug' => 's-1']);
+        // Not a Latin word: Faker's lorem text (e.g. "distinctio") must not match by chance.
+        Post::factory()->create(['title' => ['en' => 'Zebrafish Headline', 'ar' => 'عنوان'], 'slug' => 's-1']);
         Post::factory()->create(['title' => ['en' => 'Unrelated', 'ar' => 'اخر'], 'slug' => 's-2']);
 
-        $this->assertSame(1, $this->service->searchPaginated('Distinct')->total());
+        $this->assertSame(1, $this->service->searchPaginated('Zebrafish')->total());
     }
 
     public function test_stats_returns_zeroes_when_empty(): void

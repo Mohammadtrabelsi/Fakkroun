@@ -8,6 +8,7 @@ use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use App\Models\User;
 use App\Services\Concerns\ManagesModel;
+use App\Services\Concerns\ManagesSoftDeletes;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +19,9 @@ class CategoryService
 {
     /** @use ManagesModel<Category> */
     use ManagesModel;
+
+    /** @use ManagesSoftDeletes<Category> */
+    use ManagesSoftDeletes;
 
     /** @var array<int, string> */
     private const SORTABLE = ['name', 'created_at'];
@@ -196,6 +200,16 @@ class CategoryService
     public function forceDelete(Category $category): void
     {
         $category->forceDelete();
+    }
+
+    /**
+     * Active top-level categories for the home page: the priority themes, or the rest.
+     *
+     * @return Collection<int, Category>
+     */
+    public function homeCategories(bool $priority): Collection
+    {
+        return $this->query()->roots()->where('is_active', true)->where('is_priority', $priority)->ordered()->get();
     }
 
     /**

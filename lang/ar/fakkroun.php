@@ -131,6 +131,7 @@ return [
     // Units shown next to numeric game settings.
     'settings_units' => [
         'players' => 'لاعبون',
+        'categories' => 'فئات',
         'rooms' => 'غرف',
         'questions' => 'أسئلة',
         'questions_per_day' => 'أسئلة / يوم',

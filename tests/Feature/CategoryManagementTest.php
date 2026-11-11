@@ -134,6 +134,6 @@ class CategoryManagementTest extends TestCase
 
         $this->actingAs($admin)
             ->get('/admin/categories')
-            ->assertSee('wire:confirm="Permanently delete this category? This cannot be undone."', false);
+            ->assertSee('wire:confirm="Move this category to the trash?"', false);
     }
 }

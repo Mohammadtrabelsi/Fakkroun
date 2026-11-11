@@ -69,10 +69,22 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
         $this->toast(__('billing.plans.cancelled'));
         unset($this->paidUsers);
     }
+
+    /**
+     * @return array{planPrice: int, planPriceLabel: string}
+     */
+    public function with(): array
+    {
+        $payments = app(PaymentService::class);
+
+        return [
+            'planPrice' => $payments->planPrice(),
+            'planPriceLabel' => number_format($payments->planPrice() / 100, 2).' '.$payments->planCurrency(),
+        ];
+    }
 };
 ?>
 
-@php($payments = app(\App\Domain\Billing\PaymentService::class))
 <div class="ms-mw-720">
     <div class="ms-page-head">
         <div>
@@ -81,8 +93,8 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
         </div>
     </div>
 
-    @if ($payments->planPrice() > 0)
-        <p class="tag tag-accent ms-notice">{{ __('billing.plans.price', ['price' => number_format($payments->planPrice() / 100, 2).' '.$payments->planCurrency()]) }}</p>
+    @if ($planPrice > 0)
+        <p class="tag tag-accent ms-notice">{{ __('billing.plans.price', ['price' => $planPriceLabel]) }}</p>
     @else
         <p class="tag tag-outline ms-notice"><a href="{{ route('admin.game-settings') }}" wire:navigate>{{ __('billing.plans.not_on_sale') }}</a></p>
     @endif
@@ -93,7 +105,7 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
         <x-input-error :message="$errors->first('email')" />
         <div class="ms-row-10 ms-wrap">
             <label class="ms-fs-13">{{ __('billing.plans.months') }} <input type="number" min="1" max="36" wire:model="months" class="input"></label>
-            <label class="ms-fs-13">{{ __('billing.plans.amount') }} <input type="number" min="0" wire:model="amount" class="input" placeholder="{{ $payments->planPrice() * max(1, $months) }}"></label>
+            <label class="ms-fs-13">{{ __('billing.plans.amount') }} <input type="number" min="0" wire:model="amount" class="input" placeholder="{{ $planPrice * max(1, $months) }}"></label>
         </div>
         <x-text-input wire:model="receipt" type="text" :placeholder="__('billing.plans.receipt')" :error="$errors->first('receipt')" />
         <x-input-error :message="$errors->first('receipt')" />
@@ -106,7 +118,7 @@ new #[Layout('layouts::app')] #[Title('Paid accounts')] class extends Component
                     @forelse ($this->paidUsers as $user)
                         <div class="row-card" wire:key="pu-{{ $user->id }}">
                             <div class="row-card-title"><div class="ms-fw-500">{{ $user->name }}</div><div class="text-muted ms-fs-12">{{ $user->email }}</div></div>
-                            <div @class(['row-card-field', 'text-muted' = data-label="{{ __('billing.plans.until') }}"> ! $user->hasPaidPlan()])>{{ $user->plan_expires_at?->isoFormat('ll') ?? '—' }}</div>
+                            <div @class(['row-card-field', 'text-muted' => ! $user->hasPaidPlan()]) data-label="{{ __('billing.plans.until') }}">{{ $user->plan_expires_at?->isoFormat('ll') ?? '—' }}</div>
                             <div class="row-card-field ms-text-right"><button type="button" wire:click="cancel({{ $user->id }})" wire:confirm="{{ __('billing.plans.cancel') }}?" class="btn ms-btn-sm">{{ __('billing.plans.cancel') }}</button></div>
                         </div>
                     @empty

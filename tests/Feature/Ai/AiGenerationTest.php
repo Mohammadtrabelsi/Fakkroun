@@ -101,11 +101,12 @@ class AiGenerationTest extends TestCase
         Sleep::fake();
         Http::fakeSequence('api.anthropic.com/*')
             ->push(['error' => ['type' => 'rate_limit_error']], 429, ['retry-after' => '1'])
-            ->push($this->anthropicReply([$this->item('Retried question about the sea?')]));
+            ->push($this->anthropicReply([$this->item('Retried question about the sea?')]))
+            ->push($this->anthropicReply([], 'refusal'));
 
         $this->assertCount(1, (new AnthropicQuestionGenerator)->generate(new GenerationRequest(1, 'en', 'easy', 'Blue Economy'))->items);
 
-        Http::fake(['api.anthropic.com/*' => Http::response($this->anthropicReply([], 'refusal'))]);
+        // The third reply in the sequence is a refusal.
         $this->expectException(GenerationFailed::class);
         (new AnthropicQuestionGenerator)->generate(new GenerationRequest(1, 'en', 'easy', 'Blue Economy'));
     }

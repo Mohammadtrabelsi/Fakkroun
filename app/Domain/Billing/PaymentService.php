@@ -150,7 +150,12 @@ class PaymentService
             'metadata' => ['months' => max(1, $months), 'recorded_by' => $admin?->id],
         ]);
 
-        return $this->markPaid($payment);
+        $paid = $this->markPaid($payment);
+
+        // The plan was written on another instance: bring the caller's copy up to date.
+        $user->refresh();
+
+        return $paid;
     }
 
     protected function model(): string

@@ -28,7 +28,7 @@ class RoomTest extends GameplayTestCase
 
     public function test_room_settings_respect_platform_limits(): void
     {
-        app(PlatformSettings::class)->update(['game' => ['max_players' => 6]]);
+        app(PlatformSettings::class)->update(['game' => ['max_players' => 6, 'max_players_per_round' => 6]]);
 
         $this->expectException(ValidationException::class);
         $this->room($this->player(), ['max_players' => 7]);

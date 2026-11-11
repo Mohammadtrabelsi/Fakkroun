@@ -117,6 +117,6 @@ new class extends Component
         <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="save">
             {{ $user ? __('users.save_changes') : __('users.create') }}
         </button>
-        <a href="{{ route('admin.users.index') }}" wire:navigate class="btn">Cancel</a>
+        <a href="{{ route('admin.users.index') }}" wire:navigate class="btn">{{ __('actions.cancel') }}</a>
     </div>
 </form>

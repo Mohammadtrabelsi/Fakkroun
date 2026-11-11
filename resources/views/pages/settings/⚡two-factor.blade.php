@@ -105,7 +105,7 @@ new #[Layout('layouts::app')] #[Title('Two-factor authentication')] class extend
         <div class="card ms-stack-16 ms-mb-16">
             <h3 class="ms-fs-18">{{ __('two_factor.recovery_codes_title') }}</h3>
             <p class="text-muted ms-note">{{ __('two_factor.recovery_codes_hint') }}</p>
-            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-family:monospace">
+            <div class="ms-code-grid">
                 @foreach ($recoveryCodes as $code)
                     <div class="ms-fs-13">{{ $code }}</div>
                 @endforeach
@@ -147,8 +147,8 @@ new #[Layout('layouts::app')] #[Title('Two-factor authentication')] class extend
 
             <div class="field ms-mb-0">
                 <x-input-label :value="__('two_factor.secret_label')" />
-                <input type="text" readonly value="{{ $pendingSecret }}" class="input" style="font-family:monospace" onclick="this.select()">
-                <p class="text-muted ms-fs-12 ms-mt-8" style="word-break:break-all">{{ $otpauthUri }}</p>
+                <input type="text" readonly value="{{ $pendingSecret }}" class="input ms-mono" x-data x-on:click="$el.select()">
+                <p class="text-muted ms-fs-12 ms-mt-8 ms-break-all">{{ $otpauthUri }}</p>
             </div>
 
             <div class="field ms-mb-0">

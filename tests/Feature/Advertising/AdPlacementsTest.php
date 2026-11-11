@@ -9,6 +9,7 @@ use App\Domain\Advertising\Models\AdDelivery;
 use App\Domain\Advertising\Models\Advertiser;
 use App\Domain\Advertising\Models\AdvertisingPackage;
 use App\Domain\Advertising\Models\Impression;
+use App\Domain\Advertising\ReconciliationService;
 use App\Domain\Advertising\WalletService;
 use App\Domain\Billing\PaymentService;
 use App\Domain\Gameplay\GameEngine;
@@ -125,6 +126,6 @@ class AdPlacementsTest extends GameplayTestCase
         [$room, $host] = $this->lobby();
         app(AdService::class)->confirm(app(AdService::class)->offerLobby($room, $host)->token, $host);
 
-        $this->assertTrue(app(\App\Domain\Advertising\ReconciliationService::class)->run()['ok']);
+        $this->assertTrue(app(ReconciliationService::class)->run()['ok']);
     }
 }

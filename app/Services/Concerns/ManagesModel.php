@@ -36,26 +36,6 @@ trait ManagesModel
     }
 
     /**
-     * A query that also includes soft-deleted rows.
-     *
-     * @return Builder<TModel>
-     */
-    public function withTrashed(): Builder
-    {
-        return $this->query()->withTrashed();
-    }
-
-    /**
-     * A query limited to soft-deleted rows.
-     *
-     * @return Builder<TModel>
-     */
-    public function onlyTrashed(): Builder
-    {
-        return $this->query()->onlyTrashed();
-    }
-
-    /**
      * @return TModel|null
      */
     public function find(mixed $id): ?Model

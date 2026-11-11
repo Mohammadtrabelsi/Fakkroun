@@ -221,15 +221,17 @@ class GameEngineTest extends GameplayTestCase
         $room = $this->openRoom(['duplicate_rule' => true]);
         app(RoomService::class)->join($room, $third);
         $game = $this->engine->start($room, $this->host);
-        $choices = $this->choicesOf($this->current($game));
+        $question = $this->current($game);
+        $choices = $this->choicesOf($question);
 
         $this->engine->submitAnswer($game, $this->host, $choices['correct']);
         $this->engine->submitAnswer($game, $this->guest, $choices['correct']);
         $this->engine->submitAnswer($game, $third, $choices['wrong']);
-        $this->travel(21)->seconds();
+        // Everyone has answered, so the question closes at once: no need to wait for the deadline
+        // (waiting 21 s would also end the reveal and move on to the next question).
         $this->engine->tick($game);
 
-        $answers = $this->current($game)->answers()->get()->keyBy('user_id');
+        $answers = $question->answers()->get()->keyBy('user_id');
         $this->assertTrue($answers[$this->host->id]->is_correct);
         $this->assertTrue($answers[$this->host->id]->is_duplicate_excluded);
         $this->assertSame(0, $answers[$this->host->id]->points);

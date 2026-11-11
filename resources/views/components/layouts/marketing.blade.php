@@ -7,13 +7,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @php
-            $pageTitle = $title ?? config('app.name').' — '.__('fakkroun.tagline');
-        @endphp
-        <title>{{ $pageTitle }}</title>
+        <title>{{ $title ?? config('app.name').' — '.__('fakkroun.tagline') }}</title>
 
         <x-seo.meta
-            :title="$pageTitle"
+            :title="$title ?? config('app.name').' — '.__('fakkroun.tagline')"
             :description="$description ?? null"
             :canonical="$canonical ?? null"
             :image="$image ?? null"
@@ -51,14 +48,10 @@
             <div class="nav-panel" id="site-nav" data-nav-panel>
                 <nav class="nav-links" aria-label="{{ __('marketing.menu') }}">
                     @foreach (config('navigation.marketing', []) as $item)
-                        @php
-                            $isRoute = isset($item['route']);
-                            $current = $isRoute && request()->routeIs($item['route'], $item['route'].'.*');
-                        @endphp
                         <a
-                            href="{{ $isRoute ? route($item['route']) : url($item['url']) }}"
+                            href="{{ isset($item['route']) ? route($item['route']) : url($item['url']) }}"
                             class="link"
-                            @if ($current) aria-current="page" @endif
+                            @if (isset($item['route']) && request()->routeIs($item['route'], $item['route'].'.*')) aria-current="page" @endif
                         >{{ __($item['label']) }}</a>
                     @endforeach
                 </nav>
@@ -88,14 +81,14 @@
                     <p class="text-muted footer-brand-copy">{{ __('marketing.tagline') }}</p>
                     <a href="{{ route('register') }}" class="btn btn-primary mb-4">{{ __('marketing.get_started') }}</a>
                 </div>
-                <nav aria-label="Product">
+                <nav aria-label="{{ __('actions.product') }}">
                     <div class="footer-heading">{{ __('marketing.product') }}</div>
                     <div class="footer-links">
                         <a href="{{ url('/') }}#features">{{ __('marketing.features') }}</a>
                         <a href="{{ route('docs') }}">{{ __('marketing.docs') }}</a>
                     </div>
                 </nav>
-                <nav aria-label="Company">
+                <nav aria-label="{{ __('actions.company') }}">
                     <div class="footer-heading">{{ __('marketing.company') }}</div>
                     <div class="footer-links">
                         <a href="{{ route('about') }}">{{ __('marketing.about') }}</a>

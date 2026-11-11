@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Domain\Billing\PlanService;
 use App\Enums\AccountStatus;
 use App\Models\Concerns\TracksUserActions;
 use App\Notifications\QueuedResetPassword;
@@ -113,7 +114,7 @@ class User extends Authenticatable
      */
     public function hasPaidPlan(): bool
     {
-        return app(\App\Domain\Billing\PlanService::class)->isPaid($this);
+        return app(PlanService::class)->isPaid($this);
     }
 
     public function isSuspended(): bool

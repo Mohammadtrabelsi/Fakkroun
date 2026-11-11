@@ -15,6 +15,8 @@ use Livewire\Component;
  */
 new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class extends Component
 {
+    use \App\Support\Livewire\ThrottlesSubmissions;
+
     /** Pre-filled from the home page "Have a code?" form and invitation links (?code=…). */
     #[Url]
     public string $code = '';
@@ -31,6 +33,8 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
 
     public function join(RoomService $rooms, GuestPlayers $guests): void
     {
+        $this->throttleSubmission('join-room', 'code');
+
         $rules = ['code' => ['required', 'string', 'max:12']];
 
         if (auth()->guest()) {

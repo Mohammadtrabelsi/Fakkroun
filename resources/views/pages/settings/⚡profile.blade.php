@@ -167,7 +167,7 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
                 @endif
             </div>
         </div>
-        <div wire:loading wire:target="avatar" class="text-muted ms-fs-12">Uploading…</div>
+        <div wire:loading wire:target="avatar" class="text-muted ms-fs-12">{{ __('actions.uploading') }}</div>
         <x-input-error :message="$errors->first('avatar')" />
     </div>
 
@@ -201,7 +201,7 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
         </div>
 
         <div>
-            <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="updatePreferences">Save</button>
+            <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="updatePreferences">{{ __('actions.save') }}</button>
         </div>
     </form>
 
@@ -248,7 +248,7 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
         </div>
 
         <div>
-            <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="updateProfile">Save</button>
+            <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="updateProfile">{{ __('actions.save') }}</button>
         </div>
     </form>
 
@@ -281,7 +281,7 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
         </div>
 
         <div>
-            <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="updatePassword">Update password</button>
+            <button type="submit" class="btn btn-primary" wire:loading.attr="disabled" wire:target="updatePassword">{{ __('actions.update_password') }}</button>
         </div>
     </form>
 
@@ -315,7 +315,7 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
                 <button
                     type="submit"
                     class="btn ms-outline-danger"
-                    wire:confirm="Are you sure you want to permanently delete your account?"
+                    wire:confirm="{{ __('actions.confirm_delete_account') }}"
                     wire:loading.attr="disabled"
                     wire:target="deleteAccount"
                 >

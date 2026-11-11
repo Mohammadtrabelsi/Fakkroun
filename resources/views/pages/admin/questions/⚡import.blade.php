@@ -85,6 +85,15 @@ new #[Layout('layouts::app')] #[Title('Import questions')] class extends Compone
         return app(\App\Domain\Questions\QuestionImportBatchService::class)->query()->with('user:id,name')->latest('id')->paginate(10);
     }
 
+    /** First rejected rows of the batch whose details are open. */
+    #[Computed]
+    public function openBatchErrors()
+    {
+        $batch = $this->openBatch ? $this->batches->firstWhere('id', $this->openBatch) : null;
+
+        return $batch ? $batch->errors()->limit(50)->get() : collect();
+    }
+
     public function runPreview(QuestionImportService $imports): void
     {
         $this->authorize('manage questions');
@@ -203,7 +212,7 @@ new #[Layout('layouts::app')] #[Title('Import questions')] class extends Compone
                                 @if ($batch->error)<div class="text-muted ms-fs-12">{{ $batch->error }}</div>@endif
                                 @if ($openBatch === $batch->id)
                                     <ul class="ms-fs-12">
-                                        @foreach ($batch->errors()->limit(50)->get() as $error)
+                                        @foreach ($this->openBatchErrors as $error)
                                             <li>{{ __('questions.import.row', ['row' => $error->row_number]) }}: {{ implode(' · ', $error->messages) }}</li>
                                         @endforeach
                                     </ul>

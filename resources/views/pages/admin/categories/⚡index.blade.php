@@ -219,11 +219,11 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
         </div>
 
         <div class="ms-row-10">
-            <select wire:model.live="status" class="input" aria-label="Status">
+            <select wire:model.live="status" class="input" aria-label="{{ __('actions.status') }}">
                 <option value="all">{{ __('categories.all_statuses') }}</option>
                 <option value="active">{{ __('categories.active') }}</option>
                 <option value="inactive">{{ __('categories.inactive') }}</option>
-                <option value="trashed">Trashed</option>
+                <option value="trashed">{{ __('actions.trashed') }}</option>
             </select>
         </div>
     </div>
@@ -232,27 +232,27 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
         <div class="ms-toolbar">
             <div class="ms-row-10">
                 <span class="text-muted ms-fs-13">{{ count($selected) }} selected</span>
-                <select wire:model="bulkAction" class="input" aria-label="Bulk action">
-                    <option value="">Choose action…</option>
+                <select wire:model="bulkAction" class="input" aria-label="{{ __('actions.bulk_action') }}">
+                    <option value="">{{ __('actions.choose_action') }}</option>
                     @if ($status === 'trashed')
-                        <option value="restore">Restore</option>
-                        <option value="forceDelete">Delete permanently</option>
+                        <option value="restore">{{ __('actions.restore') }}</option>
+                        <option value="forceDelete">{{ __('actions.delete_permanently') }}</option>
                     @else
-                        <option value="activate">Activate</option>
-                        <option value="deactivate">Deactivate</option>
-                        <option value="delete">Move to trash</option>
+                        <option value="activate">{{ __('actions.activate') }}</option>
+                        <option value="deactivate">{{ __('actions.deactivate') }}</option>
+                        <option value="delete">{{ __('actions.move_to_trash') }}</option>
                     @endif
                 </select>
                 <button
                     type="button"
                     wire:click="applyBulk"
-                    wire:confirm="Apply this action to the selected categories?"
+                    wire:confirm="{{ __('categories.list.confirm_bulk') }}"
                     wire:loading.attr="disabled"
                     class="btn"
                     @disabled($bulkAction === '')
-                >Apply</button>
+                >{{ __('actions.apply') }}</button>
             </div>
-            <button type="button" wire:click="$set('selected', [])" class="btn ms-btn-sm">Clear selection</button>
+            <button type="button" wire:click="$set('selected', [])" class="btn ms-btn-sm">{{ __('actions.clear_selection') }}</button>
         </div>
     @endif
 
@@ -264,13 +264,13 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
         <div class="row-cards-wrap">
             <div class="row-cards">
                 <div class="row-cards-toolbar">
-                    <div class="row-cards-control"><input type="checkbox" class="checkbox" aria-label="Select all on this page" wire:click="selectPage"></div>
+                    <div class="row-cards-control"><input type="checkbox" class="checkbox" aria-label="{{ __('actions.select_page') }}" wire:click="selectPage"></div>
                     <div class="row-cards-control"><button type="button" wire:click="sortBy('name')" class="ms-sort-btn">{{ __('categories.name') }}</button></div>
                 </div>
                     @forelse ($this->categories as $category)
                         <div class="row-card" wire:key="category-{{ $category->id }}">
                             <div class="row-card-select">
-                                <input type="checkbox" class="checkbox" value="{{ $category->id }}" wire:model.live="selected" aria-label="Select category">
+                                <input type="checkbox" class="checkbox" value="{{ $category->id }}" wire:model.live="selected" aria-label="{{ __('categories.list.select') }}">
                             </div>
                             <div class="row-card-title">
                                 <div class="ms-fw-500">{{ $category->name }}</div>
@@ -284,7 +284,7 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
                             <div class="row-card-field text-muted" data-label="{{ __('categories.posts') }}">{{ $category->posts_count }}</div>
                             <div class="row-card-field" data-label="{{ __('categories.status') }}">
                                 @if ($category->trashed())
-                                    <span class="tag tag-outline">Trashed</span>
+                                    <span class="tag tag-outline">{{ __('actions.trashed') }}</span>
                                 @else
                                     <span class="tag {{ $category->is_active ? 'tag-accent' : 'tag-neutral' }}">{{ $category->is_active ? 'Active' : 'Inactive' }}</span>
                                     @if ($category->is_default_selected && $category->parent_id === null)
@@ -296,15 +296,15 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
                                 <div class="ms-actions-end">
                                     @if ($category->trashed())
                                         @can('restore', $category)
-                                            <button type="button" wire:click="restoreCategory({{ $category->id }})" class="btn ms-btn-sm">Restore</button>
+                                            <button type="button" wire:click="restoreCategory({{ $category->id }})" class="btn ms-btn-sm">{{ __('actions.restore') }}</button>
                                         @endcan
                                         @can('forceDelete', $category)
                                             <button
                                                 type="button"
                                                 wire:click="forceDeleteCategory({{ $category->id }})"
-                                                wire:confirm="Permanently delete this category? This cannot be undone."
+                                                wire:confirm="{{ __('categories.list.confirm_force_delete') }}"
                                                 class="btn ms-btn-sm-danger"
-                                            >Delete permanently</button>
+                                            >{{ __('actions.delete_permanently') }}</button>
                                         @endcan
                                     @else
                                         @can('update', $category)
@@ -314,7 +314,7 @@ new #[Layout('layouts::app')] #[Title('Categories')] class extends Component
                                             <button
                                                 type="button"
                                                 wire:click="deleteCategory({{ $category->id }})"
-                                                wire:confirm="Move this category to the trash?"
+                                                wire:confirm="{{ __('categories.list.confirm_trash') }}"
                                                 class="btn ms-btn-sm-danger"
                                             >{{ __('categories.delete') }}</button>
                                         @endcan

@@ -80,6 +80,7 @@ return [
     'results' => [
         'title' => 'Résultats finaux',
         'winner' => ':name gagne avec :score points !',
+        'rank' => 'Rang',
         'player' => 'Joueur',
         'score' => 'Score',
         'correct' => 'Bonnes',

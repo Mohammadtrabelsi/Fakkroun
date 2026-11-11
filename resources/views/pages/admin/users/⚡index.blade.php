@@ -153,7 +153,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
         <div class="ms-row-10 ms-wrap">
             <a href="{{ route('admin.users.create') }}" wire:navigate class="btn btn-primary">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M19 8v6M16 11h6"></path></svg>
-                New user
+                {{ __('users.list.new') }}
             </a>
         </div>
     </div>
@@ -169,16 +169,16 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
         </div>
 
         <div class="ms-row-10">
-            <select wire:model.live="listing" class="input" aria-label="View">
-                <option value="active">Active users</option>
-                <option value="trashed">Trashed users</option>
+            <select wire:model.live="listing" class="input" aria-label="{{ __('actions.view') }}">
+                <option value="active">{{ __('users.list.active') }}</option>
+                <option value="trashed">{{ __('users.list.trashed') }}</option>
             </select>
-            <select wire:model.live="role" class="input" aria-label="Role">
+            <select wire:model.live="role" class="input" aria-label="{{ __('actions.role') }}">
                 <option value="all">{{ __('dashboard.all_roles') }}</option>
-                <option value="admin">Administrators</option>
+                <option value="admin">{{ __('users.list.administrators') }}</option>
                 <option value="member">{{ __('dashboard.member') }}</option>
             </select>
-            <select wire:model.live="status" class="input" aria-label="Status">
+            <select wire:model.live="status" class="input" aria-label="{{ __('actions.status') }}">
                 <option value="all">{{ __('account.all_statuses') }}</option>
                 <option value="active">{{ __('account.status_active') }}</option>
                 <option value="suspended">{{ __('account.status_suspended') }}</option>
@@ -211,12 +211,12 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                             <div class="row-card-field text-muted ms-nowrap" data-label="{{ __('dashboard.joined') }}">{{ $user->created_at->format($this->dateFormat) }}</div>
                             <div class="row-card-field" data-label="{{ __('dashboard.role') }}">
                                 @if ($user->trashed())
-                                    <span class="tag tag-outline">Trashed</span>
+                                    <span class="tag tag-outline">{{ __('actions.trashed') }}</span>
                                 @else
                                     @forelse ($user->roles as $role)
                                         <span class="tag {{ $role->name === 'admin' ? 'tag-accent' : 'tag-neutral' }}">{{ __('fakkroun.roles.'.$role->name) }}</span>
                                     @empty
-                                        <span class="tag tag-neutral">Member</span>
+                                        <span class="tag tag-neutral">{{ __('users.list.member') }}</span>
                                     @endforelse
                                     @if ($user->isSuspended())
                                         <span class="tag tag-outline">{{ __('account.status_suspended') }}</span>
@@ -226,19 +226,19 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                             <div class="row-card-actions">
                                 <div class="ms-actions-end">
                                     @if ($user->trashed())
-                                        <button type="button" wire:click="restoreUser({{ $user->id }})" class="btn ms-btn-sm">Restore</button>
+                                        <button type="button" wire:click="restoreUser({{ $user->id }})" class="btn ms-btn-sm">{{ __('actions.restore') }}</button>
                                         <button
                                             type="button"
                                             wire:click="forceDeleteUser({{ $user->id }})"
-                                            wire:confirm="Permanently delete {{ $user->name }}? This cannot be undone."
+                                            wire:confirm="{{ __('users.list.confirm_force_delete', ['name' => $user->name]) }}"
                                             @disabled($user->id === auth()->id())
                                             class="btn ms-btn-sm-danger"
-                                        >Delete permanently</button>
+                                        >{{ __('actions.delete_permanently') }}</button>
                                     @else
                                         <button
                                             type="button"
                                             wire:click="toggleAdmin({{ $user->id }})"
-                                            wire:confirm="Are you sure you want to {{ $user->hasRole('admin') ? 'remove admin access from' : 'grant admin access to' }} {{ $user->name }}?"
+                                            wire:confirm="{{ __($user->hasRole('admin') ? 'users.list.confirm_revoke_admin' : 'users.list.confirm_grant_admin', ['name' => $user->name]) }}"
                                             @disabled($user->id === auth()->id())
                                             class="btn ms-btn-sm"
                                         >
@@ -259,14 +259,14 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
                                             href="{{ route('admin.users.edit', $user) }}"
                                             wire:navigate
                                             class="btn ms-btn-sm"
-                                        >Edit</a>
+                                        >{{ __('actions.edit') }}</a>
                                         <button
                                             type="button"
                                             wire:click="deleteUser({{ $user->id }})"
-                                            wire:confirm="Move {{ $user->name }} to the trash? They will not be able to sign in until restored."
+                                            wire:confirm="{{ __('users.list.confirm_trash', ['name' => $user->name]) }}"
                                             @disabled($user->id === auth()->id())
                                             class="btn ms-btn-sm-danger"
-                                        >Move to trash</button>
+                                        >{{ __('actions.move_to_trash') }}</button>
                                     @endif
                                 </div>
                             </div>

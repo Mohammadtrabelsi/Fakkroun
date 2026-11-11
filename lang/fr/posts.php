@@ -25,4 +25,13 @@ return [
     'update_post_content' => 'Mettre à jour le contenu de l\'article',
     'write_a_new_post' => 'Rédiger un nouvel article',
     'write_and_publish_content' => 'Rédigez et publiez du contenu',
+    // List screen (admin).
+    'list' => [
+        'title' => 'Articles',
+        'select' => 'Sélectionner l’article',
+        'confirm_bulk' => 'Appliquer cette action aux articles sélectionnés ?',
+        'confirm_force_delete' => 'Supprimer définitivement cet article ? Cette action est irréversible.',
+        'confirm_trash' => 'Mettre cet article à la corbeille ?',
+        'remove_cover' => 'Retirer l’image de couverture',
+    ],
 ];

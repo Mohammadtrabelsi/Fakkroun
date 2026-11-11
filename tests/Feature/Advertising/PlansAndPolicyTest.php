@@ -5,9 +5,11 @@ namespace Tests\Feature\Advertising;
 use App\Domain\Advertising\AdService;
 use App\Domain\Advertising\CampaignService;
 use App\Domain\Advertising\Enums\CampaignStatus;
+use App\Domain\Advertising\Enums\CreditType;
 use App\Domain\Advertising\Models\Advertiser;
 use App\Domain\Advertising\Models\AdvertisingPackage;
 use App\Domain\Advertising\Models\Campaign;
+use App\Domain\Advertising\Models\PolicyStrike;
 use App\Domain\Advertising\PolicyEnforcementService;
 use App\Domain\Advertising\SponsoredQuestionService;
 use App\Domain\Advertising\WalletService;
@@ -18,12 +20,15 @@ use App\Domain\Billing\Models\Payment;
 use App\Domain\Billing\PaymentNotification;
 use App\Domain\Billing\PaymentService;
 use App\Domain\Gameplay\GameEngine;
+use App\Domain\Gameplay\Models\GameQuestion;
+use App\Domain\Gameplay\Models\Room;
 use App\Domain\Gameplay\RoomService;
 use App\Domain\Questions\Models\Question;
 use App\Enums\UserRole;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
 use App\Services\PlatformSettings;
+use Livewire\Livewire;
 use Tests\Feature\Gameplay\GameplayTestCase;
 
 class PlansAndPolicyTest extends GameplayTestCase
@@ -56,7 +61,7 @@ class PlansAndPolicyTest extends GameplayTestCase
     }
 
     /**
-     * @return array{0: \App\Domain\Gameplay\Models\Room, 1: \App\Domain\Gameplay\Models\GameQuestion}
+     * @return array{0: Room, 1: GameQuestion}
      */
     private function game(User $host, User $guest): array
     {
@@ -98,7 +103,7 @@ class PlansAndPolicyTest extends GameplayTestCase
         app(PlatformSettings::class)->update(['accounts' => ['paid_plan_price_minor' => 1500]]);
         $player = $this->player();
 
-        \Livewire\Livewire::actingAs($this->admin)->test('pages::admin.plans')
+        Livewire::actingAs($this->admin)->test('pages::admin.plans')
             ->set('email', $player->email)->set('months', 2)->set('receipt', 'R-001')
             ->call('record')
             ->assertHasNoErrors();
@@ -106,7 +111,7 @@ class PlansAndPolicyTest extends GameplayTestCase
         $this->assertTrue($player->fresh()->hasPaidPlan());
         $this->assertSame(3000, Payment::query()->where('provider_reference', 'R-001')->value('amount_minor'));
 
-        \Livewire\Livewire::actingAs($this->admin)->test('pages::admin.plans')
+        Livewire::actingAs($this->admin)->test('pages::admin.plans')
             ->set('email', $player->email)->set('receipt', 'R-001')
             ->call('record')
             ->assertHasErrors('receipt');
@@ -204,8 +209,8 @@ class PlansAndPolicyTest extends GameplayTestCase
         $this->assertSame(3, $this->owner->notifications()->where('data->type', 'like', 'advertiser_policy_%')->count());
 
         // Credits are kept but frozen: no campaign of a suspended advertiser runs.
-        $this->assertSame(10, $this->advertiser->balance(\App\Domain\Advertising\Enums\CreditType::Impression));
-        $other->forceFill(['status' => CampaignStatus::Active])->save();
+        $this->assertSame(10, $this->advertiser->balance(CreditType::Impression));
+        $other->refresh()->forceFill(['status' => CampaignStatus::Active])->save();
         $this->assertFalse(Campaign::query()->running()->whereKey($other->id)->exists());
 
         // The suspended advertiser can't create campaigns; an admin can reactivate.
@@ -223,12 +228,12 @@ class PlansAndPolicyTest extends GameplayTestCase
     {
         $campaign = $this->campaign();
 
-        \Livewire\Livewire::actingAs($this->admin)->test('pages::admin.advertising')
+        Livewire::actingAs($this->admin)->test('pages::admin.advertising')
             ->set('rejectNotes.'.$campaign->id, 'Not kids-friendly')
             ->call('breach', $campaign->id);
 
         $this->assertSame(CampaignStatus::Rejected, $campaign->fresh()->status);
-        $this->assertSame(1, \App\Domain\Advertising\Models\PolicyStrike::query()->count());
+        $this->assertSame(1, PolicyStrike::query()->count());
     }
 
     public function test_terms_describe_the_room_rule_and_the_three_steps(): void

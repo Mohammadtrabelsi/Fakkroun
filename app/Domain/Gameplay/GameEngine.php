@@ -380,8 +380,9 @@ class GameEngine
         $now = now();
 
         $opened = $this->gameQuestions->query()->where('game_id', $game->id)->where('position', $position)->whereNull('opened_at')->update([
-            'opened_at' => $now,
-            'deadline_at' => $now->copy()->addSeconds((int) $game->settings['seconds_per_question']),
+            // Formatted here: a bulk update binds dates in whole seconds and would drop the milliseconds.
+            'opened_at' => $now->format(GameQuestion::CLOCK_FORMAT),
+            'deadline_at' => $now->copy()->addSeconds((int) $game->settings['seconds_per_question'])->format(GameQuestion::CLOCK_FORMAT),
         ]);
 
         if ($opened > 0) {

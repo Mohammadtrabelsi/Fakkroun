@@ -5,18 +5,23 @@ namespace Tests\Feature\Advertising;
 use App\Domain\Advertising\AdRelevance;
 use App\Domain\Advertising\AdService;
 use App\Domain\Advertising\CampaignService;
+use App\Domain\Advertising\Models\AdDelivery;
 use App\Domain\Advertising\Models\Advertiser;
 use App\Domain\Advertising\Models\AdvertisingPackage;
 use App\Domain\Advertising\Models\Campaign;
 use App\Domain\Advertising\WalletService;
 use App\Domain\Gameplay\GameEngine;
 use App\Domain\Gameplay\Models\GameQuestion;
+use App\Domain\Gameplay\Models\Room;
 use App\Domain\Gameplay\RoomService;
 use App\Enums\UserRole;
 use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use App\Models\User;
 use App\Services\PlatformSettings;
+use Illuminate\Support\Collection;
+use Illuminate\Validation\ValidationException;
+use Livewire\Livewire;
 use Tests\Feature\Gameplay\GameplayTestCase;
 
 /** Story 16, slice 1: contextual relevance (S1), fatigue caps (S4), policy tick (S13). */
@@ -55,7 +60,7 @@ class SmartAdsTest extends GameplayTestCase
     }
 
     /**
-     * @return array{0: \App\Domain\Gameplay\Models\Room, 1: \Illuminate\Support\Collection<int, GameQuestion>, 2: User}
+     * @return array{0: Room, 1: Collection<int, GameQuestion>, 2: User}
      */
     private function game(int $questions = 3): array
     {
@@ -160,7 +165,7 @@ class SmartAdsTest extends GameplayTestCase
         $advertiser = Advertiser::query()->create(['user_id' => $owner->id, 'name' => 'NGO']);
         $campaign = app(CampaignService::class)->create($advertiser, $owner, ['name' => 'Words']);
 
-        \Livewire\Livewire::actingAs($owner)->test('pages::advertiser.dashboard')
+        Livewire::actingAs($owner)->test('pages::advertiser.dashboard')
             ->set('creativeFor', $campaign->id)
             ->set('headline', 'Save the sea')
             ->set('keywords', 'ocean, sea ,، بحر, ocean')
@@ -196,7 +201,7 @@ class SmartAdsTest extends GameplayTestCase
         $advertiser = Advertiser::query()->create(['user_id' => $owner->id, 'name' => 'NGO']);
         $campaign = app(CampaignService::class)->create($advertiser, $owner, ['name' => 'Limit']);
 
-        $this->expectException(\Illuminate\Validation\ValidationException::class);
+        $this->expectException(ValidationException::class);
         app(CampaignService::class)->addCreative($campaign, $owner, ['headline' => 'Hi', 'keywords' => ['a1', 'b2', 'c3']]);
     }
 
@@ -207,7 +212,7 @@ class SmartAdsTest extends GameplayTestCase
         [$room, , $host] = $this->game(1);
 
         $this->actingAs($host)->get(route('rooms.show', $room))->assertOk();
-        $html = view('partials.ads.card', ['ad' => app(AdService::class)->offerLobby($room, $host)?->load('creative') ?? \App\Domain\Advertising\Models\AdDelivery::query()->with('creative')->firstOrFail(), 'dark' => true])->render();
+        $html = view('partials.ads.card', ['ad' => app(AdService::class)->offerLobby($room, $host)?->load('creative') ?? AdDelivery::query()->with('creative')->firstOrFail(), 'dark' => true])->render();
 
         $this->assertStringContainsString('>= 0.8', $html);
         $this->assertStringContainsString('3000', $html);

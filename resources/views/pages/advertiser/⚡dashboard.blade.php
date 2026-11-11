@@ -190,12 +190,42 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             $this->toast($e->getMessage(), 'error');
         }
     }
+
+    /**
+     * View data: the advertiser, its figures and a money formatter, so the
+     * template neither queries nor formats.
+     *
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        $advertiser = $this->advertiser();
+        $settings = app(\App\Services\PlatformSettings::class);
+        $currency = (string) $settings->get('advertising.currency');
+        // One query for every category named in the breakdown, not one per row.
+        $categoryNames = app(\App\Services\CategoryService::class)->query()
+            ->whereIn('id', array_keys($this->stats['by_category'] ?? []))
+            ->get()
+            ->mapWithKeys(fn ($category): array => [$category->id => $category->name])
+            ->all();
+
+        return [
+            'breakdownLabel' => fn (string $key, int|string|null $label): string => match ($key) {
+                'by_category' => (string) ($categoryNames[$label] ?? '—'),
+                'by_placement' => __('advertising.placements.'.$label),
+                default => (string) ($label ?: '—'),
+            },
+            'maxKeywords' => (int) $settings->get('advertising.max_keywords_per_creative'),
+            'advertiser' => $advertiser,
+            'stats' => $this->stats,
+            'money' => fn (int $minor): string => number_format($minor / 100, 2).' '.$currency,
+            'strikes' => app(\App\Domain\Advertising\PolicyStrikeService::class)->countFor($advertiser),
+            'maxStrikes' => \App\Domain\Advertising\PolicyEnforcementService::SUSPEND_AT,
+        ];
+    }
 };
 ?>
 
-@php($advertiser = $this->advertiser())
-@php($stats = $this->stats)
-@php($money = fn (int $minor) => number_format($minor / 100, 2).' '.app(\App\Services\PlatformSettings::class)->get('advertising.currency'))
 <div>
     <div class="ms-page-head">
         <div>
@@ -207,9 +237,8 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     @if ($advertiser->status === 'suspended')
         <div role="alert" class="tag tag-outline ms-notice">{{ __('advertising.policy.suspended_notice') }}</div>
     @endif
-    @php($strikes = app(\App\Domain\Advertising\PolicyStrikeService::class)->query()->where('advertiser_id', $advertiser->id)->count())
     @if ($strikes > 0 && $advertiser->status !== 'suspended')
-        <div role="status" class="tag tag-outline ms-notice">{{ __('advertising.policy.strikes_notice', ['count' => $strikes, 'max' => \App\Domain\Advertising\PolicyEnforcementService::SUSPEND_AT]) }}</div>
+        <div role="status" class="tag tag-outline ms-notice">{{ __('advertising.policy.strikes_notice', ['count' => $strikes, 'max' => $maxStrikes]) }}</div>
     @endif
     <p role="note" class="ms-fs-13 ms-mb-24">{{ __('advertising.policy_notice') }} <a href="{{ route('terms') }}#advertising">{{ __('advertising.policy_link') }}</a></p>
 
@@ -240,11 +269,11 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
 
     <div class="ms-row-10 ms-wrap ms-mb-24">
         @foreach (['by_category' => __('advertising.by_category'), 'by_language' => __('advertising.by_language'), 'by_placement' => __('advertising.by_placement'), 'daily' => __('advertising.daily')] as $key => $title)
-            <div class="card ms-flex-1" style="min-width: 240px;">
+            <div class="card ms-flex-1 ms-minw-240">
                 <div class="card-kicker">{{ $title }}</div>
                 <ul class="ms-fs-13">
                     @forelse ($stats[$key] as $label => $count)
-                        <li class="ms-row-between"><span>{{ match ($key) { 'by_category' => app(\App\Services\CategoryService::class)->find($label)?->name ?? '—', 'by_placement' => __('advertising.placements.'.$label), default => $label ?: '—' } }}</span><b>{{ number_format($count) }}</b></li>
+                        <li class="ms-row-between"><span>{{ $breakdownLabel($key, $label) }}</span><b>{{ number_format($count) }}</b></li>
                     @empty
                         <li class="text-muted">—</li>
                     @endforelse
@@ -257,7 +286,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
         <div class="card ms-p-0 ms-mb-24">
             <div class="row-cards-wrap">
                 <div class="row-cards">
-                    <caption class="ms-fs-13 ms-fw-500" style="text-align: start; padding: 12px 16px 0;">{{ __('advertising.by_creative') }}</caption>
+                    <div class="ms-fs-13 ms-fw-500 ms-card-caption">{{ __('advertising.by_creative') }}</div>
                         @foreach ($stats['by_creative'] as $row)
                             <div class="row-card"><div class="row-card-title">{{ $row['headline'] }}</div><div class="row-card-field tabular-nums" data-label="{{ __('advertising.impressions') }}">{{ number_format($row['impressions']) }}</div><div class="row-card-field tabular-nums" data-label="{{ __('advertising.clicks') }}">{{ number_format($row['clicks']) }}</div><div class="row-card-field tabular-nums" data-label="{{ __('advertising.ctr_short') }}">{{ $row['ctr'] === null ? '—' : $row['ctr'].' %' }}</div></div>
                         @endforeach
@@ -298,7 +327,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
             <x-input-error :message="$errors->first('creative_link_url')" />
             <select wire:model="creativeLanguage" class="input"><option value="">{{ __('advertising.every_language') }}</option>@foreach (config('app.available_locales') as $code => $meta)<option value="{{ $code }}">{{ $meta['label'] }}</option>@endforeach</select>
             <x-text-input wire:model="keywords" type="text" :placeholder="__('advertising.keywords_placeholder')" :error="$errors->first('creative_keywords')" />
-            <p class="text-muted ms-fs-12">{{ __('advertising.keywords_hint', ['max' => app(\App\Services\PlatformSettings::class)->get('advertising.max_keywords_per_creative')]) }}</p>
+            <p class="text-muted ms-fs-12">{{ __('advertising.keywords_hint', ['max' => $maxKeywords]) }}</p>
             <x-input-error :message="$errors->first('creative_keywords') ?: $errors->first('creative_keywords.0')" />
             <input type="file" wire:model="image" accept="image/*" class="input">
             <x-input-error :message="$errors->first('creative_image')" />

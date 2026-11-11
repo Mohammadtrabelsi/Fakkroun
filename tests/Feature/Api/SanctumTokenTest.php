@@ -47,6 +47,8 @@ class SanctumTokenTest extends TestCase
         $this->withHeader('Authorization', 'Bearer '.$token)->deleteJson('/api/auth/token')->assertNoContent();
 
         $this->assertSame(0, $user->tokens()->count());
+        // Guards remember the resolved user for the whole test process; a real request starts fresh.
+        $this->app['auth']->forgetGuards();
         $this->withHeader('Authorization', 'Bearer '.$token)->getJson('/api/profile')->assertUnauthorized();
     }
 
