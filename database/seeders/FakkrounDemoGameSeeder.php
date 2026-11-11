@@ -3,20 +3,24 @@
 namespace Database\Seeders;
 
 use App\Domain\Gameplay\Enums\RoomStatus;
+use App\Domain\Gameplay\GameQuestionService;
+use App\Domain\Gameplay\GameResultService;
+use App\Domain\Gameplay\GameService;
 use App\Domain\Gameplay\Models\Game;
-use App\Domain\Gameplay\Models\GameQuestion;
-use App\Domain\Gameplay\Models\GameResult;
-use App\Domain\Gameplay\Models\PlayerAnswer;
-use App\Domain\Gameplay\Models\Room;
-use App\Domain\Gameplay\Models\RoomPlayer;
+use App\Domain\Gameplay\PlayerAnswerService;
 use App\Domain\Gameplay\RoomCodeGenerator;
+use App\Domain\Gameplay\RoomPlayerService;
+use App\Domain\Gameplay\RoomService;
 use App\Domain\Gameplay\ScoringEngine;
 use App\Domain\Questions\Models\Question;
-use App\Domain\Questions\Models\QuestionPoolEntry;
+use App\Domain\Questions\QuestionPoolEntryService;
+use App\Domain\Questions\QuestionService;
 use App\Models\User;
 use App\Services\PlatformSettings;
+use App\Services\UserService;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -39,12 +43,12 @@ class FakkrounDemoGameSeeder extends Seeder
 
     public function run(): void
     {
-        if (Room::query()->where('name', self::ROOM_NAME)->exists()) {
+        if (app(RoomService::class)->query()->where('name', self::ROOM_NAME)->exists()) {
             return;
         }
 
-        $host = User::role('admin')->first();
-        $players = User::query()->whereKeyNot($host?->id)->orderBy('id')->limit(3)->get();
+        $host = app(UserService::class)->query()->role('admin')->first();
+        $players = app(UserService::class)->query()->whereKeyNot($host?->id)->orderBy('id')->limit(3)->get();
 
         if ($host === null || $players->isEmpty()) {
             $this->command?->warn('Not enough users: skipping the demo game.');
@@ -52,7 +56,7 @@ class FakkrounDemoGameSeeder extends Seeder
             return;
         }
 
-        $questionIds = QuestionPoolEntry::query()
+        $questionIds = app(QuestionPoolEntryService::class)->query()
             ->where('language', self::LANGUAGE)
             ->where('is_sponsored', false)
             ->orderBy('question_id')
@@ -65,8 +69,8 @@ class FakkrounDemoGameSeeder extends Seeder
             return;
         }
 
-        /** @var \Illuminate\Support\Collection<int, Question> $questions */
-        $questions = Question::query()->with('choices')->whereIn('id', $questionIds)->get()->keyBy('id');
+        /** @var Collection<int, Question> $questions */
+        $questions = app(QuestionService::class)->query()->with('choices')->whereIn('id', $questionIds)->get()->keyBy('id');
         $everyone = collect([$host])->merge($players)->values();
         $scoring = app(PlatformSettings::class)->all()['scoring'];
         $startedAt = Carbon::now()->subDay()->setTime(18, 0);
@@ -86,7 +90,7 @@ class FakkrounDemoGameSeeder extends Seeder
                 'duplicate_threshold' => (int) $scoring['duplicate_rule_threshold'],
             ];
 
-            $room = Room::query()->create([
+            $room = app(RoomService::class)->query()->create([
                 'host_id' => $host->id,
                 'name' => self::ROOM_NAME,
                 'visibility' => 'private',
@@ -99,7 +103,7 @@ class FakkrounDemoGameSeeder extends Seeder
             $room->save();
 
             foreach ($everyone as $player) {
-                RoomPlayer::query()->create([
+                app(RoomPlayerService::class)->query()->create([
                     'room_id' => $room->id,
                     'user_id' => $player->id,
                     'joined_at' => $startedAt->copy()->subMinutes(5),
@@ -115,7 +119,7 @@ class FakkrounDemoGameSeeder extends Seeder
                 'reveal_seconds' => (int) config('fakkroun.gameplay.reveal_seconds', 6),
             ];
 
-            $game = Game::query()->create([
+            $game = app(GameService::class)->query()->create([
                 'room_id' => $room->id,
                 'status' => Game::COMPLETED,
                 'settings' => $gameSettings,
@@ -133,7 +137,7 @@ class FakkrounDemoGameSeeder extends Seeder
                 $question = $questions[$questionId];
                 $deadline = $openedAt->copy()->addSeconds(self::SECONDS_PER_QUESTION);
 
-                $gameQuestion = GameQuestion::query()->create([
+                $gameQuestion = app(GameQuestionService::class)->query()->create([
                     'game_id' => $game->id,
                     'question_id' => $question->id,
                     'position' => $index + 1,
@@ -163,7 +167,7 @@ class FakkrounDemoGameSeeder extends Seeder
                     $responseMs = mt_rand(1500, $durationMs - 500);
                     $points = ScoringEngine::points($isCorrect, false, $question->difficulty->value, $responseMs, $durationMs, $gameSettings);
 
-                    PlayerAnswer::query()->create([
+                    app(PlayerAnswerService::class)->query()->create([
                         'game_question_id' => $gameQuestion->id,
                         'user_id' => $player->id,
                         'choice_id' => $choiceId,
@@ -181,7 +185,7 @@ class FakkrounDemoGameSeeder extends Seeder
                     $totals[$player->id]['ms'] += $responseMs;
                 }
 
-                Question::query()->whereKey($question->id)->update([
+                app(QuestionService::class)->query()->whereKey($question->id)->update([
                     'times_played' => DB::raw('times_played + '.$answered),
                     'times_correct' => DB::raw('times_correct + '.$correctCount),
                 ]);
@@ -195,7 +199,7 @@ class FakkrounDemoGameSeeder extends Seeder
             $rank = 1;
 
             foreach ($ranked as $userId => $row) {
-                GameResult::query()->create([
+                app(GameResultService::class)->query()->create([
                     'game_id' => $game->id,
                     'user_id' => $userId,
                     'score' => $row['score'],
