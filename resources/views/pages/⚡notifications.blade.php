@@ -45,10 +45,10 @@ new #[Layout('layouts::app')] #[Title('Notifications')] class extends Component
         <button type="button" wire:click="markAllRead" class="btn">{{ __('play.inbox.mark_all') }}</button>
     </div>
     <div class="card ms-p-0">
-        <ul class="ms-stack-16" style="padding: 8px 16px;">
+        <ul class="ms-stack-16 ms-pad-list">
             @forelse ($this->notifications as $notification)
                 <li wire:key="n-{{ $notification->id }}" class="ms-row-between">
-                    <button type="button" wire:click="open('{{ $notification->id }}')" class="ms-linkbtn" style="text-align: start;">
+                    <button type="button" wire:click="open('{{ $notification->id }}')" class="ms-linkbtn ms-text-start">
                         <span class="{{ $notification->read_at ? '' : 'ms-fw-500' }}">{{ $notification->data['title'] ?? __('play.inbox.untitled') }}</span>
                         @if (! empty($notification->data['message']))<span class="text-muted ms-block-fs12">{{ $notification->data['message'] }}</span>@endif
                         @if (! empty($notification->data['reason']))<span class="text-muted ms-block-fs12">{{ $notification->data['reason'] }}</span>@endif

@@ -9,7 +9,8 @@
 
         <title>{{ $title ?? config('app.name') }}</title>
 
-        @include('partials.theme-script')
+        {{-- Blocking on purpose: sets the theme before first paint (resources/js/theme.js). --}}
+        @themeScript
 
         @include('partials.favicons')
 
@@ -242,7 +243,7 @@
 
             <div class="shell-main">
                 <div class="shell-topbar">
-                    <button type="button" class="topbar-burger" data-sidebar-open aria-label="Open menu">
+                    <button type="button" class="topbar-burger" data-sidebar-open aria-label="{{ __('actions.open_menu') }}">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
 

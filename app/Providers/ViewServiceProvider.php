@@ -7,6 +7,7 @@ use App\Services\NotificationService;
 use App\Services\PartnerService;
 use App\Services\PlatformSettings;
 use App\Support\View\MarketingArt;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View as ViewFacade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
@@ -20,6 +21,10 @@ class ViewServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
+        // @themeScript: the render-blocking theme loader (resources/js/theme.js), so that
+        // templates hold no <script> tag of their own.
+        Blade::directive('themeScript', fn (): string => '<script src="<?php echo e(\\Illuminate\\Support\\Facades\\Vite::asset(\'resources/js/theme.js\')); ?>"></script>');
+
         // Joining and playing needs no account; hosting does.
         ViewFacade::composer(['welcome', 'about', 'components.layouts.fakkroun'], function (View $view): void {
             $view->with('playUrl', auth()->user()?->isGuest() === false ? route('rooms.create') : route('rooms.join'));

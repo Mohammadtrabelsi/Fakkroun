@@ -50,4 +50,11 @@ return [
     'default_selected' => 'Pre-selected when creating a room',
     'default_selected_hint' => 'Top-level categories only. Ticked by default in the “Create a room” form; hosts can still untick them.',
     'default_selected_tag' => 'Pre-selected',
+    // List screen (admin).
+    'list' => [
+        'select' => 'Select category',
+        'confirm_bulk' => 'Apply this action to the selected categories?',
+        'confirm_force_delete' => 'Permanently delete this category? This cannot be undone.',
+        'confirm_trash' => 'Move this category to the trash?',
+    ],
 ];

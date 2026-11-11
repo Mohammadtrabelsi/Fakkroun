@@ -268,6 +268,19 @@ return [
     | Gameplay timing — deployment-level
     |--------------------------------------------------------------------------
     */
+    /*
+    | Public form rate limits: [attempts, per seconds], per form and IP
+    | (App\Support\Livewire\ThrottlesSubmissions).
+    */
+    'form_throttle' => [
+        'default' => [10, 60],
+        'register' => [6, 60],
+        'forgot-password' => [6, 60],
+        'reset-password' => [6, 60],
+        // Guests get a throwaway account when they join: keep this one tight.
+        'join-room' => [10, 60],
+    ],
+
     'gameplay' => [
         // Seconds the correct answer and results stay on screen before the next question.
         'reveal_seconds' => 6,

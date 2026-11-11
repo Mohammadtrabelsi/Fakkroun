@@ -84,7 +84,7 @@ new #[Layout('layouts::app')] #[Title('Activity Log')] class extends Component
     <div class="ms-row-12-mb16">
         <div class="ms-inline-frame">
             <div wire:click="$set('logName', '')" @class(['ms-logfilter', 'active' => $logName === ''])>
-                All
+                {{ __('actions.all') }}
             </div>
             @foreach ($logNames as $name)
                 <div wire:click="$set('logName', '{{ $name }}')" @class(['ms-logfilter ms-capitalize', 'active' => $logName === $name])>
@@ -94,8 +94,8 @@ new #[Layout('layouts::app')] #[Title('Activity Log')] class extends Component
         </div>
 
         <div class="ms-row-10">
-            <button type="button" wire:click="export('csv')" class="btn ms-btn-sm">Export CSV</button>
-            <button type="button" wire:click="export('json')" class="btn ms-btn-sm">Export JSON</button>
+            <button type="button" wire:click="export('csv')" class="btn ms-btn-sm">{{ __('actions.export_csv') }}</button>
+            <button type="button" wire:click="export('json')" class="btn ms-btn-sm">{{ __('actions.export_json') }}</button>
         </div>
 
         <div class="ms-search-field-right">
@@ -141,7 +141,7 @@ new #[Layout('layouts::app')] #[Title('Activity Log')] class extends Component
                         <div class="prop-grid ms-inset-note">
                             @if ($activity->properties->has('old'))
                                 <div>
-                                    <div class="card-kicker">Before</div>
+                                    <div class="card-kicker">{{ __('actions.before') }}</div>
                                     <pre class="ms-pre">{{ json_encode($activity->properties->get('old'), JSON_PRETTY_PRINT) }}</pre>
                                 </div>
                             @endif
@@ -164,7 +164,4 @@ new #[Layout('layouts::app')] #[Title('Activity Log')] class extends Component
         </div>
     </div>
 
-    @push('styles')
-        <link rel="stylesheet" href="{{ asset('css/activity-log.css') }}">
-    @endpush
 </div>

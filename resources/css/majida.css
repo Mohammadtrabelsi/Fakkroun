@@ -716,3 +716,59 @@ html.dark .btn-primary:hover { background: #196a6e; }
 /* — Toasts and sized avatars (were inline styles) — */
 #toast-hub, [data-toast-hub] { position: fixed; top: 1rem; inset-inline-end: 1rem; z-index: 60; display: flex; flex-direction: column; gap: .5rem; max-width: 22rem; }
 .avatar-sized { width: var(--avatar-size); height: var(--avatar-size); font-size: max(12px, calc(var(--avatar-size) * .38)); }
+
+/* — Marketing pages: docs, blog, maintenance (were inline <style> blocks) — */
+.page-head { padding: 72px 48px 40px; }
+.docs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--color-divider); border: 1px solid var(--color-divider); }
+.docs-cell { background: var(--color-bg); padding: 28px; }
+.docs-cell h3 { font-family: var(--font-heading); font-weight: 600; font-size: 18px; margin: 0 0 8px; }
+.docs-cell p { font-size: 13px; opacity: 0.75; margin: 0 0 14px; }
+.docs-cell a { font-size: 13px; color: var(--color-accent); text-decoration: none; }
+.docs-cell a:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+    .page-head { padding: 48px 24px 32px; }
+    .docs-grid { grid-template-columns: 1fr; }
+}
+
+.maintenance { padding: 120px 48px; text-align: center; }
+.maintenance h1 { font-family: var(--font-heading); font-weight: 600; font-size: 36px; margin: 0 0 16px; }
+@media (max-width: 900px) {
+    .maintenance { padding: 80px 24px; }
+}
+
+.post-list { display: flex; flex-direction: column; border-top: 1px solid var(--color-divider); }
+.post-row { display: grid; grid-template-columns: 160px 1fr; gap: 32px; padding: 28px 0; border-bottom: 1px solid var(--color-divider); }
+.post-row .post-date { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(var(--ink), 0.55); }
+.post-row h3 { font-family: var(--font-heading); font-weight: 600; font-size: 20px; margin: 0 0 8px; }
+.post-row h3 a { color: inherit; text-decoration: none; }
+.post-row h3 a:hover { text-decoration: underline; }
+.post-row p { font-size: 14px; opacity: 0.75; margin: 0; max-width: 620px; }
+.post-row img { width: 100%; max-width: 620px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; margin-bottom: 14px; }
+.blog-search { display: flex; gap: 8px; margin-top: 24px; max-width: 420px; }
+.blog-search .input { flex: 1; }
+@media (max-width: 900px) {
+    .post-row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+.post-page { padding: 72px 48px 96px; max-width: 720px; }
+.post-page .post-meta { font-size: 13px; color: rgba(var(--ink), 0.6); margin-bottom: 16px; }
+.post-page h1 { font-family: var(--font-heading); font-weight: 600; font-size: 40px; line-height: 1.15; margin: 0 0 24px; }
+.post-page .post-cover { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; margin-bottom: 32px; }
+.post-page .post-body { font-size: 17px; line-height: 1.75; }
+.post-page .blog-tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 32px 0 0; }
+.post-page .blog-tags a { text-decoration: none; }
+.post-page .back-link { display: inline-block; margin-bottom: 32px; font-size: 13px; color: var(--color-accent); text-decoration: none; }
+@media (max-width: 900px) {
+    .post-page { padding: 48px 24px 64px; }
+    .post-page h1 { font-size: 30px; }
+}
+
+
+/* — Small helpers that replace inline styles — */
+.ms-code-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-family: monospace; }
+.ms-mono { font-family: monospace; }
+.ms-break-all { word-break: break-all; }
+.ms-textbtn { background: none; border: 0; padding: 0; color: var(--color-accent); cursor: pointer; font: inherit; font-size: 12px; }
+.ms-pad-list { padding: 8px 16px; }
+.ms-text-start { text-align: start; }
+.ms-cover-preview { width: 100%; max-width: 360px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; }

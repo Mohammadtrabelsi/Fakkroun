@@ -18,6 +18,8 @@ use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
  */
 new #[Layout('components.layouts.fakkroun')] #[Title('Create account')] class extends Component
 {
+    use \App\Support\Livewire\ThrottlesSubmissions;
+
     use UsesSpamProtection;
 
     /** Honeypot + timing fields (spatie/laravel-honeypot); bots that fill them get a 403. */
@@ -68,6 +70,8 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Create account')] class ex
 
     public function register(): void
     {
+        $this->throttleSubmission('register', 'login');
+
         $this->protectAgainstSpam();
 
         $validated = $this->validate();

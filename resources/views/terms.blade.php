@@ -42,7 +42,7 @@
                 @if ($key === 'advertising')
                     {{-- The advertiser policy chart. --}}
                     <div class="overflow-x-auto rounded-3xl border border-sand-300 bg-paper">
-                        <table class="w-full border-collapse text-start text-[15px]">
+                        <table class="fk-table-stack w-full border-collapse text-start text-[15px]">
                             <caption class="px-5 pt-4 text-start font-semibold">{{ __('terms.policy.caption') }}</caption>
                             <thead>
                                 <tr class="border-b border-sand-300">
@@ -55,8 +55,8 @@
                                 @foreach (__('terms.policy.rows') as $row)
                                     <tr class="border-b border-sand-200 align-top last:border-0">
                                         <th scope="row" class="p-4 text-start font-display text-lg text-sea">{{ $row['principle'] }}</th>
-                                        <td class="p-4"><ul class="m-0 flex flex-col gap-1 ps-4">@foreach ($row['accepted'] as $item)<li>{{ $item }}</li>@endforeach</ul></td>
-                                        <td class="p-4"><ul class="m-0 flex flex-col gap-1 ps-4">@foreach ($row['refused'] as $item)<li>{{ $item }}</li>@endforeach</ul></td>
+                                        <td class="p-4" data-label="✓ {{ __('terms.policy.accepted') }}"><ul class="m-0 flex flex-col gap-1 ps-4">@foreach ($row['accepted'] as $item)<li>{{ $item }}</li>@endforeach</ul></td>
+                                        <td class="p-4" data-label="✗ {{ __('terms.policy.refused') }}"><ul class="m-0 flex flex-col gap-1 ps-4">@foreach ($row['refused'] as $item)<li>{{ $item }}</li>@endforeach</ul></td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -65,7 +65,7 @@
 
                     <h3 class="m-0 mt-2 font-display text-2xl">{{ __('terms.formats.title') }}</h3>
                     <div class="overflow-x-auto rounded-3xl border border-sand-300 bg-paper">
-                        <table class="w-full border-collapse text-start text-[15px]">
+                        <table class="fk-table-stack w-full border-collapse text-start text-[15px]">
                             <thead>
                                 <tr class="border-b border-sand-300">
                                     <th scope="col" class="p-4 text-start">{{ __('terms.formats.format') }}</th>
@@ -77,8 +77,8 @@
                                 @foreach (__('terms.formats.rows') as $row)
                                     <tr class="border-b border-sand-200 align-top last:border-0">
                                         <th scope="row" class="p-4 text-start font-semibold">{{ $row[0] }}</th>
-                                        <td class="p-4">{{ $row[1] }}</td>
-                                        <td class="p-4">{{ $row[2] }}</td>
+                                        <td class="p-4" data-label="{{ __('terms.formats.where') }}">{{ $row[1] }}</td>
+                                        <td class="p-4" data-label="{{ __('terms.formats.counted') }}">{{ $row[2] }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

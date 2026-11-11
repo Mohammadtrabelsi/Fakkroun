@@ -91,3 +91,22 @@
 .fk-status[data-tone='live'] { background: var(--color-tint-green); color: #1F6A2C; }
 .fk-status[data-tone='draft'] { background: var(--color-sand-200); color: var(--color-ink); }
 .fk-status[data-tone='attention'] { background: var(--color-tint-sun); color: #5A3618; }
+
+/* Leaderboard: five columns; on phones games and wins move under the name. */
+.fk-standings--wide { grid-template-columns: 2.25rem minmax(0, 1fr) minmax(3.5rem, auto) minmax(3.5rem, auto) minmax(4rem, auto); }
+.fk-standings-sub { display: none; font-size: 13px; color: var(--color-ink-soft); }
+@media (max-width: 560px) {
+    .fk-standings--wide { grid-template-columns: 2.25rem minmax(0, 1fr) minmax(4rem, auto); }
+    .fk-standings--wide .fk-standings-extra, .fk-standings-head.fk-standings--wide > :nth-child(3), .fk-standings-head.fk-standings--wide > :nth-child(4) { display: none; }
+    .fk-standings-sub { display: block; }
+}
+
+/* — Genuinely tabular content (terms): a real table that stacks on phones.
+     Cells carry data-label with their column heading. — */
+@media (max-width: 640px) {
+    .fk-table-stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .fk-table-stack, .fk-table-stack tbody, .fk-table-stack tr, .fk-table-stack th, .fk-table-stack td { display: block; width: 100%; }
+    .fk-table-stack td::before { content: attr(data-label); display: block; margin-bottom: 4px; font-size: 13px; font-weight: 600; color: var(--color-ink-soft); }
+    .fk-table-stack th[scope='row'] { padding-bottom: 4px; }
+    .fk-table-stack td { padding-top: 8px; }
+}

@@ -21,4 +21,5 @@ return [
     'tags' => 'Étiquettes',
     'health' => 'Santé',
     'backups' => 'Sauvegardes',
+    'too_many_attempts' => 'Trop de tentatives. Réessayez dans :seconds secondes.',
 ];

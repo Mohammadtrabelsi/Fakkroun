@@ -81,14 +81,14 @@
                     <p class="text-muted footer-brand-copy">{{ __('marketing.tagline') }}</p>
                     <a href="{{ route('register') }}" class="btn btn-primary mb-4">{{ __('marketing.get_started') }}</a>
                 </div>
-                <nav aria-label="Product">
+                <nav aria-label="{{ __('actions.product') }}">
                     <div class="footer-heading">{{ __('marketing.product') }}</div>
                     <div class="footer-links">
                         <a href="{{ url('/') }}#features">{{ __('marketing.features') }}</a>
                         <a href="{{ route('docs') }}">{{ __('marketing.docs') }}</a>
                     </div>
                 </nav>
-                <nav aria-label="Company">
+                <nav aria-label="{{ __('actions.company') }}">
                     <div class="footer-heading">{{ __('marketing.company') }}</div>
                     <div class="footer-links">
                         <a href="{{ route('about') }}">{{ __('marketing.about') }}</a>

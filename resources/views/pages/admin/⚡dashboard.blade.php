@@ -102,9 +102,9 @@ new #[Layout('layouts::app')] #[Title('Admin Dashboard')] class extends Componen
                 <a href="{{ route('admin.users.index') }}" wire:navigate class="btn">{{ __('app.users') }}</a>
                 <a href="{{ route('admin.users.create') }}" wire:navigate class="btn btn-primary">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M19 8v6M16 11h6"></path></svg>
-                    New user
+                    {{ __('users.list.new') }}
                     @if ($this->stats['newToday'] > 0)
-                        <span class="btn-badge" title="{{ $this->stats['newToday'] }} new today">{{ $this->stats['newToday'] }}</span>
+                        <span class="btn-badge" title="{{ __('users.list.new_today', ['count' => $this->stats['newToday']]) }}">{{ $this->stats['newToday'] }}</span>
                     @endif
                 </a>
             @endcan

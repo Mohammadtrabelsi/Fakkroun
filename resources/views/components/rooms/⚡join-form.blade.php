@@ -13,6 +13,8 @@ use Livewire\Component;
  */
 new class extends Component
 {
+    use \App\Support\Livewire\ThrottlesSubmissions;
+
     public string $code = '';
 
     public function mount(string $code = ''): void
@@ -22,6 +24,8 @@ new class extends Component
 
     public function join(RoomService $rooms): void
     {
+        $this->throttleSubmission('join-room', 'code');
+
         $this->validate(['code' => ['required', 'string', 'max:12']]);
 
         $room = $rooms->findByCode($this->code);

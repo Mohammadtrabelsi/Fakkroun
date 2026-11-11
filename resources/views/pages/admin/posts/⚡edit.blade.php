@@ -196,13 +196,13 @@ new #[Layout('layouts::app')] #[Title('Edit post')] class extends Component
             <div class="field ms-mb-0">
                 <x-input-label for="cover" value="Cover image" />
                 @if ($this->post->coverImageUrl() && ! $removeCover && ! $cover)
-                    <img src="{{ $this->post->coverImageUrl() }}" alt="" class="ms-mb-8" style="width:100%;max-width:360px;aspect-ratio:16/9;object-fit:cover;border-radius:8px">
+                    <img src="{{ $this->post->coverImageUrl() }}" alt="" class="ms-mb-8 ms-cover-preview">
                 @endif
                 @if ($cover)
-                    <img src="{{ $cover->temporaryUrl() }}" alt="" class="ms-mb-8" style="width:100%;max-width:360px;aspect-ratio:16/9;object-fit:cover;border-radius:8px">
+                    <img src="{{ $cover->temporaryUrl() }}" alt="" class="ms-mb-8 ms-cover-preview">
                 @endif
                 <input type="file" wire:model="cover" id="cover" accept="image/*" class="input">
-                <div wire:loading wire:target="cover" class="text-muted ms-fs-12">Uploading…</div>
+                <div wire:loading wire:target="cover" class="text-muted ms-fs-12">{{ __('actions.uploading') }}</div>
                 <x-input-error :message="$errors->first('cover')" />
                 @if ($this->post->cover_image)
                     <label class="ms-check-label-22">
