@@ -4,6 +4,7 @@ namespace App\Domain\Advertising;
 
 use App\Domain\Advertising\Models\Campaign;
 use App\Domain\Advertising\Models\Creative;
+use App\Services\PlatformSettings;
 
 /**
  * Contextual relevance of a creative for the question just answered
@@ -21,7 +22,7 @@ use App\Domain\Advertising\Models\Creative;
  */
 class AdRelevance
 {
-    public function __construct(private readonly \App\Services\PlatformSettings $settings) {}
+    public function __construct(private readonly PlatformSettings $settings) {}
 
     /**
      * @param  array{category_ids: array<int, int>, language: string, text: string}  $context

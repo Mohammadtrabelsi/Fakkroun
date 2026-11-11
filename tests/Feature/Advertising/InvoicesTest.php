@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Advertising;
 
+use App\Domain\Advertising\AdvertisingDocuments;
 use App\Domain\Advertising\Enums\CreditType;
 use App\Domain\Advertising\InvoiceService;
 use App\Domain\Advertising\Models\Advertiser;
@@ -19,6 +20,7 @@ use Livewire\Livewire;
 use LogicException;
 use Spatie\LaravelPdf\Facades\Pdf;
 use Spatie\LaravelPdf\PdfBuilder;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Tests\TestCase;
 
 /** Story 16 S11: invoices per pack purchase, credit notes, monthly statements. */
@@ -135,8 +137,8 @@ class InvoicesTest extends TestCase
         Livewire::actingAs($stranger)->test('pages::advertiser.dashboard')
             ->call('downloadInvoice', $invoice->id)
             ->assertNotFound();
-        $this->expectException(\Symfony\Component\HttpKernel\Exception\HttpException::class);
-        app(\App\Domain\Advertising\AdvertisingDocuments::class)->invoice($invoice, $stranger);
+        $this->expectException(HttpException::class);
+        app(AdvertisingDocuments::class)->invoice($invoice, $stranger);
     }
 
     public function test_statement_pdfs(): void

@@ -13,6 +13,7 @@ use App\Domain\Advertising\Models\AdClick;
 use App\Domain\Advertising\Models\Advertiser;
 use App\Domain\Advertising\Models\AdvertisingPackage;
 use App\Domain\Advertising\Models\Campaign;
+use App\Domain\Advertising\Models\Invoice;
 use App\Domain\Advertising\Models\SponsoredRoundDelivery;
 use App\Domain\Advertising\ReconciliationService;
 use App\Domain\Advertising\SponsoredQuestionService;
@@ -22,6 +23,7 @@ use App\Domain\Ai\Drivers\FakeAdReviewer;
 use App\Domain\Billing\PaymentService;
 use App\Domain\Gameplay\GameEngine;
 use App\Domain\Gameplay\Models\Game;
+use App\Domain\Gameplay\Models\Room;
 use App\Domain\Gameplay\RoomService;
 use App\Domain\Questions\Models\Question;
 use App\Enums\UserRole;
@@ -31,6 +33,7 @@ use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Queue;
+use Livewire\Livewire;
 use Tests\Feature\Gameplay\GameplayTestCase;
 
 /** Story 16 slices 4–7: clicks and reporting, sponsored rounds, rotation by performance, AI notes. */
@@ -78,7 +81,7 @@ class SmartAdsLaterSlicesTest extends GameplayTestCase
     }
 
     /**
-     * @return array{0: \App\Domain\Gameplay\Models\Room, 1: Game, 2: User, 3: User}
+     * @return array{0: Room, 1: Game, 2: User, 3: User}
      */
     private function game(int $questions, ?User $host = null): array
     {
@@ -194,7 +197,7 @@ class SmartAdsLaterSlicesTest extends GameplayTestCase
         $this->buy(0, 0, 4);
 
         $this->assertSame(4, $this->advertiser->balance(CreditType::SponsoredRound));
-        $this->assertSame(4, \App\Domain\Advertising\Models\Invoice::query()->latest('id')->value('sponsored_round_credits'));
+        $this->assertSame(4, Invoice::query()->latest('id')->value('sponsored_round_credits'));
     }
 
     // Slice 6: rotation by performance ----------------------------------------------------
@@ -246,7 +249,7 @@ class SmartAdsLaterSlicesTest extends GameplayTestCase
         $this->assertSame(CampaignStatus::PendingReview, $campaign->status, 'The AI never approves or rejects.');
         $this->assertSame('halal', $campaign->ai_review['concerns'][0]['principle']);
 
-        \Livewire\Livewire::actingAs($this->admin)->test('pages::admin.advertising')
+        Livewire::actingAs($this->admin)->test('pages::admin.advertising')
             ->assertSee(__('advertising.ai_review.title'))
             ->assertSee('Mentions');
         FakeAdReviewer::$flagWords = [];

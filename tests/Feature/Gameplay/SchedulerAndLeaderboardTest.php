@@ -8,6 +8,7 @@ use App\Domain\Gameplay\LeaderboardService;
 use App\Domain\Gameplay\RoomService;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\Notifications\QuestionReviewed;
+use App\Services\PlatformSettings;
 
 class SchedulerAndLeaderboardTest extends GameplayTestCase
 {
@@ -38,7 +39,7 @@ class SchedulerAndLeaderboardTest extends GameplayTestCase
     public function test_expired_lobbies_are_cancelled(): void
     {
         $room = $this->room($this->player());
-        $this->travel((int) app(\App\Services\PlatformSettings::class)->get('game.room_expiry_minutes') + 1)->minutes();
+        $this->travel((int) app(PlatformSettings::class)->get('game.room_expiry_minutes') + 1)->minutes();
 
         $this->artisan('rooms:expire')->assertSuccessful();
 

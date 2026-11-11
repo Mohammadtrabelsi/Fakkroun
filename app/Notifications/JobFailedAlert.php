@@ -3,6 +3,7 @@
 namespace App\Notifications;
 
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Str;
 
 /**
  * Tells administrators that a background job failed (next step 10): AI
@@ -29,7 +30,7 @@ class JobFailedAlert extends Notification
         return [
             'type' => 'job_failed',
             'title' => __('fakkroun.ops.job_failed', ['job' => class_basename($this->job)]),
-            'message' => \Illuminate\Support\Str::limit($this->error, 300),
+            'message' => Str::limit($this->error, 300),
             'url' => route('admin.health'),
         ];
     }
