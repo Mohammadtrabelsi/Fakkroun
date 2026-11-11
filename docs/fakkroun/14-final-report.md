@@ -4,7 +4,9 @@
 > **Branches:** `ccr-fc788502-hcpb6b` (Phase 1 + MVP, PR #1 → `develop`) and `claude/fakkroun-next-steps` (design brief, phases 4–6, draft PR #2 → `develop`)
 > **Date:** 2026-11-05 · open work: [`15-roadmap.md`](15-roadmap.md)
 
-## ⚠️ Nothing in this report has been executed
+## ⚠️ Nothing in this report had been executed when it was written
+
+> **Update 2026-11-11:** the suite has since been run and passes, and the game has been played in a browser on phone screens. See [`03`](03-next-step-run-ci.md) for what ran, what it found and what is still unverified (CI runners, PHP 8.4). The text below is kept as written.
 
 Not one test, migration or page in either branch has run. GitHub Actions assigns no runner to any job in this repository, including on the untouched `develop` branch (see [`03`](03-next-step-run-ci.md)). Locally there is only PHP 8.3, while the lockfile needs 8.4, and installing Composer dependencies wasn't permitted in this environment.
 

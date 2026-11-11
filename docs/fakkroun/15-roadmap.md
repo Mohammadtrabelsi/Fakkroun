@@ -1,11 +1,11 @@
 # Roadmap: what's left
 
-> **Updated:** 2026-11-07, after PRs #1–#7 were merged into `develop`
+> **Updated:** 2026-11-11, after the first real run of the code (see step 1)
 > What is built is listed in [`14-final-report.md`](14-final-report.md). This file lists only open work, in order.
 
 | Order | Step | Why | Blocked by |
 | --- | --- | --- | --- |
-| 1 | [`03`](03-next-step-run-ci.md) Run CI and fix failures | Nothing on `develop` has been executed yet | Repository owner (Actions setting) |
+| 1 | [`03`](03-next-step-run-ci.md) Run CI | **The suite now runs and passes locally (664 tests)** and a full game was played on phone screens; GitHub Actions still assigns no runner, and PHPStan still reports 66 type errors | Repository owner (Actions setting); PHP 8.4 for the exact lockfile |
 | 2 | [`04`](04-next-step-realtime-reverb.md) Real time with Reverb | Replaces polling every second | Your approval of the dependency |
 | 3 | [`05`](05-next-step-qr-codes.md) QR-code invitations | Spec deliverable 13 | Your approval of the dependency |
 | 4 | [`12`](12-design-implementation.md) Open decisions B1, B2 | Guest players, 4-character codes | Your decision |

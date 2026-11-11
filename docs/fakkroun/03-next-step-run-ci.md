@@ -3,6 +3,28 @@
 > **Priority:** blocking, do this first · **Effort:** small (unblocking) + unknown (fixes)
 > **Owner:** repository owner (Actions settings), then development
 
+## Status (2026-11-11)
+
+The code has now been executed for the first time, on a development machine:
+
+- **Tests:** 664 pass (`php artisan test`). The first run had 28 failures and 9 errors; the real
+  defects it found are fixed (question clocks in whole seconds, `migrate --seed` aborting on four
+  questions without a source, `/leaderboard` failing with any serialising cache store, a broken
+  admin "paid accounts" screen, ledger reversal and plan-grant bugs, account deletion over the API).
+- **Browser:** every public, player and admin screen opened at 320 px and 390 px without horizontal
+  scrolling or server errors; complete two-player games were played with touch input in English,
+  French and Arabic (RTL), on phone and tablet sizes.
+- **Pint:** clean. **PHPStan:** 66 errors left (from 144), almost all because models have no
+  `@property` annotations, so enum and date casts are read as strings.
+
+Still open, and why:
+
+- **GitHub Actions has never started a job** (every run fails in about 3 seconds with no runner).
+  This is the repository or account setting described below; nothing in the code can fix it.
+- **The run used PHP 8.3 with Symfony 7.4**, because PHP 8.4 could not be installed on that machine.
+  The lockfile (PHP 8.4, Symfony 8) has not been exercised yet. Re-run the suite on 8.4.
+- The MySQL concurrency job below is not written.
+
 ## Why
 
 PRs #1–#3 are merged into `develop`, but **none of their code has been executed**: not the tests, the migrations or the pages. GitHub Actions on `Mohammadtrabelsi/Fakkroun` fails every job about 3 seconds after it starts, with no runner assigned (`runner_id` 0) and no logs. That includes the untouched starter code, so the cause is a repository or account setting, not the code.
