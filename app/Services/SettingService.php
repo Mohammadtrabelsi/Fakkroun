@@ -3,9 +3,13 @@
 namespace App\Services;
 
 use App\Models\Setting;
+use App\Services\Concerns\ManagesModel;
 
 class SettingService
 {
+    /** @use ManagesModel<Setting> */
+    use ManagesModel;
+
     public function current(): Setting
     {
         return Setting::query()->firstOrCreate([], [
@@ -25,5 +29,10 @@ class SettingService
         $setting->save();
 
         return $setting;
+    }
+
+    protected function model(): string
+    {
+        return Setting::class;
     }
 }

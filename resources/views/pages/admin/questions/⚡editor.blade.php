@@ -175,7 +175,7 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
         $this->authorize('manage advertising');
 
         $campaign = $this->sponsorCampaign === '' ? null
-            : \App\Domain\Advertising\Models\Campaign::query()->findOrFail((int) $this->sponsorCampaign);
+            : app(\App\Domain\Advertising\CampaignService::class)->query()->findOrFail((int) $this->sponsorCampaign);
 
         $this->question = $sponsored->assign($this->question, $campaign, auth()->user());
         $this->toast(__('advertising.sponsor_saved'));
@@ -252,7 +252,7 @@ new #[Layout('layouts::app')] #[Title('Question')] class extends Component
                 <p class="text-muted ms-fs-13">{{ __('advertising.sponsorship_hint') }}</p>
                 <select wire:model="sponsorCampaign" class="input" aria-label="{{ __('advertising.campaign') }}">
                     <option value="">{{ __('advertising.not_sponsored') }}</option>
-                    @foreach (\App\Domain\Advertising\Models\Campaign::query()->with('advertiser')->whereNotIn('status', ['rejected', 'completed'])->orderBy('name')->get() as $c)
+                    @foreach (app(\App\Domain\Advertising\CampaignService::class)->query()->with('advertiser')->whereNotIn('status', ['rejected', 'completed'])->orderBy('name')->get() as $c)
                         <option value="{{ $c->id }}">{{ $c->advertiser->name }} — {{ $c->name }}</option>
                     @endforeach
                 </select>

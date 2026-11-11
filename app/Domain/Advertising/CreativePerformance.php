@@ -2,8 +2,6 @@
 
 namespace App\Domain\Advertising;
 
-use App\Domain\Advertising\Models\AdClick;
-use App\Domain\Advertising\Models\Impression;
 use Illuminate\Support\Facades\Cache;
 
 /**
@@ -19,6 +17,11 @@ use Illuminate\Support\Facades\Cache;
  */
 class CreativePerformance
 {
+    public function __construct(
+        private readonly ImpressionService $impressions,
+        private readonly AdClickService $adClicks,
+    ) {}
+
     public const MAX_RATIO = 3.0;
 
     /**
@@ -33,8 +36,8 @@ class CreativePerformance
 
         sort($creativeIds);
         $stats = Cache::remember('ad-performance:'.md5(implode(',', $creativeIds)), 600, fn () => [
-            'impressions' => Impression::query()->whereIn('creative_id', $creativeIds)->selectRaw('creative_id, count(*) as total')->groupBy('creative_id')->pluck('total', 'creative_id')->all(),
-            'clicks' => AdClick::query()->whereIn('creative_id', $creativeIds)->selectRaw('creative_id, count(*) as total')->groupBy('creative_id')->pluck('total', 'creative_id')->all(),
+            'impressions' => $this->impressions->query()->whereIn('creative_id', $creativeIds)->selectRaw('creative_id, count(*) as total')->groupBy('creative_id')->pluck('total', 'creative_id')->all(),
+            'clicks' => $this->adClicks->query()->whereIn('creative_id', $creativeIds)->selectRaw('creative_id, count(*) as total')->groupBy('creative_id')->pluck('total', 'creative_id')->all(),
         ]);
 
         $ctr = [];

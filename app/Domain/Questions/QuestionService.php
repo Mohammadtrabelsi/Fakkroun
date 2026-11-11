@@ -7,10 +7,10 @@ use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Enums\TranslationStatus;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\Models\QuestionChoice;
-use App\Domain\Questions\Models\QuestionRevision;
 use App\Domain\Questions\Models\QuestionTranslation;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
@@ -29,6 +29,9 @@ use Illuminate\Validation\ValidationException;
  */
 class QuestionService
 {
+    /** @use ManagesModel<Question> */
+    use ManagesModel;
+
     /** Statuses that must be re-validated after a content change. */
     private const REVALIDATE = [
         QuestionStatus::UnderReview,
@@ -42,6 +45,9 @@ class QuestionService
         private readonly DuplicateDetector $duplicates,
         private readonly QuestionPool $pool,
         private readonly ModerationLogger $logger,
+        private readonly QuestionChoiceService $questionChoices,
+        private readonly QuestionTranslationService $questionTranslations,
+        private readonly QuestionRevisionService $questionRevisions,
     ) {}
 
     /**
@@ -108,7 +114,7 @@ class QuestionService
             $question->save();
 
             $choices = collect(range(1, QuestionValidator::CHOICES))
-                ->map(fn (int $position) => QuestionChoice::query()->create(['question_id' => $question->id, 'position' => $position]))
+                ->map(fn (int $position) => $this->questionChoices->query()->create(['question_id' => $question->id, 'position' => $position]))
                 ->values();
 
             $question->correct_choice_id = $choices[(int) $data['correct']]->id;
@@ -292,7 +298,7 @@ class QuestionService
             $map[(string) $choice->id] = trim($answers[$index]);
         }
 
-        $translation = QuestionTranslation::query()->firstOrNew(['question_id' => $question->id, 'language' => $language]);
+        $translation = $this->questionTranslations->query()->firstOrNew(['question_id' => $question->id, 'language' => $language]);
         $translation->fill([
             'body' => trim((string) $text['body']),
             'choices' => $map,
@@ -327,7 +333,7 @@ class QuestionService
 
     private function recordRevision(Question $question, ?User $actor, ?string $reason): void
     {
-        QuestionRevision::query()->create([
+        $this->questionRevisions->query()->create([
             'question_id' => $question->id,
             'version' => $question->version,
             'snapshot' => $this->snapshot($question->fresh(['choices', 'translations'])),
@@ -354,5 +360,10 @@ class QuestionService
     private function hashOf(array $data): string
     {
         return $this->duplicates->hash((string) $data['body'], array_map('strval', (array) $data['choices']));
+    }
+
+    protected function model(): string
+    {
+        return Question::class;
     }
 }

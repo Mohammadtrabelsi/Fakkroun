@@ -2,8 +2,8 @@
 
 namespace App\Domain\Ai\Jobs;
 
+use App\Domain\Ai\AiGenerationBatchService;
 use App\Domain\Ai\GenerationService;
-use App\Domain\Ai\Models\AiGenerationBatch;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -32,7 +32,7 @@ class GenerateQuestionBatch implements ShouldBeUnique, ShouldQueue
 
     public function handle(GenerationService $generation): void
     {
-        if ($batch = AiGenerationBatch::query()->find($this->batchId)) {
+        if ($batch = app(AiGenerationBatchService::class)->query()->find($this->batchId)) {
             $generation->process($batch);
         }
     }

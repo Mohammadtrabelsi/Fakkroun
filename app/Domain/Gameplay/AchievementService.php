@@ -7,6 +7,8 @@ use App\Domain\Gameplay\Models\GameResult;
 use App\Domain\Gameplay\Models\UserAchievement;
 use App\Domain\Gameplay\Notifications\AchievementUnlocked;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
+use App\Services\UserService;
 use Illuminate\Support\Collection;
 
 /**
@@ -16,6 +18,14 @@ use Illuminate\Support\Collection;
  */
 class AchievementService
 {
+    /** @use ManagesModel<UserAchievement> */
+    use ManagesModel;
+
+    public function __construct(
+        private readonly GameResultService $gameResults,
+        private readonly UserService $users,
+    ) {}
+
     /** Display order. */
     public const KEYS = ['first_game', 'first_win', 'ten_games', 'perfect_game', 'hat_trick', 'quick_thinker'];
 
@@ -28,7 +38,7 @@ class AchievementService
     public function awardFor(Game $game): void
     {
         // Guest players have no profile to show achievements on.
-        $results = GameResult::query()->where('game_id', $game->id)
+        $results = $this->gameResults->query()->where('game_id', $game->id)
             ->whereHas('user', fn ($query) => $query->where('is_guest', false))
             ->get();
 
@@ -54,7 +64,7 @@ class AchievementService
      */
     private function earned(GameResult $result, Game $game): array
     {
-        $history = GameResult::query()
+        $history = $this->gameResults->query()
             ->join('games', 'games.id', '=', 'game_results.game_id')
             ->where('games.status', Game::COMPLETED)
             ->where('game_results.user_id', $result->user_id)
@@ -87,7 +97,12 @@ class AchievementService
         ]);
 
         if ($inserted > 0) {
-            User::query()->find($userId)?->notify(new AchievementUnlocked($key));
+            $this->users->query()->find($userId)?->notify(new AchievementUnlocked($key));
         }
+    }
+
+    protected function model(): string
+    {
+        return UserAchievement::class;
     }
 }

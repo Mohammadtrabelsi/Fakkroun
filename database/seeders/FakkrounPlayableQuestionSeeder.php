@@ -7,8 +7,8 @@ use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Enums\TranslationStatus;
 use App\Domain\Questions\ModerationService;
 use App\Domain\Questions\QuestionService;
-use App\Models\Category;
-use App\Models\User;
+use App\Services\CategoryService;
+use App\Services\UserService;
 use Illuminate\Database\Seeder;
 use Illuminate\Validation\ValidationException;
 
@@ -111,7 +111,7 @@ class FakkrounPlayableQuestionSeeder extends Seeder
 
     public function run(): void
     {
-        $admin = User::role('admin')->first();
+        $admin = app(UserService::class)->query()->role('admin')->first();
 
         if ($admin === null) {
             $this->command?->warn('No admin user: skipping playable questions.');
@@ -124,7 +124,7 @@ class FakkrounPlayableQuestionSeeder extends Seeder
         $published = 0;
 
         foreach (self::QUESTIONS as [$slug, $difficulty, $correct, $reference, $texts]) {
-            $category = Category::query()->where('slug', $slug)->first();
+            $category = app(CategoryService::class)->query()->where('slug', $slug)->first();
 
             if ($category === null) {
                 continue;

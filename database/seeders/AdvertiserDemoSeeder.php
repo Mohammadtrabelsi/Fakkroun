@@ -2,12 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Domain\Advertising\AdvertiserService;
 use App\Domain\Advertising\Models\Advertiser;
 use App\Enums\UserRole;
-use App\Models\User;
+use App\Services\RoleService;
+use App\Services\UserService;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Spatie\Permission\Models\Role;
 
 /**
  * Sample advertisers (one per advertiser type) so the advertising back office
@@ -27,17 +28,17 @@ class AdvertiserDemoSeeder extends Seeder
 
     public function run(): void
     {
-        $role = Role::findOrCreate(UserRole::Advertiser->value, 'web');
+        $role = app(RoleService::class)->findOrCreate(UserRole::Advertiser->value, 'web');
 
         foreach (self::ADVERTISERS as $data) {
-            $user = User::query()->updateOrCreate(
+            $user = app(UserService::class)->updateOrCreate(
                 ['email' => $data['email']],
                 ['name' => $data['name'], 'password' => Hash::make('password'), 'email_verified_at' => now()],
             );
 
             $user->assignRole($role);
 
-            Advertiser::query()->updateOrCreate(
+            app(AdvertiserService::class)->updateOrCreate(
                 ['user_id' => $user->id],
                 ['name' => $data['name'], 'type' => $data['type'], 'contact_email' => $data['email'], 'website' => $data['website'], 'status' => 'active'],
             );

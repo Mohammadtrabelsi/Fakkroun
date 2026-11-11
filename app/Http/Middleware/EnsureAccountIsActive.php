@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\UserService;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,9 +36,8 @@ class EnsureAccountIsActive
             return redirect()->route('login')->with('status', __('account.suspended'));
         }
 
-        if ($user !== null && ($user->last_seen_at === null || $user->last_seen_at->lt(now()->subMinute()))) {
-            // Quiet update: no activity-log entry and no updated_at bump.
-            $user->newQuery()->whereKey($user->getKey())->update(['last_seen_at' => now()]);
+        if ($user !== null) {
+            app(UserService::class)->touchLastSeen($user);
         }
 
         return $next($request);

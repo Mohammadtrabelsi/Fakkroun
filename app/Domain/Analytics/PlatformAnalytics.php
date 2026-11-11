@@ -2,13 +2,18 @@
 
 namespace App\Domain\Analytics;
 
-use App\Domain\Ai\Models\AiGenerationBatch;
-use App\Domain\Gameplay\Models\Game;
-use App\Domain\Gameplay\Models\GameResult;
-use App\Domain\Gameplay\Models\PlayerAnswer;
-use App\Domain\Gameplay\Models\Room;
+use App\Domain\Ai\AiGenerationBatchService;
+use App\Domain\Gameplay\GameResultService;
+use App\Domain\Gameplay\GameService;
+use App\Domain\Gameplay\PlayerAnswerService;
+use App\Domain\Gameplay\RoomService;
 use App\Domain\Questions\Models\Question;
-use App\Domain\Questions\Models\QuestionReport;
+use App\Domain\Questions\QuestionModerationLogService;
+use App\Domain\Questions\QuestionService;
+use App\Domain\Questions\ReportService;
+use App\Services\CategoryService;
+use App\Services\PlatformSettings;
+use App\Services\UserService;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +24,19 @@ use Illuminate\Support\Facades\DB;
  */
 class PlatformAnalytics
 {
+    public function __construct(
+        private readonly GameService $games,
+        private readonly RoomService $rooms,
+        private readonly GameResultService $gameResults,
+        private readonly ReportService $reports,
+        private readonly QuestionService $questions,
+        private readonly AiGenerationBatchService $aiBatches,
+        private readonly PlayerAnswerService $playerAnswers,
+        private readonly CategoryService $categories,
+        private readonly UserService $users,
+        private readonly QuestionModerationLogService $moderationLogs,
+    ) {}
+
     /** Answers a question needs before its correct rate is ranked. */
     public const MIN_ANSWERS = 5;
 
@@ -38,18 +56,18 @@ class PlatformAnalytics
      */
     public function overview(Carbon $from, Carbon $to): array
     {
-        $games = Game::query()->whereBetween('started_at', [$from, $to]);
+        $games = $this->games->query()->whereBetween('started_at', [$from, $to]);
         $completed = (clone $games)->whereNotNull('ended_at')->where('status', 'completed');
         $answers = $this->answers($from, $to);
         $total = (clone $answers)->count();
         $resultGameIds = (clone $completed)->select('id');
 
         return [
-            'rooms_created' => Room::query()->whereBetween('created_at', [$from, $to])->count(),
+            'rooms_created' => $this->rooms->query()->whereBetween('created_at', [$from, $to])->count(),
             'games_started' => (clone $games)->count(),
             'games_completed' => (clone $completed)->count(),
-            'active_players' => GameResult::query()->whereIn('game_id', (clone $games)->select('id'))->distinct()->count('user_id'),
-            'avg_players_per_game' => round((float) GameResult::query()->whereIn('game_id', $resultGameIds)->selectRaw('count(*) as players')->groupBy('game_id')->get()->avg('players'), 1),
+            'active_players' => $this->gameResults->query()->whereIn('game_id', (clone $games)->select('id'))->distinct()->count('user_id'),
+            'avg_players_per_game' => round((float) $this->gameResults->query()->whereIn('game_id', $resultGameIds)->selectRaw('count(*) as players')->groupBy('game_id')->get()->avg('players'), 1),
             'answers' => $total,
             'correct_rate' => $total > 0 ? round(100 * (clone $answers)->where('is_correct', true)->count() / $total, 1) : null,
             'avg_response_seconds' => $total > 0 ? round(((float) (clone $answers)->avg('response_ms')) / 1000, 1) : null,
@@ -66,7 +84,7 @@ class PlatformAnalytics
     {
         // Past days come from the daily rollup when stored; today and missing days are counted live.
         $stored = app(DailyRollup::class)->rows($from, $to);
-        $counts = Game::query()->whereBetween('started_at', [$from, $to])
+        $counts = $this->games->query()->whereBetween('started_at', [$from, $to])
             ->selectRaw('date(started_at) as day, count(*) as total')
             ->groupBy(DB::raw('date(started_at)'))
             ->pluck('total', 'day');
@@ -98,7 +116,7 @@ class PlatformAnalytics
             ->orderByDesc('answers')
             ->get();
 
-        $names = \App\Models\Category::query()->whereIn('id', $categories->pluck('id'))->get()->keyBy('id');
+        $names = $this->categories->query()->whereIn('id', $categories->pluck('id'))->get()->keyBy('id');
 
         return [
             'categories' => $categories->map(fn ($row) => [
@@ -132,7 +150,7 @@ class PlatformAnalytics
 
         $ranked = $stats->where('answers', '>=', self::MIN_ANSWERS);
 
-        $reported = QuestionReport::query()->whereBetween('created_at', [$from, $to])
+        $reported = $this->reports->query()->whereBetween('created_at', [$from, $to])
             ->selectRaw('question_id as id, count(*) as reports')->groupBy('question_id')->orderByDesc('reports')->limit($limit)->get()
             ->map(fn ($row) => ['id' => (int) $row->id, 'reports' => (int) $row->reports]);
 
@@ -144,7 +162,7 @@ class PlatformAnalytics
         ];
 
         $ids = collect($lists)->flatten(1)->pluck('id')->unique();
-        $questions = Question::withTrashed()->with('translations:id,question_id,language,body')->whereIn('id', $ids)->get()->keyBy('id');
+        $questions = $this->questions->withTrashed()->with('translations:id,question_id,language,body')->whereIn('id', $ids)->get()->keyBy('id');
 
         return array_map(fn (array $rows) => array_map(fn (array $row) => $row + [
             'body' => $questions[$row['id']]?->translations->firstWhere('language', $questions[$row['id']]->origin_language)?->body ?? '—',
@@ -160,9 +178,9 @@ class PlatformAnalytics
     public function bank(): array
     {
         return [
-            'by_status' => Question::query()->selectRaw('status, count(*) as total')->groupBy('status')->pluck('total', 'status')->all(),
-            'by_source' => Question::query()->selectRaw('source, count(*) as total')->groupBy('source')->pluck('total', 'source')->all(),
-            'open_reports' => QuestionReport::query()->where('status', 'open')->count(),
+            'by_status' => $this->questions->query()->selectRaw('status, count(*) as total')->groupBy('status')->pluck('total', 'status')->all(),
+            'by_source' => $this->questions->query()->selectRaw('source, count(*) as total')->groupBy('source')->pluck('total', 'source')->all(),
+            'open_reports' => $this->reports->query()->where('status', 'open')->count(),
         ];
     }
 
@@ -173,7 +191,7 @@ class PlatformAnalytics
      */
     public function ai(Carbon $from, Carbon $to): array
     {
-        $batches = AiGenerationBatch::query()->whereBetween('created_at', [$from, $to]);
+        $batches = $this->aiBatches->query()->whereBetween('created_at', [$from, $to]);
         $generated = (int) (clone $batches)->sum('generated_count');
 
         return [
@@ -181,7 +199,7 @@ class PlatformAnalytics
             'drafts' => (clone $batches)->where('kind', 'draft')->count(),
             'generated' => $generated,
             'accepted_rate' => $generated > 0 ? round(100 * (int) (clone $batches)->sum('accepted_count') / $generated, 1) : null,
-            'published' => Question::query()->where('source', 'ai')->where('status', 'published')->whereBetween('created_at', [$from, $to])->count(),
+            'published' => $this->questions->query()->where('source', 'ai')->where('status', 'published')->whereBetween('created_at', [$from, $to])->count(),
             'estimated_cost' => round((float) (clone $batches)->sum('estimated_cost'), 2),
         ];
     }
@@ -194,7 +212,7 @@ class PlatformAnalytics
      */
     public function fairPlay(Carbon $from, Carbon $to): array
     {
-        $threshold = (int) app(\App\Services\PlatformSettings::class)->get('quality.fast_answer_review_threshold');
+        $threshold = (int) app(PlatformSettings::class)->get('quality.fast_answer_review_threshold');
         $rows = $this->answers($from, $to)
             ->selectRaw('user_id, count(*) as answers, sum(case when flagged_fast then 1 else 0 end) as flagged')
             ->groupBy('user_id')
@@ -202,7 +220,7 @@ class PlatformAnalytics
             ->orderByDesc('flagged')
             ->limit(20)
             ->get();
-        $names = \App\Models\User::query()->whereIn('id', $rows->pluck('user_id'))->pluck('name', 'id');
+        $names = $this->users->query()->whereIn('id', $rows->pluck('user_id'))->pluck('name', 'id');
 
         return [
             'flagged' => $this->answers($from, $to)->where('flagged_fast', true)->count(),
@@ -218,10 +236,10 @@ class PlatformAnalytics
      */
     public function calibration(int $limit = 15): array
     {
-        $q = app(\App\Services\PlatformSettings::class)->all()['quality'];
+        $q = app(PlatformSettings::class)->all()['quality'];
         $rate = 'times_correct * 100.0 / times_played';
 
-        return Question::query()
+        return $this->questions->query()
             ->with('translations:id,question_id,language,body')
             ->where('times_played', '>=', max(1, (int) $q['calibration_min_answers']))
             ->where(fn ($w) => $w
@@ -246,8 +264,8 @@ class PlatformAnalytics
      */
     public function moderation(): array
     {
-        $oldest = Question::query()->awaitingReview()->min(DB::raw('coalesce(submitted_at, created_at)'));
-        $decisions = \App\Domain\Questions\Models\QuestionModerationLog::query()
+        $oldest = $this->questions->query()->awaitingReview()->min(DB::raw('coalesce(submitted_at, created_at)'));
+        $decisions = $this->moderationLogs->query()
             ->whereIn('action', ['approved', 'rejected', 'changes_requested'])
             ->where('created_at', '>=', now()->subWeeks(4)->startOfWeek())
             ->get(['created_at'])
@@ -257,7 +275,7 @@ class PlatformAnalytics
             ->all();
 
         return [
-            'waiting' => Question::query()->awaitingReview()->count(),
+            'waiting' => $this->questions->query()->awaitingReview()->count(),
             'oldest_hours' => $oldest ? (int) Carbon::parse($oldest)->diffInHours(now(), true) : null,
             'weekly' => $decisions,
         ];
@@ -265,6 +283,6 @@ class PlatformAnalytics
 
     private function answers(Carbon $from, Carbon $to)
     {
-        return PlayerAnswer::query()->whereBetween('player_answers.received_at', [$from, $to]);
+        return $this->playerAnswers->query()->whereBetween('player_answers.received_at', [$from, $to]);
     }
 }

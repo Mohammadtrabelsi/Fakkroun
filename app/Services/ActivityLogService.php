@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Services\Concerns\ManagesModel;
 use Closure;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
@@ -15,6 +16,9 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
  */
 class ActivityLogService
 {
+    /** @use ManagesModel<Activity> */
+    use ManagesModel;
+
     /**
      * @return Collection<int, string>
      */
@@ -109,5 +113,10 @@ class ActivityLogService
 
             echo ']';
         };
+    }
+
+    protected function model(): string
+    {
+        return Activity::class;
     }
 }

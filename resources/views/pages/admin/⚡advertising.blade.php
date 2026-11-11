@@ -86,8 +86,8 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     #[Computed]
     public function advertisers()
     {
-        return Advertiser::query()->with(['user', 'wallets'])->withCount('campaigns')
-            ->addSelect(['strikes_count' => \App\Domain\Advertising\Models\PolicyStrike::query()->selectRaw('count(*)')->whereColumn('advertiser_id', 'advertisers.id')])
+        return app(\App\Domain\Advertising\AdvertiserService::class)->query()->with(['user', 'wallets'])->withCount('campaigns')
+            ->addSelect(['strikes_count' => app(\App\Domain\Advertising\PolicyStrikeService::class)->query()->selectRaw('count(*)')->whereColumn('advertiser_id', 'advertisers.id')])
             ->orderBy('name')->get();
     }
 
@@ -100,13 +100,13 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     #[Computed]
     public function packages()
     {
-        return AdvertisingPackage::query()->ordered()->get();
+        return app(\App\Domain\Advertising\AdvertisingPackageService::class)->query()->ordered()->get();
     }
 
     #[Computed]
     public function pending()
     {
-        return Campaign::query()->with(['advertiser', 'creatives'])
+        return app(\App\Domain\Advertising\CampaignService::class)->query()->with(['advertiser', 'creatives'])
             ->whereIn('status', [CampaignStatus::PendingReview->value, CampaignStatus::Active->value, CampaignStatus::Paused->value, CampaignStatus::Exhausted->value])
             ->orderByRaw("case when status = 'pending_review' then 0 else 1 end")->latest('id')->limit(50)->get();
     }
@@ -114,17 +114,17 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     #[Computed]
     public function invoices()
     {
-        return \App\Domain\Advertising\Models\Invoice::query()->with(['advertiser:id,name', 'creditNote:id,cancels_invoice_id,number'])->orderByDesc('id')->limit(100)->get();
+        return app(\App\Domain\Advertising\InvoiceService::class)->query()->with(['advertiser:id,name', 'creditNote:id,cancels_invoice_id,number'])->orderByDesc('id')->limit(100)->get();
     }
 
     public function downloadInvoice(int $id, AdvertisingDocuments $documents): StreamedResponse
     {
-        return $documents->invoice(\App\Domain\Advertising\Models\Invoice::query()->findOrFail($id), auth()->user());
+        return $documents->invoice(app(\App\Domain\Advertising\InvoiceService::class)->query()->findOrFail($id), auth()->user());
     }
 
     public function cancelInvoice(int $id, \App\Domain\Advertising\InvoiceService $invoices): void
     {
-        $this->attempt(fn () => $invoices->cancel(\App\Domain\Advertising\Models\Invoice::query()->findOrFail($id), auth()->user(), (string) ($this->cancelReasons[$id] ?? '')), __('advertising.invoices.cancelled'));
+        $this->attempt(fn () => $invoices->cancel(app(\App\Domain\Advertising\InvoiceService::class)->query()->findOrFail($id), auth()->user(), (string) ($this->cancelReasons[$id] ?? '')), __('advertising.invoices.cancelled'));
         unset($this->invoices);
     }
 
@@ -149,15 +149,15 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             'advWebsite' => ['nullable', 'url:https', 'max:2048'],
         ]);
 
-        $user = User::query()->where('email', $data['advEmail'])->firstOrFail();
+        $user = app(\App\Services\UserService::class)->query()->where('email', $data['advEmail'])->firstOrFail();
 
-        if (Advertiser::query()->where('user_id', $user->id)->exists()) {
+        if (app(\App\Domain\Advertising\AdvertiserService::class)->query()->where('user_id', $user->id)->exists()) {
             $this->addError('advEmail', __('advertising.errors.already_advertiser'));
 
             return;
         }
 
-        Advertiser::query()->create(['user_id' => $user->id, 'name' => $data['advName'], 'type' => $data['advType'], 'contact_email' => $user->email, 'website' => $data['advWebsite'] ?: null]);
+        app(\App\Domain\Advertising\AdvertiserService::class)->query()->create(['user_id' => $user->id, 'name' => $data['advName'], 'type' => $data['advType'], 'contact_email' => $user->email, 'website' => $data['advWebsite'] ?: null]);
         $user->assignRole(UserRole::Advertiser->value);
 
         $this->reset(['advEmail', 'advName', 'advType', 'advWebsite']);
@@ -167,7 +167,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     public function editPackage(int $id): void
     {
-        $p = AdvertisingPackage::query()->findOrFail($id);
+        $p = app(\App\Domain\Advertising\AdvertisingPackageService::class)->query()->findOrFail($id);
         $this->packageId = $p->id;
         $this->pkgName = $p->name;
         $this->pkgImpressions = $p->impression_credits;
@@ -198,7 +198,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
             return;
         }
 
-        AdvertisingPackage::query()->updateOrCreate(['id' => $this->packageId], [
+        app(\App\Domain\Advertising\AdvertisingPackageService::class)->query()->updateOrCreate(['id' => $this->packageId], [
             'name' => $data['pkgName'],
             'impression_credits' => $data['pkgImpressions'],
             'sponsored_question_credits' => $data['pkgSponsored'],
@@ -218,9 +218,9 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     /** Copies the default values (config fakkroun.advertising_packs) back onto a standard pack. */
     public function resetPackage(int $id): void
     {
-        $package = AdvertisingPackage::query()->findOrFail($id);
+        $packages = app(\App\Domain\Advertising\AdvertisingPackageService::class);
 
-        if ($package->resetToDefault()) {
+        if ($packages->resetToDefault($packages->findOrFail($id))) {
             unset($this->packages);
             $this->toast(__('advertising.package_reset'));
         }
@@ -229,7 +229,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
     /** Re-creates any standard pack that was deleted from the database. */
     public function restoreDefaultPackages(): void
     {
-        AdvertisingPackage::ensureDefaults();
+        app(\App\Domain\Advertising\AdvertisingPackageService::class)->ensureDefaults();
         unset($this->packages);
         $this->toast(__('advertising.packages_restored'));
     }
@@ -243,8 +243,8 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         ]);
 
         $this->attempt(fn () => $wallets->purchase(
-            Advertiser::query()->findOrFail($this->walletAdvertiser),
-            AdvertisingPackage::query()->findOrFail($this->purchasePackage),
+            app(\App\Domain\Advertising\AdvertiserService::class)->query()->findOrFail($this->walletAdvertiser),
+            app(\App\Domain\Advertising\AdvertisingPackageService::class)->query()->findOrFail($this->purchasePackage),
             auth()->user(),
             trim($this->paymentReference),
         ), __('advertising.purchase_recorded'));
@@ -263,7 +263,7 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
         ]);
 
         $this->attempt(fn () => $wallets->adjust(
-            Advertiser::query()->findOrFail($this->walletAdvertiser),
+            app(\App\Domain\Advertising\AdvertiserService::class)->query()->findOrFail($this->walletAdvertiser),
             CreditType::from($this->adjustType),
             $this->adjustQuantity,
             auth()->user(),
@@ -276,20 +276,20 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     public function approve(int $id, CampaignService $campaigns): void
     {
-        $this->attempt(fn () => $campaigns->approve(Campaign::query()->findOrFail($id), auth()->user(), (bool) ($this->policyChecked[$id] ?? false)), __('advertising.approved'));
+        $this->attempt(fn () => $campaigns->approve(app(\App\Domain\Advertising\CampaignService::class)->query()->findOrFail($id), auth()->user(), (bool) ($this->policyChecked[$id] ?? false)), __('advertising.approved'));
         unset($this->pending);
     }
 
     public function reject(int $id, CampaignService $campaigns): void
     {
-        $this->attempt(fn () => $campaigns->reject(Campaign::query()->findOrFail($id), auth()->user(), (string) ($this->rejectNotes[$id] ?? '')), __('advertising.rejected'));
+        $this->attempt(fn () => $campaigns->reject(app(\App\Domain\Advertising\CampaignService::class)->query()->findOrFail($id), auth()->user(), (string) ($this->rejectNotes[$id] ?? '')), __('advertising.rejected'));
         unset($this->pending);
     }
 
     public function breach(int $id, \App\Domain\Advertising\PolicyEnforcementService $policy): void
     {
         $this->attempt(function () use ($id, $policy): void {
-            $strike = $policy->recordBreach(Campaign::query()->findOrFail($id), auth()->user(), (string) ($this->rejectNotes[$id] ?? ''));
+            $strike = $policy->recordBreach(app(\App\Domain\Advertising\CampaignService::class)->query()->findOrFail($id), auth()->user(), (string) ($this->rejectNotes[$id] ?? ''));
             $this->toast(__('advertising.policy.recorded.'.min($strike->level, 3)));
         }, null);
         unset($this->pending, $this->advertisers, $this->callsDue);
@@ -297,19 +297,19 @@ new #[Layout('layouts::app')] #[Title('Advertising')] class extends Component
 
     public function recordCall(int $strikeId, \App\Domain\Advertising\PolicyEnforcementService $policy): void
     {
-        $this->attempt(fn () => $policy->recordCall(\App\Domain\Advertising\Models\PolicyStrike::query()->findOrFail($strikeId), auth()->user()), __('advertising.policy.call_recorded'));
+        $this->attempt(fn () => $policy->recordCall(app(\App\Domain\Advertising\PolicyStrikeService::class)->query()->findOrFail($strikeId), auth()->user()), __('advertising.policy.call_recorded'));
         unset($this->callsDue);
     }
 
     public function reactivate(int $id, \App\Domain\Advertising\PolicyEnforcementService $policy): void
     {
-        $this->attempt(fn () => $policy->reactivate(Advertiser::query()->findOrFail($id), auth()->user()), __('advertising.policy.reactivated'));
+        $this->attempt(fn () => $policy->reactivate(app(\App\Domain\Advertising\AdvertiserService::class)->query()->findOrFail($id), auth()->user()), __('advertising.policy.reactivated'));
         unset($this->advertisers);
     }
 
     public function pause(int $id, CampaignService $campaigns): void
     {
-        $this->attempt(fn () => $campaigns->pause(Campaign::query()->findOrFail($id), auth()->user()), __('advertising.paused'));
+        $this->attempt(fn () => $campaigns->pause(app(\App\Domain\Advertising\CampaignService::class)->query()->findOrFail($id), auth()->user()), __('advertising.paused'));
         unset($this->pending);
     }
 

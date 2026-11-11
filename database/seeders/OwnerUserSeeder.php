@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -27,7 +27,7 @@ class OwnerUserSeeder extends Seeder
         $password = env('OWNER_PASSWORD');
         $generated = null;
 
-        $user = User::withTrashed()->firstOrNew(['email' => self::EMAIL]);
+        $user = app(UserService::class)->withTrashed()->firstOrNew(['email' => self::EMAIL]);
 
         if (! $user->exists) {
             $user->name = self::NAME;

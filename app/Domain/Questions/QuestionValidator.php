@@ -4,6 +4,7 @@ namespace App\Domain\Questions;
 
 use App\Domain\Questions\Enums\Difficulty;
 use App\Models\Category;
+use App\Services\CategoryService;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
@@ -23,7 +24,10 @@ class QuestionValidator
 {
     public const CHOICES = 4;
 
-    public function __construct(private readonly DuplicateDetector $duplicates) {}
+    public function __construct(
+        private readonly DuplicateDetector $duplicates,
+        private readonly CategoryService $categories,
+    ) {}
 
     /**
      * Rules for the language-specific text (used for originals and translations).
@@ -67,7 +71,7 @@ class QuestionValidator
             $this->checkDistinctChoices($validator, (array) ($data['choices'] ?? []));
 
             if (! empty($data['subcategory_id']) && ! empty($data['category_id'])) {
-                $parent = Category::query()->whereKey($data['subcategory_id'])->value('parent_id');
+                $parent = $this->categories->query()->whereKey($data['subcategory_id'])->value('parent_id');
 
                 if ((int) $parent !== (int) $data['category_id']) {
                     $validator->errors()->add('subcategory_id', __('questions.errors.subcategory_mismatch'));

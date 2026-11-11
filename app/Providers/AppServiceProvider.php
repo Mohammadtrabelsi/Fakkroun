@@ -2,18 +2,29 @@
 
 namespace App\Providers;
 
+use App\Domain\Ai\Contracts\AdReviewer;
 use App\Domain\Ai\Contracts\QuestionGenerator;
+use App\Domain\Ai\Drivers\AnthropicAdReviewer;
 use App\Domain\Ai\Drivers\AnthropicQuestionGenerator;
+use App\Domain\Ai\Drivers\FakeAdReviewer;
 use App\Domain\Ai\Drivers\FakeQuestionGenerator;
+use App\Domain\Billing\Contracts\PaymentProvider;
+use App\Domain\Billing\Drivers\CashPaymentProvider;
 use App\Domain\Questions\Contracts\SimilarQuestionFinder;
 use App\Domain\Questions\Support\TokenOverlapFinder;
 use App\Models\Post;
+use App\Models\User;
+use App\Notifications\JobFailedAlert;
 use App\Observers\CrudNotificationObserver;
 use App\Observers\PostSitemapObserver;
 use App\Services\StructuredDataService;
+use App\Services\UserService;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Queue\Events\JobFailed;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -36,13 +47,13 @@ class AppServiceProvider extends ServiceProvider
             : new FakeQuestionGenerator);
 
         // AI notes on advertising campaigns (story 16 S8), same driver switch as drafting.
-        $this->app->bind(\App\Domain\Ai\Contracts\AdReviewer::class, fn () => config('fakkroun.ai.driver') === 'anthropic'
-            ? new \App\Domain\Ai\Drivers\AnthropicAdReviewer
-            : new \App\Domain\Ai\Drivers\FakeAdReviewer);
+        $this->app->bind(AdReviewer::class, fn () => config('fakkroun.ai.driver') === 'anthropic'
+            ? new AnthropicAdReviewer
+            : new FakeAdReviewer);
 
         // Payment method: cash only for now. Add a gateway driver and map it here.
-        $this->app->bind(\App\Domain\Billing\Contracts\PaymentProvider::class, fn () => match (config('fakkroun.payments.driver')) {
-            default => new \App\Domain\Billing\Drivers\CashPaymentProvider,
+        $this->app->bind(PaymentProvider::class, fn () => match (config('fakkroun.payments.driver')) {
+            default => new CashPaymentProvider,
         });
     }
 
@@ -134,15 +145,15 @@ class AppServiceProvider extends ServiceProvider
      */
     private function alertOnFailedJobs(): void
     {
-        \Illuminate\Support\Facades\Queue::failing(function (\Illuminate\Queue\Events\JobFailed $event): void {
+        Queue::failing(function (JobFailed $event): void {
             $name = (string) ($event->job->resolveName() ?: 'job');
 
-            if (! \Illuminate\Support\Facades\Cache::add('job-failed-alert:'.md5($name), true, 600)) {
+            if (! Cache::add('job-failed-alert:'.md5($name), true, 600)) {
                 return;
             }
 
-            rescue(fn () => \App\Models\User::permission('view admin dashboard')->get()
-                ->each(fn (\App\Models\User $admin) => $admin->notify(new \App\Notifications\JobFailedAlert($name, $event->exception->getMessage()))), report: true);
+            rescue(fn () => app(UserService::class)->query()->permission('view admin dashboard')->get()
+                ->each(fn (User $admin) => $admin->notify(new JobFailedAlert($name, $event->exception->getMessage()))), report: true);
         });
     }
 }

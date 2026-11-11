@@ -2,8 +2,8 @@
 
 namespace App\Domain\Advertising\Jobs;
 
+use App\Domain\Advertising\CampaignService;
 use App\Domain\Advertising\Enums\CampaignStatus;
-use App\Domain\Advertising\Models\Campaign;
 use App\Domain\Ai\Contracts\AdReviewer;
 use App\Domain\Ai\GenerationFailed;
 use Illuminate\Bus\Queueable;
@@ -27,7 +27,7 @@ class ReviewCampaignWithAi implements ShouldQueue
 
     public function handle(AdReviewer $reviewer): void
     {
-        $campaign = Campaign::query()->with(['advertiser', 'creatives'])->find($this->campaignId);
+        $campaign = app(CampaignService::class)->query()->with(['advertiser', 'creatives'])->find($this->campaignId);
 
         if ($campaign === null || $campaign->status !== CampaignStatus::PendingReview) {
             return;
@@ -48,6 +48,6 @@ class ReviewCampaignWithAi implements ShouldQueue
             $result = ['error' => $e->getMessage(), 'concerns' => [], 'reviewed_at' => now()->toIso8601String()];
         }
 
-        Campaign::query()->whereKey($campaign->id)->update(['ai_review' => json_encode($result)]);
+        app(CampaignService::class)->query()->whereKey($campaign->id)->update(['ai_review' => json_encode($result)]);
     }
 }

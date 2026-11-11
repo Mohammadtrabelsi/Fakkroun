@@ -3,7 +3,6 @@
 namespace App\Domain\Ai;
 
 use App\Domain\Ai\Contracts\QuestionGenerator;
-use App\Domain\Ai\Models\AiGenerationBatch;
 use App\Models\User;
 use Illuminate\Support\Facades\RateLimiter;
 
@@ -14,7 +13,10 @@ use Illuminate\Support\Facades\RateLimiter;
  */
 class QuestionDrafter
 {
-    public function __construct(private readonly QuestionGenerator $generator) {}
+    public function __construct(
+        private readonly QuestionGenerator $generator,
+        private readonly AiGenerationBatchService $aiBatches,
+    ) {}
 
     public function enabled(): bool
     {
@@ -66,7 +68,7 @@ class QuestionDrafter
      */
     private function record(User $user, GenerationRequest $request, GenerationResult $result): void
     {
-        $batch = AiGenerationBatch::query()->create([
+        $batch = $this->aiBatches->query()->create([
             'user_id' => $user->id,
             'kind' => 'draft',
             'provider' => $this->generator->provider(),

@@ -5,7 +5,6 @@ namespace App\Domain\Questions;
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Enums\TranslationStatus;
 use App\Domain\Questions\Models\Question;
-use App\Domain\Questions\Models\QuestionPoolEntry;
 
 /**
  * Keeps question_language_pool equal to "published question × approved
@@ -15,9 +14,14 @@ use App\Domain\Questions\Models\QuestionPoolEntry;
  */
 class QuestionPool
 {
+    public function __construct(
+        private readonly QuestionPoolEntryService $poolEntries,
+    ) {}
+
     public function sync(Question $question): void
     {
-        $question = Question::withTrashed()->with('translations:id,question_id,language,status')->find($question->id);
+        // Resolved lazily: QuestionService itself depends on the pool.
+        $question = app(QuestionService::class)->withTrashed()->with('translations:id,question_id,language,status')->find($question->id);
 
         if ($question === null) {
             return;
@@ -30,13 +34,13 @@ class QuestionPool
                 ->pluck('language')
                 ->all();
 
-        QuestionPoolEntry::query()
+        $this->poolEntries->query()
             ->where('question_id', $question->id)
             ->when($languages !== [], fn ($query) => $query->whereNotIn('language', $languages))
             ->delete();
 
         foreach ($languages as $language) {
-            $entry = QuestionPoolEntry::query()->firstOrNew([
+            $entry = $this->poolEntries->query()->firstOrNew([
                 'question_id' => $question->id,
                 'language' => $language,
             ]);
@@ -56,7 +60,7 @@ class QuestionPool
 
     public function remove(Question $question): void
     {
-        QuestionPoolEntry::query()->where('question_id', $question->id)->delete();
+        $this->poolEntries->query()->where('question_id', $question->id)->delete();
     }
 
     /**
@@ -64,6 +68,6 @@ class QuestionPool
      */
     public function languages(Question $question): array
     {
-        return QuestionPoolEntry::query()->where('question_id', $question->id)->orderBy('language')->pluck('language')->all();
+        return $this->poolEntries->query()->where('question_id', $question->id)->orderBy('language')->pluck('language')->all();
     }
 }

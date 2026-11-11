@@ -4,8 +4,6 @@ namespace App\Domain\Questions;
 
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Enums\TranslationStatus;
-use App\Domain\Questions\Models\Question;
-use App\Domain\Questions\Models\QuestionTranslation;
 use App\Models\User;
 use App\Services\CategoryService;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
@@ -18,7 +16,11 @@ class QuestionQueries
 {
     private const SORTABLE = ['created_at', 'updated_at', 'difficulty', 'status'];
 
-    public function __construct(private readonly CategoryService $categories) {}
+    public function __construct(
+        private readonly CategoryService $categories,
+        private readonly QuestionService $questions,
+        private readonly QuestionTranslationService $questionTranslations,
+    ) {}
 
     /**
      * Categories a user may moderate: null means all of them.
@@ -46,7 +48,7 @@ class QuestionQueries
         $direction = ($filters['direction'] ?? 'desc') === 'asc' ? 'asc' : 'desc';
         $search = trim((string) ($filters['search'] ?? ''));
 
-        return Question::query()
+        return $this->questions->query()
             ->with(['category:id,name,slug', 'translations:id,question_id,language,body,status', 'author:id,name'])
             ->when($categoryScope !== null, fn ($query) => $query->inCategories($categoryScope))
             ->when(($filters['trashed'] ?? null) === 'only', fn ($query) => $query->onlyTrashed())
@@ -72,7 +74,7 @@ class QuestionQueries
      */
     public function reviewQueue(User $moderator, int $perPage = 10): LengthAwarePaginator
     {
-        return Question::query()
+        return $this->questions->query()
             ->awaitingReview()
             ->when(($scope = $this->scopeFor($moderator)) !== null, fn ($query) => $query->inCategories($scope))
             ->with(['category', 'subcategory', 'choices', 'translations', 'author:id,name', 'moderationLogs' => fn ($q) => $q->where('action', 'created')])
@@ -88,7 +90,7 @@ class QuestionQueries
     {
         $scope = $this->scopeFor($moderator);
 
-        return QuestionTranslation::query()
+        return $this->questionTranslations->query()
             ->where('status', TranslationStatus::Pending->value)
             ->when($language, fn ($query) => $query->where('language', $language))
             ->whereHas('question', function ($query) use ($scope): void {
@@ -109,7 +111,7 @@ class QuestionQueries
      */
     public function statusCounts(?array $categoryScope = null): array
     {
-        $counts = Question::query()
+        $counts = $this->questions->query()
             ->when($categoryScope !== null, fn ($query) => $query->inCategories($categoryScope))
             ->selectRaw('status, count(*) as total')
             ->groupBy('status')

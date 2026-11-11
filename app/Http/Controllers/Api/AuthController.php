@@ -81,7 +81,7 @@ class AuthController extends Controller
         $user = $this->authenticatedUser($validated);
 
         return response()->json([
-            'token' => $user->createToken($validated['device_name'])->plainTextToken,
+            'token' => $this->users->issueToken($user, $validated['device_name']),
             'token_type' => 'Bearer',
         ], 201);
     }
@@ -91,7 +91,7 @@ class AuthController extends Controller
      */
     public function revokeToken(Request $request): JsonResponse
     {
-        $request->user()?->currentAccessToken()?->delete();
+        $this->users->revokeCurrentToken($request->user());
 
         return response()->json(null, 204);
     }
@@ -102,7 +102,7 @@ class AuthController extends Controller
         return function (string $attribute, mixed $value, \Closure $fail): void {
             if (! LoginIdentifier::isValidPhone((string) $value)) {
                 $fail(__('register.invalid_login'));
-            } elseif (User::withTrashed()->where('phone', LoginIdentifier::normalizePhone((string) $value))->exists()) {
+            } elseif ($this->users->phoneTaken((string) $value)) {
                 $fail(__('register.phone_taken'));
             }
         };

@@ -4,6 +4,7 @@ namespace App\Domain\Questions\Jobs;
 
 use App\Domain\Questions\Imports\QuestionImportService;
 use App\Domain\Questions\Models\QuestionImportBatch;
+use App\Domain\Questions\QuestionImportBatchService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -34,7 +35,7 @@ class ProcessQuestionImport implements ShouldBeUnique, ShouldQueue
 
     public function handle(QuestionImportService $imports): void
     {
-        $batch = QuestionImportBatch::query()->find($this->batchId);
+        $batch = app(QuestionImportBatchService::class)->query()->find($this->batchId);
 
         if ($batch !== null) {
             $imports->process($batch);
@@ -43,7 +44,7 @@ class ProcessQuestionImport implements ShouldBeUnique, ShouldQueue
 
     public function failed(?Throwable $exception): void
     {
-        QuestionImportBatch::query()
+        app(QuestionImportBatchService::class)->query()
             ->whereKey($this->batchId)
             ->whereNotIn('status', [QuestionImportBatch::STATUS_COMPLETED])
             ->update([

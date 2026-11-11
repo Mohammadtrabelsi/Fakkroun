@@ -1,9 +1,9 @@
 {{-- Home (fakkroun-design/design/Main.dc.html), sections in the design's order. --}}
 @php
     $locale = app()->getLocale();
-    $priority = \App\Models\Category::query()->roots()->where('is_active', true)->where('is_priority', true)->ordered()->get();
-    $others = \App\Models\Category::query()->roots()->where('is_active', true)->where('is_priority', false)->ordered()->get();
-    $partners = \App\Models\Partner::query()->visible()->get();
+    $priority = app(\App\Services\CategoryService::class)->query()->roots()->where('is_active', true)->where('is_priority', true)->ordered()->get();
+    $others = app(\App\Services\CategoryService::class)->query()->roots()->where('is_active', true)->where('is_priority', false)->ordered()->get();
+    $partners = app(\App\Services\PartnerService::class)->visible();
     $playUrl = auth()->user()?->isGuest() === false ? route('rooms.create') : route('rooms.join');
     $tiles = ['bg-tint-green text-sea', 'bg-tint-sea text-sea', 'bg-tint-green text-sea', 'bg-tint-sun text-sun-text', 'bg-tint-sun text-sun-text', 'bg-tint-sea text-sea', 'bg-tint-green text-sea'];
     $icons = [

@@ -27,7 +27,7 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
     {
         $user = auth()->user();
 
-        $posts = Post::query()
+        $posts = app(\App\Services\PostService::class)->query()
             ->where('user_id', $user->id)
             ->selectRaw('count(*) as total')
             ->selectRaw('sum(case when status = ? then 1 else 0 end) as published', [Post::STATUS_PUBLISHED])
@@ -38,7 +38,7 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
             'posts' => (int) ($posts->total ?? 0),
             'published' => (int) ($posts->published ?? 0),
             'drafts' => (int) ($posts->total ?? 0) - (int) ($posts->published ?? 0),
-            'actionsThisWeek' => Activity::query()
+            'actionsThisWeek' => app(\App\Services\ActivityLogService::class)->query()
                 ->where('causer_type', $user->getMorphClass())
                 ->where('causer_id', $user->id)
                 ->where('created_at', '>=', now()->subWeek())
@@ -59,8 +59,8 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
             'categories' => app(CategoryService::class)->stats(),
             'visits' => app(VisitService::class)->stats(),
             'activity' => [
-                'today' => Activity::where('created_at', '>=', now()->startOfDay())->count(),
-                'week' => Activity::where('created_at', '>=', now()->subWeek())->count(),
+                'today' => app(\App\Services\ActivityLogService::class)->query()->where('created_at', '>=', now()->startOfDay())->count(),
+                'week' => app(\App\Services\ActivityLogService::class)->query()->where('created_at', '>=', now()->subWeek())->count(),
             ],
         ];
     }
@@ -80,7 +80,7 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
     #[Computed]
     public function recentActivity()
     {
-        return Activity::query()->with('causer')->latest()->limit(6)->get();
+        return app(\App\Services\ActivityLogService::class)->query()->with('causer')->latest()->limit(6)->get();
     }
 };
 ?>
@@ -121,7 +121,7 @@ new #[Layout('layouts::app')] #[Title('My space')] class extends Component
             @php
                 $playerStats = app(\App\Domain\Gameplay\LeaderboardService::class)->stats(auth()->user());
                 $achievements = app(\App\Domain\Gameplay\AchievementService::class)->for(auth()->user());
-                $recent = \App\Domain\Gameplay\Models\GameResult::query()->where('user_id', auth()->id())->with('game.room:id,ulid,name')->latest('id')->limit(5)->get();
+                $recent = app(\App\Domain\Gameplay\GameResultService::class)->query()->where('user_id', auth()->id())->with('game.room:id,ulid,name')->latest('id')->limit(5)->get();
             @endphp
             <div class="ms-row-10 ms-wrap">
                 @foreach (['games', 'wins', 'best', 'correct_rate'] as $key)

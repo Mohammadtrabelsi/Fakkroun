@@ -59,7 +59,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
     {
         $this->authorize('manage users');
 
-        $target = User::findOrFail($userId);
+        $target = app(\App\Services\UserService::class)->findOrFail($userId);
 
         try {
             $users->toggleAdminRole(auth()->user(), $target);
@@ -72,7 +72,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
     {
         $this->authorize('manage users');
 
-        $target = User::findOrFail($userId);
+        $target = app(\App\Services\UserService::class)->findOrFail($userId);
 
         try {
             $users->delete(auth()->user(), $target);
@@ -86,7 +86,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
         $this->authorize('manage users');
 
         try {
-            $users->suspend(auth()->user(), User::findOrFail($userId));
+            $users->suspend(auth()->user(), app(\App\Services\UserService::class)->findOrFail($userId));
             $this->dispatch('notify', type: 'success', message: __('account.user_suspended'));
         } catch (\DomainException $e) {
             $this->addError('toggle', $e->getMessage());
@@ -97,7 +97,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
     {
         $this->authorize('manage users');
 
-        $users->reactivate(User::findOrFail($userId));
+        $users->reactivate(app(\App\Services\UserService::class)->findOrFail($userId));
         $this->dispatch('notify', type: 'success', message: __('account.user_reactivated'));
     }
 
@@ -105,7 +105,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
     {
         $this->authorize('manage users');
 
-        $users->restore(User::onlyTrashed()->findOrFail($userId));
+        $users->restore(app(\App\Services\UserService::class)->onlyTrashed()->findOrFail($userId));
     }
 
     public function forceDeleteUser(int $userId, UserService $users): void
@@ -113,7 +113,7 @@ new #[Layout('layouts::app')] #[Title('Users')] class extends Component
         $this->authorize('manage users');
 
         try {
-            $users->forceDelete(auth()->user(), User::onlyTrashed()->findOrFail($userId));
+            $users->forceDelete(auth()->user(), app(\App\Services\UserService::class)->onlyTrashed()->findOrFail($userId));
         } catch (\DomainException $e) {
             $this->addError('toggle', $e->getMessage());
         }

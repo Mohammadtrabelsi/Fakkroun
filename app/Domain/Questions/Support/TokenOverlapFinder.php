@@ -4,7 +4,7 @@ namespace App\Domain\Questions\Support;
 
 use App\Domain\Questions\Contracts\SimilarQuestionFinder;
 use App\Domain\Questions\DuplicateDetector;
-use App\Domain\Questions\Models\QuestionTranslation;
+use App\Domain\Questions\QuestionTranslationService;
 
 /**
  * Default near-duplicate finder: narrows candidates with the text's three
@@ -26,7 +26,7 @@ class TokenOverlapFinder implements SimilarQuestionFinder
         usort($tokens, fn (string $a, string $b) => mb_strlen($b) <=> mb_strlen($a));
         $probes = array_slice($tokens, 0, 3);
 
-        $candidates = QuestionTranslation::query()
+        $candidates = app(QuestionTranslationService::class)->query()
             ->select(['question_id', 'body'])
             ->where('language', $language)
             ->when($exceptQuestionId, fn ($query) => $query->where('question_id', '!=', $exceptQuestionId))

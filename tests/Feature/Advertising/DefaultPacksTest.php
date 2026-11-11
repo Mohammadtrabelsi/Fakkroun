@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Advertising;
 
+use App\Domain\Advertising\AdvertisingPackageService;
 use App\Domain\Advertising\Enums\CreditType;
 use App\Domain\Advertising\Models\Advertiser;
 use App\Domain\Advertising\Models\AdvertisingPackage;
@@ -64,14 +65,14 @@ class DefaultPacksTest extends TestCase
         $pack = AdvertisingPackage::query()->where('slug', 'professional')->firstOrFail();
         $pack->update(['impression_credits' => 1, 'price_minor' => 1]);
 
-        $this->assertTrue($pack->resetToDefault());
+        $this->assertTrue(app(AdvertisingPackageService::class)->resetToDefault($pack));
         $this->assertSame(config('fakkroun.advertising_packs.professional.price_minor'), $pack->fresh()->price_minor);
 
         $custom = AdvertisingPackage::query()->create(['name' => 'Custom', 'impression_credits' => 5, 'sponsored_question_credits' => 0, 'price_minor' => 10, 'currency' => 'TND']);
-        $this->assertFalse($custom->resetToDefault(), 'Custom packs have no default values.');
+        $this->assertFalse(app(AdvertisingPackageService::class)->resetToDefault($custom), 'Custom packs have no default values.');
 
         AdvertisingPackage::query()->where('slug', 'enterprise')->delete();
-        AdvertisingPackage::ensureDefaults();
+        app(AdvertisingPackageService::class)->ensureDefaults();
         $this->assertTrue(AdvertisingPackage::query()->where('slug', 'enterprise')->exists());
     }
 

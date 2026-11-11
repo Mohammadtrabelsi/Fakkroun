@@ -91,20 +91,20 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     #[Computed]
     public function ledger()
     {
-        return LedgerEntry::query()->where('advertiser_id', $this->advertiser()->id)->orderByDesc('id')->paginate(15, pageName: 'ledger');
+        return app(\App\Domain\Advertising\LedgerEntryService::class)->query()->where('advertiser_id', $this->advertiser()->id)->orderByDesc('id')->paginate(15, pageName: 'ledger');
     }
 
     #[Computed]
     public function invoices()
     {
-        return \App\Domain\Advertising\Models\Invoice::query()->where('advertiser_id', $this->advertiser()->id)->orderByDesc('id')->limit(50)->get();
+        return app(\App\Domain\Advertising\InvoiceService::class)->query()->where('advertiser_id', $this->advertiser()->id)->orderByDesc('id')->limit(50)->get();
     }
 
     public string $statementMonth = '';
 
     public function downloadInvoice(int $invoiceId, AdvertisingDocuments $documents): StreamedResponse
     {
-        $invoice = \App\Domain\Advertising\Models\Invoice::query()
+        $invoice = app(\App\Domain\Advertising\InvoiceService::class)->query()
             ->where('advertiser_id', $this->advertiser()->id)
             ->findOrFail($invoiceId);
 
@@ -207,7 +207,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
     @if ($advertiser->status === 'suspended')
         <div role="alert" class="tag tag-outline ms-notice">{{ __('advertising.policy.suspended_notice') }}</div>
     @endif
-    @php($strikes = \App\Domain\Advertising\Models\PolicyStrike::query()->where('advertiser_id', $advertiser->id)->count())
+    @php($strikes = app(\App\Domain\Advertising\PolicyStrikeService::class)->query()->where('advertiser_id', $advertiser->id)->count())
     @if ($strikes > 0 && $advertiser->status !== 'suspended')
         <div role="status" class="tag tag-outline ms-notice">{{ __('advertising.policy.strikes_notice', ['count' => $strikes, 'max' => \App\Domain\Advertising\PolicyEnforcementService::SUSPEND_AT]) }}</div>
     @endif
@@ -244,7 +244,7 @@ new #[Layout('layouts::app')] #[Title('Advertiser dashboard')] class extends Com
                 <div class="card-kicker">{{ $title }}</div>
                 <ul class="ms-fs-13">
                     @forelse ($stats[$key] as $label => $count)
-                        <li class="ms-row-between"><span>{{ match ($key) { 'by_category' => \App\Models\Category::find($label)?->name ?? '—', 'by_placement' => __('advertising.placements.'.$label), default => $label ?: '—' } }}</span><b>{{ number_format($count) }}</b></li>
+                        <li class="ms-row-between"><span>{{ match ($key) { 'by_category' => app(\App\Services\CategoryService::class)->find($label)?->name ?? '—', 'by_placement' => __('advertising.placements.'.$label), default => $label ?: '—' } }}</span><b>{{ number_format($count) }}</b></li>
                     @empty
                         <li class="text-muted">—</li>
                     @endforelse

@@ -3,12 +3,16 @@
 namespace App\Domain\Advertising;
 
 use App\Domain\Advertising\Enums\CampaignStatus;
+use App\Domain\Advertising\Jobs\ReviewCampaignWithAi;
 use App\Domain\Advertising\Models\Advertiser;
 use App\Domain\Advertising\Models\Campaign;
 use App\Domain\Advertising\Models\Creative;
 use App\Domain\Advertising\Notifications\AdvertiserNotice;
+use App\Domain\Ai\QuestionDrafter;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
+use App\Services\PlatformSettings;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Validator;
@@ -21,9 +25,16 @@ use Illuminate\Validation\Rule;
  */
 class CampaignService
 {
+    /** @use ManagesModel<Campaign> */
+    use ManagesModel;
+
+    public function __construct(
+        private readonly AdvertiserService $advertisers,
+    ) {}
+
     public function advertiserFor(User $user): ?Advertiser
     {
-        return Advertiser::query()->where('user_id', $user->id)->first();
+        return $this->advertisers->query()->where('user_id', $user->id)->first();
     }
 
     /**
@@ -63,7 +74,7 @@ class CampaignService
             'format' => ['nullable', Rule::in(['banner', 'logo', 'post_game'])],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,webp', 'max:1024'],
             // Topic words matched against questions (story 16 S1).
-            'keywords' => ['nullable', 'array', 'max:'.(int) app(\App\Services\PlatformSettings::class)->get('advertising.max_keywords_per_creative')],
+            'keywords' => ['nullable', 'array', 'max:'.(int) app(PlatformSettings::class)->get('advertising.max_keywords_per_creative')],
             'keywords.*' => ['string', 'min:2', 'max:40'],
         ])->validate();
 
@@ -93,8 +104,8 @@ class CampaignService
         $campaign->forceFill(['ai_review' => null])->save();
 
         // Story 16 S8: AI notes for the reviewer, when AI is configured and the setting is on.
-        if (app(\App\Domain\Ai\QuestionDrafter::class)->enabled() && app(\App\Services\PlatformSettings::class)->get('advertising.ai_review_enabled')) {
-            \App\Domain\Advertising\Jobs\ReviewCampaignWithAi::dispatch($campaign->id);
+        if (app(QuestionDrafter::class)->enabled() && app(PlatformSettings::class)->get('advertising.ai_review_enabled')) {
+            ReviewCampaignWithAi::dispatch($campaign->id);
         }
 
         return $campaign;
@@ -200,5 +211,10 @@ class CampaignService
         if (! $admin->can('manage advertising')) {
             throw new AuthorizationException;
         }
+    }
+
+    protected function model(): string
+    {
+        return Campaign::class;
     }
 }

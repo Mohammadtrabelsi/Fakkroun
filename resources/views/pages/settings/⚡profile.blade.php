@@ -91,7 +91,7 @@ new #[Layout('layouts::app')] #[Title('Profile')] class extends Component
                 function (string $attribute, mixed $value, \Closure $fail) use ($user): void {
                     if (! \App\Support\Auth\LoginIdentifier::isValidPhone((string) $value)) {
                         $fail(__('register.invalid_login'));
-                    } elseif (\App\Models\User::withTrashed()->whereKeyNot($user->id)->where('phone', \App\Support\Auth\LoginIdentifier::normalizePhone((string) $value))->exists()) {
+                    } elseif (app(\App\Services\UserService::class)->phoneTaken((string) $value, $user)) {
                         $fail(__('register.phone_taken'));
                     }
                 },

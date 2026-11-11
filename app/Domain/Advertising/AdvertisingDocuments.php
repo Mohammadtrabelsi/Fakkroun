@@ -25,7 +25,7 @@ class AdvertisingDocuments
         $invoice->loadMissing(['advertiser', 'creditNote']);
         $this->authorizeFor($user, $invoice->advertiser);
 
-        $cancels = $invoice->cancels_invoice_id ? Invoice::query()->find($invoice->cancels_invoice_id) : null;
+        $cancels = $invoice->cancels_invoice_id ? $this->invoices->query()->find($invoice->cancels_invoice_id) : null;
 
         return $this->pdf->download(
             $this->pdf->document('pdf.invoice', ['invoice' => $invoice, 'cancels' => $cancels], $invoice->number),

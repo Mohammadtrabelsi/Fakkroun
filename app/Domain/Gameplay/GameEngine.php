@@ -2,7 +2,9 @@
 
 namespace App\Domain\Gameplay;
 
+use App\Domain\Advertising\CampaignService;
 use App\Domain\Advertising\SponsoredQuestionService;
+use App\Domain\Advertising\SponsoredRoundService;
 use App\Domain\Gameplay\Enums\RoomStatus;
 use App\Domain\Gameplay\Models\Game;
 use App\Domain\Gameplay\Models\GameQuestion;
@@ -13,6 +15,7 @@ use App\Domain\Gameplay\Models\RoomPlayer;
 use App\Domain\Questions\Enums\TranslationStatus;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\Models\QuestionTranslation;
+use App\Domain\Questions\QuestionService;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
 use App\Services\PlatformSettings;
@@ -38,6 +41,13 @@ class GameEngine
         private readonly QuestionSelector $selector,
         private readonly RoomService $rooms,
         private readonly PlatformSettings $settings,
+        private readonly RoomPlayerService $roomPlayers,
+        private readonly GameService $games,
+        private readonly QuestionService $questions,
+        private readonly GameQuestionService $gameQuestions,
+        private readonly PlayerAnswerService $playerAnswers,
+        private readonly GameResultService $gameResults,
+        private readonly CampaignService $campaigns,
     ) {}
 
     public function start(Room $room, User $host): Game
@@ -45,7 +55,7 @@ class GameEngine
         try {
             return DB::transaction(function () use ($room, $host): Game {
                 /** @var Room $locked */
-                $locked = Room::query()->whereKey($room->id)->lockForUpdate()->firstOrFail();
+                $locked = $this->rooms->query()->whereKey($room->id)->lockForUpdate()->firstOrFail();
 
                 if ($locked->host_id !== $host->id) {
                     throw new AuthorizationException(__('play.errors.host_only'));
@@ -55,7 +65,7 @@ class GameEngine
                     throw new DomainActionException(__('play.errors.already_started'));
                 }
 
-                $playerIds = RoomPlayer::query()->where('room_id', $locked->id)->whereNull('left_at')->pluck('user_id')->map(fn ($id) => (int) $id)->all();
+                $playerIds = $this->roomPlayers->query()->where('room_id', $locked->id)->whereNull('left_at')->pluck('user_id')->map(fn ($id) => (int) $id)->all();
                 $minimum = (int) $this->settings->get('game.min_players');
 
                 if (count($playerIds) < $minimum) {
@@ -71,7 +81,7 @@ class GameEngine
 
                 // Sponsored round (story 16 S12): a block of consecutive questions from one campaign.
                 $round = $sponsorable && $ads['sponsored_rounds_enabled'] && $count >= (int) $ads['sponsored_round_min_game_questions']
-                    ? app(\App\Domain\Advertising\SponsoredRoundService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, (int) $ads['sponsored_round_size'])
+                    ? app(SponsoredRoundService::class)->pick($settings['language'], $settings['category_ids'], $difficulty, (int) $ads['sponsored_round_size'])
                     : null;
                 $roundIds = $round['question_ids'] ?? [];
 
@@ -93,7 +103,7 @@ class GameEngine
                 }
 
                 $scoring = $this->settings->all()['scoring'];
-                $game = Game::query()->create([
+                $game = $this->games->query()->create([
                     'room_id' => $locked->id,
                     'status' => Game::IN_PROGRESS,
                     'settings' => $settings + [
@@ -108,10 +118,10 @@ class GameEngine
                     'started_at' => now(),
                 ]);
 
-                $versions = Question::query()->whereIn('id', $questionIds)->pluck('version', 'id');
+                $versions = $this->questions->query()->whereIn('id', $questionIds)->pluck('version', 'id');
 
                 foreach (array_values($questionIds) as $index => $questionId) {
-                    GameQuestion::query()->create([
+                    $this->gameQuestions->query()->create([
                         'game_id' => $game->id,
                         'question_id' => $questionId,
                         'position' => $index + 1,
@@ -141,7 +151,7 @@ class GameEngine
     {
         return DB::transaction(function () use ($game): Game {
             /** @var Game $locked */
-            $locked = Game::query()->whereKey($game->id)->lockForUpdate()->firstOrFail();
+            $locked = $this->games->query()->whereKey($game->id)->lockForUpdate()->firstOrFail();
 
             if ($locked->isCompleted()) {
                 return $locked;
@@ -187,9 +197,9 @@ class GameEngine
             }
 
             /** @var GameQuestion|null $current */
-            $current = GameQuestion::query()
+            $current = $this->gameQuestions->query()
                 ->where('game_id', $game->id)
-                ->where('position', Game::query()->whereKey($game->id)->value('current_position'))
+                ->where('position', $this->games->query()->whereKey($game->id)->value('current_position'))
                 ->lockForUpdate()
                 ->first();
 
@@ -206,7 +216,7 @@ class GameEngine
                 throw new DomainActionException(__('play.errors.invalid_choice'));
             }
 
-            if (PlayerAnswer::query()->where('game_question_id', $current->id)->where('user_id', $player->id)->exists()) {
+            if ($this->playerAnswers->query()->where('game_question_id', $current->id)->where('user_id', $player->id)->exists()) {
                 throw new DomainActionException(__('play.errors.already_answered'));
             }
 
@@ -215,7 +225,7 @@ class GameEngine
             $fastMs = (int) $this->settings->get('quality.fast_answer_ms');
 
             try {
-                return PlayerAnswer::query()->create([
+                return $this->playerAnswers->query()->create([
                     'game_question_id' => $current->id,
                     'user_id' => $player->id,
                     'choice_id' => $choiceId,
@@ -265,10 +275,10 @@ class GameEngine
             'category' => $question->category?->name,
             'author' => $question->author?->name,
             'source' => $question->source->value,
-            'sponsor' => $question->is_sponsored && $current->sponsored_round_campaign_id === null ? \App\Domain\Advertising\Models\Campaign::query()->with('advertiser:id,name')->find($question->campaign_id)?->advertiser?->name : null,
+            'sponsor' => $question->is_sponsored && $current->sponsored_round_campaign_id === null ? $this->campaigns->query()->with('advertiser:id,name')->find($question->campaign_id)?->advertiser?->name : null,
             // Sponsored round: who presents it, and whether this is its first question (intro).
-            'round_sponsor' => app(\App\Domain\Advertising\SponsoredRoundService::class)->sponsorName($current->sponsored_round_campaign_id),
-            'round_intro' => $current->sponsored_round_campaign_id !== null && app(\App\Domain\Advertising\SponsoredRoundService::class)->isRoundStart($current),
+            'round_sponsor' => app(SponsoredRoundService::class)->sponsorName($current->sponsored_round_campaign_id),
+            'round_intro' => $current->sponsored_round_campaign_id !== null && app(SponsoredRoundService::class)->isRoundStart($current),
             // Who has answered the current question — never which answer.
             'answered_user_ids' => $answers->pluck('user_id')->map(fn ($id) => (int) $id)->values()->all(),
             'duplicate_rule' => (bool) ($game->settings['duplicate_rule'] ?? false),
@@ -283,7 +293,7 @@ class GameEngine
             ],
             'my_choice_id' => $mine?->choice_id,
             'answered_count' => $answers->count(),
-            'player_count' => RoomPlayer::query()->where('room_id', $game->room_id)->whereNull('left_at')->count(),
+            'player_count' => $this->roomPlayers->query()->where('room_id', $game->room_id)->whereNull('left_at')->count(),
             'leaderboard' => $this->leaderboard($game),
             'reveal' => null,
             'results' => null,
@@ -335,7 +345,7 @@ class GameEngine
             return [];
         }
 
-        return GameQuestion::query()
+        return $this->gameQuestions->query()
             ->where('game_id', $game->id)
             ->orderBy('position')
             ->with(['question.choices', 'answers' => fn ($query) => $query->where('user_id', $viewer->id)])
@@ -362,24 +372,24 @@ class GameEngine
 
     private function current(Game $game): GameQuestion
     {
-        return GameQuestion::query()->where('game_id', $game->id)->where('position', $game->current_position)->firstOrFail();
+        return $this->gameQuestions->query()->where('game_id', $game->id)->where('position', $game->current_position)->firstOrFail();
     }
 
     private function open(Game $game, int $position): void
     {
         $now = now();
 
-        $opened = GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->whereNull('opened_at')->update([
+        $opened = $this->gameQuestions->query()->where('game_id', $game->id)->where('position', $position)->whereNull('opened_at')->update([
             'opened_at' => $now,
             'deadline_at' => $now->copy()->addSeconds((int) $game->settings['seconds_per_question']),
         ]);
 
         if ($opened > 0) {
             // A sponsored question, or a sponsored round (at its first question), is billed once per room.
-            $gq = GameQuestion::query()->where('game_id', $game->id)->where('position', $position)->first();
+            $gq = $this->gameQuestions->query()->where('game_id', $game->id)->where('position', $position)->first();
 
             if ($gq->sponsored_round_campaign_id !== null) {
-                app(\App\Domain\Advertising\SponsoredRoundService::class)->recordDelivery($gq);
+                app(SponsoredRoundService::class)->recordDelivery($gq);
             } else {
                 app(SponsoredQuestionService::class)->recordDelivery($gq);
             }
@@ -394,7 +404,7 @@ class GameEngine
     {
         $grace = (int) $this->settings->get('game.reconnect_grace_seconds');
 
-        $present = RoomPlayer::query()
+        $present = $this->roomPlayers->query()
             ->where('room_id', $game->room_id)
             ->whereNull('left_at')
             ->where('last_seen_at', '>=', now()->subSeconds(max(5, $grace)))
@@ -404,7 +414,7 @@ class GameEngine
             return false;
         }
 
-        return PlayerAnswer::query()->where('game_question_id', $current->id)->whereIn('user_id', $present)->count() >= $present->count();
+        return $this->playerAnswers->query()->where('game_question_id', $current->id)->whereIn('user_id', $present)->count() >= $present->count();
     }
 
     private function close(Game $game, GameQuestion $current): void
@@ -435,7 +445,7 @@ class GameEngine
         $current->closed_at = now();
         $current->save();
 
-        Question::withTrashed()->whereKey($question->id)->update([
+        $this->questions->withTrashed()->whereKey($question->id)->update([
             'times_played' => DB::raw('times_played + '.$answers->count()),
             'times_correct' => DB::raw('times_correct + '.$correctCount),
         ]);
@@ -443,9 +453,9 @@ class GameEngine
 
     private function complete(Game $game): void
     {
-        $gameQuestionIds = GameQuestion::query()->where('game_id', $game->id)->pluck('id');
-        $answers = PlayerAnswer::query()->whereIn('game_question_id', $gameQuestionIds)->get()->groupBy('user_id');
-        $playerIds = RoomPlayer::query()->where('room_id', $game->room_id)->where('joined_at', '<=', $game->started_at)->pluck('user_id')
+        $gameQuestionIds = $this->gameQuestions->query()->where('game_id', $game->id)->pluck('id');
+        $answers = $this->playerAnswers->query()->whereIn('game_question_id', $gameQuestionIds)->get()->groupBy('user_id');
+        $playerIds = $this->roomPlayers->query()->where('room_id', $game->room_id)->where('joined_at', '<=', $game->started_at)->pluck('user_id')
             ->merge($answers->keys())->map(fn ($id) => (int) $id)->unique();
 
         $rows = $playerIds->map(function (int $userId) use ($answers, $game): array {
@@ -464,14 +474,14 @@ class GameEngine
         })->sort(fn (array $a, array $b) => [$b['score'], $a['total_response_ms']] <=> [$a['score'], $b['total_response_ms']])->values();
 
         foreach ($rows as $index => $row) {
-            GameResult::query()->create($row + ['rank' => $index + 1]);
+            $this->gameResults->query()->create($row + ['rank' => $index + 1]);
         }
 
         $game->status = Game::COMPLETED;
         $game->ended_at = now();
         $game->save();
 
-        Room::query()->whereKey($game->room_id)->update(['status' => RoomStatus::Completed->value]);
+        $this->rooms->query()->whereKey($game->room_id)->update(['status' => RoomStatus::Completed->value]);
 
         // Achievements never block the end of a game: a failure is reported, not thrown.
         rescue(fn () => app(AchievementService::class)->awardFor($game), report: true);
@@ -484,7 +494,7 @@ class GameEngine
      */
     private function leaderboard(Game $game): array
     {
-        $scores = PlayerAnswer::query()
+        $scores = $this->playerAnswers->query()
             ->join('game_questions', 'game_questions.id', '=', 'player_answers.game_question_id')
             ->where('game_questions.game_id', $game->id)
             ->whereNotNull('game_questions.closed_at')
@@ -493,7 +503,7 @@ class GameEngine
             ->get()
             ->keyBy('user_id');
 
-        return RoomPlayer::query()->where('room_id', $game->room_id)->with('user:id,name')->get()
+        return $this->roomPlayers->query()->where('room_id', $game->room_id)->with('user:id,name')->get()
             ->map(fn (RoomPlayer $membership) => [
                 'user_id' => $membership->user_id,
                 'name' => $membership->user?->name,

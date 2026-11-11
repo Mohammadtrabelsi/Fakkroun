@@ -6,10 +6,11 @@ use App\Domain\Advertising\Enums\CreditType;
 use App\Domain\Advertising\Models\Campaign;
 use App\Domain\Advertising\Models\SponsoredDelivery;
 use App\Domain\Gameplay\Models\GameQuestion;
-use App\Domain\Gameplay\Models\RoomPlayer;
+use App\Domain\Gameplay\RoomPlayerService;
 use App\Domain\Questions\Models\Question;
-use App\Domain\Questions\Models\QuestionPoolEntry;
 use App\Domain\Questions\QuestionPool;
+use App\Domain\Questions\QuestionPoolEntryService;
+use App\Domain\Questions\QuestionService;
 use App\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\UniqueConstraintViolationException;
@@ -26,6 +27,10 @@ class SponsoredQuestionService
         private readonly WalletService $wallets,
         private readonly CampaignService $campaigns,
         private readonly QuestionPool $pool,
+        private readonly QuestionPoolEntryService $poolEntries,
+        private readonly QuestionService $questions,
+        private readonly SponsoredDeliveryService $sponsoredDeliveries,
+        private readonly RoomPlayerService $roomPlayers,
     ) {}
 
     public function assign(Question $question, ?Campaign $campaign, User $admin): Question
@@ -52,7 +57,7 @@ class SponsoredQuestionService
             return [];
         }
 
-        $campaignIds = Campaign::query()->running()
+        $campaignIds = $this->campaigns->query()->running()
             ->whereHas('advertiser.wallets', fn ($q) => $q->where('credit_type', CreditType::SponsoredQuestion->value)->where('balance', '>', 0))
             ->get()
             ->filter(fn (Campaign $c) => $c->targets(null, $language))
@@ -62,12 +67,12 @@ class SponsoredQuestionService
             return [];
         }
 
-        return QuestionPoolEntry::query()
+        return $this->poolEntries->query()
             ->where('language', $language)
             ->where('is_sponsored', true)
             ->when($categoryIds !== [], fn ($q) => $q->whereIn('category_id', $categoryIds))
             ->when($difficulty !== null, fn ($q) => $q->where('difficulty', $difficulty))
-            ->whereIn('question_id', Question::query()->whereIn('campaign_id', $campaignIds)->select('id'))
+            ->whereIn('question_id', $this->questions->query()->whereIn('campaign_id', $campaignIds)->select('id'))
             ->inRandomOrder()
             ->limit($limit)
             ->pluck('question_id')
@@ -80,17 +85,17 @@ class SponsoredQuestionService
      */
     public function recordDelivery(GameQuestion $gq): ?SponsoredDelivery
     {
-        $question = Question::withTrashed()->find($gq->question_id);
+        $question = $this->questions->withTrashed()->find($gq->question_id);
 
         if (! $question?->is_sponsored || $question->campaign_id === null) {
             return null;
         }
 
-        if ($existing = SponsoredDelivery::query()->where('game_question_id', $gq->id)->first()) {
+        if ($existing = $this->sponsoredDeliveries->query()->where('game_question_id', $gq->id)->first()) {
             return $existing;
         }
 
-        $campaign = Campaign::query()->with('advertiser')->find($question->campaign_id);
+        $campaign = $this->campaigns->query()->with('advertiser')->find($question->campaign_id);
         $game = $gq->game;
 
         if ($campaign === null) {
@@ -108,12 +113,12 @@ class SponsoredQuestionService
                 'question_id' => $question->id,
             ]);
 
-            return SponsoredDelivery::query()->create([
+            return $this->sponsoredDeliveries->query()->create([
                 'game_question_id' => $gq->id,
                 'campaign_id' => $campaign->id,
                 'question_id' => $question->id,
                 'room_id' => $game->room_id,
-                'players_count' => RoomPlayer::query()->where('room_id', $game->room_id)->whereNull('left_at')->count(),
+                'players_count' => $this->roomPlayers->query()->where('room_id', $game->room_id)->whereNull('left_at')->count(),
                 'language' => $gq->language,
                 'category_id' => $question->category_id,
                 'billing_reference' => $reference,
@@ -126,7 +131,7 @@ class SponsoredQuestionService
 
             return null;
         } catch (UniqueConstraintViolationException) {
-            return SponsoredDelivery::query()->where('game_question_id', $gq->id)->first();
+            return $this->sponsoredDeliveries->query()->where('game_question_id', $gq->id)->first();
         }
     }
 }

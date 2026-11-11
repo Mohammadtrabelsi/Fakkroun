@@ -4,14 +4,16 @@ namespace App\Domain\Gameplay;
 
 use App\Domain\Gameplay\Enums\RoomStatus;
 use App\Domain\Gameplay\Models\Room;
-use App\Domain\Gameplay\Models\RoomPlayer;
 use App\Domain\Questions\Enums\Difficulty;
 use App\Exceptions\DomainActionException;
 use App\Models\Category;
 use App\Models\User;
+use App\Services\CategoryService;
+use App\Services\Concerns\ManagesModel;
 use App\Services\PlatformSettings;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\UniqueConstraintViolationException;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -23,9 +25,14 @@ use Illuminate\Validation\Rule;
  */
 class RoomService
 {
+    /** @use ManagesModel<Room> */
+    use ManagesModel;
+
     public function __construct(
         private readonly PlatformSettings $settings,
         private readonly RoomCodeGenerator $codes,
+        private readonly RoomPlayerService $roomPlayers,
+        private readonly CategoryService $categories,
     ) {}
 
     /**
@@ -89,7 +96,7 @@ class RoomService
                 ],
             ]);
 
-            RoomPlayer::query()->create(['room_id' => $room->id, 'user_id' => $host->id, 'joined_at' => now(), 'last_seen_at' => now()]);
+            $this->roomPlayers->query()->create(['room_id' => $room->id, 'user_id' => $host->id, 'joined_at' => now(), 'last_seen_at' => now()]);
 
             return $room;
         });
@@ -98,7 +105,7 @@ class RoomService
     /**
      * Public rooms still waiting for players, newest first (lobby "Open rooms").
      *
-     * @return \Illuminate\Support\Collection<int, Room>
+     * @return Collection<int, Room>
      */
     public function openRooms(int $limit = 8)
     {
@@ -153,7 +160,7 @@ class RoomService
         return DB::transaction(function () use ($room, $user): Room {
             /** @var Room $locked */
             $locked = Room::query()->whereKey($room->id)->lockForUpdate()->firstOrFail();
-            $membership = RoomPlayer::query()->where('room_id', $locked->id)->where('user_id', $user->id)->first();
+            $membership = $this->roomPlayers->query()->where('room_id', $locked->id)->where('user_id', $user->id)->first();
 
             if ($membership !== null && $membership->left_at === null) {
                 return $locked; // already in: joining again is a no-op (refresh, second tab, QR rescan)
@@ -169,14 +176,14 @@ class RoomService
                 throw new DomainActionException(__($locked->status === RoomStatus::InProgress ? 'play.errors.already_started' : 'play.errors.room_closed'));
             }
 
-            $count = RoomPlayer::query()->where('room_id', $locked->id)->whereNull('left_at')->count();
+            $count = $this->roomPlayers->query()->where('room_id', $locked->id)->whereNull('left_at')->count();
 
             if ($count >= $locked->max_players) {
                 throw new DomainActionException(__('play.errors.room_full', ['max' => $locked->max_players]));
             }
 
             try {
-                RoomPlayer::query()->updateOrCreate(
+                $this->roomPlayers->query()->updateOrCreate(
                     ['room_id' => $locked->id, 'user_id' => $user->id],
                     ['joined_at' => now(), 'left_at' => null, 'last_seen_at' => now()],
                 );
@@ -198,13 +205,13 @@ class RoomService
             /** @var Room $locked */
             $locked = Room::query()->whereKey($room->id)->lockForUpdate()->firstOrFail();
 
-            RoomPlayer::query()->where('room_id', $locked->id)->where('user_id', $user->id)->whereNull('left_at')->update(['left_at' => now()]);
+            $this->roomPlayers->query()->where('room_id', $locked->id)->where('user_id', $user->id)->whereNull('left_at')->update(['left_at' => now()]);
 
             if ($locked->status !== RoomStatus::Waiting || $locked->host_id !== $user->id) {
                 return;
             }
 
-            $next = RoomPlayer::query()->where('room_id', $locked->id)->whereNull('left_at')->orderBy('joined_at')->value('user_id');
+            $next = $this->roomPlayers->query()->where('room_id', $locked->id)->whereNull('left_at')->orderBy('joined_at')->value('user_id');
 
             if ($next === null) {
                 $locked->status = RoomStatus::Cancelled;
@@ -218,12 +225,12 @@ class RoomService
 
     public function isMember(Room $room, User $user): bool
     {
-        return RoomPlayer::query()->where('room_id', $room->id)->where('user_id', $user->id)->whereNull('left_at')->exists();
+        return $this->roomPlayers->query()->where('room_id', $room->id)->where('user_id', $user->id)->whereNull('left_at')->exists();
     }
 
     public function playerCount(Room $room): int
     {
-        return RoomPlayer::query()->where('room_id', $room->id)->whereNull('left_at')->count();
+        return $this->roomPlayers->query()->where('room_id', $room->id)->whereNull('left_at')->count();
     }
 
     /**
@@ -240,7 +247,7 @@ class RoomService
      */
     public function touch(Room $room, User $user): void
     {
-        RoomPlayer::query()
+        $this->roomPlayers->query()
             ->where('room_id', $room->id)
             ->where('user_id', $user->id)
             ->whereNull('left_at')
@@ -255,7 +262,7 @@ class RoomService
      */
     public function categoryOptions(): array
     {
-        return Category::query()->roots()->where('is_active', true)->ordered()->get()
+        return $this->categories->query()->roots()->where('is_active', true)->ordered()->get()
             ->mapWithKeys(fn (Category $category) => [$category->id => $category->name])
             ->all();
     }
@@ -267,7 +274,7 @@ class RoomService
      */
     public function defaultCategoryIds(): array
     {
-        return Category::query()->roots()->where('is_active', true)->where('is_default_selected', true)->ordered()
+        return $this->categories->query()->roots()->where('is_active', true)->where('is_default_selected', true)->ordered()
             ->pluck('id')->map(fn ($id) => (int) $id)->all();
     }
 
@@ -278,7 +285,7 @@ class RoomService
     public function minCategories(): int
     {
         $configured = max(1, (int) $this->settings->get('game.min_categories'));
-        $available = Category::query()->roots()->where('is_active', true)->count();
+        $available = $this->categories->query()->roots()->where('is_active', true)->count();
 
         return max(1, min($configured, $available));
     }
@@ -288,5 +295,10 @@ class RoomService
         if (! $user->can('play games')) {
             throw new AuthorizationException;
         }
+    }
+
+    protected function model(): string
+    {
+        return Room::class;
     }
 }

@@ -8,6 +8,7 @@ use App\Domain\Billing\Enums\PaymentStatus;
 use App\Domain\Billing\Models\Payment;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
 use App\Services\PlatformSettings;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +20,9 @@ use Illuminate\Support\Facades\DB;
  */
 class PaymentService
 {
+    /** @use ManagesModel<Payment> */
+    use ManagesModel;
+
     public function __construct(
         private readonly PaymentProvider $provider,
         private readonly PlanService $plans,
@@ -147,5 +151,10 @@ class PaymentService
         ]);
 
         return $this->markPaid($payment);
+    }
+
+    protected function model(): string
+    {
+        return Payment::class;
     }
 }

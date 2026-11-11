@@ -14,13 +14,13 @@ new class extends Component
 {
     public function mount(string $token): void
     {
-        $delivery = AdDelivery::query()->with('creative')->where('token', $token)->first();
+        $delivery = app(\App\Domain\Advertising\AdDeliveryService::class)->query()->with('creative')->where('token', $token)->first();
         $url = $delivery?->creative?->link_url;
 
         abort_if($delivery === null || ! is_string($url) || ! str_starts_with($url, 'https://'), 404);
 
         if (auth()->id() === $delivery->player_id) {
-            AdClick::query()->insertOrIgnore([
+            app(\App\Domain\Advertising\AdClickService::class)->query()->insertOrIgnore([
                 'delivery_id' => $delivery->id,
                 'campaign_id' => $delivery->campaign_id,
                 'creative_id' => $delivery->creative_id,

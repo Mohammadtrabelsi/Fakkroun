@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Domain\Gameplay\Enums\RoomStatus;
-use App\Domain\Gameplay\Models\Room;
+use App\Domain\Gameplay\RoomService;
 use Illuminate\Console\Command;
 
 /**
@@ -18,7 +18,7 @@ class ExpireRooms extends Command
 
     public function handle(): int
     {
-        $count = Room::query()
+        $count = app(RoomService::class)->query()
             ->where('status', RoomStatus::Waiting->value)
             ->whereNotNull('expires_at')
             ->where('expires_at', '<', now())

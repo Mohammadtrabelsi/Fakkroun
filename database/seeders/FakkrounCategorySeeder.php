@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Enums\ValidationPolicy;
-use App\Models\Category;
+use App\Services\CategoryService;
 use Illuminate\Database\Seeder;
 
 /**
@@ -108,14 +108,16 @@ class FakkrounCategorySeeder extends Seeder
 
     public function run(): void
     {
+        $categories = app(CategoryService::class);
+
         foreach (self::CATEGORIES as $position => $category) {
             $priority = in_array($category['slug'], self::PRIORITY, true);
 
-            if (Category::withTrashed()->where('slug', $category['slug'])->exists()) {
+            if ($categories->withTrashed()->where('slug', $category['slug'])->exists()) {
                 continue;
             }
 
-            Category::query()->create([
+            $categories->query()->create([
                 'slug' => $category['slug'],
                 'name' => $category['name'],
                 'description' => $category['description'],

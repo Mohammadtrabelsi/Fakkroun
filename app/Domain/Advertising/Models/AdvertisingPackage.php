@@ -50,36 +50,4 @@ class AdvertisingPackage extends Model
 
         return $slug !== null && isset($defaults[$slug]) ? $defaults[$slug] + ['slug' => $slug] : null;
     }
-
-    /**
-     * Creates the standard tiers that don't exist yet. Never changes a pack an
-     * admin already edited.
-     */
-    public static function ensureDefaults(): void
-    {
-        // Also runs inside a migration, so never fail on settings: fall back to TND.
-        $currency = (string) (rescue(fn () => app(\App\Services\PlatformSettings::class)->get('advertising.currency'), 'TND', report: false) ?: 'TND');
-
-        foreach (self::TIERS as $slug) {
-            $values = self::defaultsFor($slug);
-
-            if ($values !== null && ! self::query()->where('slug', $slug)->exists()) {
-                self::query()->create($values + ['currency' => $currency, 'is_active' => true, 'is_custom' => false]);
-            }
-        }
-    }
-
-    /** Copies the default values back onto a standard tier (admin action). */
-    public function resetToDefault(): bool
-    {
-        $values = self::defaultsFor($this->slug);
-
-        if ($values === null) {
-            return false;
-        }
-
-        unset($values['slug']);
-
-        return $this->forceFill($values)->save();
-    }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\NotificationService;
 use App\Support\Livewire\InteractsWithToasts;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
@@ -26,14 +27,14 @@ new #[Layout('layouts::app')] #[Title('Notifications')] class extends Component
      * Scoped to the signed-in user's own notifications, so an id belonging to
      * someone else resolves to a 404.
      */
-    public function markAsRead(string $id): void
+    public function markAsRead(string $id, NotificationService $notifications): void
     {
-        auth()->user()->notifications()->findOrFail($id)->markAsRead();
+        $notifications->markAsRead(auth()->user(), $id);
     }
 
-    public function markAllAsRead(): void
+    public function markAllAsRead(NotificationService $notifications): void
     {
-        auth()->user()->unreadNotifications()->update(['read_at' => now()]);
+        $notifications->markAllAsRead(auth()->user());
 
         $this->toast(__('notifications.all_marked_read'));
     }
@@ -41,16 +42,13 @@ new #[Layout('layouts::app')] #[Title('Notifications')] class extends Component
     #[Computed]
     public function notifications()
     {
-        return auth()->user()->notifications()
-            ->when($this->filter === 'unread', fn ($query) => $query->whereNull('read_at'))
-            ->latest()
-            ->paginate(15);
+        return app(NotificationService::class)->paginateFor(auth()->user(), 15, $this->filter === 'unread');
     }
 
     #[Computed]
     public function unreadCount(): int
     {
-        return auth()->user()->unreadNotifications()->count();
+        return app(NotificationService::class)->unreadCount(auth()->user());
     }
 
     public function render()

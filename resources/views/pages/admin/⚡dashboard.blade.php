@@ -67,7 +67,7 @@ new #[Layout('layouts::app')] #[Title('Admin Dashboard')] class extends Componen
             return collect();
         }
 
-        return Activity::query()->with('causer')->latest()->latest('id')->limit(4)->get();
+        return app(\App\Services\ActivityLogService::class)->query()->with('causer')->latest()->latest('id')->limit(4)->get();
     }
 
     #[Computed]

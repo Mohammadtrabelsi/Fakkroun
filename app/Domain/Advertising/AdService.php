@@ -7,10 +7,13 @@ use App\Domain\Advertising\Models\AdDelivery;
 use App\Domain\Advertising\Models\Campaign;
 use App\Domain\Advertising\Models\Creative;
 use App\Domain\Advertising\Models\Impression;
+use App\Domain\Gameplay\GameQuestionService;
 use App\Domain\Gameplay\Models\GameQuestion;
 use App\Domain\Gameplay\Models\Room;
+use App\Domain\Gameplay\RoomService;
 use App\Models\Category;
 use App\Models\User;
+use App\Services\CategoryService;
 use App\Services\PlatformSettings;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Support\Facades\DB;
@@ -40,6 +43,11 @@ class AdService
         private readonly PlatformSettings $settings,
         private readonly WalletService $wallets,
         private readonly CampaignService $campaigns,
+        private readonly AdDeliveryService $adDeliveries,
+        private readonly CategoryService $categories,
+        private readonly ImpressionService $impressions,
+        private readonly GameQuestionService $gameQuestions,
+        private readonly RoomService $rooms,
     ) {}
 
     /** Ad under the answer of a closed question. */
@@ -90,7 +98,7 @@ class AdService
         }
 
         try {
-            return AdDelivery::query()->create([
+            return $this->adDeliveries->query()->create([
                 'campaign_id' => $creative->campaign_id,
                 'creative_id' => $creative->id,
                 'room_id' => $room->id,
@@ -119,7 +127,7 @@ class AdService
             return false;
         }
 
-        $mine = AdDelivery::query()->where('player_id', $player->id)->where('room_id', $room->id)->where('placement', 'reveal');
+        $mine = $this->adDeliveries->query()->where('player_id', $player->id)->where('room_id', $room->id)->where('placement', 'reveal');
 
         if ((clone $mine)->count() >= (int) $ads['max_per_player_per_game']) {
             return false;
@@ -159,7 +167,7 @@ class AdService
         return [
             'category_ids' => $categoryIds,
             'language' => $language,
-            'text' => Category::query()->whereIn('id', $categoryIds)->get()
+            'text' => $this->categories->query()->whereIn('id', $categoryIds)->get()
                 ->map(fn (Category $c) => $c->getTranslation('name', $language, false))
                 ->filter()->implode(' '),
         ];
@@ -172,19 +180,19 @@ class AdService
      */
     public function confirm(string $token, User $player): ?Impression
     {
-        $delivery = AdDelivery::query()->with(['campaign.advertiser'])->where('token', $token)->first();
+        $delivery = $this->adDeliveries->query()->with(['campaign.advertiser'])->where('token', $token)->first();
 
         if ($delivery === null || $delivery->player_id !== $player->id || $delivery->expires_at->isPast()) {
             return null;
         }
 
-        if ($existing = Impression::query()->where('delivery_id', $delivery->id)->first()) {
+        if ($existing = $this->impressions->query()->where('delivery_id', $delivery->id)->first()) {
             return $existing;
         }
 
         $reference = 'impression:'.$delivery->id;
-        $gq = $delivery->game_question_id ? GameQuestion::query()->find($delivery->game_question_id) : null;
-        $room = $gq ? null : Room::query()->find($delivery->room_id);
+        $gq = $delivery->game_question_id ? $this->gameQuestions->query()->find($delivery->game_question_id) : null;
+        $room = $gq ? null : $this->rooms->query()->find($delivery->room_id);
 
         try {
             return DB::transaction(function () use ($delivery, $reference, $gq, $room): Impression {
@@ -197,7 +205,7 @@ class AdService
                     'player_id' => $delivery->player_id,
                 ]);
 
-                return Impression::query()->firstOrCreate(['delivery_id' => $delivery->id], [
+                return $this->impressions->query()->firstOrCreate(['delivery_id' => $delivery->id], [
                     'campaign_id' => $delivery->campaign_id,
                     'creative_id' => $delivery->creative_id,
                     'player_id' => $delivery->player_id,
@@ -216,13 +224,13 @@ class AdService
 
             return null;
         } catch (UniqueConstraintViolationException) {
-            return Impression::query()->where('delivery_id', $delivery->id)->first();
+            return $this->impressions->query()->where('delivery_id', $delivery->id)->first();
         }
     }
 
     private function delivery(User $player, string $slot): ?AdDelivery
     {
-        return AdDelivery::query()->where('player_id', $player->id)->where('slot', $slot)->first();
+        return $this->adDeliveries->query()->where('player_id', $player->id)->where('slot', $slot)->first();
     }
 
     /**
@@ -237,13 +245,13 @@ class AdService
     private function pick(array $context, User $player, int $roomId, array $ads): ?Creative
     {
         $language = $context['language'];
-        $campaigns = Campaign::query()->running()
+        $campaigns = $this->campaigns->query()->running()
             ->whereHas('advertiser.wallets', fn ($q) => $q->where('credit_type', CreditType::Impression->value)->where('balance', '>', 0))
             ->with(['creatives' => fn ($q) => $q->where('status', 'approved')->whereIn('format', ['banner', 'logo'])
                 ->where(fn ($w) => $w->whereNull('language')->orWhere('language', $language))])
             ->get()
             ->filter(fn (Campaign $c) => $c->targetsAny($context['category_ids'], $language))
-            ->filter(fn (Campaign $c) => AdDelivery::query()->where('campaign_id', $c->id)->where('player_id', $player->id)->where('room_id', $roomId)->count() < $c->max_per_player_per_game);
+            ->filter(fn (Campaign $c) => $this->adDeliveries->query()->where('campaign_id', $c->id)->where('player_id', $player->id)->where('room_id', $roomId)->count() < $c->max_per_player_per_game);
 
         $creativeIds = $campaigns->flatMap(fn (Campaign $c) => $c->creatives->pluck('id'))->all();
 
@@ -251,7 +259,7 @@ class AdService
             return null;
         }
 
-        $seenToday = AdDelivery::query()
+        $seenToday = $this->adDeliveries->query()
             ->where('player_id', $player->id)
             ->whereIn('creative_id', $creativeIds)
             ->where('issued_at', '>=', now()->startOfDay())

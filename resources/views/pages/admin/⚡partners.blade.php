@@ -1,8 +1,7 @@
 <?php
 
-use App\Models\Partner;
+use App\Services\PartnerService;
 use App\Support\Livewire\InteractsWithToasts;
-use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
@@ -38,12 +37,12 @@ new #[Layout('layouts::app')] #[Title('Partners')] class extends Component
     #[Computed]
     public function partners()
     {
-        return Partner::query()->orderBy('sort_order')->orderBy('id')->get();
+        return app(PartnerService::class)->ordered();
     }
 
-    public function edit(int $id): void
+    public function edit(int $id, PartnerService $partners): void
     {
-        $partner = Partner::query()->findOrFail($id);
+        $partner = $partners->findOrFail($id);
         $this->editingId = $partner->id;
         $this->name = $partner->name;
         $this->url = (string) $partner->url;
@@ -59,7 +58,7 @@ new #[Layout('layouts::app')] #[Title('Partners')] class extends Component
         $this->resetErrorBag();
     }
 
-    public function save(): void
+    public function save(PartnerService $partners): void
     {
         $this->authorize('manage advertising');
 
@@ -72,39 +71,22 @@ new #[Layout('layouts::app')] #[Title('Partners')] class extends Component
             'logo' => ['nullable', 'image', 'mimes:png,jpg,jpeg,webp,svg', 'max:1024'],
         ]);
 
-        $partner = $this->editingId ? Partner::query()->findOrFail($this->editingId) : new Partner;
-        $partner->fill([
+        $partners->savePartner($this->editingId ? $partners->findOrFail($this->editingId) : null, [
             'name' => $data['name'],
             'url' => $data['url'] ?: null,
             'type' => $data['type'],
             'sort_order' => $data['sortOrder'],
             'is_active' => $data['isActive'],
-        ]);
+        ], $this->logo);
 
-        if ($this->logo) {
-            $previous = $partner->logo_path;
-            $partner->logo_path = $this->logo->storePublicly('partners', 'public');
-
-            if ($previous) {
-                Storage::disk('public')->delete($previous);
-            }
-        }
-
-        $partner->save();
         $this->cancel();
         $this->toast(__('partners.saved'));
     }
 
-    public function delete(int $id): void
+    public function delete(int $id, PartnerService $partners): void
     {
         $this->authorize('manage advertising');
-        $partner = Partner::query()->findOrFail($id);
-
-        if ($partner->logo_path) {
-            Storage::disk('public')->delete($partner->logo_path);
-        }
-
-        $partner->delete();
+        $partners->delete($partners->findOrFail($id));
         $this->toast(__('partners.deleted'));
     }
 };

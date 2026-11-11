@@ -8,6 +8,7 @@ use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\Models\QuestionReport;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\RateLimiter;
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\RateLimiter;
  */
 class ReportService
 {
+    /** @use ManagesModel<QuestionReport> */
+    use ManagesModel;
+
     public function __construct(
         private readonly ModerationService $moderation,
         private readonly ModerationLogger $logger,
@@ -91,5 +95,10 @@ class ReportService
             ->with(['question.translations', 'question.category', 'reporter:id,name'])
             ->latest('id')
             ->paginate($perPage, pageName: 'reports');
+    }
+
+    protected function model(): string
+    {
+        return QuestionReport::class;
     }
 }

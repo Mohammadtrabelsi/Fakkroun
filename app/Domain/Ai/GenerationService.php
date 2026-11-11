@@ -5,13 +5,12 @@ namespace App\Domain\Ai;
 use App\Domain\Ai\Contracts\QuestionGenerator;
 use App\Domain\Ai\Jobs\GenerateQuestionBatch;
 use App\Domain\Ai\Models\AiGenerationBatch;
-use App\Domain\Ai\Models\AiGenerationItem;
 use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\Models\Question;
 use App\Domain\Questions\QuestionService;
-use App\Models\Category;
 use App\Models\User;
+use App\Services\CategoryService;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
@@ -28,6 +27,9 @@ class GenerationService
         private readonly QuestionGenerator $generator,
         private readonly QuestionService $questions,
         private readonly QuestionDrafter $drafter,
+        private readonly AiGenerationBatchService $aiBatches,
+        private readonly CategoryService $categories,
+        private readonly AiGenerationItemService $aiItems,
     ) {}
 
     /**
@@ -52,7 +54,7 @@ class GenerationService
             'require_reference' => ['boolean'],
         ])->validate();
 
-        $batch = AiGenerationBatch::query()->create([
+        $batch = $this->aiBatches->query()->create([
             'user_id' => $admin->id,
             'kind' => 'batch',
             'provider' => $this->generator->provider(),
@@ -79,8 +81,8 @@ class GenerationService
 
         $batch->forceFill(['status' => 'running', 'started_at' => now()])->save();
         $params = $batch->parameters;
-        $category = Category::query()->findOrFail($params['category_id']);
-        $subcategory = filled($params['subcategory_id'] ?? null) ? Category::query()->find($params['subcategory_id']) : null;
+        $category = $this->categories->query()->findOrFail($params['category_id']);
+        $subcategory = filled($params['subcategory_id'] ?? null) ? $this->categories->query()->find($params['subcategory_id']) : null;
         $chunk = max(1, (int) config('fakkroun.ai.chunk_size', 10));
         $ceiling = (float) config('fakkroun.ai.batch_cost_ceiling', 20.0);
         $status = config('fakkroun.ai.initial_status') === 'pending' ? QuestionStatus::Pending : QuestionStatus::Draft;
@@ -154,12 +156,12 @@ class GenerationService
         try {
             $question = $this->questions->create($data, $author, QuestionSource::Ai, $status);
             $batch->accepted_count++;
-            AiGenerationItem::query()->create(['batch_id' => $batch->id, 'payload' => $item, 'outcome' => 'accepted', 'question_id' => $question->id]);
+            $this->aiItems->query()->create(['batch_id' => $batch->id, 'payload' => $item, 'outcome' => 'accepted', 'question_id' => $question->id]);
         } catch (ValidationException $e) {
             $messages = array_values($e->validator->errors()->all());
             $duplicate = $messages === [__('questions.errors.duplicate')];
             $duplicate ? $batch->duplicate_count++ : $batch->rejected_count++;
-            AiGenerationItem::query()->create(['batch_id' => $batch->id, 'payload' => $item, 'outcome' => $duplicate ? 'duplicate' : 'invalid', 'messages' => $messages]);
+            $this->aiItems->query()->create(['batch_id' => $batch->id, 'payload' => $item, 'outcome' => $duplicate ? 'duplicate' : 'invalid', 'messages' => $messages]);
         }
 
         $batch->save();
@@ -174,6 +176,6 @@ class GenerationService
     {
         $ids = $batch->items()->whereNotNull('question_id')->latest('id')->limit(30)->pluck('question_id');
 
-        return Question::query()->whereIn('id', $ids)->with('translations')->get()->map(fn (Question $q) => $q->label())->all();
+        return $this->questions->query()->whereIn('id', $ids)->with('translations')->get()->map(fn (Question $q) => $q->label())->all();
     }
 }

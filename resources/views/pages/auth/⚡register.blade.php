@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use App\Services\UserService;
 use App\Support\Auth\LoginIdentifier;
 use App\Support\Auth\PostLoginRedirect;
@@ -49,7 +48,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Create account')] class ex
                     }
                 },
                 function (string $attribute, mixed $value, \Closure $fail): void {
-                    if (User::withTrashed()->where('phone', LoginIdentifier::normalizePhone((string) $value))->exists()) {
+                    if (app(\App\Services\UserService::class)->phoneTaken((string) $value)) {
                         $fail(__('register.phone_taken'));
                     }
                 },

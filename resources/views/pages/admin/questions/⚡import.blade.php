@@ -82,7 +82,7 @@ new #[Layout('layouts::app')] #[Title('Import questions')] class extends Compone
     #[Computed]
     public function batches()
     {
-        return QuestionImportBatch::query()->with('user:id,name')->latest('id')->paginate(10);
+        return app(\App\Domain\Questions\QuestionImportBatchService::class)->query()->with('user:id,name')->latest('id')->paginate(10);
     }
 
     public function runPreview(QuestionImportService $imports): void

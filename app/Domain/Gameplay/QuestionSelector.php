@@ -5,6 +5,7 @@ namespace App\Domain\Gameplay;
 use App\Domain\Gameplay\Models\GameQuestion;
 use App\Domain\Gameplay\Models\PlayerAnswer;
 use App\Domain\Questions\Models\QuestionPoolEntry;
+use App\Domain\Questions\QuestionPoolEntryService;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\DB;
  */
 class QuestionSelector
 {
+    public function __construct(
+        private readonly QuestionPoolEntryService $poolEntries,
+    ) {}
+
     /**
      * @param  array<int, int>  $categoryIds  top-level category ids
      * @param  array<int, int>  $playerIds
@@ -32,7 +37,7 @@ class QuestionSelector
         }
 
         if ($chosen !== []) {
-            QuestionPoolEntry::query()->whereIn('question_id', $chosen)->where('language', $language)->get()
+            $this->poolEntries->query()->whereIn('question_id', $chosen)->where('language', $language)->get()
                 ->each(fn (QuestionPoolEntry $entry) => $entry->forceFill([
                     'random_key' => mt_rand() / mt_getrandmax(),
                     'last_served_at' => now(),
@@ -87,7 +92,7 @@ class QuestionSelector
      */
     private function baseQuery(string $language, array $categoryIds, ?string $difficulty)
     {
-        return QuestionPoolEntry::query()
+        return $this->poolEntries->query()
             ->where('language', $language)
             // Sponsored questions are added separately, within their per-game limit.
             ->where('is_sponsored', false)

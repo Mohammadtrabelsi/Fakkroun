@@ -119,7 +119,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
      */
     public function downloadPdf(int $postId, PdfService $pdf): StreamedResponse
     {
-        $post = Post::findOrFail($postId);
+        $post = app(\App\Services\PostService::class)->findOrFail($postId);
         $this->authorize('view', $post);
 
         $post->loadMissing(['author', 'category', 'tags']);
@@ -129,7 +129,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
 
     public function deletePost(int $postId, PostService $posts): void
     {
-        $post = Post::findOrFail($postId);
+        $post = app(\App\Services\PostService::class)->findOrFail($postId);
         $this->authorize('delete', $post);
 
         $posts->delete($post);
@@ -139,7 +139,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
 
     public function restorePost(int $postId, PostService $posts): void
     {
-        $post = Post::onlyTrashed()->findOrFail($postId);
+        $post = app(\App\Services\PostService::class)->onlyTrashed()->findOrFail($postId);
         $this->authorize('restore', $post);
 
         $posts->restore($post);
@@ -149,7 +149,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
 
     public function forceDeletePost(int $postId, PostService $posts): void
     {
-        $post = Post::onlyTrashed()->findOrFail($postId);
+        $post = app(\App\Services\PostService::class)->onlyTrashed()->findOrFail($postId);
         $this->authorize('forceDelete', $post);
 
         $posts->forceDelete($post);
@@ -169,7 +169,7 @@ new #[Layout('layouts::app')] #[Title('Posts')] class extends Component
         $user = auth()->user();
         $done = 0;
 
-        foreach (Post::withTrashed()->whereIn('id', $this->selected)->get() as $post) {
+        foreach (app(\App\Services\PostService::class)->withTrashed()->whereIn('id', $this->selected)->get() as $post) {
             if ($user->cannot($ability, $post)) {
                 continue;
             }

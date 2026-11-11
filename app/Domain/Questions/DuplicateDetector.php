@@ -3,7 +3,6 @@
 namespace App\Domain\Questions;
 
 use App\Domain\Questions\Contracts\SimilarQuestionFinder;
-use App\Domain\Questions\Models\QuestionTranslation;
 
 /**
  * Duplicate detection (spec §8).
@@ -15,7 +14,10 @@ use App\Domain\Questions\Models\QuestionTranslation;
  */
 class DuplicateDetector
 {
-    public function __construct(private readonly SimilarQuestionFinder $finder) {}
+    public function __construct(
+        private readonly SimilarQuestionFinder $finder,
+        private readonly QuestionTranslationService $questionTranslations,
+    ) {}
 
     /**
      * @param  array<int, string>  $choices
@@ -35,7 +37,7 @@ class DuplicateDetector
      */
     public function exactMatches(string $language, string $hash, ?int $exceptQuestionId = null): array
     {
-        return QuestionTranslation::query()
+        return $this->questionTranslations->query()
             ->where('language', $language)
             ->where('content_hash', $hash)
             ->when($exceptQuestionId, fn ($query) => $query->where('question_id', '!=', $exceptQuestionId))

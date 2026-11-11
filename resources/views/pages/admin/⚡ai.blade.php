@@ -58,7 +58,7 @@ new #[Layout('layouts::app')] #[Title('AI generation')] class extends Component
     #[Computed]
     public function batches()
     {
-        return AiGenerationBatch::query()->with('user:id,name')->latest('id')->paginate(10);
+        return app(\App\Domain\Ai\AiGenerationBatchService::class)->query()->with('user:id,name')->latest('id')->paginate(10);
     }
 
     public function start(GenerationService $generation): void

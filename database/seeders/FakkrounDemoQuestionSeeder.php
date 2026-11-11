@@ -6,7 +6,8 @@ use App\Domain\Questions\Enums\QuestionSource;
 use App\Domain\Questions\Enums\QuestionStatus;
 use App\Domain\Questions\QuestionService;
 use App\Models\Category;
-use App\Models\User;
+use App\Services\CategoryService;
+use App\Services\UserService;
 use Illuminate\Database\Seeder;
 use Illuminate\Validation\ValidationException;
 
@@ -62,7 +63,7 @@ class FakkrounDemoQuestionSeeder extends Seeder
 
     public function run(): void
     {
-        $admin = User::role('admin')->first();
+        $admin = app(UserService::class)->query()->role('admin')->first();
 
         if ($admin === null) {
             $this->command?->warn('No admin user: skipping sample questions.');
@@ -71,10 +72,11 @@ class FakkrounDemoQuestionSeeder extends Seeder
         }
 
         $questions = app(QuestionService::class);
+        $categories = app(CategoryService::class);
         $created = 0;
 
         foreach (self::QUESTIONS as $index => [$slug, $difficulty, $correct, $texts]) {
-            $category = Category::query()->where('slug', $slug)->first();
+            $category = $categories->findBy('slug', $slug);
 
             if ($category === null) {
                 continue;

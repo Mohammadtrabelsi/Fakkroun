@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Post;
 use App\Models\Tag;
+use App\Services\Concerns\ManagesModel;
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\UploadedFile;
@@ -15,6 +16,9 @@ use Illuminate\Support\LazyCollection;
 
 class PostService
 {
+    /** @use ManagesModel<Post> */
+    use ManagesModel;
+
     public const COVER_DIRECTORY = 'posts';
 
     /** @var array<int, string> */
@@ -315,5 +319,10 @@ class PostService
         unset($data['tags']);
 
         return $tags;
+    }
+
+    protected function model(): string
+    {
+        return Post::class;
     }
 }

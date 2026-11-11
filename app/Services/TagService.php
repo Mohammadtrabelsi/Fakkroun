@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Post;
 use App\Models\Tag;
+use App\Services\Concerns\ManagesModel;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 
@@ -13,6 +14,9 @@ use Illuminate\Support\Str;
  */
 class TagService
 {
+    /** @use ManagesModel<Tag> */
+    use ManagesModel;
+
     /** Longest tag name accepted. */
     public const MAX_LENGTH = 50;
 
@@ -161,5 +165,10 @@ class TagService
             ->map(fn ($name) => trim((string) $name))
             ->filter(fn (string $name) => $name !== '')
             ->all();
+    }
+
+    protected function model(): string
+    {
+        return Tag::class;
     }
 }

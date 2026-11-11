@@ -4,11 +4,11 @@ namespace App\Domain\Advertising;
 
 use App\Domain\Advertising\Enums\CreditType;
 use App\Domain\Advertising\Models\Advertiser;
-use App\Domain\Advertising\Models\AdvertisingPackage;
 use App\Domain\Advertising\Models\Invoice;
 use App\Domain\Advertising\Models\LedgerEntry;
 use App\Exceptions\DomainActionException;
 use App\Models\User;
+use App\Services\Concerns\ManagesModel;
 use App\Services\PlatformSettings;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\UniqueConstraintViolationException;
@@ -29,7 +29,15 @@ use Illuminate\Support\Facades\DB;
  */
 class InvoiceService
 {
-    public function __construct(private readonly PlatformSettings $settings) {}
+    /** @use ManagesModel<Invoice> */
+    use ManagesModel;
+
+    public function __construct(
+        private readonly PlatformSettings $settings,
+        private readonly AdvertiserService $advertisers,
+        private readonly AdvertisingPackageService $advertisingPackages,
+        private readonly LedgerEntryService $ledgerEntries,
+    ) {}
 
     public function issueForPurchase(LedgerEntry $payment, ?User $actor = null): Invoice
     {
@@ -41,8 +49,8 @@ class InvoiceService
             return $existing;
         }
 
-        $advertiser = Advertiser::query()->with('user')->findOrFail($payment->advertiser_id);
-        $package = $payment->package_id ? AdvertisingPackage::query()->find($payment->package_id) : null;
+        $advertiser = $this->advertisers->query()->with('user')->findOrFail($payment->advertiser_id);
+        $package = $payment->package_id ? $this->advertisingPackages->query()->find($payment->package_id) : null;
 
         return $this->create([
             'kind' => 'invoice',
@@ -100,7 +108,7 @@ class InvoiceService
     public function statement(Advertiser $advertiser, string $month): array
     {
         $start = Carbon::createFromFormat('Y-m', $month)->startOfMonth();
-        $entries = LedgerEntry::query()
+        $entries = $this->ledgerEntries->query()
             ->where('advertiser_id', $advertiser->id)
             ->whereIn('entry_type', ['consumption', 'reversal'])
             ->whereBetween('created_at', [$start, $start->copy()->endOfMonth()])
@@ -176,5 +184,10 @@ class InvoiceService
                 }
             }
         }
+    }
+
+    protected function model(): string
+    {
+        return Invoice::class;
     }
 }
