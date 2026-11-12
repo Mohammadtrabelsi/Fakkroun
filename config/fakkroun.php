@@ -290,6 +290,8 @@ return [
         'poll_seconds' => 1,
         // Questions a player answered within this many days are avoided when possible.
         'recent_question_days' => 30,
+        // Extra questions added at most, one at a time, while first place is tied (0 turns it off).
+        'tie_break_questions' => (int) env('FAKKROUN_TIE_BREAK_QUESTIONS', 3),
     ],
 
     /*

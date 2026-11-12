@@ -139,6 +139,8 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
             'languageLabel' => (string) config('app.available_locales.'.$language.'.label', $language),
             'pollSeconds' => max(1, (int) config('fakkroun.gameplay.poll_seconds', 1)),
             'invitationUrl' => $this->room->invitationUrl(),
+            // Waiting room only: the invitation link as a scannable code.
+            'qr' => $state === null ? app(RoomService::class)->invitationQr($this->room) : null,
             'whatsappUrl' => 'https://wa.me/?text='.rawurlencode(__('play.room.share_text', ['code' => $this->room->code]).' '.$this->room->invitationUrl()),
             'lobbyPlayers' => $data['players']->values()->map(fn ($player, int $index): array => [
                 'id' => $player->id,
@@ -257,9 +259,20 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
             <div class="flex flex-wrap items-start gap-6">
                 <section class="flex min-w-0 flex-[999_1_620px] flex-col items-start gap-6 rounded-[28px] bg-sea-deep-2 p-[clamp(20px,3vw,36px)]">
                     <h1 class="fk-h2 m-0 text-[clamp(30px,8vw,40px)]">{{ __('play.game2.waiting_title') }}</h1>
-                    <div class="flex flex-col gap-1">
-                        <span class="text-sm font-semibold tracking-[.08em] text-sun uppercase">{{ __('play.game2.code_label') }}</span>
-                        <span class="font-display text-[clamp(40px,13vw,120px)] leading-none font-extrabold tracking-[0.12em]">{{ $room->code }}</span>
+                    <div class="flex w-full flex-wrap items-center justify-between gap-6">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-sm font-semibold tracking-[.08em] text-sun uppercase">{{ __('play.game2.code_label') }}</span>
+                            <span class="font-display text-[clamp(40px,13vw,120px)] leading-none font-extrabold tracking-[0.12em]">{{ $room->code }}</span>
+                        </div>
+                        @if ($qr)
+                            {{-- wire:ignore: the code never changes, no need to re-send it on every poll. --}}
+                            <figure class="m-0 flex flex-col items-center gap-2" wire:ignore>
+                                <svg viewBox="0 0 {{ $qr['size'] }} {{ $qr['size'] }}" role="img" aria-label="{{ __('play.room.qr_label') }}" shape-rendering="crispEdges" class="size-[clamp(168px,22vw,232px)] rounded-2xl bg-white text-black">
+                                    <path d="{{ $qr['path'] }}" fill="currentColor" />
+                                </svg>
+                                <figcaption class="max-w-[232px] text-center text-sm text-sea-mist">{{ __('play.room.qr_hint') }}</figcaption>
+                            </figure>
+                        @endif
                     </div>
                     <div class="flex w-full flex-wrap gap-2" x-data="{ copied: false, url: @js($invitationUrl) }">
                         <input type="text" readonly value="{{ $invitationUrl }}" aria-label="{{ __('play.room.invite') }}" class="min-h-11 min-w-0 flex-1 rounded-xl border-2 border-sea-line bg-sea-deep px-3 text-sea-mist">
@@ -315,6 +328,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                             <span class="inline-flex items-center gap-2 rounded-full bg-tint-sea px-3.5 py-2 text-[15px] font-semibold text-[#0B5A55]">{{ $state['category'] }} · {{ __('questions.difficulty.'.$state['question']['difficulty']) }}</span>
                             @if ($state['sponsor'])<span class="rounded-full bg-sun px-3 py-1.5 text-sm font-semibold text-ink">{{ __('advertising.sponsored_by', ['name' => $state['sponsor']]) }}</span>@endif
                             @if ($state['round_sponsor'] ?? null)<span class="rounded-full bg-sun px-3 py-1.5 text-sm font-semibold text-ink">{{ __('advertising.round_presented_by', ['name' => $state['round_sponsor']]) }}</span>@endif
+                            @if ($state['tie_breaker'])<span class="rounded-full bg-sun px-3 py-1.5 text-sm font-semibold text-ink">{{ __('play.game2.tie_breaker') }}</span>@endif
                             <span class="text-sea-mist">{{ __('play.game.question_of', ['n' => $state['position'], 'total' => $state['total']]) }}</span>
                         </div>
                         @if ($state['phase'] === 'question')
@@ -333,6 +347,9 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                     @if (($state['round_intro'] ?? false) && $state['phase'] === 'question')
                         {{-- Sponsored round intro (story 16 S12): labelled, never covering answers or the timer. --}}
                         <p role="note" class="m-0 rounded-2xl border-2 border-sun bg-sea-deep-2 px-4 py-2 text-[15px] font-semibold text-sun">{{ __('advertising.round_intro', ['name' => $state['round_sponsor']]) }}</p>
+                    @endif
+                    @if ($state['tie_breaker'] && $state['phase'] === 'question')
+                        <p role="note" class="m-0 rounded-2xl border-2 border-sun bg-sea-deep-2 px-4 py-2 text-[15px] font-semibold text-sun">{{ __('play.game2.tie_breaker_intro') }}</p>
                     @endif
                     <h1 class="m-0 font-display text-[clamp(26px,3.4vw,44px)] leading-[1.15] font-bold text-balance" dir="{{ $dir }}">{{ $state['question']['body'] }}</h1>
 

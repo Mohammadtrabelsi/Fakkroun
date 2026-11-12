@@ -11,9 +11,11 @@ use App\Models\User;
 use App\Services\CategoryService;
 use App\Services\Concerns\ManagesModel;
 use App\Services\PlatformSettings;
+use App\Support\QrCode\QrCode;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -33,6 +35,7 @@ class RoomService
         private readonly RoomCodeGenerator $codes,
         private readonly RoomPlayerService $roomPlayers,
         private readonly CategoryService $categories,
+        private readonly GuestPlayers $guests,
     ) {}
 
     /**
@@ -192,6 +195,45 @@ class RoomService
             }
 
             return $locked;
+        });
+    }
+
+    /**
+     * Joins as a nickname-only guest player (invitation link, QR code). The
+     * throwaway account only stays when the player really got into the room.
+     *
+     * @throws \DomainException when the room cannot be joined
+     */
+    public function joinAsGuest(Room $room, string $nickname): User
+    {
+        $guest = $this->guests->create($nickname);
+
+        try {
+            $this->join($room, $guest);
+        } catch (\DomainException|AuthorizationException $e) {
+            $guest->forceDelete();
+
+            throw $e;
+        }
+
+        return $guest;
+    }
+
+    /**
+     * The room's invitation link as a QR code, ready for an inline SVG:
+     * the side of the view box and the path of the dark modules.
+     *
+     * @return array{size: int, path: string}
+     */
+    public function invitationQr(Room $room): array
+    {
+        $url = $room->invitationUrl();
+
+        // The waiting room polls every second: encode once per link.
+        return Cache::remember('rooms:invitation-qr:'.sha1($url), now()->addDay(), function () use ($url): array {
+            $qr = QrCode::encode($url);
+
+            return ['size' => $qr->viewBoxSize(), 'path' => $qr->svgPath()];
         });
     }
 

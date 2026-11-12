@@ -35,7 +35,7 @@ One complete loop: **write a question → moderate it → play it live with frie
 These are listed so nobody mistakes them for finished features. Each has a next-step file.
 
 1. **Polling instead of WebSockets.** The room page polls every second (`wire:poll`), which is simple and robust but heavier than broadcasting. → [`04`](04-next-step-realtime-reverb.md)
-2. **No QR code image yet.** The invitation link, copy, share and WhatsApp work; the QR picture needs a library. → [`05`](05-next-step-qr-codes.md)
+2. ~~No QR code image yet.~~ Done: the waiting room shows a QR code of the invitation link. → [`05`](05-next-step-qr-codes.md)
 3. **No import screen.** The service, job and tests exist. (done since: **Admin → Questions → Import**)
 4. **One language per room.** Everyone plays in the room's language. Each player's own question language is a next step. → [`07`](07-next-step-gameplay-depth.md)
 5. **One difficulty or "any".** Difficulty *distribution* (e.g. 50/30/20) is a next step. → [`07`](07-next-step-gameplay-depth.md)

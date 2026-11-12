@@ -29,6 +29,8 @@
         <env name="SITEMAP_REGENERATE_ON_CHANGE" value="false"/>
         <!-- Livewire tests submit forms instantly; HoneypotTest re-enables the timing check. -->
         <env name="HONEYPOT_SECONDS" value="0"/>
+        <!-- Games end after their planned questions; TieBreakerTest turns tie-breakers back on. -->
+        <env name="FAKKROUN_TIE_BREAK_QUESTIONS" value="0"/>
         <env name="PULSE_ENABLED" value="false"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="NIGHTWATCH_ENABLED" value="false"/>

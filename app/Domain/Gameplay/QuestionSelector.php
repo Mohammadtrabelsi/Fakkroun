@@ -25,15 +25,16 @@ class QuestionSelector
     /**
      * @param  array<int, int>  $categoryIds  top-level category ids
      * @param  array<int, int>  $playerIds
+     * @param  array<int, int>  $exclude  question ids never to pick (already in the game)
      * @return array<int, int> question ids, in play order
      */
-    public function select(string $language, array $categoryIds, ?string $difficulty, int $count, array $playerIds = []): array
+    public function select(string $language, array $categoryIds, ?string $difficulty, int $count, array $playerIds = [], array $exclude = []): array
     {
         $recent = $this->recentlySeen($playerIds);
-        $chosen = $this->draw($language, $categoryIds, $difficulty, $count, $recent);
+        $chosen = $this->draw($language, $categoryIds, $difficulty, $count, [...$recent, ...$exclude]);
 
         if (count($chosen) < $count && $recent !== []) {
-            $chosen = [...$chosen, ...$this->draw($language, $categoryIds, $difficulty, $count - count($chosen), $chosen)];
+            $chosen = [...$chosen, ...$this->draw($language, $categoryIds, $difficulty, $count - count($chosen), [...$chosen, ...$exclude])];
         }
 
         if ($chosen !== []) {
