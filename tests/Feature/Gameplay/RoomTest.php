@@ -70,15 +70,16 @@ class RoomTest extends GameplayTestCase
         }
     }
 
-    public function test_invitation_link_sends_visitors_to_the_join_page_then_joins(): void
+    public function test_invitation_link_opens_the_invitation_page_without_joining(): void
     {
         $room = $this->room($this->player());
         $guest = $this->player();
 
-        $this->get(route('rooms.invitation', $room->code))->assertRedirect(route('rooms.join', ['code' => $room->code]));
+        // Visitors pick a nickname there; signed-in players confirm (RoomInvitationTest).
+        $this->get(route('rooms.invitation', $room->code))->assertOk()->assertSee(__('play.invitation.submit'));
 
-        $this->actingAs($guest)->get(route('rooms.invitation', $room->code))->assertRedirect(route('rooms.show', $room));
-        $this->assertTrue(app(RoomService::class)->isMember($room, $guest));
+        $this->actingAs($guest)->get(route('rooms.invitation', $room->code))->assertOk()->assertSee(__('play.invitation.submit'));
+        $this->assertFalse(app(RoomService::class)->isMember($room, $guest));
     }
 
     public function test_invitation_with_an_unknown_code_explains_the_problem(): void

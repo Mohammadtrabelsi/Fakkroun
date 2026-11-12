@@ -39,6 +39,19 @@ return [
         'guest_cta_button' => 'Créer un compte',
         'or_create' => 'Vous préférez organiser une partie ?',
     ],
+    'invitation' => [
+        'eyebrow' => 'Vous êtes invité',
+        'hosted_by' => 'Organisée par :name',
+        'name_title' => 'Comment vous appeler ?',
+        'name_hint' => 'Choisissez le nom que vous voulez : pas besoin de compte.',
+        'ready_title' => 'Prêt à jouer ?',
+        'playing_as' => 'Vous jouez avec votre compte',
+        'playing_as_guest' => 'Vous jouez sous le nom',
+        'submit' => 'Rejoindre la partie',
+        'ready_hint' => 'Vous entrez dans la salle d’attente ; l’hôte lance la partie quand tout le monde est là.',
+        'have_account' => 'Vous avez un compte ?',
+        'use_account' => 'Connectez-vous pour jouer avec',
+    ],
     'room' => [
         'code' => 'Code',
         'players' => ':count / :max joueurs',
@@ -56,6 +69,8 @@ return [
         'start' => 'Lancer la partie',
         'waiting_for_players' => 'Il faut au moins :min joueurs pour commencer.',
         'waiting_for_host' => 'En attente du lancement par l’hôte…',
+        'qr_label' => 'QR code du lien d’invitation',
+        'qr_hint' => 'Scannez avec l’appareil photo d’un téléphone pour rejoindre.',
     ],
     'rule' => [
         'title' => 'Règle des réponses identiques',
@@ -146,6 +161,8 @@ return [
         'source_missing' => 'Source : :source',
         'hint' => 'Les bonnes réponses les plus rapides rapportent plus. Une réponse enregistrée ne peut plus être changée.',
         'see_results' => 'Voir les résultats',
+        'tie_breaker' => 'Question de départage',
+        'tie_breaker_intro' => 'Égalité pour la première place : cette question supplémentaire désigne le vainqueur.',
     ],
     'results2' => [
         'got_right' => 'Vous avez trouvé :right sur :total',

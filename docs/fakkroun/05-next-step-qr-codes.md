@@ -3,6 +3,17 @@
 > **Priority:** high (spec deliverable 13) · **Effort:** small · **Spec:** §12.2
 > **Depends on:** 03
 
+## Status (2026-11-12): done, without a new dependency
+
+- The waiting room shows the invitation link as an inline SVG QR code (`RoomService::invitationQr()`).
+  The encoder is `App\Support\QrCode\QrCode` (byte mode, level M, versions 1–9), written in the project
+  so no package had to be added; its output was compared module by module with two other encoders.
+- `/join/{code}` is now a page: visitors pick any nickname (guest player) or sign in and come back;
+  signed-in players see the account they play with. Both enter the room with "Join the game".
+- Not done from the design below: the separate `qr.svg` route, the full-screen toggle and the A4 print layout.
+
+The text below is the original plan, kept as written.
+
 ## Current state
 
 `/join/{code}` already implements the whole scan flow: open → authenticate (login redirect and return) → validate room → joinable → capacity → join. The lobby shows the link with copy, Web Share and WhatsApp. Only the **image** is missing.

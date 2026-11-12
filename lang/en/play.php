@@ -39,6 +39,19 @@ return [
         'guest_cta_button' => 'Create an account',
         'or_create' => 'Hosting a game instead?',
     ],
+    'invitation' => [
+        'eyebrow' => 'You are invited',
+        'hosted_by' => 'Hosted by :name',
+        'name_title' => 'What should we call you?',
+        'name_hint' => 'Pick any name: no account needed.',
+        'ready_title' => 'Ready to play?',
+        'playing_as' => 'Playing with your account',
+        'playing_as_guest' => 'Playing as',
+        'submit' => 'Join the game',
+        'ready_hint' => 'You enter the waiting room; the host starts the game when everyone is in.',
+        'have_account' => 'Have an account?',
+        'use_account' => 'Sign in to play with it',
+    ],
     'room' => [
         'code' => 'Code',
         'players' => ':count / :max players',
@@ -56,6 +69,8 @@ return [
         'start' => 'Start the game',
         'waiting_for_players' => 'At least :min players are needed to start.',
         'waiting_for_host' => 'Waiting for the host to start the game…',
+        'qr_label' => 'QR code of the invitation link',
+        'qr_hint' => 'Scan with a phone camera to join.',
     ],
     'rule' => [
         'title' => 'Duplicate-answer rule',
@@ -146,6 +161,8 @@ return [
         'source_missing' => 'Source: :source',
         'hint' => 'Faster correct answers earn more points. You can’t change your answer once it’s locked in.',
         'see_results' => 'See the results',
+        'tie_breaker' => 'Tie-breaker',
+        'tie_breaker_intro' => 'First place is tied: this extra question decides the winner.',
     ],
     'results2' => [
         'got_right' => 'You got :right of :total right',
