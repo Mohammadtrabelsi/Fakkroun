@@ -14,6 +14,7 @@ use Illuminate\Support\Carbon;
  * @property int $question_id
  * @property int $position
  * @property string $language
+ * @property bool $is_tie_breaker
  * @property Carbon|null $opened_at
  * @property Carbon|null $deadline_at
  * @property Carbon|null $closed_at
@@ -27,11 +28,11 @@ class GameQuestion extends Model
 
     protected $dateFormat = self::CLOCK_FORMAT;
 
-    protected $fillable = ['game_id', 'question_id', 'position', 'question_version', 'language', 'opened_at', 'deadline_at', 'closed_at', 'sponsored_round_campaign_id'];
+    protected $fillable = ['game_id', 'question_id', 'position', 'question_version', 'language', 'opened_at', 'deadline_at', 'closed_at', 'sponsored_round_campaign_id', 'is_tie_breaker'];
 
     protected function casts(): array
     {
-        return ['opened_at' => 'datetime', 'deadline_at' => 'datetime', 'closed_at' => 'datetime', 'position' => 'integer'];
+        return ['opened_at' => 'datetime', 'deadline_at' => 'datetime', 'closed_at' => 'datetime', 'position' => 'integer', 'is_tie_breaker' => 'boolean'];
     }
 
     /**

@@ -173,7 +173,7 @@ class GameEngine
             $revealEnds = $current->closed_at?->copy()->addSeconds((int) $locked->settings['reveal_seconds']);
 
             if ($revealEnds !== null && $now->greaterThanOrEqualTo($revealEnds)) {
-                if ($locked->current_position < $locked->total_questions) {
+                if ($locked->current_position < $locked->total_questions || $this->addTieBreaker($locked)) {
                     $locked->current_position++;
                     $locked->save();
                     $this->open($locked, $locked->current_position);
@@ -268,6 +268,7 @@ class GameEngine
             'phase' => $game->isCompleted() ? 'completed' : ($current->isOpen() ? 'question' : 'reveal'),
             'position' => $current->position,
             'total' => $game->total_questions,
+            'tie_breaker' => (bool) $current->is_tie_breaker,
             'server_now' => $now->getTimestampMs(),
             'deadline_ms' => $current->deadline_at?->getTimestampMs(),
             'remaining_ms' => $current->isOpen() ? max(0, (int) $now->diffInMilliseconds($current->deadline_at, false)) : 0,
@@ -450,6 +451,51 @@ class GameEngine
             'times_played' => DB::raw('times_played + '.$answers->count()),
             'times_correct' => DB::raw('times_correct + '.$correctCount),
         ]);
+    }
+
+    /**
+     * After the last question: while first place is shared, one more question
+     * is added to decide the winner (at most
+     * config('fakkroun.gameplay.tie_break_questions') per game). Everyone
+     * still in the room plays it and it scores like any other question.
+     */
+    private function addTieBreaker(Game $game): bool
+    {
+        $played = $this->gameQuestions->query()->where('game_id', $game->id)->where('is_tie_breaker', true)->count();
+
+        if ($played >= (int) config('fakkroun.gameplay.tie_break_questions', 3)) {
+            return false;
+        }
+
+        $scores = collect($this->leaderboard($game))->where('left', false)->pluck('score')->values();
+
+        if ($scores->count() < 2 || $scores[0] !== $scores[1]) {
+            return false;
+        }
+
+        $settings = $game->settings;
+        $playerIds = $this->roomPlayers->query()->where('room_id', $game->room_id)->whereNull('left_at')->pluck('user_id')->map(fn ($id) => (int) $id)->all();
+        $inGame = $this->gameQuestions->query()->where('game_id', $game->id)->pluck('question_id')->map(fn ($id) => (int) $id)->all();
+        $difficulty = $settings['difficulty'] === 'any' ? null : $settings['difficulty'];
+
+        $questionId = $this->selector->select($settings['language'], $settings['category_ids'], $difficulty, 1, $playerIds, $inGame)[0] ?? null;
+
+        if ($questionId === null) {
+            return false; // nothing new left to ask: the faster player wins the tie
+        }
+
+        $this->gameQuestions->query()->create([
+            'game_id' => $game->id,
+            'question_id' => $questionId,
+            'position' => $game->total_questions + 1,
+            'question_version' => (int) ($this->questions->query()->whereKey($questionId)->value('version') ?? 1),
+            'language' => $settings['language'],
+            'is_tie_breaker' => true,
+        ]);
+
+        $game->total_questions++;
+
+        return true;
     }
 
     private function complete(Game $game): void
