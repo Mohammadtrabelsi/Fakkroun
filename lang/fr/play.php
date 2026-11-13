@@ -38,6 +38,8 @@ return [
         'guest_cta' => 'Créez un compte pour organiser vos propres salles et garder vos scores.',
         'guest_cta_button' => 'Créer un compte',
         'or_create' => 'Vous préférez organiser une partie ?',
+        'share_title' => 'Partager cette salle',
+        'share_hint' => 'Vos amis scannent ce code avec l’appareil photo de leur téléphone, puis saisissent un pseudo pour rejoindre :name.',
     ],
     'invitation' => [
         'eyebrow' => 'Vous êtes invité',

@@ -220,6 +220,33 @@ class RoomService
     }
 
     /**
+     * What the join page needs to pass a typed code on to friends: the
+     * invitation link and its QR code. Only for rooms that still take
+     * players; null otherwise (unknown code, started, closed, expired).
+     *
+     * @return array{code: string, name: string, url: string, qr: array{size: int, path: string}}|null
+     */
+    public function invitationForCode(string $code): ?array
+    {
+        if (strlen(RoomCodeGenerator::normalize($code)) !== RoomCodeGenerator::LENGTH) {
+            return null;
+        }
+
+        $room = $this->findByCode($code);
+
+        if ($room === null || $room->status !== RoomStatus::Waiting || ($room->expires_at !== null && $room->expires_at->isPast())) {
+            return null;
+        }
+
+        return [
+            'code' => $room->code,
+            'name' => (string) $room->name,
+            'url' => $room->invitationUrl(),
+            'qr' => $this->invitationQr($room),
+        ];
+    }
+
+    /**
      * The room's invitation link as a QR code, ready for an inline SVG:
      * the side of the view box and the path of the dark modules.
      *

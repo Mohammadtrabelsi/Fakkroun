@@ -38,6 +38,8 @@ return [
         'guest_cta' => 'Create an account to host your own rooms and keep your scores.',
         'guest_cta_button' => 'Create an account',
         'or_create' => 'Hosting a game instead?',
+        'share_title' => 'Share this room',
+        'share_hint' => 'Friends scan this code with a phone camera, then enter a nickname to join :name.',
     ],
     'invitation' => [
         'eyebrow' => 'You are invited',
