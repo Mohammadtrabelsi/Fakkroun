@@ -3,6 +3,7 @@
 namespace Tests\Feature\Gameplay;
 
 use App\Domain\Gameplay\Models\Room;
+use App\Domain\Gameplay\RoomService;
 use App\Enums\UserRole;
 use App\Models\Category;
 use App\Models\User;
@@ -32,13 +33,41 @@ class RoomCategoryDefaultsTest extends GameplayTestCase
         app(PlatformSettings::class)->update(['game' => ['min_categories' => 2]]);
 
         Livewire::actingAs($this->player())->test('pages::rooms.create')
-            ->call('toggleCategory', $this->category->id)
+            ->call('toggleCategory', $second->id)
+            ->assertSet('categoryIds', [$this->category->id])
             ->call('create')
             ->assertHasErrors('category_ids')
             ->assertSee(__('play.errors.min_categories', ['min' => 2]))
             ->call('toggleCategory', $second->id)
             ->call('create')
             ->assertHasNoErrors();
+    }
+
+    public function test_lobby_preselects_the_first_categories_when_none_is_marked(): void
+    {
+        Category::factory()->create();
+        Category::factory()->create();
+        Category::factory()->create(['is_active' => false]);
+        app(PlatformSettings::class)->update(['game' => ['min_categories' => 2]]);
+
+        $ids = app(RoomService::class)->defaultCategoryIds();
+        $this->assertCount(2, $ids);
+        $this->assertSame(array_slice(array_keys(app(RoomService::class)->categoryOptions()), 0, 2), $ids);
+
+        Livewire::actingAs($this->player())->test('pages::rooms.create')
+            ->assertSet('categoryIds', $ids)
+            ->call('create')
+            ->assertHasNoErrors();
+    }
+
+    public function test_marked_categories_are_topped_up_to_the_minimum(): void
+    {
+        $marked = Category::factory()->create(['is_default_selected' => true]);
+        app(PlatformSettings::class)->update(['game' => ['min_categories' => 2]]);
+
+        $ids = app(RoomService::class)->defaultCategoryIds();
+
+        $this->assertSame([$marked->id, $this->category->id], $ids);
     }
 
     public function test_minimum_is_capped_at_the_number_of_active_categories(): void

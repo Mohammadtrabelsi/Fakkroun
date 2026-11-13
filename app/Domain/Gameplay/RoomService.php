@@ -337,14 +337,19 @@ class RoomService
     }
 
     /**
-     * Categories the back office marks as pre-selected for new rooms.
+     * Categories pre-selected for new rooms: the ones the back office marks,
+     * topped up with the first categories in display order until the required
+     * minimum is reached, so the form is never submitted empty by default.
      *
      * @return array<int, int>
      */
     public function defaultCategoryIds(): array
     {
-        return $this->categories->query()->roots()->where('is_active', true)->where('is_default_selected', true)->ordered()
-            ->pluck('id')->map(fn ($id) => (int) $id)->all();
+        $roots = $this->categories->query()->roots()->where('is_active', true)->ordered()->get(['id', 'is_default_selected']);
+        $marked = $roots->where('is_default_selected', true);
+        $fill = $roots->where('is_default_selected', false)->take(max(0, $this->minCategories() - $marked->count()));
+
+        return $marked->concat($fill)->pluck('id')->map(fn ($id) => (int) $id)->all();
     }
 
     /**

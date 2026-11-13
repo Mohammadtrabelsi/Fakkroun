@@ -16,7 +16,7 @@ class PlayScreensTest extends GameplayTestCase
         $this->publishQuestions(3);
 
         Livewire::actingAs($host)->test('pages::rooms.create')
-            ->call('toggleCategory', $this->category->id)
+            ->assertSet('categoryIds', [$this->category->id])
             ->set('difficulty', 'easy')
             ->set('questionCount', 10)
             ->set('secondsPerQuestion', 30)
@@ -34,7 +34,11 @@ class PlayScreensTest extends GameplayTestCase
 
     public function test_lobby_requires_a_category(): void
     {
-        Livewire::actingAs($this->player())->test('pages::rooms.create')->call('create')->assertHasErrors('category_ids');
+        Livewire::actingAs($this->player())->test('pages::rooms.create')
+            ->call('toggleCategory', $this->category->id)
+            ->assertSet('categoryIds', [])
+            ->call('create')
+            ->assertHasErrors('category_ids');
     }
 
     public function test_only_public_waiting_rooms_are_listed_as_open(): void
