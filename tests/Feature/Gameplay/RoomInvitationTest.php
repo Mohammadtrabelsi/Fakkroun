@@ -122,6 +122,61 @@ class RoomInvitationTest extends GameplayTestCase
         $this->assertSame(0, User::query()->where('is_guest', true)->count());
     }
 
+    public function test_join_page_shows_the_qr_code_of_a_typed_code_to_pass_it_on(): void
+    {
+        $room = $this->room($this->player('Host'));
+        $qr = app(RoomService::class)->invitationQr($room);
+
+        // Nothing to share until a complete, known code is typed.
+        $this->get(route('rooms.join'))->assertOk()->assertDontSee(__('play.join.share_title'));
+
+        Livewire::test('pages::rooms.join')
+            ->set('code', substr($room->code, 0, 4))
+            ->assertDontSee(__('play.join.share_title'))
+            ->set('code', strtolower($room->code))
+            ->assertSee(__('play.join.share_title'))
+            ->assertSee(__('play.join.share_hint', ['name' => $room->name]))
+            ->assertSee('d="'.$qr['path'].'"', false)
+            ->assertSee($room->invitationUrl())
+            ->set('code', 'NOPE99')
+            ->assertDontSee(__('play.join.share_title'));
+
+        // Pre-filled from a link (?code=…): the QR code is there right away.
+        $this->get(route('rooms.join', ['code' => $room->code]))->assertOk()
+            ->assertSee(__('play.join.share_title'))
+            ->assertSee('d="'.$qr['path'].'"', false);
+    }
+
+    public function test_join_page_shows_no_qr_code_for_rooms_that_take_no_more_players(): void
+    {
+        $host = $this->player('Host');
+        $room = $this->room($host);
+        app(RoomService::class)->leave($room, $host); // alone in it: leaving cancels the room
+
+        $this->assertNull(app(RoomService::class)->invitationForCode($room->code));
+        $this->assertNull(app(RoomService::class)->invitationForCode('NOPE99'));
+        $this->assertNull(app(RoomService::class)->invitationForCode(''));
+
+        Livewire::test('pages::rooms.join')->set('code', $room->code)->assertDontSee(__('play.join.share_title'));
+    }
+
+    public function test_looking_codes_up_for_the_qr_code_is_rate_limited(): void
+    {
+        config(['fakkroun.form_throttle.room-code-lookup' => [2, 60]]);
+        $room = $this->room($this->player('Host'));
+
+        Livewire::test('pages::rooms.join')
+            ->set('code', 'NOPE99')
+            ->set('code', 'NOPE98')
+            ->assertHasNoErrors()
+            ->set('code', $room->code)
+            ->assertHasErrors('code')
+            ->assertDontSee(__('play.join.share_title'));
+
+        // A link with a code still opens the page, without the QR code.
+        $this->get(route('rooms.join', ['code' => $room->code]))->assertOk()->assertDontSee(__('play.join.share_title'));
+    }
+
     public function test_qr_encoder_builds_a_valid_symbol(): void
     {
         // Reference symbol for "HELLO" (version 1, level M, mask 0), identical in two other encoders.

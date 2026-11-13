@@ -1,9 +1,12 @@
 <?php
 
 use App\Domain\Gameplay\GuestPlayers;
+use App\Domain\Gameplay\RoomCodeGenerator;
 use App\Domain\Gameplay\RoomService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\Locked;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -12,6 +15,10 @@ use Livewire\Component;
  * Front-office "Join a room" page. Playing needs no account: visitors without
  * a session pick a nickname and are signed in as a guest player (GuestPlayers).
  * Only creating a room needs a real account.
+ *
+ * A complete code of a room that still takes players also shows that room's
+ * invitation QR code, to pass it on: scanning it opens /join/{code}, where
+ * friends enter a nickname.
  */
 new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class extends Component
 {
@@ -24,11 +31,68 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
     /** Display name for visitors joining without an account. */
     public string $nickname = '';
 
+    /** Code whose invitation QR code is on screen; only set after a throttled look-up. */
+    #[Locked]
+    public string $shareCode = '';
+
+    protected RoomService $rooms;
+
+    public function boot(RoomService $rooms): void
+    {
+        $this->rooms = $rooms;
+    }
+
     public function mount(): void
     {
         if (auth()->check()) {
             $this->authorize('play games');
         }
+
+        try {
+            $this->lookUpInvitation();
+        } catch (ValidationException) {
+            // Too many look-ups: the page still opens, just without the QR code.
+        }
+    }
+
+    public function updatedCode(): void
+    {
+        $this->lookUpInvitation();
+    }
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function with(): array
+    {
+        return [
+            'share' => $this->shareCode === '' ? null : $this->rooms->invitationForCode($this->shareCode),
+        ];
+    }
+
+    /**
+     * Only complete codes are looked up, and every look-up counts against
+     * the limit, so the QR code cannot be used to guess room codes.
+     *
+     * @throws ValidationException when the look-up limit is reached
+     */
+    private function lookUpInvitation(): void
+    {
+        $code = RoomCodeGenerator::normalize($this->code);
+
+        if ($code === $this->shareCode) {
+            return;
+        }
+
+        $this->shareCode = '';
+
+        if (strlen($code) !== RoomCodeGenerator::LENGTH) {
+            return;
+        }
+
+        $this->throttleSubmission('room-code-lookup', 'code');
+
+        $this->shareCode = (string) ($this->rooms->invitationForCode($code)['code'] ?? '');
     }
 
     public function join(RoomService $rooms, GuestPlayers $guests): void
@@ -102,7 +166,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
             @endguest
             <label for="code" class="text-[15px] text-[#C9D3D0]">{{ __('play.lobby.join_hint') }}</label>
             <div class="flex gap-2">
-                <input wire:model="code" id="code" type="text" autocomplete="off" autocapitalize="characters" maxlength="12" placeholder="7KQ2AB"
+                <input wire:model.live.debounce.400ms="code" id="code" type="text" autocomplete="off" autocapitalize="characters" maxlength="12" placeholder="7KQ2AB"
                        @error('code') aria-invalid="true" aria-describedby="code-error" @enderror
                        class="min-h-14 min-w-0 flex-1 rounded-[14px] border-2 border-[#3C5A62] bg-[#183740] px-4 text-center text-2xl font-bold tracking-[0.3em] text-sand uppercase">
                 <button type="submit" class="fk-btn min-h-14 rounded-[14px] bg-sun px-[22px] text-ink">{{ __('play.join.submit') }}</button>
@@ -115,6 +179,25 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
                 </p>
             @endguest
         </form>
+
+        @if ($share)
+            <section aria-labelledby="share-h" wire:key="share-{{ $share['code'] }}" class="flex flex-col items-center gap-4 rounded-[28px] bg-paper p-5 text-center text-ink sm:p-7">
+                <h2 id="share-h" class="m-0 text-2xl font-semibold">{{ __('play.join.share_title') }}</h2>
+                <figure class="m-0 flex flex-col items-center gap-3">
+                    <svg viewBox="0 0 {{ $share['qr']['size'] }} {{ $share['qr']['size'] }}" role="img" aria-label="{{ __('play.room.qr_label') }}" shape-rendering="crispEdges" class="size-[clamp(184px,60vw,240px)] rounded-2xl bg-white text-black">
+                        <path d="{{ $share['qr']['path'] }}" fill="currentColor" />
+                    </svg>
+                    <figcaption class="max-w-[320px] text-[15px] text-ink-muted">{{ __('play.join.share_hint', ['name' => $share['name']]) }}</figcaption>
+                </figure>
+                <div class="flex w-full flex-wrap gap-2" x-data="{ copied: false, url: @js($share['url']) }">
+                    <input type="text" readonly value="{{ $share['url'] }}" aria-label="{{ __('play.room.invite') }}" dir="ltr" class="min-h-11 min-w-0 flex-1 rounded-xl border-2 border-sand-400 bg-white px-3 text-ink-muted">
+                    <button type="button" class="fk-btn bg-sun text-ink" x-on:click="navigator.clipboard?.writeText(url); copied = true; setTimeout(() => copied = false, 2000)">
+                        <span x-show="! copied">{{ __('play.room.copy') }}</span><span x-show="copied" x-cloak>{{ __('play.room.copied') }}</span>
+                    </button>
+                    <button type="button" class="fk-btn border-2 border-ink text-ink" x-show="navigator.share" x-cloak x-on:click="navigator.share({ title: @js($share['name']), text: @js(__('play.room.share_text', ['code' => $share['code']])), url })">{{ __('play.room.share') }}</button>
+                </div>
+            </section>
+        @endif
 
         <p class="m-0 text-ink-muted">
             {{ __('play.join.or_create') }}
