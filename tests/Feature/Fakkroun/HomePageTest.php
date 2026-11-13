@@ -26,6 +26,16 @@ class HomePageTest extends TestCase
             ->assertSee('family=Baloo+Bhaijaan+2', false);
     }
 
+    public function test_the_header_shows_sign_in_once_and_play_now_once_per_breakpoint(): void
+    {
+        $html = (string) $this->get('/')->assertOk()->getContent();
+        $header = substr($html, (int) strpos($html, '<header'), (int) strpos($html, '</header>') - (int) strpos($html, '<header'));
+
+        $this->assertSame(1, substr_count($header, '>'.__('home.nav.sign_in').'</a>'));
+        // One next to the menu toggle (small screens), one in the bar (large screens).
+        $this->assertSame(2, substr_count($header, '>'.__('home.nav.play_now').'</a>'));
+    }
+
     public function test_the_mascot_has_two_eyes(): void
     {
         $html = $this->get('/')->getContent();

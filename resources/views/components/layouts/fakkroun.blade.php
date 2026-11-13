@@ -59,24 +59,18 @@
                                 @endif
                             @endforeach
                         </div>
-                        @auth
+                        @if (auth()->user()?->isGuest())
+                            <span class="flex min-h-11 min-w-0 items-center px-3.5 font-semibold text-ink"><span class="truncate">{{ auth()->user()->name }}</span></span>
+                        @elseif (auth()->check())
                             <a href="{{ route('dashboard') }}" class="flex min-h-11 min-w-0 items-center px-3.5 font-semibold text-ink no-underline"><span class="truncate">{{ auth()->user()->name }}</span></a>
                         @else
                             <a href="{{ route('login') }}" class="flex min-h-11 items-center px-3.5 font-semibold text-ink no-underline">{{ __('home.nav.sign_in') }}</a>
-                        @endauth
+                        @endif
                         {{-- Already shown next to the menu toggle on small screens. --}}
                         <div class="hidden lg:block">
                             <a href="{{ $playUrl }}" class="fk-btn bg-sea text-paper hover:bg-sea-dark hover:text-paper">{{ __('home.nav.play_now') }}</a>
                         </div>
                     </div>
-                    @if (auth()->user()?->isGuest())
-                        <span class="flex min-h-11 items-center px-3.5 font-semibold text-ink">{{ auth()->user()->name }}</span>
-                    @elseif (auth()->check())
-                        <a href="{{ route('dashboard') }}" class="flex min-h-11 items-center px-3.5 font-semibold text-ink no-underline">{{ auth()->user()->name }}</a>
-                    @else
-                        <a href="{{ route('login') }}" class="flex min-h-11 items-center px-3.5 font-semibold text-ink no-underline">{{ __('home.nav.sign_in') }}</a>
-                    @endif
-                    <a href="{{ $playUrl }}" class="fk-btn bg-sea text-paper hover:bg-sea-dark hover:text-paper">{{ __('home.nav.play_now') }}</a>
                 </div>
             </div>
         </header>
