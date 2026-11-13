@@ -50,9 +50,9 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Leaderboard')] class exten
             <h1 class="fk-h2 m-0 text-[clamp(36px,9vw,52px)] leading-none">{{ __('play.leaderboard.title') }}</h1>
             <p class="m-0 text-lg text-ink-muted">{{ __('play.leaderboard.lead') }}</p>
         </div>
-        <div role="group" aria-label="{{ __('play.leaderboard.period') }}" class="flex gap-1 rounded-[14px] bg-sand-200 p-1">
+        <div role="group" aria-label="{{ __('play.leaderboard.period') }}" class="flex flex-none gap-1 rounded-[14px] bg-sand-200 p-1">
             @foreach (['week' => __('play.leaderboard.week'), 'all' => __('play.leaderboard.all')] as $value => $label)
-                <button type="button" wire:click="$set('period', '{{ $value }}')" aria-pressed="{{ $period === $value ? 'true' : 'false' }}" class="fk-seg px-4">{{ $label }}</button>
+                <button type="button" wire:click="$set('period', '{{ $value }}')" aria-pressed="{{ $period === $value ? 'true' : 'false' }}" class="fk-seg px-4 whitespace-nowrap">{{ $label }}</button>
             @endforeach
         </div>
     </div>
