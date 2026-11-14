@@ -113,4 +113,85 @@ class TranslationSyncCommandTest extends TestCase
             ->expectsOutputToContain('Translation files are up to date.')
             ->assertSuccessful();
     }
+
+    public function test_nested_keys_that_already_exist_are_left_alone(): void
+    {
+        // Regression: bundles are nested arrays. The command used to look a
+        // dotted key up as one flat key, never found it, and wrote a flat
+        // 'hero.title' => 'Hero.title' entry that then overrode the real text.
+        File::copyDirectory(base_path('lang'), $this->langPath);
+
+        $this->artisan('translations:sync')
+            ->expectsOutputToContain('Keys added          : 0')
+            ->assertSuccessful();
+
+        foreach (['en', 'fr', 'ar'] as $locale) {
+            $home = include $this->langPath.'/'.$locale.'/home.php';
+
+            $this->assertArrayNotHasKey('hero.title', $home);
+            $this->assertSame(
+                include base_path('lang/'.$locale.'/home.php'),
+                $home,
+                "The [{$locale}] bundle must not be rewritten when nothing is missing.",
+            );
+        }
+    }
+
+    public function test_a_missing_nested_key_is_added_as_a_nested_placeholder(): void
+    {
+        File::copyDirectory(base_path('lang'), $this->langPath);
+
+        foreach (['en', 'fr'] as $locale) {
+            $file = $this->langPath.'/'.$locale.'/home.php';
+            $home = include $file;
+            unset($home['hero']['title']);
+            File::put($file, "<?php\n\nreturn ".var_export($home, true).";\n");
+        }
+
+        $this->artisan('translations:sync', ['--locales' => 'en,fr'])
+            ->assertSuccessful();
+
+        $en = include $this->langPath.'/en/home.php';
+        $fr = include $this->langPath.'/fr/home.php';
+
+        $this->assertSame('Title', $en['hero']['title']);
+        $this->assertSame('[TODO] Title', $fr['hero']['title']);
+        $this->assertArrayNotHasKey('hero.title', $en);
+        $this->assertArrayNotHasKey('hero.title', $fr);
+    }
+
+    public function test_keys_built_at_run_time_are_not_added_as_prefixes(): void
+    {
+        $this->artisan('translations:sync', ['--locales' => 'en'])
+            ->assertSuccessful();
+
+        // about.blade.php calls __('about.stat_'.$n): a prefix, not a key.
+        $about = include $this->langPath.'/en/about.php';
+
+        $this->assertArrayNotHasKey('stat_', $about);
+    }
+
+    public function test_clean_keeps_run_time_keys_and_arrays_read_whole(): void
+    {
+        File::copyDirectory(base_path('lang'), $this->langPath);
+
+        $this->artisan('translations:sync', ['--locales' => 'en', '--clean' => true])
+            ->assertSuccessful();
+
+        $original = include base_path('lang/en/terms.php');
+        $cleaned = include $this->langPath.'/en/terms.php';
+
+        // __('terms.policy.rows') returns the whole array of rows.
+        $this->assertSame($original['policy']['rows'], $cleaned['policy']['rows']);
+
+        // __('about.stat_'.$n) reaches every about.stat_* key.
+        $about = include $this->langPath.'/en/about.php';
+        $statKeys = array_filter(array_keys(include base_path('lang/en/about.php')), fn (string $key): bool => str_starts_with($key, 'stat_'));
+
+        $this->assertNotEmpty($statKeys);
+
+        foreach ($statKeys as $key) {
+            $this->assertArrayHasKey($key, $about);
+        }
+    }
 }

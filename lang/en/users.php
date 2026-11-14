@@ -6,6 +6,10 @@ return [
     'create_description' => 'Create description',
     'edit' => 'Edit',
     'edit_description' => 'Edit description',
+    'no_roles' => 'No roles',
+    'password_placeholder' => 'Leave blank to keep current',
+    'save_changes' => 'Save changes',
+    // List screen (admin).
     'list' => [
         'new' => 'New user',
         'active' => 'Active users',
@@ -18,15 +22,4 @@ return [
         'confirm_trash' => 'Move :name to the trash? They will not be able to sign in until restored.',
         'new_today' => ':count new today',
     ],
-    'list.active' => 'List.active',
-    'list.administrators' => 'List.administrators',
-    'list.confirm_force_delete' => 'List.confirm force delete',
-    'list.confirm_trash' => 'List.confirm trash',
-    'list.member' => 'List.member',
-    'list.new' => 'List.new',
-    'list.new_today' => 'List.new today',
-    'list.trashed' => 'List.trashed',
-    'no_roles' => 'No roles',
-    'password_placeholder' => 'Leave blank to keep current',
-    'save_changes' => 'Save changes',
 ];

@@ -8,8 +8,8 @@ use Tests\TestCase;
 
 /**
  * House rule: every key exists in every locale, and every key a view uses
- * exists. (translations:sync --dry-run also reports dynamic key prefixes such
- * as "about.stat_", so it cannot serve as this check.)
+ * exists. (translations:sync skips keys built at run time such as
+ * "about.stat_".$key, so it cannot serve as this check.)
  */
 class TranslationCoverageTest extends TestCase
 {
