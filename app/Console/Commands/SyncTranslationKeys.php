@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 
 class SyncTranslationKeys extends Command
@@ -24,16 +25,40 @@ class SyncTranslationKeys extends Command
 
     protected $description = 'Scan resources/ for translation keys, create missing lang files, and sync keys across all locales.';
 
+    /**
+     * Group for strings used without a "file.key" prefix. Its keys are whole
+     * sentences, so they are never read as nested paths.
+     */
+    private const string FLAT_GROUP = 'strings';
+
     // ── Patterns ──────────────────────────────────────────────────────────────
     // Matches: __('key'), __("key"), trans('key'), trans("key"),
     //          @lang('key'), @lang("key"), trans_choice('key', …)
     // Also handles dot-notation groups: __('auth.failed'), __('validation.required')
+    //
+    // The closing quote must be followed by "," or ")": a key that is built at
+    // run time (__('about.stat_'.$n), __('questions.status.'.$value)) is only a
+    // prefix, not a key, and is collected separately by $dynamicPatterns.
+    /** @var list<string> */
     private array $patterns = [
-        '/__\(\s*[\'"]([^\'"]+)[\'"]/U',
-        '/trans\(\s*[\'"]([^\'"]+)[\'"]/U',
-        '/@lang\(\s*[\'"]([^\'"]+)[\'"]/U',
-        '/trans_choice\(\s*[\'"]([^\'"]+)[\'"]/U',
+        '/__\(\s*[\'"]([^\'"]+)[\'"]\s*[,)]/U',
+        '/trans\(\s*[\'"]([^\'"]+)[\'"]\s*[,)]/U',
+        '/@lang\(\s*[\'"]([^\'"]+)[\'"]\s*[,)]/U',
+        '/trans_choice\(\s*[\'"]([^\'"]+)[\'"]\s*[,)]/U',
     ];
+
+    /** @var list<string> */
+    private array $dynamicPatterns = [
+        '/(?:__|trans|@lang|trans_choice)\(\s*[\'"]([^\'"]+)[\'"]\s*\./U',
+    ];
+
+    /**
+     * Key prefixes completed at run time ("about.stat_"); --clean keeps the
+     * keys below them.
+     *
+     * @var list<string>
+     */
+    private array $dynamicPrefixes = [];
 
     public function handle(): int
     {
@@ -117,6 +142,7 @@ class SyncTranslationKeys extends Command
     private function extractKeysFromDirectory(string $directory): array
     {
         $allKeys = [];
+        $dynamic = [];
 
         $files = File::allFiles($directory);
 
@@ -135,7 +161,16 @@ class SyncTranslationKeys extends Command
                     }
                 }
             }
+            foreach ($this->dynamicPatterns as $pattern) {
+                if (preg_match_all($pattern, $content, $matches)) {
+                    foreach ($matches[1] as $prefix) {
+                        $dynamic[$prefix] = true;
+                    }
+                }
+            }
         }
+
+        $this->dynamicPrefixes = array_keys($dynamic);
 
         return array_values(array_filter(array_keys($allKeys), fn (string $k): bool => $k !== ''));
     }
@@ -155,7 +190,7 @@ class SyncTranslationKeys extends Command
                 [$group, $subKey] = explode('.', (string) $key, 2);
             } else {
                 // Flat strings without a namespace go into "strings.php"
-                $group = 'strings';
+                $group = self::FLAT_GROUP;
                 $subKey = $key;
             }
 
@@ -201,27 +236,53 @@ class SyncTranslationKeys extends Command
         $added = [];
         $removed = [];
 
-        // Add missing keys
+        $nested = $group !== self::FLAT_GROUP;
+
+        // Add missing keys. Bundles are nested arrays ("hero.title" lives at
+        // ['hero']['title']), so a dotted key is looked up and written as a path.
         foreach (array_keys($expectedKeys) as $key) {
-            if (! array_key_exists($key, $existing)) {
-                // For the base locale use the key, replacing underscores with spaces and capitalizing the first letter.
-                // For other locales, use the base translation wrapped in [TODO].
-                $transformedKey = ucfirst(str_replace('_', ' ', $key));
-                $placeholder = $locale === $base
-                    ? $transformedKey
-                    : ('[TODO] '.($baseValues[$key] ?? $transformedKey));
-                $existing[$key] = $placeholder;
-                $added[] = $key;
+            $key = (string) $key;
+
+            if ($nested ? Arr::has($existing, $key) : array_key_exists($key, $existing)) {
+                continue;
             }
+
+            // For the base locale use the last key segment, replacing underscores with spaces and capitalizing the first letter.
+            // For other locales, use the base translation wrapped in [TODO].
+            $label = $nested ? Arr::last(explode('.', $key)) : $key;
+            $transformedKey = ucfirst(str_replace('_', ' ', (string) $label));
+            $baseValue = $nested ? Arr::get($baseValues, $key) : ($baseValues[$key] ?? null);
+            $placeholder = $locale === $base
+                ? $transformedKey
+                : ('[TODO] '.(is_string($baseValue) ? $baseValue : $transformedKey));
+
+            if ($nested) {
+                Arr::set($existing, $key, $placeholder);
+            } else {
+                $existing[$key] = $placeholder;
+            }
+
+            $added[] = $key;
         }
 
         // Optionally remove stale keys
         if ($doClean) {
-            foreach (array_keys($existing) as $existingKey) {
-                if (! array_key_exists($existingKey, $expectedKeys)) {
-                    unset($existing[$existingKey]);
-                    $removed[] = $existingKey;
+            $existingKeys = $nested ? array_keys(Arr::dot($existing)) : array_keys($existing);
+
+            foreach ($existingKeys as $existingKey) {
+                $existingKey = (string) $existingKey;
+
+                if ($this->isUsed($existingKey, $group, $expectedKeys, $nested)) {
+                    continue;
                 }
+
+                if ($nested) {
+                    Arr::forget($existing, $existingKey);
+                } else {
+                    unset($existing[$existingKey]);
+                }
+
+                $removed[] = $existingKey;
             }
         }
 
@@ -246,9 +307,6 @@ class SyncTranslationKeys extends Command
             return;
         }
 
-        // Sort keys for clean diffs
-        ksort($existing);
-
         // Write file
         $content = "<?php\n\nreturn ".$this->arrayToString($existing).";\n";
 
@@ -257,6 +315,38 @@ class SyncTranslationKeys extends Command
         }
 
         File::put($filePath, $content);
+    }
+
+    /**
+     * Whether a key found in a lang file is still referenced: directly, as part
+     * of an array a view reads whole (__('terms.policy.rows')), or through a
+     * prefix completed at run time (__('about.stat_'.$n)).
+     *
+     * @param  array<array-key, mixed>  $expectedKeys
+     */
+    private function isUsed(string $key, string $group, array $expectedKeys, bool $nested): bool
+    {
+        if (array_key_exists($key, $expectedKeys)) {
+            return true;
+        }
+
+        if (! $nested) {
+            return false;
+        }
+
+        foreach (array_keys($expectedKeys) as $expected) {
+            if (str_starts_with($key, $expected.'.')) {
+                return true;
+            }
+        }
+
+        foreach ($this->dynamicPrefixes as $prefix) {
+            if (str_starts_with($group.'.'.$key, $prefix)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     // ──────────────────────────────────────────────────────────────────────────
