@@ -1,6 +1,19 @@
 <?php
 
 return [
+    'history' => [
+        'eyebrow' => 'Vos parties',
+        'title' => 'Mes parties',
+        'empty' => 'Aucune partie terminée pour l’instant. Créez une salle ou rejoignez-en une avec un code.',
+        'players' => ':count joueurs',
+        'correct' => ':correct/:total bonnes réponses',
+        'review' => 'Revoir',
+    ],
+    'achievements_title' => 'Succès',
+    'no_achievements' => 'Terminez votre première partie pour obtenir votre premier succès.',
+    'no_achievements_public' => 'Aucun succès pour l’instant.',
+    'my_profile' => 'Mon profil public',
+    'notice' => 'Succès débloqué : :name',
     'achievements' => [
         'first_game' => [
             'name' => 'Premiers pas',
@@ -27,24 +40,4 @@ return [
             'description' => 'Une partie sans faute, en 4 secondes ou moins par réponse en moyenne.',
         ],
     ],
-    'achievements.' => '[TODO] Achievements.',
-    'achievements_title' => 'Succès',
-    'history' => [
-        'eyebrow' => 'Vos parties',
-        'title' => 'Mes parties',
-        'empty' => 'Aucune partie terminée pour l’instant. Créez une salle ou rejoignez-en une avec un code.',
-        'players' => ':count joueurs',
-        'correct' => ':correct/:total bonnes réponses',
-        'review' => 'Revoir',
-    ],
-    'history.correct' => '[TODO] History.correct',
-    'history.empty' => '[TODO] History.empty',
-    'history.eyebrow' => '[TODO] History.eyebrow',
-    'history.players' => '[TODO] History.players',
-    'history.review' => '[TODO] History.review',
-    'history.title' => '[TODO] History.title',
-    'my_profile' => 'Mon profil public',
-    'no_achievements' => 'Terminez votre première partie pour obtenir votre premier succès.',
-    'no_achievements_public' => 'Aucun succès pour l’instant.',
-    'notice' => 'Succès débloqué : :name',
 ];

@@ -384,8 +384,10 @@ The `SetLocale` middleware applies the session's chosen locale on every request,
 
 - `--locales=en,fr,ar` — which locales to sync (default: all)
 - `--base=en` — the reference locale
+- `--dry-run` — list what would change without writing
+- `--clean` — also remove keys no view uses
 
-Untranslated values are prefixed with `[TODO]` so they are easy to find and complete.
+Bundles are nested arrays, so `home.hero.title` is read and written as `['hero']['title']` in `lang/{locale}/home.php`. Keys built at run time (`__('about.stat_'.$key)`) are not real keys and are skipped; `--clean` keeps the keys under such a prefix. Untranslated values are prefixed with `[TODO]` so they are easy to find and complete.
 
 ## Roles & Permissions
 

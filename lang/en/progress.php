@@ -1,6 +1,19 @@
 <?php
 
 return [
+    'history' => [
+        'eyebrow' => 'Your games',
+        'title' => 'My games',
+        'empty' => 'No finished games yet. Create a room or join one with a code.',
+        'players' => ':count players',
+        'correct' => ':correct/:total correct',
+        'review' => 'Review',
+    ],
+    'achievements_title' => 'Achievements',
+    'no_achievements' => 'Finish your first game to earn your first achievement.',
+    'no_achievements_public' => 'No achievements yet.',
+    'my_profile' => 'My public profile',
+    'notice' => 'Achievement unlocked: :name',
     'achievements' => [
         'first_game' => [
             'name' => 'First steps',
@@ -27,24 +40,4 @@ return [
             'description' => 'A perfect game, answering in 4 seconds or less on average.',
         ],
     ],
-    'achievements.' => 'Achievements.',
-    'achievements_title' => 'Achievements',
-    'history' => [
-        'eyebrow' => 'Your games',
-        'title' => 'My games',
-        'empty' => 'No finished games yet. Create a room or join one with a code.',
-        'players' => ':count players',
-        'correct' => ':correct/:total correct',
-        'review' => 'Review',
-    ],
-    'history.correct' => 'History.correct',
-    'history.empty' => 'History.empty',
-    'history.eyebrow' => 'History.eyebrow',
-    'history.players' => 'History.players',
-    'history.review' => 'History.review',
-    'history.title' => 'History.title',
-    'my_profile' => 'My public profile',
-    'no_achievements' => 'Finish your first game to earn your first achievement.',
-    'no_achievements_public' => 'No achievements yet.',
-    'notice' => 'Achievement unlocked: :name',
 ];
