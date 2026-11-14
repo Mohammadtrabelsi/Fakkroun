@@ -1,0 +1,779 @@
+[
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Japan?",
+    "choices": [
+      "Nagoya",
+      "Tokyo",
+      "Kyoto",
+      "Osaka"
+    ],
+    "correct": 2,
+    "explanation": "Tokyo has been the capital of Japan since 1868.",
+    "reference_text": "Encyclopaedia Britannica, Tokyo",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Japon ?",
+        "choices": [
+          "Nagoya",
+          "Tokyo",
+          "Kyoto",
+          "Osaka"
+        ],
+        "explanation": "Tokyo est la capitale du Japon depuis 1868."
+      },
+      "ar": {
+        "question": "ما عاصمة اليابان؟",
+        "choices": [
+          "ناغويا",
+          "طوكيو",
+          "كيوتو",
+          "أوساكا"
+        ],
+        "explanation": "تُعد طوكيو عاصمة اليابان منذ عام 1868."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many days are there in a leap year?",
+    "choices": [
+      "364",
+      "366",
+      "367",
+      "365"
+    ],
+    "correct": 2,
+    "explanation": "A leap year has one extra day, 29 February.",
+    "reference_text": "Gregorian calendar",
+    "translations": {
+      "fr": {
+        "question": "Combien de jours compte une année bissextile ?",
+        "choices": [
+          "364",
+          "366",
+          "367",
+          "365"
+        ],
+        "explanation": "Une année bissextile a un jour de plus, le 29 février."
+      },
+      "ar": {
+        "question": "كم يومًا في السنة الكبيسة؟",
+        "choices": [
+          "364",
+          "366",
+          "367",
+          "365"
+        ],
+        "explanation": "تضيف السنة الكبيسة يومًا إضافيًا هو 29 فبراير."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is the largest land mammal?",
+    "choices": [
+      "White rhinoceros",
+      "African elephant",
+      "Hippopotamus",
+      "Giraffe"
+    ],
+    "correct": 2,
+    "explanation": "The African bush elephant is the largest living land animal.",
+    "reference_text": "IUCN African elephant facts",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand mammifère terrestre ?",
+        "choices": [
+          "Le rhinocéros blanc",
+          "L’éléphant d’Afrique",
+          "L’hippopotame",
+          "La girafe"
+        ],
+        "explanation": "L’éléphant de savane d’Afrique est le plus grand animal terrestre vivant."
+      },
+      "ar": {
+        "question": "ما أكبر الثدييات البرية؟",
+        "choices": [
+          "وحيد القرن الأبيض",
+          "الفيل الأفريقي",
+          "فرس النهر",
+          "الزرافة"
+        ],
+        "explanation": "الفيل الأفريقي هو أكبر حيوان بري حي."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the longest bone in the human body?",
+    "choices": [
+      "Humerus",
+      "Tibia",
+      "Spine",
+      "Femur"
+    ],
+    "correct": 4,
+    "explanation": "The femur, or thigh bone, is the longest and strongest bone in the body.",
+    "reference_text": "Encyclopaedia Britannica, femur",
+    "translations": {
+      "fr": {
+        "question": "Quel est l’os le plus long du corps humain ?",
+        "choices": [
+          "L’humérus",
+          "Le tibia",
+          "La colonne vertébrale",
+          "Le fémur"
+        ],
+        "explanation": "Le fémur est l’os le plus long et le plus solide du corps."
+      },
+      "ar": {
+        "question": "ما أطول عظمة في جسم الإنسان؟",
+        "choices": [
+          "عظم العضد",
+          "عظم الظنبوب",
+          "العمود الفقري",
+          "عظم الفخذ"
+        ],
+        "explanation": "عظم الفخذ هو أطول عظام الجسم وأكثرها صلابة."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which organ pumps blood through the human body?",
+    "choices": [
+      "Kidney",
+      "Heart",
+      "Lung",
+      "Liver"
+    ],
+    "correct": 2,
+    "explanation": "The heart pumps blood through the circulatory system.",
+    "reference_text": "Encyclopaedia Britannica, heart",
+    "translations": {
+      "fr": {
+        "question": "Quel organe pompe le sang dans le corps humain ?",
+        "choices": [
+          "Le rein",
+          "Le cœur",
+          "Le poumon",
+          "Le foie"
+        ],
+        "explanation": "Le cœur propulse le sang dans tout le système circulatoire."
+      },
+      "ar": {
+        "question": "أيّ عضو يضخ الدم في جسم الإنسان؟",
+        "choices": [
+          "الكلية",
+          "القلب",
+          "الرئة",
+          "الكبد"
+        ],
+        "explanation": "يضخ القلب الدم عبر الجهاز الدوري كله."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the longest river in the world, traditionally measured?",
+    "choices": [
+      "Mississippi",
+      "Nile",
+      "Yangtze",
+      "Amazon"
+    ],
+    "correct": 2,
+    "explanation": "The Nile has traditionally been considered the longest river, although some measurements place the Amazon first.",
+    "reference_text": "Encyclopaedia Britannica, Nile River",
+    "translations": {
+      "fr": {
+        "question": "Quel est traditionnellement le plus long fleuve du monde ?",
+        "choices": [
+          "Le Mississippi",
+          "Le Nil",
+          "Le Yangtsé",
+          "L’Amazone"
+        ],
+        "explanation": "Le Nil est traditionnellement considéré comme le plus long, même si certaines mesures placent l’Amazone en tête."
+      },
+      "ar": {
+        "question": "ما أطول نهر في العالم تقليديًا؟",
+        "choices": [
+          "الميسيسيبي",
+          "النيل",
+          "اليانغتسي",
+          "الأمازون"
+        ],
+        "explanation": "يُعدّ النيل تقليديًا أطول أنهار العالم، رغم أن بعض القياسات تضع الأمازون في المقدمة."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country has the most time zones?",
+    "choices": [
+      "France",
+      "United States",
+      "Russia",
+      "China"
+    ],
+    "correct": 1,
+    "explanation": "France, including its overseas territories, has the most time zones of any country.",
+    "reference_text": "time and date reference, time zones by country",
+    "translations": {
+      "fr": {
+        "question": "Quel pays compte le plus de fuseaux horaires ?",
+        "choices": [
+          "La France",
+          "Les États-Unis",
+          "La Russie",
+          "La Chine"
+        ],
+        "explanation": "La France, territoires d’outre-mer compris, possède le plus grand nombre de fuseaux horaires."
+      },
+      "ar": {
+        "question": "أيّ دولة لديها أكبر عدد من المناطق الزمنية؟",
+        "choices": [
+          "فرنسا",
+          "الولايات المتحدة",
+          "روسيا",
+          "الصين"
+        ],
+        "explanation": "تمتلك فرنسا، بما فيها أقاليمها الخارجية، أكبر عدد من المناطق الزمنية في العالم."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ancient wonder was located in Alexandria?",
+    "choices": [
+      "Lighthouse of Alexandria",
+      "Temple of Artemis",
+      "Hanging Gardens",
+      "Colossus of Rhodes"
+    ],
+    "correct": 1,
+    "explanation": "The Pharos lighthouse of Alexandria was one of the Seven Wonders of the Ancient World.",
+    "reference_text": "Encyclopaedia Britannica, Pharos of Alexandria",
+    "translations": {
+      "fr": {
+        "question": "Quelle merveille antique se trouvait à Alexandrie ?",
+        "choices": [
+          "Le phare d’Alexandrie",
+          "Le temple d’Artémis",
+          "Les jardins suspendus",
+          "Le colosse de Rhodes"
+        ],
+        "explanation": "Le phare de Pharos était l’une des Sept Merveilles du monde antique."
+      },
+      "ar": {
+        "question": "أيّ عجيبة قديمة كانت تقع في الإسكندرية؟",
+        "choices": [
+          "منارة الإسكندرية",
+          "معبد أرتميس",
+          "الحدائق المعلقة",
+          "تمثال رودس"
+        ],
+        "explanation": "كانت منارة فاروس في الإسكندرية إحدى عجائب الدنيا السبع القديمة."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the most spoken language in Africa by number of native speakers?",
+    "choices": [
+      "Hausa",
+      "Swahili",
+      "Arabic",
+      "Yoruba"
+    ],
+    "correct": 3,
+    "explanation": "Arabic, with its many dialects, has the largest number of speakers in Africa.",
+    "reference_text": "Ethnologue, African languages",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la langue la plus parlée en Afrique, par nombre de locuteurs ?",
+        "choices": [
+          "Le haoussa",
+          "Le swahili",
+          "L’arabe",
+          "Le yorouba"
+        ],
+        "explanation": "L’arabe, avec ses nombreux dialectes, compte le plus grand nombre de locuteurs en Afrique."
+      },
+      "ar": {
+        "question": "ما اللغة الأكثر انتشارًا في إفريقيا من حيث عدد المتحدثين؟",
+        "choices": [
+          "الهوسا",
+          "السواحيلية",
+          "العربية",
+          "اليوروبا"
+        ],
+        "explanation": "تملك العربية، بلهجاتها المتعددة، أكبر عدد من المتحدثين في إفريقيا."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which colour is made by mixing blue and yellow?",
+    "choices": [
+      "Purple",
+      "Orange",
+      "Brown",
+      "Green"
+    ],
+    "correct": 4,
+    "explanation": "Mixing blue and yellow pigments produces green.",
+    "reference_text": "colour mixing basics",
+    "translations": {
+      "fr": {
+        "question": "Quelle couleur obtient-on en mélangeant du bleu et du jaune ?",
+        "choices": [
+          "Le violet",
+          "L’orange",
+          "Le marron",
+          "Le vert"
+        ],
+        "explanation": "Le mélange de bleu et de jaune donne du vert."
+      },
+      "ar": {
+        "question": "ما اللون الناتج عن خلط الأزرق مع الأصفر؟",
+        "choices": [
+          "البنفسجي",
+          "البرتقالي",
+          "البني",
+          "الأخضر"
+        ],
+        "explanation": "يعطي خلط الأزرق مع الأصفر اللون الأخضر."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the smallest prime number?",
+    "choices": [
+      "0",
+      "3",
+      "2",
+      "1"
+    ],
+    "correct": 3,
+    "explanation": "2 is the only even prime number and the smallest prime.",
+    "reference_text": "number theory basics",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus petit nombre premier ?",
+        "choices": [
+          "0",
+          "3",
+          "2",
+          "1"
+        ],
+        "explanation": "2 est le plus petit nombre premier et le seul nombre premier pair."
+      },
+      "ar": {
+        "question": "ما أصغر عدد أولي؟",
+        "choices": [
+          "0",
+          "3",
+          "2",
+          "1"
+        ],
+        "explanation": "العدد 2 هو أصغر عدد أولي، وهو الوحيد الزوجي بين الأعداد الأولية."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which famous painting is in the Louvre museum in Paris?",
+    "choices": [
+      "The Night Watch",
+      "Mona Lisa",
+      "The Last Supper",
+      "Starry Night"
+    ],
+    "correct": 2,
+    "explanation": "The Mona Lisa hangs in the Louvre; The Last Supper is in Milan and The Night Watch is in Amsterdam.",
+    "reference_text": "Louvre Museum collection",
+    "translations": {
+      "fr": {
+        "question": "Quel tableau célèbre se trouve au musée du Louvre à Paris ?",
+        "choices": [
+          "La Ronde de nuit",
+          "La Joconde",
+          "La Cène",
+          "La Nuit étoilée"
+        ],
+        "explanation": "La Joconde est exposée au Louvre ; La Cène est à Milan et La Ronde de nuit à Amsterdam."
+      },
+      "ar": {
+        "question": "أيّ لوحة شهيرة توجد في متحف اللوفر بباريس؟",
+        "choices": [
+          "حراسة الليل",
+          "الموناليزا",
+          "العشاء الأخير",
+          "ليلة النجوم"
+        ],
+        "explanation": "تُعرض الموناليزا في اللوفر، أما العشاء الأخير ففي ميلانو وحراسة الليل في أمستردام."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which day of the week comes after Friday?",
+    "choices": [
+      "Monday",
+      "Saturday",
+      "Sunday",
+      "Thursday"
+    ],
+    "correct": 2,
+    "explanation": "Saturday follows Friday in the standard week.",
+    "reference_text": "calendar basics",
+    "translations": {
+      "fr": {
+        "question": "Quel jour vient après le vendredi ?",
+        "choices": [
+          "Le lundi",
+          "Le samedi",
+          "Le dimanche",
+          "Le jeudi"
+        ],
+        "explanation": "Le samedi suit le vendredi dans la semaine."
+      },
+      "ar": {
+        "question": "أيّ يوم يأتي بعد الجمعة؟",
+        "choices": [
+          "الاثنين",
+          "السبت",
+          "الأحد",
+          "الخميس"
+        ],
+        "explanation": "يأتي السبت بعد الجمعة في الأسبوع."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the freezing point of water in degrees Celsius at sea level?",
+    "choices": [
+      "0",
+      "100",
+      "10",
+      "−10"
+    ],
+    "correct": 1,
+    "explanation": "Water freezes at 0 °C under standard atmospheric pressure.",
+    "reference_text": "NIST water properties",
+    "translations": {
+      "fr": {
+        "question": "Quel est le point de congélation de l’eau en degrés Celsius au niveau de la mer ?",
+        "choices": [
+          "0",
+          "100",
+          "10",
+          "−10"
+        ],
+        "explanation": "L’eau gèle à 0 °C sous la pression atmosphérique normale."
+      },
+      "ar": {
+        "question": "ما درجة تجمد الماء بالدرجات المئوية عند مستوى سطح البحر؟",
+        "choices": [
+          "0",
+          "100",
+          "10",
+          "−10"
+        ],
+        "explanation": "يتجمد الماء عند 0 درجة مئوية تحت الضغط الجوي المعتاد."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest island in the Mediterranean Sea?",
+    "choices": [
+      "Cyprus",
+      "Sardinia",
+      "Sicily",
+      "Crete"
+    ],
+    "correct": 3,
+    "explanation": "Sicily is the largest island in the Mediterranean.",
+    "reference_text": "Encyclopaedia Britannica, Sicily",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande île de la Méditerranée ?",
+        "choices": [
+          "Chypre",
+          "La Sardaigne",
+          "La Sicile",
+          "La Crète"
+        ],
+        "explanation": "La Sicile est la plus grande île de la Méditerranée."
+      },
+      "ar": {
+        "question": "ما أكبر جزيرة في البحر الأبيض المتوسط؟",
+        "choices": [
+          "قبرص",
+          "سردينيا",
+          "صقلية",
+          "كريت"
+        ],
+        "explanation": "تُعد صقلية أكبر جزيرة في البحر الأبيض المتوسط."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport’s world championship is called the Stanley Cup playoffs in North America?",
+    "choices": [
+      "Baseball",
+      "Ice hockey",
+      "Football",
+      "Basketball"
+    ],
+    "correct": 2,
+    "explanation": "The Stanley Cup playoffs decide the NHL champion in ice hockey.",
+    "reference_text": "National Hockey League",
+    "translations": {
+      "fr": {
+        "question": "Quel sport a ses séries éliminatoires appelées « playoffs de la Coupe Stanley » en Amérique du Nord ?",
+        "choices": [
+          "Le baseball",
+          "Le hockey sur glace",
+          "Le football",
+          "Le basket-ball"
+        ],
+        "explanation": "Les séries de la Coupe Stanley désignent le champion de la LNH au hockey sur glace."
+      },
+      "ar": {
+        "question": "في أي رياضة تُحسم بطولة الكأس الشهيرة في أمريكا الشمالية عبر أدوار خروج المغلوب؟",
+        "choices": [
+          "البيسبول",
+          "هوكي الجليد",
+          "كرة القدم",
+          "كرة السلة"
+        ],
+        "explanation": "تحدد أدوار كأس ستانلي بطل الدوري الأمريكي الوطني للهوكي."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the highest mountain in Africa?",
+    "choices": [
+      "Mount Kenya",
+      "Mount Toubkal",
+      "Mount Stanley",
+      "Mount Kilimanjaro"
+    ],
+    "correct": 4,
+    "explanation": "Mount Kilimanjaro in Tanzania is the highest mountain in Africa, at about 5,895 metres.",
+    "reference_text": "Encyclopaedia Britannica, Kilimanjaro",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus haute montagne d’Afrique ?",
+        "choices": [
+          "Le mont Kenya",
+          "Le Toubkal",
+          "Le mont Stanley",
+          "Le Kilimandjaro"
+        ],
+        "explanation": "Le Kilimandjaro, en Tanzanie, culmine à environ 5 895 mètres."
+      },
+      "ar": {
+        "question": "ما أعلى جبل في إفريقيا؟",
+        "choices": [
+          "جبل كينيا",
+          "جبل توبقال",
+          "جبل ستانلي",
+          "كليمنجارو"
+        ],
+        "explanation": "يُعد كليمنجارو في تنزانيا أعلى جبل في إفريقيا، بارتفاع نحو 5895 مترًا."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many sides does a hexagon have?",
+    "choices": [
+      "5",
+      "7",
+      "6",
+      "8"
+    ],
+    "correct": 3,
+    "explanation": "A hexagon has six sides and six angles.",
+    "reference_text": "geometry basics",
+    "translations": {
+      "fr": {
+        "question": "Combien de côtés possède un hexagone ?",
+        "choices": [
+          "5",
+          "7",
+          "6",
+          "8"
+        ],
+        "explanation": "Un hexagone possède six côtés et six angles."
+      },
+      "ar": {
+        "question": "كم ضلعًا للسداسي؟",
+        "choices": [
+          "5",
+          "7",
+          "6",
+          "8"
+        ],
+        "explanation": "للسداسي ستة أضلاع وستة زوايا."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which organ filters blood to produce urine?",
+    "choices": [
+      "Stomach",
+      "Spleen",
+      "Liver",
+      "Kidney"
+    ],
+    "correct": 4,
+    "explanation": "The kidneys filter waste from the blood and produce urine.",
+    "reference_text": "Encyclopaedia Britannica, kidney",
+    "translations": {
+      "fr": {
+        "question": "Quel organe filtre le sang pour produire l’urine ?",
+        "choices": [
+          "L’estomac",
+          "La rate",
+          "Le foie",
+          "Le rein"
+        ],
+        "explanation": "Les reins filtrent les déchets du sang et produisent l’urine."
+      },
+      "ar": {
+        "question": "أيّ عضو يُرشّح الدم لإنتاج البول؟",
+        "choices": [
+          "المعدة",
+          "الطحال",
+          "الكبد",
+          "الكلية"
+        ],
+        "explanation": "تُرشّح الكليتان الفضلات من الدم وتنتجان البول."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the capital of Australia?",
+    "choices": [
+      "Canberra",
+      "Perth",
+      "Melbourne",
+      "Sydney"
+    ],
+    "correct": 1,
+    "explanation": "Canberra was chosen as the capital to settle rivalry between Sydney and Melbourne.",
+    "reference_text": "Encyclopaedia Britannica, Canberra",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Australie ?",
+        "choices": [
+          "Canberra",
+          "Perth",
+          "Melbourne",
+          "Sydney"
+        ],
+        "explanation": "Canberra a été choisie pour mettre fin à la rivalité entre Sydney et Melbourne."
+      },
+      "ar": {
+        "question": "ما عاصمة أستراليا؟",
+        "choices": [
+          "كانبيرا",
+          "بيرث",
+          "ملبورن",
+          "سيدني"
+        ],
+        "explanation": "اختيرت كانبيرا عاصمة لإنهاء التنافس بين سيدني وملبورن."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest desert in Asia?",
+    "choices": [
+      "Taklamakan",
+      "Gobi",
+      "Arabian Desert",
+      "Thar"
+    ],
+    "correct": 2,
+    "explanation": "The Gobi is the largest desert in Asia, spanning Mongolia and northern China.",
+    "reference_text": "Encyclopaedia Britannica, Gobi Desert",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand désert d’Asie ?",
+        "choices": [
+          "Le Taklamakan",
+          "Le Gobi",
+          "Le désert d’Arabie",
+          "Le Thar"
+        ],
+        "explanation": "Le Gobi, qui s’étend sur la Mongolie et le nord de la Chine, est le plus grand désert d’Asie."
+      },
+      "ar": {
+        "question": "ما أكبر صحراء في آسيا؟",
+        "choices": [
+          "صحراء تكلامكان",
+          "صحراء غوبي",
+          "الصحراء العربية",
+          "صحراء ثار"
+        ],
+        "explanation": "تُعد صحراء غوبي، الممتدة عبر منغوليا وشمال الصين، أكبر صحراء في آسيا."
+      }
+    }
+  }
+]

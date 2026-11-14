@@ -1,0 +1,483 @@
+[
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is a marine mammal that breathes air through a blowhole?",
+    "choices": [
+      "Sea urchin",
+      "Octopus",
+      "Dolphin",
+      "Clownfish"
+    ],
+    "correct": 3,
+    "explanation": "Dolphins are mammals that surface regularly to breathe.",
+    "reference_text": "NOAA Fisheries marine mammals",
+    "translations": {
+      "fr": {
+        "question": "Quel animal est un mammifère marin qui respire par un évent ?",
+        "choices": [
+          "L’oursin",
+          "La pieuvre",
+          "Le dauphin",
+          "Le poisson-clown"
+        ],
+        "explanation": "Les dauphins sont des mammifères qui remontent régulièrement respirer."
+      },
+      "ar": {
+        "question": "أيّ حيوان بحري من الثدييات يتنفس عبر فتحة في رأسه؟",
+        "choices": [
+          "قنفذ البحر",
+          "الأخطبوط",
+          "الدلفين",
+          "سمكة المهرج"
+        ],
+        "explanation": "الدلافين ثدييات تطفو إلى السطح بانتظام للتنفس."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a sea turtle’s main threat from plastic?",
+    "choices": [
+      "Growing too large",
+      "Using plastic bottles as shells",
+      "Eating plastic bags, mistaking them for jellyfish",
+      "Flying into plastic nets"
+    ],
+    "correct": 3,
+    "explanation": "Turtles often eat plastic bags they mistake for jellyfish, which can block their digestive tract.",
+    "reference_text": "NOAA sea turtles and marine debris",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale menace du plastique pour les tortues marines ?",
+        "choices": [
+          "Grandir trop",
+          "Utiliser des bouteilles comme carapace",
+          "Avaler des sacs plastiques qu’elles prennent pour des méduses",
+          "Se prendre dans des filets en plastique volants"
+        ],
+        "explanation": "Les tortues avalent souvent des sacs qu’elles confondent avec des méduses, ce qui peut obstruer leur tube digestif."
+      },
+      "ar": {
+        "question": "ما الخطر الرئيسي الذي يشكله البلاستيك على السلاحف البحرية؟",
+        "choices": [
+          "النمو أكثر من اللازم",
+          "استخدام زجاجات البلاستيك كأصداف",
+          "ابتلاع أكياس بلاستيكية تحسبها قناديل بحر",
+          "الاصطدام بالشباك البلاستيكية الطافية"
+        ],
+        "explanation": "تبتلع السلاحف أكياسًا تظنها قناديل بحر، فتسد أمعاءها أحيانًا."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the main type of habitat formed by kelp?",
+    "choices": [
+      "Glacier",
+      "Mountain range",
+      "Kelp forest",
+      "Desert"
+    ],
+    "correct": 3,
+    "explanation": "Kelp forests are underwater forests of large brown algae that shelter many species.",
+    "reference_text": "NOAA kelp forest ecosystems",
+    "translations": {
+      "fr": {
+        "question": "Quel type d’habitat forment les laminaires (kelp) ?",
+        "choices": [
+          "Un glacier",
+          "Une chaîne de montagnes",
+          "Une forêt de kelp",
+          "Un désert"
+        ],
+        "explanation": "Les forêts de kelp sont de grandes algues brunes qui abritent de nombreuses espèces."
+      },
+      "ar": {
+        "question": "ما نوع الموئل الذي تُكوّنه الطحالب العملاقة (الكِلب)؟",
+        "choices": [
+          "نهر جليدي",
+          "سلسلة جبلية",
+          "غابة من الكلب البحري",
+          "صحراء"
+        ],
+        "explanation": "غابات الكلب تحت الماء تتكون من طحالب بنية كبيرة تأوي كثيرًا من الأنواع."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the role of mangroves for coastal life?",
+    "choices": [
+      "They shelter nurseries for fish and protect shores from erosion",
+      "They produce oil",
+      "They block all light from reaching the sea",
+      "They increase salinity"
+    ],
+    "correct": 1,
+    "explanation": "Mangrove roots shelter juvenile fish and reduce wave energy on coasts.",
+    "reference_text": "UNEP mangrove ecosystems",
+    "translations": {
+      "fr": {
+        "question": "Quel rôle jouent les mangroves pour la vie côtière ?",
+        "choices": [
+          "Elles abritent des nurseries de poissons et protègent le littoral de l’érosion",
+          "Elles produisent du pétrole",
+          "Elles empêchent toute lumière d’atteindre la mer",
+          "Elles augmentent la salinité"
+        ],
+        "explanation": "Les racines des mangroves abritent les jeunes poissons et réduisent l’énergie des vagues."
+      },
+      "ar": {
+        "question": "ما دور أشجار المانغروف للحياة الساحلية؟",
+        "choices": [
+          "توفر حاضنات للأسماك وتحمي الشواطئ من التآكل",
+          "تنتج النفط",
+          "تمنع وصول الضوء إلى البحر",
+          "ترفع نسبة الملوحة"
+        ],
+        "explanation": "تأوي جذور المانغروف صغار الأسماك وتقلل قوة الأمواج عند الشواطئ."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “keystone species”?",
+    "choices": [
+      "A species used to make keys",
+      "A species whose impact on its ecosystem is much larger than its abundance suggests",
+      "A species that lives only in deserts",
+      "A species that is hard to see"
+    ],
+    "correct": 2,
+    "explanation": "Removing a keystone species can collapse the whole ecosystem around it.",
+    "reference_text": "Paine, keystone species concept",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « espèce clé de voûte » ?",
+        "choices": [
+          "Une espèce utilisée pour fabriquer des clés",
+          "Une espèce dont l’impact sur son écosystème dépasse largement son abondance",
+          "Une espèce qui vit uniquement dans les déserts",
+          "Une espèce difficile à observer"
+        ],
+        "explanation": "Sa disparition peut faire s’effondrer tout l’écosystème qui l’entoure."
+      },
+      "ar": {
+        "question": "ما هو «النوع المحوري» (Keystone species)؟",
+        "choices": [
+          "نوع يُستخدم لصنع المفاتيح",
+          "نوع يفوق تأثيره في نظامه البيئي كثيرًا وفرته العددية",
+          "نوع يعيش في الصحراء فقط",
+          "نوع يصعب رؤيته"
+        ],
+        "explanation": "قد يؤدي اختفاؤه إلى انهيار النظام البيئي المحيط به كله."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which seabird is famous for diving deep into the sea to catch fish?",
+    "choices": [
+      "Penguin",
+      "Seagull",
+      "Parrot",
+      "Pelican"
+    ],
+    "correct": 1,
+    "explanation": "Penguins are flightless seabirds that dive and swim underwater to hunt.",
+    "reference_text": "IUCN penguin species",
+    "translations": {
+      "fr": {
+        "question": "Quel oiseau marin est célèbre pour ses plongées profondes ?",
+        "choices": [
+          "Le manchot",
+          "La mouette",
+          "Le perroquet",
+          "Le pélican"
+        ],
+        "explanation": "Les manchots sont des oiseaux marins incapables de voler qui chassent en nageant sous l’eau."
+      },
+      "ar": {
+        "question": "أيّ طائر بحري يشتهر بالغوص عميقًا في البحر لصيد الأسماك؟",
+        "choices": [
+          "البطريق",
+          "النورس",
+          "الببغاء",
+          "البجعة البحرية"
+        ],
+        "explanation": "البطريق طائر بحري لا يطير، يغوص ويسبح تحت الماء للصيد."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “bioluminescence” in the ocean?",
+    "choices": [
+      "Glow from underwater volcanoes",
+      "Light from ship engines",
+      "Reflection of sunlight from waves",
+      "Light produced by living organisms"
+    ],
+    "correct": 4,
+    "explanation": "Many deep-sea animals produce light through chemical reactions in their bodies.",
+    "reference_text": "NOAA bioluminescence facts",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « bioluminescence » dans l’océan ?",
+        "choices": [
+          "La lueur des volcans sous-marins",
+          "La lumière des moteurs de navires",
+          "Le reflet du soleil sur les vagues",
+          "La lumière produite par des organismes vivants"
+        ],
+        "explanation": "De nombreux animaux des abysses produisent de la lumière par des réactions chimiques."
+      },
+      "ar": {
+        "question": "ما هو «التوهج الحيوي» (Bioluminescence) في المحيط؟",
+        "choices": [
+          "وهج البراكين تحت الماء",
+          "ضوء محركات السفن",
+          "انعكاس ضوء الشمس عن الأمواج",
+          "ضوء تنتجه الكائنات الحية"
+        ],
+        "explanation": "تنتج كثير من كائنات أعماق البحار الضوء عبر تفاعلات كيميائية داخل أجسامها."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the largest group of marine animals without a backbone called?",
+    "choices": [
+      "Mammals",
+      "Reptiles",
+      "Amphibians",
+      "Invertebrates"
+    ],
+    "correct": 4,
+    "explanation": "Invertebrates such as molluscs, crustaceans and echinoderms dominate marine life by number of species.",
+    "reference_text": "WoRMS marine species register",
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on le plus grand groupe d’animaux marins sans colonne vertébrale ?",
+        "choices": [
+          "Les mammifères",
+          "Les reptiles",
+          "Les amphibiens",
+          "Les invertébrés"
+        ],
+        "explanation": "Les invertébrés comme les mollusques et les crustacés dominent en nombre d’espèces."
+      },
+      "ar": {
+        "question": "ما اسم أكبر مجموعة من الكائنات البحرية التي لا تملك عمودًا فقريًا؟",
+        "choices": [
+          "الثدييات",
+          "الزواحف",
+          "البرمائيات",
+          "اللافقاريات"
+        ],
+        "explanation": "تهيمن اللافقاريات مثل الرخويات والقشريات على الأنواع البحرية عددًا."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which marine species is most associated with the Mediterranean’s critically endangered population of monk seals?",
+    "choices": [
+      "Sea lion",
+      "Harbour seal",
+      "Mediterranean monk seal",
+      "Walrus"
+    ],
+    "correct": 3,
+    "explanation": "The Mediterranean monk seal is one of the world’s most endangered marine mammals.",
+    "reference_text": "IUCN Red List, Mediterranean monk seal",
+    "translations": {
+      "fr": {
+        "question": "Quel mammifère marin méditerranéen est parmi les plus menacés au monde ?",
+        "choices": [
+          "Le lion de mer",
+          "Le phoque veau-marin",
+          "Le phoque moine de Méditerranée",
+          "Le morse"
+        ],
+        "explanation": "Le phoque moine de Méditerranée est l’un des mammifères marins les plus menacés au monde."
+      },
+      "ar": {
+        "question": "أيّ من الثدييات البحرية المتوسطية يُعد من أكثر الأنواع المهددة في العالم؟",
+        "choices": [
+          "أسد البحر",
+          "فقمة الميناء",
+          "فقمة الراهب المتوسطية",
+          "الفظ"
+        ],
+        "explanation": "فقمة الراهب المتوسطية من أكثر الثدييات البحرية تعرضًا للخطر في العالم."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is famous for its ink as a defence?",
+    "choices": [
+      "Starfish",
+      "Jellyfish",
+      "Octopus",
+      "Crab"
+    ],
+    "correct": 3,
+    "explanation": "Octopuses and squids release ink clouds to confuse predators.",
+    "reference_text": "Marine Biological Association, cephalopods",
+    "translations": {
+      "fr": {
+        "question": "Quel animal est connu pour son encre utilisée comme défense ?",
+        "choices": [
+          "L’étoile de mer",
+          "La méduse",
+          "La pieuvre",
+          "Le crabe"
+        ],
+        "explanation": "Les pieuvres et les seiches relâchent un nuage d’encre pour dérouter leurs prédateurs."
+      },
+      "ar": {
+        "question": "أيّ حيوان يشتهر بإفراز الحبر دفاعًا عن نفسه؟",
+        "choices": [
+          "نجم البحر",
+          "قنديل البحر",
+          "الأخطبوط",
+          "السلطعون"
+        ],
+        "explanation": "يطلق الأخطبوط والحبار سحابة من الحبر لتضليل المفترسين."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the “deep sea” zone usually defined as?",
+    "choices": [
+      "Only the first 2 metres of seawater",
+      "Surface waters near beaches",
+      "Less than 20 metres deep",
+      "Below 200 metres of depth"
+    ],
+    "correct": 4,
+    "explanation": "The deep sea begins below roughly 200 metres, where sunlight becomes very scarce.",
+    "reference_text": "NOAA ocean zones",
+    "translations": {
+      "fr": {
+        "question": "Comment est généralement définie la zone des « grands fonds » ?",
+        "choices": [
+          "Seulement les deux premiers mètres",
+          "Les eaux de surface près des plages",
+          "Moins de 20 mètres de profondeur",
+          "Au-delà de 200 mètres de profondeur"
+        ],
+        "explanation": "Les grands fonds commencent vers 200 mètres, où la lumière du soleil devient très rare."
+      },
+      "ar": {
+        "question": "كيف يُعرَّف عادةً نطاق أعماق البحار؟",
+        "choices": [
+          "أول مترين من مياه البحر فقط",
+          "مياه السطح قرب الشواطئ",
+          "أقل من 20 مترًا",
+          "ما دون عمق 200 متر"
+        ],
+        "explanation": "تبدأ أعماق البحار نحو 200 متر، حيث يصبح ضوء الشمس نادرًا جدًا."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the sea urchin’s role in kelp forests when its population grows unchecked?",
+    "choices": [
+      "They overgraze kelp, creating barren seafloor",
+      "They increase kelp growth",
+      "They build reefs",
+      "They protect kelp from storms"
+    ],
+    "correct": 1,
+    "explanation": "Unchecked urchins can strip kelp forests, leaving barren rock known as urchin barrens.",
+    "reference_text": "Estes and Palmisano, kelp–urchin interactions",
+    "translations": {
+      "fr": {
+        "question": "Quel rôle jouent les oursins dans les forêts de kelp lorsque leur population explose ?",
+        "choices": [
+          "Ils broutent le kelp et laissent un fond rocheux désertique",
+          "Ils favorisent la croissance du kelp",
+          "Ils construisent des récifs",
+          "Ils protègent le kelp des tempêtes"
+        ],
+        "explanation": "Des oursins trop nombreux peuvent dévorer les forêts de kelp et laisser des « déserts d’oursins »."
+      },
+      "ar": {
+        "question": "ما دور قنافذ البحر في غابات الكلب البحري عندما يتكاثر عددها دون ضابط؟",
+        "choices": [
+          "ترعى الكلب بإفراط فتترك قاع البحر قاحلًا",
+          "تزيد نمو الكلب",
+          "تبني الشعاب",
+          "تحمي الكلب من العواصف"
+        ],
+        "explanation": "قد تجرد أعداد كبيرة من القنافذ غابات الكلب، فيبقى الصخر عاريًا."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which fish is known for changing colour and living among sea anemones?",
+    "choices": [
+      "Tuna",
+      "Eel",
+      "Sardine",
+      "Clownfish"
+    ],
+    "correct": 4,
+    "explanation": "Clownfish live symbiotically among sea anemones, which protect them from predators.",
+    "reference_text": "NOAA clownfish and anemones",
+    "translations": {
+      "fr": {
+        "question": "Quel poisson vit parmi les anémones de mer et leur doit sa protection ?",
+        "choices": [
+          "Le thon",
+          "L’anguille",
+          "La sardine",
+          "Le poisson-clown"
+        ],
+        "explanation": "Les poissons-clowns vivent en symbiose avec les anémones, qui les protègent des prédateurs."
+      },
+      "ar": {
+        "question": "أيّ سمكة تعيش بين شقائق البحر وتحظى بحمايتها؟",
+        "choices": [
+          "التونة",
+          "الأنقليس",
+          "السردين",
+          "سمكة المهرج"
+        ],
+        "explanation": "تعيش سمكة المهرج في تكافل مع شقائق البحر التي تحميها من المفترسات."
+      }
+    }
+  }
+]

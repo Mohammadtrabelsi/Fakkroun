@@ -1,0 +1,512 @@
+[
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ship type carries containers across oceans?",
+    "choices": [
+      "Sailboat",
+      "Container ship",
+      "Kayak",
+      "Canoe"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel type de navire transporte des conteneurs à travers les océans ?",
+        "choices": [
+          "Le voilier",
+          "Le porte-conteneurs",
+          "Le kayak",
+          "Le canoë"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من السفن ينقل الحاويات عبر المحيطات؟",
+        "choices": [
+          "المركب الشراعي",
+          "سفينة الحاويات",
+          "الكاياك",
+          "الزورق"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Tunisian port is famous for its fishing fleet and marine trade in the south-east?",
+    "choices": [
+      "Gafsa",
+      "Sfax",
+      "Kasserine",
+      "Tozeur"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel port tunisien est célèbre pour sa flotte de pêche et son commerce maritime au sud-est ?",
+        "choices": [
+          "Gafsa",
+          "Sfax",
+          "Kasserine",
+          "Tozeur"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ميناء تونسي يشتهر بأسطول الصيد والتجارة البحرية في الجنوب الشرقي؟",
+        "choices": [
+          "قفصة",
+          "صفاقس",
+          "القصرين",
+          "توزر"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “aquaponics”?",
+    "choices": [
+      "Building seawalls",
+      "Fishing with plants",
+      "Growing plants and fish together in a closed water system",
+      "Mining sea salt"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’« aquaponie » ?",
+        "choices": [
+          "La construction de digues",
+          "La pêche avec des plantes",
+          "La culture de plantes et de poissons ensemble dans un système d’eau fermé",
+          "L’extraction du sel marin"
+        ]
+      },
+      "ar": {
+        "question": "ما هي «الزراعة المائية المتكاملة» (Aquaponics)؟",
+        "choices": [
+          "بناء الحواجز البحرية",
+          "الصيد بالنباتات",
+          "زراعة النباتات والأسماك معًا في نظام مائي مغلق",
+          "استخراج ملح البحر"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sea area is known as one of the busiest shipping routes between Europe and Asia?",
+    "choices": [
+      "Dead Sea",
+      "Mediterranean Sea",
+      "Aral Sea",
+      "Caspian Sea"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle mer est une des routes maritimes les plus fréquentées entre l’Europe et l’Asie ?",
+        "choices": [
+          "La mer Morte",
+          "La mer Méditerranée",
+          "La mer d’Aral",
+          "La mer Caspienne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بحر يُعد من أكثر الممرات الملاحية ازدحامًا بين أوروبا وآسيا؟",
+        "choices": [
+          "البحر الميت",
+          "البحر الأبيض المتوسط",
+          "بحر آرال",
+          "بحر قزوين"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main purpose of a sea “buoy”?",
+    "choices": [
+      "Storing oil",
+      "Growing fish",
+      "Producing electricity",
+      "Marking channels, hazards or moorings for ships"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert principalement une bouée en mer ?",
+        "choices": [
+          "Stocker du pétrole",
+          "Élever des poissons",
+          "Produire de l’électricité",
+          "Balisage de chenaux, de dangers ou de mouillages pour les navires"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من العوامة البحرية (البوية)؟",
+        "choices": [
+          "تخزين النفط",
+          "تربية الأسماك",
+          "إنتاج الكهرباء",
+          "تحديد الممرات والأخطار أو أماكن الرسو للسفن"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which activity is typical for a fishing cooperative?",
+    "choices": [
+      "Logging forests",
+      "Organising fishing trips and selling catches together",
+      "Mining gold",
+      "Producing cars"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité est typique d’une coopérative de pêcheurs ?",
+        "choices": [
+          "Exploiter des forêts",
+          "Organiser les sorties de pêche et vendre les prises ensemble",
+          "Extraire de l’or",
+          "Fabriquer des voitures"
+        ]
+      },
+      "ar": {
+        "question": "ما النشاط المعتاد لتعاونية الصيادين؟",
+        "choices": [
+          "قطع الغابات",
+          "تنظيم رحلات الصيد وبيع الصيد بشكل جماعي",
+          "تعدين الذهب",
+          "صناعة السيارات"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “mariculture”?",
+    "choices": [
+      "Hunting whales",
+      "Drilling for gas",
+      "Farming marine organisms in the sea",
+      "Mining minerals from seabed"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « mariculture » ?",
+        "choices": [
+          "La chasse à la baleine",
+          "Le forage de gaz",
+          "L’élevage d’organismes marins en mer",
+          "L’extraction de minéraux du fond marin"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الاستزراع البحري» (Mariculture)؟",
+        "choices": [
+          "صيد الحيتان",
+          "التنقيب عن الغاز",
+          "تربية الكائنات البحرية في البحر",
+          "استخراج المعادن من قاع البحر"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main concern with plastic fishing nets lost at sea?",
+    "choices": [
+      "Ghost fishing that traps marine life",
+      "Increasing sea salt",
+      "Making the sea bluer",
+      "Cooling the water"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal problème des filets de pêche en plastique perdus en mer ?",
+        "choices": [
+          "La « pêche fantôme » qui piège la vie marine",
+          "L’augmentation du sel marin",
+          "Rendre la mer plus bleue",
+          "Le refroidissement de l’eau"
+        ]
+      },
+      "ar": {
+        "question": "ما الخطر الرئيسي لشباك الصيد البلاستيكية المفقودة في البحر؟",
+        "choices": [
+          "الصيد الشبحي الذي يصطاد الكائنات البحرية",
+          "زيادة ملح البحر",
+          "جعل البحر أزرق أكثر",
+          "تبريد المياه"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call a boat that is used to catch fish with a net?",
+    "choices": [
+      "Tanker",
+      "Ferry",
+      "Fishing boat",
+      "Icebreaker"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un bateau utilisé pour pêcher au filet ?",
+        "choices": [
+          "Un pétrolier",
+          "Un ferry",
+          "Un bateau de pêche",
+          "Un brise-glace"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم القارب المستخدم لصيد الأسماك بالشباك؟",
+        "choices": [
+          "ناقلة النفط",
+          "العبارة",
+          "قارب الصيد",
+          "كاسر الجليد"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian coastal activity is linked to processing and exporting fish products?",
+    "choices": [
+      "Coal mining",
+      "Seafood processing industry",
+      "Desert farming",
+      "Diamond cutting"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité côtière tunisienne est liée à la transformation et l’exportation des produits de la mer ?",
+        "choices": [
+          "L’extraction du charbon",
+          "L’industrie de transformation des produits de la mer",
+          "L’agriculture désertique",
+          "La taille de diamants"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط ساحلي تونسي يرتبط بتصنيع المنتجات البحرية وتصديرها؟",
+        "choices": [
+          "استخراج الفحم",
+          "صناعة تحويل المنتجات البحرية",
+          "الزراعة الصحراوية",
+          "تهذيب الماس"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “ballast water exchange” used for in ships?",
+    "choices": [
+      "Cooking food on board",
+      "Stabilising ships and managing water balance",
+      "Generating electricity",
+      "Watering crops"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert l’échange des eaux de ballast sur les navires ?",
+        "choices": [
+          "Cuisiner à bord",
+          "Stabiliser le navire et gérer l’équilibre de l’eau",
+          "Produire de l’électricité",
+          "Arroser les cultures"
+        ]
+      },
+      "ar": {
+        "question": "ما وظيفة تبديل مياه الصابورة في السفن؟",
+        "choices": [
+          "طهي الطعام على متنها",
+          "تثبيت السفينة وإدارة توازن المياه",
+          "توليد الكهرباء",
+          "ري المحاصيل"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural resource does the sea provide that is used to make table salt?",
+    "choices": [
+      "Gold",
+      "Sand",
+      "Sea water",
+      "Oil"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource naturelle de la mer sert à produire le sel de table ?",
+        "choices": [
+          "L’or",
+          "Le sable",
+          "L’eau de mer",
+          "Le pétrole"
+        ]
+      },
+      "ar": {
+        "question": "ما المورد الطبيعي الذي يوفره البحر ويُستخدم لإنتاج ملح الطعام؟",
+        "choices": [
+          "الذهب",
+          "الرمل",
+          "مياه البحر",
+          "النفط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main purpose of a “port authority”?",
+    "choices": [
+      "Managing port operations and safety",
+      "Building fishing boats only",
+      "Catching fish",
+      "Selling tickets for concerts"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le rôle principal d’une « autorité portuaire » ?",
+        "choices": [
+          "Gérer les opérations et la sécurité du port",
+          "Construire uniquement des bateaux de pêche",
+          "Pêcher",
+          "Vendre des billets de concert"
+        ]
+      },
+      "ar": {
+        "question": "ما الوظيفة الرئيسية لـ«هيئة الميناء»؟",
+        "choices": [
+          "إدارة عمليات الميناء وسلامته",
+          "بناء قوارب الصيد فقط",
+          "صيد الأسماك",
+          "بيع تذاكر الحفلات"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which marine resource is used to produce medicine and cosmetics from certain sea sponges and corals?",
+    "choices": [
+      "Gravel",
+      "Coal",
+      "Marine biotechnology compounds",
+      "Oil"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource marine sert à produire des médicaments et cosmétiques à partir de certaines éponges et coraux ?",
+        "choices": [
+          "Le gravier",
+          "Le charbon",
+          "Les composés de la biotechnologie marine",
+          "Le pétrole"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مورد بحري يُستخدم لإنتاج أدوية ومستحضرات تجميل من بعض الإسفنجيات والمرجان؟",
+        "choices": [
+          "الحصى",
+          "الفحم",
+          "مركبات التقانة الحيوية البحرية",
+          "النفط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday seafood is widely eaten in Tunisia and grilled on the coast?",
+    "choices": [
+      "Chocolate",
+      "Fish",
+      "Rice pudding",
+      "Cheese"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel produit de la mer est très consommé en Tunisie, souvent grillé sur la côte ?",
+        "choices": [
+          "Le chocolat",
+          "Le poisson",
+          "Le riz au lait",
+          "Le fromage"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مأكولات بحرية منتشرة في تونس وتُشوى غالبًا على الساحل؟",
+        "choices": [
+          "الشوكولاتة",
+          "السمك",
+          "أرز بالحليب",
+          "الجبن"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  }
+]

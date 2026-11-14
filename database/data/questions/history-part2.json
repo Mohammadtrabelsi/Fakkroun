@@ -1,0 +1,779 @@
+[
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who was the first emperor of ancient Rome?",
+    "choices": [
+      "Nero",
+      "Julius Caesar",
+      "Augustus",
+      "Caligula"
+    ],
+    "correct": 3,
+    "explanation": "Augustus, born Octavian, became the first Roman emperor in 27 BC.",
+    "reference_text": "Encyclopaedia Britannica, Augustus",
+    "translations": {
+      "fr": {
+        "question": "Qui fut le premier empereur romain ?",
+        "choices": [
+          "Néron",
+          "Jules César",
+          "Auguste",
+          "Caligula"
+        ],
+        "explanation": "Auguste, né Octave, devint le premier empereur romain en 27 av. J.-C."
+      },
+      "ar": {
+        "question": "من كان أول إمبراطور روماني؟",
+        "choices": [
+          "نيرون",
+          "يوليوس قيصر",
+          "أغسطس",
+          "كاليغولا"
+        ],
+        "explanation": "أصبح أغسطس، واسمه الأصلي أوكتافيان، أول إمبراطور روماني سنة 27 قبل الميلاد."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which civilisation built the pyramids of Giza?",
+    "choices": [
+      "Ancient Greeks",
+      "Mesopotamians",
+      "Ancient Egyptians",
+      "Persians"
+    ],
+    "correct": 3,
+    "explanation": "The Giza pyramids were built by the ancient Egyptians as royal tombs.",
+    "reference_text": "UNESCO, Memphis and its Necropolis",
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation a construit les pyramides de Gizeh ?",
+        "choices": [
+          "Les Grecs anciens",
+          "Les Mésopotamiens",
+          "Les Égyptiens anciens",
+          "Les Perses"
+        ],
+        "explanation": "Les pyramides de Gizeh ont été bâties par les Égyptiens anciens comme tombeaux royaux."
+      },
+      "ar": {
+        "question": "أيّ حضارة بنت أهرامات الجيزة؟",
+        "choices": [
+          "الإغريق القدماء",
+          "سكان بلاد الرافدين",
+          "المصريون القدماء",
+          "الفرس"
+        ],
+        "explanation": "بنى المصريون القدماء أهرامات الجيزة مقابر ملكية."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which year did Christopher Columbus reach the Americas?",
+    "choices": [
+      "1392",
+      "1692",
+      "1592",
+      "1492"
+    ],
+    "correct": 4,
+    "explanation": "Columbus reached the Caribbean in 1492.",
+    "reference_text": "Encyclopaedia Britannica, Christopher Columbus",
+    "translations": {
+      "fr": {
+        "question": "En quelle année Christophe Colomb a-t-il atteint les Amériques ?",
+        "choices": [
+          "1392",
+          "1692",
+          "1592",
+          "1492"
+        ],
+        "explanation": "Colomb atteignit les Caraïbes en 1492."
+      },
+      "ar": {
+        "question": "في أي عام وصل كريستوفر كولومبوس إلى الأمريكتين؟",
+        "choices": [
+          "1392",
+          "1692",
+          "1592",
+          "1492"
+        ],
+        "explanation": "وصل كولومبوس إلى الكاريبي عام 1492."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which wall was built in China to protect against northern invasions?",
+    "choices": [
+      "Hadrian’s Wall",
+      "Great Wall of China",
+      "Berlin Wall",
+      "Western Wall"
+    ],
+    "correct": 2,
+    "explanation": "The Great Wall was built and extended over many centuries to guard northern borders.",
+    "reference_text": "UNESCO, Great Wall",
+    "translations": {
+      "fr": {
+        "question": "Quelle muraille a été construite en Chine pour se protéger des invasions du Nord ?",
+        "choices": [
+          "Le mur d’Hadrien",
+          "La Grande Muraille de Chine",
+          "Le mur de Berlin",
+          "Le Mur des lamentations"
+        ],
+        "explanation": "La Grande Muraille a été bâtie et prolongée pendant des siècles pour protéger les frontières du nord."
+      },
+      "ar": {
+        "question": "أيّ سور بُني في الصين لحماية البلاد من الغزوات الشمالية؟",
+        "choices": [
+          "جدار هادريان",
+          "سور الصين العظيم",
+          "جدار برلين",
+          "الحائط الغربي"
+        ],
+        "explanation": "بُني سور الصين العظيم وأُضيف إليه على مدى قرون لحراسة الحدود الشمالية."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who wrote the “Muqaddimah”, an early work of historiography and sociology?",
+    "choices": [
+      "Ibn Khaldun",
+      "Al-Masudi",
+      "Ibn Battuta",
+      "Al-Tabari"
+    ],
+    "correct": 1,
+    "explanation": "Ibn Khaldun wrote the Muqaddimah in 1377, a pioneering work on history and social change.",
+    "reference_text": "Encyclopaedia Britannica, Ibn Khaldun",
+    "translations": {
+      "fr": {
+        "question": "Qui a écrit la « Muqaddima », œuvre pionnière de l’historiographie et de la sociologie ?",
+        "choices": [
+          "Ibn Khaldoun",
+          "Al-Masudi",
+          "Ibn Battuta",
+          "Al-Tabari"
+        ],
+        "explanation": "Ibn Khaldoun a écrit la Muqaddima en 1377, œuvre pionnière sur l’histoire et les sociétés."
+      },
+      "ar": {
+        "question": "من ألّف «المقدمة» التي تُعد من أوائل أعمال التاريخ وعلم الاجتماع؟",
+        "choices": [
+          "ابن خلدون",
+          "المسعودي",
+          "ابن بطوطة",
+          "الطبري"
+        ],
+        "explanation": "ألّف ابن خلدون المقدمة عام 1377، وهي عمل رائد في التاريخ والعمران."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which empire captured Constantinople in 1453?",
+    "choices": [
+      "Ottoman Empire",
+      "Mongol Empire",
+      "Byzantine Empire",
+      "Persian Empire"
+    ],
+    "correct": 1,
+    "explanation": "Sultan Mehmed II captured Constantinople in 1453, ending the Byzantine Empire.",
+    "reference_text": "Encyclopaedia Britannica, Fall of Constantinople",
+    "translations": {
+      "fr": {
+        "question": "Quel empire a conquis Constantinople en 1453 ?",
+        "choices": [
+          "L’Empire ottoman",
+          "L’Empire mongol",
+          "L’Empire byzantin",
+          "L’Empire perse"
+        ],
+        "explanation": "Le sultan Mehmed II prit Constantinople en 1453, mettant fin à l’Empire byzantin."
+      },
+      "ar": {
+        "question": "أيّ إمبراطورية فتحت القسطنطينية عام 1453؟",
+        "choices": [
+          "الدولة العثمانية",
+          "الإمبراطورية المغولية",
+          "الإمبراطورية البيزنطية",
+          "الإمبراطورية الفارسية"
+        ],
+        "explanation": "فتح السلطان محمد الفاتح القسطنطينية عام 1453، فأنهى الدولة البيزنطية."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Egyptian queen ruled the Ptolemaic kingdom and was allied with Julius Caesar and Mark Antony?",
+    "choices": [
+      "Cleopatra Selene",
+      "Hatshepsut",
+      "Cleopatra VII",
+      "Nefertiti"
+    ],
+    "correct": 3,
+    "explanation": "Cleopatra VII was the last active ruler of the Ptolemaic kingdom of Egypt.",
+    "reference_text": "Encyclopaedia Britannica, Cleopatra VII",
+    "translations": {
+      "fr": {
+        "question": "Quelle reine égyptienne régna sur le royaume lagide et s’allia à Rome ?",
+        "choices": [
+          "Cléopâtre Séléné",
+          "Hatchepsout",
+          "Cléopâtre VII",
+          "Néfertiti"
+        ],
+        "explanation": "Cléopâtre VII fut la dernière souveraine active du royaume lagide d’Égypte."
+      },
+      "ar": {
+        "question": "أيّ ملكة مصرية حكمت مصر البطلمية وارتبطت بتحالفات مع روما؟",
+        "choices": [
+          "كليوباترا سيلين",
+          "حتشبسوت",
+          "كليوباترا السابعة",
+          "نفرتيتي"
+        ],
+        "explanation": "كانت كليوباترا السابعة آخر حاكمة نشطة لمملكة البطالمة في مصر."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which event started World War I in 1914?",
+    "choices": [
+      "Assassination of Archduke Franz Ferdinand",
+      "Attack on Pearl Harbor",
+      "Russian Revolution",
+      "Invasion of Poland"
+    ],
+    "correct": 1,
+    "explanation": "The assassination in Sarajevo in June 1914 triggered the chain of events leading to war.",
+    "reference_text": "Encyclopaedia Britannica, World War I",
+    "translations": {
+      "fr": {
+        "question": "Quel événement a déclenché la Première Guerre mondiale en 1914 ?",
+        "choices": [
+          "L’assassinat de l’archiduc François-Ferdinand",
+          "L’attaque de Pearl Harbor",
+          "La révolution russe",
+          "L’invasion de la Pologne"
+        ],
+        "explanation": "L’assassinat de Sarajevo en juin 1914 a déclenché l’engrenage menant à la guerre."
+      },
+      "ar": {
+        "question": "أيّ حدث أشعل الحرب العالمية الأولى عام 1914؟",
+        "choices": [
+          "اغتيال وليّ العهد النمساوي فرانز فرديناند",
+          "الهجوم على بيرل هاربر",
+          "الثورة الروسية",
+          "غزو بولندا"
+        ],
+        "explanation": "أدى اغتيال سراييفو في يونيو 1914 إلى سلسلة أحداث قادت إلى الحرب."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which treaty ended World War I with Germany’s signing in 1919?",
+    "choices": [
+      "Treaty of Tordesillas",
+      "Treaty of Nanking",
+      "Treaty of Versailles",
+      "Treaty of Utrecht"
+    ],
+    "correct": 3,
+    "explanation": "The Treaty of Versailles was signed in 1919 and imposed heavy terms on Germany.",
+    "reference_text": "Encyclopaedia Britannica, Treaty of Versailles",
+    "translations": {
+      "fr": {
+        "question": "Quel traité, signé par l’Allemagne en 1919, mit fin à la Première Guerre mondiale ?",
+        "choices": [
+          "Le traité de Versailles",
+          "Le traité de Nankin",
+          "Le traité de Tordesillas",
+          "Le traité d’Utrecht"
+        ],
+        "explanation": "Le traité de Versailles, signé en 1919, imposa des conditions sévères à l’Allemagne."
+      },
+      "ar": {
+        "question": "أيّ معاهدة وقّعتها ألمانيا عام 1919 لإنهاء الحرب العالمية الأولى؟",
+        "choices": [
+          "معاهدة فرساي",
+          "معاهدة نانكين",
+          "معاهدة تورديسيلاس",
+          "معاهدة أوترخت"
+        ],
+        "explanation": "وُقّعت معاهدة فرساي عام 1919 وفرضت شروطًا قاسية على ألمانيا."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ancient wonder was commissioned by Artemisia after the death of her husband Mausolus?",
+    "choices": [
+      "Mausoleum at Halicarnassus",
+      "Pharos",
+      "Hanging Gardens",
+      "Colossus"
+    ],
+    "correct": 1,
+    "explanation": "The Mausoleum at Halicarnassus was built for Mausolus, and his widow Artemisia commissioned it.",
+    "reference_text": "Encyclopaedia Britannica, Mausoleum at Halicarnassus",
+    "translations": {
+      "fr": {
+        "question": "Quelle merveille antique fut commandée par Artémise, veuve de Mausole ?",
+        "choices": [
+          "Le mausolée d’Halicarnasse",
+          "Le phare de Pharos",
+          "Les jardins suspendus",
+          "Le colosse"
+        ],
+        "explanation": "Le mausolée d’Halicarnasse fut élevé pour Mausole, à la demande de son épouse Artémise."
+      },
+      "ar": {
+        "question": "أيّ عجيبة قديمة أمرت ببنائها أرتيميسيا زوجة موسولوس؟",
+        "choices": [
+          "ضريح هاليكارناسوس",
+          "منارة فاروس",
+          "الحدائق المعلقة",
+          "تمثال رودس"
+        ],
+        "explanation": "بُني ضريح هاليكارناسوس لموسولوس، وأمرت زوجته أرتيميسيا بإنجازه."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which empire ruled much of the Arab world under the Umayyad dynasty with Damascus as its capital?",
+    "choices": [
+      "Ayyubid Sultanate",
+      "Umayyad Caliphate",
+      "Abbasid Caliphate",
+      "Fatimid Caliphate"
+    ],
+    "correct": 2,
+    "explanation": "The Umayyad Caliphate, based in Damascus, ruled from 661 to 750.",
+    "reference_text": "Encyclopaedia Britannica, Umayyad Caliphate",
+    "translations": {
+      "fr": {
+        "question": "Quel califat, dont la capitale était Damas, a gouverné une grande partie du monde arabe ?",
+        "choices": [
+          "Le sultanat ayyoubide",
+          "Le califat omeyyade",
+          "Le califat abbasside",
+          "Le califat fatimide"
+        ],
+        "explanation": "Le califat omeyyade, fondé à Damas, a régné de 661 à 750."
+      },
+      "ar": {
+        "question": "أيّ خلافة حكمت معظم العالم العربي من دمشق؟",
+        "choices": [
+          "السلطنة الأيوبية",
+          "الخلافة الأموية",
+          "الخلافة العباسية",
+          "الخلافة الفاطمية"
+        ],
+        "explanation": "حكمت الخلافة الأموية من دمشق بين عامي 661 و750."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country was the first to land a human on the Moon?",
+    "choices": [
+      "China",
+      "Japan",
+      "United States",
+      "Soviet Union"
+    ],
+    "correct": 3,
+    "explanation": "The Apollo 11 mission landed the first humans on the Moon in July 1969.",
+    "reference_text": "NASA Apollo 11 mission",
+    "translations": {
+      "fr": {
+        "question": "Quel pays a posé le premier homme sur la Lune ?",
+        "choices": [
+          "La Chine",
+          "Le Japon",
+          "Les États-Unis",
+          "L’Union soviétique"
+        ],
+        "explanation": "La mission Apollo 11 a posé les premiers hommes sur la Lune en juillet 1969."
+      },
+      "ar": {
+        "question": "أيّ دولة أنزلت أول إنسان على سطح القمر؟",
+        "choices": [
+          "الصين",
+          "اليابان",
+          "الولايات المتحدة",
+          "الاتحاد السوفياتي"
+        ],
+        "explanation": "حققت مهمة أبولو 11 أول هبوط بشري على القمر في يوليو 1969."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian ruler is associated with the reforms of the 19th century known as the Ahd al-Aman?",
+    "choices": [
+      "Salah Ben Yusef",
+      "Hussein Bey",
+      "Ibn Khaldun",
+      "Ahmad Bey"
+    ],
+    "correct": 4,
+    "explanation": "Ahmad Bey launched reforms in Tunisia in the 1850s; the Ahd al-Aman charter dates from 1857.",
+    "reference_text": "Encyclopaedia Britannica, Tunisia history",
+    "translations": {
+      "fr": {
+        "question": "Quel souverain tunisien est associé aux réformes du XIXe siècle connues sous le nom d’Ahd al-Aman ?",
+        "choices": [
+          "Salah Ben Youssef",
+          "Hussein Bey",
+          "Ibn Khaldoun",
+          "Ahmed Bey"
+        ],
+        "explanation": "Ahmed Bey lança des réformes au milieu du XIXe siècle ; la charte de l’Ahd al-Aman date de 1857."
+      },
+      "ar": {
+        "question": "أيّ حاكم تونسي ارتبط بإصلاحات القرن التاسع عشر المعروفة بعهد الأمان؟",
+        "choices": [
+          "صالح بن يوسف",
+          "حسين باي",
+          "ابن خلدون",
+          "أحمد باي"
+        ],
+        "explanation": "أطلق أحمد باي إصلاحات في منتصف القرن التاسع عشر، وصدر عهد الأمان عام 1857."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which civilisation invented the first known alphabet?",
+    "choices": [
+      "Persians",
+      "Egyptians",
+      "Phoenicians",
+      "Romans"
+    ],
+    "correct": 3,
+    "explanation": "Phoenician script is among the earliest alphabets and the ancestor of many scripts, including Greek and Arabic.",
+    "reference_text": "Encyclopaedia Britannica, alphabet",
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation a inventé le premier alphabet connu ?",
+        "choices": [
+          "Les Perses",
+          "Les Égyptiens",
+          "Les Phéniciens",
+          "Les Romains"
+        ],
+        "explanation": "L’écriture phénicienne compte parmi les plus anciens alphabets et a inspiré de nombreuses écritures."
+      },
+      "ar": {
+        "question": "أيّ حضارة ابتكرت أقدم أبجدية معروفة؟",
+        "choices": [
+          "الفرس",
+          "المصريون",
+          "الفينيقيون",
+          "الرومان"
+        ],
+        "explanation": "تُعد الكتابة الفينيقية من أقدم الأبجديات وأصل كثير من الكتابات، ومنها اليونانية والعربية."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which revolution in 1917 overthrew the Russian monarchy?",
+    "choices": [
+      "Russian Revolution",
+      "Chinese Revolution",
+      "Industrial Revolution",
+      "French Revolution"
+    ],
+    "correct": 1,
+    "explanation": "The 1917 Russian Revolution ended the rule of the Tsar and led to Soviet power.",
+    "reference_text": "Encyclopaedia Britannica, Russian Revolution",
+    "translations": {
+      "fr": {
+        "question": "Quelle révolution de 1917 renversa la monarchie russe ?",
+        "choices": [
+          "La Révolution russe",
+          "La Révolution chinoise",
+          "La Révolution industrielle",
+          "La Révolution française"
+        ],
+        "explanation": "La Révolution russe de 1917 mit fin au règne du tsar et ouvrit la voie au pouvoir soviétique."
+      },
+      "ar": {
+        "question": "أيّ ثورة عام 1917 أطاحت بالنظام الملكي في روسيا؟",
+        "choices": [
+          "الثورة الروسية",
+          "الثورة الصينية",
+          "الثورة الصناعية",
+          "الثورة الفرنسية"
+        ],
+        "explanation": "أنهت الثورة الروسية عام 1917 حكم القياصرة وأدت إلى الحكم السوفياتي."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ancient Greek city-state was known for its military training and Spartan warriors?",
+    "choices": [
+      "Corinth",
+      "Thebes",
+      "Athens",
+      "Sparta"
+    ],
+    "correct": 4,
+    "explanation": "Sparta was famous for its disciplined warriors and rigorous military education.",
+    "reference_text": "Encyclopaedia Britannica, Sparta",
+    "translations": {
+      "fr": {
+        "question": "Quelle cité grecque antique était réputée pour son entraînement militaire et ses guerriers ?",
+        "choices": [
+          "Corinthe",
+          "Thèbes",
+          "Athènes",
+          "Sparte"
+        ],
+        "explanation": "Sparte était célèbre pour ses guerriers disciplinés et son éducation militaire rigoureuse."
+      },
+      "ar": {
+        "question": "أيّ مدينة يونانية قديمة اشتهرت بتدريب عسكري صارم وبمحاربيها؟",
+        "choices": [
+          "كورنث",
+          "طيبة",
+          "أثينا",
+          "إسبرطة"
+        ],
+        "explanation": "اشتهرت إسبرطة بمحاربيها المنضبطين وتربيتها العسكرية الصارمة."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which year did India gain independence from British rule?",
+    "choices": [
+      "1957",
+      "1947",
+      "1967",
+      "1937"
+    ],
+    "correct": 2,
+    "explanation": "India became independent on 15 August 1947.",
+    "reference_text": "Encyclopaedia Britannica, Indian independence",
+    "translations": {
+      "fr": {
+        "question": "En quelle année l’Inde a-t-elle obtenu son indépendance de la domination britannique ?",
+        "choices": [
+          "1957",
+          "1947",
+          "1967",
+          "1937"
+        ],
+        "explanation": "L’Inde devint indépendante le 15 août 1947."
+      },
+      "ar": {
+        "question": "في أي عام نالت الهند استقلالها عن الحكم البريطاني؟",
+        "choices": [
+          "1957",
+          "1947",
+          "1967",
+          "1937"
+        ],
+        "explanation": "نالت الهند استقلالها في 15 أغسطس 1947."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Egyptian pharaoh is known for his tomb discovered nearly intact in 1922?",
+    "choices": [
+      "Tutankhamun",
+      "Akhenaten",
+      "Ramesses II",
+      "Khufu"
+    ],
+    "correct": 1,
+    "explanation": "Howard Carter discovered Tutankhamun’s tomb in the Valley of the Kings in 1922.",
+    "reference_text": "Griffith Institute, Tutankhamun",
+    "translations": {
+      "fr": {
+        "question": "Quel pharaon est connu pour sa tombe découverte presque intacte en 1922 ?",
+        "choices": [
+          "Toutankhamon",
+          "Akhenaton",
+          "Ramsès II",
+          "Khéops"
+        ],
+        "explanation": "Howard Carter découvrit la tombe de Toutankhamon dans la Vallée des Rois en 1922."
+      },
+      "ar": {
+        "question": "أيّ فرعون مصري اكتُشف قبره شبه سليم عام 1922؟",
+        "choices": [
+          "توت عنخ آمون",
+          "إخناتون",
+          "رمسيس الثاني",
+          "خوفو"
+        ],
+        "explanation": "اكتشف هوارد كارتر مقبرة توت عنخ آمون في وادي الملوك عام 1922."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which French emperor was defeated at the Battle of Waterloo in 1815?",
+    "choices": [
+      "Louis XIV",
+      "Napoleon Bonaparte",
+      "Charlemagne",
+      "Napoleon III"
+    ],
+    "correct": 2,
+    "explanation": "Napoleon Bonaparte was defeated at Waterloo in June 1815.",
+    "reference_text": "Encyclopaedia Britannica, Battle of Waterloo",
+    "translations": {
+      "fr": {
+        "question": "Quel empereur français fut vaincu à la bataille de Waterloo en 1815 ?",
+        "choices": [
+          "Louis XIV",
+          "Napoléon Bonaparte",
+          "Charlemagne",
+          "Napoléon III"
+        ],
+        "explanation": "Napoléon Bonaparte fut vaincu à Waterloo en juin 1815."
+      },
+      "ar": {
+        "question": "أيّ إمبراطور فرنسي هُزم في معركة واترلو عام 1815؟",
+        "choices": [
+          "لويس الرابع عشر",
+          "نابليون بونابرت",
+          "شارلمان",
+          "نابليون الثالث"
+        ],
+        "explanation": "هُزم نابليون بونابرت في واترلو في يونيو 1815."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ancient civilisation built the city of Machu Picchu?",
+    "choices": [
+      "Aztec",
+      "Olmec",
+      "Inca",
+      "Maya"
+    ],
+    "correct": 3,
+    "explanation": "Machu Picchu was built by the Inca in the 15th century in the Andes of Peru.",
+    "reference_text": "UNESCO, Historic Sanctuary of Machu Picchu",
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation a bâti la cité de Machu Picchu ?",
+        "choices": [
+          "Les Aztèques",
+          "Les Olmèques",
+          "Les Incas",
+          "Les Mayas"
+        ],
+        "explanation": "Machu Picchu fut construite par les Incas au XVe siècle, dans les Andes péruviennes."
+      },
+      "ar": {
+        "question": "أيّ حضارة بنت مدينة ماتشو بيتشو؟",
+        "choices": [
+          "الأزتك",
+          "الأولمك",
+          "الإنكا",
+          "المايا"
+        ],
+        "explanation": "بنى الإنكا ماتشو بيتشو في القرن الخامس عشر في جبال الأنديز بالبيرو."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which war was fought between the North and South of the United States from 1861 to 1865?",
+    "choices": [
+      "Korean War",
+      "Revolutionary War",
+      "World War I",
+      "Civil War"
+    ],
+    "correct": 4,
+    "explanation": "The American Civil War was fought from 1861 to 1865 over slavery and union.",
+    "reference_text": "Encyclopaedia Britannica, American Civil War",
+    "translations": {
+      "fr": {
+        "question": "Quelle guerre opposa le Nord et le Sud des États-Unis de 1861 à 1865 ?",
+        "choices": [
+          "La guerre de Corée",
+          "La guerre d’indépendance",
+          "La Première Guerre mondiale",
+          "La guerre de Sécession"
+        ],
+        "explanation": "La guerre de Sécession, de 1861 à 1865, opposa le Nord et le Sud sur l’esclavage et l’Union."
+      },
+      "ar": {
+        "question": "أيّ حرب دارت بين الشمال والجنوب الأمريكي من 1861 إلى 1865؟",
+        "choices": [
+          "الحرب الكورية",
+          "حرب الاستقلال الأمريكية",
+          "الحرب العالمية الأولى",
+          "الحرب الأهلية الأمريكية"
+        ],
+        "explanation": "دارت الحرب الأهلية الأمريكية بين 1861 و1865 حول العبودية ووحدة البلاد."
+      }
+    }
+  }
+]

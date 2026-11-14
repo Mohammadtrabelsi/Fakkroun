@@ -4,19 +4,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "What is the chemical symbol for gold?",
-    "choices": ["Ag", "Au", "Gd", "Go"],
-    "correct": 2,
+    "choices": [
+      "Gd",
+      "Ag",
+      "Au",
+      "Go"
+    ],
+    "correct": 3,
     "explanation": "Au comes from the Latin word “aurum”, meaning gold.",
     "reference_text": "IUPAC periodic table",
     "translations": {
       "fr": {
         "question": "Quel est le symbole chimique de l’or ?",
-        "choices": ["Ag", "Au", "Gd", "Go"],
+        "choices": [
+          "Gd",
+          "Ag",
+          "Au",
+          "Go"
+        ],
         "explanation": "Au vient du latin « aurum », qui signifie or."
       },
       "ar": {
         "question": "ما الرمز الكيميائي للذهب؟",
-        "choices": ["Ag", "Au", "Gd", "Go"],
+        "choices": [
+          "Gd",
+          "Ag",
+          "Au",
+          "Go"
+        ],
         "explanation": "يأتي الرمز Au من الكلمة اللاتينية «aurum» وتعني الذهب."
       }
     }
@@ -26,19 +41,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "Which gas do plants absorb during photosynthesis?",
-    "choices": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
-    "correct": 3,
+    "choices": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Hydrogen",
+      "Nitrogen"
+    ],
+    "correct": 1,
     "explanation": "Plants use CO₂, water and light to make glucose, releasing oxygen as a by-product.",
     "reference_text": "Encyclopaedia Britannica, photosynthesis",
     "translations": {
       "fr": {
         "question": "Quel gaz les plantes absorbent-elles pendant la photosynthèse ?",
-        "choices": ["L’oxygène", "L’azote", "Le dioxyde de carbone", "L’hydrogène"],
+        "choices": [
+          "Le dioxyde de carbone",
+          "L’oxygène",
+          "L’hydrogène",
+          "L’azote"
+        ],
         "explanation": "Les plantes utilisent le CO₂, l’eau et la lumière pour produire du glucose et rejettent de l’oxygène."
       },
       "ar": {
         "question": "ما الغاز الذي تمتصه النباتات أثناء عملية البناء الضوئي؟",
-        "choices": ["الأكسجين", "النيتروجين", "ثاني أكسيد الكربون", "الهيدروجين"],
+        "choices": [
+          "ثاني أكسيد الكربون",
+          "الأكسجين",
+          "الهيدروجين",
+          "النيتروجين"
+        ],
         "explanation": "تستخدم النباتات ثاني أكسيد الكربون والماء وضوء الشمس لإنتاج الغلوكوز، وتطلق الأكسجين."
       }
     }
@@ -48,19 +78,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "What is the speed of light in a vacuum, approximately?",
-    "choices": ["300 km/s", "3,000 km/s", "3,000,000 km/s", "300,000 km/s"],
+    "choices": [
+      "3,000,000 km/s",
+      "300 km/s",
+      "3,000 km/s",
+      "300,000 km/s"
+    ],
     "correct": 4,
     "explanation": "Light travels about 300,000 kilometres every second in a vacuum.",
     "reference_text": "NIST fundamental physical constants",
     "translations": {
       "fr": {
         "question": "Quelle est, environ, la vitesse de la lumière dans le vide ?",
-        "choices": ["300 km/s", "3 000 km/s", "3 000 000 km/s", "300 000 km/s"],
+        "choices": [
+          "3 000 000 km/s",
+          "300 km/s",
+          "3 000 km/s",
+          "300 000 km/s"
+        ],
         "explanation": "La lumière parcourt environ 300 000 kilomètres chaque seconde dans le vide."
       },
       "ar": {
         "question": "ما سرعة الضوء في الفراغ تقريبًا؟",
-        "choices": ["300 كم/ث", "3000 كم/ث", "3 ملايين كم/ث", "300 ألف كم/ث"],
+        "choices": [
+          "3 ملايين كم/ث",
+          "300 كم/ث",
+          "3000 كم/ث",
+          "300 ألف كم/ث"
+        ],
         "explanation": "تبلغ سرعة الضوء في الفراغ نحو 300 ألف كيلومتر في الثانية."
       }
     }
@@ -70,19 +115,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "What is the powerhouse of the cell?",
-    "choices": ["Nucleus", "Ribosome", "Mitochondrion", "Golgi apparatus"],
-    "correct": 3,
+    "choices": [
+      "Golgi apparatus",
+      "Nucleus",
+      "Ribosome",
+      "Mitochondrion"
+    ],
+    "correct": 4,
     "explanation": "Mitochondria produce most of the chemical energy (ATP) the cell needs.",
     "reference_text": "Encyclopaedia Britannica, mitochondrion",
     "translations": {
       "fr": {
         "question": "Quel organite est la « centrale énergétique » de la cellule ?",
-        "choices": ["Le noyau", "Le ribosome", "La mitochondrie", "L’appareil de Golgi"],
+        "choices": [
+          "L’appareil de Golgi",
+          "Le noyau",
+          "Le ribosome",
+          "La mitochondrie"
+        ],
         "explanation": "La mitochondrie produit l’essentiel de l’énergie chimique (ATP) dont la cellule a besoin."
       },
       "ar": {
         "question": "ما العضية التي تُعد «محطة توليد الطاقة» في الخلية؟",
-        "choices": ["النواة", "الريبوسوم", "الميتوكوندريا", "جهاز غولجي"],
+        "choices": [
+          "جهاز غولجي",
+          "النواة",
+          "الريبوسوم",
+          "الميتوكوندريا"
+        ],
         "explanation": "تنتج الميتوكوندريا معظم الطاقة الكيميائية (ATP) التي تحتاجها الخلية."
       }
     }
@@ -92,19 +152,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "What does “DNA” stand for?",
-    "choices": ["Deoxyribonucleic acid", "Dinitrogen acid", "Digital network array", "Dynamic nucleic amino"],
-    "correct": 1,
+    "choices": [
+      "Dynamic nucleic amino",
+      "Dinitrogen acid",
+      "Digital network array",
+      "Deoxyribonucleic acid"
+    ],
+    "correct": 4,
     "explanation": "DNA carries the genetic information of most living organisms.",
     "reference_text": "NHGRI genomics glossary",
     "translations": {
       "fr": {
         "question": "Que signifie « ADN » ?",
-        "choices": ["Acide désoxyribonucléique", "Acide dinitrogéné", "Réseau numérique matriciel", "Amino-nucléique dynamique"],
+        "choices": [
+          "Amino-nucléique dynamique",
+          "Acide dinitrogéné",
+          "Réseau numérique matriciel",
+          "Acide désoxyribonucléique"
+        ],
         "explanation": "L’ADN porte l’information génétique de la plupart des organismes vivants."
       },
       "ar": {
         "question": "ماذا يعني اختصار DNA؟",
-        "choices": ["الحمض النووي الريبي منقوص الأكسجين", "حمض ثنائي النيتروجين", "مصفوفة الشبكات الرقمية", "الأمينو النووي الديناميكي"],
+        "choices": [
+          "الأمينو النووي الديناميكي",
+          "حمض ثنائي النيتروجين",
+          "مصفوفة الشبكات الرقمية",
+          "الحمض النووي الريبي منقوص الأكسجين"
+        ],
         "explanation": "يحمل الـDNA المعلومات الوراثية لمعظم الكائنات الحية."
       }
     }
@@ -114,19 +189,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "Who formulated the theory of general relativity?",
-    "choices": ["Isaac Newton", "Niels Bohr", "Galileo Galilei", "Albert Einstein"],
-    "correct": 4,
+    "choices": [
+      "Niels Bohr",
+      "Albert Einstein",
+      "Isaac Newton",
+      "Galileo Galilei"
+    ],
+    "correct": 2,
     "explanation": "Einstein published general relativity in 1915, describing gravity as the curvature of spacetime.",
     "reference_text": "Encyclopaedia Britannica, general relativity",
     "translations": {
       "fr": {
         "question": "Qui a formulé la théorie de la relativité générale ?",
-        "choices": ["Isaac Newton", "Niels Bohr", "Galilée", "Albert Einstein"],
+        "choices": [
+          "Niels Bohr",
+          "Albert Einstein",
+          "Isaac Newton",
+          "Galilée"
+        ],
         "explanation": "Einstein a publié la relativité générale en 1915 ; il y décrit la gravitation comme une courbure de l’espace-temps."
       },
       "ar": {
         "question": "من وضع نظرية النسبية العامة؟",
-        "choices": ["إسحاق نيوتن", "نيلز بور", "غاليليو غاليلي", "ألبرت أينشتاين"],
+        "choices": [
+          "نيلز بور",
+          "ألبرت أينشتاين",
+          "إسحاق نيوتن",
+          "غاليليو غاليلي"
+        ],
         "explanation": "نشر أينشتاين النسبية العامة عام 1915، فوصف الجاذبية بأنها انحناء في الزمكان."
       }
     }
@@ -136,19 +226,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "What is the pH of pure water at 25 °C?",
-    "choices": ["5", "9", "7", "11"],
-    "correct": 3,
+    "choices": [
+      "9",
+      "7",
+      "5",
+      "11"
+    ],
+    "correct": 2,
     "explanation": "A pH of 7 is neutral: neither acidic nor basic.",
     "reference_text": "IUPAC pH definition",
     "translations": {
       "fr": {
         "question": "Quel est le pH de l’eau pure à 25 °C ?",
-        "choices": ["5", "9", "7", "11"],
+        "choices": [
+          "9",
+          "7",
+          "5",
+          "11"
+        ],
         "explanation": "Un pH de 7 est neutre : ni acide ni basique."
       },
       "ar": {
         "question": "ما درجة الحموضة (pH) للماء النقي عند 25 درجة مئوية؟",
-        "choices": ["5", "9", "7", "11"],
+        "choices": [
+          "9",
+          "7",
+          "5",
+          "11"
+        ],
         "explanation": "الرقم 7 يعني أن الماء متعادل، لا حمضيًا ولا قلويًا."
       }
     }
@@ -158,19 +263,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "What is the most abundant gas in Earth’s atmosphere?",
-    "choices": ["Oxygen", "Argon", "Nitrogen", "Carbon dioxide"],
-    "correct": 3,
+    "choices": [
+      "Carbon dioxide",
+      "Nitrogen",
+      "Argon",
+      "Oxygen"
+    ],
+    "correct": 2,
     "explanation": "Nitrogen makes up about 78% of dry air, and oxygen about 21%.",
     "reference_text": "NOAA atmosphere composition",
     "translations": {
       "fr": {
         "question": "Quel est le gaz le plus abondant dans l’atmosphère terrestre ?",
-        "choices": ["L’oxygène", "L’argon", "L’azote", "Le dioxyde de carbone"],
+        "choices": [
+          "Le dioxyde de carbone",
+          "L’azote",
+          "L’argon",
+          "L’oxygène"
+        ],
         "explanation": "L’azote représente environ 78 % de l’air sec, l’oxygène environ 21 %."
       },
       "ar": {
         "question": "ما أكثر الغازات وفرة في الغلاف الجوي للأرض؟",
-        "choices": ["الأكسجين", "الأرغون", "النيتروجين", "ثاني أكسيد الكربون"],
+        "choices": [
+          "ثاني أكسيد الكربون",
+          "النيتروجين",
+          "الأرغون",
+          "الأكسجين"
+        ],
         "explanation": "يشكّل النيتروجين نحو 78% من الهواء الجاف، والأكسجين نحو 21%."
       }
     }

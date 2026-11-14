@@ -4,19 +4,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "What do wind turbines convert into electricity?",
-    "choices": ["Chemical energy stored in coal", "Kinetic energy of moving air", "Nuclear fission energy", "Heat stored in rocks"],
-    "correct": 2,
+    "choices": [
+      "Nuclear fission energy",
+      "Chemical energy stored in coal",
+      "Heat stored in rocks",
+      "Kinetic energy of moving air"
+    ],
+    "correct": 4,
     "explanation": "The wind turns the blades, and the rotation drives a generator that produces electricity.",
     "reference_text": "IEA renewable energy technologies",
     "translations": {
       "fr": {
         "question": "Que convertissent les éoliennes en électricité ?",
-        "choices": ["L’énergie chimique du charbon", "L’énergie cinétique de l’air en mouvement", "L’énergie de fission nucléaire", "La chaleur stockée dans les roches"],
+        "choices": [
+          "L’énergie de fission nucléaire",
+          "L’énergie chimique du charbon",
+          "La chaleur stockée dans les roches",
+          "L’énergie cinétique de l’air en mouvement"
+        ],
         "explanation": "Le vent fait tourner les pales, et leur rotation entraîne un générateur qui produit de l’électricité."
       },
       "ar": {
         "question": "ما الذي تحوّله توربينات الرياح إلى كهرباء؟",
-        "choices": ["الطاقة الكيميائية المخزنة في الفحم", "الطاقة الحركية للهواء المتحرك", "طاقة الانشطار النووي", "الحرارة المخزنة في الصخور"],
+        "choices": [
+          "طاقة الانشطار النووي",
+          "الطاقة الكيميائية المخزنة في الفحم",
+          "الحرارة المخزنة في الصخور",
+          "الطاقة الحركية للهواء المتحرك"
+        ],
         "explanation": "تدير الرياح الشفرات، ويُدير دورانها مولدًا ينتج الكهرباء."
       }
     }
@@ -26,19 +41,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "Which of these is a renewable energy source?",
-    "choices": ["Uranium", "Natural gas", "Geothermal energy", "Crude oil"],
-    "correct": 3,
+    "choices": [
+      "Crude oil",
+      "Uranium",
+      "Natural gas",
+      "Geothermal energy"
+    ],
+    "correct": 4,
     "explanation": "Geothermal energy uses the Earth’s internal heat, which is replenished continuously.",
     "reference_text": "IEA renewable energy technologies",
     "translations": {
       "fr": {
         "question": "Laquelle de ces sources est une énergie renouvelable ?",
-        "choices": ["L’uranium", "Le gaz naturel", "La géothermie", "Le pétrole brut"],
+        "choices": [
+          "Le pétrole brut",
+          "L’uranium",
+          "Le gaz naturel",
+          "La géothermie"
+        ],
         "explanation": "La géothermie exploite la chaleur interne de la Terre, qui se renouvelle en continu."
       },
       "ar": {
         "question": "أيّ هذه المصادر طاقة متجددة؟",
-        "choices": ["اليورانيوم", "الغاز الطبيعي", "الطاقة الحرارية الأرضية", "النفط الخام"],
+        "choices": [
+          "النفط الخام",
+          "اليورانيوم",
+          "الغاز الطبيعي",
+          "الطاقة الحرارية الأرضية"
+        ],
         "explanation": "تستفيد الطاقة الحرارية الأرضية من حرارة باطن الأرض المتجددة باستمرار."
       }
     }
@@ -48,19 +78,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "What does a photovoltaic (PV) panel convert into electricity?",
-    "choices": ["Sunlight", "Heat from rivers", "Chemical fuel", "Radio waves"],
+    "choices": [
+      "Sunlight",
+      "Radio waves",
+      "Chemical fuel",
+      "Heat from rivers"
+    ],
     "correct": 1,
     "explanation": "PV cells convert solar radiation directly into an electric current.",
     "reference_text": "IEA solar PV overview",
     "translations": {
       "fr": {
         "question": "Que transforme un panneau photovoltaïque en électricité ?",
-        "choices": ["La lumière du soleil", "La chaleur des rivières", "Un carburant chimique", "Les ondes radio"],
+        "choices": [
+          "La lumière du soleil",
+          "Les ondes radio",
+          "Un carburant chimique",
+          "La chaleur des rivières"
+        ],
         "explanation": "Les cellules photovoltaïques convertissent directement le rayonnement solaire en courant électrique."
       },
       "ar": {
         "question": "ماذا تحوّل الألواح الكهروضوئية إلى كهرباء؟",
-        "choices": ["ضوء الشمس", "حرارة الأنهار", "وقود كيميائي", "الموجات الراديوية"],
+        "choices": [
+          "ضوء الشمس",
+          "الموجات الراديوية",
+          "وقود كيميائي",
+          "حرارة الأنهار"
+        ],
         "explanation": "تحوّل الخلايا الكهروضوئية أشعة الشمس مباشرة إلى تيار كهربائي."
       }
     }
@@ -70,19 +115,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "What is the main limitation of solar power?",
-    "choices": ["It produces toxic smoke", "It is intermittent and produces nothing at night", "It needs fuel to run", "It works only in polar regions"],
-    "correct": 2,
+    "choices": [
+      "It is intermittent and produces nothing at night",
+      "It needs fuel to run",
+      "It produces toxic smoke",
+      "It works only in polar regions"
+    ],
+    "correct": 1,
     "explanation": "Without sunlight, solar output stops, so it is combined with storage or other sources.",
     "reference_text": "IEA solar PV overview",
     "translations": {
       "fr": {
         "question": "Quelle est la principale limite de l’énergie solaire ?",
-        "choices": ["Elle produit des fumées toxiques", "Elle est intermittente et ne produit rien la nuit", "Elle a besoin de carburant pour fonctionner", "Elle ne fonctionne que dans les régions polaires"],
+        "choices": [
+          "Elle est intermittente et ne produit rien la nuit",
+          "Elle a besoin de carburant pour fonctionner",
+          "Elle produit des fumées toxiques",
+          "Elle ne fonctionne que dans les régions polaires"
+        ],
         "explanation": "Sans soleil, la production solaire s’interrompt ; on la complète donc par du stockage ou d’autres sources."
       },
       "ar": {
         "question": "ما أهم محدودية للطاقة الشمسية؟",
-        "choices": ["أنها تُنتج دخانًا سامًا", "أنها متقطعة ولا تُنتج شيئًا ليلًا", "أنها تحتاج إلى وقود لتعمل", "أنها لا تعمل إلا في المناطق القطبية"],
+        "choices": [
+          "أنها متقطعة ولا تُنتج شيئًا ليلًا",
+          "أنها تحتاج إلى وقود لتعمل",
+          "أنها تُنتج دخانًا سامًا",
+          "أنها لا تعمل إلا في المناطق القطبية"
+        ],
         "explanation": "يتوقف الإنتاج الشمسي دون ضوء، لذلك يُكمَّل بالتخزين أو بمصادر أخرى."
       }
     }
@@ -92,19 +152,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "What does hydropower use to generate electricity?",
-    "choices": ["Burning of wood", "Nuclear reactions", "Tidal gases", "Energy of moving or falling water"],
-    "correct": 4,
+    "choices": [
+      "Tidal gases",
+      "Energy of moving or falling water",
+      "Nuclear reactions",
+      "Burning of wood"
+    ],
+    "correct": 2,
     "explanation": "Falling water drives turbines connected to generators, usually at a dam.",
     "reference_text": "IEA hydropower overview",
     "translations": {
       "fr": {
         "question": "Qu’utilise l’hydroélectricité pour produire de l’électricité ?",
-        "choices": ["La combustion du bois", "Les réactions nucléaires", "Des gaz de marée", "L’énergie de l’eau en mouvement ou en chute"],
+        "choices": [
+          "Des gaz de marée",
+          "L’énergie de l’eau en mouvement ou en chute",
+          "Les réactions nucléaires",
+          "La combustion du bois"
+        ],
         "explanation": "L’eau qui chute d’un barrage fait tourner des turbines reliées à des générateurs."
       },
       "ar": {
         "question": "ما الذي تستخدمه الطاقة الكهرومائية لإنتاج الكهرباء؟",
-        "choices": ["حرق الخشب", "التفاعلات النووية", "غازات المد والجزر", "طاقة الماء المتحرك أو المتساقط"],
+        "choices": [
+          "غازات المد والجزر",
+          "طاقة الماء المتحرك أو المتساقط",
+          "التفاعلات النووية",
+          "حرق الخشب"
+        ],
         "explanation": "يُدير الماء المتساقط من السدود توربينات متصلة بمولدات كهربائية."
       }
     }
@@ -114,19 +189,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "What is “net metering”?",
-    "choices": ["A system where households sell surplus solar electricity back to the grid", "A fishing net used on wind farms", "A method of measuring soil moisture", "A tax on electricity bills"],
+    "choices": [
+      "A system where households sell surplus solar electricity back to the grid",
+      "A method of measuring soil moisture",
+      "A tax on electricity bills",
+      "A fishing net used on wind farms"
+    ],
     "correct": 1,
     "explanation": "Under net metering, a household’s own consumption is offset against what it produces, and the surplus is credited.",
     "reference_text": "IEA distributed solar policy",
     "translations": {
       "fr": {
         "question": "Qu’est-ce que le « comptage net » (net metering) ?",
-        "choices": ["Un système où les foyers revendent au réseau leur surplus d’électricité solaire", "Un filet de pêche utilisé dans les parcs éoliens", "Une méthode de mesure de l’humidité du sol", "Une taxe sur les factures d’électricité"],
+        "choices": [
+          "Un système où les foyers revendent au réseau leur surplus d’électricité solaire",
+          "Une méthode de mesure de l’humidité du sol",
+          "Une taxe sur les factures d’électricité",
+          "Un filet de pêche utilisé dans les parcs éoliens"
+        ],
         "explanation": "Avec ce système, la consommation d’un foyer est déduite de sa production, et le surplus est crédité."
       },
       "ar": {
         "question": "ما المقصود بـ«القياس الصافي» (Net metering)؟",
-        "choices": ["نظام تبيع فيه الأسر فائض الكهرباء الشمسية إلى الشبكة", "شبكة صيد تُستخدم في مزارع الرياح", "طريقة لقياس رطوبة التربة", "ضريبة على فواتير الكهرباء"],
+        "choices": [
+          "نظام تبيع فيه الأسر فائض الكهرباء الشمسية إلى الشبكة",
+          "طريقة لقياس رطوبة التربة",
+          "ضريبة على فواتير الكهرباء",
+          "شبكة صيد تُستخدم في مزارع الرياح"
+        ],
         "explanation": "في هذا النظام تُخصم الكهرباء المستهلكة من الكهرباء المنتجة، ويُحتسب الفائض لصالح المنتج."
       }
     }
@@ -136,19 +226,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "What does the “capacity factor” of a power plant describe?",
-    "choices": ["Its maximum height", "Its installed cost per kilowatt", "Its actual output over a period divided by its maximum possible output", "The number of workers per megawatt"],
-    "correct": 3,
+    "choices": [
+      "Its actual output over a period divided by its maximum possible output",
+      "Its installed cost per kilowatt",
+      "Its maximum height",
+      "The number of workers per megawatt"
+    ],
+    "correct": 1,
     "explanation": "A high capacity factor means the plant produces close to its rated power over time.",
     "reference_text": "EIA capacity factor definition",
     "translations": {
       "fr": {
         "question": "Que décrit le « facteur de capacité » d’une centrale ?",
-        "choices": ["Sa hauteur maximale", "Son coût d’installation par kilowatt", "Sa production réelle sur une période divisée par sa production maximale possible", "Le nombre d’employés par mégawatt"],
+        "choices": [
+          "Sa production réelle sur une période divisée par sa production maximale possible",
+          "Son coût d’installation par kilowatt",
+          "Sa hauteur maximale",
+          "Le nombre d’employés par mégawatt"
+        ],
         "explanation": "Un facteur de capacité élevé signifie que la centrale produit proche de sa puissance nominale sur la durée."
       },
       "ar": {
         "question": "ماذا يصف «معامل السعة» لمحطة توليد الكهرباء؟",
-        "choices": ["أقصى ارتفاع لها", "تكلفة تركيبها لكل كيلوواط", "إنتاجها الفعلي خلال فترة مقسومًا على أقصى إنتاج ممكن", "عدد العمال لكل ميغاواط"],
+        "choices": [
+          "إنتاجها الفعلي خلال فترة مقسومًا على أقصى إنتاج ممكن",
+          "تكلفة تركيبها لكل كيلوواط",
+          "أقصى ارتفاع لها",
+          "عدد العمال لكل ميغاواط"
+        ],
         "explanation": "كلما ارتفع معامل السعة، اقترب إنتاج المحطة من قدرتها الاسمية على مدى الزمن."
       }
     }
@@ -158,19 +263,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "Which technology stores surplus renewable electricity by pumping water uphill?",
-    "choices": ["Pumped-storage hydropower", "Thermal cracking", "Electrolysis of coal", "Biogas digestion"],
-    "correct": 1,
+    "choices": [
+      "Electrolysis of coal",
+      "Pumped-storage hydropower",
+      "Biogas digestion",
+      "Thermal cracking"
+    ],
+    "correct": 2,
     "explanation": "Water is pumped to a high reservoir when power is plentiful, then released through turbines when it is needed.",
     "reference_text": "IEA energy storage overview",
     "translations": {
       "fr": {
         "question": "Quelle technologie stocke l’électricité renouvelable excédentaire en pompant l’eau vers le haut ?",
-        "choices": ["L’hydroélectricité à réserve pompée (STEP)", "Le craquage thermique", "L’électrolyse du charbon", "La méthanisation"],
+        "choices": [
+          "L’électrolyse du charbon",
+          "L’hydroélectricité à réserve pompée (STEP)",
+          "La méthanisation",
+          "Le craquage thermique"
+        ],
         "explanation": "Lorsque la production est abondante, l’eau est pompée vers un réservoir haut, puis relâchée pour produire de l’électricité."
       },
       "ar": {
         "question": "أيّ تقنية تُخزّن فائض الكهرباء المتجددة بضخ الماء إلى أعلى؟",
-        "choices": ["التخزين بالضخ الكهرومائي", "التكسير الحراري", "التحليل الكهربائي للفحم", "هضم الغاز الحيوي"],
+        "choices": [
+          "التحليل الكهربائي للفحم",
+          "التخزين بالضخ الكهرومائي",
+          "هضم الغاز الحيوي",
+          "التكسير الحراري"
+        ],
         "explanation": "يُضخ الماء إلى خزان مرتفع عند فائض الإنتاج، ثم يُترك ينساب لتوليد الكهرباء عند الحاجة."
       }
     }

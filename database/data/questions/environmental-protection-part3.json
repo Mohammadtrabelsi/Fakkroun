@@ -1,0 +1,716 @@
+[
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is recycling?",
+    "choices": [
+      "Burning waste for heat",
+      "Throwing waste into rivers",
+      "Turning used materials into new products",
+      "Burying waste underground"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le recyclage ?",
+        "choices": [
+          "Brûler les déchets pour produire de la chaleur",
+          "Jeter les déchets dans les rivières",
+          "Transformer des matériaux usagés en nouveaux produits",
+          "Enfouir les déchets sous terre"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بإعادة التدوير؟",
+        "choices": [
+          "حرق النفايات لإنتاج الحرارة",
+          "رمي النفايات في الأنهار",
+          "تحويل المواد المستعملة إلى منتجات جديدة",
+          "دفن النفايات تحت الأرض"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which colour bin is commonly used for recyclable paper in many cities?",
+    "choices": [
+      "Black",
+      "White",
+      "Blue",
+      "Red"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle couleur de poubelle sert souvent aux papiers recyclables dans de nombreuses villes ?",
+        "choices": [
+          "Noire",
+          "Blanche",
+          "Bleue",
+          "Rouge"
+        ]
+      },
+      "ar": {
+        "question": "ما لون الحاوية الشائع لتدوير الورق في كثير من المدن؟",
+        "choices": [
+          "الأسود",
+          "الأبيض",
+          "الأزرق",
+          "الأحمر"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action saves the most water at home?",
+    "choices": [
+      "Washing the car daily",
+      "Leaving taps running",
+      "Fixing leaking taps",
+      "Watering lawns at noon"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne économise le plus d’eau à la maison ?",
+        "choices": [
+          "Laver la voiture chaque jour",
+          "Laisser les robinets couler",
+          "Réparer les robinets qui fuient",
+          "Arroser la pelouse à midi"
+        ]
+      },
+      "ar": {
+        "question": "ما الإجراء اليومي الذي يوفر أكبر قدر من المياه في المنزل؟",
+        "choices": [
+          "غسل السيارة يوميًا",
+          "ترك الصنابير مفتوحة",
+          "إصلاح الصنابير المتسربة",
+          "سقي الحديقة ظهرًا"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main purpose of a wastewater treatment plant?",
+    "choices": [
+      "Producing fuel from water",
+      "Removing pollutants before water returns to nature",
+      "Storing rainwater for ships",
+      "Adding salt to rivers"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but principal d’une station d’épuration ?",
+        "choices": [
+          "Produire du carburant à partir de l’eau",
+          "Éliminer les polluants avant le rejet dans le milieu naturel",
+          "Stocker l’eau de pluie pour les navires",
+          "Ajouter du sel aux rivières"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من محطة معالجة مياه الصرف؟",
+        "choices": [
+          "إنتاج وقود من الماء",
+          "إزالة الملوثات قبل عودة المياه إلى الطبيعة",
+          "تخزين مياه الأمطار للسفن",
+          "إضافة الملح إلى الأنهار"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which substance is the main pollutant in acid rain?",
+    "choices": [
+      "Helium",
+      "Argon",
+      "Sulphur dioxide",
+      "Neon"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel polluant est le principal responsable des pluies acides ?",
+        "choices": [
+          "L’hélium",
+          "L’argon",
+          "Le dioxyde de soufre",
+          "Le néon"
+        ]
+      },
+      "ar": {
+        "question": "ما الملوث الرئيسي المسبب للأمطار الحمضية؟",
+        "choices": [
+          "الهيليوم",
+          "الأرغون",
+          "ثاني أكسيد الكبريت",
+          "النيون"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “national park” mainly designed to do?",
+    "choices": [
+      "Build highways",
+      "Store nuclear waste",
+      "Protect nature and wildlife",
+      "Host industrial zones"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert principalement un « parc national » ?",
+        "choices": [
+          "Construire des autoroutes",
+          "Stocker des déchets nucléaires",
+          "Protéger la nature et la faune",
+          "Accueillir des zones industrielles"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف الرئيسي من إنشاء «المنتزه الوطني»؟",
+        "choices": [
+          "بناء الطرق السريعة",
+          "تخزين النفايات النووية",
+          "حماية الطبيعة والحياة البرية",
+          "استضافة مناطق صناعية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the term “carrying capacity” mean for an ecosystem?",
+    "choices": [
+      "The weight a bridge can carry",
+      "The volume of a lake",
+      "The number of trees in a city",
+      "The maximum population an ecosystem can support sustainably"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « capacité de charge » pour un écosystème ?",
+        "choices": [
+          "Le poids qu’un pont peut porter",
+          "Le volume d’un lac",
+          "Le nombre d’arbres dans une ville",
+          "La population maximale qu’un écosystème peut soutenir durablement"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الطاقة الاستيعابية» (Carrying capacity) للنظام البيئي؟",
+        "choices": [
+          "الوزن الذي يحمله الجسر",
+          "حجم البحيرة",
+          "عدد الأشجار في المدينة",
+          "أكبر عدد من الكائنات يمكن للنظام البيئي دعمه بشكل مستدام"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which item is most commonly used as an alternative to single-use plastic bags?",
+    "choices": [
+      "Disposable forks",
+      "Plastic cups",
+      "Cloth bags",
+      "Styrofoam boxes"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel objet remplace le plus souvent les sacs plastiques à usage unique ?",
+        "choices": [
+          "Les fourchettes jetables",
+          "Les gobelets en plastique",
+          "Les sacs en tissu",
+          "Les boîtes en polystyrène"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شيء يُستخدم عادةً بديلًا عن الأكياس البلاستيكية أحادية الاستعمال؟",
+        "choices": [
+          "شوك بلاستيكية للاستعمال مرة واحدة",
+          "أكواب بلاستيكية",
+          "الأكياس القماشية",
+          "علب الستايروفوم"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “dust pollution” mostly caused by?",
+    "choices": [
+      "Construction and traffic on unpaved roads",
+      "Rainfall",
+      "Snow",
+      "Ocean waves"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que cause surtout la pollution par les poussières ?",
+        "choices": [
+          "Les chantiers et la circulation sur les routes non revêtues",
+          "La pluie",
+          "La neige",
+          "Les vagues de la mer"
+        ]
+      },
+      "ar": {
+        "question": "ما الذي يسبب أساسًا التلوث بالغبار؟",
+        "choices": [
+          "أعمال البناء وحركة المرور على الطرق غير المعبدة",
+          "المطر",
+          "الثلج",
+          "أمواج البحر"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “strategic environmental assessment”?",
+    "choices": [
+      "Measuring the speed of winds",
+      "Ranking countries by pollution",
+      "Testing soil for gold",
+      "Assessing environmental effects of policies, plans and programmes"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « évaluation environnementale stratégique » ?",
+        "choices": [
+          "Mesurer la vitesse des vents",
+          "Classer les pays selon leur pollution",
+          "Tester le sol pour y trouver de l’or",
+          "Évaluer les effets environnementaux des politiques, plans et programmes"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«التقييم البيئي الاستراتيجي»؟",
+        "choices": [
+          "قياس سرعة الرياح",
+          "ترتيب الدول حسب التلوث",
+          "فحص التربة بحثًا عن الذهب",
+          "تقييم الآثار البيئية للسياسات والخطط والبرامج"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is considered a symbol of the fight against extinction in many countries?",
+    "choices": [
+      "Giant panda",
+      "House fly",
+      "Mosquito",
+      "Common cockroach"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal est souvent considéré comme un symbole de la lutte contre l’extinction ?",
+        "choices": [
+          "Le panda géant",
+          "La mouche domestique",
+          "Le moustique",
+          "Le cafard commun"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يُعد في كثير من الدول رمزًا لمكافحة الانقراض؟",
+        "choices": [
+          "الباندا العملاقة",
+          "الذبابة المنزلية",
+          "البعوضة",
+          "الصرصار الشائع"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which process cleans polluted air or water using living plants?",
+    "choices": [
+      "Electrolysis",
+      "Phytoremediation",
+      "Fermentation",
+      "Distillation"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel procédé dépollue l’air ou l’eau à l’aide de plantes vivantes ?",
+        "choices": [
+          "L’électrolyse",
+          "La phytoremédiation",
+          "La fermentation",
+          "La distillation"
+        ]
+      },
+      "ar": {
+        "question": "ما العملية التي تنظف الهواء أو الماء الملوث باستخدام النباتات الحية؟",
+        "choices": [
+          "التحليل الكهربائي",
+          "المعالجة بالنباتات (Phytoremediation)",
+          "التخمر",
+          "التقطير"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which substance is commonly used to clean up oil spills at sea?",
+    "choices": [
+      "Vinegar",
+      "Sugar",
+      "Table salt",
+      "Dispersants"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle substance est souvent utilisée pour nettoyer les nappes de pétrole en mer ?",
+        "choices": [
+          "Le vinaigre",
+          "Le sucre",
+          "Le sel de table",
+          "Les dispersants"
+        ]
+      },
+      "ar": {
+        "question": "ما المادة التي تُستخدم عادةً لتنظيف بقع النفط في البحر؟",
+        "choices": [
+          "الخل",
+          "السكر",
+          "ملح الطعام",
+          "المبعثرات (المذيبات المفرقة للنفط)"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which organism breaks down dead matter and returns nutrients to the soil?",
+    "choices": [
+      "Predators",
+      "Herbivores",
+      "Parasites",
+      "Decomposers"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel organisme décompose la matière morte et restitue les nutriments au sol ?",
+        "choices": [
+          "Les prédateurs",
+          "Les herbivores",
+          "Les parasites",
+          "Les décomposeurs"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائنات تحلل المادة العضوية الميتة وتعيد المغذيات إلى التربة؟",
+        "choices": [
+          "المفترسات",
+          "آكلات الأعشاب",
+          "الطفيليات",
+          "المحللات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which environmental problem is caused by excessive use of chemical fertilisers in farming?",
+    "choices": [
+      "Glacier growth",
+      "Cloud expansion",
+      "Water pollution by nitrates",
+      "Ocean cooling"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel problème environnemental est causé par l’usage excessif d’engrais chimiques ?",
+        "choices": [
+          "La croissance des glaciers",
+          "L’expansion des nuages",
+          "La pollution de l’eau par les nitrates",
+          "Le refroidissement des océans"
+        ]
+      },
+      "ar": {
+        "question": "ما المشكلة البيئية الناتجة عن الإفراط في استخدام الأسمدة الكيميائية في الزراعة؟",
+        "choices": [
+          "نمو الأنهار الجليدية",
+          "توسع السحب",
+          "تلوث المياه بالنترات",
+          "تبريد المحيطات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the term “circular” mean for waste management?",
+    "choices": [
+      "Keeping materials cycling back into use",
+      "Collecting waste every circle of the moon",
+      "Dumping waste in a circle",
+      "Recycling only round objects"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « circulaire » pour la gestion des déchets ?",
+        "choices": [
+          "Faire revenir les matières dans le cycle de production",
+          "Collecter les déchets à chaque cycle lunaire",
+          "Déposer les déchets en cercle",
+          "Ne recycler que les objets ronds"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني مصطلح «الدائري» في إدارة النفايات؟",
+        "choices": [
+          "إعادة المواد إلى دورة الاستخدام",
+          "جمع النفايات في كل دورة للقمر",
+          "إلقاء النفايات في دائرة",
+          "تدوير الأشياء المستديرة فقط"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is a renewable source of fresh water?",
+    "choices": [
+      "Rain",
+      "Coal",
+      "Oil",
+      "Gold"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est une source renouvelable d’eau douce ?",
+        "choices": [
+          "La pluie",
+          "Le charbon",
+          "Le pétrole",
+          "L’or"
+        ]
+      },
+      "ar": {
+        "question": "ما المصدر المتجدد للمياه العذبة؟",
+        "choices": [
+          "المطر",
+          "الفحم",
+          "النفط",
+          "الذهب"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which activity is most damaging to wetlands?",
+    "choices": [
+      "Photography",
+      "Walking trails",
+      "Draining them for construction",
+      "Birdwatching"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité est la plus néfaste pour les zones humides ?",
+        "choices": [
+          "La photographie",
+          "Les sentiers de randonnée",
+          "Les assécher pour la construction",
+          "L’observation des oiseaux"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط يُلحق أكبر ضرر بالأراضي الرطبة؟",
+        "choices": [
+          "التصوير الفوتوغرافي",
+          "المسارات للمشي",
+          "تجفيفها للبناء",
+          "مراقبة الطيور"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian environmental agency is responsible for national environmental protection?",
+    "choices": [
+      "Ministry of Tourism",
+      "National Railway Company",
+      "National Sports Office",
+      "National Agency for Environmental Protection (ANPE)"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel organisme tunisien est chargé de la protection nationale de l’environnement ?",
+        "choices": [
+          "Le ministère du Tourisme",
+          "La Société nationale des chemins de fer",
+          "L’Office national des sports",
+          "L’Agence nationale de protection de l’environnement (ANPE)"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هيئة تونسية تتولى حماية البيئة على المستوى الوطني؟",
+        "choices": [
+          "وزارة السياحة",
+          "الشركة الوطنية للسكك الحديدية",
+          "الديوان الوطني للرياضة",
+          "الوكالة الوطنية لحماية المحيط (ANPE)"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main cause of air pollution in cities?",
+    "choices": [
+      "Snow",
+      "Rain",
+      "Sea breeze",
+      "Vehicle exhaust and industry"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale cause de la pollution de l’air dans les villes ?",
+        "choices": [
+          "La neige",
+          "La pluie",
+          "La brise marine",
+          "Les gaz d’échappement et l’industrie"
+        ]
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لتلوث الهواء في المدن؟",
+        "choices": [
+          "الثلج",
+          "المطر",
+          "نسيم البحر",
+          "عوادم المركبات والصناعة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which practice helps protect soil fertility over the long term?",
+    "choices": [
+      "Burning fields",
+      "Crop rotation",
+      "Overgrazing",
+      "Monoculture"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle pratique aide à préserver la fertilité des sols sur le long terme ?",
+        "choices": [
+          "Le brûlage des champs",
+          "La rotation des cultures",
+          "Le surpâturage",
+          "La monoculture"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ممارسة تساعد على الحفاظ على خصوبة التربة على المدى الطويل؟",
+        "choices": [
+          "حرق الحقول",
+          "تناوب المحاصيل",
+          "الرعي الجائر",
+          "زراعة محصول واحد"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  }
+]

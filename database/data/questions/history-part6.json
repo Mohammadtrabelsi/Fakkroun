@@ -1,0 +1,580 @@
+[
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who was the first emperor of China?",
+    "choices": [
+      "Qin Shi Huang",
+      "Genghis Khan",
+      "Kublai Khan",
+      "Han Wudi"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qui fut le premier empereur de Chine ?",
+        "choices": [
+          "Qin Shi Huang",
+          "Gengis Khan",
+          "Kubilai Khan",
+          "Han Wudi"
+        ]
+      },
+      "ar": {
+        "question": "من كان أول إمبراطور للصين؟",
+        "choices": [
+          "تشين شي هوانغ",
+          "جنكيز خان",
+          "قوبلاي خان",
+          "هان وودي"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ancient civilisation built the Great Wall to protect its borders?",
+    "choices": [
+      "China",
+      "Persia",
+      "Greece",
+      "Egypt"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation ancienne a bâti la Grande Muraille pour protéger ses frontières ?",
+        "choices": [
+          "La Chine",
+          "La Perse",
+          "La Grèce",
+          "L’Égypte"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حضارة قديمة بنت السور العظيم لحماية حدودها؟",
+        "choices": [
+          "الصين",
+          "فارس",
+          "اليونان",
+          "مصر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Arab dynasty ruled Andalusia from Córdoba as the Caliphate of Córdoba?",
+    "choices": [
+      "Fatimids",
+      "Abbasids",
+      "Umayyads",
+      "Ayyubids"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle dynastie arabe gouverna l’Andalousie depuis Cordoue comme califat ?",
+        "choices": [
+          "Les Fatimides",
+          "Les Abbassides",
+          "Les Omeyyades",
+          "Les Ayyoubides"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أسرة عربية حكمت الأندلس من قرطبة بوصفها خلافة؟",
+        "choices": [
+          "الفاطميون",
+          "العباسيون",
+          "الأمويون",
+          "الأيوبيون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which European monarch sponsored Columbus’s voyage to the Americas?",
+    "choices": [
+      "Henry VIII",
+      "Peter the Great",
+      "Louis XIV",
+      "Isabella I of Castile"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel monarque européen a financé le voyage de Colomb vers les Amériques ?",
+        "choices": [
+          "Henri VIII",
+          "Pierre le Grand",
+          "Louis XIV",
+          "Isabelle Ire de Castille"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملك أوروبي موّل رحلة كولومبوس إلى الأمريكتين؟",
+        "choices": [
+          "هنري الثامن",
+          "بطرس الأكبر",
+          "لويس الرابع عشر",
+          "إيزابيلا الأولى ملكة قشتالة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which treaty ended the Second World War in the Pacific with Japan’s surrender in 1945?",
+    "choices": [
+      "Surrender aboard USS Missouri",
+      "Treaty of Ghent",
+      "Treaty of Versailles",
+      "Treaty of Nanking"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel acte mit fin à la guerre dans le Pacifique avec la capitulation du Japon en 1945 ?",
+        "choices": [
+          "La capitulation à bord de l’USS Missouri",
+          "Le traité de Gand",
+          "Le traité de Versailles",
+          "Le traité de Nankin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ وثيقة أنهت الحرب في المحيط الهادئ باستسلام اليابان عام 1945؟",
+        "choices": [
+          "التوقيع على متن السفينة يو إس إس ميسوري",
+          "معاهدة غنت",
+          "معاهدة فرساي",
+          "معاهدة نانكينغ"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian reformer wrote the influential book “The Surest Path to Knowledge of Kingdoms”?",
+    "choices": [
+      "Khayr al-Din al-Tunisi",
+      "Ibn Battuta",
+      "Al-Mutanabbi",
+      "Ibn Khaldun"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel réformateur tunisien a écrit l’ouvrage « Aqwam al-masalik » ?",
+        "choices": [
+          "Khayr al-Din al-Tunisi",
+          "Ibn Battouta",
+          "Al-Moutanabbi",
+          "Ibn Khaldoun"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصلح تونسي ألّف كتاب «أقوم المسالك في معرفة أحوال الممالك»؟",
+        "choices": [
+          "خير الدين التونسي",
+          "ابن بطوطة",
+          "المتنبي",
+          "ابن خلدون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which emperor of the Byzantine Empire commissioned the Justinian Code of law?",
+    "choices": [
+      "Heraclius",
+      "Theodosius I",
+      "Constantine I",
+      "Justinian I"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel empereur byzantin fit compiler le Code de Justinien ?",
+        "choices": [
+          "Héraclius",
+          "Théodose Ier",
+          "Constantin Ier",
+          "Justinien Ier"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إمبراطور بيزنطي أمر بجمع مجموعة القوانين المعروفة بـ«مدونة جستنيان»؟",
+        "choices": [
+          "هرقل",
+          "ثيودوسيوس الأول",
+          "قسطنطين الأول",
+          "جستنيان الأول"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which war between Britain and France lasted from 1337 to 1453?",
+    "choices": [
+      "Hundred Years’ War",
+      "Napoleonic Wars",
+      "Opium Wars",
+      "Seven Years’ War"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle guerre entre l’Angleterre et la France a duré de 1337 à 1453 ?",
+        "choices": [
+          "La guerre de Cent Ans",
+          "Les guerres napoléoniennes",
+          "Les guerres de l’opium",
+          "La guerre de Sept Ans"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حرب دارت بين إنجلترا وفرنسا من 1337 إلى 1453؟",
+        "choices": [
+          "حرب المائة عام",
+          "الحروب النابليونية",
+          "حروب الأفيون",
+          "حرب السنوات السبع"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Egyptian leader nationalised the Suez Canal in 1956?",
+    "choices": [
+      "Hosni Mubarak",
+      "Gamal Abdel Nasser",
+      "Muhammad Ali",
+      "Anwar Sadat"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel dirigeant égyptien a nationalisé le canal de Suez en 1956 ?",
+        "choices": [
+          "Hosni Moubarak",
+          "Gamal Abdel Nasser",
+          "Mohamed Ali",
+          "Anouar el-Sadate"
+        ]
+      },
+      "ar": {
+        "question": "أيّ زعيم مصري أمّم قناة السويس عام 1956؟",
+        "choices": [
+          "حسني مبارك",
+          "جمال عبد الناصر",
+          "محمد علي",
+          "أنور السادات"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country was the first to introduce a constitution in the Arab world, in 1861?",
+    "choices": [
+      "Tunisia",
+      "Syria",
+      "Egypt",
+      "Lebanon"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays arabe a adopté en premier une constitution en 1861 ?",
+        "choices": [
+          "La Tunisie",
+          "La Syrie",
+          "L’Égypte",
+          "Le Liban"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة عربية أصدرت أول دستور لها عام 1861؟",
+        "choices": [
+          "تونس",
+          "سوريا",
+          "مصر",
+          "لبنان"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which king of England is famous for his six wives?",
+    "choices": [
+      "Henry VIII",
+      "Henry VII",
+      "Edward VI",
+      "George III"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel roi d’Angleterre est célèbre pour ses six épouses ?",
+        "choices": [
+          "Henri VIII",
+          "Henri VII",
+          "Édouard VI",
+          "George III"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملك إنجليزي اشتهر بزوجاته الست؟",
+        "choices": [
+          "هنري الثامن",
+          "هنري السابع",
+          "إدوارد السادس",
+          "جورج الثالث"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Roman general crossed the Rubicon river and started a civil war?",
+    "choices": [
+      "Scipio Africanus",
+      "Marcus Aurelius",
+      "Pompey",
+      "Julius Caesar"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel général romain franchit le Rubicon et déclencha une guerre civile ?",
+        "choices": [
+          "Scipion l’Africain",
+          "Marc Aurèle",
+          "Pompée",
+          "Jules César"
+        ]
+      },
+      "ar": {
+        "question": "أيّ قائد روماني عبر نهر الروبيكون وأشعل حربًا أهلية؟",
+        "choices": [
+          "سكيبيو الأفريقي",
+          "ماركوس أوريليوس",
+          "بومبي",
+          "يوليوس قيصر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which empire was founded by Cyrus the Great around 550 BC?",
+    "choices": [
+      "Seleucid Empire",
+      "Parthian Empire",
+      "Sasanian Empire",
+      "Achaemenid Empire"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel empire fut fondé par Cyrus le Grand vers 550 av. J.-C. ?",
+        "choices": [
+          "L’Empire séleucide",
+          "L’Empire parthe",
+          "L’Empire sassanide",
+          "L’Empire achéménide"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إمبراطورية أسسها قورش الكبير حوالي عام 550 قبل الميلاد؟",
+        "choices": [
+          "الإمبراطورية السلوقية",
+          "الإمبراطورية البارثية",
+          "الإمبراطورية الساسانية",
+          "الإمبراطورية الأخمينية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country was the centre of the Silk Road trade route?",
+    "choices": [
+      "Italy",
+      "China",
+      "Canada",
+      "Brazil"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays était au cœur de la route de la soie ?",
+        "choices": [
+          "L’Italie",
+          "La Chine",
+          "Le Canada",
+          "Le Brésil"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة كانت مركزًا لطريق الحرير التجاري؟",
+        "choices": [
+          "إيطاليا",
+          "الصين",
+          "كندا",
+          "البرازيل"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which leader became the first Emperor of the French in 1804?",
+    "choices": [
+      "Napoleon Bonaparte",
+      "Charles de Gaulle",
+      "Napoleon III",
+      "Louis Philippe"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel dirigeant devint le premier empereur des Français en 1804 ?",
+        "choices": [
+          "Napoléon Bonaparte",
+          "Charles de Gaulle",
+          "Napoléon III",
+          "Louis-Philippe"
+        ]
+      },
+      "ar": {
+        "question": "أيّ زعيم أصبح أول إمبراطور للفرنسيين عام 1804؟",
+        "choices": [
+          "نابليون بونابرت",
+          "شارل ديغول",
+          "نابليون الثالث",
+          "لويس فيليب"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which civilisation built the city of Great Zimbabwe?",
+    "choices": [
+      "Ashanti Empire",
+      "Maasai",
+      "Shona people",
+      "Zulu Empire"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel peuple a construit la cité de Grand Zimbabwe ?",
+        "choices": [
+          "L’Empire ashanti",
+          "Les Maasaï",
+          "Les Shonas",
+          "L’Empire zoulou"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شعب بنى مدينة زيمبابوي العظيمة؟",
+        "choices": [
+          "إمبراطورية الأشانتي",
+          "شعب الماسايي",
+          "شعب الشونا",
+          "إمبراطورية الزولو"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which country were the Olympic Games first held in ancient times?",
+    "choices": [
+      "Egypt",
+      "Greece",
+      "Italy",
+      "Persia"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays les Jeux olympiques se déroulaient-ils à l’origine ?",
+        "choices": [
+          "L’Égypte",
+          "La Grèce",
+          "L’Italie",
+          "La Perse"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة أُقيمت الألعاب الأولمبية القديمة أول مرة؟",
+        "choices": [
+          "مصر",
+          "اليونان",
+          "إيطاليا",
+          "فارس"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  }
+]

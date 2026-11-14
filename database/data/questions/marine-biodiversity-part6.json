@@ -1,0 +1,512 @@
+[
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea animal has a body that is mostly made of water and no bones?",
+    "choices": [
+      "Jellyfish",
+      "Shark",
+      "Seal",
+      "Dolphin"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est composé surtout d’eau et n’a pas d’os ?",
+        "choices": [
+          "La méduse",
+          "Le requin",
+          "Le phoque",
+          "Le dauphin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يتكون جسمه في معظمه من الماء ولا يملك عظامًا؟",
+        "choices": [
+          "قنديل البحر",
+          "القرش",
+          "الفقمة",
+          "الدلفين"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which bird is famous for hunting fish in the sea by diving from the air?",
+    "choices": [
+      "Sparrow",
+      "Hen",
+      "Gannet",
+      "Owl"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel oiseau est célèbre pour chasser le poisson en plongeant depuis les airs ?",
+        "choices": [
+          "Le moineau",
+          "La poule",
+          "Le fou de Bassan",
+          "La chouette"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طائر يشتهر بصيد السمك بالغوص من الجو؟",
+        "choices": [
+          "العصفور",
+          "الدجاجة",
+          "طائر الغانت",
+          "البومة"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which marine animal is known to clean other fish by eating parasites from their skin?",
+    "choices": [
+      "Great white shark",
+      "Cleaner wrasse",
+      "Barracuda",
+      "Stingray"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est connu pour nettoyer d’autres poissons en mangeant leurs parasites ?",
+        "choices": [
+          "Le grand requin blanc",
+          "Le labre nettoyeur",
+          "Le barracuda",
+          "La raie pastenague"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يشتهر بتنظيف أسماك أخرى بالتهام الطفيليات من جلدها؟",
+        "choices": [
+          "القرش الأبيض الكبير",
+          "سمكة التنظيف (الأوتار)",
+          "البركودا",
+          "الراي اللسع"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which plant grows in seawater and forms important mangrove habitats?",
+    "choices": [
+      "Oak trees",
+      "Cactus",
+      "Mangrove trees",
+      "Pine trees"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle plante pousse dans l’eau de mer et forme les importants habitats des mangroves ?",
+        "choices": [
+          "Les chênes",
+          "Le cactus",
+          "Les palétuviers",
+          "Les pins"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نبات ينمو في مياه البحر ويشكل موائل المانغروف المهمة؟",
+        "choices": [
+          "أشجار البلوط",
+          "الصبار",
+          "أشجار المانغروف",
+          "أشجار الصنوبر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which marine species is known for having a skeleton of cartilage rather than bone?",
+    "choices": [
+      "Turtle",
+      "Seal",
+      "Dolphin",
+      "Shark"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle espèce marine a un squelette de cartilage et non d’os ?",
+        "choices": [
+          "La tortue",
+          "Le phoque",
+          "Le dauphin",
+          "Le requin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يملك هيكلًا غضروفيًا وليس عظميًا؟",
+        "choices": [
+          "السلحفاة",
+          "الفقمة",
+          "الدلفين",
+          "القرش"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Mediterranean animal is a symbol of the sea and is often seen in tourist spots?",
+    "choices": [
+      "Mediterranean monk seal",
+      "Penguin",
+      "Camel",
+      "Ostrich"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal méditerranéen est un symbole de la mer et se voit souvent sur les sites touristiques ?",
+        "choices": [
+          "Le phoque moine méditerranéen",
+          "Le manchot",
+          "Le chameau",
+          "L’autruche"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان متوسطي يُعد رمزًا للبحر ويُشاهد غالبًا في الأماكن السياحية؟",
+        "choices": [
+          "فقمة الراهب المتوسطية",
+          "البطريق",
+          "الجمل",
+          "النعامة"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of marine ecosystem is made of living coral and supports many species?",
+    "choices": [
+      "Alpine meadow",
+      "Glacier",
+      "Desert dune",
+      "Coral reef"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel type d’écosystème marin est formé de coraux vivants et abrite de nombreuses espèces ?",
+        "choices": [
+          "La prairie alpine",
+          "Le glacier",
+          "La dune désertique",
+          "Le récif corallien"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من النظم البيئية البحرية يتكون من المرجان الحي ويؤوي أنواعًا كثيرة؟",
+        "choices": [
+          "المراعي الجبلية",
+          "الأنهار الجليدية",
+          "الكثبان الصحراوية",
+          "الشعاب المرجانية"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Mediterranean fish is famously known as ‘sea bream’ and is farmed widely?",
+    "choices": [
+      "Salmon",
+      "Goldfish",
+      "Catfish",
+      "Gilthead sea bream"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel poisson méditerranéen est connu comme « dorade » et est très élevé ?",
+        "choices": [
+          "Le saumon",
+          "Le poisson rouge",
+          "Le silure",
+          "La dorade royale"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سمكة متوسطية تُعرف بـ«الدنيس» أو «الدينيس» وتُربى بكثرة؟",
+        "choices": [
+          "السلمون",
+          "السمك الذهبي",
+          "السمك القط",
+          "الدنيس (الدوراد)"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which marine creature is known for its spines and round shape?",
+    "choices": [
+      "Sea urchin",
+      "Squid",
+      "Octopus",
+      "Jellyfish"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est connu pour ses piquants et sa forme ronde ?",
+        "choices": [
+          "L’oursin",
+          "Le calmar",
+          "La pieuvre",
+          "La méduse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يُعرف بأشواكه وشكله المستدير؟",
+        "choices": [
+          "قنفذ البحر",
+          "الحبار",
+          "الأخطبوط",
+          "قنديل البحر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian marine resource is known for its large population of sponges and corals near Zembra?",
+    "choices": [
+      "Zembra and Zembretta marine reserve",
+      "Gafsa mines",
+      "Tozeur palm groves",
+      "Sahara Desert oasis"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource marine tunisienne est connue pour ses éponges et coraux près de Zembra ?",
+        "choices": [
+          "La réserve marine de Zembra et Zembretta",
+          "Les mines de Gafsa",
+          "Les palmeraies de Tozeur",
+          "L’oasis du Sahara"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مورد بحري تونسي يشتهر بالإسفنجيات والمرجان قرب زمبرة؟",
+        "choices": [
+          "المحمية البحرية لزمبرة وزمبرتة",
+          "مناجم قفصة",
+          "بساتين توزر",
+          "واحة الصحراء"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea creature is known to change its shape like a cloud of ink?",
+    "choices": [
+      "Octopus",
+      "Starfish",
+      "Crab",
+      "Seahorse"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est connu pour nuancer sa forme et disperser de l’encre ?",
+        "choices": [
+          "La pieuvre",
+          "L’étoile de mer",
+          "Le crabe",
+          "L’hippocampe"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يُعرف بتغيير شكله وإطلاق سحابة من الحبر؟",
+        "choices": [
+          "الأخطبوط",
+          "نجم البحر",
+          "السلطعون",
+          "فرس البحر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the largest habitat on Earth for living organisms by volume?",
+    "choices": [
+      "Tundra",
+      "Ocean",
+      "Forest",
+      "Desert"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand habitat de la Terre pour les organismes vivants par son volume ?",
+        "choices": [
+          "La toundra",
+          "L’océan",
+          "La forêt",
+          "Le désert"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر موئل على الأرض للكائنات الحية من حيث الحجم؟",
+        "choices": [
+          "التندرا",
+          "المحيط",
+          "الغابة",
+          "الصحراء"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which species of seagrass grows in the Mediterranean and is protected by Barcelona Convention?",
+    "choices": [
+      "Spirulina",
+      "Posidonia oceanica",
+      "Kelp",
+      "Sargassum"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle espèce d’herbier méditerranéen est protégée par la convention de Barcelone ?",
+        "choices": [
+          "La spiruline",
+          "La posidonie",
+          "Le kelp",
+          "Le sargasse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الحشائش البحرية المتوسطية يحميه بروتوكول برشلونة؟",
+        "choices": [
+          "السبيرولينا",
+          "البوسيدونيا",
+          "الكلب البحري",
+          "السرغاسوم"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is a mammal that lives in the sea and is related to the elephant?",
+    "choices": [
+      "Octopus",
+      "Crab",
+      "Shark",
+      "Manatee"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin mammifère est apparenté à l’éléphant ?",
+        "choices": [
+          "La pieuvre",
+          "Le crabe",
+          "Le requin",
+          "Le lamantin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري من الثدييات تربطه صلة قرابة بالفيل؟",
+        "choices": [
+          "الأخطبوط",
+          "السلطعون",
+          "القرش",
+          "أبو البقر (المانتي)"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What happens to fish populations when they are overfished for many years?",
+    "choices": [
+      "They increase in number",
+      "They migrate to the desert",
+      "They decline and may collapse",
+      "They grow larger"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que se passe-t-il pour les populations de poissons surpêchées pendant de nombreuses années ?",
+        "choices": [
+          "Elles augmentent en nombre",
+          "Elles migrent vers le désert",
+          "Elles diminuent et peuvent s’effondrer",
+          "Elles grossissent"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يحدث لأعداد الأسماك عند الإفراط في صيدها لسنوات طويلة؟",
+        "choices": [
+          "تزداد عددًا",
+          "تهاجر إلى الصحراء",
+          "تتناقص وقد تنهار",
+          "تكبر حجمًا"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  }
+]

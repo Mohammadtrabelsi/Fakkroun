@@ -1,0 +1,705 @@
+[
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the chemical formula of table salt?",
+    "choices": [
+      "KCl",
+      "CaCO₃",
+      "H₂SO₄",
+      "NaCl"
+    ],
+    "correct": 4,
+    "explanation": "Table salt is sodium chloride, NaCl.",
+    "reference_text": "IUPAC chemical nomenclature",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la formule chimique du sel de table ?",
+        "choices": [
+          "KCl",
+          "CaCO₃",
+          "H₂SO₄",
+          "NaCl"
+        ],
+        "explanation": "Le sel de table est du chlorure de sodium, NaCl."
+      },
+      "ar": {
+        "question": "ما الصيغة الكيميائية لملح الطعام؟",
+        "choices": [
+          "KCl",
+          "CaCO₃",
+          "H₂SO₄",
+          "NaCl"
+        ],
+        "explanation": "ملح الطعام هو كلوريد الصوديوم NaCl."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which planet is the largest in the Solar System?",
+    "choices": [
+      "Saturn",
+      "Jupiter",
+      "Neptune",
+      "Earth"
+    ],
+    "correct": 2,
+    "explanation": "Jupiter is the largest planet and more than twice as massive as all the others combined.",
+    "reference_text": "NASA planetary facts",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande planète du Système solaire ?",
+        "choices": [
+          "Saturne",
+          "Jupiter",
+          "Neptune",
+          "La Terre"
+        ],
+        "explanation": "Jupiter est la plus grande planète ; sa masse dépasse celle de toutes les autres planètes réunies."
+      },
+      "ar": {
+        "question": "ما أكبر كواكب المجموعة الشمسية؟",
+        "choices": [
+          "زحل",
+          "المشتري",
+          "نبتون",
+          "الأرض"
+        ],
+        "explanation": "المشتري أكبر الكواكب، وكتلته تفوق مجموع كتل بقية الكواكب."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the process by which plants lose water through their leaves?",
+    "choices": [
+      "Osmosis",
+      "Fermentation",
+      "Respiration",
+      "Transpiration"
+    ],
+    "correct": 4,
+    "explanation": "Transpiration is the loss of water vapour from plant leaves through stomata.",
+    "reference_text": "Encyclopaedia Britannica, transpiration",
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le processus par lequel les plantes perdent de l’eau par leurs feuilles ?",
+        "choices": [
+          "L’osmose",
+          "La fermentation",
+          "La respiration",
+          "La transpiration végétale"
+        ],
+        "explanation": "La transpiration est la perte de vapeur d’eau par les feuilles, à travers les stomates."
+      },
+      "ar": {
+        "question": "ما اسم العملية التي تفقد فيها النباتات الماء عبر أوراقها؟",
+        "choices": [
+          "التناضح",
+          "التخمر",
+          "التنفس",
+          "النتح"
+        ],
+        "explanation": "النتح هو فقدان بخار الماء من أوراق النبات عبر الثغور."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which gas makes up most of the Earth’s atmosphere?",
+    "choices": [
+      "Hydrogen",
+      "Oxygen",
+      "Nitrogen",
+      "Carbon dioxide"
+    ],
+    "correct": 3,
+    "explanation": "Nitrogen makes up about 78 per cent of the atmosphere.",
+    "reference_text": "NOAA atmosphere composition",
+    "translations": {
+      "fr": {
+        "question": "Quel gaz constitue la majeure partie de l’atmosphère terrestre ?",
+        "choices": [
+          "L’hydrogène",
+          "L’oxygène",
+          "L’azote",
+          "Le dioxyde de carbone"
+        ],
+        "explanation": "L’azote représente environ 78 % de l’atmosphère."
+      },
+      "ar": {
+        "question": "أيّ غاز يشكل معظم الغلاف الجوي للأرض؟",
+        "choices": [
+          "الهيدروجين",
+          "الأكسجين",
+          "النيتروجين",
+          "ثاني أكسيد الكربون"
+        ],
+        "explanation": "يشكل النيتروجين نحو 78% من الغلاف الجوي."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main function of red blood cells?",
+    "choices": [
+      "Fighting infection",
+      "Producing hormones",
+      "Carrying oxygen",
+      "Clotting blood"
+    ],
+    "correct": 3,
+    "explanation": "Red blood cells carry oxygen from the lungs to the body’s tissues, using haemoglobin.",
+    "reference_text": "Encyclopaedia Britannica, red blood cell",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la fonction principale des globules rouges ?",
+        "choices": [
+          "Combattre les infections",
+          "Produire des hormones",
+          "Transporter l’oxygène",
+          "Coaguler le sang"
+        ],
+        "explanation": "Les globules rouges transportent l’oxygène des poumons vers les tissus grâce à l’hémoglobine."
+      },
+      "ar": {
+        "question": "ما الوظيفة الرئيسية لكريات الدم الحمراء؟",
+        "choices": [
+          "مقاومة العدوى",
+          "إنتاج الهرمونات",
+          "نقل الأكسجين",
+          "تخثر الدم"
+        ],
+        "explanation": "تنقل كريات الدم الحمراء الأكسجين من الرئتين إلى الأنسجة بواسطة الهيموغلوبين."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the speed of sound in air approximately?",
+    "choices": [
+      "34 m/s",
+      "34,000 m/s",
+      "3,400 m/s",
+      "340 m/s"
+    ],
+    "correct": 4,
+    "explanation": "Sound travels at about 340 metres per second in air at room temperature.",
+    "reference_text": "NIST speed of sound",
+    "translations": {
+      "fr": {
+        "question": "Quelle est, environ, la vitesse du son dans l’air ?",
+        "choices": [
+          "34 m/s",
+          "34 000 m/s",
+          "3 400 m/s",
+          "340 m/s"
+        ],
+        "explanation": "Le son se propage à environ 340 mètres par seconde dans l’air à température ambiante."
+      },
+      "ar": {
+        "question": "ما سرعة الصوت في الهواء تقريبًا؟",
+        "choices": [
+          "34 م/ث",
+          "34000 م/ث",
+          "3400 م/ث",
+          "340 م/ث"
+        ],
+        "explanation": "ينتقل الصوت بسرعة نحو 340 مترًا في الثانية في الهواء عند درجة حرارة الغرفة."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which scientist formulated the three laws of planetary motion?",
+    "choices": [
+      "Johannes Kepler",
+      "Nicolaus Copernicus",
+      "Ptolemy",
+      "Tycho Brahe"
+    ],
+    "correct": 1,
+    "explanation": "Kepler described planetary orbits as ellipses in the early 17th century.",
+    "reference_text": "Encyclopaedia Britannica, Johannes Kepler",
+    "translations": {
+      "fr": {
+        "question": "Quel savant a énoncé les trois lois du mouvement planétaire ?",
+        "choices": [
+          "Johannes Kepler",
+          "Nicolas Copernic",
+          "Ptolémée",
+          "Tycho Brahe"
+        ],
+        "explanation": "Kepler a décrit au début du XVIIe siècle les orbites planétaires comme des ellipses."
+      },
+      "ar": {
+        "question": "من وضع قوانين كبلر الثلاثة لحركة الكواكب؟",
+        "choices": [
+          "يوهانس كبلر",
+          "نيكولاوس كوبرنيكوس",
+          "بطليموس",
+          "تيكو براهي"
+        ],
+        "explanation": "وصف كبلر في مطلع القرن السابع عشر مدارات الكواكب بأنها قطوع ناقصة."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the powerhouse-like organelle of plant cells that carries out photosynthesis?",
+    "choices": [
+      "Mitochondrion",
+      "Vacuole",
+      "Chloroplast",
+      "Ribosome"
+    ],
+    "correct": 3,
+    "explanation": "Chloroplasts contain chlorophyll and capture light energy for photosynthesis.",
+    "reference_text": "Encyclopaedia Britannica, chloroplast",
+    "translations": {
+      "fr": {
+        "question": "Quel organite des cellules végétales réalise la photosynthèse ?",
+        "choices": [
+          "La mitochondrie",
+          "La vacuole",
+          "Le chloroplaste",
+          "Le ribosome"
+        ],
+        "explanation": "Les chloroplastes contiennent la chlorophylle et captent l’énergie lumineuse pour la photosynthèse."
+      },
+      "ar": {
+        "question": "ما العضية في الخلايا النباتية التي تُجري عملية البناء الضوئي؟",
+        "choices": [
+          "الميتوكوندريا",
+          "الفجوة",
+          "البلاستيدة الخضراء",
+          "الريبوسوم"
+        ],
+        "explanation": "تحتوي البلاستيدات الخضراء على الكلوروفيل وتلتقط الطاقة الضوئية للبناء الضوئي."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of rock is formed from cooled magma or lava?",
+    "choices": [
+      "Sedimentary rock",
+      "Igneous rock",
+      "Metamorphic rock",
+      "Limestone"
+    ],
+    "correct": 2,
+    "explanation": "Igneous rocks form when molten material cools and solidifies.",
+    "reference_text": "USGS rock types",
+    "translations": {
+      "fr": {
+        "question": "Quel type de roche se forme à partir de magma ou de lave refroidis ?",
+        "choices": [
+          "La roche sédimentaire",
+          "La roche magmatique",
+          "La roche métamorphique",
+          "Le calcaire"
+        ],
+        "explanation": "Les roches magmatiques se forment lorsque la matière en fusion refroidit et se solidifie."
+      },
+      "ar": {
+        "question": "أيّ نوع من الصخور يتكون من الماجما أو الحمم المبردة؟",
+        "choices": [
+          "الصخور الرسوبية",
+          "الصخور النارية",
+          "الصخور المتحولة",
+          "الحجر الجيري"
+        ],
+        "explanation": "تتكون الصخور النارية عندما تبرد المادة المنصهرة وتتصلب."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which scientist discovered radioactivity in 1896?",
+    "choices": [
+      "Henri Becquerel",
+      "Niels Bohr",
+      "Ernest Rutherford",
+      "Marie Curie"
+    ],
+    "correct": 1,
+    "explanation": "Henri Becquerel discovered radioactivity in 1896 using uranium salts.",
+    "reference_text": "Nobel Prize in Physics 1903",
+    "translations": {
+      "fr": {
+        "question": "Quel savant a découvert la radioactivité en 1896 ?",
+        "choices": [
+          "Henri Becquerel",
+          "Niels Bohr",
+          "Ernest Rutherford",
+          "Marie Curie"
+        ],
+        "explanation": "Henri Becquerel découvrit la radioactivité en 1896 à l’aide de sels d’uranium."
+      },
+      "ar": {
+        "question": "من اكتشف النشاط الإشعاعي عام 1896؟",
+        "choices": [
+          "هنري بيكريل",
+          "نيلز بور",
+          "إرنست راذرفورد",
+          "ماري كوري"
+        ],
+        "explanation": "اكتشف هنري بيكريل النشاط الإشعاعي عام 1896 باستخدام أملاح اليورانيوم."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main gas in the air we breathe in the largest proportion?",
+    "choices": [
+      "Carbon dioxide",
+      "Argon",
+      "Nitrogen",
+      "Oxygen"
+    ],
+    "correct": 3,
+    "explanation": "Nitrogen is the largest component of the air we breathe, at about 78 per cent.",
+    "reference_text": "NOAA atmosphere composition",
+    "translations": {
+      "fr": {
+        "question": "Quel gaz présent dans l’air que nous respirons est le plus abondant ?",
+        "choices": [
+          "Le dioxyde de carbone",
+          "L’argon",
+          "L’azote",
+          "L’oxygène"
+        ],
+        "explanation": "L’azote est le composant le plus abondant de l’air, à environ 78 %."
+      },
+      "ar": {
+        "question": "ما الغاز الأكثر وفرة في الهواء الذي نتنفسه؟",
+        "choices": [
+          "ثاني أكسيد الكربون",
+          "الأرغون",
+          "النيتروجين",
+          "الأكسجين"
+        ],
+        "explanation": "النيتروجين أكبر مكونات الهواء، بنحو 78%."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which organ filters the blood and removes waste?",
+    "choices": [
+      "Lung",
+      "Heart",
+      "Spleen",
+      "Kidney"
+    ],
+    "correct": 4,
+    "explanation": "The kidneys filter blood to remove waste and excess water.",
+    "reference_text": "Encyclopaedia Britannica, kidney",
+    "translations": {
+      "fr": {
+        "question": "Quel organe filtre le sang et élimine les déchets ?",
+        "choices": [
+          "Le poumon",
+          "Le cœur",
+          "La rate",
+          "Le rein"
+        ],
+        "explanation": "Les reins filtrent le sang pour éliminer les déchets et l’eau en excès."
+      },
+      "ar": {
+        "question": "أيّ عضو يُرشّح الدم ويزيل الفضلات؟",
+        "choices": [
+          "الرئة",
+          "القلب",
+          "الطحال",
+          "الكلية"
+        ],
+        "explanation": "تُرشّح الكليتان الدم وتزيلان الفضلات والماء الزائد."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the most common element in the universe?",
+    "choices": [
+      "Oxygen",
+      "Carbon",
+      "Hydrogen",
+      "Helium"
+    ],
+    "correct": 3,
+    "explanation": "Hydrogen makes up roughly three quarters of the ordinary matter in the universe.",
+    "reference_text": "NASA universe composition",
+    "translations": {
+      "fr": {
+        "question": "Quel est l’élément le plus répandu dans l’univers ?",
+        "choices": [
+          "L’oxygène",
+          "Le carbone",
+          "L’hydrogène",
+          "L’hélium"
+        ],
+        "explanation": "L’hydrogène représente environ trois quarts de la matière ordinaire de l’univers."
+      },
+      "ar": {
+        "question": "ما العنصر الأكثر وفرة في الكون؟",
+        "choices": [
+          "الأكسجين",
+          "الكربون",
+          "الهيدروجين",
+          "الهيليوم"
+        ],
+        "explanation": "يشكل الهيدروجين نحو ثلاثة أرباع المادة العادية في الكون."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which invention is attributed to Alexander Graham Bell?",
+    "choices": [
+      "Radio",
+      "Television",
+      "Telephone",
+      "Light bulb"
+    ],
+    "correct": 3,
+    "explanation": "Bell patented the telephone in 1876.",
+    "reference_text": "Encyclopaedia Britannica, Alexander Graham Bell",
+    "translations": {
+      "fr": {
+        "question": "Quelle invention est attribuée à Alexander Graham Bell ?",
+        "choices": [
+          "La radio",
+          "La télévision",
+          "Le téléphone",
+          "L’ampoule électrique"
+        ],
+        "explanation": "Bell a déposé le brevet du téléphone en 1876."
+      },
+      "ar": {
+        "question": "أيّ اختراع يُنسب إلى ألكسندر غراهام بيل؟",
+        "choices": [
+          "الراديو",
+          "التلفاز",
+          "الهاتف",
+          "المصباح الكهربائي"
+        ],
+        "explanation": "سجّل بيل براءة اختراع الهاتف عام 1876."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call a substance that speeds up a chemical reaction without being consumed?",
+    "choices": [
+      "Isotope",
+      "Catalyst",
+      "Reagent",
+      "Solvent"
+    ],
+    "correct": 2,
+    "explanation": "A catalyst lowers the activation energy and is not used up in the reaction.",
+    "reference_text": "IUPAC gold book, catalyst",
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on une substance qui accélère une réaction chimique sans être consommée ?",
+        "choices": [
+          "Un isotope",
+          "Un catalyseur",
+          "Un réactif",
+          "Un solvant"
+        ],
+        "explanation": "Un catalyseur abaisse l’énergie d’activation sans être consommé par la réaction."
+      },
+      "ar": {
+        "question": "ما اسم المادة التي تسرّع التفاعل الكيميائي دون أن تُستهلك فيه؟",
+        "choices": [
+          "النظير",
+          "العامل الحفاز",
+          "الكاشف",
+          "المذيب"
+        ],
+        "explanation": "يخفض العامل الحفاز طاقة التنشيط دون أن يُستهلك في التفاعل."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which scientist is known for the discovery of the electron in 1897?",
+    "choices": [
+      "Michael Faraday",
+      "J. J. Thomson",
+      "Ernest Rutherford",
+      "James Chadwick"
+    ],
+    "correct": 2,
+    "explanation": "J. J. Thomson identified the electron in 1897 using cathode-ray experiments.",
+    "reference_text": "Nobel Prize in Physics 1906",
+    "translations": {
+      "fr": {
+        "question": "Quel savant a découvert l’électron en 1897 ?",
+        "choices": [
+          "Michael Faraday",
+          "J. J. Thomson",
+          "Ernest Rutherford",
+          "James Chadwick"
+        ],
+        "explanation": "J. J. Thomson identifia l’électron en 1897 grâce aux expériences sur les rayons cathodiques."
+      },
+      "ar": {
+        "question": "من اكتشف الإلكترون عام 1897؟",
+        "choices": [
+          "مايكل فاراداي",
+          "جيه جيه تومسون",
+          "إرنست راذرفورد",
+          "جيمس تشادويك"
+        ],
+        "explanation": "حدد جيه جيه تومسون الإلكترون عام 1897 عبر تجارب أشعة المهبط."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which vitamin is produced in the skin when exposed to sunlight?",
+    "choices": [
+      "Vitamin D",
+      "Vitamin K",
+      "Vitamin C",
+      "Vitamin B12"
+    ],
+    "correct": 1,
+    "explanation": "The skin produces vitamin D when exposed to ultraviolet B rays.",
+    "reference_text": "NIH Office of Dietary Supplements, vitamin D",
+    "translations": {
+      "fr": {
+        "question": "Quelle vitamine la peau produit-elle sous l’effet du soleil ?",
+        "choices": [
+          "La vitamine D",
+          "La vitamine K",
+          "La vitamine C",
+          "La vitamine B12"
+        ],
+        "explanation": "La peau produit de la vitamine D sous l’effet des rayons ultraviolets B."
+      },
+      "ar": {
+        "question": "أيّ فيتامين تنتجه البشرة عند التعرض لأشعة الشمس؟",
+        "choices": [
+          "فيتامين D",
+          "فيتامين K",
+          "فيتامين C",
+          "فيتامين B12"
+        ],
+        "explanation": "تنتج البشرة فيتامين D عند تعرضها للأشعة فوق البنفسجية من نوع B."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the process by which a solid turns directly into a gas?",
+    "choices": [
+      "Evaporation",
+      "Sublimation",
+      "Condensation",
+      "Melting"
+    ],
+    "correct": 2,
+    "explanation": "Dry ice and frost can sublimate, skipping the liquid stage.",
+    "reference_text": "Encyclopaedia Britannica, sublimation",
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le passage direct d’un solide à un gaz ?",
+        "choices": [
+          "L’évaporation",
+          "La sublimation",
+          "La condensation",
+          "La fusion"
+        ],
+        "explanation": "La glace carbonique et le givre peuvent se sublimer, sans passer par la phase liquide."
+      },
+      "ar": {
+        "question": "ما اسم العملية التي تتحول فيها المادة الصلبة مباشرة إلى غاز؟",
+        "choices": [
+          "التبخر",
+          "التسامي",
+          "التكثف",
+          "الانصهار"
+        ],
+        "explanation": "يمكن للثلج الجاف والصقيع أن يتسامى مباشرة دون المرور بالحالة السائلة."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which part of the eye controls how much light enters?",
+    "choices": [
+      "Retina",
+      "Iris",
+      "Cornea",
+      "Lens"
+    ],
+    "correct": 2,
+    "explanation": "The iris adjusts the size of the pupil to control light entering the eye.",
+    "reference_text": "Encyclopaedia Britannica, iris",
+    "translations": {
+      "fr": {
+        "question": "Quelle partie de l’œil contrôle la quantité de lumière qui entre ?",
+        "choices": [
+          "La rétine",
+          "L’iris",
+          "La cornée",
+          "Le cristallin"
+        ],
+        "explanation": "L’iris ajuste la taille de la pupille pour contrôler la lumière qui entre dans l’œil."
+      },
+      "ar": {
+        "question": "أيّ جزء في العين يتحكم في كمية الضوء الداخلة إليها؟",
+        "choices": [
+          "الشبكية",
+          "القزحية",
+          "القرنية",
+          "العدسة"
+        ],
+        "explanation": "تضبط القزحية حجم الحدقة للتحكم في الضوء الداخل إلى العين."
+      }
+    }
+  }
+]

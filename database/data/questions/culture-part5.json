@@ -1,0 +1,596 @@
+[
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which famous Japanese animated film studio created “Spirited Away”?",
+    "choices": [
+      "Disney",
+      "Studio Ghibli",
+      "Pixar",
+      "DreamWorks"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel célèbre studio japonais d’animation a créé « Le Voyage de Chihiro » ?",
+        "choices": [
+          "Disney",
+          "Studio Ghibli",
+          "Pixar",
+          "DreamWorks"
+        ]
+      },
+      "ar": {
+        "question": "أيّ استوديو ياباني شهير للرسوم المتحركة أنتج فيلم «المسافرة إلى عالم الأرواح»؟",
+        "choices": [
+          "ديزني",
+          "استوديو غيبلي",
+          "بيكسار",
+          "دريمووركس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is famous for its tea ceremony tradition?",
+    "choices": [
+      "Italy",
+      "Japan",
+      "Peru",
+      "Canada"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est célèbre pour sa tradition de la cérémonie du thé ?",
+        "choices": [
+          "L’Italie",
+          "Le Japon",
+          "Le Pérou",
+          "Le Canada"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر بتقاليد طقوس الشاي؟",
+        "choices": [
+          "إيطاليا",
+          "اليابان",
+          "بيرو",
+          "كندا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Egyptian singer is known as the ‘Star of the East’?",
+    "choices": [
+      "Fairuz",
+      "Umm Kulthum",
+      "Asmahan",
+      "Warda"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle chanteuse égyptienne est surnommée « l’Étoile de l’Orient » ?",
+        "choices": [
+          "Fayrouz",
+          "Oum Kalsoum",
+          "Asmahan",
+          "Warda"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مطربة مصرية تُلقّب بـ«كوكب الشرق»؟",
+        "choices": [
+          "فيروز",
+          "أم كلثوم",
+          "أسمهان",
+          "وردة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is the origin of the sport of sumo wrestling?",
+    "choices": [
+      "Mongolia",
+      "China",
+      "Korea",
+      "Japan"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "De quel pays la lutte sumo est-elle originaire ?",
+        "choices": [
+          "La Mongolie",
+          "La Chine",
+          "La Corée",
+          "Le Japon"
+        ]
+      },
+      "ar": {
+        "question": "من أيّ دولة تنحدر رياضة مصارعة السومو؟",
+        "choices": [
+          "منغوليا",
+          "الصين",
+          "كوريا",
+          "اليابان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous poet wrote “The Prophet”, a book of poems and sayings?",
+    "choices": [
+      "Mahmoud Darwish",
+      "Ahmed Shawqi",
+      "Khalil Gibran",
+      "Nizar Qabbani"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel poète a écrit « Le Prophète », recueil de poèmes et de maximes ?",
+        "choices": [
+          "Mahmoud Darwich",
+          "Ahmed Chawqi",
+          "Khalil Gibran",
+          "Nizar Qabbani"
+        ]
+      },
+      "ar": {
+        "question": "من ألّف كتاب «النبي» وهو مجموعة من القصائد والأقوال؟",
+        "choices": [
+          "محمود درويش",
+          "أحمد شوقي",
+          "جبران خليل جبران",
+          "نزار قباني"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the traditional Moroccan dish made with couscous and vegetables?",
+    "choices": [
+      "Pizza",
+      "Paella",
+      "Couscous",
+      "Sushi"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le plat traditionnel marocain à base de couscous et de légumes ?",
+        "choices": [
+          "La pizza",
+          "La paella",
+          "Le couscous",
+          "Les sushis"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الطبق المغربي التقليدي المكون من الكسكس والخضار؟",
+        "choices": [
+          "البيتزا",
+          "الباييلا",
+          "الكسكس",
+          "السوشي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which painter is best known for works in the Cubist style?",
+    "choices": [
+      "Claude Monet",
+      "Pablo Picasso",
+      "Salvador Dalí",
+      "Vincent van Gogh"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel peintre est surtout connu pour ses œuvres cubistes ?",
+        "choices": [
+          "Claude Monet",
+          "Pablo Picasso",
+          "Salvador Dalí",
+          "Vincent van Gogh"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رسام يشتهر بأعماله ذات الأسلوب التكعيبي؟",
+        "choices": [
+          "كلود مونيه",
+          "بابلو بيكاسو",
+          "سلفادور دالي",
+          "فنسنت فان غوخ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which famous Arabic calligraphy style is used on Islamic architecture and written in an angular form?",
+    "choices": [
+      "Cuneiform",
+      "Kufic script",
+      "Runic",
+      "Chinese seal script"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel style de calligraphie arabe, à lignes anguleuses, est utilisé sur l’architecture islamique ?",
+        "choices": [
+          "Le cunéiforme",
+          "Le style coufique",
+          "Les runes",
+          "Le sigillaire chinois"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أسلوب خط عربي ذو شكل زاوي يُستخدم في العمارة الإسلامية؟",
+        "choices": [
+          "المسمارية",
+          "الخط الكوفي",
+          "الرونية",
+          "الخط الصيني الختمي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Arabic classical musical tradition is known for the muwashshah?",
+    "choices": [
+      "Tango",
+      "Reggae",
+      "Andalusian music",
+      "Jazz"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle tradition musicale arabe classique est connue pour le muwashshah ?",
+        "choices": [
+          "Le tango",
+          "Le reggae",
+          "La musique andalouse",
+          "Le jazz"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تراث موسيقي عربي كلاسيكي يشتهر بفن الموشح؟",
+        "choices": [
+          "التانغو",
+          "الريغي",
+          "الموسيقى الأندلسية",
+          "الجاز"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which famous Egyptian film director made the film “The Land”?",
+    "choices": [
+      "Ali Riahi",
+      "Abbas Kiarostami",
+      "Youssef Chahine",
+      "Akira Kurosawa"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel célèbre réalisateur égyptien a réalisé le film « La Terre » ?",
+        "choices": [
+          "Ali Riahi",
+          "Abbas Kiarostami",
+          "Youssef Chahine",
+          "Akira Kurosawa"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مخرج مصري شهير أخرج فيلم «الأرض»؟",
+        "choices": [
+          "علي الرياحي",
+          "عباس كيارستمي",
+          "يوسف شاهين",
+          "أكيرا كوروساوا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is the birthplace of the Olympic Games in ancient times?",
+    "choices": [
+      "Greece",
+      "Italy",
+      "Persia",
+      "Egypt"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est le berceau des Jeux olympiques antiques ?",
+        "choices": [
+          "La Grèce",
+          "L’Italie",
+          "La Perse",
+          "L’Égypte"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة هي مهد الألعاب الأولمبية القديمة؟",
+        "choices": [
+          "اليونان",
+          "إيطاليا",
+          "فارس",
+          "مصر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Russian writer wrote “Crime and Punishment”?",
+    "choices": [
+      "Ivan Turgenev",
+      "Leo Tolstoy",
+      "Anton Chekhov",
+      "Fyodor Dostoevsky"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel écrivain russe a écrit « Crime et Châtiment » ?",
+        "choices": [
+          "Ivan Tourgueniev",
+          "Léon Tolstoï",
+          "Anton Tchekhov",
+          "Fiodor Dostoïevski"
+        ]
+      },
+      "ar": {
+        "question": "من كتب رواية «الجريمة والعقاب»؟",
+        "choices": [
+          "إيفان تورغينيف",
+          "ليو تولستوي",
+          "أنطون تشيخوف",
+          "فيودور دوستويفسكي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian musical instrument is commonly played in the Gnawa tradition?",
+    "choices": [
+      "Harp",
+      "Guembri (sintir)",
+      "Violin",
+      "Saxophone"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel instrument tunisien est joué dans la tradition gnaoua ?",
+        "choices": [
+          "La harpe",
+          "Le guembri (sintir)",
+          "Le violon",
+          "Le saxophone"
+        ]
+      },
+      "ar": {
+        "question": "أيّ آلة موسيقية تونسية تُعزف في تراث الكناوة؟",
+        "choices": [
+          "القيثارة",
+          "الجمبري (السنتير)",
+          "الكمان",
+          "الساكسفون"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which popular art form uses a stage with actors speaking lines and music?",
+    "choices": [
+      "Gardening",
+      "Fishing",
+      "Theatre",
+      "Cooking"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle forme d’art populaire utilise une scène avec des acteurs qui jouent et chantent ?",
+        "choices": [
+          "Le jardinage",
+          "La pêche",
+          "Le théâtre",
+          "La cuisine"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شكل فني شعبي يعتمد على خشبة مسرح يمثل فيها الممثلون ويُغنّون؟",
+        "choices": [
+          "البستنة",
+          "الصيد",
+          "المسرح",
+          "الطبخ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous opera by Verdi features the character Violetta?",
+    "choices": [
+      "Aida",
+      "Carmen",
+      "Tosca",
+      "La Traviata"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel célèbre opéra de Verdi met en scène le personnage de Violetta ?",
+        "choices": [
+          "Aïda",
+          "Carmen",
+          "Tosca",
+          "La Traviata"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أوبرا شهيرة لفيردي تضم شخصية فيوليتا؟",
+        "choices": [
+          "عايدة",
+          "كارمن",
+          "توسكا",
+          "لا تراڤياتا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian painter is known for his portrait works and his role in Tunisian modern art?",
+    "choices": [
+      "Pablo Picasso",
+      "Yahia Turki",
+      "Diego Rivera",
+      "Frida Kahlo"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel peintre tunisien est connu pour ses portraits et son rôle dans l’art moderne tunisien ?",
+        "choices": [
+          "Pablo Picasso",
+          "Yahia Turki",
+          "Diego Rivera",
+          "Frida Kahlo"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رسام تونسي اشتهر بلوحات البورتريه ودوره في الفن التونسي الحديث؟",
+        "choices": [
+          "بابلو بيكاسو",
+          "يحيى التركي",
+          "دييغو ريفيرا",
+          "فريدا كاهلو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which festival is famous for lanterns floating on water in Thailand?",
+    "choices": [
+      "Christmas",
+      "Loy Krathong",
+      "Oktoberfest",
+      "Eid al-Adha"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle fête est célèbre pour ses lanternes flottantes en Thaïlande ?",
+        "choices": [
+          "Noël",
+          "Loy Krathong",
+          "L’Oktoberfest",
+          "L’Aïd el-Adha"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مهرجان يشتهر بالفوانيس العائمة على الماء في تايلاند؟",
+        "choices": [
+          "عيد الميلاد",
+          "لوي كراثونغ",
+          "أوكتوبرفست",
+          "عيد الأضحى"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Chinese classical novel features the Monkey King?",
+    "choices": [
+      "Water Margin",
+      "Dream of the Red Chamber",
+      "Journey to the West",
+      "Romance of the Three Kingdoms"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel roman classique chinois met en scène le Roi singe ?",
+        "choices": [
+          "Au bord de l’eau",
+          "Le Rêve dans le pavillon rouge",
+          "Le Voyage en Occident",
+          "Le Roman des Trois Royaumes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رواية صينية كلاسيكية تتضمن شخصية ملك القردة؟",
+        "choices": [
+          "حكايات ضفاف الماء",
+          "حلم الغرفة الحمراء",
+          "رحلة إلى الغرب",
+          "قصة الممالك الثلاث"
+        ]
+      }
+    }
+  }
+]

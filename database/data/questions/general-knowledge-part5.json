@@ -1,0 +1,662 @@
+[
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many colours are in a rainbow, commonly listed?",
+    "choices": [
+      "Three",
+      "Seven",
+      "Five",
+      "Ten"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Combien de couleurs compte généralement un arc-en-ciel ?",
+        "choices": [
+          "Trois",
+          "Sept",
+          "Cinq",
+          "Dix"
+        ]
+      },
+      "ar": {
+        "question": "كم لونًا يضم قوس قزح عادةً؟",
+        "choices": [
+          "ثلاثة",
+          "سبعة",
+          "خمسة",
+          "عشرة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal produces milk for its young?",
+    "choices": [
+      "Snake",
+      "Chicken",
+      "Cow",
+      "Fish"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel animal produit du lait pour ses petits ?",
+        "choices": [
+          "Le serpent",
+          "La poule",
+          "La vache",
+          "Le poisson"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان ينتج الحليب لصغاره؟",
+        "choices": [
+          "الثعبان",
+          "الدجاجة",
+          "البقرة",
+          "السمكة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the largest desert in Asia?",
+    "choices": [
+      "Atacama",
+      "Sahara",
+      "Gobi Desert",
+      "Kalahari"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand désert d’Asie ?",
+        "choices": [
+          "L’Atacama",
+          "Le Sahara",
+          "Le désert de Gobi",
+          "Le Kalahari"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر صحراء في آسيا؟",
+        "choices": [
+          "صحراء أتاكاما",
+          "الصحراء الكبرى",
+          "صحراء غوبي",
+          "صحراء كالاهاري"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the smallest bird in the world?",
+    "choices": [
+      "Penguin",
+      "Bee hummingbird",
+      "Ostrich",
+      "Eagle"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus petit oiseau du monde ?",
+        "choices": [
+          "Le manchot",
+          "Le colibri d’Helena (abeille)",
+          "L’autruche",
+          "L’aigle"
+        ]
+      },
+      "ar": {
+        "question": "ما أصغر طائر في العالم؟",
+        "choices": [
+          "البطريق",
+          "طائر الطنان (النحلة)",
+          "النعامة",
+          "النسر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who painted the famous “Starry Night”?",
+    "choices": [
+      "Salvador Dalí",
+      "Vincent van Gogh",
+      "Pablo Picasso",
+      "Claude Monet"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qui a peint « La Nuit étoilée » ?",
+        "choices": [
+          "Salvador Dalí",
+          "Vincent van Gogh",
+          "Pablo Picasso",
+          "Claude Monet"
+        ]
+      },
+      "ar": {
+        "question": "من رسم لوحة «ليلة النجوم»؟",
+        "choices": [
+          "سلفادور دالي",
+          "فنسنت فان غوخ",
+          "بابلو بيكاسو",
+          "كلود مونيه"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call a baby cat?",
+    "choices": [
+      "Puppy",
+      "Cub",
+      "Kitten",
+      "Calf"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un bébé chat ?",
+        "choices": [
+          "Un chiot",
+          "Un petit",
+          "Un chaton",
+          "Un veau"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم صغير القطط؟",
+        "choices": [
+          "جرو",
+          "شبل",
+          "قطيط",
+          "عجل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which mountain is the highest in Tunisia?",
+    "choices": [
+      "Jebel Ichkeul",
+      "Jebel Bou Hedma",
+      "Jebel Zaghouan",
+      "Jebel Chambi"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus haute montagne de Tunisie ?",
+        "choices": [
+          "Le Djebel Ichkeul",
+          "Le Djebel Bou Hedma",
+          "Le Djebel Zaghouan",
+          "Le Djebel Chambi"
+        ]
+      },
+      "ar": {
+        "question": "ما أعلى جبل في تونس؟",
+        "choices": [
+          "جبل إشكل",
+          "جبل بوهدمة",
+          "جبل زغوان",
+          "جبل الشعانبي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country invented pizza?",
+    "choices": [
+      "Italy",
+      "Spain",
+      "France",
+      "Greece"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est à l’origine de la pizza ?",
+        "choices": [
+          "L’Italie",
+          "L’Espagne",
+          "La France",
+          "La Grèce"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة اشتهرت بابتكار البيتزا؟",
+        "choices": [
+          "إيطاليا",
+          "إسبانيا",
+          "فرنسا",
+          "اليونان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous painter is known for the painting “Guernica”?",
+    "choices": [
+      "Vincent van Gogh",
+      "Claude Monet",
+      "Henri Matisse",
+      "Pablo Picasso"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel peintre célèbre est connu pour « Guernica » ?",
+        "choices": [
+          "Vincent van Gogh",
+          "Claude Monet",
+          "Henri Matisse",
+          "Pablo Picasso"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رسام شهير اشتهر بلوحة «غيرنيكا»؟",
+        "choices": [
+          "فنسنت فان غوخ",
+          "كلود مونيه",
+          "هنري ماتيس",
+          "بابلو بيكاسو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which fruit is known as the king of fruits in Southeast Asia?",
+    "choices": [
+      "Grape",
+      "Durian",
+      "Apple",
+      "Banana"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel fruit est appelé le roi des fruits en Asie du Sud-Est ?",
+        "choices": [
+          "Le raisin",
+          "Le durian",
+          "La pomme",
+          "La banane"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فاكهة تُلقّب بملك الفواكه في جنوب شرق آسيا؟",
+        "choices": [
+          "العنب",
+          "الدوريان",
+          "التفاح",
+          "الموز"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which author wrote the novel “Things Fall Apart”?",
+    "choices": [
+      "Wole Soyinka",
+      "Ngugi wa Thiong’o",
+      "Chinua Achebe",
+      "Nadine Gordimer"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel auteur a écrit le roman « Le monde s’effondre » ?",
+        "choices": [
+          "Wole Soyinka",
+          "Ngũgĩ wa Thiong’o",
+          "Chinua Achebe",
+          "Nadine Gordimer"
+        ]
+      },
+      "ar": {
+        "question": "من كتب رواية «الأشياء تتداعى»؟",
+        "choices": [
+          "وول سوينكا",
+          "نغوغي وا ثيونغو",
+          "تشينوا أتشيبي",
+          "نادين غورديمر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which planet is known for its Great Red Spot?",
+    "choices": [
+      "Mercury",
+      "Jupiter",
+      "Saturn",
+      "Mars"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle planète est connue pour sa Grande Tache rouge ?",
+        "choices": [
+          "Mercure",
+          "Jupiter",
+          "Saturne",
+          "Mars"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كوكب يشتهر بالبقعة الحمراء العظيمة؟",
+        "choices": [
+          "عطارد",
+          "المشتري",
+          "زحل",
+          "المريخ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is famous for the Taj Mahal?",
+    "choices": [
+      "India",
+      "Nepal",
+      "Iran",
+      "Turkey"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est célèbre pour le Taj Mahal ?",
+        "choices": [
+          "L’Inde",
+          "Le Népal",
+          "L’Iran",
+          "La Turquie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر بتاج محل؟",
+        "choices": [
+          "الهند",
+          "نيبال",
+          "إيران",
+          "تركيا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the most common blood type in the world?",
+    "choices": [
+      "B negative",
+      "AB negative",
+      "A negative",
+      "O positive"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le groupe sanguin le plus courant dans le monde ?",
+        "choices": [
+          "B négatif",
+          "AB négatif",
+          "A négatif",
+          "O positif"
+        ]
+      },
+      "ar": {
+        "question": "ما فصيلة الدم الأكثر شيوعًا في العالم؟",
+        "choices": [
+          "B سالب",
+          "AB سالب",
+          "A سالب",
+          "O موجب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest ocean animal by length in the world?",
+    "choices": [
+      "Killer whale",
+      "Blue whale",
+      "Giant squid",
+      "Whale shark"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand animal marin par sa longueur ?",
+        "choices": [
+          "L’orque",
+          "La baleine bleue",
+          "Le calmar géant",
+          "Le requin-baleine"
+        ]
+      },
+      "ar": {
+        "question": "ما أطول حيوان بحري في العالم؟",
+        "choices": [
+          "الحوت القاتل",
+          "الحوت الأزرق",
+          "الحبار العملاق",
+          "قرش الحوت"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which type of year has 366 days?",
+    "choices": [
+      "Normal year",
+      "Leap year",
+      "Autumn",
+      "Winter"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle année compte 366 jours ?",
+        "choices": [
+          "L’année ordinaire",
+          "L’année bissextile",
+          "L’automne",
+          "L’hiver"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سنة تحتوي على 366 يومًا؟",
+        "choices": [
+          "السنة العادية",
+          "السنة الكبيسة",
+          "الخريف",
+          "الشتاء"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Arabic author wrote the famous novel “Zaynab” (1913), considered the first Egyptian novel?",
+    "choices": [
+      "Muhammad Husayn Haykal",
+      "Taha Hussein",
+      "Naguib Mahfouz",
+      "Tawfiq al-Hakim"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel auteur arabe a écrit « Zaynab » (1913), considéré comme le premier roman égyptien ?",
+        "choices": [
+          "Mohammed Hussein Heykal",
+          "Taha Hussein",
+          "Naguib Mahfouz",
+          "Tawfiq al-Hakim"
+        ]
+      },
+      "ar": {
+        "question": "من كتب رواية «زينب» (1913) التي تُعد أول رواية مصرية؟",
+        "choices": [
+          "محمد حسين هيكل",
+          "طه حسين",
+          "نجيب محفوظ",
+          "توفيق الحكيم"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is famous for changing the colour of its skin?",
+    "choices": [
+      "Giraffe",
+      "Horse",
+      "Elephant",
+      "Chameleon"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel animal est célèbre pour changer la couleur de sa peau ?",
+        "choices": [
+          "La girafe",
+          "Le cheval",
+          "L’éléphant",
+          "Le caméléon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يشتهر بتغيير لون جلده؟",
+        "choices": [
+          "الزرافة",
+          "الحصان",
+          "الفيل",
+          "الحرباء"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the most widely used writing system in the world?",
+    "choices": [
+      "Runes",
+      "Hieroglyphs",
+      "Latin alphabet",
+      "Cuneiform"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le système d’écriture le plus utilisé au monde ?",
+        "choices": [
+          "Les runes",
+          "Les hiéroglyphes",
+          "L’alphabet latin",
+          "Le cunéiforme"
+        ]
+      },
+      "ar": {
+        "question": "ما نظام الكتابة الأكثر استخدامًا في العالم؟",
+        "choices": [
+          "الرونية",
+          "الهيروغليفية",
+          "الأبجدية اللاتينية",
+          "المسمارية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the planet we live on?",
+    "choices": [
+      "Venus",
+      "Earth",
+      "Mars",
+      "Jupiter"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la planète sur laquelle nous vivons ?",
+        "choices": [
+          "Vénus",
+          "La Terre",
+          "Mars",
+          "Jupiter"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الكوكب الذي نعيش عليه؟",
+        "choices": [
+          "الزهرة",
+          "الأرض",
+          "المريخ",
+          "المشتري"
+        ]
+      }
+    }
+  }
+]

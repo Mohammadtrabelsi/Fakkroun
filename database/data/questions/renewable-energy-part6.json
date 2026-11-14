@@ -1,0 +1,512 @@
+[
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable energy technology uses the power of the wind?",
+    "choices": [
+      "Coal plant",
+      "Oil refinery",
+      "Gas boiler",
+      "Wind turbine"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie renouvelable utilise la force du vent ?",
+        "choices": [
+          "La centrale à charbon",
+          "La raffinerie de pétrole",
+          "La chaudière à gaz",
+          "L’éolienne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية متجددة تستخدم قوة الرياح؟",
+        "choices": [
+          "محطة الفحم",
+          "مصفاة النفط",
+          "مرجل الغاز",
+          "توربين الرياح"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source is used by solar cells to make electricity?",
+    "choices": [
+      "Water vapour",
+      "Coal",
+      "Crude oil",
+      "Sunlight"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle source d’énergie utilisent les cellules solaires pour produire de l’électricité ?",
+        "choices": [
+          "La vapeur d’eau",
+          "Le charbon",
+          "Le pétrole brut",
+          "La lumière du soleil"
+        ]
+      },
+      "ar": {
+        "question": "ما المصدر الذي تستخدمه الخلايا الشمسية لإنتاج الكهرباء؟",
+        "choices": [
+          "بخار الماء",
+          "الفحم",
+          "النفط الخام",
+          "ضوء الشمس"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main advantage of using batteries in a solar home system?",
+    "choices": [
+      "Increasing electricity bills",
+      "Blocking sunlight",
+      "Making the house heavier",
+      "Storing energy for use at night"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal avantage des batteries dans une installation solaire domestique ?",
+        "choices": [
+          "Augmenter la facture d’électricité",
+          "Bloquer la lumière du soleil",
+          "Alourdir la maison",
+          "Stocker l’énergie pour la nuit"
+        ]
+      },
+      "ar": {
+        "question": "ما الميزة الرئيسية للبطاريات في نظام الطاقة الشمسية المنزلي؟",
+        "choices": [
+          "زيادة فاتورة الكهرباء",
+          "حجب ضوء الشمس",
+          "جعل المنزل أثقل",
+          "تخزين الطاقة لاستخدامها ليلًا"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is known for large geothermal power production and is located in the Atlantic?",
+    "choices": [
+      "Chad",
+      "Tunisia",
+      "Iceland",
+      "Egypt"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est connu pour une grande production géothermique et se situe dans l’Atlantique ?",
+        "choices": [
+          "Le Tchad",
+          "La Tunisie",
+          "L’Islande",
+          "L’Égypte"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر بإنتاج كبير للطاقة الحرارية الأرضية وتقع في المحيط الأطلسي؟",
+        "choices": [
+          "تشاد",
+          "تونس",
+          "آيسلندا",
+          "مصر"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable source is harvested from the sea movement near coastlines?",
+    "choices": [
+      "Peat",
+      "Natural gas",
+      "Coal",
+      "Wave energy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle source renouvelable est récoltée à partir du mouvement de la mer près des côtes ?",
+        "choices": [
+          "La tourbe",
+          "Le gaz naturel",
+          "Le charbon",
+          "L’énergie des vagues"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر متجدد يُستخرج من حركة البحر قرب السواحل؟",
+        "choices": [
+          "الخث",
+          "الغاز الطبيعي",
+          "الفحم",
+          "طاقة الأمواج"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “power-to-gas” technology used for?",
+    "choices": [
+      "Pumping oil from the ground",
+      "Heating houses with diesel",
+      "Burning coal for electricity",
+      "Turning surplus renewable electricity into gas fuel"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert la technologie « power-to-gas » ?",
+        "choices": [
+          "Pomper du pétrole du sol",
+          "Chauffer les maisons au diesel",
+          "Brûler du charbon pour produire de l’électricité",
+          "Transformer l’électricité renouvelable excédentaire en gaz combustible"
+        ]
+      },
+      "ar": {
+        "question": "ما وظيفة تقنية «تحويل الكهرباء إلى غاز» (Power-to-gas)؟",
+        "choices": [
+          "ضخ النفط من الأرض",
+          "تدفئة المنازل بالديزل",
+          "حرق الفحم لإنتاج الكهرباء",
+          "تحويل فائض الكهرباء المتجددة إلى وقود غازي"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural force drives tidal energy generation?",
+    "choices": [
+      "Wind power",
+      "Moon’s gravity",
+      "Solar flares",
+      "Volcanic heat"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle force naturelle est à l’origine de l’énergie marémotrice ?",
+        "choices": [
+          "La force du vent",
+          "L’attraction de la Lune",
+          "Les éruptions solaires",
+          "La chaleur volcanique"
+        ]
+      },
+      "ar": {
+        "question": "ما القوة الطبيعية التي تحرك توليد طاقة المد والجزر؟",
+        "choices": [
+          "قوة الرياح",
+          "جاذبية القمر",
+          "التوهجات الشمسية",
+          "الحرارة البركانية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian city is known for its solar power projects in the south?",
+    "choices": [
+      "Monastir",
+      "Sousse",
+      "Tozeur",
+      "Bizerte"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne est connue pour ses projets solaires dans le sud ?",
+        "choices": [
+          "Monastir",
+          "Sousse",
+          "Tozeur",
+          "Bizerte"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة تونسية تشتهر بمشاريع الطاقة الشمسية في الجنوب؟",
+        "choices": [
+          "المنستير",
+          "سوسة",
+          "توزر",
+          "بنزرت"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for a system that combines several small energy sources and loads locally?",
+    "choices": [
+      "Megaphone",
+      "Ministry grid",
+      "Microgrid",
+      "Macrogrid"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un système qui combine localement plusieurs petites sources d’énergie et charges ?",
+        "choices": [
+          "Un mégaphone",
+          "Un réseau ministériel",
+          "Un micro-réseau",
+          "Un macro-réseau"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم النظام الذي يجمع عدة مصادر طاقة صغيرة والأحمال محليًا؟",
+        "choices": [
+          "مكبر الصوت",
+          "شبكة الوزارة",
+          "الشبكة المصغرة",
+          "الشبكة الكبرى"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable energy is produced by using heat from the Earth’s crust?",
+    "choices": [
+      "Geothermal energy",
+      "Coal",
+      "Nuclear",
+      "Oil"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie renouvelable est produite à partir de la chaleur de la croûte terrestre ?",
+        "choices": [
+          "La géothermie",
+          "Le charbon",
+          "Le nucléaire",
+          "Le pétrole"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طاقة متجددة تُنتج من حرارة قشرة الأرض؟",
+        "choices": [
+          "الطاقة الحرارية الأرضية",
+          "الفحم",
+          "النووية",
+          "النفط"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the advantage of a heat pump compared with direct electric heating?",
+    "choices": [
+      "It moves heat more efficiently",
+      "It creates more heat from nothing",
+      "It produces smoke",
+      "It needs fuel"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’avantage d’une pompe à chaleur par rapport au chauffage électrique direct ?",
+        "choices": [
+          "Elle déplace la chaleur plus efficacement",
+          "Elle crée de la chaleur à partir de rien",
+          "Elle produit de la fumée",
+          "Elle nécessite du carburant"
+        ]
+      },
+      "ar": {
+        "question": "ما ميزة المضخة الحرارية مقارنةً بالتدفئة الكهربائية المباشرة؟",
+        "choices": [
+          "تنقل الحرارة بكفاءة أكبر",
+          "تولّد حرارة من لا شيء",
+          "تنتج دخانًا",
+          "تحتاج إلى وقود"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which measure supports renewable energy by guaranteeing grid access to producers?",
+    "choices": [
+      "Priority grid access",
+      "Tax on solar panels",
+      "Limit on wind turbines",
+      "Ban on electricity"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure soutient les énergies renouvelables en garantissant l’accès des producteurs au réseau ?",
+        "choices": [
+          "La priorité d’accès au réseau",
+          "La taxe sur les panneaux solaires",
+          "La limitation des éoliennes",
+          "L’interdiction de l’électricité"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يدعم الطاقات المتجددة بضمان أولوية وصول المنتجين إلى الشبكة؟",
+        "choices": [
+          "أولوية الوصول إلى الشبكة",
+          "ضريبة على الألواح الشمسية",
+          "تحديد توربينات الرياح",
+          "حظر الكهرباء"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source is generated by plants and waste when they break down without air?",
+    "choices": [
+      "Biogas",
+      "Solar power",
+      "Wind power",
+      "Hydropower"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie est produite par les plantes et les déchets en se décomposant sans air ?",
+        "choices": [
+          "Le biogaz",
+          "L’énergie solaire",
+          "L’énergie éolienne",
+          "L’hydroélectricité"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طاقة تنتج من تحلل النباتات والنفايات في غياب الهواء؟",
+        "choices": [
+          "الغاز الحيوي",
+          "الطاقة الشمسية",
+          "طاقة الرياح",
+          "الطاقة الكهرومائية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which indicator measures the share of renewable energy in a country’s total energy use?",
+    "choices": [
+      "Wheat production",
+      "Tourism rate",
+      "Football attendance",
+      "Renewable energy share"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel indicateur mesure la part des énergies renouvelables dans la consommation totale d’énergie d’un pays ?",
+        "choices": [
+          "La production de blé",
+          "Le taux de tourisme",
+          "La fréquentation des stades",
+          "La part des énergies renouvelables"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مؤشر يقيس حصة الطاقات المتجددة من إجمالي استهلاك الطاقة في الدولة؟",
+        "choices": [
+          "إنتاج القمح",
+          "معدل السياحة",
+          "حضور الملاعب",
+          "حصة الطاقة المتجددة"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable source produces electricity from moving water in a river without a large dam?",
+    "choices": [
+      "Oil engines",
+      "Gas turbines",
+      "Coal power",
+      "Run-of-river hydropower"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle source renouvelable produit de l’électricité à partir d’un cours d’eau sans grand barrage ?",
+        "choices": [
+          "Les moteurs à pétrole",
+          "Les turbines à gaz",
+          "La centrale à charbon",
+          "L’hydroélectricité au fil de l’eau"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر متجدد يولّد الكهرباء من جريان النهر دون سد كبير؟",
+        "choices": [
+          "محركات النفط",
+          "التوربينات الغازية",
+          "محطة الفحم",
+          "الطاقة الكهرومائية الجارية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  }
+]

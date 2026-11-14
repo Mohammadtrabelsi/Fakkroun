@@ -1,0 +1,563 @@
+[
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many players are on a basketball team on the court?",
+    "choices": [
+      "6",
+      "5",
+      "4",
+      "7"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Combien de joueurs d’une équipe de basket sont sur le terrain ?",
+        "choices": [
+          "6",
+          "5",
+          "4",
+          "7"
+        ]
+      },
+      "ar": {
+        "question": "كم لاعبًا لكل فريق في كرة السلة داخل الملعب؟",
+        "choices": [
+          "6",
+          "5",
+          "4",
+          "7"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is played with a bat and a ball, and is famous for the World Series?",
+    "choices": [
+      "Cricket",
+      "Golf",
+      "Baseball",
+      "Hockey"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue avec une batte et une balle, et est célèbre pour la World Series ?",
+        "choices": [
+          "Le cricket",
+          "Le golf",
+          "Le baseball",
+          "Le hockey"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلعب بالمضرب والكرة وتشتهر بسلسلة «وورلد سيريز»؟",
+        "choices": [
+          "الكريكت",
+          "الجولف",
+          "البيسبول",
+          "الهوكي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many holes are on a standard golf course?",
+    "choices": [
+      "18",
+      "9",
+      "12",
+      "20"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Combien de trous compte un parcours de golf standard ?",
+        "choices": [
+          "18",
+          "9",
+          "12",
+          "20"
+        ]
+      },
+      "ar": {
+        "question": "كم عدد الحفر في ملعب الجولف القياسي؟",
+        "choices": [
+          "18",
+          "9",
+          "12",
+          "20"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which footballer has won the most Ballon d’Or awards, with eight?",
+    "choices": [
+      "Lionel Messi",
+      "Zinedine Zidane",
+      "Pelé",
+      "Cristiano Ronaldo"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel footballeur a remporté le plus de Ballons d’Or, avec huit ?",
+        "choices": [
+          "Lionel Messi",
+          "Zinedine Zidane",
+          "Pelé",
+          "Cristiano Ronaldo"
+        ]
+      },
+      "ar": {
+        "question": "أيّ لاعب كرة قدم فاز بأكبر عدد من جوائز الكرة الذهبية، وهو ثماني مرات؟",
+        "choices": [
+          "ليونيل ميسي",
+          "زين الدين زيدان",
+          "بيليه",
+          "كريستيانو رونالدو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country hosted the 2018 FIFA World Cup?",
+    "choices": [
+      "South Africa",
+      "Qatar",
+      "Russia",
+      "Brazil"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a accueilli la Coupe du monde de football 2018 ?",
+        "choices": [
+          "L’Afrique du Sud",
+          "Le Qatar",
+          "La Russie",
+          "Le Brésil"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة استضافت كأس العالم لكرة القدم عام 2018؟",
+        "choices": [
+          "جنوب إفريقيا",
+          "قطر",
+          "روسيا",
+          "البرازيل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which sport is a “slam dunk” an important move?",
+    "choices": [
+      "Handball",
+      "Basketball",
+      "Volleyball",
+      "Water polo"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport le « dunk » est-il un geste important ?",
+        "choices": [
+          "Le handball",
+          "Le basket-ball",
+          "Le volley-ball",
+          "Le water-polo"
+        ]
+      },
+      "ar": {
+        "question": "في أي رياضة تُعد رمية «السلام دانك» حركة مهمة؟",
+        "choices": [
+          "كرة اليد",
+          "كرة السلة",
+          "الكرة الطائرة",
+          "كرة الماء"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which athlete holds the record for the most Olympic medals in total?",
+    "choices": [
+      "Carl Lewis",
+      "Larisa Latynina",
+      "Michael Phelps",
+      "Usain Bolt"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel athlète détient le record de médailles olympiques au total ?",
+        "choices": [
+          "Carl Lewis",
+          "Larisa Latynina",
+          "Michael Phelps",
+          "Usain Bolt"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضي يحمل الرقم القياسي في إجمالي الميداليات الأولمبية؟",
+        "choices": [
+          "كارل لويس",
+          "لاريسا لاتينينا",
+          "مايكل فيلبس",
+          "يوسين بولت"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is played on ice with curling stones?",
+    "choices": [
+      "Tennis",
+      "Squash",
+      "Golf",
+      "Curling"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se pratique sur glace avec des pierres ?",
+        "choices": [
+          "Le tennis",
+          "Le squash",
+          "Le golf",
+          "Le curling"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلعب على الجليد بحجارة خاصة؟",
+        "choices": [
+          "التنس",
+          "الاسكواش",
+          "الجولف",
+          "الكيرلنغ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is traditionally the home of sumo wrestling?",
+    "choices": [
+      "Mongolia",
+      "Japan",
+      "China",
+      "Korea"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est le berceau traditionnel de la lutte sumo ?",
+        "choices": [
+          "La Mongolie",
+          "Le Japon",
+          "La Chine",
+          "La Corée"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة هي الموطن التقليدي لمصارعة السومو؟",
+        "choices": [
+          "منغوليا",
+          "اليابان",
+          "الصين",
+          "كوريا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "How many points is a touchdown worth in American football (before the extra point)?",
+    "choices": [
+      "7",
+      "3",
+      "6",
+      "2"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Combien de points vaut un touchdown au football américain (avant le point supplémentaire) ?",
+        "choices": [
+          "7",
+          "3",
+          "6",
+          "2"
+        ]
+      },
+      "ar": {
+        "question": "كم نقطة تساوي الهبوط (Touchdown) في كرة القدم الأمريكية قبل نقطة الإضافة؟",
+        "choices": [
+          "7",
+          "3",
+          "6",
+          "2"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a puck and sticks on a rink?",
+    "choices": [
+      "Tennis",
+      "Ice hockey",
+      "Swimming",
+      "Basketball"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise un palet et des crosses sur une patinoire ?",
+        "choices": [
+          "Le tennis",
+          "Le hockey sur glace",
+          "La natation",
+          "Le basket-ball"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم القرص والعصي في حلبة جليدية؟",
+        "choices": [
+          "التنس",
+          "هوكي الجليد",
+          "السباحة",
+          "كرة السلة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which swimming stroke is performed on the back?",
+    "choices": [
+      "Backstroke",
+      "Breaststroke",
+      "Butterfly",
+      "Freestyle"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle nage se pratique sur le dos ?",
+        "choices": [
+          "Le dos crawlé",
+          "La brasse",
+          "Le papillon",
+          "Le crawl"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أسلوب سباحة يُؤدّى على الظهر؟",
+        "choices": [
+          "الظهر",
+          "الصدر",
+          "الفراشة",
+          "الحرة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian sport has the national team known as the ‘Carthage Eagles’?",
+    "choices": [
+      "Handball",
+      "Basketball",
+      "Football",
+      "Volleyball"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport tunisien a une équipe nationale surnommée les « Aigles de Carthage » ?",
+        "choices": [
+          "Le handball",
+          "Le basket-ball",
+          "Le football",
+          "Le volley-ball"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تونسية يُلقّب منتخبها الوطني بـ«نسور قرطاج»؟",
+        "choices": [
+          "كرة اليد",
+          "كرة السلة",
+          "كرة القدم",
+          "الكرة الطائرة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport is called ‘the sport of kings’ in some countries?",
+    "choices": [
+      "Golf",
+      "Badminton",
+      "Table tennis",
+      "Horse racing"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est appelé « le sport des rois » dans certains pays ?",
+        "choices": [
+          "Le golf",
+          "Le badminton",
+          "Le tennis de table",
+          "Les courses hippiques"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلقّب بـ«رياضة الملوك» في بعض الدول؟",
+        "choices": [
+          "الجولف",
+          "البادمنتون",
+          "تنس الطاولة",
+          "سباق الخيل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is famous for the Tour de France?",
+    "choices": [
+      "Cycling",
+      "Climbing",
+      "Rowing",
+      "Running"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est célèbre pour le Tour de France ?",
+        "choices": [
+          "Le cyclisme",
+          "L’escalade",
+          "L’aviron",
+          "La course à pied"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تشتهر بطواف فرنسا؟",
+        "choices": [
+          "ركوب الدراجات",
+          "تسلق الجبال",
+          "التجديف",
+          "العدو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How many points is a goal worth in ice hockey?",
+    "choices": [
+      "1",
+      "2",
+      "5",
+      "3"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Combien de points vaut un but au hockey sur glace ?",
+        "choices": [
+          "1",
+          "2",
+          "5",
+          "3"
+        ]
+      },
+      "ar": {
+        "question": "كم نقطة يساوي الهدف في هوكي الجليد؟",
+        "choices": [
+          "1",
+          "2",
+          "5",
+          "3"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is performed with a long pole and a bar over which athletes jump?",
+    "choices": [
+      "Shot put",
+      "Long jump",
+      "Pole vault",
+      "Discus throw"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se pratique avec une longue perche et une barre au-dessus de laquelle on saute ?",
+        "choices": [
+          "Le lancer du poids",
+          "Le saut en longueur",
+          "Le saut à la perche",
+          "Le lancer du disque"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُمارَس بعصا طويلة وقفز فوق عارضة؟",
+        "choices": [
+          "دفع الجلة",
+          "الوثب الطويل",
+          "القفز بالزانة",
+          "رمي القرص"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,750 @@
+[
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a “solar-powered” product?",
+    "choices": [
+      "A product that stores moonlight",
+      "A product that runs on energy from sunlight",
+      "A product made of sunlight",
+      "A product that is sold only in summer"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un produit « solaire » ?",
+        "choices": [
+          "Un produit qui stocke la lumière de la lune",
+          "Un produit qui fonctionne grâce à l’énergie du soleil",
+          "Un produit fabriqué à partir de lumière",
+          "Un produit vendu uniquement en été"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بالمنتج «العامل بالطاقة الشمسية»؟",
+        "choices": [
+          "منتج يخزن ضوء القمر",
+          "منتج يعمل بطاقة مستمدة من ضوء الشمس",
+          "منتج مصنوع من ضوء الشمس",
+          "منتج يُباع في الصيف فقط"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which product type is commonly designed to reduce water use in homes?",
+    "choices": [
+      "Bottled drinks",
+      "Candles",
+      "Plastic toys",
+      "Water-saving showerheads"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel type de produit est conçu pour réduire la consommation d’eau à la maison ?",
+        "choices": [
+          "Les boissons en bouteille",
+          "Les bougies",
+          "Les jouets en plastique",
+          "Les pommeaux de douche économes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من المنتجات يُصمم عادةً لتقليل استهلاك الماء في المنزل؟",
+        "choices": [
+          "المشروبات المعبأة",
+          "الشموع",
+          "الألعاب البلاستيكية",
+          "رؤوس الدش الموفرة للمياه"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “energy efficiency” mean for a home?",
+    "choices": [
+      "Using less energy for the same service",
+      "Burning more fuel for heat",
+      "Using more energy to be comfortable",
+      "Turning off the power company"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « efficacité énergétique » pour un logement ?",
+        "choices": [
+          "Consommer moins d’énergie pour le même service",
+          "Brûler plus de combustible pour se chauffer",
+          "Consommer davantage pour être confortable",
+          "Couper le fournisseur d’électricité"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تعني «كفاءة الطاقة» في المنزل؟",
+        "choices": [
+          "استهلاك طاقة أقل للحصول على الخدمة نفسها",
+          "حرق وقود أكثر للتدفئة",
+          "استهلاك طاقة أكبر لتحقيق الراحة",
+          "قطع العلاقة بشركة الكهرباء"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “eco-tourism”?",
+    "choices": [
+      "Hunting endangered animals for sport",
+      "Flying to remote islands daily",
+      "Mass tourism in large resorts",
+      "Responsible travel that protects nature and supports local communities"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’« écotourisme » ?",
+        "choices": [
+          "La chasse d’animaux menacés pour le sport",
+          "Des vols quotidiens vers des îles isolées",
+          "Un tourisme de masse dans de grands complexes",
+          "Un voyage responsable qui protège la nature et soutient les communautés locales"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«السياحة البيئية»؟",
+        "choices": [
+          "صيد الحيوانات المهددة للتسلية",
+          "رحلات طيران يومية إلى جزر نائية",
+          "سياحة جماعية في منتجعات كبيرة",
+          "سفر مسؤول يحمي الطبيعة ويدعم المجتمعات المحلية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which mode of transport is generally the most environmentally friendly for short city trips?",
+    "choices": [
+      "Private jet",
+      "Speedboat",
+      "Private helicopter",
+      "Walking or cycling"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel mode de transport est généralement le plus écologique pour les courts trajets en ville ?",
+        "choices": [
+          "L’avion privé",
+          "Le bateau rapide",
+          "L’hélicoptère privé",
+          "La marche ou le vélo"
+        ]
+      },
+      "ar": {
+        "question": "ما وسيلة النقل الأكثر صداقة للبيئة عادةً في التنقل القصير داخل المدينة؟",
+        "choices": [
+          "الطائرة الخاصة",
+          "القارب السريع",
+          "المروحية الخاصة",
+          "المشي أو الدراجة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “green jobs” mean?",
+    "choices": [
+      "Jobs in forests only",
+      "Jobs that involve only painting walls green",
+      "Jobs that help protect or restore the environment",
+      "Jobs that pay in green money"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifient les « emplois verts » ?",
+        "choices": [
+          "Des emplois réservés aux forêts",
+          "Des emplois consistant uniquement à peindre des murs en vert",
+          "Des emplois qui contribuent à protéger ou restaurer l’environnement",
+          "Des emplois payés en monnaie verte"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تعني «الوظائف الخضراء»؟",
+        "choices": [
+          "وظائف في الغابات فقط",
+          "وظائف تقتصر على طلاء الجدران باللون الأخضر",
+          "وظائف تساهم في حماية البيئة أو استعادتها",
+          "وظائف تُدفع بعملة خضراء"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “bio-based” material?",
+    "choices": [
+      "A material made from concrete only",
+      "A material made from gold",
+      "A material made from renewable biological resources",
+      "A material made from coal"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un matériau « biosourcé » ?",
+        "choices": [
+          "Un matériau fabriqué uniquement à partir de béton",
+          "Un matériau fabriqué à partir d’or",
+          "Un matériau issu de ressources biologiques renouvelables",
+          "Un matériau fabriqué à partir de charbon"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بالمادة «الحيوية» (Bio-based)؟",
+        "choices": [
+          "مادة مصنوعة من الخرسانة فقط",
+          "مادة مصنوعة من الذهب",
+          "مادة مصنوعة من موارد بيولوجية متجددة",
+          "مادة مصنوعة من الفحم"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the best way to reduce food waste at home?",
+    "choices": [
+      "Throwing away food after one day",
+      "Planning meals and using leftovers",
+      "Ignoring expiry dates",
+      "Buying more than you need"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la meilleure façon de réduire le gaspillage alimentaire à la maison ?",
+        "choices": [
+          "Jeter les aliments après un jour",
+          "Planifier les repas et utiliser les restes",
+          "Ignorer les dates limites",
+          "Acheter plus que nécessaire"
+        ]
+      },
+      "ar": {
+        "question": "ما أفضل طريقة لتقليل هدر الطعام في المنزل؟",
+        "choices": [
+          "رمي الطعام بعد يوم واحد",
+          "التخطيط للوجبات والاستفادة من البقايا",
+          "تجاهل تواريخ الصلاحية",
+          "شراء أكثر من الحاجة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “sustainable packaging”?",
+    "choices": [
+      "Packaging that is never collected",
+      "Packaging that is reusable, recyclable or compostable",
+      "Packaging that uses more plastic",
+      "Packaging made of gold"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « emballage durable » ?",
+        "choices": [
+          "Un emballage qui n’est jamais collecté",
+          "Un emballage réutilisable, recyclable ou compostable",
+          "Un emballage qui utilise davantage de plastique",
+          "Un emballage en or"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«التغليف المستدام»؟",
+        "choices": [
+          "تغليف لا يتم جمعه أبدًا",
+          "تغليف قابل لإعادة الاستعمال أو التدوير أو التسميد",
+          "تغليف يستخدم مزيدًا من البلاستيك",
+          "تغليف مصنوع من الذهب"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main idea of “degrowth” in environmental economics?",
+    "choices": [
+      "Shrinking the number of children",
+      "Stopping all production in the world",
+      "Closing all banks",
+      "Reducing material consumption and production in rich economies"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’idée principale de la « décroissance » en économie environnementale ?",
+        "choices": [
+          "Réduire le nombre d’enfants",
+          "Arrêter toute production dans le monde",
+          "Fermer toutes les banques",
+          "Réduire la consommation et la production matérielles dans les économies riches"
+        ]
+      },
+      "ar": {
+        "question": "ما الفكرة الرئيسية لـ«تراجع النمو» (Degrowth) في الاقتصاد البيئي؟",
+        "choices": [
+          "تقليص عدد الأطفال",
+          "وقف كل الإنتاج في العالم",
+          "إغلاق جميع البنوك",
+          "تقليل الاستهلاك والإنتاج المادي في الاقتصادات الغنية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does “LED” lighting offer compared with old bulbs?",
+    "choices": [
+      "Shorter life",
+      "More heat and less light",
+      "Lower energy use and longer life",
+      "Higher energy use"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’apporte l’éclairage LED par rapport aux anciennes ampoules ?",
+        "choices": [
+          "Une durée de vie plus courte",
+          "Plus de chaleur et moins de lumière",
+          "Une consommation d’énergie plus faible et une durée de vie plus longue",
+          "Une consommation plus élevée"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تقدم إضاءة LED مقارنةً بالمصابيح القديمة؟",
+        "choices": [
+          "عمر أقصر",
+          "حرارة أكثر وضوء أقل",
+          "استهلاك أقل للطاقة وعمر أطول",
+          "استهلاك أعلى للطاقة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an “energy audit”?",
+    "choices": [
+      "A financial report of an energy company",
+      "A type of solar panel",
+      "A tax on energy companies",
+      "An inspection to find ways to save energy in a building"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « audit énergétique » ?",
+        "choices": [
+          "Un rapport financier d’une entreprise énergétique",
+          "Un type de panneau solaire",
+          "Une taxe sur les entreprises énergétiques",
+          "Une inspection visant à repérer des économies d’énergie dans un bâtiment"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«التدقيق الطاقي» (Energy audit)؟",
+        "choices": [
+          "تقرير مالي لشركة طاقة",
+          "نوع من الألواح الشمسية",
+          "ضريبة على شركات الطاقة",
+          "فحص لإيجاد سبل توفير الطاقة في مبنى"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “life-cycle thinking” in product design?",
+    "choices": [
+      "Designing products with a life of one day",
+      "Considering a product’s environmental impact from production to disposal",
+      "Measuring product age only",
+      "Painting products green"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « pensée cycle de vie » dans la conception de produits ?",
+        "choices": [
+          "Concevoir des produits qui ne durent qu’un jour",
+          "Prendre en compte l’impact environnemental d’un produit de la production à l’élimination",
+          "Mesurer seulement l’âge d’un produit",
+          "Peindre les produits en vert"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«التفكير في دورة الحياة» في تصميم المنتجات؟",
+        "choices": [
+          "تصميم منتجات يومها واحد فقط",
+          "مراعاة الأثر البيئي للمنتج من الإنتاج حتى التخلص منه",
+          "قياس عمر المنتج فقط",
+          "تلوين المنتجات بالأخضر"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which bag is considered the most eco-friendly for daily shopping?",
+    "choices": [
+      "Foam bag",
+      "Single-use plastic bag",
+      "Reusable cloth bag",
+      "Paper bag used once"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sac est considéré comme le plus écologique pour les courses quotidiennes ?",
+        "choices": [
+          "Le sac en mousse",
+          "Le sac plastique à usage unique",
+          "Le sac réutilisable en tissu",
+          "Le sac en papier utilisé une seule fois"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كيس يُعد الأكثر صداقة للبيئة للتسوق اليومي؟",
+        "choices": [
+          "كيس رغوي",
+          "كيس بلاستيكي أحادي الاستعمال",
+          "الكيس القماشي القابل لإعادة الاستعمال",
+          "كيس ورق يُستعمل مرة واحدة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an “eco-friendly” certificate for hotels?",
+    "choices": [
+      "A tax on guests",
+      "A permit for building casinos",
+      "A label showing sustainable operation and energy saving",
+      "A ban on swimming pools"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un certificat « écologique » pour les hôtels ?",
+        "choices": [
+          "Une taxe sur les clients",
+          "Un permis de construire des casinos",
+          "Un label attestant d’un fonctionnement durable et d’économies d’énergie",
+          "Une interdiction des piscines"
+        ]
+      },
+      "ar": {
+        "question": "ما هي شهادة «الصديقة للبيئة» للفنادق؟",
+        "choices": [
+          "ضريبة على النزلاء",
+          "تصريح لبناء الكازينوهات",
+          "علامة تثبت التشغيل المستدام وتوفير الطاقة",
+          "حظر حمامات السباحة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “product stewardship”?",
+    "choices": [
+      "Keeping products in a museum",
+      "Owning many products",
+      "Shared responsibility for a product’s environmental impact across its life cycle",
+      "Selling products at a loss"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « responsabilité partagée du produit » (product stewardship) ?",
+        "choices": [
+          "La conservation de produits dans un musée",
+          "Le fait de posséder beaucoup de produits",
+          "La responsabilité partagée de l’impact environnemental d’un produit sur tout son cycle de vie",
+          "La vente de produits à perte"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الإشراف على المنتج» (Product stewardship)؟",
+        "choices": [
+          "الاحتفاظ بالمنتجات في متحف",
+          "امتلاك منتجات كثيرة",
+          "المسؤولية المشتركة عن الأثر البيئي للمنتج طوال دورة حياته",
+          "بيع المنتجات بخسارة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main purpose of recycling old electronics?",
+    "choices": [
+      "Recovering metals and reducing toxic waste",
+      "Hiding devices in the ground",
+      "Making more electronic waste",
+      "Burning circuit boards in the open"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal intérêt du recyclage des appareils électroniques usagés ?",
+        "choices": [
+          "Récupérer les métaux et réduire les déchets toxiques",
+          "Cacher les appareils dans le sol",
+          "Produire davantage de déchets électroniques",
+          "Brûler les cartes électroniques à l’air libre"
+        ]
+      },
+      "ar": {
+        "question": "ما الفائدة الرئيسية من إعادة تدوير الأجهزة الإلكترونية القديمة؟",
+        "choices": [
+          "استرداد المعادن وتقليل النفايات السامة",
+          "إخفاء الأجهزة في الأرض",
+          "إنتاج مزيد من النفايات الإلكترونية",
+          "حرق لوحات الدوائر في الهواء الطلق"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “carbon neutral” mean for a company?",
+    "choices": [
+      "It uses only coal",
+      "It sells only carbon",
+      "It emits nothing at all ever",
+      "Its net emissions are balanced by removals or offsets"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « neutre en carbone » pour une entreprise ?",
+        "choices": [
+          "Elle utilise uniquement du charbon",
+          "Elle ne vend que du carbone",
+          "Elle n’émet absolument rien, jamais",
+          "Ses émissions nettes sont compensées par des absorptions ou des compensations"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني «الحياد الكربوني» بالنسبة إلى شركة؟",
+        "choices": [
+          "تستخدم الفحم وحده",
+          "تبيع الكربون فقط",
+          "لا تنبعث منها أي انبعاثات مطلقًا",
+          "توازن انبعاثاتها الصافية بعمليات الإزالة أو التعويض"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is an “extended warranty” linked to green design?",
+    "choices": [
+      "A warranty for disposable cutlery",
+      "A warranty that expires after one day",
+      "A warranty for plastic toys only",
+      "Longer repair and support to extend a product’s life"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « garantie prolongée » liée à l’écoconception ?",
+        "choices": [
+          "Une garantie pour les couverts jetables",
+          "Une garantie qui expire au bout d’un jour",
+          "Une garantie uniquement pour les jouets en plastique",
+          "Une réparation et un soutien plus longs pour prolonger la vie du produit"
+        ]
+      },
+      "ar": {
+        "question": "ما هي «الضمانة الممتدة» المرتبطة بالتصميم الأخضر؟",
+        "choices": [
+          "ضمانة لأدوات المائدة المستعملة مرة واحدة",
+          "ضمانة تنتهي بعد يوم واحد",
+          "ضمانة للألعاب البلاستيكية فقط",
+          "إصلاح ودعم أطول لإطالة عمر المنتج"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural material is used to make reusable water bottles as an eco-friendly option?",
+    "choices": [
+      "Stainless steel",
+      "Styrofoam",
+      "Single-use plastic",
+      "Paper cups"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel matériau naturel ou durable sert à fabriquer des gourdes réutilisables écologiques ?",
+        "choices": [
+          "L’acier inoxydable",
+          "Le polystyrène",
+          "Le plastique à usage unique",
+          "Les gobelets en papier"
+        ]
+      },
+      "ar": {
+        "question": "ما المادة الدائمة المستخدمة لصنع زجاجات المياه القابلة لإعادة الاستعمال كخيار صديق للبيئة؟",
+        "choices": [
+          "الفولاذ المقاوم للصدأ",
+          "الستايروفوم",
+          "البلاستيك أحادي الاستعمال",
+          "الأكواب الورقية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the goal of “zero-emission vehicles”?",
+    "choices": [
+      "Vehicles that never move",
+      "Vehicles that produce no tailpipe emissions",
+      "Vehicles that only float",
+      "Vehicles that run on coal"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif des « véhicules zéro émission » ?",
+        "choices": [
+          "Des véhicules qui ne bougent jamais",
+          "Des véhicules sans émissions à l’échappement",
+          "Des véhicules qui ne font que flotter",
+          "Des véhicules fonctionnant au charbon"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف من «المركبات منخفضة الانبعاثات» (Zero-emission vehicles)؟",
+        "choices": [
+          "مركبات لا تتحرك أبدًا",
+          "مركبات لا تنتج انبعاثات من العادم",
+          "مركبات تطفو فقط",
+          "مركبات تعمل بالفحم"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “green supply chain” mean?",
+    "choices": [
+      "A chain of green tools",
+      "A supply of green paint only",
+      "A supply chain that reduces environmental impact at every step",
+      "A chain of plastic bags"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « chaîne d’approvisionnement verte » ?",
+        "choices": [
+          "Une chaîne d’outils verts",
+          "Une fourniture de peinture verte uniquement",
+          "Une chaîne d’approvisionnement qui réduit l’impact environnemental à chaque étape",
+          "Une chaîne de sacs plastiques"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«سلسلة التوريد الخضراء»؟",
+        "choices": [
+          "سلسلة من الأدوات الخضراء",
+          "إمداد بالطلاء الأخضر فقط",
+          "سلسلة توريد تقلل الأثر البيئي في كل مرحلة",
+          "سلسلة من الأكياس البلاستيكية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  }
+]

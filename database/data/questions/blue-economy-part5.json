@@ -1,0 +1,614 @@
+[
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a “reef” in the sea?",
+    "choices": [
+      "A type of fish",
+      "A rock or coral ridge close to the surface",
+      "A deep ocean trench",
+      "A wind pattern"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « récif » en mer ?",
+        "choices": [
+          "Un type de poisson",
+          "Une crête rocheuse ou corallienne proche de la surface",
+          "Une fosse océanique profonde",
+          "Un régime de vents"
+        ]
+      },
+      "ar": {
+        "question": "ما هو «الشعاب» في البحر؟",
+        "choices": [
+          "نوع من الأسماك",
+          "حاجز صخري أو مرجاني قريب من السطح",
+          "خندق محيطي عميق",
+          "نمط للرياح"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which vessel is used for deep-sea research and exploration?",
+    "choices": [
+      "Lorry",
+      "Tram",
+      "Bicycle",
+      "Submersible"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel engin sert à la recherche et à l’exploration des grands fonds ?",
+        "choices": [
+          "Le camion",
+          "Le tramway",
+          "La bicyclette",
+          "Le submersible"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مركبة تُستخدم في استكشاف الأعماق البحرية؟",
+        "choices": [
+          "الشاحنة",
+          "الترام",
+          "الدراجة",
+          "الغواصة الصغيرة (المركبة الغاطسة)"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which port activity moves containers between ships and land?",
+    "choices": [
+      "Surfing",
+      "Container handling",
+      "Diving",
+      "Fishing"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité portuaire déplace les conteneurs entre navires et terre ?",
+        "choices": [
+          "Le surf",
+          "La manutention de conteneurs",
+          "La plongée",
+          "La pêche"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط مينائي ينقل الحاويات بين السفن واليابسة؟",
+        "choices": [
+          "ركوب الأمواج",
+          "مناولة الحاويات",
+          "الغوص",
+          "الصيد"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “fish farming in cages” usually called?",
+    "choices": [
+      "Trawling",
+      "Netting only",
+      "Marine cage aquaculture",
+      "Longlining"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on généralement l’élevage de poissons en cages ?",
+        "choices": [
+          "Le chalutage",
+          "La pêche au filet uniquement",
+          "L’aquaculture en cages marines",
+          "La palangre"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم تربية الأسماك في أقفاص بالبحر عادةً؟",
+        "choices": [
+          "الجرف بالشباك",
+          "الصيد بالشباك فقط",
+          "تربية الأسماك في الأقفاص البحرية",
+          "الصيد بالخيط الطويل"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which seafood is famous as a popular Mediterranean fish in the markets of Tunisia?",
+    "choices": [
+      "Sardine",
+      "Polar bear",
+      "Penguin",
+      "Crocodile"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel poisson méditerranéen est très populaire sur les marchés tunisiens ?",
+        "choices": [
+          "La sardine",
+          "L’ours polaire",
+          "Le manchot",
+          "Le crocodile"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سمك متوسطي يحظى بشعبية كبيرة في الأسواق التونسية؟",
+        "choices": [
+          "السردين",
+          "الدب القطبي",
+          "البطريق",
+          "التمساح"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main threat from dredging in coastal waters?",
+    "choices": [
+      "Increase in coral growth",
+      "Fewer ships",
+      "Creation of new islands only",
+      "Damage to seabed habitats and water turbidity"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale menace du dragage en eaux côtières ?",
+        "choices": [
+          "La croissance accrue des coraux",
+          "Moins de navires",
+          "La seule création d’îles nouvelles",
+          "L’atteinte aux habitats du fond et la turbidité de l’eau"
+        ]
+      },
+      "ar": {
+        "question": "ما الخطر الرئيسي للتجريف في المياه الساحلية؟",
+        "choices": [
+          "زيادة نمو المرجان",
+          "قلة السفن",
+          "إنشاء جزر جديدة فقط",
+          "الإضرار بموائل قاع البحر وتعكير المياه"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for a shallow coastal sea area separated by barrier islands?",
+    "choices": [
+      "Canyon",
+      "Glacier",
+      "Lagoon",
+      "Fjord"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle une zone maritime côtière peu profonde séparée par des îles barrières ?",
+        "choices": [
+          "Un canyon",
+          "Un glacier",
+          "Une lagune",
+          "Un fjord"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم المنطقة البحرية الساحلية الضحلة التي تفصلها جزر حاجزة؟",
+        "choices": [
+          "الوادي السحيق",
+          "النهر الجليدي",
+          "البحيرة الساحلية",
+          "الفيورد"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which activity uses the sea for leisure and sport?",
+    "choices": [
+      "Sailing",
+      "Logging",
+      "Mining",
+      "Farming"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité utilise la mer pour les loisirs et le sport ?",
+        "choices": [
+          "La voile",
+          "L’exploitation forestière",
+          "L’extraction minière",
+          "L’agriculture"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط يستخدم البحر للترفيه والرياضة؟",
+        "choices": [
+          "الإبحار الشراعي",
+          "قطع الأشجار",
+          "التعدين",
+          "الزراعة"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “sea urchin fishery” often targeted for?",
+    "choices": [
+      "Its edible roe (gonads)",
+      "Its feathers",
+      "Its oil for fuel",
+      "Its shell for jewellery"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Pour quoi la pêche aux oursins vise-t-elle souvent ?",
+        "choices": [
+          "Leurs gonades comestibles",
+          "Leurs plumes",
+          "Leur huile pour le carburant",
+          "Leur coquille pour les bijoux"
+        ]
+      },
+      "ar": {
+        "question": "ما الذي تُصطاد من أجله قنافذ البحر غالبًا؟",
+        "choices": [
+          "بيضها (الغونادات) الصالح للأكل",
+          "ريشها",
+          "زيتها كوقود",
+          "صدفتها للمجوهرات"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian coastal city is a major tourist centre on the Gulf of Hammamet?",
+    "choices": [
+      "Hammamet",
+      "Kasserine",
+      "Gafsa",
+      "Tozeur"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville côtière tunisienne est un grand centre touristique sur le golfe de Hammamet ?",
+        "choices": [
+          "Hammamet",
+          "Kasserine",
+          "Gafsa",
+          "Tozeur"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة ساحلية تونسية تُعد مركزًا سياحيًا كبيرًا على خليج الحمامات؟",
+        "choices": [
+          "الحمامات",
+          "القصرين",
+          "قفصة",
+          "توزر"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian industry uses marine resources for food and export?",
+    "choices": [
+      "Gold mining",
+      "Tea growing",
+      "Fish processing",
+      "Coal mining"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle industrie tunisienne utilise les ressources marines pour l’alimentation et l’export ?",
+        "choices": [
+          "L’extraction de l’or",
+          "La culture du thé",
+          "La transformation du poisson",
+          "L’extraction du charbon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ صناعة تونسية تستخدم الموارد البحرية للغذاء والتصدير؟",
+        "choices": [
+          "استخراج الذهب",
+          "زراعة الشاي",
+          "تصنيع الأسماك",
+          "استخراج الفحم"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is an “oil spill”?",
+    "choices": [
+      "Oil leaking into the sea or water",
+      "Ocean wave pattern",
+      "A type of fish",
+      "Blue dye"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « marée noire » ?",
+        "choices": [
+          "Du pétrole qui se répand dans la mer ou l’eau",
+          "Un type de vague océanique",
+          "Un type de poisson",
+          "Un colorant bleu"
+        ]
+      },
+      "ar": {
+        "question": "ما هي «بقعة النفط»؟",
+        "choices": [
+          "تسرّب النفط إلى البحر أو الماء",
+          "نمط من الأمواج",
+          "نوع من الأسماك",
+          "صبغة زرقاء"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which measure reduces the use of nets that catch unwanted fish and turtles?",
+    "choices": [
+      "Dynamite fishing",
+      "Turtle excluder devices",
+      "Bigger nets",
+      "Night fishing only"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure réduit l’usage de filets qui capturent des poissons et tortues non ciblés ?",
+        "choices": [
+          "La pêche à la dynamite",
+          "Les dispositifs d’exclusion des tortues",
+          "Des filets plus grands",
+          "La pêche de nuit uniquement"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يقلل من الشباك التي تصطاد أسماكًا وسلاحف غير مستهدفة؟",
+        "choices": [
+          "الصيد بالديناميت",
+          "أجهزة استبعاد السلاحف",
+          "شباك أكبر",
+          "الصيد ليلًا فقط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the main purpose of a “marine protected zone” for fish stocks?",
+    "choices": [
+      "Letting fish stocks recover and reproduce",
+      "Building ports",
+      "Allowing unlimited fishing",
+      "Increasing commercial trawling"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but principal d’une zone marine protégée pour les stocks de poissons ?",
+        "choices": [
+          "Laisser les stocks se reconstituer et se reproduire",
+          "Construire des ports",
+          "Autoriser une pêche illimitée",
+          "Augmenter le chalutage commercial"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من المنطقة البحرية المحمية بالنسبة لمخزونات الأسماك؟",
+        "choices": [
+          "السماح للمخزونات بالتعافي والتكاثر",
+          "بناء الموانئ",
+          "السماح بصيد غير محدود",
+          "زيادة الجرف التجاري"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a common coastal activity that uses boats to collect sea salt?",
+    "choices": [
+      "Surfing",
+      "Skiing",
+      "Salt harvesting",
+      "Hiking"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité côtière utilise des bateaux pour récolter du sel marin ?",
+        "choices": [
+          "Le surf",
+          "Le ski",
+          "La récolte du sel",
+          "La randonnée"
+        ]
+      },
+      "ar": {
+        "question": "ما النشاط الساحلي الشائع الذي يستخدم القوارب لجمع الملح البحري؟",
+        "choices": [
+          "ركوب الأمواج",
+          "التزلج",
+          "حصاد الملح",
+          "المشي لمسافات طويلة"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which resource is produced by seaweed to thicken foods and is used in ice cream?",
+    "choices": [
+      "Rubber",
+      "Cotton",
+      "Latex",
+      "Carrageenan"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle substance produite par les algues épaissit les aliments et entre dans les glaces ?",
+        "choices": [
+          "Le caoutchouc",
+          "Le coton",
+          "Le latex",
+          "Le carraghénane"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مادة تنتجها الطحالب تُستخدم لتكثيف الأطعمة وتدخل في صناعة المثلجات؟",
+        "choices": [
+          "المطاط",
+          "القطن",
+          "اللاتكس",
+          "الكاراجينان"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the acronym IUU stand for in fisheries?",
+    "choices": [
+      "International Union of Universities",
+      "Industrial Under-water Units",
+      "Inland Urban Utilities",
+      "Illegal, Unreported and Unregulated fishing"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Que signifie l’acronyme INN en pêche ?",
+        "choices": [
+          "Union internationale des universités",
+          "Unités industrielles sous-marines",
+          "Services urbains intérieurs",
+          "Pêche illicite, non déclarée et non réglementée"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار IUU في مصايد الأسماك؟",
+        "choices": [
+          "الاتحاد الدولي للجامعات",
+          "وحدات صناعية تحت الماء",
+          "الخدمات الحضرية الداخلية",
+          "الصيد غير القانوني وغير المبلغ عنه وغير المنظم"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea transport carries passengers and vehicles across short distances?",
+    "choices": [
+      "Tractor",
+      "Ferry",
+      "Glider",
+      "Submarine"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel moyen de transport maritime transporte passagers et véhicules sur de courtes distances ?",
+        "choices": [
+          "Le tracteur",
+          "Le ferry",
+          "Le planeur",
+          "Le sous-marin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ وسيلة نقل بحرية تنقل الركاب والمركبات لمسافات قصيرة؟",
+        "choices": [
+          "الجرار",
+          "العبّارة",
+          "الطائرة الشراعية",
+          "الغواصة"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  }
+]

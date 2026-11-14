@@ -1,0 +1,614 @@
+[
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ocean lies to the east of Africa?",
+    "choices": [
+      "Atlantic Ocean",
+      "Arctic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel océan se trouve à l’est de l’Afrique ?",
+        "choices": [
+          "L’océan Atlantique",
+          "L’océan Arctique",
+          "L’océan Indien",
+          "L’océan Pacifique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ محيط يقع شرق إفريقيا؟",
+        "choices": [
+          "المحيط الأطلسي",
+          "المحيط المتجمد الشمالي",
+          "المحيط الهندي",
+          "المحيط الهادئ"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a fishing port?",
+    "choices": [
+      "A lake used for swimming",
+      "A harbour where fishing boats land their catch",
+      "A dock for submarines only",
+      "A port for cruise ships only"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un port de pêche ?",
+        "choices": [
+          "Un lac pour la baignade",
+          "Un port où les bateaux de pêche débarquent leurs prises",
+          "Un bassin réservé aux sous-marins",
+          "Un port réservé aux paquebots"
+        ]
+      },
+      "ar": {
+        "question": "ما هو ميناء الصيد؟",
+        "choices": [
+          "بحيرة للسباحة",
+          "ميناء ترسو فيه قوارب الصيد لتفريغ صيدها",
+          "حوض للغواصات فقط",
+          "ميناء للسفن السياحية فقط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which activity uses boats to carry tourists across the sea?",
+    "choices": [
+      "Logging",
+      "Mining",
+      "Farming",
+      "Ferry services"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité utilise des bateaux pour transporter des touristes en mer ?",
+        "choices": [
+          "L’exploitation forestière",
+          "L’extraction minière",
+          "L’agriculture",
+          "Les liaisons par ferry"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط يستخدم القوارب لنقل السياح عبر البحر؟",
+        "choices": [
+          "قطع الأشجار",
+          "التعدين",
+          "الزراعة",
+          "خدمات العبارات"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which resource is harvested from the sea to make the gelatin-like substance agar?",
+    "choices": [
+      "Red seaweed",
+      "Coral",
+      "Shark skin",
+      "Sea sand"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource marine sert à fabriquer l’agar-agar ?",
+        "choices": [
+          "Les algues rouges",
+          "Le corail",
+          "La peau de requin",
+          "Le sable marin"
+        ]
+      },
+      "ar": {
+        "question": "ما المورد البحري المستخدم لصناعة الآغار (مادة هلامية)؟",
+        "choices": [
+          "الطحالب الحمراء",
+          "المرجان",
+          "جلد القرش",
+          "رمال البحر"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a common environmental problem in Mediterranean fishing?",
+    "choices": [
+      "Volcanic ash",
+      "Excess ice",
+      "Overfishing of some stocks",
+      "Too much sunlight"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est un problème environnemental courant de la pêche méditerranéenne ?",
+        "choices": [
+          "La cendre volcanique",
+          "Un excès de glace",
+          "La surpêche de certains stocks",
+          "Trop de soleil"
+        ]
+      },
+      "ar": {
+        "question": "ما المشكلة البيئية الشائعة في الصيد المتوسطي؟",
+        "choices": [
+          "الرماد البركاني",
+          "زيادة الجليد",
+          "الصيد الجائر لبعض المخزونات",
+          "فرط ضوء الشمس"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “blue carbon credit”?",
+    "choices": [
+      "A payment for ships to pollute",
+      "A financial instrument for protecting coastal ecosystems that store carbon",
+      "A loan for oil drilling",
+      "A tax on fishing boats"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « crédit carbone bleu » ?",
+        "choices": [
+          "Un paiement pour que les navires polluent",
+          "Un instrument financier pour protéger les écosystèmes côtiers qui stockent du carbone",
+          "Un prêt pour le forage pétrolier",
+          "Une taxe sur les bateaux de pêche"
+        ]
+      },
+      "ar": {
+        "question": "ما هو «ائتمان الكربون الأزرق»؟",
+        "choices": [
+          "دفعة مالية لتلويث السفن",
+          "أداة مالية لحماية النظم البيئية الساحلية التي تخزن الكربون",
+          "قرض لحفر النفط",
+          "ضريبة على قوارب الصيد"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which vessel is used to carry oil across the sea?",
+    "choices": [
+      "Submarine",
+      "Fishing boat",
+      "Sailing yacht",
+      "Oil tanker"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel navire transporte le pétrole par mer ?",
+        "choices": [
+          "Le sous-marin",
+          "Le bateau de pêche",
+          "Le voilier",
+          "Le pétrolier"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سفينة تُستخدم لنقل النفط عبر البحر؟",
+        "choices": [
+          "الغواصة",
+          "قارب الصيد",
+          "اليخت الشراعي",
+          "ناقلة النفط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the purpose of a sea wall in coastal areas?",
+    "choices": [
+      "Generating electricity",
+      "Protecting the coast from waves and erosion",
+      "Creating fishing grounds",
+      "Building ships"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert une digue en bord de mer ?",
+        "choices": [
+          "Produire de l’électricité",
+          "Protéger le littoral des vagues et de l’érosion",
+          "Créer des zones de pêche",
+          "Construire des navires"
+        ]
+      },
+      "ar": {
+        "question": "ما وظيفة الجدار البحري في المناطق الساحلية؟",
+        "choices": [
+          "توليد الكهرباء",
+          "حماية الساحل من الأمواج والتآكل",
+          "إنشاء مناطق صيد",
+          "بناء السفن"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which kind of organism is a key indicator of coastal water quality?",
+    "choices": [
+      "Shark",
+      "Polar bear",
+      "Penguin",
+      "Seagrass"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel type d’organisme est un indicateur clé de la qualité des eaux côtières ?",
+        "choices": [
+          "Le requin",
+          "L’ours polaire",
+          "Le manchot",
+          "Les herbiers marins"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الكائنات يُعد مؤشرًا مهمًا لجودة المياه الساحلية؟",
+        "choices": [
+          "القرش",
+          "الدب القطبي",
+          "البطريق",
+          "الحشائش البحرية"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea animal is commonly farmed in Mediterranean aquaculture?",
+    "choices": [
+      "Whale",
+      "Sea bream",
+      "Octopus only",
+      "Shark"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est couramment élevé en aquaculture méditerranéenne ?",
+        "choices": [
+          "La baleine",
+          "La dorade",
+          "La pieuvre uniquement",
+          "Le requin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان بحري يُربى عادةً في تربية الأحياء المائية المتوسطية؟",
+        "choices": [
+          "الحوت",
+          "الدنيس (أبو شوكة)",
+          "الأخطبوط فقط",
+          "القرش"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “blue growth” refer to in the European Union?",
+    "choices": [
+      "Painting ships blue",
+      "Only tourism growth",
+      "Growing algae in tanks",
+      "Sustainable growth of the maritime economy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi correspond la « croissance bleue » dans l’Union européenne ?",
+        "choices": [
+          "Peindre les navires en bleu",
+          "La seule croissance du tourisme",
+          "La culture d’algues en bassins",
+          "La croissance durable de l’économie maritime"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تعني «النمو الأزرق» في الاتحاد الأوروبي؟",
+        "choices": [
+          "طلاء السفن باللون الأزرق",
+          "نمو السياحة فقط",
+          "زراعة الطحالب في أحواض",
+          "النمو المستدام للاقتصاد البحري"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does a marine biologist primarily study?",
+    "choices": [
+      "Weather patterns",
+      "Sea life and ocean ecosystems",
+      "Star systems",
+      "Rock layers"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Que étudie principalement un biologiste marin ?",
+        "choices": [
+          "Les phénomènes météo",
+          "La vie marine et les écosystèmes océaniques",
+          "Les systèmes stellaires",
+          "Les couches rocheuses"
+        ]
+      },
+      "ar": {
+        "question": "ما الذي يدرسه عالم الأحياء البحرية بشكل أساسي؟",
+        "choices": [
+          "أنماط الطقس",
+          "الحياة البحرية والنظم البيئية للمحيطات",
+          "الأنظمة النجمية",
+          "طبقات الصخور"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Mediterranean country is home to the Gulf of Hammamet?",
+    "choices": [
+      "Tunisia",
+      "Algeria",
+      "Libya",
+      "Morocco"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve le golfe de Hammamet ?",
+        "choices": [
+          "La Tunisie",
+          "L’Algérie",
+          "La Libye",
+          "Le Maroc"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة يقع خليج الحمامات؟",
+        "choices": [
+          "تونس",
+          "الجزائر",
+          "ليبيا",
+          "المغرب"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main purpose of a marine research vessel?",
+    "choices": [
+      "Carrying passengers across oceans",
+      "Building offshore platforms",
+      "Mining the seabed",
+      "Collecting scientific data at sea"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but principal d’un navire de recherche marine ?",
+        "choices": [
+          "Transporter des passagers",
+          "Construire des plateformes en mer",
+          "Extraire des minerais du fond",
+          "Collecter des données scientifiques en mer"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من سفينة البحث العلمي البحري؟",
+        "choices": [
+          "نقل الركاب عبر المحيطات",
+          "بناء المنصات البحرية",
+          "تعدين قاع البحر",
+          "جمع البيانات العلمية في البحر"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural resource does a salt pan produce?",
+    "choices": [
+      "Silver",
+      "Salt",
+      "Gold",
+      "Oil"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource produit un marais salant ?",
+        "choices": [
+          "L’argent",
+          "Le sel",
+          "L’or",
+          "Le pétrole"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تنتج المَلَّاحة (مستنقعات الملح)؟",
+        "choices": [
+          "الفضة",
+          "الملح",
+          "الذهب",
+          "النفط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which international body regulates the use of the seabed beyond national jurisdiction?",
+    "choices": [
+      "UN Human Rights Council",
+      "International Monetary Fund",
+      "World Health Organization",
+      "International Seabed Authority"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel organisme international régule l’usage des fonds marins au-delà des juridictions nationales ?",
+        "choices": [
+          "Le Conseil des droits de l’homme de l’ONU",
+          "Le FMI",
+          "L’OMS",
+          "L’Autorité internationale des fonds marins"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هيئة دولية تنظّم استخدام قاع البحر خارج الولايات الوطنية؟",
+        "choices": [
+          "مجلس حقوق الإنسان التابع للأمم المتحدة",
+          "صندوق النقد الدولي",
+          "منظمة الصحة العالمية",
+          "السلطة الدولية لقاع البحار"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a common by-product of desalination plants?",
+    "choices": [
+      "Cooking oil",
+      "Plastic pellets",
+      "Fresh sugar",
+      "Concentrated brine"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est un sous-produit courant des usines de dessalement ?",
+        "choices": [
+          "L’huile de cuisson",
+          "Des granulés de plastique",
+          "Le sucre",
+          "La saumure concentrée"
+        ]
+      },
+      "ar": {
+        "question": "ما المنتج الثانوي الشائع لمحطات التحلية؟",
+        "choices": [
+          "زيت الطهي",
+          "حبيبات البلاستيك",
+          "السكر",
+          "المحلول الملحي المركّز"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the main sea routeway between Europe and Asia through Egypt?",
+    "choices": [
+      "Corinth Canal",
+      "Kiel Canal",
+      "Suez Canal",
+      "Panama Canal"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale voie maritime entre l’Europe et l’Asie passant par l’Égypte ?",
+        "choices": [
+          "Le canal de Corinthe",
+          "Le canal de Kiel",
+          "Le canal de Suez",
+          "Le canal de Panama"
+        ]
+      },
+      "ar": {
+        "question": "ما الممر البحري الرئيسي بين أوروبا وآسيا عبر مصر؟",
+        "choices": [
+          "قناة كورنث",
+          "قناة كيل",
+          "قناة السويس",
+          "قناة بنما"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  }
+]

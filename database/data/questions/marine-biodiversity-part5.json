@@ -1,0 +1,444 @@
+[
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea animal is a mammal that is famous for its intelligence and social behaviour?",
+    "choices": [
+      "Starfish",
+      "Sea anemone",
+      "Dolphin",
+      "Sea snail"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin, mammifère, est célèbre pour son intelligence et sa vie sociale ?",
+        "choices": [
+          "L’étoile de mer",
+          "L’anémone de mer",
+          "Le dauphin",
+          "L’escargot de mer"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري من الثدييات يشتهر بذكائه وسلوكه الاجتماعي؟",
+        "choices": [
+          "نجم البحر",
+          "شقائق البحر",
+          "الدلفين",
+          "قوقع البحر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call an animal that lives on the seabed and filters food from the water?",
+    "choices": [
+      "Pelagic hunter",
+      "Flying fish",
+      "Deep-sea whale",
+      "Benthic filter feeder"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un animal qui vit sur le fond et filtre sa nourriture dans l’eau ?",
+        "choices": [
+          "Un chasseur pélagique",
+          "Un poisson volant",
+          "Une baleine des abysses",
+          "Un filtreur benthique"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الكائن الذي يعيش في القاع ويرشح غذاءه من الماء؟",
+        "choices": [
+          "صياد سطحي",
+          "سمكة طائرة",
+          "حوت أعماق",
+          "كائن قاعي مرشّح"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which bird species is known for diving and swimming underwater to catch fish and is found in Antarctic waters?",
+    "choices": [
+      "Owl",
+      "Flamingo",
+      "Eagle",
+      "Penguin"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel oiseau plonge et nage sous l’eau pour pêcher, et vit dans les eaux antarctiques ?",
+        "choices": [
+          "La chouette",
+          "Le flamant",
+          "L’aigle",
+          "Le manchot"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طائر يغوص ويسبح تحت الماء للصيد ويعيش في المياه القطبية الجنوبية؟",
+        "choices": [
+          "البومة",
+          "النحام",
+          "النسر",
+          "البطريق"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which marine animal produces a shell made of calcium carbonate and lives in tropical reefs?",
+    "choices": [
+      "Giant clam",
+      "Sea horse",
+      "Jellyfish",
+      "Shark"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin produit une coquille de carbonate de calcium et vit dans les récifs tropicaux ?",
+        "choices": [
+          "Le bénitier géant",
+          "L’hippocampe",
+          "La méduse",
+          "Le requin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري ينتج صدفة من كربونات الكالسيوم ويعيش في الشعاب الاستوائية؟",
+        "choices": [
+          "المحار العملاق (التريدكنا)",
+          "فرس البحر",
+          "قنديل البحر",
+          "القرش"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Mediterranean fish is famous for migrating long distances to spawn, and is threatened by overfishing?",
+    "choices": [
+      "Sardine",
+      "Bluefin tuna",
+      "Goldfish",
+      "Carp"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel poisson méditerranéen migre sur de longues distances pour frayer et est menacé par la surpêche ?",
+        "choices": [
+          "La sardine",
+          "Le thon rouge",
+          "Le poisson rouge",
+          "La carpe"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سمكة متوسطية تهاجر لمسافات طويلة للتكاثر وتتعرض للخطر بسبب الصيد الجائر؟",
+        "choices": [
+          "السردين",
+          "التونة الزرقاء",
+          "السمك الذهبي",
+          "الكارب"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the sea animal that can regrow its arms and is related to starfish?",
+    "choices": [
+      "Shrimp",
+      "Brittle star",
+      "Crab",
+      "Lobster"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’animal marin qui peut refaire ses bras et est proche de l’étoile de mer ?",
+        "choices": [
+          "La crevette",
+          "L’ophiure",
+          "Le crabe",
+          "Le homard"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الكائن البحري الذي يعيد نمو أذرعه، وهو من قرابة نجم البحر؟",
+        "choices": [
+          "الروبيان",
+          "نجم الأفعى (الأوفيور)",
+          "السلطعون",
+          "الاستاكوزا"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which species of Mediterranean sea grass is mainly found in shallow coastal waters and forms large meadows?",
+    "choices": [
+      "Spirulina",
+      "Kelp",
+      "Posidonia oceanica",
+      "Sargassum"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle espèce de phanérogame méditerranéenne forme de grandes prairies dans les eaux côtières peu profondes ?",
+        "choices": [
+          "La spiruline",
+          "Le kelp",
+          "La posidonie",
+          "Le sargasse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الحشائش البحرية المتوسطية يكوّن مروجًا واسعة في المياه الساحلية الضحلة؟",
+        "choices": [
+          "السبيرولينا",
+          "الكلب البحري",
+          "البوسيدونيا",
+          "السرغاسوم"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is called a sea horse because of its shape?",
+    "choices": [
+      "Seahorse",
+      "Sea cow",
+      "Walrus",
+      "Sea lion"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin doit son nom à sa silhouette ?",
+        "choices": [
+          "L’hippocampe",
+          "Le lamantin",
+          "Le morse",
+          "L’otarie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري سُمّي بفرس البحر لشكله؟",
+        "choices": [
+          "فرس البحر (حصان البحر)",
+          "بقرة البحر",
+          "الفظ",
+          "أسد البحر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which marine habitat is formed by mangrove trees growing in salt water?",
+    "choices": [
+      "Alpine meadow",
+      "Desert dune",
+      "Tundra",
+      "Mangrove forest"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel habitat marin est formé par les palétuviers qui poussent dans l’eau salée ?",
+        "choices": [
+          "La prairie alpine",
+          "La dune désertique",
+          "La toundra",
+          "La mangrove"
+        ]
+      },
+      "ar": {
+        "question": "أيّ موئل بحري تكونه أشجار المانغروف النامية في المياه المالحة؟",
+        "choices": [
+          "المرج الجبلي",
+          "الكثيب الصحراوي",
+          "التندرا",
+          "غابة المانغروف"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sea creature can produce bioluminescent light to attract prey in the deep sea?",
+    "choices": [
+      "Parrotfish",
+      "Anglerfish",
+      "Sea cucumber",
+      "Clownfish"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin peut produire une lumière bioluminescente pour attirer ses proies dans les abysses ?",
+        "choices": [
+          "Le poisson-perroquet",
+          "La baudroie",
+          "La holothurie",
+          "Le poisson-clown"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري ينتج ضوءًا حيويًا لجذب فريسته في أعماق البحر؟",
+        "choices": [
+          "سمكة الببغاء",
+          "سمكة الصياد (الغِيلَم)",
+          "خيار البحر",
+          "سمكة المهرج"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the sea mammal that lives in Arctic waters and has a long tusk?",
+    "choices": [
+      "Dolphin",
+      "Seal",
+      "Manatee",
+      "Narwhal"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le mammifère marin de l’Arctique qui possède une longue défense ?",
+        "choices": [
+          "Le dauphin",
+          "Le phoque",
+          "Le lamantin",
+          "Le narval"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الثدييات البحرية في القطب الشمالي التي لها ناب طويل؟",
+        "choices": [
+          "الدلفين",
+          "الفقمة",
+          "أبو البقر (المانتي)",
+          "حوت الناروال"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which species of seagrass is known for forming “sea meadows” that protect the coast?",
+    "choices": [
+      "Pine tree",
+      "Cactus",
+      "Posidonia oceanica",
+      "Oak tree"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle espèce de phanérogame forme des « prairies marines » qui protègent le littoral ?",
+        "choices": [
+          "Le pin",
+          "Le cactus",
+          "La posidonie",
+          "Le chêne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الحشائش البحرية يكوّن «المروج البحرية» التي تحمي الساحل؟",
+        "choices": [
+          "شجرة الصنوبر",
+          "الصبار",
+          "البوسيدونيا",
+          "شجرة البلوط"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Mediterranean marine protected area is known for its Posidonia meadows and is located off the coast of Tunisia?",
+    "choices": [
+      "Bardo Museum",
+      "Sahara Dunes",
+      "Atlas Mountains",
+      "Kuriat Islands"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle aire marine protégée méditerranéenne, connue pour ses herbiers de posidonie, se trouve au large de la Tunisie ?",
+        "choices": [
+          "Le musée du Bardo",
+          "Les dunes du Sahara",
+          "Les monts de l’Atlas",
+          "Les îles Kuriat"
+        ]
+      },
+      "ar": {
+        "question": "أيّ منطقة بحرية محمية متوسطية تشتهر بحشائش البوسيدونيا وتقع قبالة السواحل التونسية؟",
+        "choices": [
+          "متحف باردو",
+          "كثبان الصحراء",
+          "جبال الأطلس",
+          "جزر قوريات"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  }
+]

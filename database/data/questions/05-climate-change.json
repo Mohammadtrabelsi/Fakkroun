@@ -4,19 +4,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "What is the greenhouse effect?",
-    "choices": ["Gases trapping heat in the atmosphere", "Plants growing inside glass houses", "Clouds reflecting all sunlight", "Ocean water evaporating only at night"],
-    "correct": 1,
+    "choices": [
+      "Clouds reflecting all sunlight",
+      "Gases trapping heat in the atmosphere",
+      "Ocean water evaporating only at night",
+      "Plants growing inside glass houses"
+    ],
+    "correct": 2,
     "explanation": "Some gases let sunlight through but hold back part of the heat the Earth radiates.",
     "reference_text": "IPCC AR6 Working Group I (2021)",
     "translations": {
       "fr": {
         "question": "Qu’est-ce que l’effet de serre ?",
-        "choices": ["Des gaz qui piègent la chaleur dans l’atmosphère", "Des plantes qui poussent sous des serres en verre", "Des nuages qui réfléchissent toute la lumière du soleil", "L’évaporation de l’eau de mer uniquement la nuit"],
+        "choices": [
+          "Des nuages qui réfléchissent toute la lumière du soleil",
+          "Des gaz qui piègent la chaleur dans l’atmosphère",
+          "L’évaporation de l’eau de mer uniquement la nuit",
+          "Des plantes qui poussent sous des serres en verre"
+        ],
         "explanation": "Certains gaz laissent passer la lumière du soleil mais retiennent une partie de la chaleur que renvoie la Terre."
       },
       "ar": {
         "question": "ما هو تأثير الاحتباس الحراري؟",
-        "choices": ["غازات تحبس الحرارة في الغلاف الجوي", "نباتات تنمو داخل البيوت الزجاجية", "غيوم تعكس كل ضوء الشمس", "تبخر مياه المحيط ليلًا فقط"],
+        "choices": [
+          "غيوم تعكس كل ضوء الشمس",
+          "غازات تحبس الحرارة في الغلاف الجوي",
+          "تبخر مياه المحيط ليلًا فقط",
+          "نباتات تنمو داخل البيوت الزجاجية"
+        ],
         "explanation": "تسمح بعض الغازات بمرور ضوء الشمس، لكنها تحتجز جزءًا من الحرارة التي تعيد الأرض إشعاعها."
       }
     }
@@ -26,19 +41,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "Which major greenhouse gas is released by livestock and flooded rice paddies?",
-    "choices": ["Helium", "Methane", "Argon", "Neon"],
+    "choices": [
+      "Neon",
+      "Methane",
+      "Argon",
+      "Helium"
+    ],
     "correct": 2,
     "explanation": "Methane comes from digestion in ruminant animals and from decomposition in flooded fields, and it traps heat strongly.",
     "reference_text": "IPCC AR6 Working Group I (2021)",
     "translations": {
       "fr": {
         "question": "Quel gaz à effet de serre important est émis par l’élevage et les rizières inondées ?",
-        "choices": ["L’hélium", "Le méthane", "L’argon", "Le néon"],
+        "choices": [
+          "Le néon",
+          "Le méthane",
+          "L’argon",
+          "L’hélium"
+        ],
         "explanation": "Le méthane provient de la digestion des ruminants et de la décomposition en milieu inondé ; il retient fortement la chaleur."
       },
       "ar": {
         "question": "أيّ غاز دفيء مهم تنبعث منه تربية الماشية وحقول الأرز المغمورة بالمياه؟",
-        "choices": ["الهيليوم", "الميثان", "الأرغون", "النيون"],
+        "choices": [
+          "النيون",
+          "الميثان",
+          "الأرغون",
+          "الهيليوم"
+        ],
         "explanation": "ينبعث الميثان من هضم الحيوانات المجترة ومن تحلل المواد العضوية في الحقول المغمورة، وله قدرة كبيرة على احتجاز الحرارة."
       }
     }
@@ -48,19 +78,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "What is the main cause of recent global warming?",
-    "choices": ["Changes in the Moon’s orbit", "Volcanic eruptions alone", "Solar flares only", "Human activities that emit greenhouse gases"],
-    "correct": 4,
+    "choices": [
+      "Changes in the Moon’s orbit",
+      "Volcanic eruptions alone",
+      "Human activities that emit greenhouse gases",
+      "Solar flares only"
+    ],
+    "correct": 3,
     "explanation": "The IPCC concludes that human influence, through greenhouse gas emissions, is the main driver of warming since the industrial era.",
     "reference_text": "IPCC AR6 Working Group I (2021)",
     "translations": {
       "fr": {
         "question": "Quelle est la principale cause du réchauffement climatique récent ?",
-        "choices": ["Les variations de l’orbite de la Lune", "Les éruptions volcaniques seules", "Les éruptions solaires uniquement", "Les activités humaines qui émettent des gaz à effet de serre"],
+        "choices": [
+          "Les variations de l’orbite de la Lune",
+          "Les éruptions volcaniques seules",
+          "Les activités humaines qui émettent des gaz à effet de serre",
+          "Les éruptions solaires uniquement"
+        ],
         "explanation": "Le GIEC conclut que l’influence humaine, par les émissions de gaz à effet de serre, est la principale cause du réchauffement observé depuis l’ère industrielle."
       },
       "ar": {
         "question": "ما السبب الرئيسي للاحترار العالمي الحديث؟",
-        "choices": ["تغيرات مدار القمر", "الثورات البركانية وحدها", "التوهجات الشمسية فقط", "الأنشطة البشرية المنبعثة منها غازات الاحتباس الحراري"],
+        "choices": [
+          "تغيرات مدار القمر",
+          "الثورات البركانية وحدها",
+          "الأنشطة البشرية المنبعثة منها غازات الاحتباس الحراري",
+          "التوهجات الشمسية فقط"
+        ],
         "explanation": "خلص الفريق الحكومي الدولي المعني بتغير المناخ (IPCC) إلى أن النشاط البشري هو السبب الرئيسي للاحترار المسجَّل منذ العصر الصناعي."
       }
     }
@@ -70,19 +115,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "What does “adaptation” mean in climate policy?",
-    "choices": ["Reducing greenhouse gas emissions", "Building coal plants in cold regions", "Adjusting to current and expected climate impacts", "Measuring temperature in cities"],
-    "correct": 3,
+    "choices": [
+      "Adjusting to current and expected climate impacts",
+      "Building coal plants in cold regions",
+      "Reducing greenhouse gas emissions",
+      "Measuring temperature in cities"
+    ],
+    "correct": 1,
     "explanation": "Adaptation reduces vulnerability to climate change, for example through flood defences or drought-resistant crops.",
     "reference_text": "IPCC AR6 Working Group II (2022)",
     "translations": {
       "fr": {
         "question": "Que signifie « l’adaptation » dans les politiques climatiques ?",
-        "choices": ["Réduire les émissions de gaz à effet de serre", "Construire des centrales à charbon dans les régions froides", "S’ajuster aux effets climatiques actuels et attendus", "Mesurer la température dans les villes"],
+        "choices": [
+          "S’ajuster aux effets climatiques actuels et attendus",
+          "Construire des centrales à charbon dans les régions froides",
+          "Réduire les émissions de gaz à effet de serre",
+          "Mesurer la température dans les villes"
+        ],
         "explanation": "L’adaptation réduit la vulnérabilité aux effets du changement climatique, par exemple avec des digues ou des cultures résistantes à la sécheresse."
       },
       "ar": {
         "question": "ماذا يعني «التكيّف» في سياسات المناخ؟",
-        "choices": ["خفض انبعاثات غازات الاحتباس الحراري", "بناء محطات فحم في المناطق الباردة", "التأقلم مع الآثار المناخية الحالية والمتوقعة", "قياس درجة الحرارة في المدن"],
+        "choices": [
+          "التأقلم مع الآثار المناخية الحالية والمتوقعة",
+          "بناء محطات فحم في المناطق الباردة",
+          "خفض انبعاثات غازات الاحتباس الحراري",
+          "قياس درجة الحرارة في المدن"
+        ],
         "explanation": "يعني التكيّف تقليل الضعف أمام آثار تغير المناخ، مثل بناء الحواجز الواقية وزراعة محاصيل مقاومة للجفاف."
       }
     }
@@ -92,19 +152,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "What is the role of the IPCC?",
-    "choices": ["It assesses scientific knowledge on climate change for governments", "It sets national carbon taxes", "It funds solar projects", "It manages global shipping routes"],
+    "choices": [
+      "It assesses scientific knowledge on climate change for governments",
+      "It funds solar projects",
+      "It sets national carbon taxes",
+      "It manages global shipping routes"
+    ],
     "correct": 1,
     "explanation": "Created in 1988, the IPCC publishes scientific assessments of climate change; it does not carry out original research itself.",
     "reference_text": "IPCC mandate (1988)",
     "translations": {
       "fr": {
         "question": "Quel est le rôle du GIEC ?",
-        "choices": ["Il évalue les connaissances scientifiques sur le changement climatique à l’intention des gouvernements", "Il fixe les taxes carbone nationales", "Il finance des projets solaires", "Il gère les routes maritimes mondiales"],
+        "choices": [
+          "Il évalue les connaissances scientifiques sur le changement climatique à l’intention des gouvernements",
+          "Il finance des projets solaires",
+          "Il fixe les taxes carbone nationales",
+          "Il gère les routes maritimes mondiales"
+        ],
         "explanation": "Créé en 1988, le GIEC publie des évaluations scientifiques du climat ; il ne mène pas lui-même de recherches originales."
       },
       "ar": {
         "question": "ما دور الفريق الحكومي الدولي المعني بتغير المناخ (IPCC)؟",
-        "choices": ["تقييم المعارف العلمية حول تغير المناخ لصالح الحكومات", "تحديد الضرائب الكربونية الوطنية", "تمويل مشاريع الطاقة الشمسية", "إدارة خطوط الملاحة العالمية"],
+        "choices": [
+          "تقييم المعارف العلمية حول تغير المناخ لصالح الحكومات",
+          "تمويل مشاريع الطاقة الشمسية",
+          "تحديد الضرائب الكربونية الوطنية",
+          "إدارة خطوط الملاحة العالمية"
+        ],
         "explanation": "أُنشئ الفريق عام 1988 لإعداد تقييمات علمية دورية حول المناخ، ولا يُجري أبحاثه الأصلية بنفسه."
       }
     }
@@ -114,19 +189,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "In which year was the Paris Agreement adopted?",
-    "choices": ["2005", "2015", "2010", "2020"],
-    "correct": 2,
+    "choices": [
+      "2015",
+      "2005",
+      "2010",
+      "2020"
+    ],
+    "correct": 1,
     "explanation": "Adopted in December 2015 at COP21, the agreement aims to keep warming well below 2 °C.",
     "reference_text": "UNFCCC Paris Agreement (2015)",
     "translations": {
       "fr": {
         "question": "En quelle année l’accord de Paris a-t-il été adopté ?",
-        "choices": ["2005", "2015", "2010", "2020"],
+        "choices": [
+          "2015",
+          "2005",
+          "2010",
+          "2020"
+        ],
         "explanation": "Adopté en décembre 2015 lors de la COP21, l’accord vise à maintenir la hausse des températures nettement sous 2 °C."
       },
       "ar": {
         "question": "في أي عام اعتُمد اتفاق باريس؟",
-        "choices": ["2005", "2015", "2010", "2020"],
+        "choices": [
+          "2015",
+          "2005",
+          "2010",
+          "2020"
+        ],
         "explanation": "اعتُمد الاتفاق في ديسمبر 2015 خلال مؤتمر الأطراف الحادي والعشرين، ويهدف إلى إبقاء الاحترار دون درجتين مئويتين."
       }
     }
@@ -136,19 +226,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "What is a “tipping point” in the climate system?",
-    "choices": ["A threshold beyond which a change becomes self-reinforcing or irreversible", "The highest temperature ever recorded", "A point where clouds form", "The meeting place of climate negotiators"],
-    "correct": 1,
+    "choices": [
+      "The highest temperature ever recorded",
+      "A point where clouds form",
+      "The meeting place of climate negotiators",
+      "A threshold beyond which a change becomes self-reinforcing or irreversible"
+    ],
+    "correct": 4,
     "explanation": "For example, melting a large ice sheet can accelerate itself by reflecting less sunlight.",
     "reference_text": "IPCC AR6 Working Group I (2021)",
     "translations": {
       "fr": {
         "question": "Qu’est-ce qu’un « point de bascule » du système climatique ?",
-        "choices": ["Un seuil au-delà duquel un changement s’auto-entretient ou devient irréversible", "La température la plus élevée jamais enregistrée", "Le point où se forment les nuages", "Le lieu de réunion des négociateurs climatiques"],
+        "choices": [
+          "La température la plus élevée jamais enregistrée",
+          "Le point où se forment les nuages",
+          "Le lieu de réunion des négociateurs climatiques",
+          "Un seuil au-delà duquel un changement s’auto-entretient ou devient irréversible"
+        ],
         "explanation": "Par exemple, la fonte d’une grande calotte glaciaire peut s’accélérer d’elle-même, car la surface claire réfléchit moins de lumière."
       },
       "ar": {
         "question": "ما المقصود بـ«نقطة التحول» في النظام المناخي؟",
-        "choices": ["عتبة يصبح بعدها التغير ذاتي التعزيز أو غير قابل للعكس", "أعلى درجة حرارة سُجّلت على الإطلاق", "النقطة التي تتكون فيها الغيوم", "مكان اجتماع مفاوضي المناخ"],
+        "choices": [
+          "أعلى درجة حرارة سُجّلت على الإطلاق",
+          "النقطة التي تتكون فيها الغيوم",
+          "مكان اجتماع مفاوضي المناخ",
+          "عتبة يصبح بعدها التغير ذاتي التعزيز أو غير قابل للعكس"
+        ],
         "explanation": "مثال ذلك أن ذوبان غطاء جليدي كبير يقلل انعكاس أشعة الشمس، فيسرّع الاحترار بدوره."
       }
     }
@@ -158,19 +263,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "What is “climate attribution” science?",
-    "choices": ["Naming hurricanes", "Predicting the price of carbon", "Ranking countries by rainfall", "Estimating how much human influence contributed to a specific extreme event"],
-    "correct": 4,
+    "choices": [
+      "Naming hurricanes",
+      "Predicting the price of carbon",
+      "Estimating how much human influence contributed to a specific extreme event",
+      "Ranking countries by rainfall"
+    ],
+    "correct": 3,
     "explanation": "Attribution studies compare simulated worlds with and without human activity to measure its effect on a heatwave or drought.",
     "reference_text": "WMO extreme event attribution overview",
     "translations": {
       "fr": {
         "question": "Qu’est-ce que la science de « l’attribution climatique » ?",
-        "choices": ["Donner des noms aux ouragans", "Prévoir le prix du carbone", "Classer les pays selon leurs précipitations", "Estimer la part de l’influence humaine dans un événement extrême donné"],
+        "choices": [
+          "Donner des noms aux ouragans",
+          "Prévoir le prix du carbone",
+          "Estimer la part de l’influence humaine dans un événement extrême donné",
+          "Classer les pays selon leurs précipitations"
+        ],
         "explanation": "Ces études comparent des simulations avec et sans activité humaine pour mesurer son effet sur une canicule ou une sécheresse."
       },
       "ar": {
         "question": "ما هو علم «الإسناد المناخي» (Climate attribution)؟",
-        "choices": ["تسمية الأعاصير", "التنبؤ بسعر الكربون", "ترتيب الدول حسب كمية الأمطار", "تقدير مساهمة النشاط البشري في حدث مناخي متطرف بعينه"],
+        "choices": [
+          "تسمية الأعاصير",
+          "التنبؤ بسعر الكربون",
+          "تقدير مساهمة النشاط البشري في حدث مناخي متطرف بعينه",
+          "ترتيب الدول حسب كمية الأمطار"
+        ],
         "explanation": "تقارن هذه الدراسات بين سيناريوهات مع النشاط البشري وأخرى دونه، لقياس تأثيره في موجة حر أو جفاف."
       }
     }

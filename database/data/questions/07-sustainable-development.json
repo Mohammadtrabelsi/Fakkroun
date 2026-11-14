@@ -4,19 +4,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "How many Sustainable Development Goals (SDGs) are there?",
-    "choices": ["17", "12", "21", "10"],
-    "correct": 1,
+    "choices": [
+      "12",
+      "21",
+      "17",
+      "10"
+    ],
+    "correct": 3,
     "explanation": "The United Nations adopted the 17 SDGs in 2015 as part of the 2030 Agenda.",
     "reference_text": "UN 2030 Agenda for Sustainable Development (2015)",
     "translations": {
       "fr": {
         "question": "Combien y a-t-il d’objectifs de développement durable (ODD) ?",
-        "choices": ["17", "12", "21", "10"],
+        "choices": [
+          "12",
+          "21",
+          "17",
+          "10"
+        ],
         "explanation": "Les 17 ODD ont été adoptés par les Nations unies en 2015 dans le cadre du Programme 2030."
       },
       "ar": {
         "question": "كم عدد أهداف التنمية المستدامة؟",
-        "choices": ["17", "12", "21", "10"],
+        "choices": [
+          "12",
+          "21",
+          "17",
+          "10"
+        ],
         "explanation": "اعتمدت الأمم المتحدة أهداف التنمية المستدامة الـ17 عام 2015 ضمن أجندة 2030."
       }
     }
@@ -26,19 +41,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "SDG 13 is about which topic?",
-    "choices": ["Clean water", "Gender equality", "Climate action", "Decent work"],
-    "correct": 3,
+    "choices": [
+      "Decent work",
+      "Climate action",
+      "Clean water",
+      "Gender equality"
+    ],
+    "correct": 2,
     "explanation": "SDG 6 covers clean water, SDG 5 gender equality and SDG 8 decent work.",
     "reference_text": "UN SDG framework (2015)",
     "translations": {
       "fr": {
         "question": "L’ODD 13 concerne quel thème ?",
-        "choices": ["L’eau propre", "L’égalité des genres", "La lutte contre les changements climatiques", "Le travail décent"],
+        "choices": [
+          "Le travail décent",
+          "La lutte contre les changements climatiques",
+          "L’eau propre",
+          "L’égalité des genres"
+        ],
         "explanation": "L’ODD 6 porte sur l’eau propre, l’ODD 5 sur l’égalité des genres et l’ODD 8 sur le travail décent."
       },
       "ar": {
         "question": "يتعلق الهدف 13 من أهداف التنمية المستدامة بأي موضوع؟",
-        "choices": ["المياه النظيفة", "المساواة بين الجنسين", "العمل من أجل المناخ", "العمل اللائق"],
+        "choices": [
+          "العمل اللائق",
+          "العمل من أجل المناخ",
+          "المياه النظيفة",
+          "المساواة بين الجنسين"
+        ],
         "explanation": "الهدف 6 للمياه النظيفة، والهدف 5 للمساواة بين الجنسين، والهدف 8 للعمل اللائق."
       }
     }
@@ -48,19 +78,34 @@
     "difficulty": "easy",
     "language": "en",
     "question": "SDG 7 focuses on which area?",
-    "choices": ["Quality education", "Affordable and clean energy", "No poverty", "Peace and justice"],
+    "choices": [
+      "Quality education",
+      "Affordable and clean energy",
+      "Peace and justice",
+      "No poverty"
+    ],
     "correct": 2,
     "explanation": "SDG 7 aims to ensure access to reliable, sustainable and modern energy for everyone.",
     "reference_text": "UN SDG framework (2015)",
     "translations": {
       "fr": {
         "question": "L’ODD 7 porte sur quel domaine ?",
-        "choices": ["Une éducation de qualité", "Une énergie abordable et propre", "Pas de pauvreté", "Paix, justice et institutions efficaces"],
+        "choices": [
+          "Une éducation de qualité",
+          "Une énergie abordable et propre",
+          "Paix, justice et institutions efficaces",
+          "Pas de pauvreté"
+        ],
         "explanation": "L’ODD 7 vise à garantir à tous l’accès à une énergie fiable, durable et moderne."
       },
       "ar": {
         "question": "يركز الهدف 7 من أهداف التنمية المستدامة على أي مجال؟",
-        "choices": ["التعليم الجيد", "طاقة ميسورة التكلفة ونظيفة", "القضاء على الفقر", "السلام والعدل"],
+        "choices": [
+          "التعليم الجيد",
+          "طاقة ميسورة التكلفة ونظيفة",
+          "السلام والعدل",
+          "القضاء على الفقر"
+        ],
         "explanation": "يهدف الهدف 7 إلى ضمان حصول الجميع على طاقة حديثة وموثوقة ومستدامة."
       }
     }
@@ -70,19 +115,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "The three pillars of sustainable development are usually described as…",
-    "choices": ["Political, military and cultural", "Industrial, agricultural and digital", "Urban, rural and coastal", "Economic, social and environmental"],
+    "choices": [
+      "Political, military and cultural",
+      "Urban, rural and coastal",
+      "Industrial, agricultural and digital",
+      "Economic, social and environmental"
+    ],
     "correct": 4,
     "explanation": "The model links economic prosperity, social equity and environmental protection.",
     "reference_text": "UN World Summit on Sustainable Development (2005)",
     "translations": {
       "fr": {
         "question": "Les trois piliers du développement durable sont généralement décrits comme…",
-        "choices": ["Politique, militaire et culturel", "Industriel, agricole et numérique", "Urbain, rural et côtier", "Économique, social et environnemental"],
+        "choices": [
+          "Politique, militaire et culturel",
+          "Urbain, rural et côtier",
+          "Industriel, agricole et numérique",
+          "Économique, social et environnemental"
+        ],
         "explanation": "Ce modèle relie prospérité économique, équité sociale et protection de l’environnement."
       },
       "ar": {
         "question": "تُوصف الركائز الثلاث للتنمية المستدامة عادةً بأنها…",
-        "choices": ["سياسية وعسكرية وثقافية", "صناعية وزراعية ورقمية", "حضرية وريفية وساحلية", "اقتصادية واجتماعية وبيئية"],
+        "choices": [
+          "سياسية وعسكرية وثقافية",
+          "حضرية وريفية وساحلية",
+          "صناعية وزراعية ورقمية",
+          "اقتصادية واجتماعية وبيئية"
+        ],
         "explanation": "يربط هذا النموذج بين الازدهار الاقتصادي والعدالة الاجتماعية وحماية البيئة."
       }
     }
@@ -92,19 +152,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "How did the 1987 Brundtland Report define sustainable development?",
-    "choices": ["Development focused only on export growth", "Development that meets present needs without compromising future generations", "Development limited to cities", "Development that stops all industry"],
-    "correct": 2,
+    "choices": [
+      "Development limited to cities",
+      "Development focused only on export growth",
+      "Development that stops all industry",
+      "Development that meets present needs without compromising future generations"
+    ],
+    "correct": 4,
     "explanation": "The definition appears in “Our Common Future”, published by the World Commission on Environment and Development.",
     "reference_text": "Brundtland Report, Our Common Future (1987)",
     "translations": {
       "fr": {
         "question": "Comment le rapport Brundtland (1987) définit-il le développement durable ?",
-        "choices": ["Un développement axé uniquement sur les exportations", "Un développement qui répond aux besoins présents sans compromettre la capacité des générations futures", "Un développement limité aux villes", "Un développement qui arrête toute industrie"],
+        "choices": [
+          "Un développement limité aux villes",
+          "Un développement axé uniquement sur les exportations",
+          "Un développement qui arrête toute industrie",
+          "Un développement qui répond aux besoins présents sans compromettre la capacité des générations futures"
+        ],
         "explanation": "Cette définition figure dans le rapport « Notre avenir à tous », publié par la Commission mondiale sur l’environnement et le développement."
       },
       "ar": {
         "question": "كيف يُعرّف تقرير برانتلاند (1987) التنمية المستدامة؟",
-        "choices": ["تنمية تركز على نمو الصادرات وحده", "تنمية تلبي احتياجات الحاضر دون المساس بقدرة الأجيال القادمة على تلبية احتياجاتها", "تنمية تقتصر على المدن", "تنمية توقف كل الصناعات"],
+        "choices": [
+          "تنمية تقتصر على المدن",
+          "تنمية تركز على نمو الصادرات وحده",
+          "تنمية توقف كل الصناعات",
+          "تنمية تلبي احتياجات الحاضر دون المساس بقدرة الأجيال القادمة على تلبية احتياجاتها"
+        ],
         "explanation": "ورد هذا التعريف في تقرير «مستقبلنا المشترك» الصادر عن اللجنة العالمية للبيئة والتنمية."
       }
     }
@@ -114,19 +189,34 @@
     "difficulty": "medium",
     "language": "en",
     "question": "Which 1992 summit in Rio de Janeiro launched Agenda 21?",
-    "choices": ["The G20 Summit", "The Earth Summit", "The Davos Forum", "The Bonn Conference"],
-    "correct": 2,
+    "choices": [
+      "The Bonn Conference",
+      "The G20 Summit",
+      "The Davos Forum",
+      "The Earth Summit"
+    ],
+    "correct": 4,
     "explanation": "The Earth Summit adopted Agenda 21, an action plan for sustainable development in the 21st century.",
     "reference_text": "UN Conference on Environment and Development (1992)",
     "translations": {
       "fr": {
         "question": "Quel sommet de Rio de Janeiro en 1992 a lancé l’Agenda 21 ?",
-        "choices": ["Le sommet du G20", "Le Sommet de la Terre", "Le forum de Davos", "La conférence de Bonn"],
+        "choices": [
+          "La conférence de Bonn",
+          "Le sommet du G20",
+          "Le forum de Davos",
+          "Le Sommet de la Terre"
+        ],
         "explanation": "Le Sommet de la Terre a adopté l’Agenda 21, un plan d’action pour le développement durable au XXIe siècle."
       },
       "ar": {
         "question": "أيّ قمة عُقدت في ريو دي جانيرو عام 1992 أطلقت أجندة القرن 21؟",
-        "choices": ["قمة مجموعة العشرين", "قمة الأرض", "منتدى دافوس", "مؤتمر بون"],
+        "choices": [
+          "مؤتمر بون",
+          "قمة مجموعة العشرين",
+          "منتدى دافوس",
+          "قمة الأرض"
+        ],
         "explanation": "أقرّت قمة الأرض أجندة القرن 21، وهي خطة عمل للتنمية المستدامة."
       }
     }
@@ -136,19 +226,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "What is “decoupling” in sustainability economics?",
-    "choices": ["Splitting a company into two units", "Stopping production entirely", "Economic growth continuing while resource use or emissions fall", "Separating a country’s economy from trade"],
+    "choices": [
+      "Splitting a company into two units",
+      "Stopping production entirely",
+      "Economic growth continuing while resource use or emissions fall",
+      "Separating a country’s economy from trade"
+    ],
     "correct": 3,
     "explanation": "Absolute decoupling means growing the economy while using fewer resources and emitting less.",
     "reference_text": "UNEP International Resource Panel decoupling report",
     "translations": {
       "fr": {
         "question": "Qu’est-ce que le « découplage » en économie de la durabilité ?",
-        "choices": ["Diviser une entreprise en deux unités", "Arrêter totalement la production", "La croissance économique qui se poursuit alors que l’usage des ressources ou les émissions diminuent", "Séparer l’économie d’un pays de son commerce"],
+        "choices": [
+          "Diviser une entreprise en deux unités",
+          "Arrêter totalement la production",
+          "La croissance économique qui se poursuit alors que l’usage des ressources ou les émissions diminuent",
+          "Séparer l’économie d’un pays de son commerce"
+        ],
         "explanation": "Le découplage absolu consiste à produire davantage de richesse en consommant moins de ressources."
       },
       "ar": {
         "question": "ما المقصود بـ«الفصل» (Decoupling) في اقتصاد الاستدامة؟",
-        "choices": ["تقسيم شركة إلى وحدتين", "وقف الإنتاج تمامًا", "استمرار النمو الاقتصادي مع انخفاض استهلاك الموارد أو الانبعاثات", "فصل اقتصاد الدولة عن التجارة"],
+        "choices": [
+          "تقسيم شركة إلى وحدتين",
+          "وقف الإنتاج تمامًا",
+          "استمرار النمو الاقتصادي مع انخفاض استهلاك الموارد أو الانبعاثات",
+          "فصل اقتصاد الدولة عن التجارة"
+        ],
         "explanation": "يعني الفصل المطلق تحقيق نمو اقتصادي أكبر مع استهلاك أقل للموارد وانبعاثات أقل."
       }
     }
@@ -158,19 +263,34 @@
     "difficulty": "hard",
     "language": "en",
     "question": "Which SDG covers “Responsible consumption and production”?",
-    "choices": ["SDG 9", "SDG 11", "SDG 16", "SDG 12"],
-    "correct": 4,
+    "choices": [
+      "SDG 11",
+      "SDG 12",
+      "SDG 9",
+      "SDG 16"
+    ],
+    "correct": 2,
     "explanation": "SDG 12 targets food waste, chemicals management and waste reduction along supply chains.",
     "reference_text": "UN SDG framework (2015)",
     "translations": {
       "fr": {
         "question": "Quel ODD couvre « la consommation et la production responsables » ?",
-        "choices": ["L’ODD 9", "L’ODD 11", "L’ODD 16", "L’ODD 12"],
+        "choices": [
+          "L’ODD 11",
+          "L’ODD 12",
+          "L’ODD 9",
+          "L’ODD 16"
+        ],
         "explanation": "L’ODD 12 vise à réduire le gaspillage alimentaire, à mieux gérer les produits chimiques et les déchets tout au long des chaînes."
       },
       "ar": {
         "question": "أيّ هدف من أهداف التنمية المستدامة يتناول «الاستهلاك والإنتاج المسؤولين»؟",
-        "choices": ["الهدف 9", "الهدف 11", "الهدف 16", "الهدف 12"],
+        "choices": [
+          "الهدف 11",
+          "الهدف 12",
+          "الهدف 9",
+          "الهدف 16"
+        ],
         "explanation": "يهدف الهدف 12 إلى تقليل الهدر الغذائي وإدارة المواد الكيميائية والنفايات طوال سلاسل الإنتاج."
       }
     }

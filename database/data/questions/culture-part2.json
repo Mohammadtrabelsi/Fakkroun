@@ -1,0 +1,631 @@
+[
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who painted “The Starry Night”?",
+    "choices": [
+      "Henri Matisse",
+      "Vincent van Gogh",
+      "Edvard Munch",
+      "Claude Monet"
+    ],
+    "correct": 2,
+    "explanation": "Van Gogh painted The Starry Night in 1889 while staying in Saint-Rémy.",
+    "reference_text": "Museum of Modern Art, The Starry Night",
+    "translations": {
+      "fr": {
+        "question": "Qui a peint « La Nuit étoilée » ?",
+        "choices": [
+          "Henri Matisse",
+          "Vincent van Gogh",
+          "Edvard Munch",
+          "Claude Monet"
+        ],
+        "explanation": "Van Gogh a peint La Nuit étoilée en 1889 à Saint-Rémy."
+      },
+      "ar": {
+        "question": "من رسم لوحة «ليلة النجوم»؟",
+        "choices": [
+          "هنري ماتيس",
+          "فنسنت فان غوخ",
+          "إدفارد مونك",
+          "كلود مونيه"
+        ],
+        "explanation": "رسم فان غوخ اللوحة عام 1889 خلال إقامته في سان رمي."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which Tunisian town is the Roman amphitheatre located?",
+    "choices": [
+      "Mahdia",
+      "Sousse",
+      "El Djem",
+      "Gabès"
+    ],
+    "correct": 3,
+    "explanation": "The Roman amphitheatre of El Djem is one of the largest surviving in the world.",
+    "reference_text": "UNESCO, El Jem Amphitheatre",
+    "translations": {
+      "fr": {
+        "question": "Dans quelle ville tunisienne se trouve l’amphithéâtre romain ?",
+        "choices": [
+          "Mahdia",
+          "Sousse",
+          "El Jem",
+          "Gabès"
+        ],
+        "explanation": "L’amphithéâtre romain d’El Jem compte parmi les plus grands conservés au monde."
+      },
+      "ar": {
+        "question": "في أي مدينة تونسية يقع المدرج الروماني؟",
+        "choices": [
+          "المهدية",
+          "سوسة",
+          "الجم",
+          "قابس"
+        ],
+        "explanation": "يُعد المدرج الروماني في الجم من أكبر المدرجات المحفوظة في العالم."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which festival is famous for its masks and parade in Venice?",
+    "choices": [
+      "Oktoberfest",
+      "Carnival of Venice",
+      "Tomatina",
+      "Mardi Gras in Rio"
+    ],
+    "correct": 2,
+    "explanation": "The Venice Carnival is known for elaborate masks and costumes.",
+    "reference_text": "Venice Carnival official information",
+    "translations": {
+      "fr": {
+        "question": "Quelle fête est célèbre à Venise pour ses masques et ses défilés ?",
+        "choices": [
+          "L’Oktoberfest",
+          "Le carnaval de Venise",
+          "La Tomatina",
+          "Le Mardi gras de Rio"
+        ],
+        "explanation": "Le carnaval de Venise est connu pour ses masques et costumes élaborés."
+      },
+      "ar": {
+        "question": "أيّ مهرجان يشتهر في البندقية بأقنعته وعروضه؟",
+        "choices": [
+          "أوكتوبرفست",
+          "كرنفال البندقية",
+          "توماتينا",
+          "كرنفال ريو"
+        ],
+        "explanation": "يشتهر كرنفال البندقية بأقنعته وأزيائه المتقنة."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who wrote the novel “Pride and Prejudice”?",
+    "choices": [
+      "Jane Austen",
+      "Emily Brontë",
+      "Mary Shelley",
+      "George Eliot"
+    ],
+    "correct": 1,
+    "explanation": "Jane Austen published Pride and Prejudice in 1813.",
+    "reference_text": "Encyclopaedia Britannica, Jane Austen",
+    "translations": {
+      "fr": {
+        "question": "Qui a écrit le roman « Orgueil et Préjugés » ?",
+        "choices": [
+          "Jane Austen",
+          "Emily Brontë",
+          "Mary Shelley",
+          "George Eliot"
+        ],
+        "explanation": "Jane Austen a publié Orgueil et Préjugés en 1813."
+      },
+      "ar": {
+        "question": "من كتب رواية «الكبرياء والتحامل»؟",
+        "choices": [
+          "جين أوستن",
+          "إيميلي برونتي",
+          "ماري شيلي",
+          "جورج إليوت"
+        ],
+        "explanation": "نشرت جين أوستن الرواية عام 1813."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Brazilian dance style is closely linked to Rio de Janeiro’s carnival?",
+    "choices": [
+      "Tango",
+      "Samba",
+      "Salsa",
+      "Flamenco"
+    ],
+    "correct": 2,
+    "explanation": "Samba originated in Afro-Brazilian communities and is central to Carnival.",
+    "reference_text": "UNESCO, samba de roda",
+    "translations": {
+      "fr": {
+        "question": "Quelle danse brésilienne est étroitement liée au carnaval de Rio ?",
+        "choices": [
+          "Le tango",
+          "La samba",
+          "La salsa",
+          "Le flamenco"
+        ],
+        "explanation": "La samba est née dans les communautés afro-brésiliennes et occupe une place centrale dans le carnaval."
+      },
+      "ar": {
+        "question": "أيّ رقصة برازيلية ترتبط ارتباطًا وثيقًا بكرنفال ريو؟",
+        "choices": [
+          "التانغو",
+          "السامبا",
+          "السالسا",
+          "الفلامينكو"
+        ],
+        "explanation": "نشأت السامبا في المجتمعات البرازيلية ذات الأصول الإفريقية، وهي محورية في الكرنفال."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is traditionally associated with the tango?",
+    "choices": [
+      "Mexico",
+      "Spain",
+      "Argentina",
+      "Cuba"
+    ],
+    "correct": 3,
+    "explanation": "Tango originated in the Río de la Plata region, in Buenos Aires and Montevideo.",
+    "reference_text": "UNESCO, tango intangible heritage",
+    "translations": {
+      "fr": {
+        "question": "Quel pays est traditionnellement associé au tango ?",
+        "choices": [
+          "Le Mexique",
+          "L’Espagne",
+          "L’Argentine",
+          "Cuba"
+        ],
+        "explanation": "Le tango est né dans la région du Río de la Plata, autour de Buenos Aires et de Montevideo."
+      },
+      "ar": {
+        "question": "أيّ دولة ترتبط تقليديًا بالتانغو؟",
+        "choices": [
+          "المكسيك",
+          "إسبانيا",
+          "الأرجنتين",
+          "كوبا"
+        ],
+        "explanation": "نشأ التانغو في منطقة ريو دي لا بلاتا حول بوينس آيرس ومونتيفيديو."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who painted “Guernica”, the anti-war mural of 1937?",
+    "choices": [
+      "Joan Miró",
+      "Pablo Picasso",
+      "El Greco",
+      "Francisco Goya"
+    ],
+    "correct": 2,
+    "explanation": "Picasso painted Guernica in response to the bombing of the Basque town.",
+    "reference_text": "Museo Reina Sofía, Guernica",
+    "translations": {
+      "fr": {
+        "question": "Qui a peint « Guernica », fresque contre la guerre de 1937 ?",
+        "choices": [
+          "Joan Miró",
+          "Pablo Picasso",
+          "Le Gréco",
+          "Francisco de Goya"
+        ],
+        "explanation": "Picasso a peint Guernica en réaction au bombardement de la ville basque."
+      },
+      "ar": {
+        "question": "من رسم لوحة «غيرنيكا» المناهضة للحرب عام 1937؟",
+        "choices": [
+          "خوان ميرو",
+          "بابلو بيكاسو",
+          "إل غريكو",
+          "فرانسيسكو غويا"
+        ],
+        "explanation": "رسم بيكاسو اللوحة ردًّا على قصف مدينة غيرنيكا الباسكية."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Arabic poet is known as the “Poet of Wisdom” and wrote on the vanity of worldly life?",
+    "choices": [
+      "Al-Mutanabbi",
+      "Imru’ al-Qais",
+      "Abu Nuwas",
+      "Al-Khansa"
+    ],
+    "correct": 1,
+    "explanation": "Al-Mutanabbi (915–965) is one of the most celebrated poets of classical Arabic.",
+    "reference_text": "Encyclopaedia Britannica, al-Mutanabbi",
+    "translations": {
+      "fr": {
+        "question": "Quel poète arabe est connu comme « le poète de la sagesse », auteur de vers sur la vanité du monde ?",
+        "choices": [
+          "Al-Mutanabbi",
+          "Imru’ al-Qays",
+          "Abou Nuwas",
+          "Al-Khansa"
+        ],
+        "explanation": "Al-Mutanabbi (915–965) est l’un des plus grands poètes de l’arabe classique."
+      },
+      "ar": {
+        "question": "أيّ شاعر عربي يُعرف بحكمته وكتب في زوال الدنيا وتقلّبها؟",
+        "choices": [
+          "المتنبي",
+          "امرؤ القيس",
+          "أبو نواس",
+          "الخنساء"
+        ],
+        "explanation": "المتنبي (915–965) من أشهر شعراء العربية الكلاسيكية."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Egyptian novel by Naguib Mahfouz is set in a single alley of Cairo?",
+    "choices": [
+      "Cairo Trilogy",
+      "Midaq Alley",
+      "The Thief and the Dogs",
+      "Palace Walk"
+    ],
+    "correct": 2,
+    "explanation": "Midaq Alley (1947) portrays the lives of residents in a Cairo alley.",
+    "reference_text": "Naguib Mahfouz bibliography",
+    "translations": {
+      "fr": {
+        "question": "Quel roman de Naguib Mahfouz se déroule dans une seule ruelle du Caire ?",
+        "choices": [
+          "Trilogie du Caire",
+          "Le Passage des miracles",
+          "Le Voleur et les chiens",
+          "Impasse Palace Walk"
+        ],
+        "explanation": "Le Passage des miracles (1947) raconte la vie des habitants d’une ruelle du Caire."
+      },
+      "ar": {
+        "question": "أيّ رواية لنجيب محفوظ تدور أحداثها في حارة واحدة بالقاهرة؟",
+        "choices": [
+          "بين القصرين",
+          "زقاق المدق",
+          "اللص والكلاب",
+          "الثلاثية"
+        ],
+        "explanation": "تصوّر «زقاق المدق» (1947) حياة سكان حارة في القاهرة."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Japanese art form uses black ink and brush on paper to paint landscapes?",
+    "choices": [
+      "Origami",
+      "Sumi-e",
+      "Ikebana",
+      "Kintsugi"
+    ],
+    "correct": 2,
+    "explanation": "Sumi-e is ink-wash painting, valued for its simplicity and suggestion.",
+    "reference_text": "Japan Foundation, traditional arts",
+    "translations": {
+      "fr": {
+        "question": "Quel art japonais peint des paysages à l’encre noire au pinceau sur papier ?",
+        "choices": [
+          "L’origami",
+          "Le sumi-e",
+          "L’ikebana",
+          "Le kintsugi"
+        ],
+        "explanation": "Le sumi-e est une peinture à l’encre de Chine, appréciée pour sa simplicité et sa suggestion."
+      },
+      "ar": {
+        "question": "أيّ فن ياباني يرسم المناظر الطبيعية بالحبر الأسود والفرشاة على الورق؟",
+        "choices": [
+          "الأوريغامي",
+          "السومي إي",
+          "الإيكيبانا",
+          "الكينتسوغي"
+        ],
+        "explanation": "السومي إي رسم بالحبر الممزوج بالماء، ويُقدَّر ببساطته وإيحائه."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which musical instrument is the Arab oud related to?",
+    "choices": [
+      "Lute family",
+      "Harp family",
+      "Drum family",
+      "Flute family"
+    ],
+    "correct": 1,
+    "explanation": "The oud is a short-necked lute and an ancestor of the European lute.",
+    "reference_text": "UNESCO, Arab music traditions",
+    "translations": {
+      "fr": {
+        "question": "À quelle famille d’instruments appartient l’oud arabe ?",
+        "choices": [
+          "Famille du luth",
+          "Famille de la harpe",
+          "Famille des percussions",
+          "Famille des flûtes"
+        ],
+        "explanation": "L’oud est un luth à manche court et un ancêtre du luth européen."
+      },
+      "ar": {
+        "question": "إلى أي عائلة من الآلات الموسيقية ينتمي العود العربي؟",
+        "choices": [
+          "عائلة العود (الآلات الوترية المضمومة)",
+          "عائلة القيثارة",
+          "عائلة الطبول",
+          "عائلة الناي"
+        ],
+        "explanation": "العود آلة وترية ذات عنق قصير، وهو سلف العود الأوروبي (اللوت)."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which playwright wrote “Waiting for Godot”?",
+    "choices": [
+      "Eugène Ionesco",
+      "Harold Pinter",
+      "Samuel Beckett",
+      "Jean-Paul Sartre"
+    ],
+    "correct": 3,
+    "explanation": "Samuel Beckett’s 1953 play is a landmark of the Theatre of the Absurd.",
+    "reference_text": "Nobel Prize in Literature 1969, Samuel Beckett",
+    "translations": {
+      "fr": {
+        "question": "Qui a écrit la pièce « En attendant Godot » ?",
+        "choices": [
+          "Eugène Ionesco",
+          "Harold Pinter",
+          "Samuel Beckett",
+          "Jean-Paul Sartre"
+        ],
+        "explanation": "La pièce de Beckett (1953) est une œuvre majeure du théâtre de l’absurde."
+      },
+      "ar": {
+        "question": "من كتب مسرحية «في انتظار غودو»؟",
+        "choices": [
+          "أوجين يونيسكو",
+          "هارولد بينتر",
+          "صامويل بيكيت",
+          "جان بول سارتر"
+        ],
+        "explanation": "مسرحية بيكيت (1953) من أعمال مسرح العبث البارزة."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which fictional wizard attends Hogwarts School?",
+    "choices": [
+      "Harry Potter",
+      "Gandalf",
+      "Merlin",
+      "Frodo"
+    ],
+    "correct": 1,
+    "explanation": "Harry Potter was created by J. K. Rowling and first published in 1997.",
+    "reference_text": "J. K. Rowling, Harry Potter series",
+    "translations": {
+      "fr": {
+        "question": "Quel sorcier fictif étudie à l’école de Poudlard ?",
+        "choices": [
+          "Harry Potter",
+          "Gandalf",
+          "Merlin",
+          "Frodon"
+        ],
+        "explanation": "Harry Potter a été créé par J. K. Rowling et publié pour la première fois en 1997."
+      },
+      "ar": {
+        "question": "أيّ ساحر خيالي يدرس في مدرسة هوغوورتس؟",
+        "choices": [
+          "هاري بوتر",
+          "غاندالف",
+          "ميرلين",
+          "فرودو"
+        ],
+        "explanation": "ابتكرت الكاتبة ج. ك. رولينغ هاري بوتر، ونُشرت أول رواية عام 1997."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Italian painter created the ceiling of the Sistine Chapel?",
+    "choices": [
+      "Caravaggio",
+      "Leonardo da Vinci",
+      "Michelangelo",
+      "Raphael"
+    ],
+    "correct": 3,
+    "explanation": "Michelangelo painted the Sistine Chapel ceiling between 1508 and 1512.",
+    "reference_text": "Vatican Museums, Sistine Chapel",
+    "translations": {
+      "fr": {
+        "question": "Quel peintre italien a décoré le plafond de la chapelle Sixtine ?",
+        "choices": [
+          "Le Caravage",
+          "Léonard de Vinci",
+          "Michel-Ange",
+          "Raphaël"
+        ],
+        "explanation": "Michel-Ange a peint le plafond de la chapelle Sixtine entre 1508 et 1512."
+      },
+      "ar": {
+        "question": "أيّ رسام إيطالي زيّن سقف كنيسة سيستين؟",
+        "choices": [
+          "كارافادجيو",
+          "ليوناردو دافنشي",
+          "ميكيل أنجلو",
+          "رافائيل"
+        ],
+        "explanation": "رسم ميكيل أنجلو سقف كنيسة سيستين بين عامي 1508 و1512."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which novel by Gabriel García Márquez tells the story of a long love waiting over fifty years?",
+    "choices": [
+      "Chronicle of a Death Foretold",
+      "Love in the Time of Cholera",
+      "The General in His Labyrinth",
+      "Of Love and Other Demons"
+    ],
+    "correct": 2,
+    "explanation": "Love in the Time of Cholera (1985) follows two lovers who wait decades to reunite.",
+    "reference_text": "Gabriel García Márquez bibliography",
+    "translations": {
+      "fr": {
+        "question": "Quel roman de Gabriel García Márquez raconte un amour qui attend plus de cinquante ans ?",
+        "choices": [
+          "Chronique d’une mort annoncée",
+          "L’Amour aux temps du choléra",
+          "Le Général dans son labyrinthe",
+          "De l’amour et d’autres démons"
+        ],
+        "explanation": "L’Amour aux temps du choléra (1985) suit deux amants qui attendent des décennies avant de se retrouver."
+      },
+      "ar": {
+        "question": "أيّ رواية لغابرييل غارسيا ماركيز تحكي قصة حب ينتظر فيها الحبيبان أكثر من خمسين عامًا؟",
+        "choices": [
+          "وقائع موت معلن",
+          "الحب في زمن الكوليرا",
+          "الجنرال في متاهته",
+          "عن الحب والشياطين الأخرى"
+        ],
+        "explanation": "تتابع رواية «الحب في زمن الكوليرا» (1985) عاشقين ينتظران عقودًا قبل أن يلتقيا."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which musical instrument has six strings in standard tuning?",
+    "choices": [
+      "Violin",
+      "Cello",
+      "Guitar",
+      "Harp"
+    ],
+    "correct": 3,
+    "explanation": "Standard guitars have six strings tuned E–A–D–G–B–E.",
+    "reference_text": "Encyclopaedia Britannica, guitar",
+    "translations": {
+      "fr": {
+        "question": "Quel instrument possède six cordes en accordage standard ?",
+        "choices": [
+          "Le violon",
+          "Le violoncelle",
+          "La guitare",
+          "La harpe"
+        ],
+        "explanation": "La guitare standard a six cordes accordées en mi-la-ré-sol-si-mi."
+      },
+      "ar": {
+        "question": "أيّ آلة موسيقية لها ستة أوتار في التوزيع القياسي؟",
+        "choices": [
+          "الكمان",
+          "التشيلو",
+          "الغيتار",
+          "القيثارة"
+        ],
+        "explanation": "للغيتار القياسي ستة أوتار مضبوطة على النغمات مي، لا، ري، صول، سي، مي."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country hosts the annual Edinburgh Festival Fringe?",
+    "choices": [
+      "England",
+      "Ireland",
+      "Scotland",
+      "Wales"
+    ],
+    "correct": 3,
+    "explanation": "Edinburgh’s Festival Fringe is the world’s largest arts festival.",
+    "reference_text": "Edinburgh Festival Fringe Society",
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se tient le Festival Fringe d’Édimbourg ?",
+        "choices": [
+          "L’Angleterre",
+          "L’Irlande",
+          "L’Écosse",
+          "Le pays de Galles"
+        ],
+        "explanation": "Le Fringe d’Édimbourg est le plus grand festival d’arts au monde."
+      },
+      "ar": {
+        "question": "في أي دولة يُقام مهرجان إدنبرة الهامشي (Fringe)؟",
+        "choices": [
+          "إنجلترا",
+          "أيرلندا",
+          "إسكتلندا",
+          "ويلز"
+        ],
+        "explanation": "يُعدّ مهرجان الهامش في إدنبرة أكبر مهرجان فني في العالم."
+      }
+    }
+  }
+]

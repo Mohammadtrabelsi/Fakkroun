@@ -1,0 +1,483 @@
+[
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does SDG 4 aim to achieve?",
+    "choices": [
+      "Clean water",
+      "Life on land",
+      "Quality education",
+      "Zero hunger"
+    ],
+    "correct": 3,
+    "explanation": "SDG 4 focuses on inclusive and equitable quality education and lifelong learning.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif de l’ODD 4 ?",
+        "choices": [
+          "L’eau propre",
+          "La vie terrestre",
+          "Une éducation de qualité",
+          "Faim zéro"
+        ],
+        "explanation": "L’ODD 4 vise une éducation de qualité, inclusive et équitable, tout au long de la vie."
+      },
+      "ar": {
+        "question": "ما هدف الهدف 4 من أهداف التنمية المستدامة؟",
+        "choices": [
+          "المياه النظيفة",
+          "الحياة في البر",
+          "التعليم الجيد",
+          "القضاء على الجوع"
+        ],
+        "explanation": "يركز الهدف 4 على تعليم جيد وشامل ومنصف مدى الحياة."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG is “No Poverty”?",
+    "choices": [
+      "SDG 2",
+      "SDG 1",
+      "SDG 3",
+      "SDG 5"
+    ],
+    "correct": 2,
+    "explanation": "SDG 1 aims to end poverty in all its forms everywhere.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "Quel est l’ODD « Pas de pauvreté » ?",
+        "choices": [
+          "L’ODD 2",
+          "L’ODD 1",
+          "L’ODD 3",
+          "L’ODD 5"
+        ],
+        "explanation": "L’ODD 1 vise à éliminer la pauvreté sous toutes ses formes, partout."
+      },
+      "ar": {
+        "question": "أيّ هدف من أهداف التنمية المستدامة يحمل عنوان «القضاء على الفقر»؟",
+        "choices": [
+          "الهدف 2",
+          "الهدف 1",
+          "الهدف 3",
+          "الهدف 5"
+        ],
+        "explanation": "يهدف الهدف 1 إلى القضاء على الفقر بجميع أشكاله في كل مكان."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "SDG 15 is about which theme?",
+    "choices": [
+      "Industry and innovation",
+      "Peace and justice",
+      "Life on land",
+      "Life below water"
+    ],
+    "correct": 3,
+    "explanation": "SDG 15 covers forests, biodiversity, land degradation and desertification.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "L’ODD 15 concerne quel thème ?",
+        "choices": [
+          "Industrie et innovation",
+          "Paix et justice",
+          "La vie terrestre",
+          "La vie aquatique"
+        ],
+        "explanation": "L’ODD 15 couvre forêts, biodiversité, dégradation des terres et désertification."
+      },
+      "ar": {
+        "question": "يتعلق الهدف 15 من أهداف التنمية المستدامة بأي موضوع؟",
+        "choices": [
+          "الصناعة والابتكار",
+          "السلام والعدل",
+          "الحياة في البر",
+          "الحياة تحت الماء"
+        ],
+        "explanation": "يشمل الهدف 15 الغابات والتنوع البيولوجي وتدهور الأراضي والتصحر."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the “circular economy” principle?",
+    "choices": [
+      "Maximise landfill use",
+      "Use, throw away, repeat",
+      "Keep materials in use for as long as possible and regenerate natural systems",
+      "Only produce goods for export"
+    ],
+    "correct": 3,
+    "explanation": "The circular economy designs out waste and keeps resources in use.",
+    "reference_text": "Ellen MacArthur Foundation, circular economy",
+    "translations": {
+      "fr": {
+        "question": "Quel est le principe de l’économie circulaire ?",
+        "choices": [
+          "Maximiser l’enfouissement",
+          "Utiliser, jeter, recommencer",
+          "Garder les matières en usage le plus longtemps possible et régénérer les systèmes naturels",
+          "Produire uniquement pour l’export"
+        ],
+        "explanation": "L’économie circulaire supprime les déchets à la conception et maintient les ressources en usage."
+      },
+      "ar": {
+        "question": "ما مبدأ «الاقتصاد الدائري»؟",
+        "choices": [
+          "تعظيم استخدام المكبات",
+          "الاستخدام ثم الرمي ثم التكرار",
+          "إبقاء المواد قيد الاستخدام أطول مدة ممكنة وتجديد النظم الطبيعية",
+          "الإنتاج للتصدير فقط"
+        ],
+        "explanation": "يلغي الاقتصاد الدائري النفايات منذ التصميم ويُبقي الموارد في دورة الاستخدام."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “SDG 6” focus on?",
+    "choices": [
+      "Climate action",
+      "Clean water and sanitation",
+      "Gender equality",
+      "Responsible production"
+    ],
+    "correct": 2,
+    "explanation": "SDG 6 targets safe drinking water, sanitation and hygiene for all.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "Sur quoi porte l’ODD 6 ?",
+        "choices": [
+          "La lutte contre le climat",
+          "L’eau propre et l’assainissement",
+          "L’égalité des genres",
+          "La production responsable"
+        ],
+        "explanation": "L’ODD 6 vise l’accès à l’eau potable, à l’assainissement et à l’hygiène pour tous."
+      },
+      "ar": {
+        "question": "على ماذا يركز الهدف 6؟",
+        "choices": [
+          "العمل المناخي",
+          "المياه النظيفة والصرف الصحي",
+          "المساواة بين الجنسين",
+          "الإنتاج المسؤول"
+        ],
+        "explanation": "يستهدف الهدف 6 توفير مياه الشرب الآمنة والصرف الصحي والنظافة للجميع."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “sustainable consumption”?",
+    "choices": [
+      "Buying as much as possible",
+      "Using resources in ways that meet needs without harming future generations",
+      "Consuming only imported goods",
+      "Stopping all shopping"
+    ],
+    "correct": 2,
+    "explanation": "Sustainable consumption balances needs with the long-term health of the planet.",
+    "reference_text": "UNEP sustainable consumption and production",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « consommation durable » ?",
+        "choices": [
+          "Acheter le plus possible",
+          "Utiliser les ressources pour répondre aux besoins sans nuire aux générations futures",
+          "Consommer uniquement des produits importés",
+          "Arrêter tout achat"
+        ],
+        "explanation": "La consommation durable concilie besoins et santé à long terme de la planète."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الاستهلاك المستدام»؟",
+        "choices": [
+          "شراء أكبر قدر ممكن",
+          "استخدام الموارد لتلبية الاحتياجات دون الإضرار بالأجيال القادمة",
+          "استهلاك السلع المستوردة فقط",
+          "التوقف عن التسوق تمامًا"
+        ],
+        "explanation": "يوازن الاستهلاك المستدام بين الاحتياجات والصحة طويلة المدى للكوكب."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which indicator measures a country’s economic output adjusted for environmental and social factors?",
+    "choices": [
+      "Gross Domestic Product alone",
+      "Stock market index",
+      "Genuine Progress Indicator",
+      "Trade balance"
+    ],
+    "correct": 3,
+    "explanation": "The Genuine Progress Indicator adjusts economic measures for environmental and social costs.",
+    "reference_text": "Genuine Progress Indicator, Redefining Progress",
+    "translations": {
+      "fr": {
+        "question": "Quel indicateur ajuste la production économique en tenant compte des facteurs environnementaux et sociaux ?",
+        "choices": [
+          "Le PIB seul",
+          "L’indice boursier",
+          "L’indicateur de progrès véritable (IPV)",
+          "La balance commerciale"
+        ],
+        "explanation": "L’indicateur de progrès véritable corrige les mesures économiques des coûts environnementaux et sociaux."
+      },
+      "ar": {
+        "question": "أيّ مؤشر يعدّل الناتج الاقتصادي بمراعاة العوامل البيئية والاجتماعية؟",
+        "choices": [
+          "الناتج المحلي الإجمالي وحده",
+          "مؤشر سوق الأسهم",
+          "مؤشر التقدم الحقيقي (GPI)",
+          "الميزان التجاري"
+        ],
+        "explanation": "يعدّل مؤشر التقدم الحقيقي المقاييس الاقتصادية بتكاليف البيئة والمجتمع."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG is about “Decent work and economic growth”?",
+    "choices": [
+      "SDG 9",
+      "SDG 10",
+      "SDG 11",
+      "SDG 8"
+    ],
+    "correct": 4,
+    "explanation": "SDG 8 promotes sustained economic growth and productive, decent employment.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur « Travail décent et croissance économique » ?",
+        "choices": [
+          "L’ODD 9",
+          "L’ODD 10",
+          "L’ODD 11",
+          "L’ODD 8"
+        ],
+        "explanation": "L’ODD 8 promeut une croissance économique soutenue et un emploi productif et décent."
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول «العمل اللائق والنمو الاقتصادي»؟",
+        "choices": [
+          "الهدف 9",
+          "الهدف 10",
+          "الهدف 11",
+          "الهدف 8"
+        ],
+        "explanation": "يعزز الهدف 8 النمو الاقتصادي المستدام والعمالة المنتجة اللائقة."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which SDG is about “Sustainable cities and communities”?",
+    "choices": [
+      "SDG 13",
+      "SDG 9",
+      "SDG 11",
+      "SDG 17"
+    ],
+    "correct": 3,
+    "explanation": "SDG 11 aims to make cities inclusive, safe, resilient and sustainable.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur les « villes et communautés durables » ?",
+        "choices": [
+          "L’ODD 13",
+          "L’ODD 9",
+          "L’ODD 11",
+          "L’ODD 17"
+        ],
+        "explanation": "L’ODD 11 vise des villes inclusives, sûres, résilientes et durables."
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول «المدن والمجتمعات المستدامة»؟",
+        "choices": [
+          "الهدف 13",
+          "الهدف 9",
+          "الهدف 11",
+          "الهدف 17"
+        ],
+        "explanation": "يهدف الهدف 11 إلى جعل المدن شاملة وآمنة ومرنة ومستدامة."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does SDG 17 focus on?",
+    "choices": [
+      "Partnerships for the goals",
+      "Gender equality",
+      "Industry",
+      "Life underwater"
+    ],
+    "correct": 1,
+    "explanation": "SDG 17 calls for strong partnerships and means of implementation.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "Sur quoi porte l’ODD 17 ?",
+        "choices": [
+          "Les partenariats pour la réalisation des objectifs",
+          "L’égalité des genres",
+          "L’industrie",
+          "La vie aquatique"
+        ],
+        "explanation": "L’ODD 17 appelle à des partenariats solides et à des moyens de mise en œuvre."
+      },
+      "ar": {
+        "question": "على ماذا يركز الهدف 17؟",
+        "choices": [
+          "الشراكات لتحقيق الأهداف",
+          "المساواة بين الجنسين",
+          "الصناعة",
+          "الحياة تحت الماء"
+        ],
+        "explanation": "يدعو الهدف 17 إلى شراكات قوية ووسائل تنفيذ فعّالة."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “green growth”?",
+    "choices": [
+      "Only planting trees in cities",
+      "Growth that ignores the environment",
+      "Growth limited to agriculture",
+      "Economic growth that is resource-efficient and reduces environmental impact"
+    ],
+    "correct": 4,
+    "explanation": "Green growth pursues economic development while keeping natural assets productive.",
+    "reference_text": "OECD green growth strategy",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « croissance verte » ?",
+        "choices": [
+          "La seule plantation d’arbres en ville",
+          "Une croissance qui ignore l’environnement",
+          "Une croissance limitée à l’agriculture",
+          "Une croissance économique économe en ressources et qui réduit l’impact environnemental"
+        ],
+        "explanation": "La croissance verte vise le développement économique tout en gardant les actifs naturels productifs."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«النمو الأخضر»؟",
+        "choices": [
+          "زراعة الأشجار في المدن فقط",
+          "نمو يتجاهل البيئة",
+          "نمو يقتصر على الزراعة",
+          "نمو اقتصادي موفر للموارد ويقلل الأثر البيئي"
+        ],
+        "explanation": "يسعى النمو الأخضر إلى التنمية الاقتصادية مع الحفاظ على الأصول الطبيعية منتجة."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which goal is SDG 3?",
+    "choices": [
+      "Zero hunger",
+      "Good health and well-being",
+      "No poverty",
+      "Clean energy"
+    ],
+    "correct": 2,
+    "explanation": "SDG 3 aims to ensure healthy lives and promote well-being for all.",
+    "reference_text": "UN SDG framework (2015)",
+    "translations": {
+      "fr": {
+        "question": "Quel est l’ODD 3 ?",
+        "choices": [
+          "Faim zéro",
+          "Bonne santé et bien-être",
+          "Pas de pauvreté",
+          "Énergie propre"
+        ],
+        "explanation": "L’ODD 3 vise à garantir une vie saine et le bien-être pour tous."
+      },
+      "ar": {
+        "question": "ما هو الهدف 3؟",
+        "choices": [
+          "القضاء على الجوع",
+          "الصحة الجيدة والرفاه",
+          "القضاء على الفقر",
+          "طاقة نظيفة"
+        ],
+        "explanation": "يهدف الهدف 3 إلى ضمان حياة صحية وتعزيز الرفاه للجميع."
+      }
+    }
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the “planetary boundaries” framework?",
+    "choices": [
+      "A tax on interplanetary travel",
+      "A list of endangered countries",
+      "Nine limits within which humanity can operate safely",
+      "A map of national borders"
+    ],
+    "correct": 3,
+    "explanation": "Introduced in 2009, the framework identifies nine Earth-system processes with safe limits.",
+    "reference_text": "Rockström et al., planetary boundaries (2009)",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le cadre des « limites planétaires » ?",
+        "choices": [
+          "Une taxe sur les voyages interplanétaires",
+          "Une liste de pays menacés",
+          "Neuf limites à l’intérieur desquelles l’humanité peut opérer en sécurité",
+          "Une carte des frontières nationales"
+        ],
+        "explanation": "Proposé en 2009, ce cadre identifie neuf processus du système Terre dotés de limites sûres."
+      },
+      "ar": {
+        "question": "ما هو إطار «الحدود الكوكبية» (Planetary boundaries)؟",
+        "choices": [
+          "ضريبة على السفر بين الكواكب",
+          "قائمة بالدول المهددة",
+          "تسعة حدود يمكن للبشرية أن تعمل ضمنها بأمان",
+          "خريطة للحدود الوطنية"
+        ],
+        "explanation": "حدد هذا الإطار عام 2009 تسع عمليات في نظام الأرض لها حدود آمنة."
+      }
+    }
+  }
+]

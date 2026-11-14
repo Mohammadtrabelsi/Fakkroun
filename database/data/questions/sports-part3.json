@@ -1,0 +1,695 @@
+[
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a racket and a net, and a small ball that is hit back and forth on a court?",
+    "choices": [
+      "Tennis",
+      "Rugby",
+      "Golf",
+      "Baseball"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise une raquette, un filet et une petite balle renvoyée de part et d’autre d’un court ?",
+        "choices": [
+          "Le tennis",
+          "Le rugby",
+          "Le golf",
+          "Le baseball"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم المضرب والشبكة والكرة الصغيرة التي تُضرب ذهابًا وإيابًا في الملعب؟",
+        "choices": [
+          "التنس",
+          "الرجبي",
+          "الجولف",
+          "البيسبول"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which sport is a “penalty kick” taken?",
+    "choices": [
+      "Cycling",
+      "Basketball",
+      "Football (soccer)",
+      "Tennis"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport tire-t-on un « penalty » ?",
+        "choices": [
+          "Le cyclisme",
+          "Le basket-ball",
+          "Le football",
+          "Le tennis"
+        ]
+      },
+      "ar": {
+        "question": "في أي رياضة تُنفَّذ «ركلة الجزاء»؟",
+        "choices": [
+          "ركوب الدراجات",
+          "كرة السلة",
+          "كرة القدم",
+          "التنس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many players are on a standard ice hockey team on the ice at once?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "5"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Combien de joueurs d’une équipe de hockey sur glace sont sur la glace en même temps ?",
+        "choices": [
+          "7",
+          "6",
+          "8",
+          "5"
+        ]
+      },
+      "ar": {
+        "question": "كم عدد لاعبي فريق هوكي الجليد على الجليد في الوقت نفسه؟",
+        "choices": [
+          "7",
+          "6",
+          "8",
+          "5"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country hosted the 2016 Summer Olympic Games?",
+    "choices": [
+      "Greece",
+      "Japan",
+      "Brazil",
+      "China"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a accueilli les Jeux olympiques d’été de 2016 ?",
+        "choices": [
+          "La Grèce",
+          "Le Japon",
+          "Le Brésil",
+          "La Chine"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة استضافت الألعاب الأولمبية الصيفية عام 2016؟",
+        "choices": [
+          "اليونان",
+          "اليابان",
+          "البرازيل",
+          "الصين"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sport is played on a court with a net, using a shuttle and rackets, and is popular in Asia?",
+    "choices": [
+      "Ice hockey",
+      "Rugby",
+      "Golf",
+      "Badminton"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue sur un terrain avec un filet, des raquettes et un volant, très populaire en Asie ?",
+        "choices": [
+          "Le hockey sur glace",
+          "Le rugby",
+          "Le golf",
+          "Le badminton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلعب بالشبكة والمضارب والريشة، وتحظى بشعبية كبيرة في آسيا؟",
+        "choices": [
+          "هوكي الجليد",
+          "الرجبي",
+          "الجولف",
+          "البادمنتون"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is played with a stick and a small ball on a field, often with teams of 11?",
+    "choices": [
+      "Field hockey",
+      "Cricket",
+      "Golf",
+      "Tennis"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue avec une crosse et une petite balle sur un terrain, souvent en équipes de onze ?",
+        "choices": [
+          "Le hockey sur gazon",
+          "Le cricket",
+          "Le golf",
+          "Le tennis"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلعب بعصا وكرة صغيرة على ملعب، وغالبًا بفرق من أحد عشر لاعبًا؟",
+        "choices": [
+          "الهوكي على العشب",
+          "الكريكت",
+          "الجولف",
+          "التنس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which athlete is known as the “Fastest Man on Earth” after winning the 100 m at several Olympics?",
+    "choices": [
+      "Mo Farah",
+      "Michael Johnson",
+      "Usain Bolt",
+      "Carl Lewis"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel athlète est surnommé « l’homme le plus rapide du monde » après ses victoires au 100 m aux Jeux ?",
+        "choices": [
+          "Mo Farah",
+          "Michael Johnson",
+          "Usain Bolt",
+          "Carl Lewis"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضي لُقّب بـ«أسرع رجل في العالم» بعد فوزه بسباق 100 متر في عدة أولمبياد؟",
+        "choices": [
+          "مو فرح",
+          "مايكل جونسون",
+          "يوسين بولت",
+          "كارل لويس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “birdie” in golf?",
+    "choices": [
+      "One stroke over par",
+      "A club used for putting",
+      "A bird that lands on the green",
+      "One stroke under par on a hole"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « birdie » au golf ?",
+        "choices": [
+          "Un coup au-dessus du par",
+          "Un club utilisé pour putter",
+          "Un oiseau qui se pose sur le green",
+          "Un coup sous le par sur un trou"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«البيردي» في الجولف؟",
+        "choices": [
+          "ضربة واحدة أعلى من الـpar",
+          "مضرب يُستخدم للدفع الخفيف",
+          "طائر يحط على الغرين",
+          "ضربة واحدة أقل من الـpar في حفرة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is the Tour de France associated with?",
+    "choices": [
+      "Swimming",
+      "Cycling",
+      "Skiing",
+      "Running"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "À quel sport est associé le Tour de France ?",
+        "choices": [
+          "La natation",
+          "Le cyclisme",
+          "Le ski",
+          "La course à pied"
+        ]
+      },
+      "ar": {
+        "question": "بأيّ رياضة يرتبط طواف فرنسا؟",
+        "choices": [
+          "السباحة",
+          "ركوب الدراجات",
+          "التزلج",
+          "العدو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country invented the sport of basketball?",
+    "choices": [
+      "Italy",
+      "France",
+      "Canada",
+      "United States"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a inventé le basket-ball ?",
+        "choices": [
+          "Italie",
+          "France",
+          "Canada",
+          "États-Unis"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة اخترعت لعبة كرة السلة؟",
+        "choices": [
+          "إيطاليا",
+          "فرنسا",
+          "كندا",
+          "الولايات المتحدة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who invented basketball in 1891?",
+    "choices": [
+      "James Naismith",
+      "Abraham Lincoln",
+      "Phil Knight",
+      "Walter Camp"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qui a inventé le basket-ball en 1891 ?",
+        "choices": [
+          "James Naismith",
+          "Abraham Lincoln",
+          "Phil Knight",
+          "Walter Camp"
+        ]
+      },
+      "ar": {
+        "question": "من اخترع كرة السلة عام 1891؟",
+        "choices": [
+          "جيمس نايسميث",
+          "أبراهام لينكولن",
+          "فيل نايت",
+          "والتر كامب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian sports club is famous for its footballer history and won the African Cup of Champions in 2011?",
+    "choices": [
+      "Club Africain",
+      "Club Sfaxien",
+      "Espérance Sportive de Tunis",
+      "Stade Tunisien"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel club sportif tunisien est célèbre pour son histoire footballistique et a remporté la Ligue des champions d’Afrique en 2011 ?",
+        "choices": [
+          "Le Club Africain",
+          "Le Club sfaxien",
+          "L’Espérance sportive de Tunis",
+          "Le Stade tunisien"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نادٍ رياضي تونسي اشتهر بتاريخه الكروي وفاز بدوري أبطال إفريقيا عام 2011؟",
+        "choices": [
+          "النادي الإفريقي",
+          "النادي الصفاقسي",
+          "الترجي الرياضي التونسي",
+          "الملعب التونسي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the traditional Japanese martial art of swordsmanship?",
+    "choices": [
+      "Karate",
+      "Kendo",
+      "Boxing",
+      "Taekwondo"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’art martial japonais traditionnel de l’escrime au sabre ?",
+        "choices": [
+          "Le karaté",
+          "Le kendo",
+          "La boxe",
+          "Le taekwondo"
+        ]
+      },
+      "ar": {
+        "question": "ما فنّ القتال الياباني التقليدي للمبارزة بالسيف؟",
+        "choices": [
+          "الكاراتيه",
+          "الكيندو",
+          "الملاكمة",
+          "التايكوندو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How many sets must a player win in a men’s Grand Slam tennis final?",
+    "choices": [
+      "4",
+      "2",
+      "5",
+      "3"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Combien de sets un joueur doit-il gagner pour remporter une finale masculine de Grand Chelem ?",
+        "choices": [
+          "4",
+          "2",
+          "5",
+          "3"
+        ]
+      },
+      "ar": {
+        "question": "كم مجموعة يجب أن يفوز بها اللاعب ليحسم نهائي بطولة الغراند سلام للرجال؟",
+        "choices": [
+          "4",
+          "2",
+          "5",
+          "3"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "In which sport is the “Stanley Cup” the ultimate prize?",
+    "choices": [
+      "Baseball",
+      "Basketball",
+      "Football",
+      "Ice hockey"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport la Coupe Stanley est-elle le trophée suprême ?",
+        "choices": [
+          "Le baseball",
+          "Le basket-ball",
+          "Le football",
+          "Le hockey sur glace"
+        ]
+      },
+      "ar": {
+        "question": "في أي رياضة تُعد كأس ستانلي الجائزة الكبرى؟",
+        "choices": [
+          "البيسبول",
+          "كرة السلة",
+          "كرة القدم",
+          "هوكي الجليد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a bat and a ball and features bases in a diamond shape?",
+    "choices": [
+      "Hockey",
+      "Rugby",
+      "Baseball",
+      "Golf"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise une batte, une balle et des bases disposées en losange ?",
+        "choices": [
+          "Le hockey",
+          "Le rugby",
+          "Le baseball",
+          "Le golf"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم المضرب والكرة وتحتوي قواعد مرتبة على شكل معين؟",
+        "choices": [
+          "الهوكي",
+          "الرجبي",
+          "البيسبول",
+          "الجولف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the highest award in judo for a black belt holder?",
+    "choices": [
+      "Kyu grade",
+      "Dojo",
+      "Obi",
+      "Dan grade"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le grade supérieur au judo pour les ceintures noires ?",
+        "choices": [
+          "Le kyu",
+          "Le dojo",
+          "L’obi",
+          "Le dan"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الدرجة الأعلى في الجودو لحاملي الحزام الأسود؟",
+        "choices": [
+          "الكيو",
+          "الدوجو",
+          "الأوبي",
+          "الدان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which sport is a “goal” scored by putting the ball through the opponent’s net with the hands?",
+    "choices": [
+      "Handball",
+      "Hockey",
+      "Football",
+      "Golf"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport marque-t-on un but en envoyant le ballon dans le filet avec les mains ?",
+        "choices": [
+          "Le handball",
+          "Le hockey",
+          "Le football",
+          "Le golf"
+        ]
+      },
+      "ar": {
+        "question": "في أي رياضة يُسجَّل الهدف بإدخال الكرة في شباك الخصم باليدين؟",
+        "choices": [
+          "كرة اليد",
+          "الهوكي",
+          "كرة القدم",
+          "الجولف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sport has the Ashes as its famous series between England and Australia?",
+    "choices": [
+      "Football",
+      "Rugby league",
+      "Tennis",
+      "Cricket"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel sport a pour série célèbre les Ashes entre l’Angleterre et l’Australie ?",
+        "choices": [
+          "Le football",
+          "Le rugby à XIII",
+          "Le tennis",
+          "Le cricket"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تشتهر بسلسلة «آشيز» بين إنجلترا وأستراليا؟",
+        "choices": [
+          "كرة القدم",
+          "رجبي الدوري",
+          "التنس",
+          "الكريكت"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the trophy awarded to the winner of the FIFA World Cup?",
+    "choices": [
+      "Davis Cup",
+      "Stanley Cup",
+      "Ryder Cup",
+      "FIFA World Cup Trophy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le trophée remis au vainqueur de la Coupe du monde de la FIFA ?",
+        "choices": [
+          "La Coupe Davis",
+          "La Coupe Stanley",
+          "La Ryder Cup",
+          "Le trophée de la Coupe du monde de la FIFA"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الكأس الممنوحة لفائز كأس العالم لكرة القدم؟",
+        "choices": [
+          "كأس ديفيس",
+          "كأس ستانلي",
+          "كأس ريدر",
+          "كأس العالم لكرة القدم (FIFA)"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is famous for the “Super Bowl” final?",
+    "choices": [
+      "Basketball",
+      "American football",
+      "Golf",
+      "Baseball"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est célèbre pour sa finale, le « Super Bowl » ?",
+        "choices": [
+          "Le basket-ball",
+          "Le football américain",
+          "Le golf",
+          "Le baseball"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تشتهر بالمباراة النهائية «سوبر بول»؟",
+        "choices": [
+          "كرة السلة",
+          "كرة القدم الأمريكية",
+          "الجولف",
+          "البيسبول"
+        ]
+      }
+    }
+  }
+]

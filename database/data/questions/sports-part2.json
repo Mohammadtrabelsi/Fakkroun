@@ -1,0 +1,483 @@
+[
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is played with a puck on ice?",
+    "choices": [
+      "Bandy",
+      "Ice hockey",
+      "Curling",
+      "Lacrosse"
+    ],
+    "correct": 2,
+    "explanation": "Ice hockey teams try to shoot a rubber puck into the opponent’s net.",
+    "reference_text": "International Ice Hockey Federation",
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue avec un palet sur la glace ?",
+        "choices": [
+          "Le bandy",
+          "Le hockey sur glace",
+          "Le curling",
+          "La crosse"
+        ],
+        "explanation": "Au hockey sur glace, on tente d’envoyer un palet en caoutchouc dans le filet adverse."
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلعب بقرص مطاطي على الجليد؟",
+        "choices": [
+          "البانديّ",
+          "الهوكي على الجليد",
+          "الكيرلنغ",
+          "اللاكروس"
+        ],
+        "explanation": "في هوكي الجليد، يحاول الفريقان تسديد القرص المطاطي في شباك الخصم."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many points is a try worth in rugby union?",
+    "choices": [
+      "5",
+      "4",
+      "7",
+      "3"
+    ],
+    "correct": 1,
+    "explanation": "A try is worth five points; a conversion adds two more.",
+    "reference_text": "World Rugby laws",
+    "translations": {
+      "fr": {
+        "question": "Combien de points vaut un essai au rugby à XV ?",
+        "choices": [
+          "5",
+          "4",
+          "7",
+          "3"
+        ],
+        "explanation": "Un essai vaut cinq points ; la transformation en rapporte deux de plus."
+      },
+      "ar": {
+        "question": "كم نقطة تُحتسب للمحاولة (Try) في الرجبي؟",
+        "choices": [
+          "5",
+          "4",
+          "7",
+          "3"
+        ],
+        "explanation": "تساوي المحاولة خمس نقاط، والتحويل يضيف نقطتين."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country invented the sport of judo?",
+    "choices": [
+      "Japan",
+      "China",
+      "Brazil",
+      "Korea"
+    ],
+    "correct": 1,
+    "explanation": "Jigoro Kano created judo in Japan, in 1882.",
+    "reference_text": "Kodokan Judo Institute",
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays le judo a-t-il été créé ?",
+        "choices": [
+          "Le Japon",
+          "La Chine",
+          "Le Brésil",
+          "La Corée"
+        ],
+        "explanation": "Jigoro Kano a créé le judo au Japon en 1882."
+      },
+      "ar": {
+        "question": "في أي دولة نشأت رياضة الجودو؟",
+        "choices": [
+          "اليابان",
+          "الصين",
+          "البرازيل",
+          "كوريا"
+        ],
+        "explanation": "أسّس جيغورو كانو الجودو في اليابان عام 1882."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a bat, a ball and wickets?",
+    "choices": [
+      "Hockey",
+      "Baseball",
+      "Softball",
+      "Cricket"
+    ],
+    "correct": 4,
+    "explanation": "Cricket is played with a bat, a hard ball and three stumps called wickets.",
+    "reference_text": "MCC Laws of Cricket",
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise une batte, une balle et des guichets ?",
+        "choices": [
+          "Le hockey",
+          "Le baseball",
+          "Le softball",
+          "Le cricket"
+        ],
+        "explanation": "Le cricket se joue avec une batte, une balle dure et trois piquets appelés guichets."
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم المضرب والكرة والأعمدة المسماة «ويكيت»؟",
+        "choices": [
+          "الهوكي",
+          "البيسبول",
+          "السوفتبول",
+          "الكريكت"
+        ],
+        "explanation": "تُلعب الكريكت بمضرب وكرة صلبة وثلاثة أعمدة تُسمّى ويكيت."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How long is a standard marathon?",
+    "choices": [
+      "30 km",
+      "42.195 km",
+      "50 km",
+      "21 km"
+    ],
+    "correct": 2,
+    "explanation": "The marathon distance is 42.195 km (26 miles 385 yards).",
+    "reference_text": "World Athletics marathon rules",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la longueur d’un marathon standard ?",
+        "choices": [
+          "30 km",
+          "42,195 km",
+          "50 km",
+          "21 km"
+        ],
+        "explanation": "La distance du marathon est de 42,195 km."
+      },
+      "ar": {
+        "question": "كم يبلغ طول سباق الماراثون القياسي؟",
+        "choices": [
+          "30 كم",
+          "42.195 كم",
+          "50 كم",
+          "21 كم"
+        ],
+        "explanation": "تبلغ مسافة الماراثون 42.195 كيلومترًا."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport is contested for the Ryder Cup?",
+    "choices": [
+      "Golf",
+      "Tennis",
+      "Cricket",
+      "Sailing"
+    ],
+    "correct": 1,
+    "explanation": "The Ryder Cup pits teams from Europe and the United States against each other in golf.",
+    "reference_text": "PGA of America, Ryder Cup",
+    "translations": {
+      "fr": {
+        "question": "Pour quelle compétition se dispute la Ryder Cup ?",
+        "choices": [
+          "Le golf",
+          "Le tennis",
+          "Le cricket",
+          "La voile"
+        ],
+        "explanation": "La Ryder Cup oppose des équipes européennes et américaines au golf."
+      },
+      "ar": {
+        "question": "ما الرياضة التي تُلعب من أجل كأس ريدر؟",
+        "choices": [
+          "الجولف",
+          "التنس",
+          "الكريكت",
+          "الإبحار"
+        ],
+        "explanation": "تجمع كأس ريدر فرقًا أوروبية وأمريكية في رياضة الجولف."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country has won the most Olympic medals in total in the Summer Games?",
+    "choices": [
+      "United States",
+      "Russia",
+      "Germany",
+      "China"
+    ],
+    "correct": 1,
+    "explanation": "The United States holds the all-time record for total Summer Olympic medals.",
+    "reference_text": "International Olympic Committee medal database",
+    "translations": {
+      "fr": {
+        "question": "Quel pays a remporté le plus de médailles olympiques au total aux Jeux d’été ?",
+        "choices": [
+          "Les États-Unis",
+          "La Russie",
+          "L’Allemagne",
+          "La Chine"
+        ],
+        "explanation": "Les États-Unis détiennent le record historique de médailles aux Jeux olympiques d’été."
+      },
+      "ar": {
+        "question": "أيّ دولة حصدت أكبر عدد إجمالي من الميداليات الأولمبية في دورات الألعاب الصيفية؟",
+        "choices": [
+          "الولايات المتحدة",
+          "روسيا",
+          "ألمانيا",
+          "الصين"
+        ],
+        "explanation": "تملك الولايات المتحدة الرقم القياسي التاريخي لمجموع ميداليات الألعاب الصيفية."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which sport is the “Stanley Cup” awarded?",
+    "choices": [
+      "American football",
+      "Ice hockey",
+      "Baseball",
+      "Basketball"
+    ],
+    "correct": 2,
+    "explanation": "The Stanley Cup is the championship trophy of the NHL.",
+    "reference_text": "National Hockey League",
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport décerne-t-on la « Coupe Stanley » ?",
+        "choices": [
+          "Le football américain",
+          "Le hockey sur glace",
+          "Le baseball",
+          "Le basket-ball"
+        ],
+        "explanation": "La Coupe Stanley est le trophée de champion de la LNH."
+      },
+      "ar": {
+        "question": "في أي رياضة تُمنح «كأس ستانلي»؟",
+        "choices": [
+          "كرة القدم الأمريكية",
+          "هوكي الجليد",
+          "البيسبول",
+          "كرة السلة"
+        ],
+        "explanation": "كأس ستانلي هو كأس البطولة في الدوري الأمريكي الوطني للهوكي."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How many players does a standard basketball team have on the court?",
+    "choices": [
+      "7",
+      "6",
+      "5",
+      "4"
+    ],
+    "correct": 3,
+    "explanation": "Each team has five players on court, and substitutes can enter at any stoppage.",
+    "reference_text": "FIBA basketball rules",
+    "translations": {
+      "fr": {
+        "question": "Combien de joueurs une équipe de basket-ball aligne-t-elle sur le terrain ?",
+        "choices": [
+          "7",
+          "6",
+          "5",
+          "4"
+        ],
+        "explanation": "Chaque équipe compte cinq joueurs sur le terrain, et les remplacements sont possibles à chaque arrêt de jeu."
+      },
+      "ar": {
+        "question": "كم عدد لاعبي فريق كرة السلة في الملعب؟",
+        "choices": [
+          "7",
+          "6",
+          "5",
+          "4"
+        ],
+        "explanation": "يلعب لكل فريق خمسة لاعبين في الملعب، ويمكن إجراء التبديلات عند توقف اللعب."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which tennis Grand Slam is played on clay courts?",
+    "choices": [
+      "Australian Open",
+      "US Open",
+      "Wimbledon",
+      "French Open"
+    ],
+    "correct": 4,
+    "explanation": "The French Open, at Roland-Garros, is the only Grand Slam played on clay.",
+    "reference_text": "ATP/WTA Grand Slam records",
+    "translations": {
+      "fr": {
+        "question": "Quel tournoi du Grand Chelem de tennis se joue sur terre battue ?",
+        "choices": [
+          "Open d’Australie",
+          "US Open",
+          "Wimbledon",
+          "Roland-Garros"
+        ],
+        "explanation": "Roland-Garros est le seul tournoi du Grand Chelem disputé sur terre battue."
+      },
+      "ar": {
+        "question": "أي بطولة من بطولات الغراند سلام في التنس تُلعب على الملاعب الترابية؟",
+        "choices": [
+          "بطولة أستراليا المفتوحة",
+          "بطولة الولايات المتحدة المفتوحة",
+          "ويمبلدون",
+          "رولان غاروس"
+        ],
+        "explanation": "رولان غاروس هي البطولة الوحيدة من الغراند سلام التي تُلعب على الملاعب الترابية."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the Tour de France’s leader’s jersey?",
+    "choices": [
+      "Yellow jersey",
+      "Polka-dot jersey",
+      "Green jersey",
+      "White jersey"
+    ],
+    "correct": 1,
+    "explanation": "The yellow jersey is worn by the overall leader of the race.",
+    "reference_text": "Amaury Sport Organisation, Tour de France",
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le maillot du leader au classement général du Tour de France ?",
+        "choices": [
+          "Le maillot jaune",
+          "Le maillot à pois",
+          "Le maillot vert",
+          "Le maillot blanc"
+        ],
+        "explanation": "Le maillot jaune est porté par le leader du classement général."
+      },
+      "ar": {
+        "question": "ما اسم القميص الذي يرتديه متصدر الترتيب العام في طواف فرنسا؟",
+        "choices": [
+          "القميص الأصفر",
+          "القميص المنقط",
+          "القميص الأخضر",
+          "القميص الأبيض"
+        ],
+        "explanation": "يرتدي القميص الأصفر المتصدر في الترتيب العام للسباق."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport has a “scrum” as one of its set plays?",
+    "choices": [
+      "Basketball",
+      "Rugby union",
+      "Water polo",
+      "Handball"
+    ],
+    "correct": 2,
+    "explanation": "A scrum restarts play after minor infringements and is a key feature of rugby.",
+    "reference_text": "World Rugby laws",
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport trouve-t-on une « mêlée » comme phase de jeu arrêtée ?",
+        "choices": [
+          "Le basket-ball",
+          "Le rugby à XV",
+          "Le water-polo",
+          "Le handball"
+        ],
+        "explanation": "La mêlée relance le jeu après certaines infractions mineures et fait partie des fondamentaux du rugby."
+      },
+      "ar": {
+        "question": "في أي رياضة يُعدّ «السكرام» (Scrum) إحدى الحالات الثابتة للعب؟",
+        "choices": [
+          "كرة السلة",
+          "الرجبي",
+          "كرة الماء",
+          "كرة اليد"
+        ],
+        "explanation": "يُعيد السكرام اللعب بعد مخالفات بسيطة، وهو من أبرز سمات الرجبي."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "In which sport would you hear the term “love” to describe zero?",
+    "choices": [
+      "Squash",
+      "Badminton",
+      "Golf",
+      "Tennis"
+    ],
+    "correct": 4,
+    "explanation": "In tennis, a score of zero is called love, probably from the French “l’oeuf” (egg).",
+    "reference_text": "ITF rules of tennis",
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport le mot « love » désigne-t-il le score zéro ?",
+        "choices": [
+          "Le squash",
+          "Le badminton",
+          "Le golf",
+          "Le tennis"
+        ],
+        "explanation": "Au tennis, le score zéro s’appelle « love », un terme dont l’origine est discutée."
+      },
+      "ar": {
+        "question": "في أي رياضة تُستخدم كلمة «لوف» (Love) للتعبير عن النتيجة صفر؟",
+        "choices": [
+          "الاسكواش",
+          "البادمنتون",
+          "الجولف",
+          "التنس"
+        ],
+        "explanation": "في التنس تُسمّى نتيجة صفر «لوف»، وأصل التسمية محل نقاش."
+      }
+    }
+  }
+]

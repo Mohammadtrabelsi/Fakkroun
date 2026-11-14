@@ -1,0 +1,596 @@
+[
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a pommel horse and rings?",
+    "choices": [
+      "Cycling",
+      "Gymnastics",
+      "Swimming",
+      "Boxing"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise un cheval d’arçons et des anneaux ?",
+        "choices": [
+          "Le cyclisme",
+          "La gymnastique",
+          "La natation",
+          "La boxe"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم حصان القفز والحلقات؟",
+        "choices": [
+          "ركوب الدراجات",
+          "الجمباز",
+          "السباحة",
+          "الملاكمة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is famous for the Wimbledon championships?",
+    "choices": [
+      "Football",
+      "Cricket",
+      "Tennis",
+      "Rugby"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est célèbre pour les championnats de Wimbledon ?",
+        "choices": [
+          "Le football",
+          "Le cricket",
+          "Le tennis",
+          "Le rugby"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تشتهر ببطولة ويمبلدون؟",
+        "choices": [
+          "كرة القدم",
+          "الكريكت",
+          "التنس",
+          "الرجبي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which football tournament is held every four years for national teams?",
+    "choices": [
+      "Copa Libertadores",
+      "FIFA World Cup",
+      "UEFA Champions League",
+      "AFC Asian Cup"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel tournoi de football réunit les équipes nationales tous les quatre ans ?",
+        "choices": [
+          "La Copa Libertadores",
+          "La Coupe du monde de la FIFA",
+          "La Ligue des champions de l’UEFA",
+          "La Coupe d’Asie de l’AFC"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بطولة لكرة القدم تُقام كل أربع سنوات للمنتخبات الوطنية؟",
+        "choices": [
+          "كوبا ليبرتادوريس",
+          "كأس العالم لكرة القدم (FIFA)",
+          "دوري أبطال أوروبا (UEFA)",
+          "كأس آسيا (AFC)"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which African football competition is held every two years for national teams?",
+    "choices": [
+      "Asian Cup",
+      "Gold Cup",
+      "Africa Cup of Nations",
+      "Copa America"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle compétition africaine de football réunit les sélections nationales tous les deux ans ?",
+        "choices": [
+          "La Coupe d’Asie",
+          "La Gold Cup",
+          "La Coupe d’Afrique des nations",
+          "La Copa America"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بطولة كرة قدم إفريقية تُقام كل سنتين للمنتخبات الوطنية؟",
+        "choices": [
+          "كأس آسيا",
+          "الكأس الذهبية",
+          "كأس أمم إفريقيا",
+          "كوبا أمريكا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a pad, a helmet and is played with a ball shaped like an oval?",
+    "choices": [
+      "Swimming",
+      "Golf",
+      "American football",
+      "Tennis"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise des protections, un casque et un ballon ovale ?",
+        "choices": [
+          "La natation",
+          "Le golf",
+          "Le football américain",
+          "Le tennis"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم الحماية والخوذة والكرة البيضاوية؟",
+        "choices": [
+          "السباحة",
+          "الجولف",
+          "كرة القدم الأمريكية",
+          "التنس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country hosted the 2012 Summer Olympic Games?",
+    "choices": [
+      "China",
+      "Brazil",
+      "Russia",
+      "United Kingdom"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a accueilli les Jeux olympiques d’été de 2012 ?",
+        "choices": [
+          "La Chine",
+          "Le Brésil",
+          "La Russie",
+          "Le Royaume-Uni"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة استضافت الألعاب الأولمبية الصيفية عام 2012؟",
+        "choices": [
+          "الصين",
+          "البرازيل",
+          "روسيا",
+          "المملكة المتحدة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is performed on a high bar, rings and beam?",
+    "choices": [
+      "Tennis",
+      "Basketball",
+      "Gymnastics",
+      "Hockey"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se pratique à la barre haute, aux anneaux et à la poutre ?",
+        "choices": [
+          "Le tennis",
+          "Le basket-ball",
+          "La gymnastique",
+          "Le hockey"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُمارس على العقلة والحلقات والعارضة؟",
+        "choices": [
+          "التنس",
+          "كرة السلة",
+          "الجمباز",
+          "الهوكي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian sports federation is responsible for organising football in Tunisia?",
+    "choices": [
+      "Tunisian Tourism Office",
+      "Tunisian Mining Company",
+      "Tunisian Textile Board",
+      "Tunisian Football Federation"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle fédération tunisienne organise le football en Tunisie ?",
+        "choices": [
+          "L’Office national du tourisme",
+          "La Compagnie minière tunisienne",
+          "L’Office du textile",
+          "La Fédération tunisienne de football"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هيئة تونسية تشرف على تنظيم كرة القدم في تونس؟",
+        "choices": [
+          "الديوان الوطني للسياحة",
+          "الشركة التونسية للمناجم",
+          "الديوان التونسي للنسيج",
+          "الجامعة التونسية لكرة القدم"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which sport is the term ‘goal’ used for the target that players must score into?",
+    "choices": [
+      "Golf",
+      "Archery",
+      "Swimming",
+      "Football"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport le « but » est-il la cible que les joueurs doivent atteindre ?",
+        "choices": [
+          "Le golf",
+          "Le tir à l’arc",
+          "La natation",
+          "Le football"
+        ]
+      },
+      "ar": {
+        "question": "في أي رياضة يُستخدم مصطلح «الهدف» للمرمى الذي يجب إدخال الكرة فيه؟",
+        "choices": [
+          "الجولف",
+          "الرماية بالقوس",
+          "السباحة",
+          "كرة القدم"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the length of a standard tennis court (singles) in metres?",
+    "choices": [
+      "23.77",
+      "30",
+      "18",
+      "40"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la longueur d’un court de tennis standard en simple, en mètres ?",
+        "choices": [
+          "23,77",
+          "30",
+          "18",
+          "40"
+        ]
+      },
+      "ar": {
+        "question": "ما طول ملعب التنس القياسي للفردي بالأمتار؟",
+        "choices": [
+          "23.77",
+          "30",
+          "18",
+          "40"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sport uses a shuttlecock on a court divided by a net?",
+    "choices": [
+      "Table tennis",
+      "Badminton",
+      "Squash",
+      "Volleyball"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise un volant sur un terrain séparé par un filet ?",
+        "choices": [
+          "Le tennis de table",
+          "Le badminton",
+          "Le squash",
+          "Le volley-ball"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم الريشة في ملعب مقسم بشبكة؟",
+        "choices": [
+          "تنس الطاولة",
+          "البادمنتون",
+          "الاسكواش",
+          "الكرة الطائرة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which team sport is played on ice with a stick and a rubber disc?",
+    "choices": [
+      "Bobsleigh",
+      "Ice hockey",
+      "Curling",
+      "Skiing"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel sport d’équipe se joue sur glace avec une crosse et un disque en caoutchouc ?",
+        "choices": [
+          "Le bobsleigh",
+          "Le hockey sur glace",
+          "Le curling",
+          "Le ski"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة جماعية تُلعب على الجليد بعصا وقرص مطاطي؟",
+        "choices": [
+          "التزحلق الجماعي (البوبسلي)",
+          "هوكي الجليد",
+          "الكيرلنغ",
+          "التزلج"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport uses a wooden bat and a ball on a diamond-shaped infield?",
+    "choices": [
+      "Baseball",
+      "Hockey",
+      "Golf",
+      "Cricket"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise une batte en bois et une balle sur un terrain en forme de losange ?",
+        "choices": [
+          "Le baseball",
+          "Le hockey",
+          "Le golf",
+          "Le cricket"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم المضرب الخشبي والكرة على ملعب بشكل معين؟",
+        "choices": [
+          "البيسبول",
+          "الهوكي",
+          "الجولف",
+          "الكريكت"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is practised in a pool with water polo balls and goals?",
+    "choices": [
+      "Water polo",
+      "Tennis",
+      "Cricket",
+      "Golf"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se pratique dans une piscine avec un ballon et des buts ?",
+        "choices": [
+          "Le water-polo",
+          "Le tennis",
+          "Le cricket",
+          "Le golf"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُمارس في حوض سباحة بكرة وأهداف؟",
+        "choices": [
+          "كرة الماء",
+          "التنس",
+          "الكريكت",
+          "الجولف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which sport would you find a team called the ‘All Blacks’?",
+    "choices": [
+      "Rugby union",
+      "Ice hockey",
+      "Cricket",
+      "Basketball"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport trouve-t-on une équipe appelée les « All Blacks » ?",
+        "choices": [
+          "Le rugby à XV",
+          "Le hockey sur glace",
+          "Le cricket",
+          "Le basket-ball"
+        ]
+      },
+      "ar": {
+        "question": "في أي رياضة نجد فريقًا يُعرف بـ«الكل بلاكس»؟",
+        "choices": [
+          "الرجبي",
+          "هوكي الجليد",
+          "الكريكت",
+          "كرة السلة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sport is combined in the modern pentathlon event?",
+    "choices": [
+      "Surfing, skiing, sailing, judo and archery",
+      "Fencing, swimming, riding, shooting and running",
+      "Golf, tennis, rowing, climbing and boxing",
+      "Chess, darts, billiards, bowling and fishing"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quels sports sont réunis dans le pentathlon moderne ?",
+        "choices": [
+          "Le surf, le ski, la voile, le judo et le tir à l’arc",
+          "L’escrime, la natation, l’équitation, le tir et la course",
+          "Le golf, le tennis, l’aviron, l’escalade et la boxe",
+          "Les échecs, les fléchettes, le billard, le bowling et la pêche"
+        ]
+      },
+      "ar": {
+        "question": "ما الرياضات التي تجمعها مسابقة الخماسي الحديث؟",
+        "choices": [
+          "ركوب الأمواج والتزلج والإبحار والجودو والرماية بالقوس",
+          "المبارزة والسباحة وركوب الخيل والرماية والجري",
+          "الجولف والتنس والتجديف وتسلق الجبال والملاكمة",
+          "الشطرنج والسهام والبلياردو والبولينغ والصيد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which cricket format has 20 overs per side?",
+    "choices": [
+      "Tennis",
+      "Golf",
+      "Twenty20",
+      "Test cricket"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel format de cricket compte 20 overs par équipe ?",
+        "choices": [
+          "Le tennis",
+          "Le golf",
+          "Le Twenty20",
+          "Le cricket Test"
+        ]
+      },
+      "ar": {
+        "question": "ما صيغة الكريكت التي تضم 20 أوفر لكل فريق؟",
+        "choices": [
+          "التنس",
+          "الجولف",
+          "تويني 20",
+          "كريكت الاختبار"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which swimmer holds the record of most Olympic gold medals in a single Games?",
+    "choices": [
+      "Ryan Lochte",
+      "Caeleb Dressel",
+      "Mark Spitz",
+      "Michael Phelps"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel nageur détient le record de médailles d’or olympiques lors d’un seul ensemble de Jeux ?",
+        "choices": [
+          "Ryan Lochte",
+          "Caeleb Dressel",
+          "Mark Spitz",
+          "Michael Phelps"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سباح يحمل الرقم القياسي في عدد الميداليات الذهبية الأولمبية في دورة واحدة؟",
+        "choices": [
+          "ريان لوشت",
+          "كاليب دريسل",
+          "مارك سبيتز",
+          "مايكل فيلبس"
+        ]
+      }
+    }
+  }
+]

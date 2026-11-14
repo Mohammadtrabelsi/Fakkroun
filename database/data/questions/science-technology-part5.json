@@ -1,0 +1,682 @@
+[
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the freezing point of water in Kelvin at standard pressure?",
+    "choices": [
+      "273 K",
+      "100 K",
+      "373 K",
+      "0 K"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le point de congélation de l’eau en kelvins à pression normale ?",
+        "choices": [
+          "273 K",
+          "100 K",
+          "373 K",
+          "0 K"
+        ]
+      },
+      "ar": {
+        "question": "ما درجة تجمد الماء بالكلفن عند الضغط العادي؟",
+        "choices": [
+          "273 ك",
+          "100 ك",
+          "373 ك",
+          "0 ك"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which planet is known for its prominent rings?",
+    "choices": [
+      "Saturn",
+      "Venus",
+      "Mercury",
+      "Mars"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle planète est connue pour ses anneaux bien visibles ?",
+        "choices": [
+          "Saturne",
+          "Vénus",
+          "Mercure",
+          "Mars"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كوكب يُعرف بحلقاته البارزة؟",
+        "choices": [
+          "زحل",
+          "الزهرة",
+          "عطارد",
+          "المريخ"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which organ pumps blood to the lungs?",
+    "choices": [
+      "Right side of the heart",
+      "Liver",
+      "Kidney",
+      "Stomach"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel organe envoie le sang vers les poumons ?",
+        "choices": [
+          "La partie droite du cœur",
+          "Le foie",
+          "Le rein",
+          "L’estomac"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عضو يضخ الدم إلى الرئتين؟",
+        "choices": [
+          "الجهة اليمنى من القلب",
+          "الكبد",
+          "الكلية",
+          "المعدة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the basic unit of an electrical current?",
+    "choices": [
+      "Ampere",
+      "Ohm",
+      "Volt",
+      "Watt"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’unité de base du courant électrique ?",
+        "choices": [
+          "L’ampère",
+          "L’ohm",
+          "Le volt",
+          "Le watt"
+        ]
+      },
+      "ar": {
+        "question": "ما وحدة قياس شدة التيار الكهربائي؟",
+        "choices": [
+          "الأمبير",
+          "الأوم",
+          "الفولت",
+          "الواط"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which vitamin helps the blood to clot?",
+    "choices": [
+      "Vitamin E",
+      "Vitamin C",
+      "Vitamin K",
+      "Vitamin A"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle vitamine aide le sang à coaguler ?",
+        "choices": [
+          "La vitamine E",
+          "La vitamine C",
+          "La vitamine K",
+          "La vitamine A"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فيتامين يساعد الدم على التخثر؟",
+        "choices": [
+          "فيتامين E",
+          "فيتامين C",
+          "فيتامين K",
+          "فيتامين A"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which scientist proposed the idea of natural selection together with Alfred Russel Wallace?",
+    "choices": [
+      "Gregor Mendel",
+      "Carl Linnaeus",
+      "Charles Darwin",
+      "Jean-Baptiste Lamarck"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel savant a proposé la sélection naturelle avec Alfred Russel Wallace ?",
+        "choices": [
+          "Gregor Mendel",
+          "Carl von Linné",
+          "Charles Darwin",
+          "Jean-Baptiste de Lamarck"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عالم اقترح الانتخاب الطبيعي مع ألفريد راسل والاس؟",
+        "choices": [
+          "غريغور مندل",
+          "كارل لينيوس",
+          "تشارلز داروين",
+          "جان بابتيست لامارك"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the speed of an object in free fall near Earth’s surface, ignoring air resistance, after one second?",
+    "choices": [
+      "About 9.8 m/s",
+      "About 98 m/s",
+      "About 1 m/s",
+      "About 0.98 m/s"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la vitesse d’un objet en chute libre près de la surface terrestre, sans résistance de l’air, après une seconde ?",
+        "choices": [
+          "Environ 9,8 m/s",
+          "Environ 98 m/s",
+          "Environ 1 m/s",
+          "Environ 0,98 m/s"
+        ]
+      },
+      "ar": {
+        "question": "ما سرعة جسم يسقط سقوطًا حرًا قرب سطح الأرض بعد ثانية واحدة، متجاهلين مقاومة الهواء؟",
+        "choices": [
+          "نحو 9.8 م/ث",
+          "نحو 98 م/ث",
+          "نحو 1 م/ث",
+          "نحو 0.98 م/ث"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which element has the atomic number 1?",
+    "choices": [
+      "Carbon",
+      "Helium",
+      "Lithium",
+      "Hydrogen"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel élément a pour numéro atomique 1 ?",
+        "choices": [
+          "Le carbone",
+          "L’hélium",
+          "Le lithium",
+          "L’hydrogène"
+        ]
+      },
+      "ar": {
+        "question": "ما العنصر الذي عدده الذري 1؟",
+        "choices": [
+          "الكربون",
+          "الهيليوم",
+          "الليثيوم",
+          "الهيدروجين"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which instrument is used to observe distant stars and planets?",
+    "choices": [
+      "Telescope",
+      "Barometer",
+      "Microscope",
+      "Thermometer"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel instrument sert à observer les étoiles et planètes lointaines ?",
+        "choices": [
+          "Le télescope",
+          "Le baromètre",
+          "Le microscope",
+          "Le thermomètre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة تُستخدم لرصد النجوم والكواكب البعيدة؟",
+        "choices": [
+          "التلسكوب",
+          "مقياس الضغط الجوي",
+          "المجهر",
+          "مقياس الحرارة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which organism is the main producer in most food chains?",
+    "choices": [
+      "Bacteria",
+      "Mushrooms",
+      "Lions",
+      "Plants"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel organisme est le principal producteur de la plupart des chaînes alimentaires ?",
+        "choices": [
+          "Les bactéries",
+          "Les champignons",
+          "Les lions",
+          "Les plantes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن هو المنتج الرئيسي في معظم السلاسل الغذائية؟",
+        "choices": [
+          "البكتيريا",
+          "الفطريات",
+          "الأسود",
+          "النباتات"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the force that opposes motion between two surfaces in contact?",
+    "choices": [
+      "Gravity",
+      "Friction",
+      "Tension",
+      "Magnetism"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la force qui s’oppose au mouvement entre deux surfaces en contact ?",
+        "choices": [
+          "La gravitation",
+          "Le frottement",
+          "La tension",
+          "Le magnétisme"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم القوة التي تقاوم الحركة بين سطحين متلامسين؟",
+        "choices": [
+          "الجاذبية",
+          "الاحتكاك",
+          "الشد",
+          "المغناطيسية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which type of bond holds water molecules together through partial charges?",
+    "choices": [
+      "Metallic bond",
+      "Hydrogen bond",
+      "Covalent bond only",
+      "Ionic bond"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel type de liaison relie les molécules d’eau grâce à leurs charges partielles ?",
+        "choices": [
+          "La liaison métallique",
+          "La liaison hydrogène",
+          "La liaison covalente uniquement",
+          "La liaison ionique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الروابط يربط جزيئات الماء معًا بفضل الشحنات الجزئية؟",
+        "choices": [
+          "الرابطة الفلزية",
+          "الرابطة الهيدروجينية",
+          "الرابطة التساهمية فقط",
+          "الرابطة الأيونية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sense organ is responsible for hearing?",
+    "choices": [
+      "Eye",
+      "Nose",
+      "Tongue",
+      "Ear"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel organe des sens est responsable de l’ouïe ?",
+        "choices": [
+          "L’œil",
+          "Le nez",
+          "La langue",
+          "L’oreille"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عضو حسّي مسؤول عن السمع؟",
+        "choices": [
+          "العين",
+          "الأنف",
+          "اللسان",
+          "الأذن"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the study of the universe as a whole called?",
+    "choices": [
+      "Meteorology",
+      "Cosmology",
+      "Biology",
+      "Geology"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’étude de l’univers dans son ensemble ?",
+        "choices": [
+          "La météorologie",
+          "La cosmologie",
+          "La biologie",
+          "La géologie"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم علم دراسة الكون بأكمله؟",
+        "choices": [
+          "علم الأرصاد الجوية",
+          "علم الكونيات",
+          "علم الأحياء",
+          "علم الجيولوجيا"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the acronym GPS stand for?",
+    "choices": [
+      "Ground Planning Service",
+      "Global Positioning System",
+      "General Power Supply",
+      "Geographic Physical Survey"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Que signifie l’acronyme GPS ?",
+        "choices": [
+          "Ground Planning Service",
+          "Global Positioning System (système de positionnement mondial)",
+          "General Power Supply",
+          "Geographic Physical Survey"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار GPS؟",
+        "choices": [
+          "خدمة تخطيط الأرض",
+          "نظام تحديد المواقع العالمي",
+          "مزود الطاقة العام",
+          "مسح جغرافي فيزيائي"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is a mammal that can fly?",
+    "choices": [
+      "Eagle",
+      "Bat",
+      "Penguin",
+      "Ostrich"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal est un mammifère capable de voler ?",
+        "choices": [
+          "L’aigle",
+          "La chauve-souris",
+          "Le manchot",
+          "L’autruche"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان من الثدييات يستطيع الطيران؟",
+        "choices": [
+          "النسر",
+          "الخفاش",
+          "البطريق",
+          "النعامة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which chemical is commonly known as ‘laughing gas’?",
+    "choices": [
+      "Nitrous oxide",
+      "Carbon monoxide",
+      "Methane",
+      "Ozone"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel produit chimique est connu sous le nom de « gaz hilarant » ?",
+        "choices": [
+          "Le protoxyde d’azote",
+          "Le monoxyde de carbone",
+          "Le méthane",
+          "L’ozone"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مادة كيميائية تُعرف بـ«غاز الضحك»؟",
+        "choices": [
+          "أكسيد النيتروز",
+          "أول أكسيد الكربون",
+          "الميثان",
+          "الأوزون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the process in which cells divide to form two identical daughter cells?",
+    "choices": [
+      "Mitosis",
+      "Osmosis",
+      "Meiosis",
+      "Fermentation"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le processus de division cellulaire qui produit deux cellules filles identiques ?",
+        "choices": [
+          "La mitose",
+          "L’osmose",
+          "La méiose",
+          "La fermentation"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم عملية انقسام الخلية التي تنتج خليتين متماثلتين؟",
+        "choices": [
+          "الانقسام الفتيلي (الميتوز)",
+          "التناضح",
+          "الانقسام الاختزالي (الميوز)",
+          "التخمر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call the force that pulls objects towards the centre of the Earth?",
+    "choices": [
+      "Friction",
+      "Pressure",
+      "Magnetism",
+      "Gravity"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on la force qui attire les objets vers le centre de la Terre ?",
+        "choices": [
+          "Le frottement",
+          "La pression",
+          "Le magnétisme",
+          "La gravité"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم القوة التي تجذب الأجسام نحو مركز الأرض؟",
+        "choices": [
+          "الاحتكاك",
+          "الضغط",
+          "المغناطيسية",
+          "الجاذبية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which part of the plant absorbs water and minerals from the soil?",
+    "choices": [
+      "Seeds",
+      "Roots",
+      "Leaves",
+      "Flowers"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle partie de la plante absorbe l’eau et les minéraux du sol ?",
+        "choices": [
+          "Les graines",
+          "Les racines",
+          "Les feuilles",
+          "Les fleurs"
+        ]
+      },
+      "ar": {
+        "question": "أيّ جزء من النبات يمتص الماء والمعادن من التربة؟",
+        "choices": [
+          "البذور",
+          "الجذور",
+          "الأوراق",
+          "الأزهار"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  }
+]

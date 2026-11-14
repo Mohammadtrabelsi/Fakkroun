@@ -1,0 +1,662 @@
+[
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which colour is the sky on a clear day?",
+    "choices": [
+      "Green",
+      "Yellow",
+      "Red",
+      "Blue"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "De quelle couleur est le ciel par temps clair ?",
+        "choices": [
+          "Vert",
+          "Jaune",
+          "Rouge",
+          "Bleu"
+        ]
+      },
+      "ar": {
+        "question": "ما لون السماء في يوم صافٍ؟",
+        "choices": [
+          "أخضر",
+          "أصفر",
+          "أحمر",
+          "أزرق"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many legs does a spider have?",
+    "choices": [
+      "Eight",
+      "Four",
+      "Ten",
+      "Six"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Combien de pattes a une araignée ?",
+        "choices": [
+          "Huit",
+          "Quatre",
+          "Dix",
+          "Six"
+        ]
+      },
+      "ar": {
+        "question": "كم عدد أرجل العنكبوت؟",
+        "choices": [
+          "ثمانية",
+          "أربعة",
+          "عشرة",
+          "ستة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the opposite of ‘day’?",
+    "choices": [
+      "Morning",
+      "Night",
+      "Dawn",
+      "Noon"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le contraire de « jour » ?",
+        "choices": [
+          "Le matin",
+          "La nuit",
+          "L’aube",
+          "Midi"
+        ]
+      },
+      "ar": {
+        "question": "ما عكس كلمة «نهار»؟",
+        "choices": [
+          "صباح",
+          "ليل",
+          "فجر",
+          "ظهر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is the fastest land animal?",
+    "choices": [
+      "Horse",
+      "Antelope",
+      "Cheetah",
+      "Lion"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’animal terrestre le plus rapide ?",
+        "choices": [
+          "Le cheval",
+          "L’antilope",
+          "Le guépard",
+          "Le lion"
+        ]
+      },
+      "ar": {
+        "question": "ما أسرع حيوان بري؟",
+        "choices": [
+          "الحصان",
+          "الظبي",
+          "الفهد",
+          "الأسد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who wrote the novel “War and Peace”?",
+    "choices": [
+      "Leo Tolstoy",
+      "Ivan Turgenev",
+      "Anton Chekhov",
+      "Fyodor Dostoevsky"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qui a écrit le roman « Guerre et Paix » ?",
+        "choices": [
+          "Léon Tolstoï",
+          "Ivan Tourgueniev",
+          "Anton Tchekhov",
+          "Fiodor Dostoïevski"
+        ]
+      },
+      "ar": {
+        "question": "من كتب رواية «الحرب والسلام»؟",
+        "choices": [
+          "ليو تولستوي",
+          "إيفان تورغينيف",
+          "أنطون تشيخوف",
+          "فيودور دوستويفسكي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest animal in the world by mass that lives on land?",
+    "choices": [
+      "Hippo",
+      "Giraffe",
+      "Rhinoceros",
+      "African elephant"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus lourd animal terrestre du monde ?",
+        "choices": [
+          "L’hippopotame",
+          "La girafe",
+          "Le rhinocéros",
+          "L’éléphant d’Afrique"
+        ]
+      },
+      "ar": {
+        "question": "ما أثقل حيوان بري في العالم؟",
+        "choices": [
+          "فرس النهر",
+          "الزرافة",
+          "وحيد القرن",
+          "الفيل الأفريقي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which musical symbol indicates a note’s duration is halved?",
+    "choices": [
+      "Quaver",
+      "Forte",
+      "Fermata",
+      "Crescendo"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel symbole musical indique qu’une durée est divisée par deux ?",
+        "choices": [
+          "La croche",
+          "Le forte",
+          "Le point d’orgue",
+          "Le crescendo"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رمز موسيقي يدل على تقسيم مدة النغمة إلى النصف؟",
+        "choices": [
+          "الثمنية",
+          "الفورتي",
+          "الفيرماتا",
+          "الكريشندو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do bees produce?",
+    "choices": [
+      "Wool",
+      "Silk",
+      "Milk",
+      "Honey"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Que produisent les abeilles ?",
+        "choices": [
+          "De la laine",
+          "De la soie",
+          "Du lait",
+          "Du miel"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تنتج النحل؟",
+        "choices": [
+          "الصوف",
+          "الحرير",
+          "الحليب",
+          "العسل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the most spoken language in the world by total speakers?",
+    "choices": [
+      "English",
+      "Mandarin",
+      "Hindi",
+      "Spanish"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la langue la plus parlée au monde au total ?",
+        "choices": [
+          "L’anglais",
+          "Le mandarin",
+          "L’hindi",
+          "L’espagnol"
+        ]
+      },
+      "ar": {
+        "question": "ما أكثر اللغات انتشارًا في العالم بإجمالي المتحدثين؟",
+        "choices": [
+          "الإنجليزية",
+          "الصينية الماندرين",
+          "الهندية",
+          "الإسبانية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian poet wrote the famous poem “The Will to Live”?",
+    "choices": [
+      "Mahmoud Darwish",
+      "Nizar Qabbani",
+      "Ahmed Shawqi",
+      "Abu al-Qasim al-Shabbi"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel poète tunisien a écrit le célèbre poème « La Volonté de vivre » ?",
+        "choices": [
+          "Mahmoud Darwich",
+          "Nizar Qabbani",
+          "Ahmed Chawqi",
+          "Abou al-Qasim Echebbi"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شاعر تونسي كتب القصيدة الشهيرة «إرادة الحياة»؟",
+        "choices": [
+          "محمود درويش",
+          "نزار قباني",
+          "أحمد شوقي",
+          "أبو القاسم الشابي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the smallest unit of a chemical element?",
+    "choices": [
+      "Cell",
+      "Crystal",
+      "Atom",
+      "Molecule"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus petite unité d’un élément chimique ?",
+        "choices": [
+          "La cellule",
+          "Le cristal",
+          "L’atome",
+          "La molécule"
+        ]
+      },
+      "ar": {
+        "question": "ما أصغر وحدة من العنصر الكيميائي؟",
+        "choices": [
+          "الخلية",
+          "البلورة",
+          "الذرة",
+          "الجزيء"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Who painted “The Persistence of Memory”, featuring melting clocks?",
+    "choices": [
+      "Henri Matisse",
+      "Pablo Picasso",
+      "Claude Monet",
+      "Salvador Dalí"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qui a peint « La Persistance de la mémoire », avec ses montres molles ?",
+        "choices": [
+          "Henri Matisse",
+          "Pablo Picasso",
+          "Claude Monet",
+          "Salvador Dalí"
+        ]
+      },
+      "ar": {
+        "question": "من رسم لوحة «إصرار الذاكرة» ذات الساعات الذائبة؟",
+        "choices": [
+          "هنري ماتيس",
+          "بابلو بيكاسو",
+          "كلود مونيه",
+          "سلفادور دالي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which metal is liquid at room temperature?",
+    "choices": [
+      "Mercury",
+      "Gold",
+      "Iron",
+      "Copper"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel métal est liquide à température ambiante ?",
+        "choices": [
+          "Le mercure",
+          "L’or",
+          "Le fer",
+          "Le cuivre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فلز يكون سائلًا في درجة حرارة الغرفة؟",
+        "choices": [
+          "الزئبق",
+          "الذهب",
+          "الحديد",
+          "النحاس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How many strings does a standard violin have?",
+    "choices": [
+      "Six",
+      "Four",
+      "Five",
+      "Three"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Combien de cordes compte un violon standard ?",
+        "choices": [
+          "Six",
+          "Quatre",
+          "Cinq",
+          "Trois"
+        ]
+      },
+      "ar": {
+        "question": "كم وترًا في الكمان القياسي؟",
+        "choices": [
+          "ستة",
+          "أربعة",
+          "خمسة",
+          "ثلاثة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country is home to the ancient city of Timgad?",
+    "choices": [
+      "Algeria",
+      "Libya",
+      "Morocco",
+      "Egypt"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve l’ancienne cité de Timgad ?",
+        "choices": [
+          "L’Algérie",
+          "La Libye",
+          "Le Maroc",
+          "L’Égypte"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة تقع مدينة تيمقاد الأثرية؟",
+        "choices": [
+          "الجزائر",
+          "ليبيا",
+          "المغرب",
+          "مصر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many days are in a week?",
+    "choices": [
+      "Six",
+      "Seven",
+      "Eight",
+      "Five"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Combien de jours compte une semaine ?",
+        "choices": [
+          "Six",
+          "Sept",
+          "Huit",
+          "Cinq"
+        ]
+      },
+      "ar": {
+        "question": "كم يومًا في الأسبوع؟",
+        "choices": [
+          "ستة",
+          "سبعة",
+          "ثمانية",
+          "خمسة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous scientist developed the theory of general relativity?",
+    "choices": [
+      "Albert Einstein",
+      "Galileo Galilei",
+      "Marie Curie",
+      "Isaac Newton"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel savant célèbre a développé la théorie de la relativité générale ?",
+        "choices": [
+          "Albert Einstein",
+          "Galilée",
+          "Marie Curie",
+          "Isaac Newton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عالم شهير طوّر نظرية النسبية العامة؟",
+        "choices": [
+          "ألبرت أينشتاين",
+          "غاليليو",
+          "ماري كوري",
+          "إسحاق نيوتن"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which festival is known as the festival of colours in India?",
+    "choices": [
+      "Diwali",
+      "Pongal",
+      "Onam",
+      "Holi"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle fête est appelée la fête des couleurs en Inde ?",
+        "choices": [
+          "Diwali",
+          "Pongal",
+          "Onam",
+          "Holi"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مهرجان يُعرف بمهرجان الألوان في الهند؟",
+        "choices": [
+          "ديوالي",
+          "بونغال",
+          "أونام",
+          "هولي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which vegetable is orange and grows underground?",
+    "choices": [
+      "Cucumber",
+      "Lettuce",
+      "Pepper",
+      "Carrot"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel légume est orange et pousse sous terre ?",
+        "choices": [
+          "Le concombre",
+          "La laitue",
+          "Le poivron",
+          "La carotte"
+        ]
+      },
+      "ar": {
+        "question": "أيّ خضار برتقالي اللون وينمو تحت الأرض؟",
+        "choices": [
+          "الخيار",
+          "الخس",
+          "الفلفل",
+          "الجزر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the longest bone in the human arm?",
+    "choices": [
+      "Clavicle",
+      "Radius",
+      "Ulna",
+      "Humerus"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’os le plus long du bras humain ?",
+        "choices": [
+          "La clavicule",
+          "Le radius",
+          "Le cubitus",
+          "L’humérus"
+        ]
+      },
+      "ar": {
+        "question": "ما أطول عظمة في ذراع الإنسان؟",
+        "choices": [
+          "الترقوة",
+          "الكعبرة",
+          "الزند",
+          "عظم العضد"
+        ]
+      }
+    }
+  }
+]

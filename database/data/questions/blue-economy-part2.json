@@ -1,0 +1,668 @@
+[
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea is the saltiest large body of water in the world?",
+    "choices": [
+      "Baltic Sea",
+      "Red Sea",
+      "Dead Sea",
+      "Caspian Sea"
+    ],
+    "correct": 3,
+    "explanation": "The Dead Sea is so salty that people float easily in it.",
+    "reference_text": "USGS, Dead Sea salinity",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la mer la plus salée du monde ?",
+        "choices": [
+          "La mer Baltique",
+          "La mer Rouge",
+          "La mer Morte",
+          "La mer Caspienne"
+        ],
+        "explanation": "La mer Morte est si salée que l’on y flotte facilement."
+      },
+      "ar": {
+        "question": "ما البحر الأكثر ملوحة في العالم؟",
+        "choices": [
+          "بحر البلطيق",
+          "البحر الأحمر",
+          "البحر الميت",
+          "بحر قزوين"
+        ],
+        "explanation": "البحر الميت شديد الملوحة إلى درجة أن السباحين يطفون فوق سطحه بسهولة."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main cause of coral bleaching?",
+    "choices": [
+      "Rising sea temperatures",
+      "Too much night-time sunlight",
+      "Excess fish",
+      "Cold currents"
+    ],
+    "correct": 1,
+    "explanation": "Heat stress makes corals expel the algae that give them colour and food.",
+    "reference_text": "NOAA Coral Reef Watch",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale cause du blanchissement des coraux ?",
+        "choices": [
+          "La hausse de la température de la mer",
+          "Trop de lumière la nuit",
+          "Un excès de poissons",
+          "Les courants froids"
+        ],
+        "explanation": "Le stress thermique pousse les coraux à expulser les algues qui leur donnent couleur et nourriture."
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لابيضاض المرجان؟",
+        "choices": [
+          "ارتفاع درجة حرارة البحر",
+          "الإضاءة الليلية الزائدة",
+          "الوفرة السمكية",
+          "التيارات الباردة"
+        ],
+        "explanation": "يدفع الإجهاد الحراري المرجان إلى طرد الطحالب التي تمنحه لونه وغذاءه."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is “overfishing”?",
+    "choices": [
+      "Fishing in rivers",
+      "Fishing only at night",
+      "Catching fish faster than they can reproduce",
+      "Fishing with nets"
+    ],
+    "correct": 3,
+    "explanation": "Overfishing depletes fish populations and damages marine ecosystems.",
+    "reference_text": "FAO State of World Fisheries and Aquaculture",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « surpêche » ?",
+        "choices": [
+          "Pêcher dans les rivières",
+          "Pêcher uniquement la nuit",
+          "Capturer les poissons plus vite qu’ils ne peuvent se reproduire",
+          "Pêcher avec des filets"
+        ],
+        "explanation": "La surpêche épuise les populations de poissons et abîme les écosystèmes marins."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الصيد الجائر»؟",
+        "choices": [
+          "الصيد في الأنهار",
+          "الصيد ليلًا فقط",
+          "صيد الأسماك أسرع من قدرتها على التكاثر",
+          "الصيد بالشباك"
+        ],
+        "explanation": "يستنزف الصيد الجائر أعداد الأسماك ويضر بالنظم البيئية البحرية."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the world’s largest coral reef system?",
+    "choices": [
+      "Great Barrier Reef",
+      "Red Sea Reef",
+      "Florida Reef",
+      "Belize Barrier Reef"
+    ],
+    "correct": 1,
+    "explanation": "The Great Barrier Reef off Australia is the largest reef system on Earth.",
+    "reference_text": "UNESCO, Great Barrier Reef",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand récif corallien du monde ?",
+        "choices": [
+          "La Grande Barrière de corail",
+          "Le récif de la mer Rouge",
+          "Le récif de Floride",
+          "Le récif barrière du Belize"
+        ],
+        "explanation": "La Grande Barrière de corail, au large de l’Australie, est le plus grand système récifal du monde."
+      },
+      "ar": {
+        "question": "ما أكبر نظام للشعاب المرجانية في العالم؟",
+        "choices": [
+          "الحاجز المرجاني العظيم",
+          "شعاب البحر الأحمر",
+          "شعاب فلوريدا",
+          "الحاجز المرجاني في بليز"
+        ],
+        "explanation": "الحاجز المرجاني العظيم قبالة أستراليا هو أكبر نظام للشعاب على الأرض."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is seaweed farming mainly used for?",
+    "choices": [
+      "Producing electricity only",
+      "Building ships",
+      "Making glass",
+      "Food, fertiliser and other products"
+    ],
+    "correct": 4,
+    "explanation": "Farmed seaweed is used for food, fertiliser, cosmetics and bioplastics.",
+    "reference_text": "FAO seaweed farming report",
+    "translations": {
+      "fr": {
+        "question": "À quoi sert principalement la culture des algues marines ?",
+        "choices": [
+          "La seule production d’électricité",
+          "La construction de navires",
+          "La fabrication du verre",
+          "L’alimentation, les engrais et d’autres produits"
+        ],
+        "explanation": "Les algues cultivées servent à l’alimentation, aux engrais, aux cosmétiques et aux bioplastiques."
+      },
+      "ar": {
+        "question": "ما الاستخدام الرئيسي لزراعة الطحالب البحرية؟",
+        "choices": [
+          "إنتاج الكهرباء فقط",
+          "بناء السفن",
+          "صناعة الزجاج",
+          "الغذاء والأسمدة ومنتجات أخرى"
+        ],
+        "explanation": "تُستخدم الطحالب المزروعة في الغذاء والأسمدة ومستحضرات التجميل والبلاستيك الحيوي."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an “offshore wind farm”?",
+    "choices": [
+      "Turbines installed at sea",
+      "Turbines installed in deserts",
+      "Hydroelectric dams on rivers",
+      "Solar panels fixed on boats"
+    ],
+    "correct": 1,
+    "explanation": "Offshore wind farms take advantage of stronger and steadier winds over the sea.",
+    "reference_text": "IEA offshore wind outlook",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un parc éolien en mer (offshore) ?",
+        "choices": [
+          "Des éoliennes installées en mer",
+          "Des éoliennes installées dans les déserts",
+          "Des barrages hydroélectriques sur les fleuves",
+          "Des panneaux solaires fixés sur des bateaux"
+        ],
+        "explanation": "Les parcs en mer profitent de vents plus forts et plus réguliers."
+      },
+      "ar": {
+        "question": "ما هي مزرعة الرياح البحرية (Offshore wind farm)؟",
+        "choices": [
+          "توربينات تُركَّب في البحر",
+          "توربينات تُركَّب في الصحراء",
+          "سدود كهرومائية على الأنهار",
+          "ألواح شمسية تُثبَّت على القوارب"
+        ],
+        "explanation": "تستفيد المزارع البحرية من رياح أقوى وأكثر انتظامًا فوق البحر."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What causes ocean tides?",
+    "choices": [
+      "The gravitational pull of the Moon and Sun",
+      "Wind-driven waves",
+      "Strong ocean currents",
+      "Underwater earthquakes"
+    ],
+    "correct": 1,
+    "explanation": "The Moon’s gravity is the main driver of the regular rise and fall of sea level.",
+    "reference_text": "NOAA tides and currents",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qui provoque les marées océaniques ?",
+        "choices": [
+          "L’attraction gravitationnelle de la Lune et du Soleil",
+          "Les vagues produites par le vent",
+          "De forts courants océaniques",
+          "Les séismes sous-marins"
+        ],
+        "explanation": "L’attraction de la Lune est le principal moteur des marées régulières."
+      },
+      "ar": {
+        "question": "ما الذي يسبب المدّ والجزر في المحيطات؟",
+        "choices": [
+          "الجاذبية المشتركة للقمر والشمس",
+          "الأمواج التي يحركها الرياح",
+          "تيارات محيطية قوية",
+          "الزلازل تحت البحر"
+        ],
+        "explanation": "جاذبية القمر هي المحرك الرئيسي لارتفاع منسوب البحر وانخفاضه المنتظم."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the deepest known point of the world’s oceans?",
+    "choices": [
+      "Java Trench",
+      "Tonga Trench",
+      "Mariana Trench",
+      "Puerto Rico Trench"
+    ],
+    "correct": 3,
+    "explanation": "The Challenger Deep in the Mariana Trench reaches nearly 11 kilometres.",
+    "reference_text": "NOAA, Challenger Deep",
+    "translations": {
+      "fr": {
+        "question": "Quel est le point le plus profond connu des océans ?",
+        "choices": [
+          "La fosse de Java",
+          "La fosse des Tonga",
+          "La fosse des Mariannes",
+          "La fosse de Porto Rico"
+        ],
+        "explanation": "Le Challenger Deep, dans la fosse des Mariannes, atteint près de 11 kilomètres."
+      },
+      "ar": {
+        "question": "ما أعمق نقطة معروفة في محيطات العالم؟",
+        "choices": [
+          "خندق جاوة",
+          "خندق تونغا",
+          "خندق ماريانا",
+          "خندق بويرتو ريكو"
+        ],
+        "explanation": "يصل تشالنجر ديب في خندق ماريانا إلى نحو 11 كيلومترًا."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Why is “ballast water” from ships an environmental concern?",
+    "choices": [
+      "It contains ship fuel",
+      "It can transport invasive species between ports",
+      "It cools engines",
+      "It cleans ship hulls"
+    ],
+    "correct": 2,
+    "explanation": "Ships take in ballast water at one port and release it at another, spreading non-native species.",
+    "reference_text": "IMO Ballast Water Management Convention",
+    "translations": {
+      "fr": {
+        "question": "Pourquoi les eaux de ballast des navires posent-elles un problème environnemental ?",
+        "choices": [
+          "Elles contiennent du carburant",
+          "Elles peuvent transporter des espèces envahissantes d’un port à l’autre",
+          "Elles refroidissent les moteurs",
+          "Elles nettoient les coques"
+        ],
+        "explanation": "Les navires prennent de l’eau de ballast dans un port et la rejettent dans un autre, propageant des espèces non indigènes."
+      },
+      "ar": {
+        "question": "لماذا تُعد مياه الصابورة (Ballast water) للسفن مصدر قلق بيئي؟",
+        "choices": [
+          "لأنها تحتوي على وقود السفن",
+          "لأنها تنقل الكائنات الغازية بين الموانئ",
+          "لأنها تبرّد المحركات",
+          "لأنها تنظف بدن السفينة"
+        ],
+        "explanation": "تأخذ السفن مياه الصابورة في ميناء وتفرغها في آخر، فتنتقل معها كائنات غير محلية."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does ROV stand for in ocean research?",
+    "choices": [
+      "Radio Ocean Verifier",
+      "Remotely Operated Vehicle",
+      "Rapid Ocean Voyage",
+      "Regional Oceanic Valley"
+    ],
+    "correct": 2,
+    "explanation": "ROVs are unmanned submersibles controlled from the surface.",
+    "reference_text": "Woods Hole Oceanographic Institution",
+    "translations": {
+      "fr": {
+        "question": "Que signifie ROV en recherche océanographique ?",
+        "choices": [
+          "Radio Ocean Verifier",
+          "Remotely Operated Vehicle (véhicule télécommandé)",
+          "Rapid Ocean Voyage",
+          "Regional Oceanic Valley"
+        ],
+        "explanation": "Les ROV sont des submersibles sans équipage, pilotés depuis la surface."
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار ROV في أبحاث المحيطات؟",
+        "choices": [
+          "مُحقِّق موجات المحيط",
+          "مركبة تُدار عن بُعد",
+          "رحلة محيطية سريعة",
+          "الوادي المحيطي الإقليمي"
+        ],
+        "explanation": "المركبات المُدارة عن بُعد غواصات بلا طاقم تُدار من السطح."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an estuary?",
+    "choices": [
+      "A deep ocean trench",
+      "A sandbank in a lake",
+      "A glacier flowing into the sea",
+      "Where a river meets the sea and fresh and salt water mix"
+    ],
+    "correct": 4,
+    "explanation": "Estuaries are rich nursery habitats for many fish and birds.",
+    "reference_text": "NOAA estuaries education",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un estuaire ?",
+        "choices": [
+          "Une fosse océanique profonde",
+          "Un banc de sable dans un lac",
+          "Un glacier qui se jette dans la mer",
+          "Un lieu où un fleuve rejoint la mer et où l’eau douce et l’eau salée se mêlent"
+        ],
+        "explanation": "Les estuaires sont des zones de reproduction très riches pour de nombreux poissons et oiseaux."
+      },
+      "ar": {
+        "question": "ما المصب النهري (Estuary)؟",
+        "choices": [
+          "خندق محيطي عميق",
+          "جزيرة رملية في بحيرة",
+          "جبل جليدي ينزل إلى البحر",
+          "مكان يلتقي فيه النهر بالبحر فتختلط المياه العذبة والمالحة"
+        ],
+        "explanation": "تُعد المصبات بيئات حاضنة غنية للأسماك والطيور."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the smallest of the world’s five oceans?",
+    "choices": [
+      "Arctic",
+      "Southern",
+      "Atlantic",
+      "Indian"
+    ],
+    "correct": 1,
+    "explanation": "The Arctic Ocean is the smallest and shallowest of the five.",
+    "reference_text": "NOAA ocean facts",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus petit des cinq océans ?",
+        "choices": [
+          "L’océan Arctique",
+          "L’océan Austral",
+          "L’océan Atlantique",
+          "L’océan Indien"
+        ],
+        "explanation": "L’océan Arctique est le plus petit et le moins profond des cinq."
+      },
+      "ar": {
+        "question": "أيّ المحيطات الخمسة هو الأصغر؟",
+        "choices": [
+          "المحيط المتجمد الشمالي",
+          "المحيط الجنوبي",
+          "المحيط الأطلسي",
+          "المحيط الهندي"
+        ],
+        "explanation": "المحيط المتجمد الشمالي هو الأصغر والأقل عمقًا بين المحيطات الخمسة."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Most marine pollution comes from which kind of source?",
+    "choices": [
+      "Natural volcanic gas",
+      "Whale migrations",
+      "Land-based sources such as plastic and sewage",
+      "Natural sea salt"
+    ],
+    "correct": 3,
+    "explanation": "Around 80% of marine litter originates from land activities, according to UNEP.",
+    "reference_text": "UNEP marine litter report",
+    "translations": {
+      "fr": {
+        "question": "La majeure partie de la pollution marine provient de quel type de source ?",
+        "choices": [
+          "Les gaz volcaniques naturels",
+          "Les migrations des baleines",
+          "Les sources terrestres comme le plastique et les eaux usées",
+          "Le sel marin naturel"
+        ],
+        "explanation": "Selon le PNUE, une grande part des déchets marins vient des activités terrestres."
+      },
+      "ar": {
+        "question": "من أيّ نوع من المصادر تأتي معظم الملوثات البحرية؟",
+        "choices": [
+          "الغازات البركانية الطبيعية",
+          "هجرات الحيتان",
+          "مصادر بَرّية كالبلاستيك ومياه الصرف",
+          "ملح البحر الطبيعي"
+        ],
+        "explanation": "يُقدَّر أن نحو 80% من النفايات البحرية مصدرها الأنشطة البرية وفق برنامج الأمم المتحدة للبيئة."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main cause of current sea level rise?",
+    "choices": [
+      "Stronger winds",
+      "Thermal expansion of water and melting ice",
+      "Less rainfall",
+      "Drought on land"
+    ],
+    "correct": 2,
+    "explanation": "Warmer water expands and melting glaciers and ice sheets add water to the ocean.",
+    "reference_text": "IPCC AR6 sea level chapter",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale cause de la montée actuelle du niveau de la mer ?",
+        "choices": [
+          "Des vents plus forts",
+          "La dilatation thermique de l’eau et la fonte des glaces",
+          "La baisse des précipitations",
+          "La sécheresse sur les continents"
+        ],
+        "explanation": "L’eau plus chaude se dilate et la fonte des glaciers et des calottes ajoute de l’eau aux océans."
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لارتفاع مستوى سطح البحر حاليًا؟",
+        "choices": [
+          "رياح أقوى",
+          "التمدد الحراري للمياه وذوبان الجليد",
+          "انخفاض هطول الأمطار",
+          "الجفاف على اليابسة"
+        ],
+        "explanation": "يتمدد الماء الدافئ، وتضيف الأنهار الجليدية المذابة مياهًا إلى المحيطات."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the largest shark species in the world?",
+    "choices": [
+      "Hammerhead shark",
+      "Great white shark",
+      "Tiger shark",
+      "Whale shark"
+    ],
+    "correct": 4,
+    "explanation": "Whale sharks are filter feeders and can exceed 12 metres in length.",
+    "reference_text": "IUCN Red List, whale shark",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand requin du monde ?",
+        "choices": [
+          "Le requin marteau",
+          "Le grand requin blanc",
+          "Le requin tigre",
+          "Le requin-baleine"
+        ],
+        "explanation": "Le requin-baleine se nourrit par filtration et peut dépasser 12 mètres de long."
+      },
+      "ar": {
+        "question": "ما أكبر أنواع أسماك القرش في العالم؟",
+        "choices": [
+          "قرش المطرقة",
+          "القرش الأبيض الكبير",
+          "قرش النمر",
+          "قرش الحوت"
+        ],
+        "explanation": "قرش الحوت يتغذى بالترشيح، وقد يتجاوز طوله 12 مترًا."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “upwelling” in the ocean?",
+    "choices": [
+      "Cold, nutrient-rich water rising to the surface",
+      "Rain falling onto the sea",
+      "Water sinking to the seabed",
+      "Waves breaking on reefs"
+    ],
+    "correct": 1,
+    "explanation": "Upwelling brings nutrients up, supporting some of the world’s richest fisheries.",
+    "reference_text": "NOAA upwelling explainer",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « remontée d’eau » (upwelling) dans l’océan ?",
+        "choices": [
+          "Une eau froide et riche en nutriments qui remonte en surface",
+          "La pluie qui tombe sur la mer",
+          "Une eau qui coule vers le fond",
+          "Des vagues qui déferlent sur les récifs"
+        ],
+        "explanation": "La remontée d’eau apporte des nutriments en surface, soutenant certaines des pêcheries les plus riches du monde."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الصعود المائي» (Upwelling) في المحيط؟",
+        "choices": [
+          "مياه باردة غنية بالمغذيات ترتفع إلى السطح",
+          "سقوط المطر على البحر",
+          "مياه تغوص إلى قاع البحر",
+          "أمواج تتكسر على الشعاب"
+        ],
+        "explanation": "يحمل الصعود المائي المغذيات إلى السطح، فيدعم بعض أغنى مصايد الأسماك في العالم."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a lagoon?",
+    "choices": [
+      "A river mouth",
+      "A deep ocean trench",
+      "A floating iceberg",
+      "A shallow body of water separated from the sea by sandbars or reefs"
+    ],
+    "correct": 4,
+    "explanation": "Lagoons are shallow coastal waters that often support fisheries and wildlife.",
+    "reference_text": "Encyclopaedia Britannica, lagoon",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une lagune ?",
+        "choices": [
+          "L’embouchure d’un fleuve",
+          "Une fosse océanique profonde",
+          "Un iceberg flottant",
+          "Une étendue d’eau peu profonde séparée de la mer par des cordons sableux ou des récifs"
+        ],
+        "explanation": "Les lagunes sont des eaux côtières peu profondes, souvent riches en pêche et en faune."
+      },
+      "ar": {
+        "question": "ما البحيرة الساحلية (Lagoon)؟",
+        "choices": [
+          "فم نهر",
+          "خندق محيطي عميق",
+          "جبل جليدي عائم",
+          "مسطح مائي ضحل يفصله عن البحر حاجز رملي أو شعاب"
+        ],
+        "explanation": "البحيرات الساحلية مياه ضحلة غالبًا ما تدعم الصيد والحياة البرية."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “sustainable tourism” in coastal areas?",
+    "choices": [
+      "Banning all beach visits",
+      "Tourism that limits environmental damage and benefits local communities",
+      "Unlimited growth of cruise ships",
+      "Building hotels directly on reefs"
+    ],
+    "correct": 2,
+    "explanation": "It balances visitor numbers with protection of the environment and the local economy.",
+    "reference_text": "UN World Tourism Organization sustainable tourism definition",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « tourisme durable » sur le littoral ?",
+        "choices": [
+          "L’interdiction de toute visite de plage",
+          "Un tourisme qui limite les dégâts environnementaux et profite aux communautés locales",
+          "La croissance illimitée des croisières",
+          "La construction d’hôtels directement sur les récifs"
+        ],
+        "explanation": "Il équilibre le nombre de visiteurs avec la protection de l’environnement et de l’économie locale."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«السياحة المستدامة» في المناطق الساحلية؟",
+        "choices": [
+          "حظر زيارة الشواطئ كليًا",
+          "سياحة تحدّ من الأضرار البيئية وتفيد المجتمعات المحلية",
+          "نمو غير محدود للسفن السياحية",
+          "بناء الفنادق فوق الشعاب مباشرة"
+        ],
+        "explanation": "توازن هذه السياحة بين أعداد الزوار وحماية البيئة والاقتصاد المحلي."
+      }
+    }
+  }
+]

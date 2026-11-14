@@ -1,0 +1,444 @@
+[
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural resource is becoming scarce in many regions and needs careful management?",
+    "choices": [
+      "Fresh water",
+      "Sand",
+      "Air",
+      "Sunlight"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource naturelle devient rare dans de nombreuses régions et exige une gestion attentive ?",
+        "choices": [
+          "L’eau douce",
+          "Le sable",
+          "L’air",
+          "La lumière du soleil"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مورد طبيعي يصبح نادرًا في مناطق كثيرة ويحتاج إلى إدارة دقيقة؟",
+        "choices": [
+          "المياه العذبة",
+          "الرمل",
+          "الهواء",
+          "ضوء الشمس"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which action reduces the amount of plastic used in shopping?",
+    "choices": [
+      "Taking extra plastic bags",
+      "Buying more bottled water",
+      "Bringing a reusable bag",
+      "Choosing wrapped food"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle action réduit la quantité de plastique utilisée lors des courses ?",
+        "choices": [
+          "Prendre des sacs plastiques supplémentaires",
+          "Acheter davantage d’eau en bouteille",
+          "Apporter un sac réutilisable",
+          "Choisir des aliments emballés"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يقلل كمية البلاستيك المستخدمة في التسوق؟",
+        "choices": [
+          "أخذ أكياس بلاستيكية إضافية",
+          "شراء المزيد من المياه المعبأة",
+          "إحضار كيس قابل لإعادة الاستعمال",
+          "اختيار الأطعمة المغلفة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which biological method uses insects or natural predators to control pests instead of chemicals?",
+    "choices": [
+      "Chemical spraying only",
+      "Burning fields",
+      "Dumping pesticides in rivers",
+      "Biological pest control"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle méthode biologique utilise des insectes ou prédateurs naturels pour lutter contre les ravageurs au lieu de produits chimiques ?",
+        "choices": [
+          "La pulvérisation chimique uniquement",
+          "Le brûlage des champs",
+          "Le déversement de pesticides dans les rivières",
+          "La lutte biologique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طريقة بيولوجية تستخدم الحشرات أو المفترسات الطبيعية لمكافحة الآفات بدلًا من المواد الكيميائية؟",
+        "choices": [
+          "الرش الكيميائي وحده",
+          "حرق الحقول",
+          "إلقاء المبيدات في الأنهار",
+          "المكافحة البيولوجية للآفات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural process cleans water by allowing sediment to settle and microbes to break down pollutants?",
+    "choices": [
+      "Natural water treatment",
+      "Rainfall only",
+      "Volcanic activity",
+      "Evaporation only"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel processus naturel purifie l’eau en laissant les sédiments se déposer et les micro-organismes dégrader les polluants ?",
+        "choices": [
+          "Le traitement naturel de l’eau",
+          "La seule pluie",
+          "L’activité volcanique",
+          "La seule évaporation"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عملية طبيعية تنقي المياه بترسيب الرواسب وتحلل الكائنات الدقيقة للملوثات؟",
+        "choices": [
+          "المعالجة الطبيعية للمياه",
+          "الهطول المطري وحده",
+          "النشاط البركاني",
+          "التبخر وحده"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday behaviour helps keep beaches clean?",
+    "choices": [
+      "Taking your litter home",
+      "Leaving bottles on the sand",
+      "Burning rubbish on beaches",
+      "Throwing cans into the sea"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel comportement quotidien aide à garder les plages propres ?",
+        "choices": [
+          "Rapporter ses déchets chez soi",
+          "Laisser des bouteilles sur le sable",
+          "Brûler des déchets sur la plage",
+          "Jeter des canettes à la mer"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سلوك يومي يساعد على الحفاظ على نظافة الشواطئ؟",
+        "choices": [
+          "حمل النفايات معك إلى المنزل",
+          "ترك الزجاجات على الرمل",
+          "حرق القمامة على الشاطئ",
+          "رمي العلب في البحر"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the purpose of an environmental management system (EMS)?",
+    "choices": [
+      "Organising how a company reduces its environmental impacts",
+      "Keeping animals in cages",
+      "Building highways",
+      "Selling cosmetics"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert un système de management environnemental (SME) ?",
+        "choices": [
+          "Organiser la façon dont une entreprise réduit ses impacts environnementaux",
+          "Garder des animaux en cage",
+          "Construire des autoroutes",
+          "Vendre des cosmétiques"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض من نظام الإدارة البيئية (EMS)؟",
+        "choices": [
+          "تنظيم كيفية خفض الشركة لأثرها البيئي",
+          "حبس الحيوانات في الأقفاص",
+          "بناء الطرق السريعة",
+          "بيع مستحضرات التجميل"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which international body is responsible for the environment within the United Nations system?",
+    "choices": [
+      "WHO",
+      "NATO",
+      "World Bank",
+      "UN Environment Programme"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel organisme international est chargé de l’environnement au sein du système des Nations unies ?",
+        "choices": [
+          "L’OMS",
+          "L’OTAN",
+          "La Banque mondiale",
+          "Le Programme des Nations unies pour l’environnement"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هيئة دولية تتولى ملف البيئة ضمن منظومة الأمم المتحدة؟",
+        "choices": [
+          "منظمة الصحة العالمية",
+          "حلف الناتو",
+          "البنك الدولي",
+          "برنامج الأمم المتحدة للبيئة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item should be used with care to avoid chemical pollution at home?",
+    "choices": [
+      "Glass vases",
+      "Cotton towels",
+      "Wooden spoons",
+      "Household cleaning chemicals"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel produit courant doit être utilisé avec précaution pour éviter une pollution chimique à la maison ?",
+        "choices": [
+          "Les vases en verre",
+          "Les serviettes en coton",
+          "Les cuillères en bois",
+          "Les produits ménagers chimiques"
+        ]
+      },
+      "ar": {
+        "question": "أيّ منتج شائع يجب استعماله بحذر لتجنب التلوث الكيميائي في المنزل؟",
+        "choices": [
+          "المزهريات الزجاجية",
+          "المناشف القطنية",
+          "الملاعق الخشبية",
+          "المواد الكيميائية للتنظيف المنزلي"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of forest is protected by law in many countries because of its biodiversity?",
+    "choices": [
+      "Urban park only",
+      "Protected forest",
+      "Commercial plantation only",
+      "Industrial zone"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel type de forêt est protégé par la loi dans de nombreux pays en raison de sa biodiversité ?",
+        "choices": [
+          "Le parc urbain uniquement",
+          "La forêt protégée",
+          "La plantation commerciale uniquement",
+          "La zone industrielle"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الغابات يحميه القانون في دول كثيرة بسبب تنوعه البيولوجي؟",
+        "choices": [
+          "الحديقة الحضرية فقط",
+          "الغابة المحمية",
+          "المزرعة التجارية فقط",
+          "المنطقة الصناعية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which concept refers to how much a species or ecosystem can tolerate change before it collapses?",
+    "choices": [
+      "Credit rate",
+      "Resilience threshold",
+      "Trade balance",
+      "Market price"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel concept désigne le seuil au-delà duquel une espèce ou un écosystème ne peut plus supporter le changement ?",
+        "choices": [
+          "Le taux de crédit",
+          "Le seuil de résilience",
+          "La balance commerciale",
+          "Le prix du marché"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مفهوم يشير إلى الحد الذي يستطيع عنده النوع أو النظام البيئي تحمل التغيير قبل أن ينهار؟",
+        "choices": [
+          "معدل الائتمان",
+          "عتبة المرونة",
+          "الميزان التجاري",
+          "سعر السوق"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which action helps protect wildlife in cities?",
+    "choices": [
+      "Using loud fireworks near nests",
+      "Keeping cats indoors at night",
+      "Leaving rubbish near parks",
+      "Feeding wild animals junk food"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle action aide à protéger la faune urbaine ?",
+        "choices": [
+          "Utiliser des feux d’artifice bruyants près des nids",
+          "Garder les chats à l’intérieur la nuit",
+          "Laisser des déchets près des parcs",
+          "Nourrir la faune sauvage avec de la malbouffe"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يساعد على حماية الحياة البرية في المدن؟",
+        "choices": [
+          "استخدام الألعاب النارية الصاخبة قرب الأعشاش",
+          "إبقاء القطط في المنزل ليلًا",
+          "ترك القمامة قرب الحدائق",
+          "إطعام الحيوانات البرية أطعمة غير صحية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which term describes the variety of genes within a single species?",
+    "choices": [
+      "Rainfall rate",
+      "Genetic diversity",
+      "Soil density",
+      "Wind speed"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel terme désigne la variété des gènes au sein d’une même espèce ?",
+        "choices": [
+          "Le taux de pluie",
+          "La diversité génétique",
+          "La densité du sol",
+          "La vitesse du vent"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف تنوع الجينات داخل النوع الواحد؟",
+        "choices": [
+          "معدل الهطول",
+          "التنوع الجيني",
+          "كثافة التربة",
+          "سرعة الرياح"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action helps reduce heating energy in winter?",
+    "choices": [
+      "Leaving doors open",
+      "Opening windows all day",
+      "Heating empty rooms",
+      "Insulating windows and doors"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne réduit l’énergie de chauffage en hiver ?",
+        "choices": [
+          "Laisser les portes ouvertes",
+          "Ouvrir les fenêtres toute la journée",
+          "Chauffer des pièces vides",
+          "Isoler les fenêtres et les portes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يقلل طاقة التدفئة في الشتاء؟",
+        "choices": [
+          "ترك الأبواب مفتوحة",
+          "فتح النوافذ طوال النهار",
+          "تدفئة غرف فارغة",
+          "عزل النوافذ والأبواب"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  }
+]

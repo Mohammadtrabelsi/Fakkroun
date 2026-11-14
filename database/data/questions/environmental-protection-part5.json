@@ -1,0 +1,648 @@
+[
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item is most commonly recycled from households?",
+    "choices": [
+      "Garden hose",
+      "Old carpets",
+      "Broken furniture",
+      "Glass bottles"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel objet ménager est le plus souvent recyclé ?",
+        "choices": [
+          "Le tuyau d’arrosage",
+          "Les vieux tapis",
+          "Les meubles cassés",
+          "Les bouteilles en verre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مادة منزلية يُعاد تدويرها غالبًا أكثر من غيرها؟",
+        "choices": [
+          "خرطوم الحديقة",
+          "السجاد القديم",
+          "الأثاث المكسور",
+          "زجاجات الزجاج"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which activity pollutes rivers most often?",
+    "choices": [
+      "Dumping untreated waste water",
+      "Drinking water",
+      "Walking along the banks",
+      "Fishing with rods"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité pollue le plus souvent les rivières ?",
+        "choices": [
+          "Le rejet d’eaux usées non traitées",
+          "Boire de l’eau",
+          "La promenade sur les berges",
+          "La pêche à la ligne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط يلوث الأنهار غالبًا؟",
+        "choices": [
+          "تصريف مياه الصرف غير المعالجة",
+          "شرب الماء",
+          "المشي على الضفاف",
+          "الصيد بالسنارة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which term describes the variety of habitats in an area?",
+    "choices": [
+      "Soil density",
+      "Air pressure",
+      "Water hardness",
+      "Habitat diversity"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel terme décrit la variété des habitats dans une zone ?",
+        "choices": [
+          "La densité du sol",
+          "La pression atmosphérique",
+          "La dureté de l’eau",
+          "La diversité des habitats"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف تنوع الموائل في منطقة ما؟",
+        "choices": [
+          "كثافة التربة",
+          "الضغط الجوي",
+          "عسر الماء",
+          "تنوع الموائل"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which pollutant is commonly released by coal-fired power plants and contributes to acid rain?",
+    "choices": [
+      "Sulphur dioxide",
+      "Oxygen",
+      "Argon",
+      "Nitrogen"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel polluant est souvent rejeté par les centrales au charbon et contribue aux pluies acides ?",
+        "choices": [
+          "Le dioxyde de soufre",
+          "L’oxygène",
+          "L’argon",
+          "L’azote"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملوث تطلقه محطات الفحم ويسهم في الأمطار الحمضية؟",
+        "choices": [
+          "ثاني أكسيد الكبريت",
+          "الأكسجين",
+          "الأرغون",
+          "النيتروجين"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the best way to dispose of used batteries?",
+    "choices": [
+      "Bury them in the garden",
+      "Burn them",
+      "Take them to a collection point",
+      "Throw them in the bin"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la meilleure façon d’éliminer les piles usagées ?",
+        "choices": [
+          "Les enterrer dans le jardin",
+          "Les brûler",
+          "Les apporter à un point de collecte",
+          "Les jeter à la poubelle"
+        ]
+      },
+      "ar": {
+        "question": "ما أفضل طريقة للتخلص من البطاريات المستعملة؟",
+        "choices": [
+          "دفنها في الحديقة",
+          "حرقها",
+          "نقلها إلى نقطة تجميع مخصصة",
+          "رميها في سلة المهملات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which international agreement aims to limit the use of mercury?",
+    "choices": [
+      "Vienna Convention on Dance",
+      "Kyoto Protocol",
+      "Ramsar Convention",
+      "Minamata Convention"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel accord international vise à limiter l’usage du mercure ?",
+        "choices": [
+          "La convention de Vienne sur la danse",
+          "Le protocole de Kyoto",
+          "La convention de Ramsar",
+          "La convention de Minamata"
+        ]
+      },
+      "ar": {
+        "question": "أيّ اتفاق دولي يهدف إلى الحد من استخدام الزئبق؟",
+        "choices": [
+          "اتفاقية فيينا للرقص",
+          "بروتوكول كيوتو",
+          "اتفاقية رامسار",
+          "اتفاقية ميناماتا"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which environmental sign indicates that an item is recyclable?",
+    "choices": [
+      "Skull and crossbones",
+      "Mobius loop (three arrows)",
+      "Red cross",
+      "Stop sign"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel symbole environnemental indique qu’un article est recyclable ?",
+        "choices": [
+          "La tête de mort",
+          "La boucle de Möbius (trois flèches)",
+          "La croix rouge",
+          "Le panneau stop"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رمز بيئي يدل على أن المنتج قابل لإعادة التدوير؟",
+        "choices": [
+          "الجمجمة والعظمتان",
+          "حلقة موبيوس (ثلاثة أسهم)",
+          "الصليب الأحمر",
+          "علامة قف"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is smog most commonly associated with?",
+    "choices": [
+      "Clean mountain air",
+      "Polluted air in cities",
+      "Ocean waves",
+      "Forest rain"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "À quoi le smog est-il le plus souvent associé ?",
+        "choices": [
+          "L’air pur des montagnes",
+          "L’air pollué des villes",
+          "Les vagues de l’océan",
+          "La pluie en forêt"
+        ]
+      },
+      "ar": {
+        "question": "بماذا يرتبط الضباب الدخاني غالبًا؟",
+        "choices": [
+          "هواء الجبال النقي",
+          "الهواء الملوث في المدن",
+          "أمواج المحيط",
+          "مطر الغابات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural feature protects coasts from storm surges?",
+    "choices": [
+      "Volcanoes",
+      "Deserts",
+      "Glaciers",
+      "Sand dunes"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel élément naturel protège les côtes des submersions marines ?",
+        "choices": [
+          "Les volcans",
+          "Les déserts",
+          "Les glaciers",
+          "Les dunes de sable"
+        ]
+      },
+      "ar": {
+        "question": "أيّ معلم طبيعي يحمي السواحل من ارتفاع الأمواج العاصفة؟",
+        "choices": [
+          "البراكين",
+          "الصحاري",
+          "الأنهار الجليدية",
+          "الكثبان الرملية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which European directive sets standards for good water quality in rivers, lakes and coasts?",
+    "choices": [
+      "Habitats Directive",
+      "Water Framework Directive",
+      "Packaging Directive",
+      "Birds Directive"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle directive européenne fixe des normes de bonne qualité de l’eau des rivières, lacs et côtes ?",
+        "choices": [
+          "La directive Habitats",
+          "La directive-cadre sur l’eau",
+          "La directive Emballages",
+          "La directive Oiseaux"
+        ]
+      },
+      "ar": {
+        "question": "أيّ توجيه أوروبي يحدد معايير جودة المياه في الأنهار والبحيرات والسواحل؟",
+        "choices": [
+          "توجيه الموائل",
+          "التوجيه الإطاري للمياه",
+          "توجيه التغليف",
+          "توجيه الطيور"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is an everyday habit that reduces air pollution?",
+    "choices": [
+      "Burning leaves",
+      "Using old diesel generators",
+      "Walking or using public transport",
+      "Idling the car engine"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle habitude quotidienne réduit la pollution de l’air ?",
+        "choices": [
+          "Brûler les feuilles",
+          "Utiliser de vieux groupes électrogènes diesel",
+          "Marcher ou prendre les transports en commun",
+          "Laisser tourner le moteur à l’arrêt"
+        ]
+      },
+      "ar": {
+        "question": "ما العادة اليومية التي تقلل تلوث الهواء؟",
+        "choices": [
+          "حرق الأوراق",
+          "استخدام مولدات ديزل قديمة",
+          "المشي أو استخدام النقل العام",
+          "ترك محرك السيارة يعمل وهي متوقفة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which substance from old paints and batteries can contaminate soil and water?",
+    "choices": [
+      "Bread flour",
+      "Table sugar",
+      "Heavy metals",
+      "Cooking oil"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle substance présente dans les anciennes peintures et piles peut contaminer le sol et l’eau ?",
+        "choices": [
+          "La farine",
+          "Le sucre de table",
+          "Les métaux lourds",
+          "L’huile de cuisson"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مادة توجد في الدهانات والبطاريات القديمة قد تلوث التربة والماء؟",
+        "choices": [
+          "دقيق الخبز",
+          "سكر المائدة",
+          "المعادن الثقيلة",
+          "زيت الطهي"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “eco-toxicity”?",
+    "choices": [
+      "The measure of wind speed",
+      "The capacity of a substance to harm ecosystems",
+      "The capacity to grow fruit",
+      "The ability to make electricity"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que « l’écotoxicité » ?",
+        "choices": [
+          "La mesure de la vitesse du vent",
+          "La capacité d’une substance à nuire aux écosystèmes",
+          "La capacité à faire pousser des fruits",
+          "La capacité à produire de l’électricité"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«السمية البيئية» (Eco-toxicity)؟",
+        "choices": [
+          "قياس سرعة الرياح",
+          "قدرة مادة على الإضرار بالنظم البيئية",
+          "القدرة على إنتاج الفاكهة",
+          "القدرة على توليد الكهرباء"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which plant can help clean the air in homes?",
+    "choices": [
+      "Coral",
+      "Pine cone",
+      "Spider plant",
+      "Cactus only"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle plante peut contribuer à purifier l’air intérieur ?",
+        "choices": [
+          "Le corail",
+          "La pomme de pin",
+          "Le chlorophytum",
+          "Le cactus uniquement"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نبات يمكن أن يساعد في تنقية الهواء داخل المنازل؟",
+        "choices": [
+          "المرجان",
+          "مخروط الصنوبر",
+          "نبات الكلوروفيتوم",
+          "الصبار وحده"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of waste is produced by hospitals and must be handled carefully?",
+    "choices": [
+      "Garden waste",
+      "Paper waste",
+      "Medical waste",
+      "Food scraps"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel type de déchets produisent les hôpitaux et doit être traité avec précaution ?",
+        "choices": [
+          "Les déchets de jardin",
+          "Les déchets de papier",
+          "Les déchets médicaux",
+          "Les restes alimentaires"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من النفايات تنتجه المستشفيات ويجب التعامل معه بحذر؟",
+        "choices": [
+          "نفايات الحدائق",
+          "نفايات الورق",
+          "النفايات الطبية",
+          "بقايا الطعام"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which global agreement on plastic pollution is being negotiated under the UN?",
+    "choices": [
+      "Space treaty",
+      "Global plastics treaty",
+      "Antarctic treaty only",
+      "Trade treaty"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel accord mondial sur la pollution plastique est négocié sous l’égide de l’ONU ?",
+        "choices": [
+          "Le traité spatial",
+          "Le traité mondial sur les plastiques",
+          "Le traité antarctique uniquement",
+          "Le traité commercial"
+        ]
+      },
+      "ar": {
+        "question": "أيّ اتفاق عالمي بشأن التلوث البلاستيكي يجري التفاوض عليه تحت رعاية الأمم المتحدة؟",
+        "choices": [
+          "معاهدة الفضاء",
+          "المعاهدة العالمية للبلاستيك",
+          "معاهدة القارة القطبية فقط",
+          "معاهدة التجارة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is a benefit of planting trees in cities?",
+    "choices": [
+      "More car traffic",
+      "Less shade",
+      "More noise",
+      "Cooler streets and cleaner air"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est un avantage de planter des arbres en ville ?",
+        "choices": [
+          "Plus de trafic automobile",
+          "Moins d’ombre",
+          "Plus de bruit",
+          "Des rues plus fraîches et un air plus propre"
+        ]
+      },
+      "ar": {
+        "question": "ما فائدة زراعة الأشجار في المدن؟",
+        "choices": [
+          "زيادة حركة السيارات",
+          "ظل أقل",
+          "زيادة الضجيج",
+          "شوارع أبرد وهواء أنظف"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main cause of microplastics in the ocean?",
+    "choices": [
+      "Sea salt",
+      "Volcanic ash",
+      "Natural sand",
+      "Breakdown of larger plastic litter"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale cause des microplastiques dans l’océan ?",
+        "choices": [
+          "Le sel marin",
+          "La cendre volcanique",
+          "Le sable naturel",
+          "La fragmentation de gros déchets plastiques"
+        ]
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي للجسيمات البلاستيكية الدقيقة في المحيط؟",
+        "choices": [
+          "ملح البحر",
+          "الرماد البركاني",
+          "الرمل الطبيعي",
+          "تفتت النفايات البلاستيكية الكبيرة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which indicator measures the health of a river based on its living organisms?",
+    "choices": [
+      "Biotic index",
+      "Sunshine index",
+      "Wind index",
+      "Snow index"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel indicateur mesure la santé d’une rivière à partir de ses organismes vivants ?",
+        "choices": [
+          "L’indice biotique",
+          "L’indice d’ensoleillement",
+          "L’indice éolien",
+          "L’indice de neige"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مؤشر يقيس صحة النهر بالاعتماد على كائناته الحية؟",
+        "choices": [
+          "المؤشر الحيوي",
+          "مؤشر السطوع",
+          "مؤشر الرياح",
+          "مؤشر الثلج"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  }
+]

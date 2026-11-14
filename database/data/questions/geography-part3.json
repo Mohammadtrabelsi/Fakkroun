@@ -1,0 +1,853 @@
+[
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Germany?",
+    "choices": [
+      "Munich",
+      "Frankfurt",
+      "Berlin",
+      "Hamburg"
+    ],
+    "correct": 3,
+    "explanation": "Berlin is the capital and largest city of Germany.",
+    "reference_text": "Encyclopaedia Britannica, Germany",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Allemagne ?",
+        "choices": [
+          "Munich",
+          "Francfort",
+          "Berlin",
+          "Hambourg"
+        ],
+        "explanation": "Berlin est la capitale et la plus grande ville d’Allemagne."
+      },
+      "ar": {
+        "question": "ما عاصمة ألمانيا؟",
+        "choices": [
+          "ميونخ",
+          "فرانكفورت",
+          "برلين",
+          "هامبورغ"
+        ],
+        "explanation": "برلين هي عاصمة ألمانيا وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Italy?",
+    "choices": [
+      "Milan",
+      "Florence",
+      "Naples",
+      "Rome"
+    ],
+    "correct": 4,
+    "explanation": "Rome is the capital of Italy and its largest city.",
+    "reference_text": "Encyclopaedia Britannica, Italy",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Italie ?",
+        "choices": [
+          "Milan",
+          "Florence",
+          "Naples",
+          "Rome"
+        ],
+        "explanation": "Rome est la capitale de l’Italie et sa plus grande ville."
+      },
+      "ar": {
+        "question": "ما عاصمة إيطاليا؟",
+        "choices": [
+          "ميلانو",
+          "فلورنسا",
+          "نابولي",
+          "روما"
+        ],
+        "explanation": "روما هي عاصمة إيطاليا وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Turkey?",
+    "choices": [
+      "Izmir",
+      "Antalya",
+      "Istanbul",
+      "Ankara"
+    ],
+    "correct": 4,
+    "explanation": "Ankara has been the capital of Turkey since 1923; Istanbul is the largest city.",
+    "reference_text": "Encyclopaedia Britannica, Turkey",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Turquie ?",
+        "choices": [
+          "Izmir",
+          "Antalya",
+          "Istanbul",
+          "Ankara"
+        ],
+        "explanation": "Ankara est la capitale de la Turquie depuis 1923 ; Istanbul en est la plus grande ville."
+      },
+      "ar": {
+        "question": "ما عاصمة تركيا؟",
+        "choices": [
+          "إزمير",
+          "أنطاليا",
+          "إسطنبول",
+          "أنقرة"
+        ],
+        "explanation": "أنقرة عاصمة تركيا منذ عام 1923، وإسطنبول أكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the largest desert in the world?",
+    "choices": [
+      "Kalahari",
+      "Antarctic Desert",
+      "Gobi",
+      "Sahara"
+    ],
+    "correct": 2,
+    "explanation": "Antarctica is the largest desert in the world, because a desert is defined by low precipitation.",
+    "reference_text": "Encyclopaedia Britannica, desert",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand désert du monde ?",
+        "choices": [
+          "Le Kalahari",
+          "Le désert antarctique",
+          "Le Gobi",
+          "Le Sahara"
+        ],
+        "explanation": "L’Antarctique est le plus grand désert du monde, car un désert se définit par de faibles précipitations."
+      },
+      "ar": {
+        "question": "ما أكبر صحراء في العالم؟",
+        "choices": [
+          "صحراء كالاهاري",
+          "الصحراء القطبية الجنوبية",
+          "صحراء غوبي",
+          "الصحراء الكبرى"
+        ],
+        "explanation": "القارة القطبية الجنوبية هي أكبر صحراء في العالم، لأن الصحراء تُعرَّف بقلة الهطول."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which river flows through Baghdad?",
+    "choices": [
+      "Orontes",
+      "Tigris",
+      "Euphrates",
+      "Jordan"
+    ],
+    "correct": 2,
+    "explanation": "Baghdad lies on the banks of the Tigris, which flows through central Iraq.",
+    "reference_text": "Encyclopaedia Britannica, Tigris River",
+    "translations": {
+      "fr": {
+        "question": "Quel fleuve traverse Bagdad ?",
+        "choices": [
+          "L’Oronte",
+          "Le Tigre",
+          "L’Euphrate",
+          "Le Jourdain"
+        ],
+        "explanation": "Bagdad est située sur les rives du Tigre, qui traverse le centre de l’Irak."
+      },
+      "ar": {
+        "question": "أيّ نهر يمر ببغداد؟",
+        "choices": [
+          "العاصي",
+          "دجلة",
+          "الفرات",
+          "الأردن"
+        ],
+        "explanation": "تقع بغداد على ضفاف دجلة الذي يجري في وسط العراق."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is home to the city of Marrakesh?",
+    "choices": [
+      "Algeria",
+      "Morocco",
+      "Libya",
+      "Tunisia"
+    ],
+    "correct": 2,
+    "explanation": "Marrakesh is a historic imperial city in southwestern Morocco.",
+    "reference_text": "UNESCO, Medina of Marrakesh",
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve la ville de Marrakech ?",
+        "choices": [
+          "L’Algérie",
+          "Le Maroc",
+          "La Libye",
+          "La Tunisie"
+        ],
+        "explanation": "Marrakech est une ville impériale historique du sud-ouest du Maroc."
+      },
+      "ar": {
+        "question": "في أي دولة تقع مدينة مراكش؟",
+        "choices": [
+          "الجزائر",
+          "المغرب",
+          "ليبيا",
+          "تونس"
+        ],
+        "explanation": "مراكش مدينة إمبراطورية تاريخية تقع في جنوب غرب المغرب."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which lake is the largest freshwater lake in the world by volume?",
+    "choices": [
+      "Lake Baikal",
+      "Lake Titicaca",
+      "Lake Victoria",
+      "Lake Superior"
+    ],
+    "correct": 1,
+    "explanation": "Lake Baikal holds about a fifth of the world’s unfrozen fresh surface water.",
+    "reference_text": "Encyclopaedia Britannica, Lake Baikal",
+    "translations": {
+      "fr": {
+        "question": "Quel lac est le plus grand lac d’eau douce du monde par son volume ?",
+        "choices": [
+          "Le lac Baïkal",
+          "Le lac Titicaca",
+          "Le lac Victoria",
+          "Le lac Supérieur"
+        ],
+        "explanation": "Le lac Baïkal contient environ un cinquième de l’eau douce liquide de la planète."
+      },
+      "ar": {
+        "question": "أيّ بحيرة هي أكبر بحيرة عذبة في العالم من حيث الحجم؟",
+        "choices": [
+          "بحيرة بايكال",
+          "بحيرة تيتيكاكا",
+          "بحيرة فيكتوريا",
+          "بحيرة سوبيريور"
+        ],
+        "explanation": "تحتوي بحيرة بايكال على نحو خُمس المياه العذبة السائلة في العالم."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which mountain range runs along the western coast of South America?",
+    "choices": [
+      "Himalayas",
+      "Appalachians",
+      "Andes",
+      "Rockies"
+    ],
+    "correct": 3,
+    "explanation": "The Andes are the longest continental mountain range in the world.",
+    "reference_text": "Encyclopaedia Britannica, Andes",
+    "translations": {
+      "fr": {
+        "question": "Quelle chaîne de montagnes longe la côte ouest de l’Amérique du Sud ?",
+        "choices": [
+          "L’Himalaya",
+          "Les Appalaches",
+          "Les Andes",
+          "Les Rocheuses"
+        ],
+        "explanation": "Les Andes sont la plus longue chaîne de montagnes continentale du monde."
+      },
+      "ar": {
+        "question": "أيّ سلسلة جبلية تمتد على الساحل الغربي لأمريكا الجنوبية؟",
+        "choices": [
+          "جبال الهيمالايا",
+          "جبال الأبلاش",
+          "جبال الأنديز",
+          "جبال روكي"
+        ],
+        "explanation": "جبال الأنديز أطول سلسلة جبلية قارية في العالم."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the capital of Greece?",
+    "choices": [
+      "Thessaloniki",
+      "Patras",
+      "Heraklion",
+      "Athens"
+    ],
+    "correct": 4,
+    "explanation": "Athens is the capital and largest city of Greece.",
+    "reference_text": "Encyclopaedia Britannica, Greece",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Grèce ?",
+        "choices": [
+          "Thessalonique",
+          "Patras",
+          "Héraklion",
+          "Athènes"
+        ],
+        "explanation": "Athènes est la capitale et la plus grande ville de Grèce."
+      },
+      "ar": {
+        "question": "ما عاصمة اليونان؟",
+        "choices": [
+          "تسالونيكي",
+          "باترا",
+          "هيراكليون",
+          "أثينا"
+        ],
+        "explanation": "أثينا هي عاصمة اليونان وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian mountain range lies in the north and reaches into Algeria?",
+    "choices": [
+      "Tibesti",
+      "Atlas Mountains",
+      "Ahaggar",
+      "Dorsale (Tell Atlas)"
+    ],
+    "correct": 4,
+    "explanation": "The Dorsale, part of the Tell Atlas, runs across northern Tunisia.",
+    "reference_text": "Encyclopaedia Britannica, Tell Atlas",
+    "translations": {
+      "fr": {
+        "question": "Quelle chaîne de montagnes tunisienne s’étend au nord et se prolonge en Algérie ?",
+        "choices": [
+          "Le Tibesti",
+          "L’Atlas",
+          "Le Hoggar",
+          "La dorsale (Atlas tellien)"
+        ],
+        "explanation": "La dorsale, partie de l’Atlas tellien, traverse le nord de la Tunisie."
+      },
+      "ar": {
+        "question": "أيّ سلسلة جبلية تونسية تمتد شمالًا وتتصل بالجزائر؟",
+        "choices": [
+          "تبستي",
+          "جبال الأطلس",
+          "الهقار",
+          "الدورسال (الأطلس التلي)"
+        ],
+        "explanation": "تمتد الدورسال، وهي جزء من الأطلس التلي، عبر شمال تونس."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the largest city in Africa by population?",
+    "choices": [
+      "Johannesburg",
+      "Kinshasa",
+      "Lagos",
+      "Cairo"
+    ],
+    "correct": 3,
+    "explanation": "Lagos is the most populous city in Africa, although population figures vary by definition.",
+    "reference_text": "UN World Urbanization Prospects",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande ville d’Afrique par sa population ?",
+        "choices": [
+          "Johannesburg",
+          "Kinshasa",
+          "Lagos",
+          "Le Caire"
+        ],
+        "explanation": "Lagos est la ville la plus peuplée d’Afrique, même si les chiffres varient selon les définitions."
+      },
+      "ar": {
+        "question": "ما أكبر مدينة في إفريقيا من حيث عدد السكان؟",
+        "choices": [
+          "جوهانسبرغ",
+          "كينشاسا",
+          "لاغوس",
+          "القاهرة"
+        ],
+        "explanation": "لاغوس هي أكثر مدن إفريقيا سكانًا، وإن اختلفت الأرقام حسب التعريف."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ocean is the Atlantic Ocean’s neighbour to the west?",
+    "choices": [
+      "Pacific",
+      "Southern",
+      "Arctic",
+      "Indian"
+    ],
+    "correct": 1,
+    "explanation": "The Atlantic lies between the Americas to the west and Europe and Africa to the east.",
+    "reference_text": "NOAA ocean basins",
+    "translations": {
+      "fr": {
+        "question": "Quel océan est voisin de l’Atlantique à l’ouest ?",
+        "choices": [
+          "Le Pacifique",
+          "L’Austral",
+          "L’Arctique",
+          "L’Indien"
+        ],
+        "explanation": "L’Atlantique se situe entre les Amériques à l’ouest et l’Europe et l’Afrique à l’est."
+      },
+      "ar": {
+        "question": "أيّ محيط يجاور المحيط الأطلسي من الغرب؟",
+        "choices": [
+          "الهادئ",
+          "الجنوبي",
+          "المتجمد الشمالي",
+          "الهندي"
+        ],
+        "explanation": "يقع الأطلسي بين الأمريكتين غربًا وأوروبا وإفريقيا شرقًا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which strait links the Red Sea to the Gulf of Aden?",
+    "choices": [
+      "Strait of Hormuz",
+      "Dardanelles",
+      "Bab el-Mandeb",
+      "Bosporus"
+    ],
+    "correct": 3,
+    "explanation": "Bab el-Mandeb is a narrow strait between Yemen and the Horn of Africa.",
+    "reference_text": "Encyclopaedia Britannica, Bab el-Mandeb",
+    "translations": {
+      "fr": {
+        "question": "Quel détroit relie la mer Rouge au golfe d’Aden ?",
+        "choices": [
+          "Le détroit d’Ormuz",
+          "Les Dardanelles",
+          "Bab el-Mandeb",
+          "Le Bosphore"
+        ],
+        "explanation": "Bab el-Mandeb est un détroit étroit entre le Yémen et la Corne de l’Afrique."
+      },
+      "ar": {
+        "question": "أيّ مضيق يصل البحر الأحمر بخليج عدن؟",
+        "choices": [
+          "مضيق هرمز",
+          "الدردنيل",
+          "باب المندب",
+          "البوسفور"
+        ],
+        "explanation": "باب المندب مضيق ضيق يفصل بين اليمن والقرن الإفريقي."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the capital of Saudi Arabia?",
+    "choices": [
+      "Mecca",
+      "Riyadh",
+      "Dammam",
+      "Jeddah"
+    ],
+    "correct": 2,
+    "explanation": "Riyadh is the capital and largest city of Saudi Arabia.",
+    "reference_text": "Encyclopaedia Britannica, Saudi Arabia",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Arabie saoudite ?",
+        "choices": [
+          "La Mecque",
+          "Riyad",
+          "Dammam",
+          "Djeddah"
+        ],
+        "explanation": "Riyad est la capitale et la plus grande ville d’Arabie saoudite."
+      },
+      "ar": {
+        "question": "ما عاصمة المملكة العربية السعودية؟",
+        "choices": [
+          "مكة المكرمة",
+          "الرياض",
+          "الدمام",
+          "جدة"
+        ],
+        "explanation": "الرياض هي عاصمة السعودية وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the highest waterfall in the world?",
+    "choices": [
+      "Niagara Falls",
+      "Victoria Falls",
+      "Iguazu Falls",
+      "Angel Falls"
+    ],
+    "correct": 4,
+    "explanation": "Angel Falls in Venezuela drops about 979 metres in total.",
+    "reference_text": "Encyclopaedia Britannica, Angel Falls",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus haute chute d’eau du monde ?",
+        "choices": [
+          "Les chutes du Niagara",
+          "Les chutes Victoria",
+          "Les chutes d’Iguaçu",
+          "Le Salto Ángel"
+        ],
+        "explanation": "Le Salto Ángel, au Venezuela, chute d’environ 979 mètres au total."
+      },
+      "ar": {
+        "question": "ما أعلى شلال في العالم؟",
+        "choices": [
+          "شلالات نياجرا",
+          "شلالات فيكتوريا",
+          "شلالات إغوازو",
+          "شلال أنخل"
+        ],
+        "explanation": "يهوي شلال أنخل في فنزويلا من ارتفاع يقارب 979 مترًا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the capital of Brazil?",
+    "choices": [
+      "Brasília",
+      "Salvador",
+      "São Paulo",
+      "Rio de Janeiro"
+    ],
+    "correct": 1,
+    "explanation": "Brasília became the capital in 1960, replacing Rio de Janeiro.",
+    "reference_text": "Encyclopaedia Britannica, Brasília",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Brésil ?",
+        "choices": [
+          "Brasília",
+          "Salvador",
+          "São Paulo",
+          "Rio de Janeiro"
+        ],
+        "explanation": "Brasília est devenue capitale en 1960, à la place de Rio de Janeiro."
+      },
+      "ar": {
+        "question": "ما عاصمة البرازيل؟",
+        "choices": [
+          "برازيليا",
+          "سلفادور",
+          "ساو باولو",
+          "ريو دي جانيرو"
+        ],
+        "explanation": "أصبحت برازيليا عاصمة عام 1960 بدلًا من ريو دي جانيرو."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian island in the Mediterranean is the largest of the country’s islands?",
+    "choices": [
+      "Zembra",
+      "Kerkennah",
+      "Galite",
+      "Djerba"
+    ],
+    "correct": 4,
+    "explanation": "Djerba is the largest island in Tunisia, located in the Gulf of Gabès.",
+    "reference_text": "Tunisian tourism office, Djerba",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande île tunisienne ?",
+        "choices": [
+          "Zembra",
+          "Kerkennah",
+          "La Galite",
+          "Djerba"
+        ],
+        "explanation": "Djerba est la plus grande île de Tunisie, située dans le golfe de Gabès."
+      },
+      "ar": {
+        "question": "ما أكبر جزيرة تونسية؟",
+        "choices": [
+          "زمبرة",
+          "قرقنة",
+          "جزيرة غاليت",
+          "جربة"
+        ],
+        "explanation": "جربة أكبر جزيرة في تونس، وتقع في خليج قابس."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the largest country in South America?",
+    "choices": [
+      "Brazil",
+      "Argentina",
+      "Colombia",
+      "Peru"
+    ],
+    "correct": 1,
+    "explanation": "Brazil covers almost half of South America.",
+    "reference_text": "Encyclopaedia Britannica, Brazil",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand pays d’Amérique du Sud ?",
+        "choices": [
+          "Le Brésil",
+          "L’Argentine",
+          "La Colombie",
+          "Le Pérou"
+        ],
+        "explanation": "Le Brésil couvre presque la moitié de l’Amérique du Sud."
+      },
+      "ar": {
+        "question": "ما أكبر دولة في أمريكا الجنوبية؟",
+        "choices": [
+          "البرازيل",
+          "الأرجنتين",
+          "كولومبيا",
+          "بيرو"
+        ],
+        "explanation": "تغطي البرازيل نحو نصف مساحة أمريكا الجنوبية تقريبًا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which city is known as the City of Light?",
+    "choices": [
+      "Rome",
+      "Paris",
+      "Vienna",
+      "Prague"
+    ],
+    "correct": 2,
+    "explanation": "Paris earned the nickname City of Light for its early adoption of street lighting and its cultural role.",
+    "reference_text": "Encyclopaedia Britannica, Paris",
+    "translations": {
+      "fr": {
+        "question": "Quelle ville est surnommée « la Ville lumière » ?",
+        "choices": [
+          "Rome",
+          "Paris",
+          "Vienne",
+          "Prague"
+        ],
+        "explanation": "Paris porte ce surnom grâce à son éclairage urbain précoce et à son rôle culturel."
+      },
+      "ar": {
+        "question": "أيّ مدينة تُلقّب بـ«مدينة النور»؟",
+        "choices": [
+          "روما",
+          "باريس",
+          "فيينا",
+          "براغ"
+        ],
+        "explanation": "لقّبت باريس بمدينة النور بفضل إنارتها المبكرة للشوارع ودورها الثقافي."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country is the smallest in Africa by area?",
+    "choices": [
+      "Gambia",
+      "Seychelles",
+      "Djibouti",
+      "Comoros"
+    ],
+    "correct": 2,
+    "explanation": "The Seychelles is the smallest African country by area, with about 460 square kilometres of land.",
+    "reference_text": "Encyclopaedia Britannica, Seychelles",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus petit pays d’Afrique par sa superficie ?",
+        "choices": [
+          "La Gambie",
+          "Les Seychelles",
+          "Djibouti",
+          "Les Comores"
+        ],
+        "explanation": "Les Seychelles sont le plus petit pays d’Afrique, avec environ 460 kilomètres carrés de terres."
+      },
+      "ar": {
+        "question": "ما أصغر دولة في إفريقيا من حيث المساحة؟",
+        "choices": [
+          "غامبيا",
+          "سيشيل",
+          "جيبوتي",
+          "جزر القمر"
+        ],
+        "explanation": "تُعد سيشل أصغر دولة إفريقية مساحةً، بنحو 460 كيلومترًا مربعًا من اليابسة."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country lies at the southern tip of the Arabian Peninsula?",
+    "choices": [
+      "Kuwait",
+      "Oman",
+      "Yemen",
+      "Bahrain"
+    ],
+    "correct": 3,
+    "explanation": "Yemen borders the Red Sea and the Gulf of Aden at the southern end of the peninsula.",
+    "reference_text": "Encyclopaedia Britannica, Yemen",
+    "translations": {
+      "fr": {
+        "question": "Quel pays se trouve à la pointe sud de la péninsule Arabique ?",
+        "choices": [
+          "Koweït",
+          "Oman",
+          "Le Yémen",
+          "Bahreïn"
+        ],
+        "explanation": "Le Yémen borde la mer Rouge et le golfe d’Aden à l’extrémité sud de la péninsule."
+      },
+      "ar": {
+        "question": "أيّ دولة تقع في أقصى جنوب شبه الجزيرة العربية؟",
+        "choices": [
+          "الكويت",
+          "عُمان",
+          "اليمن",
+          "البحرين"
+        ],
+        "explanation": "تطل اليمن على البحر الأحمر وخليج عدن في الطرف الجنوبي للجزيرة."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which African river is the second-longest after the Nile?",
+    "choices": [
+      "Niger",
+      "Orange",
+      "Zambezi",
+      "Congo"
+    ],
+    "correct": 4,
+    "explanation": "The Congo is generally ranked the second-longest river in Africa, after the Nile.",
+    "reference_text": "Encyclopaedia Britannica, Congo River",
+    "translations": {
+      "fr": {
+        "question": "Quel fleuve africain est le deuxième plus long après le Nil ?",
+        "choices": [
+          "Le Niger",
+          "L’Orange",
+          "Le Zambèze",
+          "Le Congo"
+        ],
+        "explanation": "Le Congo est généralement classé deuxième fleuve d’Afrique, derrière le Nil."
+      },
+      "ar": {
+        "question": "أيّ نهر إفريقي يُعد الثاني في الطول بعد النيل؟",
+        "choices": [
+          "النيجر",
+          "أورانج",
+          "الزامبيزي",
+          "الكونغو"
+        ],
+        "explanation": "يُصنَّف الكونغو عادةً ثاني أطول أنهار إفريقيا بعد النيل."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is the largest island nation in Southeast Asia?",
+    "choices": [
+      "Indonesia",
+      "Malaysia",
+      "Vietnam",
+      "Philippines"
+    ],
+    "correct": 1,
+    "explanation": "Indonesia is the largest island nation in the world by number of islands and in Southeast Asia by area.",
+    "reference_text": "Encyclopaedia Britannica, Indonesia",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand État insulaire d’Asie du Sud-Est ?",
+        "choices": [
+          "L’Indonésie",
+          "La Malaisie",
+          "Le Viêt Nam",
+          "Les Philippines"
+        ],
+        "explanation": "L’Indonésie est le plus grand État insulaire d’Asie du Sud-Est par sa superficie."
+      },
+      "ar": {
+        "question": "ما أكبر دولة جزرية في جنوب شرق آسيا؟",
+        "choices": [
+          "إندونيسيا",
+          "ماليزيا",
+          "فيتنام",
+          "الفلبين"
+        ],
+        "explanation": "إندونيسيا أكبر دولة جزرية في جنوب شرق آسيا مساحةً."
+      }
+    }
+  }
+]

@@ -1,0 +1,716 @@
+[
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who was the first man to walk on the Moon?",
+    "choices": [
+      "Neil Armstrong",
+      "Buzz Aldrin",
+      "John Glenn",
+      "Yuri Gagarin"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qui fut le premier homme à marcher sur la Lune ?",
+        "choices": [
+          "Neil Armstrong",
+          "Buzz Aldrin",
+          "John Glenn",
+          "Youri Gagarine"
+        ]
+      },
+      "ar": {
+        "question": "من كان أول إنسان يمشي على سطح القمر؟",
+        "choices": [
+          "نيل أرمسترونغ",
+          "باز ألدرين",
+          "جون غلين",
+          "يوري غاغارين"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ancient civilisation developed cuneiform writing?",
+    "choices": [
+      "Aztecs",
+      "Sumerians",
+      "Mayans",
+      "Vikings"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation ancienne a développé l’écriture cunéiforme ?",
+        "choices": [
+          "Les Aztèques",
+          "Les Sumériens",
+          "Les Mayas",
+          "Les Vikings"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حضارة قديمة طوّرت الكتابة المسمارية؟",
+        "choices": [
+          "الأزتيك",
+          "السومريون",
+          "المايا",
+          "الفايكنغ"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which wall was built in Berlin in 1961 and torn down in 1989?",
+    "choices": [
+      "Great Wall",
+      "Western Wall",
+      "Berlin Wall",
+      "Hadrian’s Wall"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel mur fut construit à Berlin en 1961 et démoli en 1989 ?",
+        "choices": [
+          "La Grande Muraille",
+          "Le Mur des lamentations",
+          "Le mur de Berlin",
+          "Le mur d’Hadrien"
+        ]
+      },
+      "ar": {
+        "question": "أيّ جدار بُني في برلين عام 1961 وهُدم عام 1989؟",
+        "choices": [
+          "السور العظيم",
+          "الحائط الغربي",
+          "جدار برلين",
+          "جدار هادريان"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who was the first Prime Minister of India after independence?",
+    "choices": [
+      "Sardar Patel",
+      "Jawaharlal Nehru",
+      "Mahatma Gandhi",
+      "Indira Gandhi"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qui fut le premier Premier ministre de l’Inde après l’indépendance ?",
+        "choices": [
+          "Sardar Patel",
+          "Jawaharlal Nehru",
+          "Mahatma Gandhi",
+          "Indira Gandhi"
+        ]
+      },
+      "ar": {
+        "question": "من كان أول رئيس وزراء للهند بعد الاستقلال؟",
+        "choices": [
+          "سردار باتيل",
+          "جواهر لال نهرو",
+          "المهاتما غاندي",
+          "إنديرا غاندي"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which ancient Egyptian queen was the first female pharaoh to rule in her own right?",
+    "choices": [
+      "Tiye",
+      "Cleopatra",
+      "Nefertiti",
+      "Hatshepsut"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle reine égyptienne antique fut la première femme pharaon à régner de plein droit ?",
+        "choices": [
+          "Tiyi",
+          "Cléopâtre",
+          "Néfertiti",
+          "Hatchepsout"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملكة مصرية قديمة كانت أول امرأة تحكم مصر بصفة فرعون؟",
+        "choices": [
+          "تيي",
+          "كليوباترا",
+          "نفرتيتي",
+          "حتشبسوت"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian leader signed the independence agreement with France in 1956?",
+    "choices": [
+      "Gamal Abdel Nasser",
+      "Ahmed Ben Bella",
+      "Mohammed V",
+      "Habib Bourguiba"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel dirigeant tunisien a signé l’accord d’indépendance avec la France en 1956 ?",
+        "choices": [
+          "Gamal Abdel Nasser",
+          "Ahmed Ben Bella",
+          "Mohammed V",
+          "Habib Bourguiba"
+        ]
+      },
+      "ar": {
+        "question": "أيّ زعيم تونسي وقّع اتفاقية الاستقلال مع فرنسا عام 1956؟",
+        "choices": [
+          "جمال عبد الناصر",
+          "أحمد بن بلة",
+          "محمد الخامس",
+          "الحبيب بورقيبة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which treaty ended the Crimean War in 1856?",
+    "choices": [
+      "Treaty of Versailles",
+      "Treaty of Paris",
+      "Treaty of Utrecht",
+      "Treaty of Vienna"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel traité mit fin à la guerre de Crimée en 1856 ?",
+        "choices": [
+          "Le traité de Versailles",
+          "Le traité de Paris",
+          "Le traité d’Utrecht",
+          "Le traité de Vienne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ معاهدة أنهت حرب القرم عام 1856؟",
+        "choices": [
+          "معاهدة فرساي",
+          "معاهدة باريس",
+          "معاهدة أوترخت",
+          "معاهدة فيينا"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which empire was ruled by the Mughal dynasty in South Asia?",
+    "choices": [
+      "Ottoman Empire",
+      "Maurya Empire",
+      "Mughal Empire",
+      "Safavid Empire"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel empire fut gouverné par la dynastie moghole en Asie du Sud ?",
+        "choices": [
+          "L’Empire ottoman",
+          "L’Empire maurya",
+          "L’Empire moghol",
+          "L’Empire safavide"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إمبراطورية حكمتها أسرة المغول في جنوب آسيا؟",
+        "choices": [
+          "الدولة العثمانية",
+          "إمبراطورية الماوريا",
+          "الإمبراطورية المغولية",
+          "الدولة الصفوية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ancient Greek philosopher was the teacher of Alexander the Great?",
+    "choices": [
+      "Plato",
+      "Socrates",
+      "Aristotle",
+      "Pythagoras"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel philosophe grec antique fut le précepteur d’Alexandre le Grand ?",
+        "choices": [
+          "Platon",
+          "Socrate",
+          "Aristote",
+          "Pythagore"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فيلسوف يوناني قديم كان معلم الإسكندر الأكبر؟",
+        "choices": [
+          "أفلاطون",
+          "سقراط",
+          "أرسطو",
+          "فيثاغورس"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country was the first to use paper money in the world?",
+    "choices": [
+      "China",
+      "Italy",
+      "Egypt",
+      "Greece"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a utilisé en premier le papier-monnaie dans le monde ?",
+        "choices": [
+          "La Chine",
+          "L’Italie",
+          "L’Égypte",
+          "La Grèce"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة استخدمت النقود الورقية أولًا في العالم؟",
+        "choices": [
+          "الصين",
+          "إيطاليا",
+          "مصر",
+          "اليونان"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which empire was ruled by Julius Caesar as dictator?",
+    "choices": [
+      "Roman Republic",
+      "Persian Empire",
+      "Greek Empire",
+      "Egyptian Empire"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Sur quel État Jules César exerça-t-il la dictature ?",
+        "choices": [
+          "La République romaine",
+          "L’Empire perse",
+          "L’Empire grec",
+          "L’Empire égyptien"
+        ]
+      },
+      "ar": {
+        "question": "على أي دولة حكم يوليوس قيصر ديكتاتورًا؟",
+        "choices": [
+          "الجمهورية الرومانية",
+          "الإمبراطورية الفارسية",
+          "الإمبراطورية اليونانية",
+          "الإمبراطورية المصرية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian historical event in 1881 led to the French protectorate?",
+    "choices": [
+      "Congress of Berlin",
+      "Treaty of Tilsit",
+      "Battle of Hastings",
+      "Treaty of Bardo"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel événement tunisien de 1881 mena au protectorat français ?",
+        "choices": [
+          "Le congrès de Berlin",
+          "Le traité de Tilsit",
+          "La bataille d’Hastings",
+          "Le traité du Bardo"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حدث تاريخي تونسي عام 1881 أدى إلى الحماية الفرنسية؟",
+        "choices": [
+          "مؤتمر برلين",
+          "معاهدة تيلسيت",
+          "معركة هاستينغز",
+          "معاهدة باردو"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which European explorer sailed around the southern tip of Africa to reach India in 1498?",
+    "choices": [
+      "Marco Polo",
+      "Ferdinand Magellan",
+      "James Cook",
+      "Vasco da Gama"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel explorateur européen contourna la pointe sud de l’Afrique pour atteindre l’Inde en 1498 ?",
+        "choices": [
+          "Marco Polo",
+          "Ferdinand Magellan",
+          "James Cook",
+          "Vasco de Gama"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مستكشف أوروبي أبحر حول رأس الرجاء الصالح ليصل إلى الهند عام 1498؟",
+        "choices": [
+          "ماركو بولو",
+          "فرديناند ماغلان",
+          "جيمس كوك",
+          "فاسكو دا غاما"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ancient city was buried by the eruption of Mount Vesuvius in 79 AD?",
+    "choices": [
+      "Carthage",
+      "Babylon",
+      "Pompeii",
+      "Troy"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle cité antique fut ensevelie par l’éruption du Vésuve en 79 apr. J.-C. ?",
+        "choices": [
+          "Carthage",
+          "Babylone",
+          "Pompéi",
+          "Troie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة قديمة دُفنت تحت ثوران جبل فيزوف عام 79 ميلادية؟",
+        "choices": [
+          "قرطاج",
+          "بابل",
+          "بومبي",
+          "طروادة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which scientist is famous for the discovery of penicillin?",
+    "choices": [
+      "Marie Curie",
+      "Alexander Fleming",
+      "Louis Pasteur",
+      "Joseph Lister"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel scientifique est célèbre pour la découverte de la pénicilline ?",
+        "choices": [
+          "Marie Curie",
+          "Alexander Fleming",
+          "Louis Pasteur",
+          "Joseph Lister"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عالم اشتهر باكتشاف البنسلين؟",
+        "choices": [
+          "ماري كوري",
+          "ألكسندر فلمنغ",
+          "لويس باستور",
+          "جوزيف ليستر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Ottoman sultan conquered Egypt in 1517?",
+    "choices": [
+      "Selim I",
+      "Mehmed IV",
+      "Murad IV",
+      "Suleiman I"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sultan ottoman conquit l’Égypte en 1517 ?",
+        "choices": [
+          "Sélim Ier",
+          "Mehmed IV",
+          "Mourad IV",
+          "Soliman Ier"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سلاطين الدولة العثمانية فتح مصر عام 1517؟",
+        "choices": [
+          "سليم الأول",
+          "محمد الرابع",
+          "مراد الرابع",
+          "سليمان القانوني"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which war did the United States enter in 1917?",
+    "choices": [
+      "World War I",
+      "Korean War",
+      "Vietnam War",
+      "World War II"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Dans quelle guerre les États-Unis sont-ils entrés en 1917 ?",
+        "choices": [
+          "La Première Guerre mondiale",
+          "La guerre de Corée",
+          "La guerre du Viêt Nam",
+          "La Seconde Guerre mondiale"
+        ]
+      },
+      "ar": {
+        "question": "في أي حرب دخلت الولايات المتحدة عام 1917؟",
+        "choices": [
+          "الحرب العالمية الأولى",
+          "الحرب الكورية",
+          "حرب فيتنام",
+          "الحرب العالمية الثانية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Chinese dynasty built the Forbidden City in Beijing?",
+    "choices": [
+      "Tang dynasty",
+      "Han dynasty",
+      "Zhou dynasty",
+      "Ming dynasty"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle dynastie chinoise a bâti la Cité interdite à Pékin ?",
+        "choices": [
+          "La dynastie Tang",
+          "La dynastie Han",
+          "La dynastie Zhou",
+          "La dynastie Ming"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سلالة صينية بنت المدينة المحرمة في بكين؟",
+        "choices": [
+          "أسرة تانغ",
+          "أسرة هان",
+          "أسرة تشو",
+          "أسرة مينغ"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which English king signed the Magna Carta in 1215?",
+    "choices": [
+      "Edward III",
+      "Henry VIII",
+      "Richard I",
+      "King John"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel roi anglais a signé la Magna Carta en 1215 ?",
+        "choices": [
+          "Édouard III",
+          "Henri VIII",
+          "Richard Cœur de Lion",
+          "Jean sans Terre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملك إنجليزي وقّع الماغنا كارتا عام 1215؟",
+        "choices": [
+          "إدوارد الثالث",
+          "هنري الثامن",
+          "ريتشارد الأول",
+          "الملك جون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which empire was defeated at the Battle of Tours in 732?",
+    "choices": [
+      "Holy Roman Empire",
+      "Mongol Empire",
+      "Umayyad Caliphate",
+      "Byzantine Empire"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel empire fut vaincu à la bataille de Poitiers (Tours) en 732 ?",
+        "choices": [
+          "Le Saint-Empire romain",
+          "L’Empire mongol",
+          "Le califat omeyyade",
+          "L’Empire byzantin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تعرضت للهزيمة في معركة بلاط الشهداء (بواتييه) عام 732؟",
+        "choices": [
+          "الإمبراطورية الرومانية المقدسة",
+          "الإمبراطورية المغولية",
+          "الخلافة الأموية",
+          "الإمبراطورية البيزنطية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country was ruled by the Incas?",
+    "choices": [
+      "Mexico",
+      "Italy",
+      "Egypt",
+      "Peru"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel pays était gouverné par les Incas ?",
+        "choices": [
+          "Le Mexique",
+          "L’Italie",
+          "L’Égypte",
+          "Le Pérou"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة حكمها الإنكا؟",
+        "choices": [
+          "المكسيك",
+          "إيطاليا",
+          "مصر",
+          "بيرو"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  }
+]
