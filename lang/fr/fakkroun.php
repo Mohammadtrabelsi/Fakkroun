@@ -1,25 +1,35 @@
 <?php
 
 return [
-    'game_settings' => 'Paramètres de jeu',
-    'game_settings_description' => 'Règles appliquées à chaque salle et partie. Les modifications s’appliquent aux parties lancées après l’enregistrement.',
-    'moderator_saved' => 'Catégories enregistrées pour :name',
-    'moderator_scope_hint' => 'Les modérateurs ne peuvent examiner que le contenu des catégories cochées ici.',
-    'moderators' => 'Modérateurs',
-    'moderators_description' => 'Choisissez les catégories que chaque modérateur examine. Une catégorie principale inclut ses sous-catégories.',
-    'no_moderators' => 'Aucun modérateur pour l’instant. Attribuez le rôle de modérateur depuis Utilisateurs → Modifier.',
     'ops' => [
         'job_failed' => 'Une tâche de fond a échoué : :job',
     ],
+    'tagline' => 'Réfléchis, réponds, apprends, gagne !',
     'preview_category' => 'Biodiversité marine',
+    'sample_question' => 'Exemple de question',
+    'game_settings' => 'Paramètres de jeu',
+    'game_settings_description' => 'Règles appliquées à chaque salle et partie. Les modifications s’appliquent aux parties lancées après l’enregistrement.',
+    'settings_saved' => 'Paramètres de jeu enregistrés',
+    'settings_reset' => 'Paramètres de jeu réinitialisés',
+    'settings_reset_button' => 'Rétablir les valeurs par défaut',
+    'settings_reset_confirm' => 'Rétablir tous les paramètres de jeu à leur valeur par défaut ?',
+    'moderators' => 'Modérateurs',
+    'moderators_description' => 'Choisissez les catégories que chaque modérateur examine. Une catégorie principale inclut ses sous-catégories.',
+    'moderator_saved' => 'Catégories enregistrées pour :name',
+    'moderator_scope_hint' => 'Les modérateurs ne peuvent examiner que le contenu des catégories cochées ici.',
+    'no_moderators' => 'Aucun modérateur pour l’instant. Attribuez le rôle de modérateur depuis Utilisateurs → Modifier.',
     'roles' => [
         'admin' => 'Administrateur',
         'moderator' => 'Modérateur',
         'advertiser' => 'Annonceur',
         'player' => 'Joueur',
     ],
-    'roles.' => '[TODO] Roles.',
-    'sample_question' => 'Exemple de question',
+    'settings_errors' => [
+        'min_players_above_max' => 'Le nombre minimum de joueurs ne peut pas dépasser le maximum.',
+        'round_above_max' => 'Le nombre de joueurs par manche ne peut pas dépasser le maximum par salle.',
+        'question_count_above_max' => 'Le nombre de questions par défaut ne peut pas dépasser le maximum.',
+        'seconds_out_of_range' => 'La durée par défaut d’une question doit être comprise entre la durée minimale et la durée maximale.',
+    ],
     'settings' => [
         'game' => [
             'title' => 'Salles et parties',
@@ -118,17 +128,7 @@ return [
             'fallback_locale' => 'Langue de repli',
         ],
     ],
-    'settings.' => '[TODO] Settings.',
-    'settings_errors' => [
-        'min_players_above_max' => 'Le nombre minimum de joueurs ne peut pas dépasser le maximum.',
-        'round_above_max' => 'Le nombre de joueurs par manche ne peut pas dépasser le maximum par salle.',
-        'question_count_above_max' => 'Le nombre de questions par défaut ne peut pas dépasser le maximum.',
-        'seconds_out_of_range' => 'La durée par défaut d’une question doit être comprise entre la durée minimale et la durée maximale.',
-    ],
-    'settings_reset' => 'Paramètres de jeu réinitialisés',
-    'settings_reset_button' => 'Rétablir les valeurs par défaut',
-    'settings_reset_confirm' => 'Rétablir tous les paramètres de jeu à leur valeur par défaut ?',
-    'settings_saved' => 'Paramètres de jeu enregistrés',
+    // Units shown next to numeric game settings.
     'settings_units' => [
         'players' => 'joueurs',
         'categories' => 'catégories',
@@ -148,7 +148,5 @@ return [
         'milliseconds' => 'ms',
         'minor' => '1/100 :currency',
     ],
-    'settings_units.' => '[TODO] Settings units.',
-    'settings_units.minor' => '[TODO] Settings units.minor',
-    'tagline' => 'Réfléchis, réponds, apprends, gagne !',
+
 ];

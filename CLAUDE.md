@@ -92,8 +92,8 @@ Where they meet this code base:
 - **Public forms** use `App\Support\Livewire\ThrottlesSubmissions`; limits are in
   `config('fakkroun.form_throttle')`.
 - **Translations**: `tests/Feature/TranslationCoverageTest.php` is the check for missing keys.
-  `php artisan translations:sync --dry-run` also lists dynamic key prefixes (`about.stat_`),
-  so its "keys added" count is not a list of missing translations; do not run it without `--dry-run`.
+  `php artisan translations:sync --dry-run` must report `Keys added : 0`. It reads nested bundles
+  and skips keys built at run time (`__('about.stat_'.$key)`); those are covered by the test only.
 - **Tests** are PHPUnit classes (the rules say Pest; Pest is not installed and adding it is a
   dependency change that needs approval).
 - **PHP 8.4** is required by the lockfile (Symfony 8). `composer analyse` still reports

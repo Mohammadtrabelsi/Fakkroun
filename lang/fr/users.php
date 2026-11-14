@@ -6,6 +6,10 @@ return [
     'create_description' => 'Description de création',
     'edit' => 'Modifier',
     'edit_description' => 'Description de modification',
+    'no_roles' => 'Aucun rôle',
+    'password_placeholder' => 'Laisser vide pour conserver le mot de passe actuel',
+    'save_changes' => 'Enregistrer les modifications',
+    // List screen (admin).
     'list' => [
         'new' => 'Nouvel utilisateur',
         'active' => 'Utilisateurs actifs',
@@ -18,15 +22,4 @@ return [
         'confirm_trash' => 'Mettre :name à la corbeille ? La connexion lui sera impossible jusqu’à restauration.',
         'new_today' => ':count nouveaux aujourd’hui',
     ],
-    'list.active' => '[TODO] List.active',
-    'list.administrators' => '[TODO] List.administrators',
-    'list.confirm_force_delete' => '[TODO] List.confirm force delete',
-    'list.confirm_trash' => '[TODO] List.confirm trash',
-    'list.member' => '[TODO] List.member',
-    'list.new' => '[TODO] List.new',
-    'list.new_today' => '[TODO] List.new today',
-    'list.trashed' => '[TODO] List.trashed',
-    'no_roles' => 'Aucun rôle',
-    'password_placeholder' => 'Laisser vide pour conserver le mot de passe actuel',
-    'save_changes' => 'Enregistrer les modifications',
 ];
