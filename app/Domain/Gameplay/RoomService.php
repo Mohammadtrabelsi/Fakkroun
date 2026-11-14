@@ -224,7 +224,7 @@ class RoomService
      * invitation link and its QR code. Only for rooms that still take
      * players; null otherwise (unknown code, started, closed, expired).
      *
-     * @return array{code: string, name: string, url: string, qr: array{size: int, path: string}}|null
+     * @return array{code: string, name: string, url: string, qr: array{size: int, path: string}, links: array{whatsapp: string, messenger: string}}|null
      */
     public function invitationForCode(string $code): ?array
     {
@@ -243,6 +243,24 @@ class RoomService
             'name' => (string) $room->name,
             'url' => $room->invitationUrl(),
             'qr' => $this->invitationQr($room),
+            'links' => $this->shareLinks($room),
+        ];
+    }
+
+    /**
+     * Ready-made links that hand the invitation to a messaging app.
+     * Messenger only has an app link (no web one without a Facebook app id),
+     * so the pages offer it on phones and tablets only.
+     *
+     * @return array{whatsapp: string, messenger: string}
+     */
+    public function shareLinks(Room $room): array
+    {
+        $url = $room->invitationUrl();
+
+        return [
+            'whatsapp' => 'https://wa.me/?text='.rawurlencode(__('play.room.share_text', ['code' => $room->code]).' '.$url),
+            'messenger' => 'fb-messenger://share/?link='.rawurlencode($url),
         ];
     }
 

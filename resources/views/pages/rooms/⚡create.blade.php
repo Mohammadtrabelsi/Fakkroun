@@ -94,12 +94,6 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
         return app(QuestionSelector::class)->available($this->language, array_map('intval', $this->categoryIds), $this->difficulty === 'any' ? null : $this->difficulty);
     }
 
-    #[Computed]
-    public function openRooms()
-    {
-        return app(RoomService::class)->openRooms();
-    }
-
     public function create(RoomService $rooms): void
     {
         $this->authorize('play games');
@@ -226,13 +220,17 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                 <span><b>{{ __('play.rule.title') }}</b> <span class="text-ink-soft">— {{ __('play.rule.explanation') }}</span></span>
             </label>
 
-            <div class="flex flex-wrap items-center justify-between gap-4 border-t border-sand-300 pt-6">
-                <label class="flex min-h-11 cursor-pointer items-center gap-3">
-                    <input type="checkbox" wire:model="isPrivate" class="h-[22px] w-[22px] accent-sea">
-                    <span><b>{{ __('play.lobby.private') }}</b> <span class="text-ink-soft">{{ __('play.lobby.private_hint') }}</span></span>
-                </label>
-                <button type="submit" class="fk-btn fk-btn-primary min-h-14 rounded-2xl px-7 text-lg" wire:loading.attr="disabled" wire:target="create">{{ __('play.lobby.create_button', ['count' => $questionCount]) }}</button>
-            </div>
+            <fieldset class="m-0 flex flex-col gap-3 border-0 border-t border-sand-300 p-0 pt-6">
+                <legend class="sr-only">{{ __('play.create.visibility') }}</legend>
+                <span aria-hidden="true" class="font-semibold">{{ __('play.create.visibility') }}</span>
+                <div class="flex gap-1 rounded-[14px] bg-sand-200 p-1">
+                    <button type="button" wire:click="$set('isPrivate', true)" aria-pressed="{{ $isPrivate ? 'true' : 'false' }}" class="fk-seg">{{ __('play.create.visibility_private') }}</button>
+                    <button type="button" wire:click="$set('isPrivate', false)" aria-pressed="{{ $isPrivate ? 'false' : 'true' }}" class="fk-seg">{{ __('play.create.visibility_public') }}</button>
+                </div>
+                <p class="m-0 text-[15px] text-ink-muted" aria-live="polite">{{ $isPrivate ? __('play.create.visibility_private_hint') : __('play.create.visibility_public_hint') }}</p>
+            </fieldset>
+
+            <button type="submit" class="fk-btn fk-btn-primary min-h-14 self-end rounded-2xl px-7 text-lg max-sm:self-stretch" wire:loading.attr="disabled" wire:target="create">{{ __('play.lobby.create_button', ['count' => $questionCount]) }}</button>
         </form>
 
         <aside class="flex min-w-0 flex-[1_1_340px] flex-col gap-6">
@@ -247,25 +245,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                 @error('code') <span role="alert" class="text-sm font-semibold text-sun">{{ $message }}</span> @enderror
             </form>
 
-            <section aria-labelledby="open-h" class="flex flex-col gap-3.5 rounded-[28px] border border-sand-300 bg-paper p-6" wire:poll.10s>
-                <div class="flex items-center justify-between">
-                    <h2 id="open-h" class="m-0 text-[22px] font-semibold">{{ __('play.lobby.open_rooms') }}</h2>
-                    <span class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#2F6B34]"><span class="h-2 w-2 rounded-full bg-correct"></span>{{ __('play.lobby.live') }}</span>
-                </div>
-                <ul class="m-0 flex list-none flex-col gap-2.5 p-0">
-                    @forelse ($this->openRooms as $room)
-                        <li class="flex items-center gap-3 rounded-2xl bg-sand p-3" wire:key="open-{{ $room->id }}">
-                            <div class="flex min-w-0 flex-1 flex-col gap-0.5">
-                                <b class="text-base">{{ $room->name }}</b>
-                                <span class="text-[13px] text-ink-soft">{{ __('play.lobby.room_meta', ['players' => $room->players_count, 'max' => $room->max_players, 'host' => $room->host?->name]) }}</span>
-                            </div>
-                            <a href="{{ route('rooms.invitation', $room->code) }}" aria-label="{{ __('play.lobby.join_room', ['name' => $room->name]) }}" class="inline-flex min-h-11 items-center rounded-xl border-2 border-sea px-4 text-sm font-semibold text-sea no-underline">{{ __('play.join.submit') }}</a>
-                        </li>
-                    @empty
-                        <li class="text-[15px] text-ink-soft">{{ __('play.lobby.no_open_rooms') }}</li>
-                    @endforelse
-                </ul>
-            </section>
+            <livewire:rooms.open-rooms />
         </aside>
     </div>
 </div>

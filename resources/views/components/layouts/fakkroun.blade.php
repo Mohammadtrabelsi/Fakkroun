@@ -87,7 +87,7 @@
                         <span class="leading-relaxed">{{ __('home.footer.tagline') }}</span>
                     </div>
                     @foreach ([
-                        [__('home.footer.play'), [[__('home.footer.create'), $playUrl], [__('home.footer.join'), route('rooms.join')]]],
+                        [__('home.footer.play'), [[__('home.footer.create'), route('rooms.create')], [__('home.footer.join'), route('rooms.join')]]],
                         [__('home.footer.contribute'), [[__('home.footer.submit'), route('questions.submit')], [__('home.footer.schools'), url('/#partners')], [__('home.footer.partners'), url('/#partners')]]],
                         [__('home.footer.about'), [[__('home.footer.mission'), route('about')], [__('home.footer.terms'), route('terms')]]],
                     ] as [$heading, $links])

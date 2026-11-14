@@ -25,9 +25,9 @@ class ViewServiceProvider extends ServiceProvider
         // templates hold no <script> tag of their own.
         Blade::directive('themeScript', fn (): string => '<script src="<?php echo e(\\Illuminate\\Support\\Facades\\Vite::asset(\'resources/js/theme.js\')); ?>"></script>');
 
-        // Joining and playing needs no account; hosting does.
+        // Every "Play" button opens the chooser: join a room or host one.
         ViewFacade::composer(['welcome', 'about', 'components.layouts.fakkroun'], function (View $view): void {
-            $view->with('playUrl', auth()->user()?->isGuest() === false ? route('rooms.create') : route('rooms.join'));
+            $view->with('playUrl', route('play'));
         });
 
         ViewFacade::composer('welcome', function (View $view): void {

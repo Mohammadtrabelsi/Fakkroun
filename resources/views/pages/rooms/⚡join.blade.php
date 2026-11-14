@@ -195,9 +195,13 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
                         <span x-show="! copied">{{ __('play.room.copy') }}</span><span x-show="copied" x-cloak>{{ __('play.room.copied') }}</span>
                     </button>
                     <button type="button" class="fk-btn border-2 border-ink text-ink" x-show="navigator.share" x-cloak x-on:click="navigator.share({ title: @js($share['name']), text: @js(__('play.room.share_text', ['code' => $share['code']])), url })">{{ __('play.room.share') }}</button>
+                    <a class="fk-btn border-2 border-ink text-ink no-underline" href="{{ $share['links']['whatsapp'] }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a class="fk-btn hidden border-2 border-ink text-ink no-underline [@media(pointer:coarse)]:inline-flex" href="{{ $share['links']['messenger'] }}">Messenger</a>
                 </div>
             </section>
         @endif
+
+        <livewire:rooms.open-rooms />
 
         <p class="m-0 text-ink-muted">
             {{ __('play.join.or_create') }}

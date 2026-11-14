@@ -18,7 +18,7 @@ return [
         'title' => 'Think. Answer. Learn.',
         'title_accent' => 'Win.',
         'lead' => 'Open a room, share the code, and race your friends, class or colleagues through questions about our sea, our climate and our planet — in Arabic, French or English. Every answer comes with the story behind it.',
-        'create' => 'Create a room',
+        'create' => 'Play now',
         'have_code' => 'Have a code?',
         'code_placeholder' => 'e.g. 7KQ2',
         'join' => 'Join',
@@ -98,7 +98,7 @@ return [
     'cta' => [
         'title' => 'Your room is one code away.',
         'subtitle' => 'جاهز؟ فكّر قبل ما تجاوب.',
-        'button' => 'Create a room',
+        'button' => 'Play now',
     ],
     'footer' => [
         'tagline' => 'Think, Answer, Learn, Win! A multiplayer quiz for a greener, bluer Mediterranean.',
