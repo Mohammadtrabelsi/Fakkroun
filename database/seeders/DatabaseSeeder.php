@@ -42,6 +42,7 @@ class DatabaseSeeder extends Seeder
     public const DEMO = [
         FakkrounDemoQuestionSeeder::class,
         FakkrounPlayableQuestionSeeder::class,
+        FakkrounQuestionBankSeeder::class,
         FakkrounDemoGameSeeder::class,
         AdvertiserDemoSeeder::class,
     ];
