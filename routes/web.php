@@ -44,6 +44,9 @@ Route::livewire('/language/{locale}', 'pages::locale')->name('locale.switch');
 
 Route::livewire('/leaderboard', 'pages::leaderboard')->name('leaderboard');
 
+// Every "Play" button lands here: join a room or host one.
+Route::livewire('/play', 'pages::rooms.start')->name('play');
+
 // Playing needs no account: anyone can join with a code and a nickname (the
 // join page signs visitors in as guest players, see GuestPlayers). Only
 // creating a room, and every account page below, needs a real account.
@@ -99,7 +102,7 @@ Route::middleware(['auth', 'registered'])->group(function () {
         Route::livewire('/players/{user}', 'pages::players.show')->name('players.show');
 
         Route::middleware('can:play games')->group(function () {
-            Route::livewire('/play', 'pages::rooms.create')->name('rooms.create');
+            Route::livewire('/play/host', 'pages::rooms.create')->name('rooms.create');
             Route::livewire('/play/history', 'pages::rooms.history')->name('rooms.history');
         });
 

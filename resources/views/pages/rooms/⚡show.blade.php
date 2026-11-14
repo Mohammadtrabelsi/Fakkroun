@@ -141,7 +141,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
             'invitationUrl' => $this->room->invitationUrl(),
             // Waiting room only: the invitation link as a scannable code.
             'qr' => $state === null ? app(RoomService::class)->invitationQr($this->room) : null,
-            'whatsappUrl' => 'https://wa.me/?text='.rawurlencode(__('play.room.share_text', ['code' => $this->room->code]).' '.$this->room->invitationUrl()),
+            'shareLinks' => app(RoomService::class)->shareLinks($this->room),
             'lobbyPlayers' => $data['players']->values()->map(fn ($player, int $index): array => [
                 'id' => $player->id,
                 'name' => $player->name,
@@ -280,7 +280,8 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Room')] class extends Comp
                             <span x-show="! copied">{{ __('play.room.copy') }}</span><span x-show="copied" x-cloak>{{ __('play.room.copied') }}</span>
                         </button>
                         <button type="button" class="fk-btn border-2 border-sea-line text-sand" x-show="navigator.share" x-cloak x-on:click="navigator.share({ title: @js($room->name), text: @js(__('play.room.share_text', ['code' => $room->code])), url })">{{ __('play.room.share') }}</button>
-                        <a class="fk-btn border-2 border-sea-line text-sand no-underline" href="{{ $whatsappUrl }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                        <a class="fk-btn border-2 border-sea-line text-sand no-underline" href="{{ $shareLinks['whatsapp'] }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                        <a class="fk-btn hidden border-2 border-sea-line text-sand no-underline [@media(pointer:coarse)]:inline-flex" href="{{ $shareLinks['messenger'] }}">Messenger</a>
                     </div>
                     <dl class="m-0 grid w-full gap-3 text-[15px] [grid-template-columns:repeat(auto-fit,minmax(180px,1fr))]">
                         <div><dt class="text-sea-mist">{{ __('play.create.categories') }}</dt><dd class="m-0 font-semibold">{{ implode(', ', $categoryNames) }}</dd></div>

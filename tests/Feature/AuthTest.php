@@ -119,7 +119,7 @@ class AuthTest extends TestCase
     public function test_guests_are_sent_to_the_matching_login(): void
     {
         $this->get('/admin/dashboard')->assertRedirect('/admin/login');
-        $this->get('/play')->assertRedirect('/login');
+        $this->get(route('rooms.create'))->assertRedirect('/login');
     }
 
     public function test_user_can_register(): void

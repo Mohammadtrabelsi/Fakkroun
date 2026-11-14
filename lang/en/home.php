@@ -37,7 +37,7 @@ return [
     'cta' => [
         'title' => 'Your room is one code away.',
         'subtitle' => 'جاهز؟ فكّر قبل ما تجاوب.',
-        'button' => 'Create a room',
+        'button' => 'Play now',
     ],
     'cta.button' => 'Cta.button',
     'cta.subtitle' => 'Cta.subtitle',
@@ -75,7 +75,7 @@ return [
         'title' => 'Think. Answer. Learn.',
         'title_accent' => 'Win.',
         'lead' => 'Open a room, share the code, and race your friends, class or colleagues through questions about our sea, our climate and our planet — in Arabic, French or English. Every answer comes with the story behind it.',
-        'create' => 'Create a room',
+        'create' => 'Play now',
         'have_code' => 'Have a code?',
         'code_placeholder' => 'e.g. 7KQ2',
         'join' => 'Join',

@@ -37,7 +37,7 @@ return [
     'cta' => [
         'title' => 'Votre salle n’est qu’à un code.',
         'subtitle' => 'جاهز؟ فكّر قبل ما تجاوب.',
-        'button' => 'Créer une salle',
+        'button' => 'Jouer maintenant',
     ],
     'cta.button' => '[TODO] Cta.button',
     'cta.subtitle' => '[TODO] Cta.subtitle',
@@ -75,7 +75,7 @@ return [
         'title' => 'Réfléchis. Réponds. Apprends.',
         'title_accent' => 'Gagne.',
         'lead' => 'Ouvrez une salle, partagez le code et affrontez vos amis, votre classe ou vos collègues sur des questions sur notre mer, notre climat et notre planète — en arabe, en français ou en anglais. Chaque réponse est accompagnée de l’histoire qui la sous-tend.',
-        'create' => 'Créer une salle',
+        'create' => 'Jouer maintenant',
         'have_code' => 'Vous avez un code ?',
         'code_placeholder' => 'ex. 7KQ2',
         'join' => 'Rejoindre',
