@@ -40,6 +40,8 @@ return [
         'easiest' => 'Plus faciles',
         'most_played' => 'Plus jouées',
         'most_reported' => 'Plus signalées',
+        'most_correct' => 'Plus de bonnes réponses',
+        'most_wrong' => 'Plus de mauvaises réponses',
     ],
     'lists.' => '[TODO] Lists.',
     'metrics' => [
@@ -72,5 +74,28 @@ return [
     'question_hint' => 'Les plus difficiles et les plus faciles ne comptent que les questions répondues au moins :min fois.',
     'question_title' => 'Questions',
     'reports' => '{0,1} :count signalement|[2,*] :count signalements',
+    'metrics.correct_responses' => 'Réponses correctes',
+    'metrics.wrong_responses' => 'Réponses fausses',
+    'correct_rate_hint' => ':rate correctes',
+    'count_correct' => ':count correctes',
+    'count_wrong' => ':count fausses',
+    'room_status' => [
+        'waiting' => 'En attente',
+        'in_progress' => 'En cours',
+        'completed' => 'Terminées',
+        'cancelled' => 'Annulées',
+    ],
+    'rooms' => [
+        'title' => 'Salons',
+        'created' => 'Salons créés',
+        'avg_players' => 'Joueurs par salon en moyenne',
+    ],
+    'players' => [
+        'title' => 'Joueurs',
+        'registrations' => 'Nouveaux comptes',
+        'registered' => 'Joueurs inscrits ayant joué',
+        'guests' => 'Joueurs invités ayant joué',
+        'note' => 'Les invités rejoignent avec un pseudo, sans compte.',
+    ],
     'title' => 'Statistiques',
 ];

@@ -40,6 +40,8 @@ return [
         'easiest' => 'Easiest',
         'most_played' => 'Most played',
         'most_reported' => 'Most reported',
+        'most_correct' => 'Most correct answers',
+        'most_wrong' => 'Most wrong answers',
     ],
     'lists.' => 'Lists.',
     'metrics' => [
@@ -72,5 +74,28 @@ return [
     'question_hint' => 'Hardest and easiest only include questions answered at least :min times.',
     'question_title' => 'Questions',
     'reports' => '{1} :count report|[0,*] :count reports',
+    'metrics.correct_responses' => 'Correct responses',
+    'metrics.wrong_responses' => 'Wrong responses',
+    'correct_rate_hint' => ':rate correct',
+    'count_correct' => ':count correct',
+    'count_wrong' => ':count wrong',
+    'room_status' => [
+        'waiting' => 'Waiting',
+        'in_progress' => 'In progress',
+        'completed' => 'Completed',
+        'cancelled' => 'Cancelled',
+    ],
+    'rooms' => [
+        'title' => 'Rooms',
+        'created' => 'Rooms created',
+        'avg_players' => 'Players per room on average',
+    ],
+    'players' => [
+        'title' => 'Players',
+        'registrations' => 'New accounts',
+        'registered' => 'Registered players who played',
+        'guests' => 'Guest players who played',
+        'note' => 'Guests join with a nickname and no account.',
+    ],
     'title' => 'Analytics',
 ];

@@ -40,6 +40,8 @@ return [
         'easiest' => 'الأسهل',
         'most_played' => 'الأكثر لعبًا',
         'most_reported' => 'الأكثر إبلاغًا',
+        'most_correct' => 'الأكثر إجابات صحيحة',
+        'most_wrong' => 'الأكثر إجابات خاطئة',
     ],
     'lists.' => '[TODO] Lists.',
     'metrics' => [
@@ -72,5 +74,28 @@ return [
     'question_hint' => 'الأصعب والأسهل تشمل فقط الأسئلة التي أُجيب عنها :min مرات على الأقل.',
     'question_title' => 'الأسئلة',
     'reports' => '{0} لا بلاغات|{1} بلاغ واحد|[2,*] :count بلاغات',
+    'metrics.correct_responses' => 'الإجابات الصحيحة',
+    'metrics.wrong_responses' => 'الإجابات الخاطئة',
+    'correct_rate_hint' => ':rate صحيحة',
+    'count_correct' => ':count صحيحة',
+    'count_wrong' => ':count خاطئة',
+    'room_status' => [
+        'waiting' => 'في الانتظار',
+        'in_progress' => 'جارية',
+        'completed' => 'مكتملة',
+        'cancelled' => 'ملغاة',
+    ],
+    'rooms' => [
+        'title' => 'الغرف',
+        'created' => 'الغرف المنشأة',
+        'avg_players' => 'اللاعبون في الغرفة في المتوسط',
+    ],
+    'players' => [
+        'title' => 'اللاعبون',
+        'registrations' => 'حسابات جديدة',
+        'registered' => 'لاعبون مسجّلون شاركوا',
+        'guests' => 'لاعبون ضيوف شاركوا',
+        'note' => 'ينضم الضيوف باسم مستعار دون حساب.',
+    ],
     'title' => 'الإحصاءات',
 ];
