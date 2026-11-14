@@ -2,11 +2,6 @@
 
 return [
     'cash_instructions' => 'Payment is in cash for now. Pay a member of the Fakkroun team; your paid account starts as soon as they record the payment.',
-    'errors' => [
-        'plan_not_available' => 'The paid account is not on sale yet.',
-        'not_pending' => 'This payment is no longer pending.',
-        'duplicate_reference' => 'This receipt number was already recorded.',
-    ],
     'plans' => [
         'title' => 'Paid accounts',
         'description' => 'Users with a paid, ad-free account. Payment is in cash for now: record each cash payment here. Advertiser packs are separate (Advertising).',
@@ -25,19 +20,9 @@ return [
         'none' => 'No paid accounts yet.',
         'unknown_user' => 'No user with this e-mail.',
     ],
-    'plans.amount' => 'Plans.amount',
-    'plans.cancel' => 'Plans.cancel',
-    'plans.cancelled' => 'Plans.cancelled',
-    'plans.description' => 'Plans.description',
-    'plans.email' => 'Plans.email',
-    'plans.months' => 'Plans.months',
-    'plans.none' => 'Plans.none',
-    'plans.not_on_sale' => 'Plans.not on sale',
-    'plans.price' => 'Plans.price',
-    'plans.receipt' => 'Plans.receipt',
-    'plans.record' => 'Plans.record',
-    'plans.recorded' => 'Plans.recorded',
-    'plans.title' => 'Plans.title',
-    'plans.unknown_user' => 'Plans.unknown user',
-    'plans.until' => 'Plans.until',
+    'errors' => [
+        'plan_not_available' => 'The paid account is not on sale yet.',
+        'not_pending' => 'This payment is no longer pending.',
+        'duplicate_reference' => 'This receipt number was already recorded.',
+    ],
 ];
