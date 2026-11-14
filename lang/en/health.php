@@ -1,19 +1,20 @@
 <?php
 
 return [
-    'title' => 'Application health',
+    'check' => 'Check',
     'description' => 'Results of the scheduled health checks (database, cache, disk, queue, scheduler, backups).',
     'last_run' => 'last run :time',
+    'no_results' => 'No results yet. Run the checks now, or make sure the scheduler is running.',
+    'refreshed' => 'Health checks completed.',
     'run_now' => 'Run checks now',
     'running' => 'Running…',
-    'refreshed' => 'Health checks completed.',
-    'check' => 'Check',
     'status' => 'Status',
-    'summary' => 'Details',
-    'no_results' => 'No results yet. Run the checks now, or make sure the scheduler is running.',
-    'status_ok' => 'OK',
-    'status_warning' => 'Warning',
-    'status_failed' => 'Failed',
+    'status_' => 'Status ',
     'status_crashed' => 'Crashed',
+    'status_failed' => 'Failed',
+    'status_ok' => 'OK',
     'status_skipped' => 'Skipped',
+    'status_warning' => 'Warning',
+    'summary' => 'Details',
+    'title' => 'Application health',
 ];

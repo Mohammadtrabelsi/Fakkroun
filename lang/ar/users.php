@@ -6,10 +6,6 @@ return [
     'create_description' => 'وصف الإنشاء',
     'edit' => 'تعديل',
     'edit_description' => 'وصف التعديل',
-    'no_roles' => 'لا توجد أدوار',
-    'password_placeholder' => 'اتركه فارغًا للإبقاء على كلمة المرور الحالية',
-    'save_changes' => 'حفظ التغييرات',
-    // List screen (admin).
     'list' => [
         'new' => 'مستخدم جديد',
         'active' => 'المستخدمون النشطون',
@@ -22,4 +18,15 @@ return [
         'confirm_trash' => 'هل تريد نقل :name إلى سلة المحذوفات؟ لن يتمكن من تسجيل الدخول حتى يُسترجع.',
         'new_today' => ':count جدد اليوم',
     ],
+    'list.active' => '[TODO] List.active',
+    'list.administrators' => '[TODO] List.administrators',
+    'list.confirm_force_delete' => '[TODO] List.confirm force delete',
+    'list.confirm_trash' => '[TODO] List.confirm trash',
+    'list.member' => '[TODO] List.member',
+    'list.new' => '[TODO] List.new',
+    'list.new_today' => '[TODO] List.new today',
+    'list.trashed' => '[TODO] List.trashed',
+    'no_roles' => 'لا توجد أدوار',
+    'password_placeholder' => 'اتركه فارغًا للإبقاء على كلمة المرور الحالية',
+    'save_changes' => 'حفظ التغييرات',
 ];

@@ -2,6 +2,11 @@
 
 return [
     'cash_instructions' => 'Le paiement se fait en espèces pour le moment. Payez un membre de l’équipe Fakkroun ; votre compte payant démarre dès qu’il enregistre le paiement.',
+    'errors' => [
+        'plan_not_available' => 'Le compte payant n’est pas encore en vente.',
+        'not_pending' => 'Ce paiement n’est plus en attente.',
+        'duplicate_reference' => 'Ce numéro de reçu est déjà enregistré.',
+    ],
     'plans' => [
         'title' => 'Comptes payants',
         'description' => 'Utilisateurs avec un compte payant sans publicité. Le paiement se fait en espèces pour le moment : enregistrez ici chaque paiement. Les offres annonceurs sont à part (Publicité).',
@@ -20,9 +25,19 @@ return [
         'none' => 'Aucun compte payant pour le moment.',
         'unknown_user' => 'Aucun utilisateur avec cet e-mail.',
     ],
-    'errors' => [
-        'plan_not_available' => 'Le compte payant n’est pas encore en vente.',
-        'not_pending' => 'Ce paiement n’est plus en attente.',
-        'duplicate_reference' => 'Ce numéro de reçu est déjà enregistré.',
-    ],
+    'plans.amount' => '[TODO] Plans.amount',
+    'plans.cancel' => '[TODO] Plans.cancel',
+    'plans.cancelled' => '[TODO] Plans.cancelled',
+    'plans.description' => '[TODO] Plans.description',
+    'plans.email' => '[TODO] Plans.email',
+    'plans.months' => '[TODO] Plans.months',
+    'plans.none' => '[TODO] Plans.none',
+    'plans.not_on_sale' => '[TODO] Plans.not on sale',
+    'plans.price' => '[TODO] Plans.price',
+    'plans.receipt' => '[TODO] Plans.receipt',
+    'plans.record' => '[TODO] Plans.record',
+    'plans.recorded' => '[TODO] Plans.recorded',
+    'plans.title' => '[TODO] Plans.title',
+    'plans.unknown_user' => '[TODO] Plans.unknown user',
+    'plans.until' => '[TODO] Plans.until',
 ];

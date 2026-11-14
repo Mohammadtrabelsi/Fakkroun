@@ -1,35 +1,25 @@
 <?php
 
 return [
+    'game_settings' => 'إعدادات اللعب',
+    'game_settings_description' => 'القواعد التي تتبعها كل غرفة ولعبة. تُطبَّق التغييرات على الألعاب التي تبدأ بعد الحفظ.',
+    'moderator_saved' => 'تم حفظ الفئات لـ :name',
+    'moderator_scope_hint' => 'لا يمكن للمشرفين مراجعة المحتوى إلا في الفئات المحددة هنا.',
+    'moderators' => 'المشرفون',
+    'moderators_description' => 'اختر الفئات التي يراجعها كل مشرف. تعيين فئة رئيسية يشمل فئاتها الفرعية.',
+    'no_moderators' => 'لا يوجد مشرفون بعد. امنح مستخدمًا دور المشرف من المستخدمون ← تعديل.',
     'ops' => [
         'job_failed' => 'فشلت مهمة في الخلفية: :job',
     ],
-    'tagline' => 'فكّر، أجب، تعلّم، اربح!',
     'preview_category' => 'التنوع البيولوجي البحري',
-    'sample_question' => 'سؤال تجريبي',
-    'game_settings' => 'إعدادات اللعب',
-    'game_settings_description' => 'القواعد التي تتبعها كل غرفة ولعبة. تُطبَّق التغييرات على الألعاب التي تبدأ بعد الحفظ.',
-    'settings_saved' => 'تم حفظ إعدادات اللعب',
-    'settings_reset' => 'تمت إعادة إعدادات اللعب إلى القيم الافتراضية',
-    'settings_reset_button' => 'إعادة القيم الافتراضية',
-    'settings_reset_confirm' => 'هل تريد إعادة جميع إعدادات اللعب إلى قيمها الافتراضية؟',
-    'moderators' => 'المشرفون',
-    'moderators_description' => 'اختر الفئات التي يراجعها كل مشرف. تعيين فئة رئيسية يشمل فئاتها الفرعية.',
-    'moderator_saved' => 'تم حفظ الفئات لـ :name',
-    'moderator_scope_hint' => 'لا يمكن للمشرفين مراجعة المحتوى إلا في الفئات المحددة هنا.',
-    'no_moderators' => 'لا يوجد مشرفون بعد. امنح مستخدمًا دور المشرف من المستخدمون ← تعديل.',
     'roles' => [
         'admin' => 'مسؤول',
         'moderator' => 'مشرف',
         'advertiser' => 'معلن',
         'player' => 'لاعب',
     ],
-    'settings_errors' => [
-        'min_players_above_max' => 'لا يمكن أن يتجاوز الحد الأدنى لعدد اللاعبين الحد الأقصى.',
-        'round_above_max' => 'لا يمكن أن يتجاوز عدد اللاعبين في الجولة الحد الأقصى للغرفة.',
-        'question_count_above_max' => 'لا يمكن أن يتجاوز عدد الأسئلة الافتراضي الحد الأقصى.',
-        'seconds_out_of_range' => 'يجب أن تكون المدة الافتراضية للسؤال بين المدة الدنيا والمدة القصوى.',
-    ],
+    'roles.' => '[TODO] Roles.',
+    'sample_question' => 'سؤال تجريبي',
     'settings' => [
         'game' => [
             'title' => 'الغرف والألعاب',
@@ -128,7 +118,17 @@ return [
             'fallback_locale' => 'اللغة الاحتياطية',
         ],
     ],
-    // Units shown next to numeric game settings.
+    'settings.' => '[TODO] Settings.',
+    'settings_errors' => [
+        'min_players_above_max' => 'لا يمكن أن يتجاوز الحد الأدنى لعدد اللاعبين الحد الأقصى.',
+        'round_above_max' => 'لا يمكن أن يتجاوز عدد اللاعبين في الجولة الحد الأقصى للغرفة.',
+        'question_count_above_max' => 'لا يمكن أن يتجاوز عدد الأسئلة الافتراضي الحد الأقصى.',
+        'seconds_out_of_range' => 'يجب أن تكون المدة الافتراضية للسؤال بين المدة الدنيا والمدة القصوى.',
+    ],
+    'settings_reset' => 'تمت إعادة إعدادات اللعب إلى القيم الافتراضية',
+    'settings_reset_button' => 'إعادة القيم الافتراضية',
+    'settings_reset_confirm' => 'هل تريد إعادة جميع إعدادات اللعب إلى قيمها الافتراضية؟',
+    'settings_saved' => 'تم حفظ إعدادات اللعب',
     'settings_units' => [
         'players' => 'لاعبون',
         'categories' => 'فئات',
@@ -148,5 +148,7 @@ return [
         'milliseconds' => 'ميلي ثانية',
         'minor' => ':currency 1/100',
     ],
-
+    'settings_units.' => '[TODO] Settings units.',
+    'settings_units.minor' => '[TODO] Settings units.minor',
+    'tagline' => 'فكّر، أجب، تعلّم، اربح!',
 ];

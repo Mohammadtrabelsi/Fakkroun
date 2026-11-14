@@ -2,6 +2,11 @@
 
 return [
     'cash_instructions' => 'الدفع نقدًا حاليًا. ادفع لأحد أعضاء فريق فكّرون، ويبدأ حسابك المدفوع فور تسجيله للدفعة.',
+    'errors' => [
+        'plan_not_available' => 'الحساب المدفوع غير معروض للبيع بعد.',
+        'not_pending' => 'لم تعد هذه الدفعة قيد الانتظار.',
+        'duplicate_reference' => 'رقم الإيصال هذا مسجّل مسبقًا.',
+    ],
     'plans' => [
         'title' => 'الحسابات المدفوعة',
         'description' => 'المستخدمون أصحاب حساب مدفوع بدون إعلانات. الدفع نقدًا حاليًا: سجّل هنا كل دفعة نقدية. باقات المعلنين منفصلة (الإعلانات).',
@@ -20,9 +25,19 @@ return [
         'none' => 'لا توجد حسابات مدفوعة بعد.',
         'unknown_user' => 'لا يوجد مستخدم بهذا البريد.',
     ],
-    'errors' => [
-        'plan_not_available' => 'الحساب المدفوع غير معروض للبيع بعد.',
-        'not_pending' => 'لم تعد هذه الدفعة قيد الانتظار.',
-        'duplicate_reference' => 'رقم الإيصال هذا مسجّل مسبقًا.',
-    ],
+    'plans.amount' => '[TODO] Plans.amount',
+    'plans.cancel' => '[TODO] Plans.cancel',
+    'plans.cancelled' => '[TODO] Plans.cancelled',
+    'plans.description' => '[TODO] Plans.description',
+    'plans.email' => '[TODO] Plans.email',
+    'plans.months' => '[TODO] Plans.months',
+    'plans.none' => '[TODO] Plans.none',
+    'plans.not_on_sale' => '[TODO] Plans.not on sale',
+    'plans.price' => '[TODO] Plans.price',
+    'plans.receipt' => '[TODO] Plans.receipt',
+    'plans.record' => '[TODO] Plans.record',
+    'plans.recorded' => '[TODO] Plans.recorded',
+    'plans.title' => '[TODO] Plans.title',
+    'plans.unknown_user' => '[TODO] Plans.unknown user',
+    'plans.until' => '[TODO] Plans.until',
 ];

@@ -1,35 +1,25 @@
 <?php
 
 return [
+    'game_settings' => 'Game settings',
+    'game_settings_description' => 'Rules every room and game follows. Changes apply to games started after you save.',
+    'moderator_saved' => 'Categories saved for :name',
+    'moderator_scope_hint' => 'Moderators can only review content in the categories ticked here.',
+    'moderators' => 'Moderators',
+    'moderators_description' => 'Choose which categories each moderator reviews. Assigning a top-level category includes its subcategories.',
+    'no_moderators' => 'No moderators yet. Give a user the moderator role from Users → Edit.',
     'ops' => [
         'job_failed' => 'A background task failed: :job',
     ],
-    'tagline' => 'Think, Answer, Learn, Win!',
     'preview_category' => 'Marine Biodiversity',
-    'sample_question' => 'Sample question',
-    'game_settings' => 'Game settings',
-    'game_settings_description' => 'Rules every room and game follows. Changes apply to games started after you save.',
-    'settings_saved' => 'Game settings saved',
-    'settings_reset' => 'Game settings reset to defaults',
-    'settings_reset_button' => 'Reset to defaults',
-    'settings_reset_confirm' => 'Reset every game setting to its default value?',
-    'moderators' => 'Moderators',
-    'moderators_description' => 'Choose which categories each moderator reviews. Assigning a top-level category includes its subcategories.',
-    'moderator_saved' => 'Categories saved for :name',
-    'moderator_scope_hint' => 'Moderators can only review content in the categories ticked here.',
-    'no_moderators' => 'No moderators yet. Give a user the moderator role from Users → Edit.',
     'roles' => [
         'admin' => 'Administrator',
         'moderator' => 'Moderator',
         'advertiser' => 'Advertiser',
         'player' => 'Player',
     ],
-    'settings_errors' => [
-        'min_players_above_max' => 'The minimum number of players cannot exceed the maximum.',
-        'round_above_max' => 'Players per round cannot exceed the maximum players per room.',
-        'question_count_above_max' => 'The default number of questions cannot exceed the maximum.',
-        'seconds_out_of_range' => 'The default question duration must lie between the minimum and maximum durations.',
-    ],
+    'roles.' => 'Roles.',
+    'sample_question' => 'Sample question',
     'settings' => [
         'game' => [
             'title' => 'Rooms and games',
@@ -128,7 +118,17 @@ return [
             'fallback_locale' => 'Fallback language',
         ],
     ],
-    // Units shown next to numeric game settings.
+    'settings.' => 'Settings.',
+    'settings_errors' => [
+        'min_players_above_max' => 'The minimum number of players cannot exceed the maximum.',
+        'round_above_max' => 'Players per round cannot exceed the maximum players per room.',
+        'question_count_above_max' => 'The default number of questions cannot exceed the maximum.',
+        'seconds_out_of_range' => 'The default question duration must lie between the minimum and maximum durations.',
+    ],
+    'settings_reset' => 'Game settings reset to defaults',
+    'settings_reset_button' => 'Reset to defaults',
+    'settings_reset_confirm' => 'Reset every game setting to its default value?',
+    'settings_saved' => 'Game settings saved',
     'settings_units' => [
         'players' => 'players',
         'categories' => 'categories',
@@ -148,5 +148,7 @@ return [
         'milliseconds' => 'ms',
         'minor' => '1/100 :currency',
     ],
-
+    'settings_units.' => 'Settings units.',
+    'settings_units.minor' => 'Settings units.minor',
+    'tagline' => 'Think, Answer, Learn, Win!',
 ];

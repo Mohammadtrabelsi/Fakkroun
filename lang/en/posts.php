@@ -12,6 +12,19 @@ return [
     'delete' => 'Delete',
     'drafts' => 'Drafts',
     'edit_post' => 'Edit post',
+    'list' => [
+        'title' => 'Posts',
+        'select' => 'Select post',
+        'confirm_bulk' => 'Apply this action to the selected posts?',
+        'confirm_force_delete' => 'Permanently delete this post? This cannot be undone.',
+        'confirm_trash' => 'Move this post to the trash?',
+        'remove_cover' => 'Remove cover image',
+    ],
+    'list.confirm_bulk' => 'List.confirm bulk',
+    'list.confirm_force_delete' => 'List.confirm force delete',
+    'list.confirm_trash' => 'List.confirm trash',
+    'list.select' => 'List.select',
+    'list.title' => 'List.title',
     'new_post' => 'New post',
     'no_posts_found' => 'No posts found',
     'published' => 'Published',
@@ -25,13 +38,4 @@ return [
     'update_post_content' => 'Update post content',
     'write_a_new_post' => 'Write a new post',
     'write_and_publish_content' => 'Write and publish content',
-    // List screen (admin).
-    'list' => [
-        'title' => 'Posts',
-        'select' => 'Select post',
-        'confirm_bulk' => 'Apply this action to the selected posts?',
-        'confirm_force_delete' => 'Permanently delete this post? This cannot be undone.',
-        'confirm_trash' => 'Move this post to the trash?',
-        'remove_cover' => 'Remove cover image',
-    ],
 ];

@@ -1,19 +1,6 @@
 <?php
 
 return [
-    'history' => [
-        'eyebrow' => 'ألعابك',
-        'title' => 'ألعابي',
-        'empty' => 'لا توجد ألعاب مكتملة بعد. أنشئ غرفة أو انضم إلى غرفة برمز.',
-        'players' => ':count لاعبين',
-        'correct' => ':correct/:total إجابات صحيحة',
-        'review' => 'مراجعة',
-    ],
-    'achievements_title' => 'الإنجازات',
-    'no_achievements' => 'أكمل لعبتك الأولى لتحصل على أول إنجاز.',
-    'no_achievements_public' => 'لا توجد إنجازات بعد.',
-    'my_profile' => 'ملفي العام',
-    'notice' => 'إنجاز جديد: :name',
     'achievements' => [
         'first_game' => [
             'name' => 'الخطوة الأولى',
@@ -40,4 +27,24 @@ return [
             'description' => 'لعبة مثالية بمتوسط 4 ثوانٍ أو أقل لكل إجابة.',
         ],
     ],
+    'achievements.' => '[TODO] Achievements.',
+    'achievements_title' => 'الإنجازات',
+    'history' => [
+        'eyebrow' => 'ألعابك',
+        'title' => 'ألعابي',
+        'empty' => 'لا توجد ألعاب مكتملة بعد. أنشئ غرفة أو انضم إلى غرفة برمز.',
+        'players' => ':count لاعبين',
+        'correct' => ':correct/:total إجابات صحيحة',
+        'review' => 'مراجعة',
+    ],
+    'history.correct' => '[TODO] History.correct',
+    'history.empty' => '[TODO] History.empty',
+    'history.eyebrow' => '[TODO] History.eyebrow',
+    'history.players' => '[TODO] History.players',
+    'history.review' => '[TODO] History.review',
+    'history.title' => '[TODO] History.title',
+    'my_profile' => 'ملفي العام',
+    'no_achievements' => 'أكمل لعبتك الأولى لتحصل على أول إنجاز.',
+    'no_achievements_public' => 'لا توجد إنجازات بعد.',
+    'notice' => 'إنجاز جديد: :name',
 ];

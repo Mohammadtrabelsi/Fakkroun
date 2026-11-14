@@ -12,6 +12,19 @@ return [
     'delete' => 'حذف',
     'drafts' => 'المسودات',
     'edit_post' => 'تعديل المنشور',
+    'list' => [
+        'title' => 'المقالات',
+        'select' => 'تحديد المقال',
+        'confirm_bulk' => 'هل تريد تطبيق هذا الإجراء على المقالات المحددة؟',
+        'confirm_force_delete' => 'هل تريد حذف هذا المقال نهائيًا؟ لا يمكن التراجع عن ذلك.',
+        'confirm_trash' => 'هل تريد نقل هذا المقال إلى سلة المحذوفات؟',
+        'remove_cover' => 'إزالة صورة الغلاف',
+    ],
+    'list.confirm_bulk' => '[TODO] List.confirm bulk',
+    'list.confirm_force_delete' => '[TODO] List.confirm force delete',
+    'list.confirm_trash' => '[TODO] List.confirm trash',
+    'list.select' => '[TODO] List.select',
+    'list.title' => '[TODO] List.title',
     'new_post' => 'منشور جديد',
     'no_posts_found' => 'لم يتم العثور على منشورات',
     'published' => 'المنشورة',
@@ -25,13 +38,4 @@ return [
     'update_post_content' => 'تحديث محتوى المنشور',
     'write_a_new_post' => 'اكتب منشورًا جديدًا',
     'write_and_publish_content' => 'اكتب وانشر المحتوى',
-    // List screen (admin).
-    'list' => [
-        'title' => 'المقالات',
-        'select' => 'تحديد المقال',
-        'confirm_bulk' => 'هل تريد تطبيق هذا الإجراء على المقالات المحددة؟',
-        'confirm_force_delete' => 'هل تريد حذف هذا المقال نهائيًا؟ لا يمكن التراجع عن ذلك.',
-        'confirm_trash' => 'هل تريد نقل هذا المقال إلى سلة المحذوفات؟',
-        'remove_cover' => 'إزالة صورة الغلاف',
-    ],
 ];
