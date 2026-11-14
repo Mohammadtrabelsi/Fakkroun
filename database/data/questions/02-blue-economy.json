@@ -1,0 +1,298 @@
+[
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does the “blue economy” focus on?",
+    "choices": [
+      "Mining deserts for minerals",
+      "Air travel only",
+      "Blue-coloured packaging",
+      "Sustainable use of ocean and marine resources"
+    ],
+    "correct": 4,
+    "explanation": "The blue economy aims to use ocean resources while keeping them healthy and able to regenerate.",
+    "reference_text": "FAO sustainable blue economy resources",
+    "translations": {
+      "fr": {
+        "question": "Sur quoi porte « l’économie bleue » ?",
+        "choices": [
+          "L’extraction minière dans les déserts",
+          "Le transport aérien uniquement",
+          "Les emballages de couleur bleue",
+          "L’usage durable des océans et des ressources marines"
+        ],
+        "explanation": "L’économie bleue vise à exploiter les ressources océaniques tout en préservant leur capacité à se renouveler."
+      },
+      "ar": {
+        "question": "ما الذي يركز عليه «الاقتصاد الأزرق»؟",
+        "choices": [
+          "التعدين في الصحاري",
+          "النقل الجوي وحده",
+          "تغليف باللون الأزرق",
+          "الاستخدام المستدام لموارد المحيطات والبحار"
+        ],
+        "explanation": "يسعى الاقتصاد الأزرق إلى الاستفادة من موارد المحيطات مع الحفاظ على قدرتها على التجدد."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which of these is part of the blue economy?",
+    "choices": [
+      "Coal mining",
+      "Car manufacturing",
+      "Sustainable fisheries and aquaculture",
+      "Desert farming"
+    ],
+    "correct": 3,
+    "explanation": "Fisheries and aquaculture are core blue-economy sectors when they are managed sustainably.",
+    "reference_text": "FAO sustainable blue economy resources",
+    "translations": {
+      "fr": {
+        "question": "Lequel de ces secteurs fait partie de l’économie bleue ?",
+        "choices": [
+          "L’extraction du charbon",
+          "La fabrication automobile",
+          "La pêche durable et l’aquaculture",
+          "L’agriculture désertique"
+        ],
+        "explanation": "La pêche durable et l’aquaculture sont des secteurs clés de l’économie bleue lorsqu’elles sont gérées durablement."
+      },
+      "ar": {
+        "question": "أيّ هذه القطاعات يُعدّ جزءًا من الاقتصاد الأزرق؟",
+        "choices": [
+          "استخراج الفحم",
+          "صناعة السيارات",
+          "الصيد المستدام وتربية الأحياء المائية",
+          "الزراعة في الصحراء"
+        ],
+        "explanation": "يُعدّ الصيد المستدام وتربية الأحياء المائية من القطاعات الأساسية في الاقتصاد الأزرق عند إدارتها بشكل مستدام."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is “aquaculture”?",
+    "choices": [
+      "Building ships",
+      "Mapping the deep sea floor",
+      "Farming aquatic organisms such as fish, shellfish and algae",
+      "Desalinating seawater"
+    ],
+    "correct": 3,
+    "explanation": "Aquaculture produces fish, shellfish and plants in ponds, cages or sea farms.",
+    "reference_text": "FAO aquaculture definitions",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’« aquaculture » ?",
+        "choices": [
+          "La construction de navires",
+          "La cartographie des fonds marins",
+          "L’élevage d’organismes aquatiques comme les poissons, les coquillages et les algues",
+          "Le dessalement de l’eau de mer"
+        ],
+        "explanation": "L’aquaculture produit des animaux et des végétaux aquatiques dans des bassins, des cages ou des parcs en mer."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«تربية الأحياء المائية» (Aquaculture)؟",
+        "choices": [
+          "بناء السفن",
+          "رسم خرائط قاع البحر العميق",
+          "تربية الكائنات المائية كالأسماك والمحار والطحالب",
+          "تحلية مياه البحر"
+        ],
+        "explanation": "تنتج تربية الأحياء المائية الأسماك والكائنات المائية في أحواض وأقفاص أو مزارع بحرية."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “blue carbon”?",
+    "choices": [
+      "A type of blue dye",
+      "Carbon captured and stored by seagrass, mangroves and salt marshes",
+      "Carbon dioxide dissolved in lakes",
+      "Carbon emitted by ships"
+    ],
+    "correct": 2,
+    "explanation": "Coastal ecosystems store large amounts of carbon in their soils and biomass.",
+    "reference_text": "UNEP blue carbon report",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « carbone bleu » ?",
+        "choices": [
+          "Un colorant bleu",
+          "Le carbone capturé et stocké par les herbiers, les mangroves et les marais salés",
+          "Le dioxyde de carbone dissous dans les lacs",
+          "Le carbone émis par les navires"
+        ],
+        "explanation": "Les écosystèmes côtiers stockent de grandes quantités de carbone dans leurs sols et leur biomasse."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الكربون الأزرق»؟",
+        "choices": [
+          "نوع من الصبغات الزرقاء",
+          "الكربون الذي تمتصه الحشائش البحرية وأشجار المانغروف والمستنقعات المالحة وتخزنه",
+          "ثاني أكسيد الكربون المذاب في البحيرات",
+          "الكربون الذي تطلقه السفن"
+        ],
+        "explanation": "تخزن النظم البيئية الساحلية كميات كبيرة من الكربون في تربتها وكتلتها الحيوية."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “MPA” stand for in ocean conservation?",
+    "choices": [
+      "Marine Protected Area",
+      "Marine Plastic Agency",
+      "Mediterranean Port Authority",
+      "Maritime Pollution Alert"
+    ],
+    "correct": 1,
+    "explanation": "A marine protected area restricts some activities to preserve ecosystems and the species living in them.",
+    "reference_text": "IUCN marine protected area guidance",
+    "translations": {
+      "fr": {
+        "question": "Que signifie « AMP » (aire marine protégée) en conservation des océans ?",
+        "choices": [
+          "Aire marine protégée",
+          "Agence du plastique marin",
+          "Autorité portuaire méditerranéenne",
+          "Alerte à la pollution maritime"
+        ],
+        "explanation": "Une aire marine protégée limite certaines activités afin de préserver les écosystèmes et les espèces qui s’y trouvent."
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار MPA في حماية المحيطات؟",
+        "choices": [
+          "منطقة بحرية محمية",
+          "وكالة البلاستيك البحري",
+          "هيئة الموانئ المتوسطية",
+          "تنبيه التلوث البحري"
+        ],
+        "explanation": "تحدّ المنطقة البحرية المحمية من بعض الأنشطة لحماية النظم البيئية والكائنات التي تعيش فيها."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “desalination”?",
+    "choices": [
+      "Cleaning oil spills with chemicals",
+      "Adding salt to rivers",
+      "Measuring sea depth with sonar",
+      "Removing salt from seawater to make fresh water"
+    ],
+    "correct": 4,
+    "explanation": "Methods such as reverse osmosis remove salt from seawater to produce drinking water.",
+    "reference_text": "UN-Water desalination overview",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « dessalement » ?",
+        "choices": [
+          "Nettoyer les marées noires avec des produits chimiques",
+          "Ajouter du sel aux rivières",
+          "Mesurer la profondeur de la mer au sonar",
+          "Retirer le sel de l’eau de mer pour obtenir de l’eau douce"
+        ],
+        "explanation": "Le dessalement, notamment par osmose inverse, permet d’obtenir de l’eau douce à partir de l’eau de mer."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«تحلية المياه»؟",
+        "choices": [
+          "تنظيف بقع النفط بالمواد الكيميائية",
+          "إضافة الملح إلى الأنهار",
+          "قياس عمق البحر بالسونار",
+          "إزالة الملح من مياه البحر للحصول على مياه عذبة"
+        ],
+        "explanation": "تتيح التحلية، ومنها التناضح العكسي، الحصول على مياه عذبة من مياه البحر."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main cause of ocean acidification?",
+    "choices": [
+      "Melting ice in the Arctic",
+      "Excess salt flowing from rivers",
+      "Heat from undersea volcanoes",
+      "Increased absorption of CO₂ from the atmosphere"
+    ],
+    "correct": 4,
+    "explanation": "The oceans absorb a large share of human-made CO₂, which lowers their pH over time.",
+    "reference_text": "IPCC special report on the ocean and cryosphere",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale cause de l’acidification des océans ?",
+        "choices": [
+          "La fonte de la banquise arctique",
+          "L’excès de sel charrié par les fleuves",
+          "La chaleur des volcans sous-marins",
+          "L’absorption accrue de CO₂ provenant de l’atmosphère"
+        ],
+        "explanation": "Les océans absorbent une part importante du CO₂ émis par l’activité humaine, ce qui les rend plus acides."
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لتحمّض المحيطات؟",
+        "choices": [
+          "ذوبان الجليد في القطب الشمالي",
+          "الملح الزائد القادم من الأنهار",
+          "الحرارة الصادرة عن البراكين تحت الماء",
+          "زيادة امتصاص ثاني أكسيد الكربون من الغلاف الجوي"
+        ],
+        "explanation": "تمتص المحيطات جزءًا كبيرًا من ثاني أكسيد الكربون الناتج عن النشاط البشري، فتصبح أكثر حموضة."
+      }
+    }
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the term “dead zone” describe in coastal waters?",
+    "choices": [
+      "Coastal areas without any salt",
+      "Areas with too little oxygen to support most marine life",
+      "Zones where fishing is banned for tourism",
+      "Places where the sea is frozen all year"
+    ],
+    "correct": 2,
+    "explanation": "Dead zones lack enough oxygen for most marine life, often because of excess nutrients.",
+    "reference_text": "NOAA hypoxia and dead zones",
+    "translations": {
+      "fr": {
+        "question": "Que désigne l’expression « zone morte » dans les eaux côtières ?",
+        "choices": [
+          "Des côtes dépourvues de sel",
+          "Des zones trop pauvres en oxygène pour la plupart des espèces marines",
+          "Des zones où la pêche est interdite pour le tourisme",
+          "Des endroits où la mer reste gelée toute l’année"
+        ],
+        "explanation": "Dans une zone morte, la faible teneur en oxygène, souvent liée à un excès de nutriments, empêche la plupart des espèces marines de survivre."
+      },
+      "ar": {
+        "question": "ماذا يصف مصطلح «المنطقة الميتة» في المياه الساحلية؟",
+        "choices": [
+          "سواحل خالية تمامًا من الملح",
+          "مناطق تفتقر إلى الأكسجين اللازم لمعظم الكائنات البحرية",
+          "مناطق يُمنع فيها الصيد لأغراض السياحة",
+          "أماكن يتجمد فيها البحر طوال العام"
+        ],
+        "explanation": "تفتقر المنطقة الميتة إلى الأكسجين، غالبًا بسبب فائض المغذيات، فلا تستطيع معظم الكائنات البحرية العيش فيها."
+      }
+    }
+  }
+]

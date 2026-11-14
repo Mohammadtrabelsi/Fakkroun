@@ -1,0 +1,594 @@
+[
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does “global warming” refer to?",
+    "choices": [
+      "Warmer ocean currents only",
+      "A long-term rise in Earth’s average surface temperature",
+      "A cold period in winter",
+      "A sudden heatwave in one city"
+    ],
+    "correct": 2,
+    "explanation": "Global warming is the long-term increase of the planet’s average surface temperature.",
+    "reference_text": "NASA climate change overview",
+    "translations": {
+      "fr": {
+        "question": "À quoi correspond le « réchauffement climatique » ?",
+        "choices": [
+          "Uniquement des courants océaniques plus chauds",
+          "Une hausse à long terme de la température moyenne de surface de la Terre",
+          "Une période froide en hiver",
+          "Une canicule soudaine dans une seule ville"
+        ],
+        "explanation": "Le réchauffement climatique est la hausse durable de la température moyenne à la surface de la planète."
+      },
+      "ar": {
+        "question": "ماذا يعني «الاحترار العالمي»؟",
+        "choices": [
+          "ارتفاع حرارة التيارات البحرية فقط",
+          "ارتفاع طويل الأمد في متوسط درجة حرارة سطح الأرض",
+          "فترة برد في الشتاء",
+          "موجة حر مفاجئة في مدينة واحدة"
+        ],
+        "explanation": "الاحترار العالمي هو الارتفاع المستمر في متوسط حرارة سطح الكوكب."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday activity releases the most carbon dioxide?",
+    "choices": [
+      "Burning fossil fuels for energy",
+      "Breathing",
+      "Drinking water",
+      "Walking"
+    ],
+    "correct": 1,
+    "explanation": "Burning coal, oil and gas for energy is the largest source of human CO₂ emissions.",
+    "reference_text": "IEA CO₂ emissions from fuel combustion",
+    "translations": {
+      "fr": {
+        "question": "Quelle activité courante rejette le plus de dioxyde de carbone ?",
+        "choices": [
+          "Brûler des énergies fossiles pour produire de l’énergie",
+          "Respirer",
+          "Boire de l’eau",
+          "Marcher"
+        ],
+        "explanation": "La combustion de charbon, pétrole et gaz est la principale source d’émissions humaines de CO₂."
+      },
+      "ar": {
+        "question": "أيّ نشاط يومي يطلق أكبر كمية من ثاني أكسيد الكربون؟",
+        "choices": [
+          "حرق الوقود الأحفوري لتوليد الطاقة",
+          "التنفس",
+          "شرب الماء",
+          "المشي"
+        ],
+        "explanation": "حرق الفحم والنفط والغاز لتوليد الطاقة هو أكبر مصدر لانبعاثات ثاني أكسيد الكربون البشرية."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a common effect of climate change on glaciers?",
+    "choices": [
+      "They grow larger each summer",
+      "They shrink and melt faster",
+      "They stop moving forever",
+      "They turn into deserts"
+    ],
+    "correct": 2,
+    "explanation": "Warming temperatures are causing most mountain glaciers worldwide to retreat.",
+    "reference_text": "IPCC AR6 cryosphere chapter",
+    "translations": {
+      "fr": {
+        "question": "Quel est un effet courant du changement climatique sur les glaciers ?",
+        "choices": [
+          "Ils s’agrandissent chaque été",
+          "Ils rétrécissent et fondent plus vite",
+          "Ils cessent de bouger pour toujours",
+          "Ils se transforment en déserts"
+        ],
+        "explanation": "La hausse des températures fait reculer la plupart des glaciers de montagne dans le monde."
+      },
+      "ar": {
+        "question": "ما الأثر الشائع لتغير المناخ على الأنهار الجليدية؟",
+        "choices": [
+          "تكبر كل صيف",
+          "تنكمش وتذوب بوتيرة أسرع",
+          "تتوقف عن الحركة إلى الأبد",
+          "تتحول إلى صحارى"
+        ],
+        "explanation": "يؤدي ارتفاع الحرارة إلى تراجع معظم الأنهار الجليدية الجبلية حول العالم."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “carbon budget” in climate science?",
+    "choices": [
+      "The cost of buying carbon offsets",
+      "The total amount of CO₂ that can be emitted while keeping warming below a set limit",
+      "A plan for planting forests in cities",
+      "A government bank account for carbon taxes"
+    ],
+    "correct": 2,
+    "explanation": "Carbon budgets estimate how much more CO₂ can be emitted before a temperature target is exceeded.",
+    "reference_text": "IPCC AR6 carbon budget assessment",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « budget carbone » en science du climat ?",
+        "choices": [
+          "Le coût d’achat de compensations carbone",
+          "La quantité totale de CO₂ qui peut être émise tout en restant sous une limite de réchauffement",
+          "Un plan de plantation de forêts urbaines",
+          "Un compte bancaire public pour les taxes carbone"
+        ],
+        "explanation": "Le budget carbone estime la quantité de CO₂ encore émissible avant de dépasser un objectif de température."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الميزانية الكربونية» في علم المناخ؟",
+        "choices": [
+          "تكلفة شراء تعويضات الكربون",
+          "إجمالي كمية ثاني أكسيد الكربون التي يمكن انبعاثها مع البقاء دون حد احترار محدد",
+          "خطة لزراعة الغابات في المدن",
+          "حساب مصرفي حكومي للضرائب الكربونية"
+        ],
+        "explanation": "تقدّر الميزانية الكربونية كمية ما تبقى من ثاني أكسيد الكربون قبل تجاوز هدف الحرارة."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “sea level rise” mainly caused by?",
+    "choices": [
+      "More fish in the ocean",
+      "Stronger tides on the coast",
+      "Less salt in seawater",
+      "Warming water expanding and melting ice adding water"
+    ],
+    "correct": 4,
+    "explanation": "Water expands as it warms, and melting land ice adds more water to the oceans.",
+    "reference_text": "IPCC AR6 sea level chapter",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qui provoque principalement la hausse du niveau de la mer ?",
+        "choices": [
+          "Plus de poissons dans l’océan",
+          "Des marées plus fortes sur le littoral",
+          "Moins de sel dans l’eau de mer",
+          "L’eau qui se dilate en se réchauffant et la fonte des glaces qui ajoute de l’eau"
+        ],
+        "explanation": "L’eau se dilate en se réchauffant, et la fonte des glaces terrestres ajoute de l’eau aux océans."
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لارتفاع مستوى سطح البحر؟",
+        "choices": [
+          "زيادة الأسماك في المحيط",
+          "مدّ أقوى على الساحل",
+          "قلة الملح في مياه البحر",
+          "تمدد الماء الدافئ وذوبان الجليد الذي يضيف مياهًا"
+        ],
+        "explanation": "يتمدد الماء عند تسخينه، وذوبان الجليد على اليابسة يضيف مزيدًا من المياه إلى المحيطات."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “mitigation” mean in climate policy?",
+    "choices": [
+      "Reducing or preventing greenhouse gas emissions",
+      "Relocating coastal cities",
+      "Adjusting to climate impacts",
+      "Insuring farms against drought"
+    ],
+    "correct": 1,
+    "explanation": "Mitigation tackles the causes of climate change, while adaptation deals with its effects.",
+    "reference_text": "IPCC AR6 Working Group III glossary",
+    "translations": {
+      "fr": {
+        "question": "Que signifie « l’atténuation » dans les politiques climatiques ?",
+        "choices": [
+          "Réduire ou prévenir les émissions de gaz à effet de serre",
+          "Déplacer les villes côtières",
+          "S’ajuster aux impacts climatiques",
+          "Assurer les exploitations contre la sécheresse"
+        ],
+        "explanation": "L’atténuation s’attaque aux causes du changement climatique, l’adaptation à ses effets."
+      },
+      "ar": {
+        "question": "ماذا يعني «التخفيف» (Mitigation) في سياسات المناخ؟",
+        "choices": [
+          "خفض أو منع انبعاثات غازات الاحتباس الحراري",
+          "نقل المدن الساحلية",
+          "التكيف مع الآثار المناخية",
+          "التأمين على المزارع ضد الجفاف"
+        ],
+        "explanation": "يعالج التخفيف أسباب تغير المناخ، بينما يعالج التكيف آثاره."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which gas is the most important long-lived greenhouse gas emitted by human activity?",
+    "choices": [
+      "Neon",
+      "Helium",
+      "Argon",
+      "Carbon dioxide"
+    ],
+    "correct": 4,
+    "explanation": "Carbon dioxide stays in the atmosphere for centuries and is the main driver of warming.",
+    "reference_text": "NOAA Global Monitoring Laboratory",
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal gaz à effet de serre à longue durée de vie émis par l’activité humaine ?",
+        "choices": [
+          "Le néon",
+          "L’hélium",
+          "L’argon",
+          "Le dioxyde de carbone"
+        ],
+        "explanation": "Le CO₂ reste des siècles dans l’atmosphère et est le principal moteur du réchauffement."
+      },
+      "ar": {
+        "question": "ما أهم غاز دفيء طويل الأمد ينبعث من النشاط البشري؟",
+        "choices": [
+          "النيون",
+          "الهيليوم",
+          "الأرغون",
+          "ثاني أكسيد الكربون"
+        ],
+        "explanation": "يبقى ثاني أكسيد الكربون قرونًا في الجو، وهو المحرك الرئيسي للاحترار."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main purpose of a “net-zero” target?",
+    "choices": [
+      "Banning all cars",
+      "Stopping all economic activity",
+      "Zero trees planted",
+      "Balancing emissions with removals so the net addition to the atmosphere is zero"
+    ],
+    "correct": 4,
+    "explanation": "Net zero means remaining emissions are offset by carbon removal, leaving no net increase.",
+    "reference_text": "UN High-Level Expert Group on Net Zero",
+    "translations": {
+      "fr": {
+        "question": "Quel est le but d’un objectif de « neutralité carbone » (net zéro) ?",
+        "choices": [
+          "Interdire toutes les voitures",
+          "Arrêter toute activité économique",
+          "Zéro arbre planté",
+          "Compenser les émissions par des absorptions pour qu’aucun ajout net ne subsiste dans l’atmosphère"
+        ],
+        "explanation": "Le net zéro signifie que les émissions restantes sont compensées par l’élimination du carbone."
+      },
+      "ar": {
+        "question": "ما الغرض من هدف «صافي الانبعاثات الصفرية» (Net zero)؟",
+        "choices": [
+          "حظر جميع السيارات",
+          "وقف كل النشاط الاقتصادي",
+          "ألا تُزرع أي شجرة",
+          "موازنة الانبعاثات بعمليات الإزالة بحيث لا تبقى زيادة صافية في الجو"
+        ],
+        "explanation": "يعني صافي الصفر أن الانبعاثات المتبقية تُعوَّض بإزالة الكربون، فلا يبقى ارتفاع صافٍ."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the Kyoto Protocol best known for?",
+    "choices": [
+      "Banning nuclear weapons",
+      "Regulating ocean fishing",
+      "Protecting wetlands",
+      "Binding emission reduction targets for industrialised countries"
+    ],
+    "correct": 4,
+    "explanation": "Adopted in 1997, the Kyoto Protocol set legally binding targets for developed countries.",
+    "reference_text": "UNFCCC Kyoto Protocol (1997)",
+    "translations": {
+      "fr": {
+        "question": "Pour quoi le protocole de Kyoto est-il surtout connu ?",
+        "choices": [
+          "L’interdiction des armes nucléaires",
+          "La régulation de la pêche océanique",
+          "La protection des zones humides",
+          "Des objectifs contraignants de réduction des émissions pour les pays industrialisés"
+        ],
+        "explanation": "Adopté en 1997, le protocole de Kyoto fixe des objectifs juridiquement contraignants aux pays développés."
+      },
+      "ar": {
+        "question": "بماذا يُعرف بروتوكول كيوتو بشكل خاص؟",
+        "choices": [
+          "حظر الأسلحة النووية",
+          "تنظيم صيد الأسماك في المحيطات",
+          "حماية الأراضي الرطبة",
+          "أهداف ملزمة لخفض الانبعاثات للدول الصناعية"
+        ],
+        "explanation": "اعتُمد بروتوكول كيوتو عام 1997، وحدد أهدافًا ملزمة قانونًا للدول المتقدمة."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “heat island” in a city?",
+    "choices": [
+      "An urban area that is significantly warmer than surrounding rural areas",
+      "A small island in a river",
+      "A cooling lake in a park",
+      "A volcano in the city centre"
+    ],
+    "correct": 1,
+    "explanation": "Buildings and asphalt absorb and hold heat, making cities warmer than their surroundings.",
+    "reference_text": "US EPA urban heat island basics",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « îlot de chaleur » urbain ?",
+        "choices": [
+          "Une zone urbaine nettement plus chaude que les campagnes environnantes",
+          "Une petite île dans un fleuve",
+          "Un lac rafraîchissant dans un parc",
+          "Un volcan au centre-ville"
+        ],
+        "explanation": "Les bâtiments et l’asphalte absorbent et retiennent la chaleur, rendant les villes plus chaudes."
+      },
+      "ar": {
+        "question": "ما هي «جزيرة الحرارة» في المدينة؟",
+        "choices": [
+          "منطقة حضرية أدفأ بكثير من الريف المحيط بها",
+          "جزيرة صغيرة في نهر",
+          "بحيرة مبردة في حديقة",
+          "بركان في وسط المدينة"
+        ],
+        "explanation": "تمتص المباني والإسفلت الحرارة وتحتفظ بها، فتصبح المدن أدفأ من محيطها."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Paris Agreement goal is the stronger temperature target?",
+    "choices": [
+      "Keep warming well below 2 °C and pursue 1.5 °C",
+      "Keep warming below 5 °C",
+      "Stop warming completely",
+      "Keep warming below 3.5 °C"
+    ],
+    "correct": 1,
+    "explanation": "The Paris Agreement aims to limit warming to well below 2 °C and to pursue efforts for 1.5 °C.",
+    "reference_text": "UNFCCC Paris Agreement, Article 2",
+    "translations": {
+      "fr": {
+        "question": "Quel objectif de température est le plus ambitieux de l’accord de Paris ?",
+        "choices": [
+          "Rester nettement sous 2 °C et viser 1,5 °C",
+          "Rester sous 5 °C",
+          "Arrêter tout réchauffement",
+          "Rester sous 3,5 °C"
+        ],
+        "explanation": "L’accord de Paris vise à limiter le réchauffement nettement sous 2 °C et à viser 1,5 °C."
+      },
+      "ar": {
+        "question": "ما هدف الحرارة الأكثر طموحًا في اتفاق باريس؟",
+        "choices": [
+          "إبقاء الاحترار دون 2 درجة مئوية بكثير والسعي إلى 1.5 درجة مئوية",
+          "إبقاؤه دون 5 درجات مئوية",
+          "إيقاف الاحترار تمامًا",
+          "إبقاؤه دون 3.5 درجات مئوية"
+        ],
+        "explanation": "يهدف الاتفاق إلى إبقاء الاحترار دون 2 درجة مئوية بكثير والسعي إلى 1.5 درجة مئوية."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural event can release large amounts of CO₂ and ash into the atmosphere?",
+    "choices": [
+      "Rain showers",
+      "Morning dew",
+      "Volcanic eruptions",
+      "Snowfall"
+    ],
+    "correct": 3,
+    "explanation": "Volcanoes release CO₂ and particles, but their total emissions are far smaller than human emissions.",
+    "reference_text": "USGS volcanic gas emissions",
+    "translations": {
+      "fr": {
+        "question": "Quel phénomène naturel peut rejeter de grandes quantités de CO₂ et de cendres ?",
+        "choices": [
+          "Les averses",
+          "La rosée du matin",
+          "Les éruptions volcaniques",
+          "Les chutes de neige"
+        ],
+        "explanation": "Les volcans rejettent du CO₂ et des particules, mais bien moins que les émissions humaines."
+      },
+      "ar": {
+        "question": "أيّ ظاهرة طبيعية يمكن أن تطلق كميات كبيرة من ثاني أكسيد الكربون والرماد في الجو؟",
+        "choices": [
+          "زخات المطر",
+          "الندى الصباحي",
+          "الثورات البركانية",
+          "تساقط الثلوج"
+        ],
+        "explanation": "تطلق البراكين ثاني أكسيد الكربون والجسيمات، لكن انبعاثاتها أقل بكثير من الانبعاثات البشرية."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “climate finance”?",
+    "choices": [
+      "Money for weather forecasting only",
+      "Funding that helps countries cut emissions and adapt to climate change",
+      "Banks setting weather prices",
+      "Insurance for sunny days"
+    ],
+    "correct": 2,
+    "explanation": "Developed countries have pledged to mobilise climate finance for developing countries.",
+    "reference_text": "UNFCCC climate finance",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « financement climatique » ?",
+        "choices": [
+          "Des fonds pour la seule prévision météo",
+          "Des financements qui aident les pays à réduire leurs émissions et à s’adapter",
+          "Des banques qui fixent le prix du temps",
+          "Une assurance pour les journées ensoleillées"
+        ],
+        "explanation": "Les pays développés se sont engagés à mobiliser des financements climatiques pour les pays en développement."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«التمويل المناخي» (Climate finance)؟",
+        "choices": [
+          "أموال لتوقعات الطقس فقط",
+          "تمويل يساعد الدول على خفض الانبعاثات والتكيف مع تغير المناخ",
+          "بنوك تحدد أسعار الطقس",
+          "تأمين للأيام المشمسة"
+        ],
+        "explanation": "تعهدت الدول المتقدمة بتعبئة تمويل مناخي للدول النامية."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which global indicator is commonly used to track the greenhouse effect of a gas relative to CO₂?",
+    "choices": [
+      "Global Warming Potential (GWP)",
+      "Body Mass Index",
+      "Human Development Index",
+      "Gross Domestic Product"
+    ],
+    "correct": 1,
+    "explanation": "GWP compares how much heat a gas traps over a given period relative to CO₂.",
+    "reference_text": "IPCC AR6 GWP definitions",
+    "translations": {
+      "fr": {
+        "question": "Quel indicateur mondial sert à comparer le pouvoir réchauffant d’un gaz par rapport au CO₂ ?",
+        "choices": [
+          "Le potentiel de réchauffement global (PRG)",
+          "L’indice de masse corporelle",
+          "L’indice de développement humain",
+          "Le produit intérieur brut"
+        ],
+        "explanation": "Le PRG compare la chaleur piégée par un gaz sur une période donnée par rapport au CO₂."
+      },
+      "ar": {
+        "question": "ما المؤشر العالمي المستخدم لمقارنة قدرة غاز على احتجاز الحرارة مقارنةً بثاني أكسيد الكربون؟",
+        "choices": [
+          "إمكانات الاحترار العالمي (GWP)",
+          "مؤشر كتلة الجسم",
+          "مؤشر التنمية البشرية",
+          "الناتج المحلي الإجمالي"
+        ],
+        "explanation": "يقارن GWP مقدار الحرارة التي يحتجزها الغاز خلال فترة محددة مقارنةً بثاني أكسيد الكربون."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “drought” in climate terms?",
+    "choices": [
+      "A very cold winter",
+      "A strong wind storm",
+      "A prolonged period of abnormally low water availability",
+      "Heavy rain for several days"
+    ],
+    "correct": 3,
+    "explanation": "Droughts can last months or years and strongly affect farming and water supply.",
+    "reference_text": "WMO drought definitions",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « sécheresse » en termes climatiques ?",
+        "choices": [
+          "Un hiver très froid",
+          "Une forte tempête de vent",
+          "Une période prolongée de disponibilité anormalement faible en eau",
+          "Des pluies intenses pendant plusieurs jours"
+        ],
+        "explanation": "Les sécheresses peuvent durer des mois ou des années et affecter fortement l’agriculture et l’eau potable."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الجفاف» بالمعنى المناخي؟",
+        "choices": [
+          "شتاء شديد البرودة",
+          "عاصفة رياح قوية",
+          "فترة طويلة من انخفاض توافر المياه بشكل غير طبيعي",
+          "أمطار غزيرة لعدة أيام"
+        ],
+        "explanation": "قد يستمر الجفاف شهورًا أو سنوات ويؤثر بقوة في الزراعة وإمدادات المياه."
+      }
+    }
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “ocean warming” most likely to cause for marine life?",
+    "choices": [
+      "Cooler water in tropical areas",
+      "Shifts in species ranges toward cooler waters",
+      "Larger coral reefs everywhere",
+      "Less dissolved oxygen in warm waters"
+    ],
+    "correct": 2,
+    "explanation": "Many fish and plankton species move toward cooler waters, and warm water holds less dissolved oxygen.",
+    "reference_text": "IPCC Special Report on the Ocean and Cryosphere",
+    "translations": {
+      "fr": {
+        "question": "Que risque principalement de provoquer le réchauffement des océans pour la vie marine ?",
+        "choices": [
+          "Des eaux plus froides dans les zones tropicales",
+          "Des déplacements d’aires de répartition des espèces vers des eaux plus fraîches",
+          "Des récifs coralliens plus grands partout",
+          "Moins d’oxygène dissous dans les eaux chaudes"
+        ],
+        "explanation": "De nombreuses espèces migrent vers des eaux plus fraîches, et l’eau chaude retient moins d’oxygène."
+      },
+      "ar": {
+        "question": "ماذا يُرجَّح أن يسبب احترار المحيطات للحياة البحرية؟",
+        "choices": [
+          "مياه أبرد في المناطق الاستوائية",
+          "تحوّل نطاقات انتشار الأنواع نحو المياه الأبرد",
+          "شعاب مرجانية أكبر في كل مكان",
+          "أكسجين مذاب أقل في المياه الدافئة"
+        ],
+        "explanation": "تتحرك أنواع كثيرة من الأسماك والعوالق نحو المياه الأبرد، والماء الدافئ يحمل أكسجينًا أقل."
+      }
+    }
+  }
+]

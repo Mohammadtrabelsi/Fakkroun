@@ -1,0 +1,662 @@
+[
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is played with a racket and a ball on a court with a net?",
+    "choices": [
+      "Cricket",
+      "Golf",
+      "Tennis",
+      "Rugby"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue avec une raquette et une balle sur un court avec un filet ?",
+        "choices": [
+          "Le cricket",
+          "Le golf",
+          "Le tennis",
+          "Le rugby"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلعب بالمضرب والكرة على ملعب بشبكة؟",
+        "choices": [
+          "الكريكت",
+          "الجولف",
+          "التنس",
+          "الرجبي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many players are on a team in a standard volleyball match on the court?",
+    "choices": [
+      "8",
+      "4",
+      "6",
+      "5"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Combien de joueurs par équipe sont sur le terrain dans un match standard de volley-ball ?",
+        "choices": [
+          "8",
+          "4",
+          "6",
+          "5"
+        ]
+      },
+      "ar": {
+        "question": "كم لاعبًا لكل فريق في الملعب خلال مباراة الكرة الطائرة القياسية؟",
+        "choices": [
+          "8",
+          "4",
+          "6",
+          "5"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is famous for the Stanley Cup finals?",
+    "choices": [
+      "Ice hockey",
+      "Baseball",
+      "Basketball",
+      "Golf"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est célèbre pour les finales de la Coupe Stanley ?",
+        "choices": [
+          "Le hockey sur glace",
+          "Le baseball",
+          "Le basket-ball",
+          "Le golf"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تشتهر بنهائيات كأس ستانلي؟",
+        "choices": [
+          "هوكي الجليد",
+          "البيسبول",
+          "كرة السلة",
+          "الجولف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the term for a shot in tennis that lands in the court and bounces twice before the opponent can return?",
+    "choices": [
+      "Double bounce",
+      "Ace",
+      "Let",
+      "Net shot"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un coup au tennis qui rebondit deux fois avant que l’adversaire ne puisse le renvoyer ?",
+        "choices": [
+          "Le double rebond",
+          "L’ace",
+          "Le let",
+          "La volée filet"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الضربة في التنس التي ترتد مرتين قبل أن يتمكن الخصم من ردها؟",
+        "choices": [
+          "الارتداد المزدوج",
+          "الإيس",
+          "اللعبة المعادة",
+          "ضربة الشبكة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is famous for its World Series championship?",
+    "choices": [
+      "Baseball",
+      "Cricket",
+      "Hockey",
+      "Golf"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est célèbre pour sa finale appelée World Series ?",
+        "choices": [
+          "Le baseball",
+          "Le cricket",
+          "Le hockey",
+          "Le golf"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تشتهر ببطولة «وورلد سيريز»؟",
+        "choices": [
+          "البيسبول",
+          "الكريكت",
+          "الهوكي",
+          "الجولف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is the birthplace of football (soccer) as an organised modern sport?",
+    "choices": [
+      "Spain",
+      "England",
+      "Argentina",
+      "Brazil"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est le berceau du football moderne organisé ?",
+        "choices": [
+          "L’Espagne",
+          "L’Angleterre",
+          "L’Argentine",
+          "Le Brésil"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة هي مهد كرة القدم الحديثة المنظمة؟",
+        "choices": [
+          "إسبانيا",
+          "إنجلترا",
+          "الأرجنتين",
+          "البرازيل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a stick called a hurling stick and a small ball called a sliotar?",
+    "choices": [
+      "Hurling",
+      "Golf",
+      "Cricket",
+      "Baseball"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise une canne appelée hurley et une petite balle appelée sliotar ?",
+        "choices": [
+          "Le hurling",
+          "Le golf",
+          "Le cricket",
+          "Le baseball"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم عصا تُسمى الهورلي وكرة صغيرة تُسمى السليوتار؟",
+        "choices": [
+          "الهورلينغ",
+          "الجولف",
+          "الكريكت",
+          "البيسبول"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport is closely associated with the Wimbledon Championships grass courts?",
+    "choices": [
+      "Tennis",
+      "Rugby",
+      "Volleyball",
+      "Hockey"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est étroitement associé aux courts en gazon de Wimbledon ?",
+        "choices": [
+          "Le tennis",
+          "Le rugby",
+          "Le volley-ball",
+          "Le hockey"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة ترتبط ارتباطًا وثيقًا بملاعب العشب في ويمبلدون؟",
+        "choices": [
+          "التنس",
+          "الرجبي",
+          "الكرة الطائرة",
+          "الهوكي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is performed on a mat with flips and somersaults and is known for balance?",
+    "choices": [
+      "Gymnastics",
+      "Cycling",
+      "Boxing",
+      "Swimming"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se pratique sur un tapis avec des saltos et des équilibres ?",
+        "choices": [
+          "La gymnastique",
+          "Le cyclisme",
+          "La boxe",
+          "La natation"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُمارس على حصيرة بالقلبات والدورات وتشتهر بالتوازن؟",
+        "choices": [
+          "الجمباز",
+          "ركوب الدراجات",
+          "الملاكمة",
+          "السباحة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which sport is the term ‘home run’ used?",
+    "choices": [
+      "Baseball",
+      "Football",
+      "Golf",
+      "Basketball"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport utilise-t-on le terme « home run » ?",
+        "choices": [
+          "Le baseball",
+          "Le football",
+          "Le golf",
+          "Le basket-ball"
+        ]
+      },
+      "ar": {
+        "question": "في أي رياضة يُستخدم مصطلح «الضربة الكاملة» (Home run)؟",
+        "choices": [
+          "البيسبول",
+          "كرة القدم",
+          "الجولف",
+          "كرة السلة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is a team game with the aim of putting the ball in the opponent’s basket?",
+    "choices": [
+      "Swimming",
+      "Cycling",
+      "Golf",
+      "Basketball"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel sport d’équipe consiste à mettre le ballon dans le panier adverse ?",
+        "choices": [
+          "La natation",
+          "Le cyclisme",
+          "Le golf",
+          "Le basket-ball"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة جماعية هدفها إدخال الكرة في سلة الخصم؟",
+        "choices": [
+          "السباحة",
+          "ركوب الدراجات",
+          "الجولف",
+          "كرة السلة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country has won the most Olympic medals in the Winter Games?",
+    "choices": [
+      "Norway",
+      "Egypt",
+      "Brazil",
+      "Tunisia"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a remporté le plus de médailles aux Jeux olympiques d’hiver ?",
+        "choices": [
+          "La Norvège",
+          "L’Égypte",
+          "Le Brésil",
+          "La Tunisie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة حصدت أكبر عدد من الميداليات في الألعاب الأولمبية الشتوية؟",
+        "choices": [
+          "النرويج",
+          "مصر",
+          "البرازيل",
+          "تونس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is performed in water with strokes called freestyle, breaststroke and backstroke?",
+    "choices": [
+      "Sailing",
+      "Rowing",
+      "Diving",
+      "Swimming"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se pratique dans l’eau avec les nages crawl, brasse et dos ?",
+        "choices": [
+          "La voile",
+          "L’aviron",
+          "Le plongeon",
+          "La natation"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُمارس في الماء بأساليب الحرة والصدر والظهر؟",
+        "choices": [
+          "الإبحار الشراعي",
+          "التجديف",
+          "الغوص",
+          "السباحة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the term ‘offside’ refer to in football?",
+    "choices": [
+      "A foul on the goalkeeper",
+      "A player who is wearing the wrong shirt",
+      "A player being beyond the last defender when the ball is played to them",
+      "A goal scored from outside the pitch"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "À quoi renvoie le terme « hors-jeu » au football ?",
+        "choices": [
+          "Une faute sur le gardien",
+          "Un joueur qui porte le mauvais maillot",
+          "Un joueur qui se trouve au-delà du dernier défenseur au moment où le ballon lui est transmis",
+          "Un but marqué depuis l’extérieur du terrain"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني مصطلح «التسلل» في كرة القدم؟",
+        "choices": [
+          "خطأ على حارس المرمى",
+          "لاعب يرتدي القميص الخطأ",
+          "وجود اللاعب أمام آخر مدافع عند تمرير الكرة إليه",
+          "هدف من خارج الملعب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport uses a pitch, bats and a ball and is played between two teams of eleven?",
+    "choices": [
+      "Table tennis",
+      "Ice hockey",
+      "Cricket",
+      "Water polo"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue sur un terrain avec des battes et une balle, entre deux équipes de onze ?",
+        "choices": [
+          "Le tennis de table",
+          "Le hockey sur glace",
+          "Le cricket",
+          "Le water-polo"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلعب على أرض بمضارب وكرة بين فريقين من أحد عشر لاعبًا؟",
+        "choices": [
+          "تنس الطاولة",
+          "هوكي الجليد",
+          "الكريكت",
+          "كرة الماء"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian sports venue is the main stadium of Tunis?",
+    "choices": [
+      "Stade de Bizerte",
+      "Stade El Menzah",
+      "Stade de Gabès",
+      "Stade de Sfax"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal stade de Tunis ?",
+        "choices": [
+          "Le stade de Bizerte",
+          "Le stade El Menzah",
+          "Le stade de Gabès",
+          "Le stade de Sfax"
+        ]
+      },
+      "ar": {
+        "question": "ما الملعب الرئيسي في تونس العاصمة؟",
+        "choices": [
+          "ملعب بنزرت",
+          "ملعب المنزه",
+          "ملعب قابس",
+          "ملعب صفاقس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is famous for the Ryder Cup?",
+    "choices": [
+      "Cricket",
+      "Sailing",
+      "Golf",
+      "Tennis"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est célèbre pour la Ryder Cup ?",
+        "choices": [
+          "Le cricket",
+          "La voile",
+          "Le golf",
+          "Le tennis"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تشتهر بكأس ريدر؟",
+        "choices": [
+          "الكريكت",
+          "الإبحار",
+          "الجولف",
+          "التنس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport uses a long pole to vault over a high bar?",
+    "choices": [
+      "Pole vault",
+      "High jump",
+      "Long jump",
+      "Triple jump"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise une longue perche pour sauter par-dessus une barre haute ?",
+        "choices": [
+          "Le saut à la perche",
+          "Le saut en hauteur",
+          "Le saut en longueur",
+          "Le triple saut"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم عصا طويلة للقفز فوق عارضة عالية؟",
+        "choices": [
+          "القفز بالزانة",
+          "الوثب العالي",
+          "الوثب الطويل",
+          "الوثب الثلاثي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sport is known as the ‘noble art’ and uses gloves and a ring?",
+    "choices": [
+      "Karate",
+      "Boxing",
+      "Wrestling",
+      "Judo"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel sport est appelé « l’art noble », se pratique avec des gants et sur un ring ?",
+        "choices": [
+          "Le karaté",
+          "La boxe",
+          "La lutte",
+          "Le judo"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُعرف بـ«الفن النبيل» وتُمارس بالقفازات والحلبة؟",
+        "choices": [
+          "الكاراتيه",
+          "الملاكمة",
+          "المصارعة",
+          "الجودو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is practised on a sand court with two players per side?",
+    "choices": [
+      "Basketball",
+      "Table tennis",
+      "Badminton",
+      "Beach volleyball"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel sport se pratique sur sable, avec deux joueurs par équipe ?",
+        "choices": [
+          "Le basket-ball",
+          "Le tennis de table",
+          "Le badminton",
+          "Le beach-volley"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رياضة تُمارس على الرمال بلاعبين لكل فريق؟",
+        "choices": [
+          "كرة السلة",
+          "تنس الطاولة",
+          "البادمنتون",
+          "الكرة الطائرة الشاطئية"
+        ]
+      }
+    }
+  }
+]

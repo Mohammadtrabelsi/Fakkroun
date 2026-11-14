@@ -1,0 +1,580 @@
+[
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which gas do plants absorb from the air to make food through photosynthesis?",
+    "choices": [
+      "Carbon dioxide",
+      "Helium",
+      "Argon",
+      "Neon"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz les plantes absorbent-elles dans l’air pour fabriquer leur nourriture par photosynthèse ?",
+        "choices": [
+          "Le dioxyde de carbone",
+          "L’hélium",
+          "L’argon",
+          "Le néon"
+        ]
+      },
+      "ar": {
+        "question": "ما الغاز الذي تمتصه النباتات من الهواء لصنع غذائها بالبناء الضوئي؟",
+        "choices": [
+          "ثاني أكسيد الكربون",
+          "الهيليوم",
+          "الأرغون",
+          "النيون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which season brings the most rain to many Mediterranean countries?",
+    "choices": [
+      "Winter",
+      "Summer",
+      "Spring only",
+      "Autumn only"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle saison apporte le plus de pluie à de nombreux pays méditerranéens ?",
+        "choices": [
+          "L’hiver",
+          "L’été",
+          "Le printemps uniquement",
+          "L’automne uniquement"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فصل يجلب أكبر كمية من الأمطار لكثير من دول البحر المتوسط؟",
+        "choices": [
+          "الشتاء",
+          "الصيف",
+          "الربيع وحده",
+          "الخريف وحده"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main goal of climate adaptation planning for coastal cities?",
+    "choices": [
+      "Protecting people and property from rising seas and storms",
+      "Removing all beaches",
+      "Building more coal plants",
+      "Banning tourism"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif principal de la planification d’adaptation climatique des villes côtières ?",
+        "choices": [
+          "Protéger les personnes et les biens contre la montée des eaux et les tempêtes",
+          "Supprimer toutes les plages",
+          "Construire davantage de centrales à charbon",
+          "Interdire le tourisme"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف الرئيسي من التخطيط للتكيف المناخي في المدن الساحلية؟",
+        "choices": [
+          "حماية الناس والممتلكات من ارتفاع البحر والعواصف",
+          "إزالة كل الشواطئ",
+          "بناء المزيد من محطات الفحم",
+          "منع السياحة"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural gas is the main component of natural gas and a greenhouse gas?",
+    "choices": [
+      "Methane",
+      "Neon",
+      "Argon",
+      "Krypton"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz est le principal composant du gaz naturel et un gaz à effet de serre ?",
+        "choices": [
+          "Le méthane",
+          "Le néon",
+          "L’argon",
+          "Le krypton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز هو المكوّن الرئيسي للغاز الطبيعي وهو من غازات الاحتباس الحراري؟",
+        "choices": [
+          "الميثان",
+          "النيون",
+          "الأرغون",
+          "الكريبتون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the term “1.5 °C pathway” refer to?",
+    "choices": [
+      "A path of emissions reductions that limits warming to about 1.5 °C",
+      "A rail track for trains",
+      "A hiking route in the mountains",
+      "A tax on tourists"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que désigne la « trajectoire de 1,5 °C » ?",
+        "choices": [
+          "Une trajectoire de réduction des émissions limitant le réchauffement à environ 1,5 °C",
+          "Une voie ferrée",
+          "Un sentier de randonnée en montagne",
+          "Une taxe sur les touristes"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني مصطلح «مسار 1.5 درجة مئوية»؟",
+        "choices": [
+          "مسار لخفض الانبعاثات يحد الاحترار بنحو 1.5 درجة مئوية",
+          "سكة للقطارات",
+          "مسار للتنزه في الجبال",
+          "ضريبة على السياح"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which type of energy comes from burning wood, crop waste or animal dung?",
+    "choices": [
+      "Solar energy",
+      "Biomass energy",
+      "Wind energy",
+      "Tidal energy"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie provient de la combustion du bois, des résidus de cultures ou du fumier ?",
+        "choices": [
+          "L’énergie solaire",
+          "La bioénergie (biomasse)",
+          "L’énergie éolienne",
+          "L’énergie marémotrice"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طاقة تأتي من حرق الخشب أو بقايا المحاصيل أو روث الحيوانات؟",
+        "choices": [
+          "الطاقة الشمسية",
+          "طاقة الكتلة الحيوية",
+          "طاقة الرياح",
+          "طاقة المد"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which global initiative aims to restore billions of hectares of degraded land?",
+    "choices": [
+      "Eurovision",
+      "Olympic Games",
+      "World Cup",
+      "Bonn Challenge"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle initiative mondiale vise à restaurer des milliards d’hectares de terres dégradées ?",
+        "choices": [
+          "L’Eurovision",
+          "Les Jeux olympiques",
+          "La Coupe du monde",
+          "Le défi de Bonn"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مبادرة عالمية تهدف إلى استعادة مليارات الهكتارات من الأراضي المتدهورة؟",
+        "choices": [
+          "مسابقة يوروفيجن",
+          "الألعاب الأولمبية",
+          "كأس العالم",
+          "تحدي بون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for the difference between the actual temperature and a long-term average for a place?",
+    "choices": [
+      "Wind chill",
+      "Dew point",
+      "Temperature anomaly",
+      "Atmospheric pressure"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on l’écart entre la température réelle et la moyenne à long terme d’un lieu ?",
+        "choices": [
+          "Le refroidissement éolien",
+          "Le point de rosée",
+          "L’anomalie de température",
+          "La pression atmosphérique"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف الفرق بين الحرارة الفعلية والمتوسط طويل الأمد لمكان ما؟",
+        "choices": [
+          "برودة الرياح",
+          "نقطة الندى",
+          "الشذوذ الحراري",
+          "الضغط الجوي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural event releases large amounts of water vapour into the sky?",
+    "choices": [
+      "Snow on the ground",
+      "Clouds forming over the sea",
+      "Volcanic rocks",
+      "Earthquakes"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel phénomène naturel libère de grandes quantités de vapeur d’eau dans le ciel ?",
+        "choices": [
+          "La neige au sol",
+          "La formation de nuages au-dessus de la mer",
+          "Les roches volcaniques",
+          "Les séismes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ظاهرة طبيعية تطلق كميات كبيرة من بخار الماء إلى السماء؟",
+        "choices": [
+          "الثلج على الأرض",
+          "تكوّن السحب فوق البحر",
+          "الصخور البركانية",
+          "الزلازل"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which measure can reduce methane emissions from landfills?",
+    "choices": [
+      "Capturing landfill gas for energy",
+      "Burning waste in the open",
+      "Piling waste near rivers",
+      "Ignoring decomposition"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure peut réduire les émissions de méthane des décharges ?",
+        "choices": [
+          "La capture du biogaz des décharges pour produire de l’énergie",
+          "Le brûlage des déchets à l’air libre",
+          "L’entassement des déchets près des rivières",
+          "L’ignorance de la décomposition"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يمكن أن يقلل انبعاثات الميثان من المكبّات؟",
+        "choices": [
+          "احتجاز غاز المكبّات واستخدامه للطاقة",
+          "حرق النفايات في الهواء الطلق",
+          "تكديس النفايات قرب الأنهار",
+          "تجاهل عملية التحلل"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is an “extreme weather event” in climate science?",
+    "choices": [
+      "A normal sunny day",
+      "A small change in humidity",
+      "A rare and severe weather event such as a heatwave or flood",
+      "A calm breeze in spring"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « événement météorologique extrême » en science du climat ?",
+        "choices": [
+          "Une journée ensoleillée normale",
+          "Un petit changement d’humidité",
+          "Un phénomène rare et sévère comme une canicule ou une inondation",
+          "Une brise calme au printemps"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الحدث الجوي المتطرف» في علم المناخ؟",
+        "choices": [
+          "يوم مشمس عادي",
+          "تغير بسيط في الرطوبة",
+          "ظاهرة جوية نادرة وشديدة مثل موجة حر أو فيضان",
+          "نسيم هادئ في الربيع"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item helps save energy when used for lighting?",
+    "choices": [
+      "Candles",
+      "Gas lamps",
+      "LED bulbs",
+      "Oil lamps"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel objet courant aide à économiser l’énergie pour l’éclairage ?",
+        "choices": [
+          "Les bougies",
+          "Les lampes à gaz",
+          "Les ampoules LED",
+          "Les lampes à huile"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شيء شائع يساعد على توفير الطاقة عند استخدامه في الإضاءة؟",
+        "choices": [
+          "الشموع",
+          "مصابيح الغاز",
+          "مصابيح LED",
+          "المصابيح الزيتية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which region is particularly vulnerable to sea-level rise because of its low-lying land?",
+    "choices": [
+      "Frozen tundra only",
+      "Deep inland deserts",
+      "Low-lying coastal deltas",
+      "High mountain peaks"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle région est particulièrement vulnérable à la hausse du niveau de la mer en raison de ses terres basses ?",
+        "choices": [
+          "La toundra gelée uniquement",
+          "Les déserts continentaux profonds",
+          "Les deltas côtiers de basse altitude",
+          "Les hauts sommets montagneux"
+        ]
+      },
+      "ar": {
+        "question": "أيّ منطقة تتعرض بشكل خاص لارتفاع مستوى البحر بسبب انخفاض أراضيها؟",
+        "choices": [
+          "التندرا المتجمدة وحدها",
+          "الصحارى الداخلية العميقة",
+          "الدلتاوات الساحلية المنخفضة",
+          "قمم الجبال العالية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the scientific technique used to estimate past climates from ice cores?",
+    "choices": [
+      "Seismic mapping",
+      "Satellite navigation",
+      "Radar imaging",
+      "Ice core analysis"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la technique scientifique qui estime les climats passés à partir des carottes de glace ?",
+        "choices": [
+          "La cartographie sismique",
+          "La navigation par satellite",
+          "L’imagerie radar",
+          "L’analyse des carottes glaciaires"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم التقنية العلمية التي تُقدّر المناخات القديمة من عينات الجليد؟",
+        "choices": [
+          "الخرائط الزلزالية",
+          "الملاحة بالأقمار الصناعية",
+          "التصوير بالرادار",
+          "تحليل عينات الجليد الأسطوانية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday habit saves water and energy when cooking?",
+    "choices": [
+      "Opening the oven often",
+      "Leaving pans uncovered",
+      "Boiling more water than needed",
+      "Using lids on pots"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle habitude quotidienne économise eau et énergie à la cuisson ?",
+        "choices": [
+          "Ouvrir souvent le four",
+          "Laisser les casseroles découvertes",
+          "Faire bouillir plus d’eau que nécessaire",
+          "Utiliser des couvercles sur les casseroles"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عادة يومية توفر الماء والطاقة أثناء الطهي؟",
+        "choices": [
+          "فتح الفرن كثيرًا",
+          "ترك الأواني مكشوفة",
+          "غلي ماء أكثر من اللازم",
+          "استخدام الأغطية على القدور"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which concept describes how forests can slow climate change by storing carbon in their trunks and roots?",
+    "choices": [
+      "Forest burning",
+      "Forest cutting",
+      "Forest mining",
+      "Carbon storage in forests"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel concept décrit la façon dont les forêts ralentissent le changement climatique en stockant du carbone dans leurs troncs et racines ?",
+        "choices": [
+          "La combustion des forêts",
+          "La coupe des forêts",
+          "L’exploitation minière des forêts",
+          "Le stockage du carbone dans les forêts"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مفهوم يصف كيف تبطئ الغابات تغير المناخ بتخزين الكربون في جذوعها وجذورها؟",
+        "choices": [
+          "حرق الغابات",
+          "قطع الغابات",
+          "تعدين الغابات",
+          "تخزين الكربون في الغابات"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country hosted the COP27 climate conference in 2022?",
+    "choices": [
+      "Chile",
+      "Morocco",
+      "Egypt",
+      "Tunisia"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a accueilli la COP27 sur le climat en 2022 ?",
+        "choices": [
+          "Le Chili",
+          "Le Maroc",
+          "L’Égypte",
+          "La Tunisie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة استضافت مؤتمر المناخ COP27 عام 2022؟",
+        "choices": [
+          "تشيلي",
+          "المغرب",
+          "مصر",
+          "تونس"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  }
+]

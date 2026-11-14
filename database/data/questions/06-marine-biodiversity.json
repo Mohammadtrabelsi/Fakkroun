@@ -1,0 +1,298 @@
+[
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is plankton?",
+    "choices": [
+      "A type of coral reef",
+      "A large shark species",
+      "Microscopic organisms drifting in water",
+      "A deep-sea fish"
+    ],
+    "correct": 3,
+    "explanation": "Plankton includes phytoplankton, which produces a large share of the planet’s oxygen, and zooplankton.",
+    "reference_text": "NOAA ocean plankton overview",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le plancton ?",
+        "choices": [
+          "Un type de récif corallien",
+          "Une grande espèce de requin",
+          "Des organismes microscopiques qui dérivent dans l’eau",
+          "Un poisson des abysses"
+        ],
+        "explanation": "Le plancton comprend le phytoplancton, qui produit une grande part de l’oxygène de la planète, et le zooplancton."
+      },
+      "ar": {
+        "question": "ما هو العوالق البحرية (Plankton)؟",
+        "choices": [
+          "نوع من الشعاب المرجانية",
+          "نوع كبير من أسماك القرش",
+          "كائنات مجهرية تطفو في الماء",
+          "سمكة من أعماق البحر"
+        ],
+        "explanation": "تشمل العوالق النباتية، التي تنتج جزءًا كبيرًا من أكسجين الكوكب، والعوالق الحيوانية."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Coral reefs are built mainly by which organisms?",
+    "choices": [
+      "Tuna",
+      "Sea stars",
+      "Coral polyps",
+      "Sea otters"
+    ],
+    "correct": 3,
+    "explanation": "Polyps secrete a limestone skeleton that builds up over centuries to form the reef.",
+    "reference_text": "NOAA coral reef facts",
+    "translations": {
+      "fr": {
+        "question": "Les récifs coralliens sont construits principalement par quels organismes ?",
+        "choices": [
+          "Les thons",
+          "Les étoiles de mer",
+          "Les polypes coralliens",
+          "Les loutres de mer"
+        ],
+        "explanation": "Les polypes sécrètent un squelette calcaire qui s’accumule pendant des siècles pour former le récif."
+      },
+      "ar": {
+        "question": "ما الكائنات التي تبني الشعاب المرجانية بشكل رئيسي؟",
+        "choices": [
+          "التونة",
+          "نجم البحر",
+          "الحيوانات المرجانية (البوليبات)",
+          "ثعالب البحر"
+        ],
+        "explanation": "تفرز البوليبات هيكلًا كلسيًا يتراكم على مدى قرون ليكوّن الشعاب."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the largest animal that has ever lived?",
+    "choices": [
+      "Whale shark",
+      "Giant squid",
+      "Blue whale",
+      "Sperm whale"
+    ],
+    "correct": 3,
+    "explanation": "Blue whales can reach around 30 metres in length.",
+    "reference_text": "NOAA Fisheries blue whale facts",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand animal ayant jamais vécu ?",
+        "choices": [
+          "Le requin-baleine",
+          "Le calmar géant",
+          "La baleine bleue",
+          "Le cachalot"
+        ],
+        "explanation": "La baleine bleue peut atteindre une trentaine de mètres de long."
+      },
+      "ar": {
+        "question": "ما أكبر حيوان عاش على الإطلاق؟",
+        "choices": [
+          "القرش الحوت",
+          "الحبار العملاق",
+          "الحوت الأزرق",
+          "حوت العنبر"
+        ],
+        "explanation": "قد يبلغ طول الحوت الأزرق نحو 30 مترًا."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Why are seagrass meadows important?",
+    "choices": [
+      "They block all sunlight",
+      "They provide nursery habitat for fish and store carbon",
+      "They are used only as building material",
+      "They produce plastic"
+    ],
+    "correct": 2,
+    "explanation": "Seagrass meadows shelter young fish and lock up significant amounts of carbon in their sediments.",
+    "reference_text": "UNEP seagrass ecosystems report",
+    "translations": {
+      "fr": {
+        "question": "Pourquoi les herbiers marins sont-ils importants ?",
+        "choices": [
+          "Ils bloquent toute la lumière",
+          "Ils servent de nurseries aux poissons et stockent du carbone",
+          "Ils ne servent qu’à construire",
+          "Ils produisent du plastique"
+        ],
+        "explanation": "Les herbiers abritent de jeunes poissons et séquestrent un carbone important dans leurs sédiments."
+      },
+      "ar": {
+        "question": "لماذا تُعد الحشائش البحرية مهمة؟",
+        "choices": [
+          "لأنها تحجب ضوء الشمس بالكامل",
+          "لأنها حاضنات للأسماك الصغيرة وتخزن الكربون",
+          "لأنها تُستخدم في البناء فقط",
+          "لأنها تنتج البلاستيك"
+        ],
+        "explanation": "تأوي الحشائش البحرية صغار الأسماك، وتخزن كميات كبيرة من الكربون في رواسبها."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “bycatch”?",
+    "choices": [
+      "Non-target species accidentally caught in fishing gear",
+      "A fishing boat’s engine part",
+      "A prize awarded at fishing competitions",
+      "A fish caught in a river"
+    ],
+    "correct": 1,
+    "explanation": "Bycatch includes dolphins, turtles and seabirds caught by mistake, often discarded dead.",
+    "reference_text": "FAO bycatch guidance",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que les « prises accessoires » (bycatch) ?",
+        "choices": [
+          "Des espèces non ciblées capturées accidentellement par les engins de pêche",
+          "Une pièce du moteur d’un bateau de pêche",
+          "Un prix remis lors des concours de pêche",
+          "Un poisson pêché dans une rivière"
+        ],
+        "explanation": "Les prises accessoires comprennent des dauphins, des tortues ou des oiseaux pris par erreur, souvent rejetés morts."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الصيد العرضي» (Bycatch)؟",
+        "choices": [
+          "كائنات غير مستهدفة تقع في شباك الصيد عن طريق الخطأ",
+          "قطعة من محرك قارب صيد",
+          "جائزة تُمنح في مسابقات الصيد",
+          "سمكة تُصاد في نهر"
+        ],
+        "explanation": "يشمل الصيد العرضي دلافين وسلاحف وطيورًا تُصاد بالخطأ، وكثيرًا ما تُلقى ميتة في البحر."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Posidonia oceanica is a seagrass endemic to which sea?",
+    "choices": [
+      "The Arctic Ocean",
+      "The Baltic Sea",
+      "The Red Sea",
+      "The Mediterranean"
+    ],
+    "correct": 4,
+    "explanation": "Endemic means it grows naturally only in that sea; its meadows are protected.",
+    "reference_text": "UNEP-MAP Posidonia meadows",
+    "translations": {
+      "fr": {
+        "question": "La posidonie (Posidonia oceanica) est une plante marine endémique de quelle mer ?",
+        "choices": [
+          "L’océan Arctique",
+          "La mer Baltique",
+          "La mer Rouge",
+          "La Méditerranée"
+        ],
+        "explanation": "Endémique signifie qu’elle ne pousse naturellement que dans cette mer ; ses herbiers sont protégés."
+      },
+      "ar": {
+        "question": "الحشيشة البحرية «بوسيدونيا» مستوطنة في أي بحر؟",
+        "choices": [
+          "المحيط المتجمد الشمالي",
+          "بحر البلطيق",
+          "البحر الأحمر",
+          "البحر الأبيض المتوسط"
+        ],
+        "explanation": "تنمو البوسيدونيا طبيعيًا في البحر المتوسط فقط، وتُعد أهم حشائشه البحرية وتحتاج إلى الحماية."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “cetacean”?",
+    "choices": [
+      "A sea bird",
+      "A marine mammal such as a whale, dolphin or porpoise",
+      "A type of seaweed",
+      "A deep-sea crab"
+    ],
+    "correct": 2,
+    "explanation": "Cetaceans are marine mammals that breathe air, including whales, dolphins and porpoises.",
+    "reference_text": "IUCN cetacean information",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « cétacé » ?",
+        "choices": [
+          "Un oiseau de mer",
+          "Un mammifère marin comme la baleine, le dauphin ou le marsouin",
+          "Une algue marine",
+          "Un crabe des abysses"
+        ],
+        "explanation": "Les cétacés regroupent baleines, dauphins et marsouins ; ce sont des mammifères qui respirent l’air libre."
+      },
+      "ar": {
+        "question": "ما هي «الحوتيات» (Cetaceans)؟",
+        "choices": [
+          "طائر بحري",
+          "ثدييات بحرية كالحيتان والدلافين والخنازير البحرية",
+          "نوع من الطحالب البحرية",
+          "سرطان من أعماق البحر"
+        ],
+        "explanation": "تشمل الحوتيات الحيتان والدلافين والخنازير البحرية، وهي ثدييات تتنفس الهواء."
+      }
+    }
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “MSY” (maximum sustainable yield) mean in fisheries?",
+    "choices": [
+      "The total tonnage of a fishing fleet",
+      "The biggest fish ever caught",
+      "The largest catch that can be taken without depleting a stock over time",
+      "The maximum price of fish at market"
+    ],
+    "correct": 3,
+    "explanation": "Taking more than MSY depletes a fish stock over the long term.",
+    "reference_text": "FAO fisheries management glossary",
+    "translations": {
+      "fr": {
+        "question": "Que signifie « RMD » (rendement maximal durable) en pêche ?",
+        "choices": [
+          "Le tonnage total d’une flotte de pêche",
+          "Le plus gros poisson jamais pêché",
+          "La plus grande capture pouvant être prélevée sans épuiser durablement un stock",
+          "Le prix maximal du poisson sur le marché"
+        ],
+        "explanation": "Le RMD est un repère de gestion : prélever davantage que ce niveau appauvrit le stock à long terme."
+      },
+      "ar": {
+        "question": "ماذا يعني «الغلة القصوى المستدامة» (MSY) في مصايد الأسماك؟",
+        "choices": [
+          "الحمولة الإجمالية لأسطول الصيد",
+          "أكبر سمكة صيدت على الإطلاق",
+          "أكبر صيد يمكن أخذه دون استنزاف المخزون على المدى الطويل",
+          "أقصى سعر للسمك في السوق"
+        ],
+        "explanation": "يؤدي تجاوز الغلة القصوى المستدامة إلى تراجع المخزون السمكي على المدى الطويل."
+      }
+    }
+  }
+]

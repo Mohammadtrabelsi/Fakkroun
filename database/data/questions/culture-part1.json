@@ -1,0 +1,742 @@
+[
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who painted the Mona Lisa?",
+    "choices": [
+      "Leonardo da Vinci",
+      "Raphael",
+      "Michelangelo",
+      "Donatello"
+    ],
+    "correct": 1,
+    "explanation": "Leonardo da Vinci painted it in the early 16th century.",
+    "reference_text": "Louvre Museum collection",
+    "translations": {
+      "fr": {
+        "question": "Qui a peint La Joconde ?",
+        "choices": [
+          "Léonard de Vinci",
+          "Raphaël",
+          "Michel-Ange",
+          "Donatello"
+        ],
+        "explanation": "Léonard de Vinci l’a peinte au début du XVIe siècle."
+      },
+      "ar": {
+        "question": "من رسم لوحة الموناليزا؟",
+        "choices": [
+          "ليوناردو دافنشي",
+          "رافائيل",
+          "ميكيل أنجلو",
+          "دوناتيلو"
+        ],
+        "explanation": "رسمها ليوناردو دافنشي في أوائل القرن السادس عشر."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who wrote the play “Romeo and Juliet”?",
+    "choices": [
+      "William Shakespeare",
+      "Charles Dickens",
+      "Geoffrey Chaucer",
+      "Jane Austen"
+    ],
+    "correct": 1,
+    "explanation": "Shakespeare wrote it around 1595.",
+    "reference_text": "Encyclopaedia Britannica, William Shakespeare",
+    "translations": {
+      "fr": {
+        "question": "Qui a écrit la pièce « Roméo et Juliette » ?",
+        "choices": [
+          "William Shakespeare",
+          "Charles Dickens",
+          "Geoffrey Chaucer",
+          "Jane Austen"
+        ],
+        "explanation": "Shakespeare l’a écrite vers 1595."
+      },
+      "ar": {
+        "question": "من كتب مسرحية «روميو وجولييت»؟",
+        "choices": [
+          "ويليام شكسبير",
+          "تشارلز ديكنز",
+          "جيفري تشوسر",
+          "جين أوستن"
+        ],
+        "explanation": "كتبها شكسبير نحو عام 1595."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many keys does a standard piano have?",
+    "choices": [
+      "88",
+      "100",
+      "76",
+      "66"
+    ],
+    "correct": 1,
+    "explanation": "A standard concert piano has 88 keys.",
+    "reference_text": "Encyclopaedia Britannica, piano",
+    "translations": {
+      "fr": {
+        "question": "Combien de touches compte un piano standard ?",
+        "choices": [
+          "88",
+          "100",
+          "76",
+          "66"
+        ],
+        "explanation": "Un piano de concert standard possède 88 touches."
+      },
+      "ar": {
+        "question": "كم عدد مفاتيح البيانو القياسي؟",
+        "choices": [
+          "88",
+          "100",
+          "76",
+          "66"
+        ],
+        "explanation": "يحتوي البيانو الحفلي القياسي على 88 مفتاحًا."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which dish is a staple of Tunisian cuisine, made from steamed semolina?",
+    "choices": [
+      "Couscous",
+      "Pasta",
+      "Sushi",
+      "Paella"
+    ],
+    "correct": 1,
+    "explanation": "Couscous is steamed semolina, served with vegetables, meat or fish.",
+    "reference_text": "UNESCO, couscous culture",
+    "translations": {
+      "fr": {
+        "question": "Quel plat, à base de semoule cuite à la vapeur, est essentiel à la cuisine tunisienne ?",
+        "choices": [
+          "Le couscous",
+          "Les pâtes",
+          "Les sushis",
+          "La paella"
+        ],
+        "explanation": "Le couscous est une semoule cuite à la vapeur, servie avec légumes, viande ou poisson."
+      },
+      "ar": {
+        "question": "أيّ طبق من الأطعمة الأساسية في المطبخ التونسي، ويُصنع من السميد المطهو بالبخار؟",
+        "choices": [
+          "الكسكسي",
+          "المعكرونة",
+          "السوشي",
+          "الباييلا"
+        ],
+        "explanation": "الكسكسي سميد يُطهى بالبخار ويُقدَّم مع الخضار أو اللحم أو السمك."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which city is the Cannes Film Festival held?",
+    "choices": [
+      "Cannes",
+      "Venice",
+      "Toronto",
+      "Berlin"
+    ],
+    "correct": 1,
+    "explanation": "Cannes, on the French Riviera, hosts the festival every spring.",
+    "reference_text": "Festival de Cannes official site",
+    "translations": {
+      "fr": {
+        "question": "Dans quelle ville se tient le Festival de Cannes ?",
+        "choices": [
+          "Cannes",
+          "Venise",
+          "Toronto",
+          "Berlin"
+        ],
+        "explanation": "Cannes, sur la Côte d’Azur, accueille le festival chaque printemps."
+      },
+      "ar": {
+        "question": "في أي مدينة يُقام مهرجان كان السينمائي؟",
+        "choices": [
+          "كان",
+          "البندقية",
+          "تورونتو",
+          "برلين"
+        ],
+        "explanation": "تُقام الدورة في مدينة كان الفرنسية على الريفييرا كل ربيع."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who composed “The Four Seasons”?",
+    "choices": [
+      "Johann Sebastian Bach",
+      "Wolfgang Mozart",
+      "George Frideric Handel",
+      "Antonio Vivaldi"
+    ],
+    "correct": 4,
+    "explanation": "Vivaldi wrote this set of four violin concertos around 1720.",
+    "reference_text": "Encyclopaedia Britannica, Antonio Vivaldi",
+    "translations": {
+      "fr": {
+        "question": "Qui a composé « Les Quatre Saisons » ?",
+        "choices": [
+          "Johann Sebastian Bach",
+          "Wolfgang Mozart",
+          "Georg Friedrich Haendel",
+          "Antonio Vivaldi"
+        ],
+        "explanation": "Vivaldi a écrit ces quatre concertos pour violon vers 1720."
+      },
+      "ar": {
+        "question": "من ألّف مقطوعات «الفصول الأربعة»؟",
+        "choices": [
+          "يوهان سيباستيان باخ",
+          "فولفغانغ موتسارت",
+          "جورج فريدريك هاندل",
+          "أنطونيو فيفالدي"
+        ],
+        "explanation": "ألّف فيفالدي هذه المقطوعات الأربع للكمان نحو عام 1720."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which artist is famous for cutting off part of his own ear?",
+    "choices": [
+      "Pablo Picasso",
+      "Salvador Dalí",
+      "Vincent van Gogh",
+      "Claude Monet"
+    ],
+    "correct": 3,
+    "explanation": "Van Gogh, a Post-Impressionist painter, is widely known for this episode.",
+    "reference_text": "Van Gogh Museum, biography",
+    "translations": {
+      "fr": {
+        "question": "Quel artiste est célèbre pour s’être coupé une partie de l’oreille ?",
+        "choices": [
+          "Pablo Picasso",
+          "Salvador Dalí",
+          "Vincent van Gogh",
+          "Claude Monet"
+        ],
+        "explanation": "Van Gogh, peintre post-impressionniste, est connu pour cet épisode de sa vie."
+      },
+      "ar": {
+        "question": "أيّ فنان اشتهر بقطع جزء من أذنه؟",
+        "choices": [
+          "بابلو بيكاسو",
+          "سلفادور دالي",
+          "فنسنت فان غوخ",
+          "كلود مونيه"
+        ],
+        "explanation": "اشتهر فان غوخ، رسام ما بعد الانطباعية، بهذه الواقعة من حياته."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Latin American author wrote “One Hundred Years of Solitude”?",
+    "choices": [
+      "Julio Cortázar",
+      "Pablo Neruda",
+      "Jorge Luis Borges",
+      "Gabriel García Márquez"
+    ],
+    "correct": 4,
+    "explanation": "García Márquez published the novel in 1967.",
+    "reference_text": "Nobel Prize in Literature 1982",
+    "translations": {
+      "fr": {
+        "question": "Quel auteur latino-américain a écrit « Cent ans de solitude » ?",
+        "choices": [
+          "Julio Cortázar",
+          "Pablo Neruda",
+          "Jorge Luis Borges",
+          "Gabriel García Márquez"
+        ],
+        "explanation": "García Márquez a publié ce roman en 1967."
+      },
+      "ar": {
+        "question": "أيّ كاتب من أمريكا اللاتينية كتب رواية «مئة عام من العزلة»؟",
+        "choices": [
+          "خوليو كورتثار",
+          "بابلو نيرودا",
+          "خورخي لويس بورخيس",
+          "غابرييل غارسيا ماركيز"
+        ],
+        "explanation": "نشر ماركيز الرواية عام 1967."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the Japanese art of paper folding called?",
+    "choices": [
+      "Origami",
+      "Bonsai",
+      "Calligraphy",
+      "Ikebana"
+    ],
+    "correct": 1,
+    "explanation": "Origami comes from ori (folding) and kami (paper).",
+    "reference_text": "Japan Foundation, traditional arts",
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’art japonais du pliage du papier ?",
+        "choices": [
+          "L’origami",
+          "Le bonsaï",
+          "La calligraphie",
+          "L’ikebana"
+        ],
+        "explanation": "Origami vient de « ori » (plier) et « kami » (papier)."
+      },
+      "ar": {
+        "question": "ما اسم فن طيّ الورق الياباني؟",
+        "choices": [
+          "الأوريغامي",
+          "البونساي",
+          "الخط الياباني",
+          "الإيكيبانا"
+        ],
+        "explanation": "الكلمة مركبة من «ori» أي طيّ و«kami» أي ورق."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which festival of lights is mainly celebrated by Hindus?",
+    "choices": [
+      "Eid al-Fitr",
+      "Holi",
+      "Hanukkah",
+      "Diwali"
+    ],
+    "correct": 4,
+    "explanation": "Diwali, the festival of lights, marks the victory of light over darkness.",
+    "reference_text": "Encyclopaedia Britannica, Diwali",
+    "translations": {
+      "fr": {
+        "question": "Quelle fête des lumières est principalement célébrée par les hindous ?",
+        "choices": [
+          "Aïd el-Fitr",
+          "Holi",
+          "Hanouka",
+          "Diwali"
+        ],
+        "explanation": "Diwali, la fête des lumières, célèbre la victoire de la lumière sur l’obscurité."
+      },
+      "ar": {
+        "question": "ما مهرجان الأنوار الذي يحتفل به الهندوس بشكل رئيسي؟",
+        "choices": [
+          "عيد الفطر",
+          "هولي",
+          "حانوكا",
+          "ديوالي"
+        ],
+        "explanation": "يحتفل ديوالي، مهرجان الأنوار، بانتصار النور على الظلام."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Egyptian writer won the Nobel Prize in Literature in 1988?",
+    "choices": [
+      "Tawfiq al-Hakim",
+      "Taha Hussein",
+      "Yusuf Idris",
+      "Naguib Mahfouz"
+    ],
+    "correct": 4,
+    "explanation": "Naguib Mahfouz was the first Arabic-language writer to receive the Nobel Prize in Literature.",
+    "reference_text": "Nobel Prize in Literature 1988",
+    "translations": {
+      "fr": {
+        "question": "Quel écrivain égyptien a reçu le prix Nobel de littérature en 1988 ?",
+        "choices": [
+          "Tawfiq al-Hakim",
+          "Taha Hussein",
+          "Youssef Idriss",
+          "Naguib Mahfouz"
+        ],
+        "explanation": "Naguib Mahfouz est le premier écrivain de langue arabe à recevoir le prix Nobel de littérature."
+      },
+      "ar": {
+        "question": "أيّ كاتب مصري فاز بجائزة نوبل في الأدب عام 1988؟",
+        "choices": [
+          "توفيق الحكيم",
+          "طه حسين",
+          "يوسف إدريس",
+          "نجيب محفوظ"
+        ],
+        "explanation": "نجيب محفوظ أول كاتب بالعربية ينال جائزة نوبل في الأدب."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Italian city is famous for its canals and gondolas?",
+    "choices": [
+      "Naples",
+      "Venice",
+      "Milan",
+      "Florence"
+    ],
+    "correct": 2,
+    "explanation": "Venice is built on a lagoon and crossed by canals.",
+    "reference_text": "UNESCO, Venice and its Lagoon",
+    "translations": {
+      "fr": {
+        "question": "Quelle ville italienne est célèbre pour ses canaux et ses gondoles ?",
+        "choices": [
+          "Naples",
+          "Venise",
+          "Milan",
+          "Florence"
+        ],
+        "explanation": "Venise est bâtie sur une lagune et traversée de canaux."
+      },
+      "ar": {
+        "question": "أيّ مدينة إيطالية تشتهر بقنواتها المائية وزوارقها الجندولا؟",
+        "choices": [
+          "نابولي",
+          "البندقية",
+          "ميلانو",
+          "فلورنسا"
+        ],
+        "explanation": "تُبنى البندقية على بحيرة ساحلية وتتخللها القنوات."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which instrument is most closely associated with Scotland?",
+    "choices": [
+      "Ukulele",
+      "Sitar",
+      "Accordion",
+      "Bagpipes"
+    ],
+    "correct": 4,
+    "explanation": "The Great Highland bagpipe is the best-known Scottish instrument.",
+    "reference_text": "National Piping Centre, Scotland",
+    "translations": {
+      "fr": {
+        "question": "Quel instrument est le plus associé à l’Écosse ?",
+        "choices": [
+          "Le ukulélé",
+          "Le sitar",
+          "L’accordéon",
+          "La cornemuse"
+        ],
+        "explanation": "La grande cornemuse des Highlands est l’instrument écossais le plus connu."
+      },
+      "ar": {
+        "question": "أيّ آلة موسيقية ترتبط أكثر بإسكتلندا؟",
+        "choices": [
+          "اليوكليلي",
+          "السيتار",
+          "الأكورديون",
+          "المزمار الأسكتلندي"
+        ],
+        "explanation": "المزمار الأسكتلندي، ويُعرف بالبايب، هو أشهر آلة إسكتلندية."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which art movement is most associated with Salvador Dalí?",
+    "choices": [
+      "Impressionism",
+      "Cubism",
+      "Baroque",
+      "Surrealism"
+    ],
+    "correct": 4,
+    "explanation": "Dalí was a leading Surrealist known for dreamlike imagery such as melting clocks.",
+    "reference_text": "Museo Nacional Centro de Arte Reina Sofía",
+    "translations": {
+      "fr": {
+        "question": "À quel mouvement artistique est surtout associé Salvador Dalí ?",
+        "choices": [
+          "L’impressionnisme",
+          "Le cubisme",
+          "Le baroque",
+          "Le surréalisme"
+        ],
+        "explanation": "Dalí est un grand surréaliste, connu pour ses images oniriques comme les montres molles."
+      },
+      "ar": {
+        "question": "بأيّ حركة فنية يرتبط سلفادور دالي أكثر؟",
+        "choices": [
+          "الانطباعية",
+          "التكعيبية",
+          "الباروك",
+          "السريالية"
+        ],
+        "explanation": "كان دالي من أبرز السرياليين، واشتهر بصور حالمة مثل الساعات الذائبة."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian city is known as a holy city and home to the Great Mosque of Uqba?",
+    "choices": [
+      "Tunis",
+      "Monastir",
+      "Kairouan",
+      "Bizerte"
+    ],
+    "correct": 3,
+    "explanation": "Kairouan, founded in 670, is one of the holiest cities in Islam in the Maghreb.",
+    "reference_text": "UNESCO, Kairouan",
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne est appelée ville sainte et abrite la grande mosquée de Sidi Okba ?",
+        "choices": [
+          "Tunis",
+          "Monastir",
+          "Kairouan",
+          "Bizerte"
+        ],
+        "explanation": "Kairouan, fondée en 670, est l’une des villes saintes de l’islam au Maghreb."
+      },
+      "ar": {
+        "question": "أيّ مدينة تونسية تُعرف بالمدينة المقدسة وتضم الجامع الكبير لعقبة بن نافع؟",
+        "choices": [
+          "تونس",
+          "المنستير",
+          "القيروان",
+          "بنزرت"
+        ],
+        "explanation": "تأسست القيروان سنة 50 للهجرة (670 ميلادي) وهي من أقدس المدن في المغرب العربي."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ancient epic poem, traditionally attributed to Homer, tells of the Trojan War?",
+    "choices": [
+      "The Aeneid",
+      "The Divine Comedy",
+      "The Odyssey",
+      "The Iliad"
+    ],
+    "correct": 4,
+    "explanation": "The Iliad focuses on a few weeks in the tenth year of the Trojan War.",
+    "reference_text": "Encyclopaedia Britannica, Iliad",
+    "translations": {
+      "fr": {
+        "question": "Quel poème épique antique, attribué à Homère, raconte la guerre de Troie ?",
+        "choices": [
+          "L’Énéide",
+          "La Divine Comédie",
+          "L’Odyssée",
+          "L’Iliade"
+        ],
+        "explanation": "L’Iliade se concentre sur quelques semaines de la dixième année de la guerre de Troie."
+      },
+      "ar": {
+        "question": "ما الملحمة الشعرية القديمة المنسوبة إلى هوميروس، التي تحكي حرب طروادة؟",
+        "choices": [
+          "الإنياذة",
+          "الكوميديا الإلهية",
+          "الأوديسة",
+          "الإلياذة"
+        ],
+        "explanation": "تدور الإلياذة حول أحداث أسابيع قليلة من السنة العاشرة لحرب طروادة."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is home to the Taj Mahal?",
+    "choices": [
+      "Iran",
+      "Nepal",
+      "Pakistan",
+      "India"
+    ],
+    "correct": 4,
+    "explanation": "The Taj Mahal in Agra was built by Emperor Shah Jahan in the 17th century.",
+    "reference_text": "UNESCO, Taj Mahal",
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve le Taj Mahal ?",
+        "choices": [
+          "Iran",
+          "Népal",
+          "Pakistan",
+          "Inde"
+        ],
+        "explanation": "Le Taj Mahal, à Agra, a été bâti par l’empereur Shah Jahan au XVIIe siècle."
+      },
+      "ar": {
+        "question": "في أي دولة يقع تاج محل؟",
+        "choices": [
+          "إيران",
+          "نيبال",
+          "باكستان",
+          "الهند"
+        ],
+        "explanation": "بناه الإمبراطور شاه جهان في مدينة آغرا خلال القرن السابع عشر."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who created the detective Sherlock Holmes?",
+    "choices": [
+      "Agatha Christie",
+      "Arthur Conan Doyle",
+      "Edgar Allan Poe",
+      "Bram Stoker"
+    ],
+    "correct": 2,
+    "explanation": "Arthur Conan Doyle introduced Holmes in 1887.",
+    "reference_text": "Encyclopaedia Britannica, Arthur Conan Doyle",
+    "translations": {
+      "fr": {
+        "question": "Qui a créé le détective Sherlock Holmes ?",
+        "choices": [
+          "Agatha Christie",
+          "Arthur Conan Doyle",
+          "Edgar Allan Poe",
+          "Bram Stoker"
+        ],
+        "explanation": "Arthur Conan Doyle a présenté Holmes en 1887."
+      },
+      "ar": {
+        "question": "من ابتكر المحقق شيرلوك هولمز؟",
+        "choices": [
+          "أغاثا كريستي",
+          "آرثر كونان دويل",
+          "إدغار آلان بو",
+          "برام ستوكر"
+        ],
+        "explanation": "قدّم آرثر كونان دويل هولمز عام 1887."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which composer wrote the opera “The Magic Flute”?",
+    "choices": [
+      "Wolfgang Amadeus Mozart",
+      "Richard Wagner",
+      "Giuseppe Verdi",
+      "Ludwig van Beethoven"
+    ],
+    "correct": 1,
+    "explanation": "Mozart premiered The Magic Flute in Vienna in 1791.",
+    "reference_text": "Encyclopaedia Britannica, The Magic Flute",
+    "translations": {
+      "fr": {
+        "question": "Quel compositeur a écrit l’opéra « La Flûte enchantée » ?",
+        "choices": [
+          "Wolfgang Amadeus Mozart",
+          "Richard Wagner",
+          "Giuseppe Verdi",
+          "Ludwig van Beethoven"
+        ],
+        "explanation": "Mozart a créé La Flûte enchantée à Vienne en 1791."
+      },
+      "ar": {
+        "question": "من ألّف الأوبرا «الناي السحري»؟",
+        "choices": [
+          "فولفغانغ أماديوس موتسارت",
+          "ريتشارد فاغنر",
+          "جوزيبي فيردي",
+          "لودفيغ فان بيتهوفن"
+        ],
+        "explanation": "عُرضت الأوبرا لأول مرة في فيينا عام 1791 من تأليف موتسارت."
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Japanese art form arranges flowers according to a traditional philosophy?",
+    "choices": [
+      "Bonsai",
+      "Origami",
+      "Ikebana",
+      "Sumi-e"
+    ],
+    "correct": 3,
+    "explanation": "Ikebana is the disciplined art of flower arrangement.",
+    "reference_text": "Japan Foundation, traditional arts",
+    "translations": {
+      "fr": {
+        "question": "Quel art japonais compose des bouquets selon une philosophie traditionnelle ?",
+        "choices": [
+          "Le bonsaï",
+          "L’origami",
+          "L’ikebana",
+          "Le sumi-e"
+        ],
+        "explanation": "L’ikebana est l’art discipliné de l’arrangement floral."
+      },
+      "ar": {
+        "question": "أيّ فن ياباني يُنسّق الزهور وفق فلسفة تقليدية؟",
+        "choices": [
+          "البونساي",
+          "الأوريغامي",
+          "الإيكيبانا",
+          "السومي إي"
+        ],
+        "explanation": "الإيكيبانا فن منظّم لتنسيق الزهور."
+      }
+    }
+  }
+]

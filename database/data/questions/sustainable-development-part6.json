@@ -1,0 +1,682 @@
+[
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG is about reducing inequality within and among countries?",
+    "choices": [
+      "SDG 1",
+      "SDG 12",
+      "SDG 10",
+      "SDG 11"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD vise la réduction des inégalités entre et au sein des pays ?",
+        "choices": [
+          "L’ODD 1",
+          "L’ODD 12",
+          "L’ODD 10",
+          "L’ODD 11"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يسعى إلى الحد من عدم المساواة داخل الدول وفيما بينها؟",
+        "choices": [
+          "الهدف 1",
+          "الهدف 12",
+          "الهدف 10",
+          "الهدف 11"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG is about clean water and sanitation?",
+    "choices": [
+      "SDG 7",
+      "SDG 6",
+      "SDG 8",
+      "SDG 9"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur l’eau propre et l’assainissement ?",
+        "choices": [
+          "L’ODD 7",
+          "L’ODD 6",
+          "L’ODD 8",
+          "L’ODD 9"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول المياه النظيفة والصرف الصحي؟",
+        "choices": [
+          "الهدف 7",
+          "الهدف 6",
+          "الهدف 8",
+          "الهدف 9"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “sustainable tourism” aim to achieve?",
+    "choices": [
+      "Ban all visitors",
+      "Build hotels in protected forests",
+      "Minimise environmental and social impacts while benefiting local communities",
+      "Maximise waste on beaches"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que vise le « tourisme durable » ?",
+        "choices": [
+          "Interdire tous les visiteurs",
+          "Construire des hôtels dans les forêts protégées",
+          "Minimiser les impacts environnementaux et sociaux tout en profitant aux communautés locales",
+          "Maximiser les déchets sur les plages"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف من «السياحة المستدامة»؟",
+        "choices": [
+          "منع كل الزوار",
+          "بناء الفنادق في الغابات المحمية",
+          "تقليل الآثار البيئية والاجتماعية مع الإفادة من المجتمعات المحلية",
+          "زيادة النفايات على الشواطئ"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which approach uses plants and natural systems to manage stormwater in cities?",
+    "choices": [
+      "Concrete channels only",
+      "Underground pipes only",
+      "Green infrastructure",
+      "Removing all trees"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle approche utilise les plantes et les systèmes naturels pour gérer les eaux pluviales en ville ?",
+        "choices": [
+          "Les canaux en béton uniquement",
+          "Les canalisations souterraines uniquement",
+          "Les infrastructures vertes",
+          "La suppression de tous les arbres"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نهج يستخدم النباتات والأنظمة الطبيعية لإدارة مياه الأمطار في المدن؟",
+        "choices": [
+          "القنوات الخرسانية فقط",
+          "الأنابيب الجوفية فقط",
+          "البنية التحتية الخضراء",
+          "إزالة كل الأشجار"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the aim of the “Just Transition” concept in climate policy?",
+    "choices": [
+      "Banning all jobs",
+      "Stopping all industry immediately",
+      "Ensuring workers and communities are supported when moving away from fossil fuels",
+      "Moving factories to space"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif de la « transition juste » en politique climatique ?",
+        "choices": [
+          "Supprimer tous les emplois",
+          "Arrêter immédiatement toute industrie",
+          "Soutenir les travailleurs et les communautés lors de la sortie des énergies fossiles",
+          "Déplacer les usines dans l’espace"
+        ]
+      },
+      "ar": {
+        "question": "ما هدف مفهوم «الانتقال العادل» في السياسات المناخية؟",
+        "choices": [
+          "إلغاء كل الوظائف",
+          "وقف كل الصناعات فورًا",
+          "ضمان دعم العمال والمجتمعات عند الانتقال بعيدًا عن الوقود الأحفوري",
+          "نقل المصانع إلى الفضاء"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on partnerships for the goals?",
+    "choices": [
+      "SDG 1",
+      "SDG 2",
+      "SDG 17",
+      "SDG 3"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur les partenariats pour la réalisation des objectifs ?",
+        "choices": [
+          "L’ODD 1",
+          "L’ODD 2",
+          "L’ODD 17",
+          "L’ODD 3"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الشراكات لتحقيق الأهداف؟",
+        "choices": [
+          "الهدف 1",
+          "الهدف 2",
+          "الهدف 17",
+          "الهدف 3"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which measure encourages recycling by making producers pay for packaging waste?",
+    "choices": [
+      "Tax on recycled goods",
+      "Extended producer responsibility",
+      "Ban on recycling",
+      "Free packaging"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure encourage le recyclage en faisant payer les producteurs pour leurs emballages ?",
+        "choices": [
+          "La taxe sur les produits recyclés",
+          "La responsabilité élargie du producteur",
+          "L’interdiction du recyclage",
+          "Les emballages gratuits"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يشجع على إعادة التدوير بجعل المنتجين يدفعون تكلفة نفايات التغليف؟",
+        "choices": [
+          "ضريبة على السلع المعادة تدويرها",
+          "المسؤولية الموسعة للمنتج",
+          "حظر إعادة التدوير",
+          "التغليف المجاني"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “blue-green infrastructure” designed to do?",
+    "choices": [
+      "Manage water and green space together in cities",
+      "Stop rainfall",
+      "Build only blue-coloured buildings",
+      "Remove all green spaces"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert l’« infrastructure bleue-verte » ?",
+        "choices": [
+          "Gérer ensemble l’eau et les espaces verts en ville",
+          "Arrêter les précipitations",
+          "Construire uniquement des bâtiments bleus",
+          "Supprimer tous les espaces verts"
+        ]
+      },
+      "ar": {
+        "question": "ما وظيفة «البنية التحتية الزرقاء الخضراء»؟",
+        "choices": [
+          "إدارة المياه والمساحات الخضراء معًا في المدن",
+          "إيقاف هطول الأمطار",
+          "بناء المباني باللون الأزرق فقط",
+          "إزالة كل المساحات الخضراء"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday practice helps protect biodiversity in a garden?",
+    "choices": [
+      "Using pesticides everywhere",
+      "Removing all insects",
+      "Planting native flowers",
+      "Covering soil with concrete"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle pratique quotidienne protège la biodiversité au jardin ?",
+        "choices": [
+          "Utiliser des pesticides partout",
+          "Supprimer tous les insectes",
+          "Planter des fleurs indigènes",
+          "Couvrir le sol de béton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ممارسة يومية تحمي التنوع البيولوجي في الحديقة؟",
+        "choices": [
+          "استخدام المبيدات في كل مكان",
+          "القضاء على كل الحشرات",
+          "زراعة الزهور المحلية",
+          "تغطية التربة بالخرسانة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which indicator tracks progress on poverty reduction across countries?",
+    "choices": [
+      "Poverty headcount ratio",
+      "Air speed",
+      "Stock index",
+      "Shoe size"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel indicateur suit les progrès dans la réduction de la pauvreté entre les pays ?",
+        "choices": [
+          "Le taux de pauvreté",
+          "La vitesse de l’air",
+          "L’indice boursier",
+          "La pointure"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مؤشر يتابع التقدم في الحد من الفقر بين الدول؟",
+        "choices": [
+          "نسبة الفقر",
+          "سرعة الهواء",
+          "مؤشر البورصة",
+          "مقاس الحذاء"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which concept describes using less material and energy to produce the same service?",
+    "choices": [
+      "Waste expansion",
+      "Overproduction",
+      "Energy hoarding",
+      "Resource efficiency"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel concept décrit l’usage de moins de matière et d’énergie pour un même service ?",
+        "choices": [
+          "L’expansion des déchets",
+          "La surproduction",
+          "L’accumulation d’énergie",
+          "L’efficacité des ressources"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مفهوم يصف استخدام مواد وطاقة أقل لتقديم الخدمة نفسها؟",
+        "choices": [
+          "توسع النفايات",
+          "الإفراط في الإنتاج",
+          "اكتناز الطاقة",
+          "كفاءة الموارد"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on responsible consumption and production?",
+    "choices": [
+      "SDG 13",
+      "SDG 12",
+      "SDG 14",
+      "SDG 15"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur la consommation et la production responsables ?",
+        "choices": [
+          "L’ODD 13",
+          "L’ODD 12",
+          "L’ODD 14",
+          "L’ODD 15"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الاستهلاك والإنتاج المسؤولين؟",
+        "choices": [
+          "الهدف 13",
+          "الهدف 12",
+          "الهدف 14",
+          "الهدف 15"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “sustainable city” most likely to include?",
+    "choices": [
+      "Public transport, green spaces and efficient buildings",
+      "No parks",
+      "Unlimited car use",
+      "Only highways"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que comprend le plus probablement une « ville durable » ?",
+        "choices": [
+          "Transports publics, espaces verts et bâtiments efficaces",
+          "Aucun parc",
+          "Usage illimité de la voiture",
+          "Uniquement des autoroutes"
+        ]
+      },
+      "ar": {
+        "question": "ما الذي تتضمنه المدينة المستدامة على الأرجح؟",
+        "choices": [
+          "النقل العام والمساحات الخضراء والمباني الفعالة",
+          "لا حدائق",
+          "استخدام السيارات دون حدود",
+          "الطرق السريعة فقط"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which framework from the UN focuses on rights for future generations and environmental protection?",
+    "choices": [
+      "Principle of unlimited growth",
+      "Principle of mass consumption",
+      "Principle of short-term profit",
+      "Principle of intergenerational equity"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel principe des Nations unies porte sur les droits des générations futures et la protection de l’environnement ?",
+        "choices": [
+          "Le principe de croissance illimitée",
+          "Le principe de la consommation de masse",
+          "Le principe du profit à court terme",
+          "Le principe d’équité intergénérationnelle"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مبدأ للأمم المتحدة يركز على حقوق الأجيال القادمة وحماية البيئة؟",
+        "choices": [
+          "مبدأ النمو غير المحدود",
+          "مبدأ الاستهلاك الجماعي",
+          "مبدأ الربح قصير الأجل",
+          "مبدأ العدالة بين الأجيال"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday activity supports sustainable urban living?",
+    "choices": [
+      "Leaving lights on",
+      "Using disposable cups",
+      "Walking and cycling",
+      "Driving everywhere"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité quotidienne favorise une vie urbaine durable ?",
+        "choices": [
+          "Laisser les lumières allumées",
+          "Utiliser des gobelets jetables",
+          "Marcher et faire du vélo",
+          "Conduire partout"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط يومي يدعم الحياة الحضرية المستدامة؟",
+        "choices": [
+          "ترك الأضواء مشتعلة",
+          "استخدام الأكواب أحادية الاستعمال",
+          "المشي وركوب الدراجة",
+          "القيادة في كل مكان"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which term describes the use of renewable energy in households and businesses to reduce grid demand?",
+    "choices": [
+      "Coal reliance",
+      "Oil dependence",
+      "Distributed generation",
+      "Centralised monopoly"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel terme désigne l’usage d’énergies renouvelables chez les particuliers et les entreprises pour réduire la demande du réseau ?",
+        "choices": [
+          "La dépendance au charbon",
+          "La dépendance au pétrole",
+          "La production décentralisée",
+          "Le monopole centralisé"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف استخدام الطاقات المتجددة في المنازل والشركات لتقليل الطلب على الشبكة؟",
+        "choices": [
+          "الاعتماد على الفحم",
+          "الاعتماد على النفط",
+          "التوليد الموزع",
+          "الاحتكار المركزي"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the purpose of a sustainability impact assessment for policies?",
+    "choices": [
+      "To decide the national anthem",
+      "To count the number of civil servants",
+      "To check whether policies will benefit people, planet and prosperity",
+      "To select the colour of government buildings"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert une évaluation d’impact de durabilité des politiques ?",
+        "choices": [
+          "Décider de l’hymne national",
+          "Compter les fonctionnaires",
+          "Vérifier que les politiques profitent aux personnes, à la planète et à la prospérité",
+          "Choisir la couleur des bâtiments publics"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض من تقييم الأثر المستدام للسياسات؟",
+        "choices": [
+          "تحديد النشيد الوطني",
+          "عدّ الموظفين الحكوميين",
+          "التحقق من أن السياسات تفيد الناس والكوكب والازدهار",
+          "اختيار لون المباني الحكومية"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action reduces the energy used for heating water at home?",
+    "choices": [
+      "Leaving hot water running",
+      "Taking shorter showers",
+      "Using the highest temperature always",
+      "Heating water for hours"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne réduit l’énergie utilisée pour chauffer l’eau à la maison ?",
+        "choices": [
+          "Laisser couler l’eau chaude",
+          "Prendre des douches plus courtes",
+          "Toujours utiliser la température maximale",
+          "Chauffer l’eau pendant des heures"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يقلل الطاقة المستخدمة لتسخين الماء في المنزل؟",
+        "choices": [
+          "ترك الماء الساخن مفتوحًا",
+          "أخذ دوش أقصر",
+          "استخدام أعلى درجة حرارة دائمًا",
+          "تسخين الماء لساعات"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which approach focuses on maintaining healthy ecosystems to deliver benefits to people?",
+    "choices": [
+      "Ecosystem services approach",
+      "Single-crop approach",
+      "Speculation approach",
+      "Mining approach"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle approche vise à préserver des écosystèmes sains pour les bénéfices qu’ils apportent aux populations ?",
+        "choices": [
+          "L’approche des services écosystémiques",
+          "L’approche monoculture",
+          "L’approche spéculative",
+          "L’approche minière"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نهج يركز على الحفاظ على النظم البيئية الصحية لتقديم فوائدها للناس؟",
+        "choices": [
+          "نهج خدمات النظم البيئية",
+          "نهج المحصول الواحد",
+          "نهج المضاربة",
+          "النهج التعديني"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sustainable development principle means that everyone should share the benefits and burdens fairly?",
+    "choices": [
+      "Rivalry",
+      "Exclusion",
+      "Equity",
+      "Monopoly"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel principe du développement durable signifie que chacun doit partager équitablement les bénéfices et les charges ?",
+        "choices": [
+          "La rivalité",
+          "L’exclusion",
+          "L’équité",
+          "Le monopole"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مبدأ من مبادئ التنمية المستدامة يعني أن يتقاسم الجميع المنافع والأعباء بعدالة؟",
+        "choices": [
+          "التنافس",
+          "الإقصاء",
+          "الإنصاف",
+          "الاحتكار"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  }
+]

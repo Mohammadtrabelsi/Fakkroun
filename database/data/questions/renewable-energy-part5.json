@@ -1,0 +1,580 @@
+[
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What energy source do hydropower plants rely on?",
+    "choices": [
+      "Coal",
+      "Oil",
+      "Gas",
+      "Flowing water"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Sur quelle source d’énergie reposent les centrales hydroélectriques ?",
+        "choices": [
+          "Le charbon",
+          "Le pétrole",
+          "Le gaz",
+          "L’eau courante"
+        ]
+      },
+      "ar": {
+        "question": "على أيّ مصدر طاقة تعتمد محطات الطاقة الكهرومائية؟",
+        "choices": [
+          "الفحم",
+          "النفط",
+          "الغاز",
+          "المياه الجارية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable source uses light from the sun to produce electricity?",
+    "choices": [
+      "Diesel energy",
+      "Coal energy",
+      "Nuclear energy",
+      "Solar energy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle source renouvelable utilise la lumière du soleil pour produire de l’électricité ?",
+        "choices": [
+          "L’énergie diesel",
+          "L’énergie charbonnière",
+          "L’énergie nucléaire",
+          "L’énergie solaire"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر متجدد يستخدم ضوء الشمس لإنتاج الكهرباء؟",
+        "choices": [
+          "طاقة الديزل",
+          "طاقة الفحم",
+          "الطاقة النووية",
+          "الطاقة الشمسية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main advantage of wind energy in terms of fuel?",
+    "choices": [
+      "It needs coal",
+      "It needs gas",
+      "It needs no fuel",
+      "It needs uranium"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal avantage de l’énergie éolienne en termes de combustible ?",
+        "choices": [
+          "Elle nécessite du charbon",
+          "Elle nécessite du gaz",
+          "Elle ne nécessite aucun combustible",
+          "Elle nécessite de l’uranium"
+        ]
+      },
+      "ar": {
+        "question": "ما الميزة الرئيسية لطاقة الرياح من حيث الوقود؟",
+        "choices": [
+          "تحتاج إلى الفحم",
+          "تحتاج إلى الغاز",
+          "لا تحتاج إلى وقود",
+          "تحتاج إلى اليورانيوم"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which renewable resource is the largest source of electricity in Iceland?",
+    "choices": [
+      "Hydropower and geothermal",
+      "Coal",
+      "Nuclear",
+      "Oil"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource renouvelable est la principale source d’électricité en Islande ?",
+        "choices": [
+          "L’hydroélectricité et la géothermie",
+          "Le charbon",
+          "Le nucléaire",
+          "Le pétrole"
+        ]
+      },
+      "ar": {
+        "question": "ما المورد المتجدد الذي يشكل المصدر الأكبر للكهرباء في آيسلندا؟",
+        "choices": [
+          "الكهرومائية والطاقة الحرارية الأرضية",
+          "الفحم",
+          "النووية",
+          "النفط"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for the ratio of electricity produced to the maximum possible in a given period?",
+    "choices": [
+      "Capacity factor",
+      "Market share",
+      "Interest rate",
+      "Tax rate"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on le rapport entre l’électricité produite et la production maximale possible sur une période donnée ?",
+        "choices": [
+          "Le facteur de capacité",
+          "La part de marché",
+          "Le taux d’intérêt",
+          "Le taux d’imposition"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف نسبة الكهرباء المنتجة إلى الحد الأقصى الممكن خلال فترة معينة؟",
+        "choices": [
+          "معامل السعة",
+          "الحصة السوقية",
+          "سعر الفائدة",
+          "معدل الضريبة"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which source produces the most renewable electricity worldwide in recent decades?",
+    "choices": [
+      "Coal",
+      "Oil",
+      "Hydropower",
+      "Gas"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle source produit le plus d’électricité renouvelable dans le monde ces dernières décennies ?",
+        "choices": [
+          "Le charbon",
+          "Le pétrole",
+          "L’hydroélectricité",
+          "Le gaz"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر ينتج أكبر قدر من الكهرباء المتجددة في العالم خلال العقود الأخيرة؟",
+        "choices": [
+          "الفحم",
+          "النفط",
+          "الطاقة الكهرومائية",
+          "الغاز"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What do we call electricity generated near where it is used?",
+    "choices": [
+      "Foreign power",
+      "Import energy",
+      "Monopoly supply",
+      "Distributed generation"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on l’électricité produite près de son lieu de consommation ?",
+        "choices": [
+          "L’énergie étrangère",
+          "L’énergie importée",
+          "La fourniture monopolistique",
+          "La production distribuée"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الكهرباء المولدة قرب مكان استخدامها؟",
+        "choices": [
+          "الطاقة الأجنبية",
+          "الطاقة المستوردة",
+          "الإمداد الاحتكاري",
+          "التوليد الموزع"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which gas is produced by electrolysis of water using renewable electricity and can be stored as a fuel?",
+    "choices": [
+      "Argon",
+      "Hydrogen",
+      "Carbon monoxide",
+      "Neon"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz est produit par électrolyse de l’eau avec de l’électricité renouvelable et peut être stocké comme carburant ?",
+        "choices": [
+          "L’argon",
+          "L’hydrogène",
+          "Le monoxyde de carbone",
+          "Le néon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز يُنتج بالتحليل الكهربائي للماء باستخدام كهرباء متجددة ويمكن تخزينه كوقود؟",
+        "choices": [
+          "الأرغون",
+          "الهيدروجين",
+          "أول أكسيد الكربون",
+          "النيون"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the most common renewable energy source used for household heating in Europe?",
+    "choices": [
+      "Oil",
+      "Biomass",
+      "Uranium",
+      "Coal"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la source renouvelable la plus utilisée pour le chauffage des ménages en Europe ?",
+        "choices": [
+          "Le pétrole",
+          "La biomasse",
+          "L’uranium",
+          "Le charbon"
+        ]
+      },
+      "ar": {
+        "question": "ما أكثر مصادر الطاقة المتجددة استخداماً لتدفئة المنازل في أوروبا؟",
+        "choices": [
+          "النفط",
+          "الكتلة الحيوية",
+          "اليورانيوم",
+          "الفحم"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a common reason to combine solar with batteries?",
+    "choices": [
+      "To reduce sunlight",
+      "To store power for use after sunset",
+      "To increase noise",
+      "To make the panels heavier"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la raison courante d’associer solaire et batteries ?",
+        "choices": [
+          "Réduire l’ensoleillement",
+          "Stocker l’énergie pour l’utiliser après le coucher du soleil",
+          "Augmenter le bruit",
+          "Alourdir les panneaux"
+        ]
+      },
+      "ar": {
+        "question": "ما السبب الشائع لدمج الطاقة الشمسية مع البطاريات؟",
+        "choices": [
+          "تقليل ضوء الشمس",
+          "تخزين الكهرباء لاستخدامها بعد غروب الشمس",
+          "زيادة الضوضاء",
+          "جعل الألواح أثقل"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which technology converts organic waste into methane for use as fuel?",
+    "choices": [
+      "Electrolysis of coal",
+      "Nuclear fusion",
+      "Thermal cracking",
+      "Anaerobic digestion"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie transforme les déchets organiques en méthane utilisable comme combustible ?",
+        "choices": [
+          "L’électrolyse du charbon",
+          "La fusion nucléaire",
+          "Le craquage thermique",
+          "La méthanisation"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية تحوّل النفايات العضوية إلى ميثان يُستخدم كوقود؟",
+        "choices": [
+          "التحليل الكهربائي للفحم",
+          "الاندماج النووي",
+          "التكسير الحراري",
+          "الهضم اللاهوائي"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday device uses solar energy to charge itself?",
+    "choices": [
+      "Diesel engine",
+      "Solar calculator",
+      "Gas heater",
+      "Oil lamp"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel appareil courant utilise l’énergie solaire pour se recharger ?",
+        "choices": [
+          "Le moteur diesel",
+          "La calculatrice solaire",
+          "Le chauffage au gaz",
+          "La lampe à huile"
+        ]
+      },
+      "ar": {
+        "question": "أيّ جهاز يومي يستخدم الطاقة الشمسية لشحن نفسه؟",
+        "choices": [
+          "محرك الديزل",
+          "الآلة الحاسبة الشمسية",
+          "سخان الغاز",
+          "المصباح الزيتي"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is one of the leaders in solar energy use in the Middle East?",
+    "choices": [
+      "Iceland",
+      "United Arab Emirates",
+      "Finland",
+      "Norway"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est l’un des leaders de l’énergie solaire au Moyen-Orient ?",
+        "choices": [
+          "L’Islande",
+          "Les Émirats arabes unis",
+          "La Finlande",
+          "La Norvège"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تُعد من الرائدات في استخدام الطاقة الشمسية في الشرق الأوسط؟",
+        "choices": [
+          "آيسلندا",
+          "الإمارات العربية المتحدة",
+          "فنلندا",
+          "النرويج"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for the energy lost when converting one form of energy into another?",
+    "choices": [
+      "Energy loss (inefficiency)",
+      "Energy gain",
+      "Energy storage",
+      "Energy price"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on l’énergie perdue lors de la conversion d’une forme d’énergie en une autre ?",
+        "choices": [
+          "La perte d’énergie (inefficacité)",
+          "Le gain d’énergie",
+          "Le stockage d’énergie",
+          "Le prix de l’énergie"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف الطاقة المفقودة عند تحويل شكل من الطاقة إلى آخر؟",
+        "choices": [
+          "الفقد الطاقي (عدم الكفاءة)",
+          "كسب الطاقة",
+          "تخزين الطاقة",
+          "سعر الطاقة"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural resource is used by wind farms to produce electricity?",
+    "choices": [
+      "Gas",
+      "Coal",
+      "Air movement",
+      "Oil"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource naturelle est utilisée par les parcs éoliens ?",
+        "choices": [
+          "Le gaz",
+          "Le charbon",
+          "Le mouvement de l’air",
+          "Le pétrole"
+        ]
+      },
+      "ar": {
+        "question": "ما المورد الطبيعي الذي تستخدمه مزارع الرياح لإنتاج الكهرباء؟",
+        "choices": [
+          "الغاز",
+          "الفحم",
+          "حركة الهواء",
+          "النفط"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which technology uses sunlight to heat a fluid that drives turbines in a power plant?",
+    "choices": [
+      "Nuclear reactor",
+      "Concentrated solar power",
+      "Diesel engine",
+      "Coal boiler"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie utilise la lumière du soleil pour chauffer un fluide qui fait tourner des turbines ?",
+        "choices": [
+          "Le réacteur nucléaire",
+          "Le solaire à concentration",
+          "Le moteur diesel",
+          "La chaudière au charbon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية تستخدم ضوء الشمس لتسخين مائع يدير التوربينات في محطة لتوليد الكهرباء؟",
+        "choices": [
+          "مفاعل نووي",
+          "الطاقة الشمسية المركزة",
+          "محرك الديزل",
+          "مرجل الفحم"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian energy plan aims to increase the share of renewables in electricity production?",
+    "choices": [
+      "Mining expansion plan",
+      "Textile export plan",
+      "Tunisian national renewable energy plan",
+      "Tourism investment plan"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel plan énergétique tunisien vise à augmenter la part des renouvelables dans la production d’électricité ?",
+        "choices": [
+          "Le plan d’expansion minière",
+          "Le plan d’export textile",
+          "Le plan national des énergies renouvelables",
+          "Le plan d’investissement touristique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ خطة طاقة تونسية تهدف إلى رفع حصة الطاقات المتجددة في إنتاج الكهرباء؟",
+        "choices": [
+          "خطة توسيع التعدين",
+          "خطة تصدير النسيج",
+          "الخطة الوطنية للطاقات المتجددة",
+          "خطة الاستثمار السياحي"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  }
+]

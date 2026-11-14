@@ -1,0 +1,614 @@
+[
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a greenhouse gas?",
+    "choices": [
+      "A gas that cools the ocean",
+      "A gas used only in hospitals",
+      "A gas that traps heat in the atmosphere",
+      "A gas used to grow plants in glass houses"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un gaz à effet de serre ?",
+        "choices": [
+          "Un gaz qui refroidit l’océan",
+          "Un gaz utilisé uniquement dans les hôpitaux",
+          "Un gaz qui retient la chaleur dans l’atmosphère",
+          "Un gaz utilisé pour cultiver sous serre"
+        ]
+      },
+      "ar": {
+        "question": "ما هو غاز الاحتباس الحراري؟",
+        "choices": [
+          "غاز يبرّد المحيط",
+          "غاز يُستخدم في المستشفيات فقط",
+          "غاز يحبس الحرارة في الغلاف الجوي",
+          "غاز يُستخدم لزراعة النباتات في البيوت الزجاجية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main purpose of a nature reserve?",
+    "choices": [
+      "To build factories",
+      "To host shopping centres",
+      "To store oil",
+      "To protect wildlife and natural habitats"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but principal d’une réserve naturelle ?",
+        "choices": [
+          "Construire des usines",
+          "Accueillir des centres commerciaux",
+          "Stocker du pétrole",
+          "Protéger la faune et les habitats naturels"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف الرئيسي من المحمية الطبيعية؟",
+        "choices": [
+          "بناء المصانع",
+          "استضافة مراكز التسوق",
+          "تخزين النفط",
+          "حماية الحياة البرية والموائل الطبيعية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which of these is a renewable resource?",
+    "choices": [
+      "Wind",
+      "Coal",
+      "Oil",
+      "Uranium"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Laquelle de ces ressources est renouvelable ?",
+        "choices": [
+          "Le vent",
+          "Le charbon",
+          "Le pétrole",
+          "L’uranium"
+        ]
+      },
+      "ar": {
+        "question": "أيّ من هذه الموارد متجدد؟",
+        "choices": [
+          "الرياح",
+          "الفحم",
+          "النفط",
+          "اليورانيوم"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an invasive species?",
+    "choices": [
+      "A species that is protected by law",
+      "A species introduced to an area where it causes harm",
+      "A species that lives in deep caves",
+      "A species found only in cities"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une espèce envahissante ?",
+        "choices": [
+          "Une espèce protégée par la loi",
+          "Une espèce introduite dans une zone où elle cause des dommages",
+          "Une espèce qui vit dans les grottes profondes",
+          "Une espèce présente uniquement en ville"
+        ]
+      },
+      "ar": {
+        "question": "ما هو النوع الغازي (الدخيل)؟",
+        "choices": [
+          "نوع محمي بالقانون",
+          "نوع أُدخل إلى منطقة فيسبب فيها ضررًا",
+          "نوع يعيش في الكهوف العميقة",
+          "نوع يوجد في المدن فقط"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural process is responsible for turning dead plants and animals into fertile soil?",
+    "choices": [
+      "Volcanism",
+      "Decomposition",
+      "Erosion",
+      "Evaporation"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel processus naturel transforme les végétaux et animaux morts en sol fertile ?",
+        "choices": [
+          "Le volcanisme",
+          "La décomposition",
+          "L’érosion",
+          "L’évaporation"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عملية طبيعية تحوّل النباتات والحيوانات الميتة إلى تربة خصبة؟",
+        "choices": [
+          "النشاط البركاني",
+          "التحلل",
+          "التعرية",
+          "التبخر"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “biodegradable” mean?",
+    "choices": [
+      "Able to be broken down naturally by living organisms",
+      "Able to produce electricity",
+      "Made of metal only",
+      "Impossible to break down"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « biodégradable » ?",
+        "choices": [
+          "Capable d’être décomposé naturellement par des organismes vivants",
+          "Capable de produire de l’électricité",
+          "Fabriqué uniquement en métal",
+          "Impossible à décomposer"
+        ]
+      },
+      "ar": {
+        "question": "ما معنى «قابل للتحلل الحيوي»؟",
+        "choices": [
+          "قابل للتحلل بشكل طبيعي بفعل الكائنات الحية",
+          "قادر على توليد الكهرباء",
+          "مصنوع من المعدن فقط",
+          "يستحيل تحلله"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which international convention protects the world’s cultural and natural heritage sites?",
+    "choices": [
+      "Basel Convention",
+      "World Heritage Convention",
+      "Paris Agreement",
+      "Kyoto Protocol"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle convention internationale protège les sites du patrimoine culturel et naturel mondial ?",
+        "choices": [
+          "La convention de Bâle",
+          "La convention du patrimoine mondial",
+          "L’accord de Paris",
+          "Le protocole de Kyoto"
+        ]
+      },
+      "ar": {
+        "question": "أيّ اتفاقية دولية تحمي مواقع التراث الثقافي والطبيعي في العالم؟",
+        "choices": [
+          "اتفاقية بازل",
+          "اتفاقية التراث العالمي",
+          "اتفاق باريس",
+          "بروتوكول كيوتو"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which pollutant is produced by vehicle engines and affects air quality?",
+    "choices": [
+      "Argon",
+      "Neon",
+      "Oxygen",
+      "Nitrogen dioxide"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel polluant est produit par les moteurs de véhicules et affecte la qualité de l’air ?",
+        "choices": [
+          "L’argon",
+          "Le néon",
+          "L’oxygène",
+          "Le dioxyde d’azote"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملوث تُنتجه محركات المركبات ويؤثر في جودة الهواء؟",
+        "choices": [
+          "الأرغون",
+          "النيون",
+          "الأكسجين",
+          "ثاني أكسيد النيتروجين"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an “ecological footprint”?",
+    "choices": [
+      "The number of steps taken in a forest",
+      "The area of biologically productive land a person needs to sustain their consumption",
+      "A tax on hiking boots",
+      "The depth of footprints on a beach"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que « l’empreinte écologique » ?",
+        "choices": [
+          "Le nombre de pas effectués dans une forêt",
+          "La surface de terres biologiquement productives nécessaire pour soutenir sa consommation",
+          "Une taxe sur les chaussures de randonnée",
+          "La profondeur des empreintes sur la plage"
+        ]
+      },
+      "ar": {
+        "question": "ما هي «البصمة البيئية» (Ecological footprint)؟",
+        "choices": [
+          "عدد الخطوات في الغابة",
+          "مساحة الأراضي المنتجة حيويًا التي يحتاجها الفرد لتلبية استهلاكه",
+          "ضريبة على أحذية المشي",
+          "عمق الآثار على الشاطئ"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which substance is used as a coolant in older refrigerators and is harmful to the ozone layer?",
+    "choices": [
+      "Helium",
+      "Argon",
+      "CFC",
+      "Nitrogen"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle substance servait de fluide frigorigène dans les anciens réfrigérateurs et nuit à la couche d’ozone ?",
+        "choices": [
+          "L’hélium",
+          "L’argon",
+          "Les CFC",
+          "L’azote"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مادة كانت تُستخدم في الثلاجات القديمة كمبرّد وتضر طبقة الأوزون؟",
+        "choices": [
+          "الهيليوم",
+          "الأرغون",
+          "مركبات CFC",
+          "النيتروجين"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item should not be flushed down the toilet because it harms sewers and seas?",
+    "choices": [
+      "Toilet paper",
+      "Water",
+      "Wet wipes",
+      "Soap"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel objet courant ne faut-il pas jeter dans les toilettes car il nuit aux réseaux et à la mer ?",
+        "choices": [
+          "Le papier toilette",
+          "L’eau",
+          "Les lingettes humides",
+          "Le savon"
+        ]
+      },
+      "ar": {
+        "question": "ما الشيء الشائع الذي لا ينبغي رميه في المرحاض لأنه يضر شبكات الصرف والبحر؟",
+        "choices": [
+          "ورق التواليت",
+          "الماء",
+          "المناديل المبللة",
+          "الصابون"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which environmental indicator measures the amount of oxygen needed by microorganisms to break down organic matter in water?",
+    "choices": [
+      "Soil colour",
+      "Air speed",
+      "Sound level",
+      "Biochemical oxygen demand (BOD)"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel indicateur mesure l’oxygène nécessaire aux micro-organismes pour décomposer la matière organique dans l’eau ?",
+        "choices": [
+          "La couleur du sol",
+          "La vitesse de l’air",
+          "Le niveau sonore",
+          "La demande biochimique en oxygène (DBO)"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مؤشر بيئي يقيس كمية الأكسجين التي تحتاجها الكائنات الدقيقة لتحليل المادة العضوية في الماء؟",
+        "choices": [
+          "لون التربة",
+          "سرعة الهواء",
+          "مستوى الصوت",
+          "الطلب الحيوي على الأكسجين (BOD)"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which environmental principle states that prevention is better than cure?",
+    "choices": [
+      "Law of gravity",
+      "Doppler principle",
+      "Principle of inertia",
+      "Precautionary principle"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel principe environnemental affirme que mieux vaut prévenir que guérir ?",
+        "choices": [
+          "La loi de la gravitation",
+          "L’effet Doppler",
+          "Le principe d’inertie",
+          "Le principe de précaution"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مبدأ بيئي يقرر أن الوقاية خير من العلاج؟",
+        "choices": [
+          "قانون الجاذبية",
+          "تأثير دوبلر",
+          "مبدأ القصور الذاتي",
+          "مبدأ الحيطة والحذر"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural environment is most affected by plastic pollution in the sea?",
+    "choices": [
+      "Glacier caves",
+      "Desert",
+      "Mountain tops",
+      "Ocean"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel milieu naturel est le plus touché par la pollution plastique marine ?",
+        "choices": [
+          "Les grottes glaciaires",
+          "Le désert",
+          "Les sommets montagneux",
+          "L’océan"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بيئة طبيعية تتأثر أكثر بالتلوث البلاستيكي البحري؟",
+        "choices": [
+          "كهوف الجليد",
+          "الصحراء",
+          "قمم الجبال",
+          "المحيط"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which of these is a benefit of urban green spaces?",
+    "choices": [
+      "Reducing heat and improving air quality",
+      "Increasing traffic noise",
+      "Causing flooding",
+      "Raising carbon emissions"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Lequel de ces éléments est un avantage des espaces verts urbains ?",
+        "choices": [
+          "Réduire la chaleur et améliorer la qualité de l’air",
+          "Augmenter le bruit de la circulation",
+          "Provoquer des inondations",
+          "Augmenter les émissions de carbone"
+        ]
+      },
+      "ar": {
+        "question": "أيّ من هذه الفوائد تقدمها المساحات الخضراء الحضرية؟",
+        "choices": [
+          "تخفيف الحرارة وتحسين جودة الهواء",
+          "زيادة ضجيج المرور",
+          "التسبب في الفيضانات",
+          "رفع الانبعاثات الكربونية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “carbon capture and storage” refer to?",
+    "choices": [
+      "Making diamonds from carbon",
+      "Burning carbon in engines",
+      "Capturing CO₂ from industry and storing it underground",
+      "Storing carbon in banks"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "À quoi correspond le « captage et stockage du carbone » ?",
+        "choices": [
+          "Fabriquer des diamants à partir du carbone",
+          "Brûler du carbone dans des moteurs",
+          "Capturer le CO₂ des industries et le stocker sous terre",
+          "Stocker du carbone dans les banques"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني «احتجاز الكربون وتخزينه» (CCS)؟",
+        "choices": [
+          "صناعة الماس من الكربون",
+          "حرق الكربون في المحركات",
+          "التقاط ثاني أكسيد الكربون من الصناعة وتخزينه تحت الأرض",
+          "تخزين الكربون في البنوك"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which activity helps reduce the amount of waste in landfills?",
+    "choices": [
+      "Dumping paint in rivers",
+      "Burning plastics",
+      "Composting food scraps",
+      "Throwing batteries in the bin"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité réduit la quantité de déchets en décharge ?",
+        "choices": [
+          "Déverser de la peinture dans les rivières",
+          "Brûler le plastique",
+          "Composter les restes alimentaires",
+          "Jeter les piles à la poubelle"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط يساعد على تقليل كمية النفايات في المكبّات؟",
+        "choices": [
+          "إلقاء الدهان في الأنهار",
+          "حرق البلاستيك",
+          "تسميد بقايا الطعام",
+          "رمي البطاريات في سلة المهملات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the best description of “sustainable forestry”?",
+    "choices": [
+      "Burning forests for ash",
+      "Planting one species only",
+      "Clearing all trees for farmland",
+      "Harvesting timber while keeping the forest healthy and regenerating"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la meilleure définition de la « foresterie durable » ?",
+        "choices": [
+          "Brûler les forêts pour en tirer des cendres",
+          "Planter une seule espèce",
+          "Défricher tous les arbres pour des terres agricoles",
+          "Exploiter le bois tout en maintenant la forêt saine et en régénération"
+        ]
+      },
+      "ar": {
+        "question": "ما أفضل وصف للحراجة المستدامة (Sustainable forestry)؟",
+        "choices": [
+          "حرق الغابات للحصول على الرماد",
+          "زراعة نوع واحد فقط",
+          "إزالة الأشجار كلها للأراضي الزراعية",
+          "قطع الأخشاب مع الحفاظ على صحة الغابة وتجددها"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  }
+]

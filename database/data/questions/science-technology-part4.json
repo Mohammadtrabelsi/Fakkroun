@@ -1,0 +1,648 @@
+[
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the largest organ inside the human body?",
+    "choices": [
+      "Heart",
+      "Liver",
+      "Brain",
+      "Stomach"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand organe interne du corps humain ?",
+        "choices": [
+          "Le cœur",
+          "Le foie",
+          "Le cerveau",
+          "L’estomac"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر عضو داخلي في جسم الإنسان؟",
+        "choices": [
+          "القلب",
+          "الكبد",
+          "الدماغ",
+          "المعدة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the boiling point of water in Fahrenheit at sea level?",
+    "choices": [
+      "212 °F",
+      "32 °F",
+      "180 °F",
+      "100 °F"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le point d’ébullition de l’eau en Fahrenheit au niveau de la mer ?",
+        "choices": [
+          "212 °F",
+          "32 °F",
+          "180 °F",
+          "100 °F"
+        ]
+      },
+      "ar": {
+        "question": "ما درجة غليان الماء بالفهرنهايت عند مستوى سطح البحر؟",
+        "choices": [
+          "212 °F",
+          "32 °F",
+          "180 °F",
+          "100 °F"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which planet is closest to the Sun?",
+    "choices": [
+      "Mercury",
+      "Mars",
+      "Venus",
+      "Earth"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle planète est la plus proche du Soleil ?",
+        "choices": [
+          "Mercure",
+          "Mars",
+          "Vénus",
+          "La Terre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كوكب هو الأقرب إلى الشمس؟",
+        "choices": [
+          "عطارد",
+          "المريخ",
+          "الزهرة",
+          "الأرض"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the study of living things called?",
+    "choices": [
+      "Biology",
+      "Geology",
+      "Chemistry",
+      "Physics"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’étude des êtres vivants ?",
+        "choices": [
+          "La biologie",
+          "La géologie",
+          "La chimie",
+          "La physique"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم علم دراسة الكائنات الحية؟",
+        "choices": [
+          "علم الأحياء",
+          "علم الجيولوجيا",
+          "علم الكيمياء",
+          "علم الفيزياء"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which gas do humans need to breathe to survive?",
+    "choices": [
+      "Carbon monoxide",
+      "Oxygen",
+      "Helium",
+      "Methane"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "De quel gaz les humains ont-ils besoin pour survivre en respirant ?",
+        "choices": [
+          "Le monoxyde de carbone",
+          "L’oxygène",
+          "L’hélium",
+          "Le méthane"
+        ]
+      },
+      "ar": {
+        "question": "ما الغاز الذي يحتاجه الإنسان للتنفس ليبقى حيًا؟",
+        "choices": [
+          "أول أكسيد الكربون",
+          "الأكسجين",
+          "الهيليوم",
+          "الميثان"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the unit of frequency?",
+    "choices": [
+      "Pascal",
+      "Newton",
+      "Hertz",
+      "Joule"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’unité de fréquence ?",
+        "choices": [
+          "Le pascal",
+          "Le newton",
+          "Le hertz",
+          "Le joule"
+        ]
+      },
+      "ar": {
+        "question": "ما وحدة قياس التردد؟",
+        "choices": [
+          "الباسكال",
+          "النيوتن",
+          "الهرتز",
+          "الجول"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which scientist is known for the theory of relativity?",
+    "choices": [
+      "Stephen Hawking",
+      "Albert Einstein",
+      "Isaac Newton",
+      "Nikola Tesla"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel savant est célèbre pour la théorie de la relativité ?",
+        "choices": [
+          "Stephen Hawking",
+          "Albert Einstein",
+          "Isaac Newton",
+          "Nikola Tesla"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عالم اشتهر بنظرية النسبية؟",
+        "choices": [
+          "ستيفن هوكينغ",
+          "ألبرت أينشتاين",
+          "إسحاق نيوتن",
+          "نيكولا تسلا"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the basic unit of life?",
+    "choices": [
+      "Tissue",
+      "Atom",
+      "Cell",
+      "Molecule"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’unité de base de la vie ?",
+        "choices": [
+          "Le tissu",
+          "L’atome",
+          "La cellule",
+          "La molécule"
+        ]
+      },
+      "ar": {
+        "question": "ما الوحدة الأساسية للحياة؟",
+        "choices": [
+          "النسيج",
+          "الذرة",
+          "الخلية",
+          "الجزيء"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which element is essential for making bones and teeth strong?",
+    "choices": [
+      "Iron",
+      "Zinc",
+      "Calcium",
+      "Sodium"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel élément est essentiel pour des os et des dents solides ?",
+        "choices": [
+          "Le fer",
+          "Le zinc",
+          "Le calcium",
+          "Le sodium"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عنصر ضروري لقوة العظام والأسنان؟",
+        "choices": [
+          "الحديد",
+          "الزنك",
+          "الكالسيوم",
+          "الصوديوم"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the closest galaxy to the Milky Way?",
+    "choices": [
+      "Sombrero",
+      "Andromeda",
+      "Whirlpool",
+      "Triangulum"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la galaxie la plus proche de la Voie lactée ?",
+        "choices": [
+          "Sombrero",
+          "Andromède",
+          "Tourbillon",
+          "Triangle"
+        ]
+      },
+      "ar": {
+        "question": "ما أقرب مجرة إلى درب التبانة؟",
+        "choices": [
+          "سومبريرو",
+          "أندروميدا",
+          "الدوامة",
+          "المثلث"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which particle is responsible for carrying the electromagnetic force?",
+    "choices": [
+      "Neutron",
+      "Neutrino",
+      "Photon",
+      "Quark"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle particule transporte la force électromagnétique ?",
+        "choices": [
+          "Le neutron",
+          "Le neutrino",
+          "Le photon",
+          "Le quark"
+        ]
+      },
+      "ar": {
+        "question": "أيّ جسيم يحمل القوة الكهرومغناطيسية؟",
+        "choices": [
+          "النيوترون",
+          "النيوترينو",
+          "الفوتون",
+          "الكوارك"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the law stating that energy cannot be created or destroyed?",
+    "choices": [
+      "Hooke’s law",
+      "Law of gravity",
+      "Conservation of energy",
+      "Ohm’s law"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la loi selon laquelle l’énergie ne peut être ni créée ni détruite ?",
+        "choices": [
+          "La loi de Hooke",
+          "La loi de la gravitation",
+          "La conservation de l’énergie",
+          "La loi d’Ohm"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم القانون الذي ينص على أن الطاقة لا تُخلق ولا تُفنى؟",
+        "choices": [
+          "قانون هوك",
+          "قانون الجذب",
+          "حفظ الطاقة",
+          "قانون أوم"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which organelle contains the genetic material in a eukaryotic cell?",
+    "choices": [
+      "Cell membrane",
+      "Nucleus",
+      "Lysosome",
+      "Ribosome"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel organite contient le matériel génétique dans une cellule eucaryote ?",
+        "choices": [
+          "La membrane cellulaire",
+          "Le noyau",
+          "Le lysosome",
+          "Le ribosome"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عضية تحتوي المادة الوراثية في الخلية حقيقية النواة؟",
+        "choices": [
+          "الغشاء الخلوي",
+          "النواة",
+          "الليسوسوم",
+          "الريبوسوم"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main source of energy for the Earth?",
+    "choices": [
+      "Ocean waves",
+      "The Sun",
+      "The core",
+      "The Moon"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale source d’énergie de la Terre ?",
+        "choices": [
+          "Les vagues",
+          "Le Soleil",
+          "Le noyau",
+          "La Lune"
+        ]
+      },
+      "ar": {
+        "question": "ما المصدر الرئيسي للطاقة على الأرض؟",
+        "choices": [
+          "أمواج البحر",
+          "الشمس",
+          "باطن الأرض",
+          "القمر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which scientist discovered that the Earth orbits the Sun?",
+    "choices": [
+      "Nicolaus Copernicus",
+      "Tycho Brahe",
+      "Ptolemy",
+      "Aristotle"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel savant a établi que la Terre tourne autour du Soleil ?",
+        "choices": [
+          "Nicolas Copernic",
+          "Tycho Brahe",
+          "Ptolémée",
+          "Aristote"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عالم أثبت أن الأرض تدور حول الشمس؟",
+        "choices": [
+          "نيكولاوس كوبرنيكوس",
+          "تيكو براهي",
+          "بطليموس",
+          "أرسطو"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What type of energy does a moving car have?",
+    "choices": [
+      "Potential energy",
+      "Chemical energy only",
+      "Nuclear energy",
+      "Kinetic energy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel type d’énergie possède une voiture en mouvement ?",
+        "choices": [
+          "L’énergie potentielle",
+          "L’énergie chimique uniquement",
+          "L’énergie nucléaire",
+          "L’énergie cinétique"
+        ]
+      },
+      "ar": {
+        "question": "ما نوع الطاقة التي تمتلكها السيارة المتحركة؟",
+        "choices": [
+          "طاقة الوضع",
+          "الطاقة الكيميائية فقط",
+          "الطاقة النووية",
+          "الطاقة الحركية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the hardest natural substance known?",
+    "choices": [
+      "Steel",
+      "Quartz",
+      "Granite",
+      "Diamond"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la substance naturelle la plus dure connue ?",
+        "choices": [
+          "L’acier",
+          "Le quartz",
+          "Le granit",
+          "Le diamant"
+        ]
+      },
+      "ar": {
+        "question": "ما أصلب مادة طبيعية معروفة؟",
+        "choices": [
+          "الفولاذ",
+          "الكوارتز",
+          "الجرانيت",
+          "الماس"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which tool is used to measure temperature?",
+    "choices": [
+      "Scale",
+      "Ruler",
+      "Barometer",
+      "Thermometer"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel instrument sert à mesurer la température ?",
+        "choices": [
+          "La balance",
+          "La règle",
+          "Le baromètre",
+          "Le thermomètre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة تُستخدم لقياس درجة الحرارة؟",
+        "choices": [
+          "الميزان",
+          "المسطرة",
+          "مقياس الضغط الجوي",
+          "مقياس الحرارة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which scientific principle explains why objects float on water?",
+    "choices": [
+      "Archimedes’ principle",
+      "Snell’s law",
+      "Ohm’s law",
+      "Newton’s second law"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel principe scientifique explique pourquoi les objets flottent sur l’eau ?",
+        "choices": [
+          "Le principe d’Archimède",
+          "La loi de Snell",
+          "La loi d’Ohm",
+          "La deuxième loi de Newton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مبدأ علمي يفسر سبب طفو الأجسام على الماء؟",
+        "choices": [
+          "مبدأ أرخميدس",
+          "قانون سنل",
+          "قانون أوم",
+          "قانون نيوتن الثاني"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  }
+]

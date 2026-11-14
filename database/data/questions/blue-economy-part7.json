@@ -1,0 +1,240 @@
+[
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does a lighthouse help ships do?",
+    "choices": [
+      "Generate oil",
+      "Catch fish",
+      "Produce salt",
+      "Navigate safely near the coast"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert un phare pour les navires ?",
+        "choices": [
+          "Générer du pétrole",
+          "Pêcher",
+          "Produire du sel",
+          "Naviguer en sécurité près des côtes"
+        ]
+      },
+      "ar": {
+        "question": "ما الذي تساعد المنارة السفن على فعله؟",
+        "choices": [
+          "توليد النفط",
+          "صيد الأسماك",
+          "إنتاج الملح",
+          "الملاحة بأمان قرب الساحل"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is a main use of seaweed in cooking across many countries?",
+    "choices": [
+      "Fuel for cars only",
+      "Cement mixing",
+      "Food ingredient such as nori and agar",
+      "Glass making"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est un usage principal des algues en cuisine dans de nombreux pays ?",
+        "choices": [
+          "Carburant pour voitures uniquement",
+          "Mélange pour le ciment",
+          "Ingrédient alimentaire comme le nori et l’agar",
+          "Fabrication du verre"
+        ]
+      },
+      "ar": {
+        "question": "ما الاستخدام الرئيسي للطحالب في الطبخ في دول كثيرة؟",
+        "choices": [
+          "وقود للسيارات فقط",
+          "خلط الإسمنت",
+          "مكوّن غذائي مثل النوري والآغار",
+          "صناعة الزجاج"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “blue economy” strategy for small island states?",
+    "choices": [
+      "Closing all ports",
+      "Moving the island inland",
+      "Using ocean resources sustainably for jobs and growth",
+      "Banning fishing completely"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la stratégie « économie bleue » pour les petits États insulaires ?",
+        "choices": [
+          "Fermer tous les ports",
+          "Déplacer l’île à l’intérieur des terres",
+          "Utiliser durablement les ressources océaniques pour l’emploi et la croissance",
+          "Interdire totalement la pêche"
+        ]
+      },
+      "ar": {
+        "question": "ما استراتيجية «الاقتصاد الأزرق» للدول الجزرية الصغيرة؟",
+        "choices": [
+          "إغلاق كل الموانئ",
+          "نقل الجزيرة إلى الداخل",
+          "الاستخدام المستدام لموارد المحيط لتحقيق العمل والنمو",
+          "حظر الصيد كليًا"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea vessel is used to carry people across short routes between islands?",
+    "choices": [
+      "Tanker",
+      "Ferry",
+      "Dredger",
+      "Submarine"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel navire transporte les personnes sur de courtes distances entre les îles ?",
+        "choices": [
+          "Le pétrolier",
+          "Le ferry",
+          "La drague",
+          "Le sous-marin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سفينة تُستخدم لنقل الركاب على مسافات قصيرة بين الجزر؟",
+        "choices": [
+          "الناقلة",
+          "العبارة",
+          "كاسحة الرمال",
+          "الغواصة"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main purpose of an aquaculture hatchery?",
+    "choices": [
+      "Producing young fish or shellfish for farming",
+      "Mining salt",
+      "Cooking fish for restaurants",
+      "Building ships"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal rôle d’une écloserie aquacole ?",
+        "choices": [
+          "Produire des jeunes poissons ou coquillages pour l’élevage",
+          "Extraire du sel",
+          "Cuisiner du poisson pour les restaurants",
+          "Construire des navires"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من مفقس الأحياء المائية؟",
+        "choices": [
+          "إنتاج صغار الأسماك أو المحاريات للتربية",
+          "استخراج الملح",
+          "طهي الأسماك للمطاعم",
+          "بناء السفن"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural feature of the sea attracts divers and snorkellers to coral areas?",
+    "choices": [
+      "Factory outlets",
+      "Coral reefs and colourful fish",
+      "Ship wrecks only",
+      "Oil platforms"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel élément naturel de la mer attire les plongeurs vers les zones coralliennes ?",
+        "choices": [
+          "Les rejets d’usines",
+          "Les récifs coralliens et les poissons colorés",
+          "Uniquement les épaves",
+          "Les plates-formes pétrolières"
+        ]
+      },
+      "ar": {
+        "question": "ما العنصر الطبيعي في البحر الذي يجذب الغواصين إلى مناطق المرجان؟",
+        "choices": [
+          "مخارج المصانع",
+          "الشعاب المرجانية والأسماك الملونة",
+          "حطام السفن فقط",
+          "منصات النفط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which resource is harvested from the sea to make omega-3 supplements?",
+    "choices": [
+      "Crude oil",
+      "Fish oil",
+      "Coral dust",
+      "Sea sand"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource marine sert à fabriquer les compléments oméga-3 ?",
+        "choices": [
+          "Le pétrole brut",
+          "L’huile de poisson",
+          "La poussière de corail",
+          "Le sable marin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مورد بحري يُستخدم لصنع مكملات أوميغا 3؟",
+        "choices": [
+          "النفط الخام",
+          "زيت السمك",
+          "غبار المرجان",
+          "الرمل البحري"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  }
+]

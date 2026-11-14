@@ -1,0 +1,682 @@
+[
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday practice reduces electricity use in the home the most?",
+    "choices": [
+      "Switching off unused appliances",
+      "Running the dishwasher half full",
+      "Keeping fridge doors open",
+      "Leaving the TV on standby all night"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle pratique quotidienne réduit le plus la consommation d’électricité à la maison ?",
+        "choices": [
+          "Éteindre les appareils non utilisés",
+          "Lancer le lave-vaisselle à moitié plein",
+          "Laisser la porte du frigo ouverte",
+          "Laisser la télévision en veille toute la nuit"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ممارسة يومية تقلل استهلاك الكهرباء في المنزل أكثر من غيرها؟",
+        "choices": [
+          "إطفاء الأجهزة غير المستخدمة",
+          "تشغيل غسالة الأطباق نصف ممتلئة",
+          "ترك باب الثلاجة مفتوحًا",
+          "ترك التلفاز في وضع الاستعداد طوال الليل"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which product is made from recycled paper and is commonly used for packaging?",
+    "choices": [
+      "Metal cans",
+      "Styrofoam trays",
+      "Plastic bags",
+      "Cardboard boxes"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel produit est fabriqué à partir de papier recyclé et sert souvent d’emballage ?",
+        "choices": [
+          "Les boîtes métalliques",
+          "Les barquettes en polystyrène",
+          "Les sacs plastiques",
+          "Les boîtes en carton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ منتج يُصنع من الورق المعاد تدويره ويُستخدم غالبًا في التغليف؟",
+        "choices": [
+          "علب المعدن",
+          "صواني الستايروفوم",
+          "الأكياس البلاستيكية",
+          "علب الكرتون"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which term describes goods designed to last longer and be easily repaired?",
+    "choices": [
+      "Durable products",
+      "Fast fashion",
+      "Disposable goods",
+      "Single-use items"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel terme désigne des biens conçus pour durer plus longtemps et être facilement réparés ?",
+        "choices": [
+          "Les produits durables",
+          "La mode éphémère",
+          "Les biens jetables",
+          "Les articles à usage unique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصطلح يصف السلع المصممة لتدوم أطول وتسهل إصلاحها؟",
+        "choices": [
+          "المنتجات المتينة",
+          "الموضة السريعة",
+          "السلع القابلة للتخلص",
+          "الأغراض أحادية الاستعمال"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which system reuses bottles by returning them to the shop for a refund?",
+    "choices": [
+      "Free giveaway",
+      "Deposit return scheme",
+      "Plastic tax only",
+      "Bottle burning"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel système réutilise les bouteilles en les rapportant au magasin contre un remboursement ?",
+        "choices": [
+          "Le don gratuit",
+          "La consigne avec remboursement",
+          "La taxe sur le plastique uniquement",
+          "Le brûlage des bouteilles"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نظام يعيد استخدام الزجاجات بإعادتها إلى المتجر مقابل استرداد المال؟",
+        "choices": [
+          "التوزيع المجاني",
+          "نظام الضمان المسترد للعبوات",
+          "ضريبة البلاستيك فقط",
+          "حرق الزجاجات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday choice helps reduce plastic waste from food?",
+    "choices": [
+      "Bringing your own container",
+      "Using plastic cutlery",
+      "Buying pre-packed items",
+      "Taking extra bags"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel choix quotidien aide à réduire les déchets plastiques alimentaires ?",
+        "choices": [
+          "Apporter son propre contenant",
+          "Utiliser des couverts en plastique",
+          "Acheter des produits suremballés",
+          "Prendre des sacs supplémentaires"
+        ]
+      },
+      "ar": {
+        "question": "أيّ اختيار يومي يساعد على تقليل النفايات البلاستيكية من الطعام؟",
+        "choices": [
+          "إحضار حاوية خاصة بك",
+          "استخدام أدوات مائدة بلاستيكية",
+          "شراء المنتجات المغلفة مسبقًا",
+          "أخذ أكياس إضافية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which measure reduces emissions by using waste heat from industry for homes?",
+    "choices": [
+      "Coal stoves",
+      "District heating",
+      "Gas flares",
+      "Open fires"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure réduit les émissions en utilisant la chaleur perdue de l’industrie pour chauffer des logements ?",
+        "choices": [
+          "Les poêles à charbon",
+          "Le chauffage urbain",
+          "Les torchères",
+          "Les feux ouverts"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يقلل الانبعاثات باستخدام الحرارة الفائضة من الصناعة لتدفئة المنازل؟",
+        "choices": [
+          "مواقد الفحم",
+          "التدفئة المركزية الحضرية",
+          "الشعلات الغازية",
+          "النيران المكشوفة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a common benefit of buying second-hand clothes?",
+    "choices": [
+      "More plastic packaging",
+      "Less textile waste",
+      "More water use",
+      "More factory waste"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est un avantage courant de l’achat de vêtements d’occasion ?",
+        "choices": [
+          "Plus d’emballages plastiques",
+          "Moins de déchets textiles",
+          "Plus de consommation d’eau",
+          "Plus de déchets industriels"
+        ]
+      },
+      "ar": {
+        "question": "ما الفائدة الشائعة لشراء الملابس المستعملة؟",
+        "choices": [
+          "زيادة التغليف البلاستيكي",
+          "تقليل النفايات النسيجية",
+          "زيادة استهلاك المياه",
+          "زيادة نفايات المصانع"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which tool is used to measure how much energy a building uses over time?",
+    "choices": [
+      "Ruler",
+      "Energy meter",
+      "Compass",
+      "Thermometer only"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel outil sert à mesurer l’énergie consommée par un bâtiment au fil du temps ?",
+        "choices": [
+          "La règle",
+          "Le compteur d’énergie",
+          "La boussole",
+          "Le thermomètre seul"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة تُستخدم لقياس الطاقة التي يستهلكها المبنى على مدى الزمن؟",
+        "choices": [
+          "المسطرة",
+          "عدّاد الطاقة",
+          "البوصلة",
+          "مقياس الحرارة وحده"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “green public procurement” encourage governments to do?",
+    "choices": [
+      "Buy goods with lower environmental impact",
+      "Buy only imported plastics",
+      "Buy only the most expensive items",
+      "Stop buying products"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qu’encourage la « commande publique verte » ?",
+        "choices": [
+          "Acheter des biens à plus faible impact environnemental",
+          "N’acheter que des plastiques importés",
+          "N’acheter que les articles les plus chers",
+          "Arrêter tout achat"
+        ]
+      },
+      "ar": {
+        "question": "ما الذي يشجعه «الشراء الحكومي الأخضر»؟",
+        "choices": [
+          "شراء سلع ذات أثر بيئي أقل",
+          "شراء البلاستيك المستورد فقط",
+          "شراء أغلى السلع فقط",
+          "وقف كل المشتريات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action saves water when washing hands?",
+    "choices": [
+      "Turning off the tap while lathering",
+      "Washing with the tap on full",
+      "Leaving the tap running",
+      "Using hot water always"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne économise de l’eau lorsqu’on se lave les mains ?",
+        "choices": [
+          "Fermer le robinet pendant le savonnage",
+          "Se laver avec le robinet à fond",
+          "Laisser couler le robinet",
+          "Utiliser toujours de l’eau chaude"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يوفّر الماء عند غسل اليدين؟",
+        "choices": [
+          "إغلاق الصنبور أثناء الصابون",
+          "الغسل بالصنبور على أقصى قوة",
+          "ترك الصنبور مفتوحًا",
+          "استخدام الماء الساخن دائمًا"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a common green alternative to plastic straws?",
+    "choices": [
+      "Paper cups only",
+      "Plastic forks",
+      "Metal or bamboo straws",
+      "Extra plastic straws"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est une alternative verte courante aux pailles en plastique ?",
+        "choices": [
+          "Des gobelets en papier uniquement",
+          "Des fourchettes en plastique",
+          "Les pailles en métal ou en bambou",
+          "Des pailles plastiques supplémentaires"
+        ]
+      },
+      "ar": {
+        "question": "ما البديل الأخضر الشائع للمصاصات البلاستيكية؟",
+        "choices": [
+          "أكواب ورق فقط",
+          "شوك بلاستيكية",
+          "مصاصات من المعدن أو الخيزران",
+          "مصاصات بلاستيكية إضافية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which concept links economic growth with the reduction of environmental pressure?",
+    "choices": [
+      "Deforestation",
+      "Decoupling",
+      "Overconsumption",
+      "Mono-cropping"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel concept relie la croissance économique à la réduction des pressions environnementales ?",
+        "choices": [
+          "La déforestation",
+          "Le découplage",
+          "La surconsommation",
+          "La monoculture"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مفهوم يربط النمو الاقتصادي بتقليل الضغوط البيئية؟",
+        "choices": [
+          "إزالة الغابات",
+          "الفصل (Decoupling)",
+          "الإفراط في الاستهلاك",
+          "زراعة محصول واحد"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the main purpose of a recycling bin in a neighbourhood?",
+    "choices": [
+      "Collecting food for the market",
+      "Collecting materials to be recycled",
+      "Holding water supplies",
+      "Storing furniture"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but principal d’un bac de recyclage dans un quartier ?",
+        "choices": [
+          "Collecter des aliments pour le marché",
+          "Collecter les matériaux à recycler",
+          "Contenir des réserves d’eau",
+          "Stocker des meubles"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من حاوية إعادة التدوير في الحي؟",
+        "choices": [
+          "جمع الطعام للسوق",
+          "جمع المواد لإعادة تدويرها",
+          "حفظ مخزون الماء",
+          "تخزين الأثاث"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which building feature helps save energy by letting in natural light?",
+    "choices": [
+      "Closing every window",
+      "Painting walls black",
+      "Large windows and skylights",
+      "Thick curtains all day"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel élément d’un bâtiment permet d’économiser de l’énergie en laissant entrer la lumière naturelle ?",
+        "choices": [
+          "La fermeture de toutes les fenêtres",
+          "Des murs peints en noir",
+          "Les grandes fenêtres et les puits de lumière",
+          "Des rideaux épais toute la journée"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عنصر في المبنى يساعد على توفير الطاقة بالسماح بدخول الضوء الطبيعي؟",
+        "choices": [
+          "إغلاق كل النوافذ",
+          "طلاء الجدران بالأسود",
+          "النوافذ الكبيرة والفتحات العلوية",
+          "الستائر السميكة طوال النهار"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for products designed to be taken apart and reused at the end of their life?",
+    "choices": [
+      "Design for loss",
+      "Design for burning",
+      "Design for disassembly",
+      "Design for landfill"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on les produits conçus pour être démontés et réutilisés en fin de vie ?",
+        "choices": [
+          "La conception pour la perte",
+          "La conception pour l’incinération",
+          "La conception pour le démontage",
+          "La conception pour l’enfouissement"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف المنتجات المصممة لتُفكّك وتُعاد استخدام أجزائها عند نهاية عمرها؟",
+        "choices": [
+          "التصميم من أجل الضياع",
+          "التصميم من أجل الحرق",
+          "التصميم من أجل التفكيك",
+          "التصميم من أجل الردم"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which fuel is considered cleaner for household cooking than charcoal in many areas?",
+    "choices": [
+      "Plastic waste",
+      "Used tyres",
+      "Rubbish",
+      "Natural gas or electricity"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel combustible est considéré comme plus propre que le charbon de bois pour la cuisine dans de nombreuses régions ?",
+        "choices": [
+          "Les déchets plastiques",
+          "Les pneus usagés",
+          "Les ordures",
+          "Le gaz naturel ou l’électricité"
+        ]
+      },
+      "ar": {
+        "question": "أيّ وقود يُعد أنظف من الفحم النباتي للطهي المنزلي في مناطق كثيرة؟",
+        "choices": [
+          "النفايات البلاستيكية",
+          "الإطارات المستعملة",
+          "القمامة",
+          "الغاز الطبيعي أو الكهرباء"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which everyday item is most often made from bioplastic?",
+    "choices": [
+      "Compostable cutlery",
+      "Stone tiles",
+      "Metal cans",
+      "Glass jars"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel objet courant est le plus souvent fabriqué en bioplastique ?",
+        "choices": [
+          "Les couverts compostables",
+          "Les carreaux de pierre",
+          "Les boîtes métalliques",
+          "Les bocaux en verre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ منتج يومي يُصنع غالبًا من البلاستيك الحيوي؟",
+        "choices": [
+          "أدوات المائدة القابلة للتسميد",
+          "بلاط الحجر",
+          "العلب المعدنية",
+          "البرطمانات الزجاجية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the aim of a “zero-emission building”?",
+    "choices": [
+      "Using only fossil fuels",
+      "Burning waste on site",
+      "No net carbon emissions during its use",
+      "No windows at all"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but d’un « bâtiment à émissions nulles » ?",
+        "choices": [
+          "L’usage exclusif des combustibles fossiles",
+          "La combustion de déchets sur place",
+          "Aucune émission nette de carbone pendant son usage",
+          "Aucune fenêtre"
+        ]
+      },
+      "ar": {
+        "question": "ما هدف «المبنى منخفض الانبعاثات» (Zero-emission building)؟",
+        "choices": [
+          "استخدام الوقود الأحفوري وحده",
+          "حرق النفايات في الموقع",
+          "عدم وجود انبعاثات كربونية صافية أثناء استخدامه",
+          "عدم وجود نوافذ إطلاقًا"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural material is commonly used as a biodegradable cup?",
+    "choices": [
+      "Bagasse (sugar cane fibre)",
+      "Plastic film",
+      "Polystyrene",
+      "Aluminium"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel matériau naturel est couramment utilisé pour des gobelets biodégradables ?",
+        "choices": [
+          "La bagasse (fibre de canne à sucre)",
+          "Le film plastique",
+          "Le polystyrène",
+          "L’aluminium"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مادة طبيعية تُستخدم عادةً في أكواب قابلة للتحلل؟",
+        "choices": [
+          "الكسارة (ليف قصب السكر)",
+          "الغشاء البلاستيكي",
+          "البوليستيرين",
+          "الألومنيوم"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an “eco-label” often seen on cleaning products?",
+    "choices": [
+      "A warning about explosions",
+      "A mark showing lower environmental impact",
+      "A brand logo only",
+      "A tax stamp"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « écolabel », souvent vu sur les produits d’entretien ?",
+        "choices": [
+          "Un avertissement d’explosion",
+          "Une marque indiquant un impact environnemental réduit",
+          "Un simple logo de marque",
+          "Un timbre fiscal"
+        ]
+      },
+      "ar": {
+        "question": "ما هي «الشهادة البيئية» (Eco-label) التي تظهر غالبًا على منتجات التنظيف؟",
+        "choices": [
+          "تحذير من الانفجار",
+          "علامة تشير إلى أثر بيئي أقل",
+          "شعار تجاري فقط",
+          "طابع ضريبي"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  }
+]

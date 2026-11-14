@@ -1,0 +1,890 @@
+[
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who painted the ceiling of the Sistine Chapel?",
+    "choices": [
+      "Michelangelo",
+      "Titian",
+      "Leonardo da Vinci",
+      "Raphael"
+    ],
+    "correct": 1,
+    "explanation": "Michelangelo painted the ceiling between 1508 and 1512.",
+    "reference_text": "Vatican Museums, Sistine Chapel",
+    "translations": {
+      "fr": {
+        "question": "Qui a peint le plafond de la chapelle Sixtine ?",
+        "choices": [
+          "Michel-Ange",
+          "Titien",
+          "Léonard de Vinci",
+          "Raphaël"
+        ],
+        "explanation": "Michel-Ange a peint le plafond entre 1508 et 1512."
+      },
+      "ar": {
+        "question": "من رسم سقف كنيسة سيستين؟",
+        "choices": [
+          "ميكيل أنجلو",
+          "تيتيان",
+          "ليوناردو دافنشي",
+          "رافائيل"
+        ],
+        "explanation": "رسم ميكيل أنجلو السقف بين عامي 1508 و1512."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ancient civilisation built the Great Pyramid of Giza?",
+    "choices": [
+      "Ancient Egyptians",
+      "Sumerians",
+      "Aztecs",
+      "Persians"
+    ],
+    "correct": 1,
+    "explanation": "The Great Pyramid was built for Pharaoh Khufu about 4,500 years ago.",
+    "reference_text": "Encyclopaedia Britannica, Great Pyramid of Giza",
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation a construit la Grande Pyramide de Gizeh ?",
+        "choices": [
+          "Les Égyptiens anciens",
+          "Les Sumériens",
+          "Les Aztèques",
+          "Les Perses"
+        ],
+        "explanation": "La Grande Pyramide fut construite pour le pharaon Khéops il y a environ 4 500 ans."
+      },
+      "ar": {
+        "question": "أيّ حضارة بنت الهرم الأكبر في الجيزة؟",
+        "choices": [
+          "المصريون القدماء",
+          "السومريون",
+          "الأزتيك",
+          "الفرس"
+        ],
+        "explanation": "بُني الهرم الأكبر للفرعون خوفو قبل نحو 4500 عام."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who was the leader of the Kingdom of France who was known as the “Sun King”?",
+    "choices": [
+      "Charles V",
+      "Napoleon",
+      "Louis XIV",
+      "Louis XVI"
+    ],
+    "correct": 3,
+    "explanation": "Louis XIV reigned from 1643 to 1715 and was called the Sun King.",
+    "reference_text": "Encyclopaedia Britannica, Louis XIV",
+    "translations": {
+      "fr": {
+        "question": "Quel roi de France était surnommé le « Roi-Soleil » ?",
+        "choices": [
+          "Charles V",
+          "Napoléon",
+          "Louis XIV",
+          "Louis XVI"
+        ],
+        "explanation": "Louis XIV régna de 1643 à 1715 et fut surnommé le Roi-Soleil."
+      },
+      "ar": {
+        "question": "أيّ ملوك فرنسا لُقّب بـ«ملك الشمس»؟",
+        "choices": [
+          "شارل الخامس",
+          "نابليون",
+          "لويس الرابع عشر",
+          "لويس السادس عشر"
+        ],
+        "explanation": "حكم لويس الرابع عشر من 1643 إلى 1715 ولُقّب بملك الشمس."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Arab dynasty founded Baghdad as its capital in 762?",
+    "choices": [
+      "Umayyads",
+      "Fatimids",
+      "Mamluks",
+      "Abbasids"
+    ],
+    "correct": 4,
+    "explanation": "Caliph al-Mansur founded Baghdad as the Abbasid capital in 762.",
+    "reference_text": "Encyclopaedia Britannica, Baghdad",
+    "translations": {
+      "fr": {
+        "question": "Quelle dynastie arabe a fait de Bagdad sa capitale en 762 ?",
+        "choices": [
+          "Les Omeyyades",
+          "Les Fatimides",
+          "Les Mamelouks",
+          "Les Abbassides"
+        ],
+        "explanation": "Le calife al-Mansour fonda Bagdad comme capitale abbasside en 762."
+      },
+      "ar": {
+        "question": "أيّ أسرة عربية اتخذت بغداد عاصمة لها عام 762؟",
+        "choices": [
+          "الأمويون",
+          "الفاطميون",
+          "المماليك",
+          "العباسيون"
+        ],
+        "explanation": "أسس الخليفة المنصور بغداد عاصمةً للعباسيين عام 762."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which treaty of 1648 ended the Thirty Years’ War?",
+    "choices": [
+      "Treaty of Tordesillas",
+      "Treaty of Utrecht",
+      "Treaty of Paris",
+      "Peace of Westphalia"
+    ],
+    "correct": 4,
+    "explanation": "The Peace of Westphalia ended the Thirty Years’ War in Europe.",
+    "reference_text": "Encyclopaedia Britannica, Peace of Westphalia",
+    "translations": {
+      "fr": {
+        "question": "Quel traité de 1648 mit fin à la guerre de Trente Ans ?",
+        "choices": [
+          "Le traité de Tordesillas",
+          "Le traité d’Utrecht",
+          "Le traité de Paris",
+          "La paix de Westphalie"
+        ],
+        "explanation": "La paix de Westphalie mit fin à la guerre de Trente Ans en Europe."
+      },
+      "ar": {
+        "question": "أيّ معاهدة عام 1648 أنهت حرب الثلاثين عامًا؟",
+        "choices": [
+          "معاهدة تورديسيلاس",
+          "معاهدة أوترخت",
+          "معاهدة باريس",
+          "صلح وستفاليا"
+        ],
+        "explanation": "أنهى صلح وستفاليا حرب الثلاثين عامًا في أوروبا."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which leader launched the Meiji Restoration in Japan in 1868?",
+    "choices": [
+      "Emperor Hirohito",
+      "Oda Nobunaga",
+      "Shogun Tokugawa",
+      "Emperor Meiji"
+    ],
+    "correct": 4,
+    "explanation": "The Meiji Restoration restored imperial rule and began Japan’s modernisation.",
+    "reference_text": "Encyclopaedia Britannica, Meiji Restoration",
+    "translations": {
+      "fr": {
+        "question": "Quel souverain a lancé la restauration de Meiji au Japon en 1868 ?",
+        "choices": [
+          "L’empereur Hirohito",
+          "Oda Nobunaga",
+          "Le shogun Tokugawa",
+          "L’empereur Meiji"
+        ],
+        "explanation": "La restauration de Meiji rétablit le pouvoir impérial et lança la modernisation du Japon."
+      },
+      "ar": {
+        "question": "من قاد إصلاح عصر ميجي في اليابان عام 1868؟",
+        "choices": [
+          "الإمبراطور هيروهيتو",
+          "أودا نوبوناغا",
+          "الشوغون توكوغاوا",
+          "الإمبراطور ميجي"
+        ],
+        "explanation": "أعاد إصلاح ميجي الحكم الإمبراطوري وبدأ تحديث اليابان."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which empire ruled Tunisia during the Roman conquest and was defeated in the Punic Wars?",
+    "choices": [
+      "Greek Empire",
+      "Ottoman Empire",
+      "Byzantine Empire",
+      "Carthaginian Empire"
+    ],
+    "correct": 4,
+    "explanation": "Carthage fought Rome in the Punic Wars, and Carthage was destroyed in 146 BC.",
+    "reference_text": "Encyclopaedia Britannica, Punic Wars",
+    "translations": {
+      "fr": {
+        "question": "Quel empire dominait la Tunisie avant la conquête romaine et fut vaincu lors des guerres puniques ?",
+        "choices": [
+          "L’Empire grec",
+          "L’Empire ottoman",
+          "L’Empire byzantin",
+          "L’empire carthaginois"
+        ],
+        "explanation": "Carthage affronta Rome dans les guerres puniques et fut détruite en 146 av. J.-C."
+      },
+      "ar": {
+        "question": "أيّ إمبراطورية حكمت تونس قبل الغزو الروماني، وهُزمت في الحروب البونية؟",
+        "choices": [
+          "الإمبراطورية اليونانية",
+          "الدولة العثمانية",
+          "الإمبراطورية البيزنطية",
+          "قرطاج"
+        ],
+        "explanation": "خاضت قرطاج حروبًا مع روما، ودُمّرت عام 146 قبل الميلاد."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ruler of the Ottoman Empire captured Constantinople in 1453?",
+    "choices": [
+      "Mehmed II",
+      "Selim I",
+      "Murad I",
+      "Suleiman the Magnificent"
+    ],
+    "correct": 1,
+    "explanation": "Mehmed II, known as Mehmed the Conqueror, captured Constantinople in 1453.",
+    "reference_text": "Encyclopaedia Britannica, Mehmed II",
+    "translations": {
+      "fr": {
+        "question": "Quel souverain ottoman prit Constantinople en 1453 ?",
+        "choices": [
+          "Mehmed II",
+          "Selim Ier",
+          "Mourad Ier",
+          "Soliman le Magnifique"
+        ],
+        "explanation": "Mehmed II, dit le Conquérant, prit Constantinople en 1453."
+      },
+      "ar": {
+        "question": "أيّ سلاطين الدولة العثمانية فتح القسطنطينية عام 1453؟",
+        "choices": [
+          "محمد الثاني",
+          "سليم الأول",
+          "مراد الأول",
+          "سليمان القانوني"
+        ],
+        "explanation": "فتح محمد الثاني، المعروف بالفاتح، القسطنطينية عام 1453."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Maghreb country saw the first independent Muslim dynasty, the Idrisids, founded in 788?",
+    "choices": [
+      "Morocco",
+      "Tunisia",
+      "Libya",
+      "Algeria"
+    ],
+    "correct": 1,
+    "explanation": "Early Islamic conquests in North Africa made Islam dominant across the region; the question refers to the first Maghreb dynasty of Morocco, the Idrisids.",
+    "reference_text": "Encyclopaedia Britannica, Idrisid dynasty",
+    "translations": {
+      "fr": {
+        "question": "Quel pays du Maghreb a été le premier à établir une dynastie musulmane indépendante ?",
+        "choices": [
+          "Le Maroc",
+          "La Tunisie",
+          "La Libye",
+          "L’Algérie"
+        ],
+        "explanation": "La dynastie idrisside, fondée au Maroc en 788, fut la première dynastie musulmane indépendante du Maghreb."
+      },
+      "ar": {
+        "question": "أيّ دولة مغاربية أقامت أول دولة إسلامية مستقلة؟",
+        "choices": [
+          "المغرب",
+          "تونس",
+          "ليبيا",
+          "الجزائر"
+        ],
+        "explanation": "أسس إدريس الأول دولة الأدارسة في المغرب عام 788، وهي أول دولة إسلامية مستقلة في المغرب العربي."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which war was fought between Britain and its American colonies from 1775 to 1783?",
+    "choices": [
+      "War of 1812",
+      "Civil War",
+      "Mexican-American War",
+      "American Revolutionary War"
+    ],
+    "correct": 4,
+    "explanation": "The American Revolutionary War led to the independence of the United States.",
+    "reference_text": "Encyclopaedia Britannica, American Revolution",
+    "translations": {
+      "fr": {
+        "question": "Quelle guerre opposa la Grande-Bretagne à ses colonies américaines de 1775 à 1783 ?",
+        "choices": [
+          "La guerre de 1812",
+          "La guerre de Sécession",
+          "La guerre américano-mexicaine",
+          "La guerre d’indépendance américaine"
+        ],
+        "explanation": "La guerre d’indépendance américaine mena à l’indépendance des États-Unis."
+      },
+      "ar": {
+        "question": "أيّ حرب دارت بين بريطانيا ومستعمراتها الأمريكية بين 1775 و1783؟",
+        "choices": [
+          "حرب 1812",
+          "الحرب الأهلية",
+          "الحرب المكسيكية الأمريكية",
+          "حرب الاستقلال الأمريكية"
+        ],
+        "explanation": "أدت حرب الاستقلال الأمريكية إلى استقلال الولايات المتحدة."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian dynasty ruled the country from the 17th to the 20th century and founded a modern state?",
+    "choices": [
+      "Fatimid dynasty",
+      "Zirid dynasty",
+      "Almohad dynasty",
+      "Husainid dynasty"
+    ],
+    "correct": 4,
+    "explanation": "The Husainid beys ruled Tunisia from 1705 until the French protectorate in 1881, and the country became a republic in 1957.",
+    "reference_text": "Encyclopaedia Britannica, Husainid dynasty",
+    "translations": {
+      "fr": {
+        "question": "Quelle dynastie tunisienne a gouverné le pays du XVIIe au XXe siècle ?",
+        "choices": [
+          "La dynastie fatimide",
+          "La dynastie ziride",
+          "La dynastie almohade",
+          "La dynastie husseinite"
+        ],
+        "explanation": "Les beys husseinites ont régné de 1705 jusqu’au protectorat français en 1881."
+      },
+      "ar": {
+        "question": "أيّ أسرة حكمت تونس من القرن السابع عشر إلى القرن العشرين؟",
+        "choices": [
+          "الأسرة الفاطمية",
+          "الأسرة الزيرية",
+          "الأسرة الموحدية",
+          "الأسرة الحسينية"
+        ],
+        "explanation": "حكم البايات الحسينيون تونس من 1705 حتى الحماية الفرنسية عام 1881."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which event in 1492 ended Muslim rule in the Iberian city of Granada?",
+    "choices": [
+      "Battle of Lepanto",
+      "Fall of Granada",
+      "Siege of Vienna",
+      "Sack of Rome"
+    ],
+    "correct": 2,
+    "explanation": "Granada, the last Muslim stronghold in Iberia, surrendered to the Catholic Monarchs in 1492.",
+    "reference_text": "Encyclopaedia Britannica, Granada",
+    "translations": {
+      "fr": {
+        "question": "Quel événement de 1492 mit fin à la domination musulmane à Grenade ?",
+        "choices": [
+          "La bataille de Lépante",
+          "La chute de Grenade",
+          "Le siège de Vienne",
+          "Le sac de Rome"
+        ],
+        "explanation": "Grenade, dernier bastion musulman de la péninsule Ibérique, se rendit aux Rois catholiques en 1492."
+      },
+      "ar": {
+        "question": "أيّ حدث عام 1492 أنهى الحكم الإسلامي في غرناطة؟",
+        "choices": [
+          "معركة ليبانتو",
+          "سقوط غرناطة",
+          "حصار فيينا",
+          "نهب روما"
+        ],
+        "explanation": "سلّمت غرناطة، آخر معاقل المسلمين في الأندلس، للملكين الكاثوليكيين عام 1492."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which year did the Second World War begin?",
+    "choices": [
+      "1941",
+      "1939",
+      "1945",
+      "1914"
+    ],
+    "correct": 2,
+    "explanation": "World War II began in September 1939 with Germany’s invasion of Poland.",
+    "reference_text": "Encyclopaedia Britannica, World War II",
+    "translations": {
+      "fr": {
+        "question": "En quelle année a commencé la Seconde Guerre mondiale ?",
+        "choices": [
+          "1941",
+          "1939",
+          "1945",
+          "1914"
+        ],
+        "explanation": "La Seconde Guerre mondiale commença en septembre 1939 avec l’invasion de la Pologne."
+      },
+      "ar": {
+        "question": "في أي عام بدأت الحرب العالمية الثانية؟",
+        "choices": [
+          "1941",
+          "1939",
+          "1945",
+          "1914"
+        ],
+        "explanation": "بدأت الحرب العالمية الثانية في سبتمبر 1939 مع غزو ألمانيا لبولندا."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which leader is known for the Long March in China in 1934–1935?",
+    "choices": [
+      "Chiang Kai-shek",
+      "Mao Zedong",
+      "Deng Xiaoping",
+      "Sun Yat-sen"
+    ],
+    "correct": 2,
+    "explanation": "Mao Zedong led the Communist forces on the Long March, which covered thousands of kilometres.",
+    "reference_text": "Encyclopaedia Britannica, Long March",
+    "translations": {
+      "fr": {
+        "question": "Quel dirigeant est associé à la Longue Marche en Chine en 1934-1935 ?",
+        "choices": [
+          "Tchang Kaï-chek",
+          "Mao Zedong",
+          "Deng Xiaoping",
+          "Sun Yat-sen"
+        ],
+        "explanation": "Mao Zedong conduisit les forces communistes lors de la Longue Marche, sur plusieurs milliers de kilomètres."
+      },
+      "ar": {
+        "question": "أيّ زعيم يرتبط بالمسيرة الطويلة في الصين عام 1934–1935؟",
+        "choices": [
+          "تشيانغ كاي شيك",
+          "ماو تسي تونغ",
+          "دنغ شياو بينغ",
+          "صن يات صن"
+        ],
+        "explanation": "قاد ماو تسي تونغ القوات الشيوعية في المسيرة الطويلة التي امتدت آلاف الكيلومترات."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country was the first to abolish slavery in the Western world in 1794 with the French Revolution?",
+    "choices": [
+      "France",
+      "Spain",
+      "United Kingdom",
+      "Portugal"
+    ],
+    "correct": 1,
+    "explanation": "France abolished slavery in its colonies in 1794, though it was restored in 1802.",
+    "reference_text": "Encyclopaedia Britannica, abolition of slavery",
+    "translations": {
+      "fr": {
+        "question": "Quel pays a aboli l’esclavage dans ses colonies en 1794, pendant la Révolution ?",
+        "choices": [
+          "La France",
+          "L’Espagne",
+          "Le Royaume-Uni",
+          "Le Portugal"
+        ],
+        "explanation": "La France abolit l’esclavage dans ses colonies en 1794, avant son rétablissement en 1802."
+      },
+      "ar": {
+        "question": "أيّ دولة ألغت العبودية في مستعمراتها عام 1794 خلال الثورة؟",
+        "choices": [
+          "فرنسا",
+          "إسبانيا",
+          "المملكة المتحدة",
+          "البرتغال"
+        ],
+        "explanation": "ألغت فرنسا العبودية في مستعمراتها عام 1794، ثم أُعيدت عام 1802."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Egyptian dynasty ruled Egypt after the death of Alexander the Great and was led by Ptolemy I?",
+    "choices": [
+      "Abbasid dynasty",
+      "Ptolemaic dynasty",
+      "Mamluk dynasty",
+      "Fatimid dynasty"
+    ],
+    "correct": 2,
+    "explanation": "Ptolemy I, a general of Alexander, founded the Ptolemaic dynasty that ruled Egypt until 30 BC.",
+    "reference_text": "Encyclopaedia Britannica, Ptolemaic dynasty",
+    "translations": {
+      "fr": {
+        "question": "Quelle dynastie gouverna l’Égypte après la mort d’Alexandre le Grand, fondée par Ptolémée Ier ?",
+        "choices": [
+          "La dynastie abbasside",
+          "La dynastie lagide",
+          "La dynastie mamelouke",
+          "La dynastie fatimide"
+        ],
+        "explanation": "Ptolémée Ier, général d’Alexandre, fonda la dynastie lagide qui régna sur l’Égypte jusqu’en 30 av. J.-C."
+      },
+      "ar": {
+        "question": "أيّ أسرة حكمت مصر بعد وفاة الإسكندر الأكبر، وأسسها بطليموس الأول؟",
+        "choices": [
+          "الأسرة العباسية",
+          "الأسرة البطلمية",
+          "الأسرة المملوكية",
+          "الأسرة الفاطمية"
+        ],
+        "explanation": "أسس بطليموس الأول، أحد قادة الإسكندر، الأسرة البطلمية التي حكمت مصر حتى عام 30 قبل الميلاد."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which man is credited with inventing the printing press with movable metal type in Europe around 1440?",
+    "choices": [
+      "Galileo Galilei",
+      "Martin Luther",
+      "Johannes Gutenberg",
+      "Christopher Columbus"
+    ],
+    "correct": 3,
+    "explanation": "Gutenberg developed movable metal type printing in Mainz, transforming the spread of knowledge.",
+    "reference_text": "Encyclopaedia Britannica, Johannes Gutenberg",
+    "translations": {
+      "fr": {
+        "question": "Qui est crédité de l’invention de l’imprimerie à caractères mobiles en Europe vers 1440 ?",
+        "choices": [
+          "Galilée",
+          "Martin Luther",
+          "Johannes Gutenberg",
+          "Christophe Colomb"
+        ],
+        "explanation": "Gutenberg mit au point l’impression à caractères métalliques mobiles à Mayence."
+      },
+      "ar": {
+        "question": "من يُنسب إليه اختراع الطباعة بالحروف المعدنية المتحركة في أوروبا نحو عام 1440؟",
+        "choices": [
+          "غاليليو",
+          "مارتن لوثر",
+          "يوهانس غوتنبرغ",
+          "كريستوفر كولومبوس"
+        ],
+        "explanation": "طوّر غوتنبرغ الطباعة بالحروف المعدنية المتحركة في مدينة ماينتس."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which civilisation built the city of Timgad in North Africa?",
+    "choices": [
+      "Vandals",
+      "Byzantines",
+      "Phoenicians",
+      "Romans"
+    ],
+    "correct": 4,
+    "explanation": "Timgad was founded by the Romans as a military colony in AD 100 in present-day Algeria.",
+    "reference_text": "UNESCO, Timgad",
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation a fondé la cité de Timgad en Afrique du Nord ?",
+        "choices": [
+          "Les Vandales",
+          "Les Byzantins",
+          "Les Phéniciens",
+          "Les Romains"
+        ],
+        "explanation": "Timgad fut fondée par les Romains comme colonie militaire vers l’an 100, dans l’actuelle Algérie."
+      },
+      "ar": {
+        "question": "أيّ حضارة بنت مدينة تيمقاد في شمال إفريقيا؟",
+        "choices": [
+          "الوندال",
+          "البيزنطيون",
+          "الفينيقيون",
+          "الرومان"
+        ],
+        "explanation": "أسس الرومان تيمقاد مستعمرة عسكرية نحو عام 100 ميلادي في الجزائر الحالية."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who was the first President of the French Fifth Republic?",
+    "choices": [
+      "Jacques Chirac",
+      "Georges Pompidou",
+      "Charles de Gaulle",
+      "François Mitterrand"
+    ],
+    "correct": 3,
+    "explanation": "Charles de Gaulle led the Fifth Republic from 1959 and served as its first president.",
+    "reference_text": "Encyclopaedia Britannica, Charles de Gaulle",
+    "translations": {
+      "fr": {
+        "question": "Qui fut le premier président de la Cinquième République ?",
+        "choices": [
+          "Jacques Chirac",
+          "Georges Pompidou",
+          "Charles de Gaulle",
+          "François Mitterrand"
+        ],
+        "explanation": "Charles de Gaulle fut le premier président de la Cinquième République, à partir de 1959."
+      },
+      "ar": {
+        "question": "من كان أول رئيس للجمهورية الفرنسية الخامسة؟",
+        "choices": [
+          "جاك شيراك",
+          "جورج بومبيدو",
+          "شارل ديغول",
+          "فرانسوا ميتران"
+        ],
+        "explanation": "تولى شارل ديغول رئاسة الجمهورية الخامسة ابتداءً من 1959."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which ancient wonder stood at the entrance to the harbour of Rhodes?",
+    "choices": [
+      "Mausoleum",
+      "Colossus of Rhodes",
+      "Lighthouse of Alexandria",
+      "Temple of Artemis"
+    ],
+    "correct": 2,
+    "explanation": "The Colossus was a giant bronze statue of the sun god Helios, and it reportedly stood near the harbour.",
+    "reference_text": "Encyclopaedia Britannica, Colossus of Rhodes",
+    "translations": {
+      "fr": {
+        "question": "Quelle merveille antique se dressait à l’entrée du port de Rhodes ?",
+        "choices": [
+          "Le mausolée",
+          "Le colosse de Rhodes",
+          "Le phare d’Alexandrie",
+          "Le temple d’Artémis"
+        ],
+        "explanation": "Le colosse était une statue géante en bronze du dieu Hélios, placée près du port."
+      },
+      "ar": {
+        "question": "أيّ عجيبة قديمة كانت تقف عند مدخل ميناء رودس؟",
+        "choices": [
+          "الضريح",
+          "تمثال رودس العملاق",
+          "منارة الإسكندرية",
+          "معبد أرتميس"
+        ],
+        "explanation": "كان التمثال العملاق من البرونز يمثل الإله هيليوس، وقيل إنه وقف قرب الميناء."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Moroccan dynasty defeated the Portuguese at the Battle of Alcácer Quibir in 1578?",
+    "choices": [
+      "Almoravid dynasty",
+      "Saadi dynasty",
+      "Merinid dynasty",
+      "Alawite dynasty"
+    ],
+    "correct": 2,
+    "explanation": "The Saadi sultan Ahmad al-Mansur won a famous victory at the Battle of the Three Kings in 1578.",
+    "reference_text": "Encyclopaedia Britannica, Battle of Alcácer Quibir",
+    "translations": {
+      "fr": {
+        "question": "Quelle dynastie marocaine vainquit les Portugais à la bataille d’Alcácer-Quibir en 1578 ?",
+        "choices": [
+          "La dynastie almoravide",
+          "La dynastie saadienne",
+          "La dynastie mérinide",
+          "La dynastie alaouite"
+        ],
+        "explanation": "Le sultan saadien Ahmed al-Mansour remporta cette victoire lors de la bataille des Trois Rois, en 1578."
+      },
+      "ar": {
+        "question": "أيّ أسرة مغربية هزمت البرتغاليين في معركة وادي المخازن عام 1578؟",
+        "choices": [
+          "الأسرة المرابطية",
+          "الأسرة السعدية",
+          "الأسرة المرينية",
+          "الأسرة العلوية"
+        ],
+        "explanation": "حقق السلطان السعدي أحمد المنصور نصرًا كبيرًا في معركة وادي المخازن عام 1578."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which building in Paris was stormed on 14 July 1789?",
+    "choices": [
+      "Versailles",
+      "The Louvre",
+      "The Bastille",
+      "Notre-Dame"
+    ],
+    "correct": 3,
+    "explanation": "The storming of the Bastille on 14 July 1789 is a symbol of the French Revolution.",
+    "reference_text": "Encyclopaedia Britannica, Storming of the Bastille",
+    "translations": {
+      "fr": {
+        "question": "Quel édifice parisien fut pris d’assaut le 14 juillet 1789 ?",
+        "choices": [
+          "Versailles",
+          "Le Louvre",
+          "La Bastille",
+          "Notre-Dame"
+        ],
+        "explanation": "La prise de la Bastille, le 14 juillet 1789, est devenue le symbole de la Révolution."
+      },
+      "ar": {
+        "question": "أيّ مبنى في باريس اقتُحم في 14 يوليو 1789؟",
+        "choices": [
+          "فرساي",
+          "اللوفر",
+          "الباستيل",
+          "نوتردام"
+        ],
+        "explanation": "اقتحام سجن الباستيل في 14 يوليو 1789 أصبح رمزًا للثورة الفرنسية."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which 5th-century walls protected Constantinople for over a thousand years?",
+    "choices": [
+      "Hadrian’s Wall",
+      "Great Wall of China",
+      "Theodosian Walls",
+      "Walls of Babylon"
+    ],
+    "correct": 3,
+    "explanation": "The Theodosian Walls, built under Theodosius II, protected Constantinople for over a thousand years.",
+    "reference_text": "UNESCO, Constantinople Historic Areas",
+    "translations": {
+      "fr": {
+        "question": "Quelle muraille, construite au Ve siècle sous un empereur, protégea Constantinople pendant plus de mille ans ?",
+        "choices": [
+          "Le mur d’Hadrien",
+          "La Grande Muraille de Chine",
+          "Les murailles théodosiennes",
+          "Les murs de Babylone"
+        ],
+        "explanation": "Les murailles théodosiennes, édifiées sous Théodose II, protégèrent Constantinople pendant plus de mille ans."
+      },
+      "ar": {
+        "question": "أيّ أسوار بُنيت في القرن الخامس وحمت القسطنطينية أكثر من ألف عام؟",
+        "choices": [
+          "جدار هادريان",
+          "سور الصين العظيم",
+          "أسوار ثيودوسيوس",
+          "أسوار بابل"
+        ],
+        "explanation": "بُنيت أسوار ثيودوسيوس في عهد ثيودوسيوس الثاني، وحمت القسطنطينية لأكثر من ألف عام."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which event in 1789 started the French Revolution with the convening of an assembly?",
+    "choices": [
+      "Congress of Vienna",
+      "Diet of Worms",
+      "Council of Trent",
+      "Estates-General"
+    ],
+    "correct": 4,
+    "explanation": "Louis XVI convened the Estates-General in May 1789, which led to the revolution.",
+    "reference_text": "Encyclopaedia Britannica, Estates-General",
+    "translations": {
+      "fr": {
+        "question": "Quelle assemblée réunie en 1789 a déclenché la Révolution française ?",
+        "choices": [
+          "Le congrès de Vienne",
+          "La diète de Worms",
+          "Le concile de Trente",
+          "Les États généraux"
+        ],
+        "explanation": "Louis XVI convoqua les États généraux en mai 1789, ce qui conduisit à la Révolution."
+      },
+      "ar": {
+        "question": "أيّ مجلس انعقد عام 1789 فأشعل الثورة الفرنسية؟",
+        "choices": [
+          "مؤتمر فيينا",
+          "دايت وورمس",
+          "مجمع ترنت",
+          "الطبقات العامة (الإستات جينيرو)"
+        ],
+        "explanation": "دعا لويس السادس عشر الطبقات العامة في مايو 1789، فقادت إلى الثورة."
+      }
+    }
+  }
+]

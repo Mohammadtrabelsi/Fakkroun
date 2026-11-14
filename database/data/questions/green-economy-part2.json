@@ -1,0 +1,742 @@
+[
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which material can be recycled repeatedly without losing quality?",
+    "choices": [
+      "Paper towels",
+      "Textile blends",
+      "Aluminium",
+      "Plastic bags"
+    ],
+    "correct": 3,
+    "explanation": "Aluminium can be recycled again and again with little loss of quality.",
+    "reference_text": "Aluminium Association recycling facts",
+    "translations": {
+      "fr": {
+        "question": "Quel matériau peut être recyclé à l’infini sans perdre sa qualité ?",
+        "choices": [
+          "Le papier essuie-tout",
+          "Les textiles mélangés",
+          "L’aluminium",
+          "Les sacs plastiques"
+        ],
+        "explanation": "L’aluminium peut être recyclé encore et encore sans perte notable de qualité."
+      },
+      "ar": {
+        "question": "أيّ مادة يمكن إعادة تدويرها مرارًا دون أن تفقد جودتها؟",
+        "choices": [
+          "مناديل الورق",
+          "الأقمشة المختلطة",
+          "الألومنيوم",
+          "الأكياس البلاستيكية"
+        ],
+        "explanation": "يمكن إعادة تدوير الألومنيوم مرات عديدة دون فقدان يُذكر في الجودة."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does “zero waste” aim for?",
+    "choices": [
+      "Producing waste only at night",
+      "Sending no waste to landfill or incineration",
+      "Burning all waste for energy",
+      "Banning all recycling"
+    ],
+    "correct": 2,
+    "explanation": "Zero waste means designing systems so that nothing is sent to landfill or incineration.",
+    "reference_text": "Zero Waste International Alliance definition",
+    "translations": {
+      "fr": {
+        "question": "Que vise le principe « zéro déchet » ?",
+        "choices": [
+          "Ne produire de déchets que la nuit",
+          "Ne plus envoyer aucun déchet en décharge ou à l’incinération",
+          "Brûler tous les déchets pour produire de l’énergie",
+          "Interdire tout recyclage"
+        ],
+        "explanation": "Le zéro déchet vise à concevoir des systèmes où rien n’est envoyé en décharge ni incinéré."
+      },
+      "ar": {
+        "question": "ما الهدف من مبدأ «صفر نفايات»؟",
+        "choices": [
+          "إنتاج النفايات ليلًا فقط",
+          "عدم إرسال أي نفايات إلى المكبات أو الحرق",
+          "حرق كل النفايات لإنتاج الطاقة",
+          "حظر إعادة التدوير كليًا"
+        ],
+        "explanation": "يهدف صفر النفايات إلى تصميم أنظمة لا تُرسل فيها أي مادة إلى المكب أو الحرق."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is composting?",
+    "choices": [
+      "Storing waste underground",
+      "Burning dry leaves in the open air",
+      "Shredding scrap metal",
+      "Decomposition of organic waste into nutrient-rich compost"
+    ],
+    "correct": 4,
+    "explanation": "Composting turns food scraps and garden waste into soil-enriching compost.",
+    "reference_text": "US EPA composting guidance",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le compostage ?",
+        "choices": [
+          "Enterrer les déchets sous terre",
+          "Brûler des feuilles mortes à l’air libre",
+          "Broyer de la ferraille",
+          "La décomposition des déchets organiques en compost riche en nutriments"
+        ],
+        "explanation": "Le compostage transforme les restes alimentaires et les déchets verts en compost fertilisant."
+      },
+      "ar": {
+        "question": "ما المقصود بالتسميد العضوي (Composting)؟",
+        "choices": [
+          "دفن النفايات تحت الأرض",
+          "حرق الأوراق الجافة في الهواء الطلق",
+          "تقطيع الخردة المعدنية",
+          "تحلل النفايات العضوية إلى سماد غني بالمغذيات"
+        ],
+        "explanation": "يحوّل التسميد بقايا الطعام ونفايات الحدائق إلى سماد يُغني التربة."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “green bond”?",
+    "choices": [
+      "A subsidy for tree planting only",
+      "A bond financing environmental projects",
+      "A bond issued by coal companies",
+      "A bank card for green shopping"
+    ],
+    "correct": 2,
+    "explanation": "Green bonds raise money specifically for climate and environmental projects.",
+    "reference_text": "ICMA Green Bond Principles",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « obligation verte » (green bond) ?",
+        "choices": [
+          "Une subvention pour la seule plantation d’arbres",
+          "Une obligation qui finance des projets environnementaux",
+          "Une obligation émise par des compagnies charbonnières",
+          "Une carte bancaire pour des achats écologiques"
+        ],
+        "explanation": "Les obligations vertes lèvent des fonds destinés à des projets climatiques et environnementaux."
+      },
+      "ar": {
+        "question": "ما هو «السند الأخضر» (Green bond)؟",
+        "choices": [
+          "دعم لزراعة الأشجار فقط",
+          "سند يموّل مشاريع بيئية",
+          "سند تُصدره شركات الفحم",
+          "بطاقة مصرفية للتسوق الصديق للبيئة"
+        ],
+        "explanation": "تجمع السندات الخضراء أموالًا مخصصة لمشاريع المناخ والبيئة."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does a “carbon footprint” measure?",
+    "choices": [
+      "The size of a factory building",
+      "The number of trees planted",
+      "The total greenhouse gas emissions caused by an activity",
+      "The weight of packaging"
+    ],
+    "correct": 3,
+    "explanation": "It is usually expressed in tonnes of CO₂ equivalent.",
+    "reference_text": "UNEP carbon footprint definition",
+    "translations": {
+      "fr": {
+        "question": "Que mesure « l’empreinte carbone » ?",
+        "choices": [
+          "La taille d’un bâtiment industriel",
+          "Le nombre d’arbres plantés",
+          "Le total des émissions de gaz à effet de serre liées à une activité",
+          "Le poids des emballages"
+        ],
+        "explanation": "Elle s’exprime généralement en tonnes d’équivalent CO₂."
+      },
+      "ar": {
+        "question": "ماذا تقيس «البصمة الكربونية»؟",
+        "choices": [
+          "حجم مبنى المصنع",
+          "عدد الأشجار المزروعة",
+          "إجمالي انبعاثات غازات الاحتباس الحراري الناتجة عن نشاط",
+          "وزن التغليف"
+        ],
+        "explanation": "تُقاس عادةً بالطن من مكافئ ثاني أكسيد الكربون."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “reuse” in the waste hierarchy?",
+    "choices": [
+      "Dumping waste at sea",
+      "Converting waste into energy",
+      "Using a product again for the same purpose",
+      "Buying new items every week"
+    ],
+    "correct": 3,
+    "explanation": "Reuse keeps products in service before they reach the recycling stage.",
+    "reference_text": "EU Waste Framework Directive",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « réemploi » dans la hiérarchie des déchets ?",
+        "choices": [
+          "Déverser les déchets en mer",
+          "Transformer les déchets en énergie",
+          "Utiliser à nouveau un produit pour le même usage",
+          "Acheter des articles neufs chaque semaine"
+        ],
+        "explanation": "Le réemploi prolonge l’usage des produits avant leur passage au recyclage."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«إعادة الاستعمال» في تسلسل إدارة النفايات؟",
+        "choices": [
+          "إلقاء النفايات في البحر",
+          "تحويل النفايات إلى طاقة",
+          "إعادة استخدام المنتج لنفس الغرض",
+          "شراء أغراض جديدة كل أسبوع"
+        ],
+        "explanation": "تُطيل إعادة الاستعمال عمر المنتج قبل أن يصل إلى مرحلة إعادة التدوير."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “green procurement”?",
+    "choices": [
+      "Importing fuel for power plants",
+      "Buying the cheapest goods regardless of impact",
+      "Selling recycled goods abroad",
+      "Public buying that prioritises environmental criteria"
+    ],
+    "correct": 4,
+    "explanation": "Public bodies use environmental criteria when they buy goods and services.",
+    "reference_text": "UNEP sustainable public procurement guidance",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que « l’achat public responsable » (green procurement) ?",
+        "choices": [
+          "Importer du carburant pour les centrales",
+          "Acheter le moins cher quel que soit l’impact",
+          "Vendre à l’étranger des produits recyclés",
+          "Des achats publics qui privilégient des critères environnementaux"
+        ],
+        "explanation": "Les administrations intègrent des critères environnementaux dans leurs achats de biens et services."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الشراء الأخضر» (Green procurement)؟",
+        "choices": [
+          "استيراد وقود لمحطات الكهرباء",
+          "شراء أرخص السلع بغض النظر عن أثرها",
+          "بيع السلع المعاد تدويرها إلى الخارج",
+          "مشتريات عامة تُعطي الأولوية للمعايير البيئية"
+        ],
+        "explanation": "تُدرج الجهات العامة معايير بيئية عند شراء السلع والخدمات."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “sharing economy”?",
+    "choices": [
+      "An economy based on state monopolies",
+      "An economy relying on shared access to goods and services rather than individual ownership",
+      "An economy that operates without money",
+      "An economy that only trades in stocks"
+    ],
+    "correct": 2,
+    "explanation": "Examples include shared cars, tools and accommodation.",
+    "reference_text": "OECD sharing economy report",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que « l’économie du partage » ?",
+        "choices": [
+          "Une économie fondée sur des monopoles publics",
+          "Une économie reposant sur l’accès partagé aux biens et services plutôt que sur la propriété individuelle",
+          "Une économie sans argent",
+          "Une économie qui ne vit que des actions boursières"
+        ],
+        "explanation": "Elle inclut par exemple les voitures, outils et logements partagés."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«اقتصاد المشاركة»؟",
+        "choices": [
+          "اقتصاد قائم على احتكار الدولة",
+          "اقتصاد يقوم على الاستفادة المشتركة من السلع والخدمات بدل التملك الفردي",
+          "اقتصاد يعمل دون نقود",
+          "اقتصاد يتعامل بالأسهم وحدها"
+        ],
+        "explanation": "من أمثلته مشاركة السيارات والأدوات والمساكن."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the LEED certification evaluate?",
+    "choices": [
+      "Solar lamp quality",
+      "Green building design and performance",
+      "Organic food production",
+      "Electric car batteries"
+    ],
+    "correct": 2,
+    "explanation": "LEED is a widely used green building rating system.",
+    "reference_text": "US Green Building Council LEED",
+    "translations": {
+      "fr": {
+        "question": "Que certifie la certification LEED ?",
+        "choices": [
+          "La qualité des lampes solaires",
+          "La conception et la performance des bâtiments verts",
+          "La production alimentaire biologique",
+          "Les batteries des voitures électriques"
+        ],
+        "explanation": "LEED est un système de notation des bâtiments durables très répandu."
+      },
+      "ar": {
+        "question": "ماذا تُقيّم شهادة LEED؟",
+        "choices": [
+          "جودة المصابيح الشمسية",
+          "تصميم المباني الخضراء وأدائها",
+          "إنتاج الغذاء العضوي",
+          "بطاريات السيارات الكهربائية"
+        ],
+        "explanation": "نظام LEED معيار واسع الانتشار لتقييم المباني المستدامة."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural fibre is traditionally used for rope and is fully biodegradable?",
+    "choices": [
+      "Hemp",
+      "Nylon",
+      "Polyester",
+      "PVC"
+    ],
+    "correct": 1,
+    "explanation": "Hemp is a plant fibre grown for textiles, rope and paper.",
+    "reference_text": "FAO natural fibres overview",
+    "translations": {
+      "fr": {
+        "question": "Quelle fibre naturelle est traditionnellement utilisée pour les cordages et est entièrement biodégradable ?",
+        "choices": [
+          "Le chanvre",
+          "Le nylon",
+          "Le polyester",
+          "Le PVC"
+        ],
+        "explanation": "Le chanvre est une fibre végétale utilisée pour les textiles, les cordages et le papier."
+      },
+      "ar": {
+        "question": "أيّ ألياف طبيعية تُستخدم تقليديًا في صناعة الحبال وتتحلل حيويًا بالكامل؟",
+        "choices": [
+          "القنب",
+          "النايلون",
+          "البوليستر",
+          "البولي فينيل كلوريد"
+        ],
+        "explanation": "القنب ليف نباتي يُستخدم في المنسوجات والحبال والورق."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “biomass” energy?",
+    "choices": [
+      "Energy from rock formations",
+      "Energy from uranium",
+      "Energy from ocean waves only",
+      "Energy from organic material such as wood or crop residues"
+    ],
+    "correct": 4,
+    "explanation": "Biomass is organic matter that can be burned or converted into fuel.",
+    "reference_text": "IEA bioenergy overview",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’énergie de la « biomasse » ?",
+        "choices": [
+          "L’énergie issue des formations rocheuses",
+          "L’énergie issue de l’uranium",
+          "L’énergie issue des seules vagues",
+          "L’énergie issue de matière organique comme le bois ou les résidus agricoles"
+        ],
+        "explanation": "La biomasse est de la matière organique qui peut être brûlée ou transformée en carburant."
+      },
+      "ar": {
+        "question": "ما المقصود بطاقة الكتلة الحيوية (Biomass)؟",
+        "choices": [
+          "طاقة مستخرجة من التكوينات الصخرية",
+          "طاقة مستخرجة من اليورانيوم",
+          "طاقة الأمواج البحرية وحدها",
+          "طاقة مستخرجة من مواد عضوية كالخشب وبقايا المحاصيل"
+        ],
+        "explanation": "الكتلة الحيوية مادة عضوية يمكن حرقها أو تحويلها إلى وقود."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “industrial symbiosis”?",
+    "choices": [
+      "Companies merging into one",
+      "Factories built on a single site",
+      "Waste or by-products from one company used as input by another",
+      "Factories sharing the same workers"
+    ],
+    "correct": 3,
+    "explanation": "Eco-industrial parks are built on this idea to cut waste and costs.",
+    "reference_text": "UNEP industrial symbiosis guide",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « symbiose industrielle » ?",
+        "choices": [
+          "La fusion de plusieurs entreprises",
+          "Des usines construites sur un même site",
+          "Des déchets ou sous-produits d’une entreprise utilisés comme matière par une autre",
+          "Des usines qui partagent les mêmes salariés"
+        ],
+        "explanation": "Les écoparcs industriels reposent sur cette idée pour réduire déchets et coûts."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«التكافل الصناعي» (Industrial symbiosis)؟",
+        "choices": [
+          "اندماج شركات في شركة واحدة",
+          "بناء المصانع في موقع واحد",
+          "استخدام نفايات أو منتجات ثانوية لشركة كمدخلات لشركة أخرى",
+          "مشاركة المصانع نفس العمال"
+        ],
+        "explanation": "تقوم المناطق الصناعية البيئية على هذه الفكرة لتقليل النفايات والتكاليف."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which metal is the most abundant in the Earth’s crust?",
+    "choices": [
+      "Aluminium",
+      "Iron",
+      "Copper",
+      "Gold"
+    ],
+    "correct": 1,
+    "explanation": "Aluminium is the most common metal in the crust, though it is bound in minerals.",
+    "reference_text": "USGS mineral commodity summaries",
+    "translations": {
+      "fr": {
+        "question": "Quel métal est le plus abondant dans la croûte terrestre ?",
+        "choices": [
+          "L’aluminium",
+          "Le fer",
+          "Le cuivre",
+          "L’or"
+        ],
+        "explanation": "L’aluminium est le métal le plus répandu dans la croûte, mais il est lié dans des minéraux."
+      },
+      "ar": {
+        "question": "ما أكثر المعادن وفرة في القشرة الأرضية؟",
+        "choices": [
+          "الألومنيوم",
+          "الحديد",
+          "النحاس",
+          "الذهب"
+        ],
+        "explanation": "الألومنيوم أكثر المعادن شيوعًا في القشرة الأرضية، لكنه مرتبط في معادن."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “deposit-return scheme”?",
+    "choices": [
+      "A bank loan for recycling plants",
+      "A tax on plastic production",
+      "Consumers get money back for returning empty containers",
+      "Fines for littering in parks"
+    ],
+    "correct": 3,
+    "explanation": "Deposit schemes encourage people to return bottles and cans for recycling.",
+    "reference_text": "European Commission packaging waste guidance",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « consigne » avec remboursement ?",
+        "choices": [
+          "Un prêt bancaire pour les usines de recyclage",
+          "Une taxe sur la production de plastique",
+          "Le consommateur est remboursé en rapportant ses emballages vides",
+          "Des amendes pour déchets abandonnés dans les parcs"
+        ],
+        "explanation": "Les systèmes de consigne incitent à rapporter bouteilles et canettes pour les recycler."
+      },
+      "ar": {
+        "question": "ما المقصود بنظام «الضمان المسترد» للعبوات؟",
+        "choices": [
+          "قرض مصرفي لمصانع إعادة التدوير",
+          "ضريبة على إنتاج البلاستيك",
+          "يستعيد المستهلك أمواله عند إرجاع العبوات الفارغة",
+          "غرامات على رمي القمامة في الحدائق"
+        ],
+        "explanation": "تشجع هذه الأنظمة على إرجاع الزجاجات والعلب للتدوير."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the FSC label indicate on wood products?",
+    "choices": [
+      "Energy-efficient appliances",
+      "Organic food",
+      "Fair trade wages",
+      "Wood from responsibly managed forests"
+    ],
+    "correct": 4,
+    "explanation": "The Forest Stewardship Council label certifies responsibly sourced timber.",
+    "reference_text": "Forest Stewardship Council",
+    "translations": {
+      "fr": {
+        "question": "Que signifie le label FSC sur les produits en bois ?",
+        "choices": [
+          "Des appareils économes en énergie",
+          "Un aliment biologique",
+          "Des salaires équitables",
+          "Du bois issu de forêts gérées de manière responsable"
+        ],
+        "explanation": "Le label du Forest Stewardship Council certifie un bois issu d’une gestion responsable."
+      },
+      "ar": {
+        "question": "ماذا تعني علامة FSC على منتجات الخشب؟",
+        "choices": [
+          "أجهزة موفرة للطاقة",
+          "غذاء عضوي",
+          "أجور عادلة في التجارة",
+          "خشب من غابات تُدار بمسؤولية"
+        ],
+        "explanation": "تُصدّق شهادة مجلس رعاية الغابات على أخشاب مصدرها مُدار بمسؤولية."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Fast fashion is most associated with which environmental problem?",
+    "choices": [
+      "Low water use",
+      "Large textile waste and pollution",
+      "Full recycling of all clothes",
+      "Zero carbon emissions"
+    ],
+    "correct": 2,
+    "explanation": "Cheap, rapidly changing clothing creates large volumes of waste and water pollution.",
+    "reference_text": "UNEP textiles and sustainability report",
+    "translations": {
+      "fr": {
+        "question": "La « mode éphémère » (fast fashion) est surtout associée à quel problème environnemental ?",
+        "choices": [
+          "Une faible consommation d’eau",
+          "Une grande quantité de déchets textiles et de pollution",
+          "Le recyclage complet de tous les vêtements",
+          "Des émissions de carbone nulles"
+        ],
+        "explanation": "Les vêtements bon marché et renouvelés très vite produisent beaucoup de déchets et de pollution de l’eau."
+      },
+      "ar": {
+        "question": "ما المشكلة البيئية الأبرز المرتبطة بـ«الموضة السريعة» (Fast fashion)؟",
+        "choices": [
+          "انخفاض استهلاك المياه",
+          "كميات كبيرة من النفايات النسيجية والتلوث",
+          "إعادة تدوير كل الملابس",
+          "انعدام الانبعاثات الكربونية"
+        ],
+        "explanation": "تُنتج الملابس الرخيصة سريعة التغير كميات كبيرة من النفايات وتلوث المياه."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is an “ecolabel”?",
+    "choices": [
+      "A tax code for imported goods",
+      "A warning sign for toxic goods",
+      "A sticker showing the energy price",
+      "A label showing that a product meets environmental criteria"
+    ],
+    "correct": 4,
+    "explanation": "Ecolabels help consumers choose products with lower environmental impact.",
+    "reference_text": "Global Ecolabelling Network",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « écolabel » ?",
+        "choices": [
+          "Un code douanier pour les produits importés",
+          "Un signe d’avertissement pour produits toxiques",
+          "Un autocollant indiquant le prix de l’énergie",
+          "Un label indiquant qu’un produit respecte des critères environnementaux"
+        ],
+        "explanation": "Les écolabels aident les consommateurs à choisir des produits à plus faible impact environnemental."
+      },
+      "ar": {
+        "question": "ما هو «الملصق البيئي» (Ecolabel)؟",
+        "choices": [
+          "رمز ضريبي للسلع المستوردة",
+          "علامة تحذير من السلع السامة",
+          "ملصق يبيّن سعر الطاقة",
+          "علامة تدل على أن المنتج يستوفي معايير بيئية"
+        ],
+        "explanation": "تساعد الملصقات البيئية المستهلك على اختيار منتجات أقل أثرًا على البيئة."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the purpose of a “repair café”?",
+    "choices": [
+      "Storing used clothes for export",
+      "Restaurants serving only recycled food",
+      "Volunteers help people repair broken items",
+      "Selling new electronics"
+    ],
+    "correct": 3,
+    "explanation": "Repair cafés extend the life of everyday objects and reduce waste.",
+    "reference_text": "Repair Café Foundation",
+    "translations": {
+      "fr": {
+        "question": "Quel est le but d’un « repair café » ?",
+        "choices": [
+          "Stocker des vêtements usagés pour l’export",
+          "Des restaurants qui ne servent que des aliments recyclés",
+          "Des bénévoles aident à réparer des objets cassés",
+          "Vendre de l’électronique neuve"
+        ],
+        "explanation": "Les repair cafés prolongent la vie des objets du quotidien et réduisent les déchets."
+      },
+      "ar": {
+        "question": "ما الغرض من «مقهى الإصلاح» (Repair café)؟",
+        "choices": [
+          "تخزين الملابس المستعملة للتصدير",
+          "مطاعم تقدم طعامًا معاد تدويره فقط",
+          "متطوعون يساعدون الناس على إصلاح الأشياء المعطلة",
+          "بيع إلكترونيات جديدة"
+        ],
+        "explanation": "تطيل مقاهي الإصلاح عمر الأشياء اليومية وتقلل النفايات."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “cradle-to-cradle” design?",
+    "choices": [
+      "Making cradles from recycled plastic",
+      "Designing products to be thrown away after one use",
+      "Designing products for maximum landfill use",
+      "Design where materials are reused in continuous cycles"
+    ],
+    "correct": 4,
+    "explanation": "In cradle-to-cradle design, materials keep circulating as nutrients or technical materials.",
+    "reference_text": "Cradle to Cradle Products Innovation Institute",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le design « du berceau au berceau » (cradle-to-cradle) ?",
+        "choices": [
+          "Des berceaux fabriqués en plastique recyclé",
+          "Des produits conçus pour être jetés après un seul usage",
+          "Des produits conçus pour maximiser l’enfouissement",
+          "Un design où les matières sont réutilisées en cycles continus"
+        ],
+        "explanation": "Dans ce modèle, les matières continuent de circuler comme nutriments biologiques ou matériaux techniques."
+      },
+      "ar": {
+        "question": "ما هو التصميم «من المهد إلى المهد» (Cradle-to-cradle)؟",
+        "choices": [
+          "صناعة المهود من البلاستيك المعاد تدويره",
+          "تصميم منتجات تُرمى بعد استعمال واحد",
+          "تصميم منتجات تُدفن بأكبر قدر ممكن",
+          "تصميم تُعاد فيه استخدام المواد في دورات متواصلة"
+        ],
+        "explanation": "تستمر المواد في الدوران كمغذيات حيوية أو مواد تقنية ضمن هذا النموذج."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “cap and trade” mean?",
+    "choices": [
+      "Setting an emissions cap and allowing trading of permits",
+      "Banning all trade between countries",
+      "Capping salaries in public jobs",
+      "Trading seeds between farmers only"
+    ],
+    "correct": 1,
+    "explanation": "Companies receive or buy permits, and those who pollute less can sell their spare permits.",
+    "reference_text": "EU Emissions Trading System overview",
+    "translations": {
+      "fr": {
+        "question": "Que signifie le système « plafonner et échanger » (cap and trade) ?",
+        "choices": [
+          "Fixer un plafond d’émissions et permettre l’échange de quotas",
+          "Interdire tout commerce entre pays",
+          "Plafonner les salaires dans le secteur public",
+          "Échanger uniquement des semences entre agriculteurs"
+        ],
+        "explanation": "Les entreprises reçoivent ou achètent des quotas ; celles qui polluent moins peuvent revendre leurs excédents."
+      },
+      "ar": {
+        "question": "ماذا يعني نظام «الحد والتداول» (Cap and trade)؟",
+        "choices": [
+          "تحديد سقف للانبعاثات والسماح بتداول التصاريح",
+          "حظر التجارة بين الدول",
+          "تحديد سقف للرواتب في الوظائف العامة",
+          "تبادل البذور بين المزارعين فقط"
+        ],
+        "explanation": "تحصل الشركات على تصاريح أو تشتريها، ومن يلوّث أقل يمكنه بيع فائضه."
+      }
+    }
+  }
+]

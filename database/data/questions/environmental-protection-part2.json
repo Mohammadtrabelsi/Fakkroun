@@ -1,0 +1,705 @@
+[
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does COP stand for in international climate talks?",
+    "choices": [
+      "Common Oceanic Policy",
+      "Council of Planners",
+      "Climate Organisation Programme",
+      "Conference of the Parties"
+    ],
+    "correct": 4,
+    "explanation": "COP meetings bring together the parties to the UN climate convention each year.",
+    "reference_text": "UNFCCC glossary",
+    "translations": {
+      "fr": {
+        "question": "Que signifie COP dans les négociations climatiques internationales ?",
+        "choices": [
+          "Politique océanique commune",
+          "Conseil des planificateurs",
+          "Programme de l’organisation climatique",
+          "Conférence des Parties"
+        ],
+        "explanation": "Les COP réunissent chaque année les parties à la convention climat de l’ONU."
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار COP في مفاوضات المناخ الدولية؟",
+        "choices": [
+          "السياسة البحرية المشتركة",
+          "مجلس المخططين",
+          "برنامج منظمة المناخ",
+          "مؤتمر الأطراف"
+        ],
+        "explanation": "تجمع مؤتمرات الأطراف سنويًا الدول الموقعة على اتفاقية الأمم المتحدة للمناخ."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is deforestation?",
+    "choices": [
+      "Forest fires only",
+      "Clearing or loss of forest cover",
+      "Planting new forests",
+      "Trimming garden trees"
+    ],
+    "correct": 2,
+    "explanation": "Deforestation removes trees permanently, often for farmland or construction.",
+    "reference_text": "FAO Global Forest Resources Assessment",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la déforestation ?",
+        "choices": [
+          "Uniquement les incendies de forêt",
+          "La disparition ou le défrichement du couvert forestier",
+          "La plantation de nouvelles forêts",
+          "La taille des arbres de jardin"
+        ],
+        "explanation": "La déforestation supprime durablement les arbres, souvent pour l’agriculture ou la construction."
+      },
+      "ar": {
+        "question": "ما المقصود بإزالة الغابات (Deforestation)؟",
+        "choices": [
+          "حرائق الغابات وحدها",
+          "فقدان الغطاء الحرجي أو قطعه",
+          "زراعة غابات جديدة",
+          "تقليم أشجار الحدائق"
+        ],
+        "explanation": "تزيل إزالة الغابات الأشجار بشكل دائم، غالبًا لتوسيع الأراضي الزراعية أو البناء."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is desertification?",
+    "choices": [
+      "Land degradation that turns fertile land into desert-like land",
+      "Rivers expanding into deserts",
+      "Planting sand dunes",
+      "Cooling of desert regions"
+    ],
+    "correct": 1,
+    "explanation": "Overgrazing, drought and poor farming can make productive land turn barren.",
+    "reference_text": "UNCCD desertification definition",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la désertification ?",
+        "choices": [
+          "La dégradation des terres qui transforme les sols fertiles en terres semi-désertiques",
+          "L’extension des fleuves dans les déserts",
+          "La plantation de dunes de sable",
+          "Le refroidissement des régions désertiques"
+        ],
+        "explanation": "Le surpâturage, la sécheresse et de mauvaises pratiques agricoles peuvent rendre des terres productives stériles."
+      },
+      "ar": {
+        "question": "ما المقصود بالتصحر (Desertification)؟",
+        "choices": [
+          "تدهور الأراضي الذي يحوّل الأراضي الخصبة إلى أراضٍ شبيهة بالصحراء",
+          "امتداد الأنهار داخل الصحاري",
+          "زراعة الكثبان الرملية",
+          "تبريد المناطق الصحراوية"
+        ],
+        "explanation": "قد يحوّل الرعي الجائر والجفاف والزراعة السيئة الأرض المنتجة إلى أرض قاحلة."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is hazardous waste?",
+    "choices": [
+      "Waste that is harmful to health or the environment",
+      "Food scraps for compost",
+      "Paper and cardboard",
+      "Garden clippings"
+    ],
+    "correct": 1,
+    "explanation": "Hazardous waste includes chemicals, batteries and medical waste that need special handling.",
+    "reference_text": "Basel Convention on hazardous wastes",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un déchet dangereux ?",
+        "choices": [
+          "Un déchet nocif pour la santé ou l’environnement",
+          "Des restes alimentaires pour compost",
+          "Du papier et du carton",
+          "Des déchets de jardin"
+        ],
+        "explanation": "Les déchets dangereux, comme les produits chimiques et les piles, exigent une gestion spécifique."
+      },
+      "ar": {
+        "question": "ما هي النفايات الخطرة؟",
+        "choices": [
+          "نفايات ضارة بالصحة أو بالبيئة",
+          "بقايا طعام للتسميد",
+          "الورق والكرتون",
+          "قصاصات الحدائق"
+        ],
+        "explanation": "تشمل النفايات الخطرة المواد الكيميائية والبطاريات والنفايات الطبية، وتحتاج إلى معالجة خاصة."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does an air quality index measure?",
+    "choices": [
+      "Hours of sunshine",
+      "Wind speed",
+      "Humidity",
+      "The level of air pollutants"
+    ],
+    "correct": 4,
+    "explanation": "Indices such as AQI convert pollutant levels into a simple health scale.",
+    "reference_text": "US EPA Air Quality Index",
+    "translations": {
+      "fr": {
+        "question": "Que mesure un indice de qualité de l’air ?",
+        "choices": [
+          "Les heures d’ensoleillement",
+          "La vitesse du vent",
+          "L’humidité",
+          "Le niveau de polluants dans l’air"
+        ],
+        "explanation": "Les indices comme l’AQI traduisent les niveaux de polluants en échelle sanitaire simple."
+      },
+      "ar": {
+        "question": "ماذا يقيس مؤشر جودة الهواء؟",
+        "choices": [
+          "ساعات سطوع الشمس",
+          "سرعة الرياح",
+          "الرطوبة",
+          "مستوى الملوثات في الهواء"
+        ],
+        "explanation": "تحوّل مؤشرات مثل AQI مستويات الملوثات إلى مقياس صحي مبسط."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is soil erosion?",
+    "choices": [
+      "Growth of soil microbes",
+      "Soil becoming richer in nutrients",
+      "Removal of topsoil by wind or water",
+      "Soil freezing in winter"
+    ],
+    "correct": 3,
+    "explanation": "Topsoil is the most fertile layer, and losing it reduces crop yields.",
+    "reference_text": "FAO soil erosion facts",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’érosion des sols ?",
+        "choices": [
+          "La croissance des micro-organismes du sol",
+          "Un sol qui s’enrichit en nutriments",
+          "L’enlèvement de la couche arable par le vent ou l’eau",
+          "Un sol qui gèle en hiver"
+        ],
+        "explanation": "La couche arable est la plus fertile ; la perdre réduit les rendements agricoles."
+      },
+      "ar": {
+        "question": "ما هو تآكل التربة (Soil erosion)؟",
+        "choices": [
+          "نمو الكائنات الدقيقة في التربة",
+          "زيادة غنى التربة بالمغذيات",
+          "جرف الطبقة السطحية للتربة بفعل الرياح أو المياه",
+          "تجمد التربة في الشتاء"
+        ],
+        "explanation": "الطبقة السطحية هي الأخصب، وفقدانها يقلل المحاصيل."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is noise pollution?",
+    "choices": [
+      "Light coming from cities",
+      "Excessive or disturbing sound in the environment",
+      "Dust in the air",
+      "Clean silence in cities"
+    ],
+    "correct": 2,
+    "explanation": "Long exposure to loud noise can harm health, sleep and wildlife.",
+    "reference_text": "WHO environmental noise guidelines",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la pollution sonore ?",
+        "choices": [
+          "La lumière des villes",
+          "Un bruit excessif ou gênant dans l’environnement",
+          "La poussière dans l’air",
+          "Le silence absolu en ville"
+        ],
+        "explanation": "Une exposition prolongée au bruit peut nuire à la santé, au sommeil et à la faune."
+      },
+      "ar": {
+        "question": "ما هو التلوث الضوضائي؟",
+        "choices": [
+          "الضوء القادم من المدن",
+          "أصوات مفرطة أو مزعجة في البيئة",
+          "الغبار في الهواء",
+          "الهدوء النقي في المدن"
+        ],
+        "explanation": "يمكن للتعرض الطويل للضوضاء العالية أن يضر بالصحة والنوم والحياة البرية."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which convention regulates international trade in endangered species?",
+    "choices": [
+      "Rio Convention",
+      "CITES",
+      "Ramsar Convention",
+      "Basel Convention"
+    ],
+    "correct": 2,
+    "explanation": "CITES, signed in 1973, controls trade in wild animals and plants at risk.",
+    "reference_text": "CITES secretariat",
+    "translations": {
+      "fr": {
+        "question": "Quelle convention encadre le commerce international des espèces menacées ?",
+        "choices": [
+          "La convention de Rio",
+          "La CITES",
+          "La convention de Ramsar",
+          "La convention de Bâle"
+        ],
+        "explanation": "La CITES, signée en 1973, régule le commerce des animaux et plantes sauvages menacés."
+      },
+      "ar": {
+        "question": "أيّ اتفاقية تنظّم التجارة الدولية في الأنواع المهددة بالانقراض؟",
+        "choices": [
+          "اتفاقية ريو",
+          "اتفاقية سايتس (CITES)",
+          "اتفاقية رامسار",
+          "اتفاقية بازل"
+        ],
+        "explanation": "تنظّم اتفاقية سايتس، الموقعة عام 1973، تجارة الحيوانات والنباتات البرية المعرضة للخطر."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is waste-to-energy?",
+    "choices": [
+      "Turning waste into jewellery",
+      "Using waste as food for animals",
+      "Burning or processing waste to generate power or heat",
+      "Shipping waste to space"
+    ],
+    "correct": 3,
+    "explanation": "Waste-to-energy plants recover energy from waste that cannot be recycled.",
+    "reference_text": "EU waste management hierarchy",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la valorisation énergétique des déchets ?",
+        "choices": [
+          "Transformer les déchets en bijoux",
+          "Utiliser les déchets comme nourriture pour animaux",
+          "Brûler ou traiter des déchets pour produire électricité ou chaleur",
+          "Envoyer les déchets dans l’espace"
+        ],
+        "explanation": "Ces installations récupèrent de l’énergie à partir de déchets qui ne peuvent pas être recyclés."
+      },
+      "ar": {
+        "question": "ما هو تحويل النفايات إلى طاقة؟",
+        "choices": [
+          "تحويل النفايات إلى مجوهرات",
+          "استخدام النفايات كغذاء للحيوانات",
+          "حرق النفايات أو معالجتها لتوليد الكهرباء أو الحرارة",
+          "إرسال النفايات إلى الفضاء"
+        ],
+        "explanation": "تستعيد محطات تحويل النفايات طاقة من مواد لا يمكن إعادة تدويرها."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an endemic species?",
+    "choices": [
+      "A species found only in one specific area",
+      "A species introduced by humans",
+      "An extinct species",
+      "A species found everywhere on Earth"
+    ],
+    "correct": 1,
+    "explanation": "Madagascar’s lemurs are a famous example of endemic species.",
+    "reference_text": "IUCN glossary of endemic species",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une espèce endémique ?",
+        "choices": [
+          "Une espèce présente uniquement dans une zone précise",
+          "Une espèce introduite par l’homme",
+          "Une espèce disparue",
+          "Une espèce présente partout sur Terre"
+        ],
+        "explanation": "Les lémuriens de Madagascar en sont un exemple célèbre."
+      },
+      "ar": {
+        "question": "ما هو الكائن المتوطن (Endemic species)؟",
+        "choices": [
+          "كائن لا يوجد إلا في منطقة محددة",
+          "كائن أدخله الإنسان",
+          "كائن منقرض",
+          "كائن منتشر في كل أنحاء الأرض"
+        ],
+        "explanation": "تُعد الليمورات في مدغشقر مثالًا شهيرًا على الأنواع المتوطنة."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What commonly causes groundwater pollution?",
+    "choices": [
+      "Chemical leaks from farms, landfills and industry",
+      "Snowmelt in mountains",
+      "Rainfall",
+      "Ocean tides"
+    ],
+    "correct": 1,
+    "explanation": "Nitrates from fertiliser and solvents from industry can seep into aquifers.",
+    "reference_text": "US Geological Survey groundwater quality",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qui cause le plus souvent la pollution des nappes phréatiques ?",
+        "choices": [
+          "Les fuites chimiques des exploitations, décharges et industries",
+          "La fonte des neiges en montagne",
+          "Les précipitations",
+          "Les marées océaniques"
+        ],
+        "explanation": "Les nitrates des engrais et les solvants industriels peuvent s’infiltrer dans les nappes."
+      },
+      "ar": {
+        "question": "ما السبب الشائع لتلوث المياه الجوفية؟",
+        "choices": [
+          "التسربات الكيميائية من المزارع ومكبات النفايات والمصانع",
+          "ذوبان الثلوج في الجبال",
+          "سقوط الأمطار",
+          "المد والجزر"
+        ],
+        "explanation": "يمكن للنترات من الأسمدة والمذيبات الصناعية أن تتسرب إلى طبقات المياه الجوفية."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is ecosystem restoration?",
+    "choices": [
+      "Repairing damaged ecosystems to recover their health and function",
+      "Cloning endangered animals",
+      "Mining deep soils for minerals",
+      "Building cities on wetlands"
+    ],
+    "correct": 1,
+    "explanation": "Restoration can include replanting, removing invasive species and reconnecting rivers.",
+    "reference_text": "UN Decade on Ecosystem Restoration",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la restauration écologique ?",
+        "choices": [
+          "Réparer des écosystèmes dégradés pour retrouver leur santé et leur fonctionnement",
+          "Cloner des animaux menacés",
+          "Extraire des minéraux des sols profonds",
+          "Construire des villes sur les zones humides"
+        ],
+        "explanation": "Elle peut inclure la replantation, l’élimination d’espèces envahissantes et la reconnexion des cours d’eau."
+      },
+      "ar": {
+        "question": "ما المقصود باستعادة النظم البيئية؟",
+        "choices": [
+          "إصلاح النظم البيئية المتضررة لاستعادة صحتها ووظيفتها",
+          "استنساخ الحيوانات المهددة",
+          "التنقيب عن المعادن في التربة العميقة",
+          "بناء المدن على الأراضي الرطبة"
+        ],
+        "explanation": "قد تشمل الاستعادة إعادة التشجير وإزالة الأنواع الغازية وإعادة ربط مجاري الأنهار."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does sustainable agriculture aim to protect?",
+    "choices": [
+      "Soil, water and biodiversity for future generations",
+      "Maximum chemical use",
+      "Clearing forests for more crops",
+      "Replacing all soil with hydroponics"
+    ],
+    "correct": 1,
+    "explanation": "Sustainable farming keeps land productive over the long term.",
+    "reference_text": "FAO sustainable agriculture principles",
+    "translations": {
+      "fr": {
+        "question": "Que cherche à protéger l’agriculture durable ?",
+        "choices": [
+          "Les sols, l’eau et la biodiversité pour les générations futures",
+          "Un usage maximal de produits chimiques",
+          "Le défrichement des forêts pour plus de cultures",
+          "Le remplacement de tous les sols par l’hydroponie"
+        ],
+        "explanation": "L’agriculture durable maintient la productivité des terres sur le long terme."
+      },
+      "ar": {
+        "question": "ماذا تسعى الزراعة المستدامة إلى حمايته؟",
+        "choices": [
+          "التربة والمياه والتنوع البيولوجي للأجيال القادمة",
+          "أقصى استخدام للمواد الكيميائية",
+          "قطع الغابات لزيادة المحاصيل",
+          "استبدال التربة كليًا بالزراعة المائية"
+        ],
+        "explanation": "تحافظ الزراعة المستدامة على إنتاجية الأرض على المدى الطويل."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a landfill?",
+    "choices": [
+      "A recycling plant for glass",
+      "A lake used for fish farming",
+      "A site where waste is buried",
+      "A type of wind turbine"
+    ],
+    "correct": 3,
+    "explanation": "Modern landfills are lined and monitored to limit leaks and gas emissions.",
+    "reference_text": "US EPA landfill basics",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une décharge ?",
+        "choices": [
+          "Une usine de recyclage du verre",
+          "Un lac utilisé pour la pisciculture",
+          "Un site où les déchets sont enfouis",
+          "Un type d’éolienne"
+        ],
+        "explanation": "Les décharges modernes sont étanchéifiées et surveillées pour limiter fuites et émissions de gaz."
+      },
+      "ar": {
+        "question": "ما هو المكب (Landfill)؟",
+        "choices": [
+          "مصنع لإعادة تدوير الزجاج",
+          "بحيرة تُستخدم لتربية الأسماك",
+          "موقع تُدفن فيه النفايات",
+          "نوع من توربينات الرياح"
+        ],
+        "explanation": "تُبطَّن المكبات الحديثة وتُراقَب للحد من التسرب وانبعاث الغازات."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which greenhouse gas has the chemical formula N₂O?",
+    "choices": [
+      "Nitrous oxide",
+      "Neon",
+      "Argon",
+      "Helium"
+    ],
+    "correct": 1,
+    "explanation": "Nitrous oxide is a potent greenhouse gas released mainly by fertilised soils.",
+    "reference_text": "IPCC AR6 greenhouse gases",
+    "translations": {
+      "fr": {
+        "question": "Quel gaz à effet de serre a pour formule N₂O ?",
+        "choices": [
+          "Le protoxyde d’azote",
+          "Le néon",
+          "L’argon",
+          "L’hélium"
+        ],
+        "explanation": "Le protoxyde d’azote est un puissant gaz à effet de serre, émis surtout par les sols fertilisés."
+      },
+      "ar": {
+        "question": "أيّ غاز دفيء صيغته الكيميائية N₂O؟",
+        "choices": [
+          "أكسيد النيتروز",
+          "النيون",
+          "الأرغون",
+          "الهيليوم"
+        ],
+        "explanation": "أكسيد النيتروز غاز دفيء قوي تنبعث معظمه من التربة المسمّدة."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is biomimicry?",
+    "choices": [
+      "Making robots walk like cars",
+      "Mimicking machine sounds",
+      "Design inspired by solutions found in nature",
+      "Copying human art"
+    ],
+    "correct": 3,
+    "explanation": "Examples include Velcro, inspired by burrs, and high-speed train noses inspired by kingfishers.",
+    "reference_text": "Biomimicry Institute",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le biomimétisme ?",
+        "choices": [
+          "Faire marcher des robots comme des voitures",
+          "Imiter les bruits des machines",
+          "Concevoir en s’inspirant de solutions trouvées dans la nature",
+          "Copier l’art humain"
+        ],
+        "explanation": "Le velcro, inspiré des capitules de bardane, ou les trains rapides dont le nez s’inspire du martin-pêcheur en sont des exemples."
+      },
+      "ar": {
+        "question": "ما هو المحاكاة الحيوية (Biomimicry)؟",
+        "choices": [
+          "جعل الروبوتات تمشي كالسيارات",
+          "تقليد أصوات الآلات",
+          "تصميم مستوحى من حلول موجودة في الطبيعة",
+          "نسخ الفن البشري"
+        ],
+        "explanation": "من الأمثلة الشهيرة مادة الفيلكرو المستوحاة من نبتة الأرقطيون، ومقدمة القطارات السريعة المستوحاة من طائر الصيّاد."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a carbon sink?",
+    "choices": [
+      "A system that absorbs more carbon than it releases",
+      "A factory chimney",
+      "A fuel tanker",
+      "A deep-sea mine"
+    ],
+    "correct": 1,
+    "explanation": "Forests, oceans and soils are major natural carbon sinks.",
+    "reference_text": "IPCC AR6 carbon cycle",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un puits de carbone ?",
+        "choices": [
+          "Un système qui absorbe davantage de carbone qu’il n’en rejette",
+          "Une cheminée d’usine",
+          "Un camion-citerne",
+          "Une mine sous-marine"
+        ],
+        "explanation": "Les forêts, les océans et les sols sont des puits de carbone naturels majeurs."
+      },
+      "ar": {
+        "question": "ما هو «مصرف الكربون» (Carbon sink)؟",
+        "choices": [
+          "نظام يمتص من الكربون أكثر مما يطلقه",
+          "مدخنة مصنع",
+          "ناقلة وقود",
+          "منجم في أعماق البحر"
+        ],
+        "explanation": "تُعد الغابات والمحيطات والتربة مصارف طبيعية رئيسية للكربون."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is smog a mixture of?",
+    "choices": [
+      "Salt and wind",
+      "Rain and sand",
+      "Ice and snow",
+      "Smoke and fog"
+    ],
+    "correct": 4,
+    "explanation": "Smog combines smoke and fog, and it forms especially in polluted cities.",
+    "reference_text": "WHO air pollution fact sheet",
+    "translations": {
+      "fr": {
+        "question": "Le smog est un mélange de quoi ?",
+        "choices": [
+          "De sel et de vent",
+          "De pluie et de sable",
+          "De glace et de neige",
+          "De fumée et de brouillard"
+        ],
+        "explanation": "Le smog associe fumée et brouillard ; il se forme surtout dans les villes polluées."
+      },
+      "ar": {
+        "question": "الضباب الدخاني (Smog) مزيج من ماذا؟",
+        "choices": [
+          "الملح والرياح",
+          "المطر والرمال",
+          "الجليد والثلج",
+          "الدخان والضباب"
+        ],
+        "explanation": "يجمع الضباب الدخاني بين الدخان والضباب، ويتكون خاصة في المدن الملوثة."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is soil salinisation?",
+    "choices": [
+      "Turning soil into sand",
+      "Adding salt to soil for taste",
+      "Accumulation of salt in soil that reduces fertility",
+      "Soil reflecting sunlight"
+    ],
+    "correct": 3,
+    "explanation": "Poor irrigation can leave salts behind and make land unsuitable for crops.",
+    "reference_text": "FAO global map of salt-affected soils",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la salinisation des sols ?",
+        "choices": [
+          "La transformation du sol en sable",
+          "Ajouter du sel au sol pour le goût",
+          "L’accumulation de sel dans le sol qui réduit sa fertilité",
+          "Un sol qui réfléchit la lumière du soleil"
+        ],
+        "explanation": "Une irrigation mal conduite peut laisser des sels et rendre les terres impropres aux cultures."
+      },
+      "ar": {
+        "question": "ما هو تملّح التربة (Soil salinisation)؟",
+        "choices": [
+          "تحوّل التربة إلى رمال",
+          "إضافة الملح إلى التربة لتحسين الطعم",
+          "تراكم الأملاح في التربة مما يقلل خصوبتها",
+          "انعكاس ضوء الشمس عن التربة"
+        ],
+        "explanation": "قد تترك الريّ السيئ أملاحًا تجعل الأرض غير صالحة للزراعة."
+      }
+    }
+  }
+]

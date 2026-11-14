@@ -1,0 +1,761 @@
+[
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea lies between Europe and Africa at its narrowest point?",
+    "choices": [
+      "Black Sea",
+      "Strait of Gibraltar",
+      "Caspian Sea",
+      "Red Sea"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel détroit sépare l’Europe de l’Afrique à son point le plus étroit ?",
+        "choices": [
+          "La mer Noire",
+          "Le détroit de Gibraltar",
+          "La mer Caspienne",
+          "La mer Rouge"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مضيق يفصل أوروبا عن إفريقيا عند أضيق نقطة؟",
+        "choices": [
+          "البحر الأسود",
+          "مضيق جبل طارق",
+          "بحر قزوين",
+          "البحر الأحمر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call a baby dog?",
+    "choices": [
+      "Calf",
+      "Kitten",
+      "Puppy",
+      "Cub"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un bébé chien ?",
+        "choices": [
+          "Un veau",
+          "Un chaton",
+          "Un chiot",
+          "Un petit"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم صغير الكلب؟",
+        "choices": [
+          "عجل",
+          "قطيط",
+          "جرو",
+          "شبل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal lays eggs and has a shell and no hair?",
+    "choices": [
+      "Turtle",
+      "Cat",
+      "Horse",
+      "Dog"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal pond des œufs, a une carapace et pas de poils ?",
+        "choices": [
+          "La tortue",
+          "Le chat",
+          "Le cheval",
+          "Le chien"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يبيض ويملك صدفة ولا يملك شعرًا؟",
+        "choices": [
+          "السلحفاة",
+          "القط",
+          "الحصان",
+          "الكلب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous Egyptian city is known for its library founded in ancient times?",
+    "choices": [
+      "Giza",
+      "Aswan",
+      "Luxor",
+      "Alexandria"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle célèbre ville égyptienne est connue pour sa bibliothèque antique ?",
+        "choices": [
+          "Gizeh",
+          "Assouan",
+          "Louxor",
+          "Alexandrie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة مصرية شهيرة تشتهر بمكتبتها القديمة؟",
+        "choices": [
+          "الجيزة",
+          "أسوان",
+          "الأقصر",
+          "الإسكندرية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the tallest building in the world (as of recent years)?",
+    "choices": [
+      "Eiffel Tower",
+      "Burj Khalifa",
+      "Big Ben",
+      "Empire State Building"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le nom du plus haut bâtiment du monde (ces dernières années) ?",
+        "choices": [
+          "La tour Eiffel",
+          "Burj Khalifa",
+          "Big Ben",
+          "L’Empire State Building"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم أطول مبنى في العالم (في السنوات الأخيرة)؟",
+        "choices": [
+          "برج إيفل",
+          "برج خليفة",
+          "بيغ بن",
+          "إمباير ستيت بلدينغ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which mountain range separates Spain from France?",
+    "choices": [
+      "Pyrenees",
+      "Atlas",
+      "Andes",
+      "Alps"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle chaîne de montagnes sépare l’Espagne de la France ?",
+        "choices": [
+          "Les Pyrénées",
+          "L’Atlas",
+          "Les Andes",
+          "Les Alpes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سلسلة جبلية تفصل إسبانيا عن فرنسا؟",
+        "choices": [
+          "جبال البيرينيه",
+          "جبال الأطلس",
+          "جبال الأنديز",
+          "جبال الألب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which language is used by the most people as a first language in Asia?",
+    "choices": [
+      "French",
+      "Mandarin Chinese",
+      "Spanish",
+      "English"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle langue est la langue maternelle du plus grand nombre de personnes en Asie ?",
+        "choices": [
+          "Le français",
+          "Le chinois mandarin",
+          "L’espagnol",
+          "L’anglais"
+        ]
+      },
+      "ar": {
+        "question": "أيّ لغة هي اللغة الأم لأكبر عدد من الناس في آسيا؟",
+        "choices": [
+          "الفرنسية",
+          "الصينية الماندرين",
+          "الإسبانية",
+          "الإنجليزية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is famous for the Louvre Museum?",
+    "choices": [
+      "France",
+      "Italy",
+      "Spain",
+      "Greece"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est célèbre pour le musée du Louvre ?",
+        "choices": [
+          "La France",
+          "L’Italie",
+          "L’Espagne",
+          "La Grèce"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر بمتحف اللوفر؟",
+        "choices": [
+          "فرنسا",
+          "إيطاليا",
+          "إسبانيا",
+          "اليونان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is a symbol of wisdom in many cultures?",
+    "choices": [
+      "Goat",
+      "Cow",
+      "Owl",
+      "Pig"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel animal est un symbole de sagesse dans de nombreuses cultures ?",
+        "choices": [
+          "La chèvre",
+          "La vache",
+          "La chouette",
+          "Le cochon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يُعد رمزًا للحكمة في ثقافات كثيرة؟",
+        "choices": [
+          "الماعز",
+          "البقرة",
+          "البومة",
+          "الخنزير"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian city is known for its olive oil production and the famous Sfax market?",
+    "choices": [
+      "Gafsa",
+      "Kasserine",
+      "Bizerte",
+      "Sfax"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne est connue pour sa production d’huile d’olive et son grand marché ?",
+        "choices": [
+          "Gafsa",
+          "Kasserine",
+          "Bizerte",
+          "Sfax"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة تونسية تشتهر بإنتاج زيت الزيتون وسوقها الكبير؟",
+        "choices": [
+          "قفصة",
+          "القصرين",
+          "بنزرت",
+          "صفاقس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous composer was deaf for much of his later life and wrote the Ninth Symphony?",
+    "choices": [
+      "Johann Sebastian Bach",
+      "Wolfgang Amadeus Mozart",
+      "Ludwig van Beethoven",
+      "Frédéric Chopin"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel célèbre compositeur, devenu sourd, a écrit la Neuvième Symphonie ?",
+        "choices": [
+          "Johann Sebastian Bach",
+          "Wolfgang Amadeus Mozart",
+          "Ludwig van Beethoven",
+          "Frédéric Chopin"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملحن شهير أصيب بالصمم في أواخر حياته وألّف السيمفونية التاسعة؟",
+        "choices": [
+          "يوهان سيباستيان باخ",
+          "فولفغانغ أماديوس موتسارت",
+          "لودفيغ فان بيتهوفن",
+          "فريدريك شوبان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday tool is used to cut paper?",
+    "choices": [
+      "Spoon",
+      "Brush",
+      "Hammer",
+      "Scissors"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel outil courant sert à couper le papier ?",
+        "choices": [
+          "La cuillère",
+          "La brosse",
+          "Le marteau",
+          "Les ciseaux"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة شائعة تُستخدم لقص الورق؟",
+        "choices": [
+          "الملعقة",
+          "الفرشاة",
+          "المطرقة",
+          "المقص"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is the largest producer of coffee in the world?",
+    "choices": [
+      "Ethiopia",
+      "Colombia",
+      "Brazil",
+      "Vietnam"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est le premier producteur mondial de café ?",
+        "choices": [
+          "L’Éthiopie",
+          "La Colombie",
+          "Le Brésil",
+          "Le Viêt Nam"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تُعد أكبر منتج للقهوة في العالم؟",
+        "choices": [
+          "إثيوبيا",
+          "كولومبيا",
+          "البرازيل",
+          "فيتنام"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the largest country by population in Africa?",
+    "choices": [
+      "Nigeria",
+      "Ethiopia",
+      "Kenya",
+      "Egypt"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le pays le plus peuplé d’Afrique ?",
+        "choices": [
+          "Le Nigeria",
+          "L’Éthiopie",
+          "Le Kenya",
+          "L’Égypte"
+        ]
+      },
+      "ar": {
+        "question": "ما أكثر دول إفريقيا سكانًا؟",
+        "choices": [
+          "نيجيريا",
+          "إثيوبيا",
+          "كينيا",
+          "مصر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which poet wrote the famous line “Ode to Joy” that became the anthem of the European Union?",
+    "choices": [
+      "William Wordsworth",
+      "Rainer Maria Rilke",
+      "Friedrich Schiller",
+      "Heinrich Heine"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel poète a écrit l’« Ode à la joie », devenue l’hymne de l’Union européenne ?",
+        "choices": [
+          "William Wordsworth",
+          "Rainer Maria Rilke",
+          "Friedrich Schiller",
+          "Heinrich Heine"
+        ]
+      },
+      "ar": {
+        "question": "من كتب قصيدة «نشيد الفرح» التي أصبحت نشيد الاتحاد الأوروبي؟",
+        "choices": [
+          "ويليام وردزورث",
+          "راينر ماريا ريلكه",
+          "فريدريش شيلر",
+          "هاينريش هاينه"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is shaped like a boot and has Rome as its capital?",
+    "choices": [
+      "Spain",
+      "Portugal",
+      "Greece",
+      "Italy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a la forme d’une botte et Rome pour capitale ?",
+        "choices": [
+          "L’Espagne",
+          "Le Portugal",
+          "La Grèce",
+          "L’Italie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشبه شكلها الحذاء ولها روما عاصمةً؟",
+        "choices": [
+          "إسبانيا",
+          "البرتغال",
+          "اليونان",
+          "إيطاليا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the main ingredient of traditional Tunisian harissa soup?",
+    "choices": [
+      "Fish sauce only",
+      "Chili peppers",
+      "Chocolate",
+      "Sugar"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’ingrédient principal de l’harissa tunisienne traditionnelle ?",
+        "choices": [
+          "La sauce de poisson uniquement",
+          "Les piments",
+          "Le chocolat",
+          "Le sucre"
+        ]
+      },
+      "ar": {
+        "question": "ما المكوّن الرئيسي للهريسة التونسية التقليدية؟",
+        "choices": [
+          "صلصة السمك وحدها",
+          "الفلفل الحار",
+          "الشوكولاتة",
+          "السكر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which metal is used to make the wires in most household electrical systems?",
+    "choices": [
+      "Copper",
+      "Lead",
+      "Gold",
+      "Silver"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel métal sert à fabriquer les fils électriques de la plupart des installations domestiques ?",
+        "choices": [
+          "Le cuivre",
+          "Le plomb",
+          "L’or",
+          "L’argent"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فلز يُستخدم لصنع أسلاك الكهرباء المنزلية في أغلب الأحيان؟",
+        "choices": [
+          "النحاس",
+          "الرصاص",
+          "الذهب",
+          "الفضة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which vitamin does the body produce when skin is exposed to sunlight?",
+    "choices": [
+      "Vitamin B12",
+      "Vitamin D",
+      "Vitamin C",
+      "Vitamin K"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle vitamine le corps produit-il lorsque la peau est exposée au soleil ?",
+        "choices": [
+          "La vitamine B12",
+          "La vitamine D",
+          "La vitamine C",
+          "La vitamine K"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فيتامين يصنعه الجسم عند تعرض الجلد لأشعة الشمس؟",
+        "choices": [
+          "فيتامين B12",
+          "فيتامين D",
+          "فيتامين C",
+          "فيتامين K"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal has the longest neck?",
+    "choices": [
+      "Giraffe",
+      "Elephant",
+      "Camel",
+      "Horse"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal a le cou le plus long ?",
+        "choices": [
+          "La girafe",
+          "L’éléphant",
+          "Le chameau",
+          "Le cheval"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان له أطول رقبة؟",
+        "choices": [
+          "الزرافة",
+          "الفيل",
+          "الجمل",
+          "الحصان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Arabic city is known for the mausoleum of Ibn Arabi and is located in Syria?",
+    "choices": [
+      "Damascus",
+      "Homs",
+      "Latakia",
+      "Aleppo"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville arabe abrite le mausolée d’Ibn Arabi et se trouve en Syrie ?",
+        "choices": [
+          "Damas",
+          "Homs",
+          "Lattaquié",
+          "Alep"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة عربية تضم ضريح ابن عربي وتقع في سوريا؟",
+        "choices": [
+          "دمشق",
+          "حمص",
+          "اللاذقية",
+          "حلب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the official currency of Japan?",
+    "choices": [
+      "Won",
+      "Yuan",
+      "Ringgit",
+      "Yen"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la monnaie officielle du Japon ?",
+        "choices": [
+          "Le won",
+          "Le yuan",
+          "Le ringgit",
+          "Le yen"
+        ]
+      },
+      "ar": {
+        "question": "ما العملة الرسمية لليابان؟",
+        "choices": [
+          "الوون",
+          "اليوان",
+          "الرينغيت",
+          "الين"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the opposite of ‘ancient’?",
+    "choices": [
+      "Historic",
+      "Modern",
+      "Old",
+      "Early"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le contraire d’« ancien » ?",
+        "choices": [
+          "Historique",
+          "Moderne",
+          "Vieux",
+          "Précoce"
+        ]
+      },
+      "ar": {
+        "question": "ما عكس كلمة «قديم»؟",
+        "choices": [
+          "تاريخي",
+          "حديث",
+          "عتيق",
+          "مبكر"
+        ]
+      }
+    }
+  }
+]

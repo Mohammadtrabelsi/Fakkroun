@@ -1,0 +1,716 @@
+[
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which gas is released when fossil fuels are burned and is the main cause of global warming?",
+    "choices": [
+      "Carbon dioxide",
+      "Nitrogen",
+      "Oxygen",
+      "Helium"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz est libéré lors de la combustion des combustibles fossiles et est la principale cause du réchauffement ?",
+        "choices": [
+          "Le dioxyde de carbone",
+          "L’azote",
+          "L’oxygène",
+          "L’hélium"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز ينطلق عند حرق الوقود الأحفوري ويُعد السبب الرئيسي للاحترار العالمي؟",
+        "choices": [
+          "ثاني أكسيد الكربون",
+          "النيتروجين",
+          "الأكسجين",
+          "الهيليوم"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main source of the energy that drives Earth’s climate?",
+    "choices": [
+      "Ocean tides",
+      "The Sun",
+      "Volcanoes",
+      "The Moon"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale source d’énergie qui fait fonctionner le climat terrestre ?",
+        "choices": [
+          "Les marées",
+          "Le Soleil",
+          "Les volcans",
+          "La Lune"
+        ]
+      },
+      "ar": {
+        "question": "ما المصدر الرئيسي للطاقة التي تحرك مناخ الأرض؟",
+        "choices": [
+          "المد والجزر",
+          "الشمس",
+          "البراكين",
+          "القمر"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call the warm rainfall event along the Pacific coast of South America linked to climate variability?",
+    "choices": [
+      "La Niña",
+      "Hurricane",
+      "El Niño",
+      "Monsoon"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on le phénomène de réchauffement des eaux du Pacifique au large de l’Amérique du Sud, lié à la variabilité climatique ?",
+        "choices": [
+          "La Niña",
+          "L’ouragan",
+          "El Niño",
+          "La mousson"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الظاهرة المرتبطة بتذبذب المناخ، وفيها ترتفع حرارة مياه المحيط الهادئ قرب سواحل أمريكا الجنوبية؟",
+        "choices": [
+          "لا نينيا",
+          "الإعصار",
+          "إل نينيو",
+          "الموسم الرياحي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which period is often used as the pre-industrial baseline for measuring global warming?",
+    "choices": [
+      "1850–1900",
+      "1800 BC",
+      "1950–2000",
+      "1990–2020"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle période sert souvent de référence préindustrielle pour mesurer le réchauffement ?",
+        "choices": [
+          "1850–1900",
+          "1800 av. J.-C.",
+          "1950–2000",
+          "1990–2020"
+        ]
+      },
+      "ar": {
+        "question": "ما الفترة التي تُستخدم غالبًا كخط أساس لما قبل الثورة الصناعية لقياس الاحترار العالمي؟",
+        "choices": [
+          "1850–1900",
+          "1800 قبل الميلاد",
+          "1950–2000",
+          "1990–2020"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the international panel that publishes scientific assessments on climate change?",
+    "choices": [
+      "IPCC",
+      "UNESCO",
+      "WHO",
+      "IMF"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel groupe international publie les évaluations scientifiques sur le changement climatique ?",
+        "choices": [
+          "Le GIEC",
+          "L’UNESCO",
+          "L’OMS",
+          "Le FMI"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الهيئة الدولية التي تنشر التقييمات العلمية حول تغير المناخ؟",
+        "choices": [
+          "الفريق الحكومي الدولي المعني بتغير المناخ (IPCC)",
+          "اليونسكو",
+          "منظمة الصحة العالمية",
+          "صندوق النقد الدولي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sector produces the largest share of global greenhouse gas emissions?",
+    "choices": [
+      "Education",
+      "Energy",
+      "Sports",
+      "Tourism"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel secteur produit la plus grande part des émissions mondiales de gaz à effet de serre ?",
+        "choices": [
+          "L’éducation",
+          "L’énergie",
+          "Le sport",
+          "Le tourisme"
+        ]
+      },
+      "ar": {
+        "question": "أيّ قطاع ينتج أكبر حصة من انبعاثات غازات الاحتباس الحراري عالميًا؟",
+        "choices": [
+          "التعليم",
+          "الطاقة",
+          "الرياضة",
+          "السياحة"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which effect describes the greenhouse-driven increase in extreme rainfall events?",
+    "choices": [
+      "Reduction of storms",
+      "Intensification of the water cycle",
+      "Freezing of rivers",
+      "Cooling of the atmosphere"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel effet décrit la hausse des pluies extrêmes liée à l’effet de serre ?",
+        "choices": [
+          "La réduction des tempêtes",
+          "L’intensification du cycle de l’eau",
+          "Le gel des rivières",
+          "Le refroidissement de l’atmosphère"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تأثير يصف الزيادة في هطول الأمطار الشديدة بسبب الاحتباس الحراري؟",
+        "choices": [
+          "تراجع العواصف",
+          "تكثّف دورة المياه",
+          "تجمّد الأنهار",
+          "تبريد الغلاف الجوي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “climate resilience”?",
+    "choices": [
+      "Building only in the mountains",
+      "Permanent immunity to heat",
+      "The ability of systems to absorb shocks and recover from climate impacts",
+      "Reduction of rainfall"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « résilience climatique » ?",
+        "choices": [
+          "Ne construire que dans les montagnes",
+          "Une immunité permanente à la chaleur",
+          "La capacité des systèmes à absorber les chocs et à se rétablir après des impacts climatiques",
+          "La réduction des précipitations"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«المرونة المناخية» (Climate resilience)؟",
+        "choices": [
+          "البناء في الجبال فقط",
+          "مناعة دائمة من الحرارة",
+          "قدرة الأنظمة على امتصاص الصدمات والتعافي من الآثار المناخية",
+          "تراجع هطول الأمطار"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ocean process absorbs much of the excess heat caused by greenhouse gases?",
+    "choices": [
+      "Tidal locking",
+      "Sea salt formation",
+      "Ocean freezing",
+      "Ocean heat uptake"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel processus océanique absorbe une grande partie de la chaleur excédentaire due aux gaz à effet de serre ?",
+        "choices": [
+          "Le verrouillage de marée",
+          "La formation du sel marin",
+          "La congélation de l’océan",
+          "L’absorption de chaleur par l’océan"
+        ]
+      },
+      "ar": {
+        "question": "ما العملية البحرية التي تمتص جزءًا كبيرًا من الحرارة الزائدة الناتجة عن غازات الاحتباس الحراري؟",
+        "choices": [
+          "القفل المدّي",
+          "تكوّن ملح البحر",
+          "تجمد المحيط",
+          "امتصاص المحيط للحرارة"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which season is most affected by heatwaves in the Mediterranean region?",
+    "choices": [
+      "Spring",
+      "Autumn",
+      "Summer",
+      "Winter"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle saison est la plus touchée par les vagues de chaleur en Méditerranée ?",
+        "choices": [
+          "Le printemps",
+          "L’automne",
+          "L’été",
+          "L’hiver"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فصل يتأثر أكثر بموجات الحر في منطقة البحر الأبيض المتوسط؟",
+        "choices": [
+          "الربيع",
+          "الخريف",
+          "الصيف",
+          "الشتاء"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which renewable technology is most often recommended to cut emissions from electricity?",
+    "choices": [
+      "Wind and solar power",
+      "Waste burning",
+      "Coal power",
+      "Oil power"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie renouvelable est la plus souvent recommandée pour réduire les émissions de l’électricité ?",
+        "choices": [
+          "L’éolien et le solaire",
+          "L’incinération des déchets",
+          "Le charbon",
+          "Le pétrole"
+        ]
+      },
+      "ar": {
+        "question": "ما التقنية المتجددة الأكثر توصية لخفض انبعاثات توليد الكهرباء؟",
+        "choices": [
+          "طاقة الرياح والطاقة الشمسية",
+          "حرق النفايات",
+          "الفحم",
+          "النفط"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “albedo” describe in climate science?",
+    "choices": [
+      "The amount of rainfall",
+      "The speed of the wind",
+      "The reflectivity of a surface",
+      "The depth of ocean water"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que décrit l’« albédo » en science du climat ?",
+        "choices": [
+          "La quantité de pluie",
+          "La vitesse du vent",
+          "Le pouvoir réfléchissant d’une surface",
+          "La profondeur de l’eau de mer"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يصف «الانعكاسية» (Albedo) في علم المناخ؟",
+        "choices": [
+          "كمية الأمطار",
+          "سرعة الرياح",
+          "قدرة السطح على عكس أشعة الشمس",
+          "عمق مياه البحر"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural process removes carbon dioxide from the atmosphere through photosynthesis?",
+    "choices": [
+      "Plant growth",
+      "Volcanic eruptions",
+      "Lightning",
+      "Rainfall"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel processus naturel retire le dioxyde de carbone de l’atmosphère par la photosynthèse ?",
+        "choices": [
+          "La croissance des plantes",
+          "Les éruptions volcaniques",
+          "La foudre",
+          "Les précipitations"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عملية طبيعية تزيل ثاني أكسيد الكربون من الجو عبر البناء الضوئي؟",
+        "choices": [
+          "نمو النباتات",
+          "الثورات البركانية",
+          "البرق",
+          "الهطول المطري"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action helps reduce personal carbon emissions the most?",
+    "choices": [
+      "Using public transport instead of a car",
+      "Burning waste at home",
+      "Leaving lights on all day",
+      "Flying more often"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne réduit le plus ses émissions personnelles de carbone ?",
+        "choices": [
+          "Prendre les transports en commun plutôt que la voiture",
+          "Brûler ses déchets à la maison",
+          "Laisser les lumières allumées toute la journée",
+          "Prendre l’avion plus souvent"
+        ]
+      },
+      "ar": {
+        "question": "ما الإجراء اليومي الذي يقلل الانبعاثات الكربونية الشخصية أكثر من غيره؟",
+        "choices": [
+          "استخدام النقل العام بدل السيارة",
+          "حرق النفايات في المنزل",
+          "ترك الأضواء مشتعلة طوال اليوم",
+          "السفر بالطائرة أكثر"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the “Green Climate Fund” established to support?",
+    "choices": [
+      "Military spending",
+      "Luxury tourism",
+      "Developing countries’ climate action",
+      "Oil exploration in the Arctic"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif du Fonds vert pour le climat ?",
+        "choices": [
+          "Financer les dépenses militaires",
+          "Développer le tourisme de luxe",
+          "Soutenir l’action climatique des pays en développement",
+          "Financer l’exploration pétrolière en Arctique"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف من تأسيس «صندوق المناخ الأخضر» (Green Climate Fund)؟",
+        "choices": [
+          "تمويل الإنفاق العسكري",
+          "تنمية السياحة الفاخرة",
+          "دعم العمل المناخي للدول النامية",
+          "تمويل التنقيب عن النفط في القطب الشمالي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which greenhouse gas is emitted mainly by refrigerants and has a very high warming potential?",
+    "choices": [
+      "Hydrofluorocarbons",
+      "Helium",
+      "Argon",
+      "Nitrogen"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz à effet de serre est émis surtout par les fluides frigorigènes et a un pouvoir réchauffant très élevé ?",
+        "choices": [
+          "Les hydrofluorocarbures",
+          "L’hélium",
+          "L’argon",
+          "L’azote"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز دفيء ينبعث أساسًا من مواد التبريد ولديه قدرة احترار عالية جدًا؟",
+        "choices": [
+          "الهيدروفلوروكربونات",
+          "الهيليوم",
+          "الأرغون",
+          "النيتروجين"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “loss and damage” in climate negotiations?",
+    "choices": [
+      "A tax on imported cars",
+      "Fines for deforestation",
+      "Insurance for ships",
+      "Harm caused by climate impacts that cannot be avoided by adaptation"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que les « pertes et préjudices » (loss and damage) dans les négociations climatiques ?",
+        "choices": [
+          "Une taxe sur les voitures importées",
+          "Des amendes pour la déforestation",
+          "Une assurance pour les navires",
+          "Les dommages causés par les impacts climatiques que l’adaptation ne peut pas éviter"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الخسائر والأضرار» (Loss and damage) في مفاوضات المناخ؟",
+        "choices": [
+          "ضريبة على السيارات المستوردة",
+          "غرامات على إزالة الغابات",
+          "تأمين للسفن",
+          "الأضرار الناجمة عن الآثار المناخية التي لا يمكن تجنبها بالتكيف"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main cause of the melting of Arctic sea ice in recent decades?",
+    "choices": [
+      "Strong tides",
+      "Global warming",
+      "Earthquakes",
+      "Ocean salinity"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale cause de la fonte de la banquise arctique ces dernières décennies ?",
+        "choices": [
+          "Les marées fortes",
+          "Le réchauffement climatique",
+          "Les séismes",
+          "La salinité des océans"
+        ]
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لذوبان الجليد البحري في القطب الشمالي خلال العقود الأخيرة؟",
+        "choices": [
+          "المدّ القوي",
+          "الاحترار العالمي",
+          "الزلازل",
+          "ملوحة المحيطات"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which climate event is characterised by heavy rain and flooding in a short time?",
+    "choices": [
+      "Snowstorm",
+      "Frost",
+      "Flash flood",
+      "Drought"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel phénomène climatique se caractérise par des pluies intenses et des inondations en peu de temps ?",
+        "choices": [
+          "La tempête de neige",
+          "Le gel",
+          "La crue soudaine",
+          "La sécheresse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ظاهرة مناخية تتميز بأمطار غزيرة وفيضانات خلال فترة قصيرة؟",
+        "choices": [
+          "العاصفة الثلجية",
+          "الصقيع",
+          "الفيضان المفاجئ",
+          "الجفاف"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian coastal issue is closely linked to rising sea levels?",
+    "choices": [
+      "Desert expansion",
+      "Glacier retreat",
+      "Coastal erosion",
+      "Volcanic activity"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel problème côtier tunisien est étroitement lié à la hausse du niveau de la mer ?",
+        "choices": [
+          "L’extension du désert",
+          "Le recul des glaciers",
+          "L’érosion côtière",
+          "L’activité volcanique"
+        ]
+      },
+      "ar": {
+        "question": "ما المشكلة الساحلية في تونس المرتبطة بشكل وثيق بارتفاع مستوى البحر؟",
+        "choices": [
+          "تمدد الصحراء",
+          "تراجع الأنهار الجليدية",
+          "تآكل السواحل",
+          "النشاط البركاني"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “climate refugee”?",
+    "choices": [
+      "A person forced to move because of climate-related disasters",
+      "A tourist visiting a cold region",
+      "A farmer growing cold-resistant crops",
+      "A scientist studying the climate"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « réfugié climatique » ?",
+        "choices": [
+          "Une personne contrainte de quitter son lieu de vie à cause de catastrophes liées au climat",
+          "Un touriste qui visite une région froide",
+          "Un agriculteur qui cultive des plantes résistantes au froid",
+          "Un scientifique qui étudie le climat"
+        ]
+      },
+      "ar": {
+        "question": "ما هو «اللاجئ المناخي»؟",
+        "choices": [
+          "شخص يُضطر إلى النزوح بسبب كوارث مرتبطة بالمناخ",
+          "سائح يزور منطقة باردة",
+          "مزارع يزرع محاصيل مقاومة للبرد",
+          "عالم يدرس المناخ"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  }
+]

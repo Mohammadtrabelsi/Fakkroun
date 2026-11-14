@@ -1,0 +1,298 @@
+[
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the largest ocean on Earth?",
+    "choices": [
+      "Arctic",
+      "Indian",
+      "Atlantic",
+      "Pacific"
+    ],
+    "correct": 4,
+    "explanation": "The Pacific covers about a third of the Earth’s surface.",
+    "reference_text": "Encyclopaedia Britannica, oceans",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand océan du globe ?",
+        "choices": [
+          "Arctique",
+          "Indien",
+          "Atlantique",
+          "Pacifique"
+        ],
+        "explanation": "Le Pacifique couvre à lui seul environ un tiers de la surface de la Terre."
+      },
+      "ar": {
+        "question": "ما أكبر محيط على وجه الأرض؟",
+        "choices": [
+          "المتجمد الشمالي",
+          "الهندي",
+          "الأطلسي",
+          "الهادئ"
+        ],
+        "explanation": "يغطي المحيط الهادئ نحو ثلث سطح الأرض تقريبًا."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many continents are there?",
+    "choices": [
+      "7",
+      "8",
+      "6",
+      "5"
+    ],
+    "correct": 1,
+    "explanation": "The usual count is seven: Africa, Antarctica, Asia, Australia (Oceania), Europe and the two Americas.",
+    "reference_text": "Encyclopaedia Britannica, continents",
+    "translations": {
+      "fr": {
+        "question": "Combien de continents compte-t-on ?",
+        "choices": [
+          "7",
+          "8",
+          "6",
+          "5"
+        ],
+        "explanation": "On en compte généralement sept : l’Afrique, l’Antarctique, l’Asie, l’Océanie, l’Europe et les deux Amériques."
+      },
+      "ar": {
+        "question": "كم عدد القارات في العالم؟",
+        "choices": [
+          "7",
+          "8",
+          "6",
+          "5"
+        ],
+        "explanation": "تُعدّ القارات عادةً سبعًا: إفريقيا، وأنتاركتيكا، وآسيا، وأوقيانوسيا، وأوروبا، وأمريكا الشمالية، وأمريكا الجنوبية."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which planet is known as the Red Planet?",
+    "choices": [
+      "Venus",
+      "Mars",
+      "Jupiter",
+      "Saturn"
+    ],
+    "correct": 2,
+    "explanation": "Its surface is rich in iron oxide, which gives it a rusty colour.",
+    "reference_text": "NASA Mars facts",
+    "translations": {
+      "fr": {
+        "question": "Quelle planète est surnommée la planète rouge ?",
+        "choices": [
+          "Vénus",
+          "Mars",
+          "Jupiter",
+          "Saturne"
+        ],
+        "explanation": "Sa surface contient beaucoup d’oxyde de fer, qui lui donne sa couleur rouille."
+      },
+      "ar": {
+        "question": "أيّ كوكب يُلقّب بالكوكب الأحمر؟",
+        "choices": [
+          "الزهرة",
+          "المريخ",
+          "المشتري",
+          "زحل"
+        ],
+        "explanation": "يكتسب سطحه لونه المائل إلى الحمرة من أكسيد الحديد."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the hardest natural mineral?",
+    "choices": [
+      "Feldspar",
+      "Talc",
+      "Diamond",
+      "Quartz"
+    ],
+    "correct": 3,
+    "explanation": "Diamond scores 10, the highest value, on the Mohs hardness scale.",
+    "reference_text": "Mohs hardness scale",
+    "translations": {
+      "fr": {
+        "question": "Quel est le minéral naturel le plus dur ?",
+        "choices": [
+          "Le feldspath",
+          "Le talc",
+          "Le diamant",
+          "Le quartz"
+        ],
+        "explanation": "Sur l’échelle de Mohs, le diamant atteint 10, le niveau maximal."
+      },
+      "ar": {
+        "question": "ما أصلب معدن طبيعي؟",
+        "choices": [
+          "الفلسبار",
+          "التلك",
+          "الماس",
+          "الكوارتز"
+        ],
+        "explanation": "يحتل الماس الدرجة 10 على مقياس موس للصلابة، وهي الدرجة الأعلى."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which language has the most native speakers worldwide?",
+    "choices": [
+      "Spanish",
+      "English",
+      "Hindi",
+      "Mandarin Chinese"
+    ],
+    "correct": 4,
+    "explanation": "Mandarin has the most native speakers, although English is the most widely spoken overall.",
+    "reference_text": "Ethnologue language statistics",
+    "translations": {
+      "fr": {
+        "question": "Quelle langue compte le plus de locuteurs natifs dans le monde ?",
+        "choices": [
+          "L’espagnol",
+          "L’anglais",
+          "Le hindi",
+          "Le mandarin"
+        ],
+        "explanation": "Le mandarin est la langue maternelle du plus grand nombre, alors que l’anglais est la plus parlée au total."
+      },
+      "ar": {
+        "question": "أيّ لغة لها أكبر عدد من المتحدثين الأصليين في العالم؟",
+        "choices": [
+          "الإسبانية",
+          "الإنجليزية",
+          "الهندية",
+          "الصينية الماندرين"
+        ],
+        "explanation": "الماندرين هي اللغة الأم لأكبر عدد من الناس، بينما تُعد الإنجليزية الأوسع انتشارًا بين المتحدثين بها."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How many bones does an adult human body have?",
+    "choices": [
+      "186",
+      "206",
+      "226",
+      "256"
+    ],
+    "correct": 2,
+    "explanation": "Babies have more bones at birth, because some fuse together as they grow.",
+    "reference_text": "Encyclopaedia Britannica, human skeleton",
+    "translations": {
+      "fr": {
+        "question": "Combien d’os compte le corps humain adulte ?",
+        "choices": [
+          "186",
+          "206",
+          "226",
+          "256"
+        ],
+        "explanation": "Le nouveau-né en possède davantage, car certains os se soudent en grandissant."
+      },
+      "ar": {
+        "question": "كم عدد عظام جسم الإنسان البالغ؟",
+        "choices": [
+          "186",
+          "206",
+          "226",
+          "256"
+        ],
+        "explanation": "يولد الطفل بعظام أكثر، لأن بعضها يلتحم مع النمو."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the smallest country in the world by area?",
+    "choices": [
+      "Liechtenstein",
+      "Vatican City",
+      "Monaco",
+      "San Marino"
+    ],
+    "correct": 2,
+    "explanation": "Vatican City covers less than half a square kilometre.",
+    "reference_text": "Encyclopaedia Britannica, Vatican City",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus petit pays du monde par sa superficie ?",
+        "choices": [
+          "Liechtenstein",
+          "La Cité du Vatican",
+          "Monaco",
+          "Saint-Marin"
+        ],
+        "explanation": "La Cité du Vatican couvre moins d’un demi-kilomètre carré."
+      },
+      "ar": {
+        "question": "ما أصغر دولة في العالم من حيث المساحة؟",
+        "choices": [
+          "ليختنشتاين",
+          "مدينة الفاتيكان",
+          "موناكو",
+          "سان مارينو"
+        ],
+        "explanation": "تبلغ مساحة مدينة الفاتيكان أقل من نصف كيلومتر مربع."
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest hot desert in the world?",
+    "choices": [
+      "Kalahari",
+      "Gobi",
+      "Sahara",
+      "Arabian"
+    ],
+    "correct": 3,
+    "explanation": "The Sahara, in North Africa, is the largest hot desert, though the Gobi is a cold desert.",
+    "reference_text": "Encyclopaedia Britannica, deserts",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand désert chaud du monde ?",
+        "choices": [
+          "Le Kalahari",
+          "Le Gobi",
+          "Le Sahara",
+          "Le désert d’Arabie"
+        ],
+        "explanation": "Le Sahara, en Afrique du Nord, est le plus grand désert chaud du monde ; le Gobi est un désert froid."
+      },
+      "ar": {
+        "question": "ما أكبر صحراء حارة في العالم؟",
+        "choices": [
+          "صحراء كالاهاري",
+          "صحراء غوبي",
+          "الصحراء الكبرى",
+          "صحراء الربع الخالي"
+        ],
+        "explanation": "الصحراء الكبرى في شمال إفريقيا هي أكبر صحراء حارة في العالم، أما صحراء غوبي فهي صحراء باردة."
+      }
+    }
+  }
+]

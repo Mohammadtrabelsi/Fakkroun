@@ -1,0 +1,784 @@
+[
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG aims to end hunger?",
+    "choices": [
+      "SDG 2 (Zero Hunger)",
+      "SDG 4",
+      "SDG 6",
+      "SDG 3"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD vise à éliminer la faim ?",
+        "choices": [
+          "L’ODD 2 (Faim zéro)",
+          "L’ODD 4",
+          "L’ODD 6",
+          "L’ODD 3"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يسعى إلى القضاء على الجوع؟",
+        "choices": [
+          "الهدف 2 (القضاء على الجوع)",
+          "الهدف 4",
+          "الهدف 6",
+          "الهدف 3"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on gender equality?",
+    "choices": [
+      "SDG 7",
+      "SDG 11",
+      "SDG 5",
+      "SDG 9"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur l’égalité des genres ?",
+        "choices": [
+          "L’ODD 7",
+          "L’ODD 11",
+          "L’ODD 5",
+          "L’ODD 9"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول المساواة بين الجنسين؟",
+        "choices": [
+          "الهدف 7",
+          "الهدف 11",
+          "الهدف 5",
+          "الهدف 9"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on industry, innovation and infrastructure?",
+    "choices": [
+      "SDG 12",
+      "SDG 8",
+      "SDG 9",
+      "SDG 10"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur l’industrie, l’innovation et les infrastructures ?",
+        "choices": [
+          "L’ODD 12",
+          "L’ODD 8",
+          "L’ODD 9",
+          "L’ODD 10"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الصناعة والابتكار والبنية التحتية؟",
+        "choices": [
+          "الهدف 12",
+          "الهدف 8",
+          "الهدف 9",
+          "الهدف 10"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which SDG focuses on reducing inequality within and among countries?",
+    "choices": [
+      "SDG 15",
+      "SDG 13",
+      "SDG 1",
+      "SDG 10"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD vise à réduire les inégalités entre les pays et en leur sein ?",
+        "choices": [
+          "L’ODD 15",
+          "L’ODD 13",
+          "L’ODD 1",
+          "L’ODD 10"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يسعى إلى الحد من عدم المساواة داخل الدول وفيما بينها؟",
+        "choices": [
+          "الهدف 15",
+          "الهدف 13",
+          "الهدف 1",
+          "الهدف 10"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which SDG focuses on peace, justice and strong institutions?",
+    "choices": [
+      "SDG 18",
+      "SDG 14",
+      "SDG 16",
+      "SDG 12"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur la paix, la justice et des institutions efficaces ?",
+        "choices": [
+          "L’ODD 18",
+          "L’ODD 14",
+          "L’ODD 16",
+          "L’ODD 12"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول السلام والعدل والمؤسسات القوية؟",
+        "choices": [
+          "الهدف 18",
+          "الهدف 14",
+          "الهدف 16",
+          "الهدف 12"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which SDG focuses on clean water and sanitation?",
+    "choices": [
+      "SDG 7",
+      "SDG 1",
+      "SDG 3",
+      "SDG 6"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur l’eau propre et l’assainissement ?",
+        "choices": [
+          "L’ODD 7",
+          "L’ODD 1",
+          "L’ODD 3",
+          "L’ODD 6"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول المياه النظيفة والصرف الصحي؟",
+        "choices": [
+          "الهدف 7",
+          "الهدف 1",
+          "الهدف 3",
+          "الهدف 6"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which SDG focuses on life below water?",
+    "choices": [
+      "SDG 13",
+      "SDG 14",
+      "SDG 15",
+      "SDG 12"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur la vie aquatique ?",
+        "choices": [
+          "L’ODD 13",
+          "L’ODD 14",
+          "L’ODD 15",
+          "L’ODD 12"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الحياة تحت الماء؟",
+        "choices": [
+          "الهدف 13",
+          "الهدف 14",
+          "الهدف 15",
+          "الهدف 12"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the “2030 Agenda”?",
+    "choices": [
+      "A trade agreement for oil",
+      "A UN plan with 17 goals for sustainable development",
+      "A military treaty signed in 2030",
+      "A Tunisian national plan for tourism"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que « l’Agenda 2030 » ?",
+        "choices": [
+          "Un accord commercial sur le pétrole",
+          "Un plan de l’ONU comportant 17 objectifs de développement durable",
+          "Un traité militaire signé en 2030",
+          "Un plan national tunisien pour le tourisme"
+        ]
+      },
+      "ar": {
+        "question": "ما هي «أجندة 2030»؟",
+        "choices": [
+          "اتفاقية تجارية للنفط",
+          "خطة للأمم المتحدة تضم 17 هدفًا للتنمية المستدامة",
+          "معاهدة عسكرية وُقّعت عام 2030",
+          "خطة وطنية تونسية للسياحة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which concept refers to using resources in a way that meets present needs without compromising future generations?",
+    "choices": [
+      "Consumerism",
+      "Mass production",
+      "Sustainable development",
+      "Economic dumping"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel concept désigne l’usage des ressources qui répond aux besoins présents sans compromettre les générations futures ?",
+        "choices": [
+          "Le consumérisme",
+          "La production de masse",
+          "Le développement durable",
+          "Le dumping économique"
+        ]
+      },
+      "ar": {
+        "question": "ما المفهوم الذي يشير إلى استخدام الموارد لتلبية الحاجات الحالية دون المساس بقدرة الأجيال القادمة؟",
+        "choices": [
+          "النزعة الاستهلاكية",
+          "الإنتاج الكبير",
+          "التنمية المستدامة",
+          "الإغراق الاقتصادي"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “renewable energy” mainly intended to replace?",
+    "choices": [
+      "Sunlight",
+      "Water",
+      "Wind",
+      "Fossil fuels"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Que cherchent surtout à remplacer les énergies renouvelables ?",
+        "choices": [
+          "La lumière du soleil",
+          "L’eau",
+          "Le vent",
+          "Les énergies fossiles"
+        ]
+      },
+      "ar": {
+        "question": "ما الذي تهدف الطاقة المتجددة بشكل أساسي إلى استبداله؟",
+        "choices": [
+          "ضوء الشمس",
+          "الماء",
+          "الرياح",
+          "الوقود الأحفوري"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday habit supports sustainable consumption most?",
+    "choices": [
+      "Using disposable cutlery",
+      "Buying bottled water every day",
+      "Throwing away clothes after one season",
+      "Buying only what you need"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle habitude quotidienne favorise le plus la consommation durable ?",
+        "choices": [
+          "Utiliser des couverts jetables",
+          "Acheter de l’eau en bouteille chaque jour",
+          "Jeter ses vêtements après une saison",
+          "N’acheter que le nécessaire"
+        ]
+      },
+      "ar": {
+        "question": "ما العادة اليومية التي تدعم الاستهلاك المستدام أكثر من غيرها؟",
+        "choices": [
+          "استخدام أدوات المائدة البلاستيكية",
+          "شراء المياه المعبأة يوميًا",
+          "رمي الملابس بعد موسم واحد",
+          "شراء ما نحتاجه فقط"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “fair trade”?",
+    "choices": [
+      "Trade that only benefits importers",
+      "Trade without any taxes",
+      "Trade in illegal goods",
+      "Trade that gives producers fair prices and working conditions"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « commerce équitable » ?",
+        "choices": [
+          "Un commerce qui ne profite qu’aux importateurs",
+          "Un commerce sans aucune taxe",
+          "Un commerce de produits illégaux",
+          "Un commerce qui garantit des prix et des conditions de travail équitables aux producteurs"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«التجارة العادلة» (Fair trade)؟",
+        "choices": [
+          "تجارة تفيد المستوردين وحدهم",
+          "تجارة بلا أي ضرائب",
+          "تجارة في بضائع غير مشروعة",
+          "تجارة تمنح المنتجين أسعارًا وظروف عمل عادلة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which principle means that future generations should inherit a planet at least as healthy as ours?",
+    "choices": [
+      "Short-term profit",
+      "Intergenerational equity",
+      "Mass consumption",
+      "Free market"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel principe signifie que les générations futures doivent hériter d’une planète au moins aussi saine que la nôtre ?",
+        "choices": [
+          "Le profit à court terme",
+          "L’équité intergénérationnelle",
+          "La consommation de masse",
+          "Le libre marché"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مبدأ يعني أن تورث الأجيال القادمة كوكبًا لا يقل صحةً عن كوكبنا؟",
+        "choices": [
+          "الربح قصير الأجل",
+          "العدالة بين الأجيال",
+          "الاستهلاك الجماعي",
+          "السوق الحرة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG is about affordable and clean energy?",
+    "choices": [
+      "SDG 9",
+      "SDG 6",
+      "SDG 7",
+      "SDG 8"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur l’énergie abordable et propre ?",
+        "choices": [
+          "L’ODD 9",
+          "L’ODD 6",
+          "L’ODD 7",
+          "L’ODD 8"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الطاقة النظيفة وبأسعار معقولة؟",
+        "choices": [
+          "الهدف 9",
+          "الهدف 6",
+          "الهدف 7",
+          "الهدف 8"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does the acronym UNDP stand for?",
+    "choices": [
+      "United Nations Defence Pact",
+      "Universal Nutrition and Diet Plan",
+      "United Nations Development Programme",
+      "United National Diplomacy Panel"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifie l’acronyme PNUD ?",
+        "choices": [
+          "Pacte de défense des Nations unies",
+          "Plan universel de nutrition et de régime",
+          "Programme des Nations unies pour le développement",
+          "Panel diplomatique national des Nations unies"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار UNDP؟",
+        "choices": [
+          "ميثاق الدفاع للأمم المتحدة",
+          "خطة التغذية والحمية العالمية",
+          "برنامج الأمم المتحدة الإنمائي",
+          "لجنة الدبلوماسية الوطنية للأمم المتحدة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “zero-carbon” mean for an energy system?",
+    "choices": [
+      "No fuel used",
+      "No energy stored",
+      "No net emissions of carbon dioxide",
+      "No electricity at all"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « zéro carbone » pour un système énergétique ?",
+        "choices": [
+          "Aucun carburant utilisé",
+          "Aucune énergie stockée",
+          "Aucune émission nette de dioxyde de carbone",
+          "Aucune électricité du tout"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني «خلوّ الكربون» بالنسبة إلى نظام الطاقة؟",
+        "choices": [
+          "لا وقود مستخدم",
+          "لا طاقة مخزنة",
+          "لا انبعاثات صافية من ثاني أكسيد الكربون",
+          "لا كهرباء مطلقًا"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which measure encourages businesses to report their environmental and social performance?",
+    "choices": [
+      "Sustainability reporting",
+      "Export ban",
+      "Price fixing",
+      "Tax evasion"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure incite les entreprises à publier leurs performances environnementales et sociales ?",
+        "choices": [
+          "Le reporting de durabilité",
+          "L’interdiction d’exporter",
+          "L’entente sur les prix",
+          "L’évasion fiscale"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يشجع الشركات على الإبلاغ عن أدائها البيئي والاجتماعي؟",
+        "choices": [
+          "إعداد تقارير الاستدامة",
+          "حظر التصدير",
+          "تحديد الأسعار بالاتفاق",
+          "التهرب الضريبي"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is an example of a renewable natural resource?",
+    "choices": [
+      "Oil",
+      "Natural gas",
+      "Forests",
+      "Coal"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est un exemple de ressource naturelle renouvelable ?",
+        "choices": [
+          "Le pétrole",
+          "Le gaz naturel",
+          "Les forêts",
+          "Le charbon"
+        ]
+      },
+      "ar": {
+        "question": "ما مثال على مورد طبيعي متجدد؟",
+        "choices": [
+          "النفط",
+          "الغاز الطبيعي",
+          "الغابات",
+          "الفحم"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the acronym ESG stand for in finance?",
+    "choices": [
+      "Export, Supply and Growth",
+      "Energy, Security and Growth",
+      "Environmental, Social and Governance",
+      "Economic, Strategic and Global"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifie l’acronyme ESG en finance ?",
+        "choices": [
+          "Exportation, approvisionnement et croissance",
+          "Énergie, sécurité et croissance",
+          "Environnement, social et gouvernance",
+          "Économie, stratégie et global"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار ESG في التمويل؟",
+        "choices": [
+          "التصدير والإمداد والنمو",
+          "الطاقة والأمن والنمو",
+          "البيئة والمجتمع والحوكمة",
+          "الاقتصاد والاستراتيجية والعولمة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which approach uses nature-based solutions such as mangroves to reduce flood risk?",
+    "choices": [
+      "Removing coastal vegetation",
+      "Dredging all rivers",
+      "Ecosystem-based adaptation",
+      "Concrete-only protection"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle approche utilise des solutions fondées sur la nature, comme les mangroves, pour réduire le risque d’inondation ?",
+        "choices": [
+          "La suppression de la végétation côtière",
+          "Le dragage de toutes les rivières",
+          "L’adaptation fondée sur les écosystèmes",
+          "La protection uniquement en béton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نهج يستخدم حلولًا قائمة على الطبيعة، مثل أشجار المانغروف، لتقليل مخاطر الفيضانات؟",
+        "choices": [
+          "إزالة الغطاء النباتي الساحلي",
+          "تجريف جميع الأنهار",
+          "التكيف القائم على النظم البيئية",
+          "الحماية بالخرسانة فقط"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday practice helps reduce plastic waste most effectively?",
+    "choices": [
+      "Burning plastic at home",
+      "Buying more single-use cups",
+      "Using reusable bags",
+      "Throwing plastic into rivers"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle pratique quotidienne réduit le plus efficacement les déchets plastiques ?",
+        "choices": [
+          "Brûler le plastique à la maison",
+          "Acheter davantage de gobelets jetables",
+          "Utiliser des sacs réutilisables",
+          "Jeter le plastique dans les rivières"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ممارسة يومية تقلل النفايات البلاستيكية بفعالية أكبر؟",
+        "choices": [
+          "حرق البلاستيك في المنزل",
+          "شراء مزيد من الأكواب أحادية الاستعمال",
+          "استخدام الأكياس القابلة لإعادة الاستعمال",
+          "رمي البلاستيك في الأنهار"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the aim of “nexus” thinking (water–energy–food) in sustainable development?",
+    "choices": [
+      "Banning food imports",
+      "Managing these resources together to avoid trade-offs",
+      "Selling water rights",
+      "Ranking countries by energy use"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif de la réflexion « nexus » (eau–énergie–alimentation) en développement durable ?",
+        "choices": [
+          "Interdire les importations alimentaires",
+          "Gérer ces ressources ensemble pour éviter les arbitrages négatifs",
+          "Vendre des droits sur l’eau",
+          "Classer les pays selon leur consommation d’énergie"
+        ]
+      },
+      "ar": {
+        "question": "ما هدف التفكير المترابط (nexus) بين المياه والطاقة والغذاء في التنمية المستدامة؟",
+        "choices": [
+          "حظر استيراد الغذاء",
+          "إدارة هذه الموارد معًا لتجنب المفاضلات السلبية",
+          "بيع حقوق المياه",
+          "ترتيب الدول حسب استهلاك الطاقة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which goal aims for responsible consumption and production?",
+    "choices": [
+      "SDG 12",
+      "SDG 13",
+      "SDG 11",
+      "SDG 10"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD vise une consommation et une production responsables ?",
+        "choices": [
+          "L’ODD 12",
+          "L’ODD 13",
+          "L’ODD 11",
+          "L’ODD 10"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يسعى إلى الاستهلاك والإنتاج المسؤولين؟",
+        "choices": [
+          "الهدف 12",
+          "الهدف 13",
+          "الهدف 11",
+          "الهدف 10"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  }
+]

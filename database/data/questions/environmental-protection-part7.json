@@ -1,0 +1,206 @@
+[
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main purpose of a recycling centre?",
+    "choices": [
+      "Storing furniture",
+      "Growing vegetables",
+      "Sorting and processing materials for reuse",
+      "Selling fuel"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal rôle d’un centre de recyclage ?",
+        "choices": [
+          "Stocker des meubles",
+          "Cultiver des légumes",
+          "Trier et traiter les matériaux pour les réutiliser",
+          "Vendre du carburant"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من مركز إعادة التدوير؟",
+        "choices": [
+          "تخزين الأثاث",
+          "زراعة الخضروات",
+          "فرز المواد ومعالجتها لإعادة استخدامها",
+          "بيع الوقود"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of pollution is caused by excess light at night in cities?",
+    "choices": [
+      "Soil pollution",
+      "Light pollution",
+      "Noise pollution",
+      "Water pollution"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel type de pollution est causé par un excès de lumière la nuit dans les villes ?",
+        "choices": [
+          "La pollution des sols",
+          "La pollution lumineuse",
+          "La pollution sonore",
+          "La pollution de l’eau"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من التلوث تسببه الإضاءة الزائدة ليلًا في المدن؟",
+        "choices": [
+          "تلوث التربة",
+          "التلوث الضوئي",
+          "التلوث الضوضائي",
+          "تلوث المياه"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action reduces paper waste in the office?",
+    "choices": [
+      "Throwing away unused paper",
+      "Printing on both sides",
+      "Using a new notebook daily",
+      "Printing everything twice"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne réduit les déchets de papier au bureau ?",
+        "choices": [
+          "Jeter le papier inutilisé",
+          "Imprimer recto verso",
+          "Utiliser un nouveau cahier chaque jour",
+          "Imprimer tout deux fois"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يقلل نفايات الورق في المكتب؟",
+        "choices": [
+          "رمي الورق غير المستخدم",
+          "الطباعة على الوجهين",
+          "استخدام دفتر جديد كل يوم",
+          "طباعة كل شيء مرتين"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which mineral is a common contaminant in old water pipes and can harm health?",
+    "choices": [
+      "Iron",
+      "Silver",
+      "Gold",
+      "Lead"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel minéral est un contaminant courant des anciennes canalisations et peut nuire à la santé ?",
+        "choices": [
+          "Le fer",
+          "L’argent",
+          "L’or",
+          "Le plomb"
+        ]
+      },
+      "ar": {
+        "question": "أيّ معدن يُعد ملوثًا شائعًا في أنابيب المياه القديمة ويضر بالصحة؟",
+        "choices": [
+          "الحديد",
+          "الفضة",
+          "الذهب",
+          "الرصاص"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does “zero emissions” mean for a vehicle?",
+    "choices": [
+      "It is painted black",
+      "It releases no harmful exhaust gases while driving",
+      "It never moves",
+      "It uses only coal"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « zéro émission » pour un véhicule ?",
+        "choices": [
+          "Il est peint en noir",
+          "Il ne rejette aucun gaz d’échappement nocif en roulant",
+          "Il ne bouge jamais",
+          "Il utilise uniquement du charbon"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تعني «انبعاثات صفرية» بالنسبة إلى مركبة؟",
+        "choices": [
+          "مطلية بالأسود",
+          "لا تطلق غازات عادم ضارة أثناء القيادة",
+          "لا تتحرك أبدًا",
+          "تعمل بالفحم وحده"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which process uses bacteria to remove nitrogen from wastewater?",
+    "choices": [
+      "Freezing",
+      "Mining",
+      "Biological nutrient removal",
+      "Burning"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel procédé utilise des bactéries pour éliminer l’azote des eaux usées ?",
+        "choices": [
+          "La congélation",
+          "L’extraction minière",
+          "L’élimination biologique des nutriments",
+          "La combustion"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عملية تستخدم البكتيريا لإزالة النيتروجين من مياه الصرف؟",
+        "choices": [
+          "التجميد",
+          "التعدين",
+          "الإزالة البيولوجية للمغذيات",
+          "الحرق"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Global Environment Outlook (GEO-6)"
+  }
+]

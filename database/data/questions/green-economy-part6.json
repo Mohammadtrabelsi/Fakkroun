@@ -1,0 +1,580 @@
+[
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the best first step to reduce household waste?",
+    "choices": [
+      "Burning waste at home",
+      "Sorting waste for recycling",
+      "Buying more packaged food",
+      "Throwing everything in one bin"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la meilleure première étape pour réduire les déchets ménagers ?",
+        "choices": [
+          "Brûler ses déchets à la maison",
+          "Trier ses déchets pour le recyclage",
+          "Acheter davantage d’aliments emballés",
+          "Tout jeter dans une seule poubelle"
+        ]
+      },
+      "ar": {
+        "question": "ما أفضل خطوة أولى لتقليل النفايات المنزلية؟",
+        "choices": [
+          "حرق النفايات في المنزل",
+          "فرز النفايات لإعادة تدويرها",
+          "شراء مزيد من الأطعمة المغلفة",
+          "رمي كل شيء في سلة واحدة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural product is used to make eco-friendly toothbrushes?",
+    "choices": [
+      "Steel only",
+      "Plastic",
+      "Glass",
+      "Bamboo"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel produit naturel sert à fabriquer des brosses à dents écologiques ?",
+        "choices": [
+          "L’acier uniquement",
+          "Le plastique",
+          "Le verre",
+          "Le bambou"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مادة طبيعية تُستخدم لصنع فراشي الأسنان الصديقة للبيئة؟",
+        "choices": [
+          "الفولاذ وحده",
+          "البلاستيك",
+          "الزجاج",
+          "الخيزران"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the purpose of a green building certification?",
+    "choices": [
+      "Recognising buildings that use resources efficiently",
+      "Making buildings taller",
+      "Reducing building size",
+      "Painting walls green only"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert une certification de bâtiment vert ?",
+        "choices": [
+          "Reconnaître les bâtiments qui utilisent efficacement les ressources",
+          "Rendre les bâtiments plus hauts",
+          "Réduire la taille des bâtiments",
+          "Peindre les murs en vert uniquement"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض من شهادة المباني الخضراء؟",
+        "choices": [
+          "الاعتراف بالمباني التي تستخدم الموارد بكفاءة",
+          "جعل المباني أطول",
+          "تقليص حجم المباني",
+          "طلاء الجدران بالأخضر فقط"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which fuel is considered the cleanest for vehicles among these options?",
+    "choices": [
+      "Diesel smoke",
+      "Electricity",
+      "Heavy oil",
+      "Coal"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel carburant est considéré comme le plus propre pour les véhicules parmi ces options ?",
+        "choices": [
+          "Les fumées du diesel",
+          "L’électricité",
+          "Le fioul lourd",
+          "Le charbon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ وقود يُعد الأنظف للمركبات من بين هذه الخيارات؟",
+        "choices": [
+          "دخان الديزل",
+          "الكهرباء",
+          "الوقود الثقيل",
+          "الفحم"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “repair before replace” encourage people to do?",
+    "choices": [
+      "Ignore damaged goods",
+      "Throw items away quickly",
+      "Fix broken items before buying new ones",
+      "Buy only new items"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « réparer avant de remplacer » ?",
+        "choices": [
+          "Ignorer les objets abîmés",
+          "Jeter rapidement les objets",
+          "Réparer les objets cassés avant d’en acheter de nouveaux",
+          "N’acheter que du neuf"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يشجع مبدأ «الإصلاح قبل الاستبدال» الناس على فعله؟",
+        "choices": [
+          "تجاهل المنتجات التالفة",
+          "رمي الأشياء بسرعة",
+          "إصلاح الأشياء المعطلة قبل شراء جديدة",
+          "شراء الجديد فقط"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday habit reduces the use of disposable items?",
+    "choices": [
+      "Taking plastic cups to the office",
+      "Using paper plates for every meal",
+      "Carrying a reusable cup",
+      "Buying single-use cutlery"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle habitude quotidienne réduit l’usage d’articles jetables ?",
+        "choices": [
+          "Prendre des gobelets en plastique au bureau",
+          "Utiliser des assiettes en papier à chaque repas",
+          "Emporter un gobelet réutilisable",
+          "Acheter des couverts jetables"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عادة يومية تقلل استخدام الأدوات أحادية الاستعمال؟",
+        "choices": [
+          "أخذ أكواب بلاستيكية إلى المكتب",
+          "استخدام الأطباق الورقية في كل وجبة",
+          "حمل كوب قابل لإعادة الاستعمال",
+          "شراء أدوات مائدة للاستعمال مرة واحدة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “green chemistry”?",
+    "choices": [
+      "Making fireworks",
+      "Designing chemical products and processes that reduce hazardous substances",
+      "Mixing colours for paint only",
+      "Growing plants in labs"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « chimie verte » ?",
+        "choices": [
+          "La fabrication de feux d’artifice",
+          "La conception de produits et procédés chimiques qui réduisent les substances dangereuses",
+          "Le mélange de couleurs pour la peinture uniquement",
+          "La culture de plantes en laboratoire"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الكيمياء الخضراء»؟",
+        "choices": [
+          "صناعة الألعاب النارية",
+          "تصميم منتجات وعمليات كيميائية تقلل المواد الخطرة",
+          "خلط الألوان للدهان فقط",
+          "زراعة النباتات في المختبرات"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which product type is designed to use less electricity than traditional models?",
+    "choices": [
+      "Old refrigerators",
+      "Energy-efficient appliances",
+      "Toasters with no timer",
+      "Heating lamps"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel type de produit est conçu pour consommer moins d’électricité que les modèles traditionnels ?",
+        "choices": [
+          "Les vieux réfrigérateurs",
+          "Les appareils économes en énergie",
+          "Les grille-pains sans minuteur",
+          "Les lampes chauffantes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من المنتجات مصمم ليستهلك كهرباء أقل من النماذج التقليدية؟",
+        "choices": [
+          "الثلاجات القديمة",
+          "الأجهزة الموفرة للطاقة",
+          "المحامص بدون مؤقت",
+          "مصابيح التدفئة"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “climate-friendly” diet usually based on?",
+    "choices": [
+      "Only sugary drinks",
+      "Only imported food",
+      "Only processed meat",
+      "More plant-based foods and less food waste"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Sur quoi repose généralement un régime favorable au climat ?",
+        "choices": [
+          "Uniquement des boissons sucrées",
+          "Uniquement des aliments importés",
+          "Uniquement de la viande transformée",
+          "Davantage d’aliments d’origine végétale et moins de gaspillage"
+        ]
+      },
+      "ar": {
+        "question": "على ماذا يقوم النظام الغذائي الصديق للمناخ عادةً؟",
+        "choices": [
+          "المشروبات السكرية فقط",
+          "الأطعمة المستوردة فقط",
+          "اللحوم المصنعة فقط",
+          "أغذية نباتية أكثر وهدر طعام أقل"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item can be reused many times instead of single-use bags?",
+    "choices": [
+      "Plastic straw",
+      "Cloth tote bag",
+      "Paper cup",
+      "Foam tray"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel objet courant peut être réutilisé de nombreuses fois à la place des sacs à usage unique ?",
+        "choices": [
+          "La paille en plastique",
+          "Le tote bag en tissu",
+          "Le gobelet en papier",
+          "La barquette en mousse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شيء يومي يمكن إعادة استخدامه مرات عديدة بدلًا من الأكياس أحادية الاستعمال؟",
+        "choices": [
+          "المصاصة البلاستيكية",
+          "الحقيبة القماشية",
+          "الكوب الورقي",
+          "الصينية الرغوية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which measure is used to track the carbon footprint of a product over its life cycle?",
+    "choices": [
+      "Market survey",
+      "Life cycle assessment",
+      "Stock valuation",
+      "Price index"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure sert à suivre l’empreinte carbone d’un produit sur son cycle de vie ?",
+        "choices": [
+          "L’étude de marché",
+          "L’analyse du cycle de vie",
+          "L’évaluation boursière",
+          "L’indice des prix"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة تُستخدم لتتبع البصمة الكربونية للمنتج عبر دورة حياته؟",
+        "choices": [
+          "دراسة السوق",
+          "تقييم دورة الحياة",
+          "تقييم الأسهم",
+          "مؤشر الأسعار"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which system reduces food waste by donating surplus food to people in need?",
+    "choices": [
+      "Food dumping",
+      "Food donation programmes",
+      "Food burning",
+      "Food hoarding"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel système réduit le gaspillage alimentaire en donnant les surplus aux personnes dans le besoin ?",
+        "choices": [
+          "Le déversement de nourriture",
+          "Les programmes de dons alimentaires",
+          "La combustion des aliments",
+          "L’accumulation de nourriture"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نظام يقلل هدر الطعام بالتبرع بالفائض للمحتاجين؟",
+        "choices": [
+          "رمي الطعام",
+          "برامج التبرع بالطعام",
+          "حرق الطعام",
+          "اكتناز الطعام"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “green tax reform”?",
+    "choices": [
+      "Taxing sunlight",
+      "Doubling taxes on clean energy",
+      "Removing all taxes",
+      "Shifting taxes from labour to pollution and resource use"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « réforme fiscale verte » ?",
+        "choices": [
+          "Taxer la lumière du soleil",
+          "Doubler les taxes sur l’énergie propre",
+          "Supprimer toutes les taxes",
+          "Déplacer la fiscalité du travail vers la pollution et l’usage des ressources"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الإصلاح الضريبي الأخضر»؟",
+        "choices": [
+          "فرض ضريبة على ضوء الشمس",
+          "مضاعفة الضرائب على الطاقة النظيفة",
+          "إلغاء كل الضرائب",
+          "نقل الضرائب من العمل إلى التلوث واستخدام الموارد"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which activity benefits the environment by planting trees in urban areas?",
+    "choices": [
+      "Urban greening",
+      "Clearing trees for parking",
+      "Concreting parks",
+      "Building highways through parks"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité profite à l’environnement en plantant des arbres en zone urbaine ?",
+        "choices": [
+          "Le verdissement urbain",
+          "L’abattage d’arbres pour le stationnement",
+          "Le bétonnage des parcs",
+          "La construction d’autoroutes à travers les parcs"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط يفيد البيئة بزراعة الأشجار في المناطق الحضرية؟",
+        "choices": [
+          "التشجير الحضري",
+          "قطع الأشجار للمواقف",
+          "تعبيد الحدائق",
+          "شق الطرق السريعة عبر الحدائق"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which term describes replacing fossil fuels with clean hydrogen in heavy industry?",
+    "choices": [
+      "Industrial over-expansion",
+      "Industrial mining",
+      "Industrial decarbonisation",
+      "Industrial waste dumping"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel terme désigne le remplacement des combustibles fossiles par de l’hydrogène propre dans l’industrie lourde ?",
+        "choices": [
+          "La surexpansion industrielle",
+          "L’exploitation minière industrielle",
+          "La décarbonation industrielle",
+          "Le déversement industriel"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف استبدال الوقود الأحفوري بالهيدروجين النظيف في الصناعات الثقيلة؟",
+        "choices": [
+          "التوسع الصناعي المفرط",
+          "التعدين الصناعي",
+          "إزالة الكربون من الصناعة",
+          "رمي النفايات الصناعية"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of bulb uses the least energy among common types?",
+    "choices": [
+      "Halogen",
+      "Candle",
+      "Incandescent",
+      "LED"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel type d’ampoule consomme le moins d’énergie parmi les types courants ?",
+        "choices": [
+          "L’halogène",
+          "La bougie",
+          "L’incandescente",
+          "La LED"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من المصابيح يستهلك أقل طاقة بين الأنواع الشائعة؟",
+        "choices": [
+          "الهالوجين",
+          "الشمعة",
+          "المتوهجة (المتوهج التقليدي)",
+          "LED"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which group of materials can usually be recycled together in a household bin?",
+    "choices": [
+      "Clean paper and cardboard",
+      "Food waste and batteries",
+      "Glass and chemicals",
+      "Wood and paint"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel groupe de matériaux peut en général être recyclé ensemble dans la poubelle de tri ?",
+        "choices": [
+          "Le papier propre et le carton",
+          "Les déchets alimentaires et les piles",
+          "Le verre et les produits chimiques",
+          "Le bois et la peinture"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مجموعة من المواد يمكن عادةً إعادة تدويرها معًا في سلة المنزل؟",
+        "choices": [
+          "الورق النظيف والكرتون",
+          "بقايا الطعام والبطاريات",
+          "الزجاج والمواد الكيميائية",
+          "الخشب والدهان"
+        ]
+      }
+    },
+    "reference_text": "UNEP, Towards a Green Economy (2011)"
+  }
+]

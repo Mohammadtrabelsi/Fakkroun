@@ -1,0 +1,376 @@
+[
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea animal is known as a jellyfish relative with a clear, gel-like body?",
+    "choices": [
+      "Lobster",
+      "Clam",
+      "Jellyfish",
+      "Oyster"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin, parent de la méduse, a un corps transparent et gélatineux ?",
+        "choices": [
+          "Le homard",
+          "La palourde",
+          "La méduse",
+          "L’huître"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري، قريب من قنديل البحر، له جسم هلامي شفاف؟",
+        "choices": [
+          "الاستاكوزا",
+          "المحارة",
+          "قنديل البحر",
+          "المحار"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is a famous sea turtle that can live for decades and lays eggs on beaches?",
+    "choices": [
+      "Crab",
+      "Seahorse",
+      "Loggerhead turtle",
+      "Shark"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle tortue marine célèbre peut vivre des décennies et pond sur les plages ?",
+        "choices": [
+          "Le crabe",
+          "L’hippocampe",
+          "La tortue caouanne",
+          "Le requin"
+        ]
+      },
+      "ar": {
+        "question": "ما السلحفاة البحرية الشهيرة التي تعيش عقودًا وتضع بيضها على الشواطئ؟",
+        "choices": [
+          "السلطعون",
+          "فرس البحر",
+          "سلحفاة الكاريتا (الكاوانا)",
+          "القرش"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which marine group includes sea stars, sea urchins and sea cucumbers?",
+    "choices": [
+      "Reptiles",
+      "Mammals",
+      "Birds",
+      "Echinoderms"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel groupe marin comprend les étoiles de mer, les oursins et les holothuries ?",
+        "choices": [
+          "Les reptiles",
+          "Les mammifères",
+          "Les oiseaux",
+          "Les échinodermes"
+        ]
+      },
+      "ar": {
+        "question": "ما المجموعة البحرية التي تشمل نجوم البحر وقنافذ البحر وخيار البحر؟",
+        "choices": [
+          "الزواحف",
+          "الثدييات",
+          "الطيور",
+          "شوكيات الجلد (الإيكينودرمات)"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of marine life lives attached to rocks and filters water for food, like barnacles?",
+    "choices": [
+      "Sessile filter feeders",
+      "Deep-sea hunters",
+      "Fast predators",
+      "Flying fish"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel type d’organisme marin vit fixé aux rochers et filtre l’eau pour se nourrir, comme les balanes ?",
+        "choices": [
+          "Les filtreurs sessiles",
+          "Les chasseurs des abysses",
+          "Les prédateurs rapides",
+          "Les poissons volants"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الكائنات البحرية يعيش ملتصقًا بالصخور ويرشح الماء ليتغذى، مثل البرنقيل؟",
+        "choices": [
+          "المرشّحات الثابتة",
+          "صيادو الأعماق",
+          "المفترسات السريعة",
+          "الأسماك الطائرة"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Mediterranean species of dolphin is widely seen off Tunisian coasts?",
+    "choices": [
+      "Common bottlenose dolphin",
+      "Narwhal",
+      "Orca",
+      "Beluga"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle espèce de dauphin méditerranéenne est fréquemment observée au large des côtes tunisiennes ?",
+        "choices": [
+          "Le grand dauphin",
+          "Le narval",
+          "L’orque",
+          "Le bélouga"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الدلافين المتوسطية يُشاهد كثيرًا قبالة السواحل التونسية؟",
+        "choices": [
+          "الدلفين قاروري الأنف",
+          "الناروال",
+          "الحوت القاتل",
+          "الحوت الأبيض"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What do we call a marine animal that can change between male and female during its life?",
+    "choices": [
+      "Mammal",
+      "Sequential hermaphrodite",
+      "Amphibian",
+      "Reptile"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un animal marin qui change de sexe au cours de sa vie ?",
+        "choices": [
+          "Un mammifère",
+          "Un hermaphrodite successif",
+          "Un amphibien",
+          "Un reptile"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الكائن البحري الذي يتحول من جنس إلى آخر خلال حياته؟",
+        "choices": [
+          "الثدييات",
+          "الخنثى المتعاقب",
+          "البرمائيات",
+          "الزواحف"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which marine animal is known for having eight arms and no shell?",
+    "choices": [
+      "Crab",
+      "Snail",
+      "Clam",
+      "Octopus"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin a huit bras et pas de coquille ?",
+        "choices": [
+          "Le crabe",
+          "L’escargot",
+          "La palourde",
+          "La pieuvre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري له ثماني أذرع ولا يملك صدفة؟",
+        "choices": [
+          "السلطعون",
+          "القوقع",
+          "المحارة",
+          "الأخطبوط"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which marine ecosystem is found in tropical waters and depends on symbiotic algae for energy?",
+    "choices": [
+      "Dune fields",
+      "Salt flats",
+      "Glaciers",
+      "Coral reefs"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel écosystème marin tropical dépend d’algues symbiotiques pour son énergie ?",
+        "choices": [
+          "Les champs de dunes",
+          "Les salins",
+          "Les glaciers",
+          "Les récifs coralliens"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نظام بيئي بحري استوائي يعتمد على طحالب متكافلة للحصول على الطاقة؟",
+        "choices": [
+          "حقول الكثبان",
+          "السبخات الملحية",
+          "الأنهار الجليدية",
+          "الشعاب المرجانية"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sea animal is famous for its ability to regrow lost limbs and lives on the seabed?",
+    "choices": [
+      "Penguin",
+      "Starfish",
+      "Dolphin",
+      "Eagle"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est célèbre pour régénérer ses membres perdus et vit sur le fond ?",
+        "choices": [
+          "Le manchot",
+          "L’étoile de mer",
+          "Le dauphin",
+          "L’aigle"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يشتهر بقدرته على تجديد أطرافه المفقودة ويعيش في القاع؟",
+        "choices": [
+          "البطريق",
+          "نجم البحر",
+          "الدلفين",
+          "النسر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which marine animal is a symbol of intelligence and is often trained in aquariums?",
+    "choices": [
+      "Dolphin",
+      "Limpet",
+      "Sea cucumber",
+      "Jellyfish"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est un symbole d’intelligence et est souvent entraîné dans les aquariums ?",
+        "choices": [
+          "Le dauphin",
+          "La patelle",
+          "La holothurie",
+          "La méduse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يُعد رمزًا للذكاء ويُدرّب غالبًا في الأحواض؟",
+        "choices": [
+          "الدلفين",
+          "البرنقيل",
+          "خيار البحر",
+          "قنديل البحر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main threat to marine turtles caused by fishing gear?",
+    "choices": [
+      "Entanglement and drowning in nets",
+      "Overheating in cold water",
+      "Eating seaweed",
+      "Burning on beaches"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale menace pour les tortues marines causée par les engins de pêche ?",
+        "choices": [
+          "L’enchevêtrement et la noyade dans les filets",
+          "La surchauffe en eau froide",
+          "Manger des algues",
+          "Le brûlage sur les plages"
+        ]
+      },
+      "ar": {
+        "question": "ما الخطر الرئيسي على السلاحف البحرية الناجم عن أدوات الصيد؟",
+        "choices": [
+          "التشابك في الشباك والغرق",
+          "الحرارة الزائدة في المياه الباردة",
+          "أكل الطحالب",
+          "الاحتراق على الشواطئ"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  }
+]

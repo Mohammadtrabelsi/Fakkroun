@@ -1,0 +1,816 @@
+[
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does a solar water heater use to heat water?",
+    "choices": [
+      "Nuclear heat",
+      "Sunlight",
+      "Electricity from coal",
+      "Wind power"
+    ],
+    "correct": 2,
+    "explanation": "Solar collectors absorb sunlight and transfer its heat to water.",
+    "reference_text": "IEA solar heating overview",
+    "translations": {
+      "fr": {
+        "question": "Qu’utilise un chauffe-eau solaire pour chauffer l’eau ?",
+        "choices": [
+          "La chaleur nucléaire",
+          "La lumière du soleil",
+          "L’électricité du charbon",
+          "L’énergie éolienne"
+        ],
+        "explanation": "Les capteurs solaires absorbent le rayonnement et transmettent la chaleur à l’eau."
+      },
+      "ar": {
+        "question": "ما الذي تستخدمه سخانات المياه الشمسية لتسخين الماء؟",
+        "choices": [
+          "الحرارة النووية",
+          "ضوء الشمس",
+          "كهرباء الفحم",
+          "طاقة الرياح"
+        ],
+        "explanation": "تمتص المجمعات الشمسية أشعة الشمس وتنقل حرارتها إلى الماء."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable source is harnessed by dams on rivers?",
+    "choices": [
+      "Biomass",
+      "Geothermal heat",
+      "Solar radiation",
+      "Hydropower"
+    ],
+    "correct": 4,
+    "explanation": "Dams store water and release it through turbines to produce electricity.",
+    "reference_text": "IEA hydropower overview",
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie renouvelable exploitent les barrages sur les fleuves ?",
+        "choices": [
+          "La biomasse",
+          "La chaleur géothermique",
+          "Le rayonnement solaire",
+          "L’hydroélectricité"
+        ],
+        "explanation": "Les barrages stockent l’eau et la libèrent à travers des turbines pour produire de l’électricité."
+      },
+      "ar": {
+        "question": "أيّ مصدر متجدد تستثمره السدود المقامة على الأنهار؟",
+        "choices": [
+          "الكتلة الحيوية",
+          "الحرارة الجوفية",
+          "الإشعاع الشمسي",
+          "الطاقة الكهرومائية"
+        ],
+        "explanation": "تخزن السدود المياه وتطلقها عبر التوربينات لإنتاج الكهرباء."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the unit used to measure electrical power?",
+    "choices": [
+      "Ampere",
+      "Volt",
+      "Watt",
+      "Joule"
+    ],
+    "correct": 3,
+    "explanation": "A watt equals one joule per second.",
+    "reference_text": "SI units, BIPM",
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’unité de mesure de la puissance électrique ?",
+        "choices": [
+          "L’ampère",
+          "Le volt",
+          "Le watt",
+          "Le joule"
+        ],
+        "explanation": "Un watt correspond à un joule par seconde."
+      },
+      "ar": {
+        "question": "ما وحدة قياس القدرة الكهربائية؟",
+        "choices": [
+          "الأمبير",
+          "الفولت",
+          "الواط",
+          "الجول"
+        ],
+        "explanation": "الواط يساوي جول واحد في الثانية."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is a global leader in wind power generation?",
+    "choices": [
+      "Bhutan",
+      "Mongolia",
+      "Denmark",
+      "Chad"
+    ],
+    "correct": 3,
+    "explanation": "Denmark has long been a pioneer of wind energy and a major turbine maker.",
+    "reference_text": "Global Wind Energy Council report",
+    "translations": {
+      "fr": {
+        "question": "Quel pays est un leader mondial de la production éolienne ?",
+        "choices": [
+          "Le Bhoutan",
+          "La Mongolie",
+          "Le Danemark",
+          "Le Tchad"
+        ],
+        "explanation": "Le Danemark est un pionnier de l’éolien et un grand constructeur d’éoliennes."
+      },
+      "ar": {
+        "question": "أيّ دولة من الدول الرائدة عالميًا في إنتاج طاقة الرياح؟",
+        "choices": [
+          "بوتان",
+          "منغوليا",
+          "الدنمارك",
+          "تشاد"
+        ],
+        "explanation": "تُعد الدنمارك رائدة في طاقة الرياح وصناعة التوربينات."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does a “feed-in tariff” guarantee to renewable producers?",
+    "choices": [
+      "A free plot of land",
+      "Unlimited water rights",
+      "Exemption from all taxes forever",
+      "A fixed price for the electricity they feed into the grid"
+    ],
+    "correct": 4,
+    "explanation": "Feed-in tariffs pay producers a set rate per kilowatt-hour for a number of years.",
+    "reference_text": "IRENA feed-in tariff policy brief",
+    "translations": {
+      "fr": {
+        "question": "Que garantit un « tarif d’achat » (feed-in tariff) aux producteurs renouvelables ?",
+        "choices": [
+          "Un terrain gratuit",
+          "Des droits illimités sur l’eau",
+          "Une exonération fiscale perpétuelle",
+          "Un prix fixe pour l’électricité injectée dans le réseau"
+        ],
+        "explanation": "Le tarif d’achat rémunère chaque kilowattheure à un prix fixé pendant plusieurs années."
+      },
+      "ar": {
+        "question": "ماذا تضمن «تعرفة الشراء» (Feed-in tariff) لمنتجي الطاقة المتجددة؟",
+        "choices": [
+          "قطعة أرض مجانية",
+          "حقوقًا غير محدودة في المياه",
+          "إعفاءً دائمًا من كل الضرائب",
+          "سعرًا ثابتًا للكهرباء التي يضخّونها في الشبكة"
+        ],
+        "explanation": "تدفع التعرفة سعرًا محددًا لكل كيلوواط ساعة لعدد من السنوات."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main component of a geothermal power plant’s heat source?",
+    "choices": [
+      "Solar panels",
+      "Ocean currents",
+      "Hot underground water and rock",
+      "Burning natural gas"
+    ],
+    "correct": 3,
+    "explanation": "Geothermal plants tap hot water or steam in the Earth’s crust.",
+    "reference_text": "IEA geothermal energy overview",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la source de chaleur principale d’une centrale géothermique ?",
+        "choices": [
+          "Des panneaux solaires",
+          "Les courants marins",
+          "L’eau chaude et les roches souterraines",
+          "La combustion du gaz naturel"
+        ],
+        "explanation": "Les centrales géothermiques exploitent l’eau ou la vapeur chaudes de la croûte terrestre."
+      },
+      "ar": {
+        "question": "ما المصدر الرئيسي للحرارة في محطة الطاقة الحرارية الأرضية؟",
+        "choices": [
+          "الألواح الشمسية",
+          "التيارات البحرية",
+          "المياه الساخنة والصخور تحت الأرض",
+          "حرق الغاز الطبيعي"
+        ],
+        "explanation": "تستغل المحطات الحرارية الأرضية المياه الساخنة أو البخار في القشرة الأرضية."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “curtailment” in power systems?",
+    "choices": [
+      "Deliberately reducing renewable output when supply exceeds demand",
+      "Installing more transmission lines",
+      "Shortening the lifetime of turbines",
+      "Increasing the price of electricity"
+    ],
+    "correct": 1,
+    "explanation": "Curtailment happens when the grid cannot absorb all available renewable power.",
+    "reference_text": "IEA power system flexibility report",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que « l’écrêtement » (curtailment) dans les réseaux électriques ?",
+        "choices": [
+          "La réduction volontaire de la production renouvelable quand l’offre dépasse la demande",
+          "L’installation de nouvelles lignes de transport",
+          "La réduction de la durée de vie des turbines",
+          "La hausse du prix de l’électricité"
+        ],
+        "explanation": "L’écrêtement survient lorsque le réseau ne peut pas absorber toute l’électricité renouvelable disponible."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«خفض الإنتاج» (Curtailment) في أنظمة الكهرباء؟",
+        "choices": [
+          "تقليص إنتاج الطاقة المتجددة عمدًا عندما يفوق العرض الطلب",
+          "تركيب خطوط نقل جديدة",
+          "تقصير عمر التوربينات",
+          "رفع سعر الكهرباء"
+        ],
+        "explanation": "يحدث الخفض حين لا تستطيع الشبكة استيعاب كل الكهرباء المتجددة المتاحة."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “smart grid”?",
+    "choices": [
+      "A grid for telephone lines only",
+      "A grid with no transformers",
+      "A grid that runs only on diesel",
+      "An electricity network that uses digital communication to balance supply and demand"
+    ],
+    "correct": 4,
+    "explanation": "Smart grids use sensors and two-way data to manage electricity flows efficiently.",
+    "reference_text": "European Commission smart grids task force",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « réseau intelligent » (smart grid) ?",
+        "choices": [
+          "Un réseau réservé aux lignes téléphoniques",
+          "Un réseau sans transformateurs",
+          "Un réseau alimenté uniquement au diesel",
+          "Un réseau électrique qui utilise la communication numérique pour équilibrer offre et demande"
+        ],
+        "explanation": "Les réseaux intelligents utilisent capteurs et échanges de données pour gérer efficacement les flux électriques."
+      },
+      "ar": {
+        "question": "ما هي «الشبكة الذكية» (Smart grid)؟",
+        "choices": [
+          "شبكة خاصة بخطوط الهاتف",
+          "شبكة بلا محولات",
+          "شبكة تعمل بالديزل وحده",
+          "شبكة كهرباء تستخدم الاتصال الرقمي لموازنة العرض والطلب"
+        ],
+        "explanation": "تستخدم الشبكات الذكية أجهزة الاستشعار وتبادل البيانات لإدارة تدفق الكهرباء بكفاءة."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “LCOE” stand for in energy economics?",
+    "choices": [
+      "Levelised Cost of Energy",
+      "Local Carbon Offset Estimate",
+      "Low Cost Operating Efficiency",
+      "Linear Capacity of Electricity"
+    ],
+    "correct": 1,
+    "explanation": "LCOE compares the lifetime cost per unit of energy across technologies.",
+    "reference_text": "Lazard LCOE analysis",
+    "translations": {
+      "fr": {
+        "question": "Que signifie « LCOE » en économie de l’énergie ?",
+        "choices": [
+          "Coût actualisé de l’énergie (Levelised Cost of Energy)",
+          "Estimation locale de compensation carbone",
+          "Efficacité opérationnelle à faible coût",
+          "Capacité linéaire de l’électricité"
+        ],
+        "explanation": "Le LCOE compare le coût sur la durée de vie par unité d’énergie entre technologies."
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار LCOE في اقتصاديات الطاقة؟",
+        "choices": [
+          "متوسط تكلفة الطاقة المستوية (Levelised Cost of Energy)",
+          "تقدير محلي لتعويض الكربون",
+          "كفاءة تشغيل منخفضة التكلفة",
+          "السعة الخطية للكهرباء"
+        ],
+        "explanation": "يقارن LCOE تكلفة الوحدة من الطاقة على مدى عمر المشروع بين التقنيات."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which type of solar cell is made from a single crystal of silicon?",
+    "choices": [
+      "Thin-film cell",
+      "Organic cell",
+      "Perovskite cell",
+      "Monocrystalline cell"
+    ],
+    "correct": 4,
+    "explanation": "Monocrystalline silicon cells are efficient and recognisable by their uniform dark colour.",
+    "reference_text": "NREL solar cell efficiency chart",
+    "translations": {
+      "fr": {
+        "question": "Quel type de cellule solaire est fabriqué à partir d’un seul cristal de silicium ?",
+        "choices": [
+          "La cellule en couche mince",
+          "La cellule organique",
+          "La cellule pérovskite",
+          "La cellule monocristalline"
+        ],
+        "explanation": "Les cellules en silicium monocristallin sont efficaces et d’un noir uniforme."
+      },
+      "ar": {
+        "question": "أيّ نوع من الخلايا الشمسية يُصنع من بلورة واحدة من السيليكون؟",
+        "choices": [
+          "الخلية الرقيقة",
+          "الخلية العضوية",
+          "خلية البيروفسكايت",
+          "الخلية أحادية البلورة"
+        ],
+        "explanation": "تتميز خلايا السيليكون أحادية البلورة بكفاءتها ولونها الداكن الموحد."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “microgrid”?",
+    "choices": [
+      "A grid for microwaves",
+      "A grid made of micro-wind turbines only",
+      "A local network that can operate independently of the main grid",
+      "A very small electronic chip"
+    ],
+    "correct": 3,
+    "explanation": "Microgrids often combine local generation, storage and loads for resilience.",
+    "reference_text": "US Department of Energy microgrid overview",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « micro-réseau » (microgrid) ?",
+        "choices": [
+          "Un réseau réservé aux micro-ondes",
+          "Un réseau fait uniquement de micro-éoliennes",
+          "Un réseau local qui peut fonctionner indépendamment du réseau principal",
+          "Une très petite puce électronique"
+        ],
+        "explanation": "Les micro-réseaux combinent production locale, stockage et consommation pour gagner en résilience."
+      },
+      "ar": {
+        "question": "ما هي «الشبكة المصغّرة» (Microgrid)؟",
+        "choices": [
+          "شبكة خاصة بالموجات الدقيقة",
+          "شبكة تتكون من توربينات صغيرة فقط",
+          "شبكة محلية يمكن أن تعمل مستقلة عن الشبكة الرئيسية",
+          "رقاقة إلكترونية صغيرة جدًا"
+        ],
+        "explanation": "تجمع الشبكات المصغّرة بين الإنتاج المحلي والتخزين والاستهلاك لتعزيز المرونة."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source comes from the heat of the Earth’s interior?",
+    "choices": [
+      "Geothermal energy",
+      "Wind energy",
+      "Hydrogen",
+      "Tidal energy"
+    ],
+    "correct": 1,
+    "explanation": "Geothermal energy comes from heat stored deep inside the planet.",
+    "reference_text": "IEA geothermal energy overview",
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie provient de la chaleur de l’intérieur de la Terre ?",
+        "choices": [
+          "La géothermie",
+          "L’énergie éolienne",
+          "L’hydrogène",
+          "L’énergie marémotrice"
+        ],
+        "explanation": "La géothermie vient de la chaleur stockée au cœur de la planète."
+      },
+      "ar": {
+        "question": "أيّ مصدر طاقة يأتي من حرارة باطن الأرض؟",
+        "choices": [
+          "الطاقة الحرارية الأرضية",
+          "طاقة الرياح",
+          "الهيدروجين",
+          "طاقة المد والجزر"
+        ],
+        "explanation": "تأتي الطاقة الحرارية الأرضية من الحرارة المخزنة في عمق الكوكب."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “green hydrogen”?",
+    "choices": [
+      "Hydrogen produced from natural gas without capture",
+      "Hydrogen produced by electrolysis powered by renewable electricity",
+      "Hydrogen extracted from coal",
+      "Hydrogen stored in old mines"
+    ],
+    "correct": 2,
+    "explanation": "Green hydrogen emits no CO₂ in production when renewable power is used.",
+    "reference_text": "IEA Global Hydrogen Review",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’« hydrogène vert » ?",
+        "choices": [
+          "L’hydrogène produit à partir de gaz naturel sans captage",
+          "L’hydrogène produit par électrolyse alimentée en électricité renouvelable",
+          "L’hydrogène extrait du charbon",
+          "L’hydrogène stocké dans d’anciennes mines"
+        ],
+        "explanation": "L’hydrogène vert n’émet pas de CO₂ à la production lorsqu’il utilise une électricité renouvelable."
+      },
+      "ar": {
+        "question": "ما هو «الهيدروجين الأخضر»؟",
+        "choices": [
+          "هيدروجين يُنتج من الغاز الطبيعي دون احتجاز الكربون",
+          "هيدروجين يُنتج بالتحليل الكهربائي باستخدام كهرباء متجددة",
+          "هيدروجين مستخرج من الفحم",
+          "هيدروجين مخزَّن في المناجم القديمة"
+        ],
+        "explanation": "لا ينبعث من الهيدروجين الأخضر ثاني أكسيد الكربون عند الإنتاج إذا استُخدمت كهرباء متجددة."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which unit describes energy in everyday electricity bills?",
+    "choices": [
+      "Volt-ampere reactive",
+      "Hertz",
+      "Newton",
+      "Kilowatt-hour"
+    ],
+    "correct": 4,
+    "explanation": "Electricity is billed by kilowatt-hour, the energy used by a 1 kW load over one hour.",
+    "reference_text": "SI units and electricity tariffs",
+    "translations": {
+      "fr": {
+        "question": "Quelle unité sert à facturer l’énergie électrique sur les factures ?",
+        "choices": [
+          "Le volt-ampère réactif",
+          "Le hertz",
+          "Le newton",
+          "Le kilowattheure"
+        ],
+        "explanation": "L’électricité se facture au kilowattheure, soit l’énergie d’une charge de 1 kW pendant une heure."
+      },
+      "ar": {
+        "question": "ما الوحدة التي تُحتسب بها الكهرباء في الفواتير المنزلية؟",
+        "choices": [
+          "الفولت أمبير الردّي",
+          "الهرتز",
+          "النيوتن",
+          "الكيلوواط ساعة"
+        ],
+        "explanation": "تُحتسب الكهرباء بالكيلوواط ساعة، وهي طاقة حمل قدره كيلوواط خلال ساعة."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main advantage of renewable energy for air quality?",
+    "choices": [
+      "It produces more smoke",
+      "It raises the amount of carbon monoxide",
+      "It requires burning coal",
+      "It produces little or no air pollution during operation"
+    ],
+    "correct": 4,
+    "explanation": "Most renewable sources emit no pollutants while generating electricity.",
+    "reference_text": "WHO air quality and energy",
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal avantage des énergies renouvelables pour la qualité de l’air ?",
+        "choices": [
+          "Elles produisent plus de fumée",
+          "Elles augmentent le monoxyde de carbone",
+          "Elles nécessitent de brûler du charbon",
+          "Elles produisent peu ou pas de pollution de l’air en fonctionnement"
+        ],
+        "explanation": "La plupart des sources renouvelables n’émettent aucun polluant lorsqu’elles produisent de l’électricité."
+      },
+      "ar": {
+        "question": "ما الميزة الرئيسية للطاقة المتجددة فيما يخص جودة الهواء؟",
+        "choices": [
+          "إنها تنتج دخانًا أكثر",
+          "إنها ترفع كمية أول أكسيد الكربون",
+          "إنها تتطلب حرق الفحم",
+          "إنها لا تُنتج تلوثًا للهواء تقريبًا أثناء التشغيل"
+        ],
+        "explanation": "معظم مصادر الطاقة المتجددة لا تطلق ملوثات أثناء توليد الكهرباء."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “solar farm”?",
+    "choices": [
+      "A large installation of solar panels that feeds electricity to the grid",
+      "A farm that grows only solar crops",
+      "A greenhouse heated by the Sun",
+      "A village powered by candles"
+    ],
+    "correct": 1,
+    "explanation": "Utility-scale solar farms can cover hundreds of hectares.",
+    "reference_text": "IEA solar PV overview",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « centrale solaire » au sol ?",
+        "choices": [
+          "Une grande installation de panneaux solaires qui injecte son électricité dans le réseau",
+          "Une ferme qui cultive uniquement des plantes solaires",
+          "Une serre chauffée par le soleil",
+          "Un village alimenté à la bougie"
+        ],
+        "explanation": "Les grandes centrales solaires peuvent couvrir des centaines d’hectares."
+      },
+      "ar": {
+        "question": "ما هي «المزرعة الشمسية»؟",
+        "choices": [
+          "تركيب كبير لألواح شمسية يغذي الشبكة بالكهرباء",
+          "مزرعة تزرع محاصيل شمسية فقط",
+          "بيت زجاجي يسخنه الشمس",
+          "قرية تُضاء بالشموع"
+        ],
+        "explanation": "قد تغطي المزارع الشمسية الكبيرة مئات الهكتارات."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which energy source is generated by the rise and fall of sea water in estuaries and bays?",
+    "choices": [
+      "Geothermal energy",
+      "Tidal energy",
+      "Nuclear fusion",
+      "Biogas"
+    ],
+    "correct": 2,
+    "explanation": "Tidal barrages capture the height difference between high and low tide.",
+    "reference_text": "IRENA ocean energy technologies",
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie est produite par la montée et la descente de l’eau de mer dans les estuaires et les baies ?",
+        "choices": [
+          "La géothermie",
+          "L’énergie marémotrice",
+          "La fusion nucléaire",
+          "Le biogaz"
+        ],
+        "explanation": "Les barrages marémoteurs captent la différence de hauteur entre marée haute et marée basse."
+      },
+      "ar": {
+        "question": "أيّ مصدر طاقة يُنتج من ارتفاع مياه البحر وانخفاضها في المصبات والخلجان؟",
+        "choices": [
+          "الطاقة الحرارية الأرضية",
+          "طاقة المد والجزر",
+          "الاندماج النووي",
+          "الغاز الحيوي"
+        ],
+        "explanation": "تلتقط سدود المد والجزر فارق الارتفاع بين المد والجزر."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “biogas” made of mainly?",
+    "choices": [
+      "Pure hydrogen",
+      "Methane produced by decomposition of organic matter",
+      "Liquid nitrogen",
+      "Pure oxygen"
+    ],
+    "correct": 2,
+    "explanation": "Biogas forms when microorganisms break down organic waste without oxygen.",
+    "reference_text": "FAO biogas overview",
+    "translations": {
+      "fr": {
+        "question": "De quoi est principalement composé le biogaz ?",
+        "choices": [
+          "D’hydrogène pur",
+          "De méthane issu de la décomposition de matière organique",
+          "D’azote liquide",
+          "D’oxygène pur"
+        ],
+        "explanation": "Le biogaz se forme lorsque des micro-organismes décomposent les déchets organiques en l’absence d’oxygène."
+      },
+      "ar": {
+        "question": "مِمَّ يتكون الغاز الحيوي أساسًا؟",
+        "choices": [
+          "هيدروجين نقي",
+          "الميثان الناتج عن تحلل المواد العضوية",
+          "نيتروجين سائل",
+          "أكسجين نقي"
+        ],
+        "explanation": "يتكون الغاز الحيوي حين تحلل الكائنات الدقيقة النفايات العضوية في غياب الأكسجين."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source is generated by the nuclear fusion of the Sun?",
+    "choices": [
+      "Solar energy",
+      "Coal energy",
+      "Oil energy",
+      "Gas energy"
+    ],
+    "correct": 1,
+    "explanation": "Sunlight comes from fusion of hydrogen into helium in the Sun’s core.",
+    "reference_text": "NASA Sun facts",
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie provient de la fusion nucléaire dans le Soleil ?",
+        "choices": [
+          "L’énergie solaire",
+          "L’énergie du charbon",
+          "L’énergie du pétrole",
+          "L’énergie du gaz"
+        ],
+        "explanation": "La lumière du Soleil provient de la fusion de l’hydrogène en hélium au cœur de l’étoile."
+      },
+      "ar": {
+        "question": "أيّ مصدر طاقة يأتي من الاندماج النووي في الشمس؟",
+        "choices": [
+          "الطاقة الشمسية",
+          "طاقة الفحم",
+          "طاقة النفط",
+          "طاقة الغاز"
+        ],
+        "explanation": "يأتي ضوء الشمس من اندماج الهيدروجين إلى هليوم في قلب النجم."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country has the Noor solar complex, one of the world’s largest?",
+    "choices": [
+      "Morocco",
+      "Algeria",
+      "Tunisia",
+      "Egypt"
+    ],
+    "correct": 1,
+    "explanation": "The Noor Ouarzazate complex is located in Morocco.",
+    "reference_text": "MASEN Morocco, Noor Ouarzazate",
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve le complexe solaire Noor, l’un des plus grands au monde ?",
+        "choices": [
+          "Le Maroc",
+          "L’Algérie",
+          "La Tunisie",
+          "L’Égypte"
+        ],
+        "explanation": "Le complexe Noor Ouarzazate se trouve au Maroc."
+      },
+      "ar": {
+        "question": "في أي دولة يقع مجمع نور الشمسي، من أكبر مجمعات الطاقة الشمسية في العالم؟",
+        "choices": [
+          "المغرب",
+          "الجزائر",
+          "تونس",
+          "مصر"
+        ],
+        "explanation": "يقع مجمع نور ورزازات في المغرب."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does a “heat pump” do?",
+    "choices": [
+      "Creates cold by freezing water",
+      "Produces heat by burning fuel only",
+      "Moves heat from one place to another, often using electricity",
+      "Cools only computers"
+    ],
+    "correct": 3,
+    "explanation": "Heat pumps move heat from outside air or ground into a building, using less energy than direct heating.",
+    "reference_text": "IEA heat pumps report",
+    "translations": {
+      "fr": {
+        "question": "Que fait une « pompe à chaleur » ?",
+        "choices": [
+          "Elle crée du froid en gelant l’eau",
+          "Elle produit de la chaleur en brûlant uniquement du combustible",
+          "Elle déplace la chaleur d’un endroit à un autre, souvent avec de l’électricité",
+          "Elle refroidit uniquement les ordinateurs"
+        ],
+        "explanation": "Elle transfère la chaleur de l’air ou du sol vers un bâtiment, avec moins d’énergie qu’un chauffage direct."
+      },
+      "ar": {
+        "question": "ماذا تفعل «المضخة الحرارية» (Heat pump)؟",
+        "choices": [
+          "تُنتج البرودة بتجميد الماء",
+          "تُنتج الحرارة بحرق الوقود فقط",
+          "تنقل الحرارة من مكان إلى آخر، غالبًا باستخدام الكهرباء",
+          "تبرّد أجهزة الحاسوب فقط"
+        ],
+        "explanation": "تنقل المضخة الحرارة من الهواء أو الأرض إلى المبنى بطاقة أقل من التسخين المباشر."
+      }
+    }
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which technology converts solar energy into heat for power generation using mirrors focusing on a tower?",
+    "choices": [
+      "Solar roofing tiles",
+      "Solar-powered calculators",
+      "Concentrated solar power",
+      "Photovoltaic silicon"
+    ],
+    "correct": 3,
+    "explanation": "Concentrated solar power uses mirrors to focus sunlight and produce steam for turbines.",
+    "reference_text": "NREL concentrating solar power basics",
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie convertit l’énergie solaire en chaleur grâce à des miroirs concentrant la lumière sur une tour ?",
+        "choices": [
+          "Les tuiles solaires",
+          "Les calculatrices solaires",
+          "La centrale solaire à concentration",
+          "Le photovoltaïque au silicium"
+        ],
+        "explanation": "La concentration solaire utilise des miroirs pour produire de la vapeur qui alimente des turbines."
+      },
+      "ar": {
+        "question": "أيّ تقنية تحوّل الطاقة الشمسية إلى حرارة لتوليد الكهرباء، باستخدام مرايا تركّز الضوء على برج؟",
+        "choices": [
+          "بلاط الأسقف الشمسي",
+          "الآلات الحاسبة الشمسية",
+          "الطاقة الشمسية المركّزة",
+          "الخلايا الكهروضوئية السيليكونية"
+        ],
+        "explanation": "تستخدم الطاقة الشمسية المركّزة المرايا لتركيز الضوء وإنتاج بخار يدير التوربينات."
+      }
+    }
+  }
+]

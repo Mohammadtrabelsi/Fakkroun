@@ -1,0 +1,682 @@
+[
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the Earth’s natural layer that protects us from most harmful ultraviolet rays?",
+    "choices": [
+      "Ozone layer",
+      "Ice layer",
+      "Dust layer",
+      "Cloud layer"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la couche naturelle de la Terre qui nous protège de la plupart des rayons ultraviolets nocifs ?",
+        "choices": [
+          "La couche d’ozone",
+          "La couche de glace",
+          "La couche de poussière",
+          "La couche nuageuse"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الطبقة الطبيعية للأرض التي تحمينا من معظم الأشعة فوق البنفسجية الضارة؟",
+        "choices": [
+          "طبقة الأوزون",
+          "طبقة الجليد",
+          "طبقة الغبار",
+          "طبقة الغيوم"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is a common sign of climate change in mountain regions?",
+    "choices": [
+      "More snow every year",
+      "Thicker ice on peaks",
+      "Growing forests at high altitudes",
+      "Glacier retreat"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est un signe courant du changement climatique en montagne ?",
+        "choices": [
+          "Plus de neige chaque année",
+          "L’épaississement de la glace des sommets",
+          "La croissance des forêts en altitude",
+          "Le recul des glaciers"
+        ]
+      },
+      "ar": {
+        "question": "ما العلامة الشائعة لتغير المناخ في المناطق الجبلية؟",
+        "choices": [
+          "ازدياد الثلوج كل عام",
+          "زيادة سماكة الجليد على القمم",
+          "نمو الغابات في المرتفعات",
+          "تراجع الأنهار الجليدية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sector is responsible for the largest share of emissions from transport?",
+    "choices": [
+      "Road vehicles",
+      "Bicycles",
+      "Walking",
+      "Sailboats"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel mode de transport est responsable de la plus grande part des émissions du secteur ?",
+        "choices": [
+          "Les véhicules routiers",
+          "Les vélos",
+          "La marche",
+          "Les voiliers"
+        ]
+      },
+      "ar": {
+        "question": "أيّ وسيلة نقل تتسبب في أكبر حصة من انبعاثات قطاع النقل؟",
+        "choices": [
+          "المركبات البرية",
+          "الدراجات",
+          "المشي",
+          "القوارب الشراعية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main reason for the loss of Arctic sea ice?",
+    "choices": [
+      "More fish",
+      "Rising temperatures",
+      "Strong winds only",
+      "Lower sea level"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la principale raison de la perte de la banquise arctique ?",
+        "choices": [
+          "Davantage de poissons",
+          "La hausse des températures",
+          "Les vents forts uniquement",
+          "La baisse du niveau de la mer"
+        ]
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لفقدان الجليد البحري في القطب الشمالي؟",
+        "choices": [
+          "زيادة الأسماك",
+          "ارتفاع درجات الحرارة",
+          "الرياح القوية وحدها",
+          "انخفاض مستوى البحر"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian initiative promotes low-carbon development and climate planning?",
+    "choices": [
+      "Tourism export plan only",
+      "National Climate Change Strategy",
+      "National Coal Plan",
+      "Military build-up plan"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle initiative tunisienne promeut un développement bas carbone et la planification climatique ?",
+        "choices": [
+          "Le plan d’exportation touristique uniquement",
+          "La stratégie nationale de lutte contre les changements climatiques",
+          "Le plan national charbon",
+          "Le plan de renforcement militaire"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مبادرة تونسية تعزز التنمية منخفضة الكربون والتخطيط المناخي؟",
+        "choices": [
+          "خطة تصدير السياحة فقط",
+          "الاستراتيجية الوطنية لتغير المناخ",
+          "المخطط الوطني للفحم",
+          "خطة التسلح العسكري"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call a long period of unusually cold weather?",
+    "choices": [
+      "Heatwave",
+      "Drought",
+      "Cold spell",
+      "Monsoon"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on une longue période de froid anormal ?",
+        "choices": [
+          "Une vague de chaleur",
+          "La sécheresse",
+          "Une vague de froid",
+          "La mousson"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم فترة طويلة من البرد غير المعتاد؟",
+        "choices": [
+          "موجة حر",
+          "الجفاف",
+          "موجة برد",
+          "الموسم الرياحي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which activity in agriculture can help store carbon in soils?",
+    "choices": [
+      "Burning crop residues",
+      "Using only chemical fertilisers",
+      "Deep ploughing every day",
+      "Adding organic matter and cover crops"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle pratique agricole peut stocker le carbone dans les sols ?",
+        "choices": [
+          "Brûler les résidus de culture",
+          "Utiliser uniquement des engrais chimiques",
+          "Labourer profondément chaque jour",
+          "Apporter de la matière organique et des couverts végétaux"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ممارسة زراعية تساعد على تخزين الكربون في التربة؟",
+        "choices": [
+          "حرق بقايا المحاصيل",
+          "استخدام الأسمدة الكيميائية وحدها",
+          "الحراثة العميقة يوميًا",
+          "إضافة المواد العضوية والمحاصيل الغطائية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the process that describes how warmer air holds more moisture and can produce heavier rainfall?",
+    "choices": [
+      "Snell’s law",
+      "Hooke’s law",
+      "Doppler effect",
+      "Clausius–Clapeyron relation"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la relation qui explique qu’un air plus chaud retient plus d’humidité et peut produire des pluies plus fortes ?",
+        "choices": [
+          "La loi de Snell",
+          "La loi de Hooke",
+          "L’effet Doppler",
+          "La relation de Clausius–Clapeyron"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم العلاقة التي تفسر أن الهواء الأدفأ يحتفظ ببخار ماء أكبر ويمكن أن ينتج أمطارًا أغزر؟",
+        "choices": [
+          "قانون سنل",
+          "قانون هوك",
+          "تأثير دوبلر",
+          "علاقة كلوزيوس–كلابيرون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is a clean energy technology that does not need fuel to run?",
+    "choices": [
+      "Coal plant",
+      "Diesel generator",
+      "Solar panels",
+      "Gas turbine"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie d’énergie propre ne nécessite pas de carburant ?",
+        "choices": [
+          "La centrale à charbon",
+          "Le groupe électrogène diesel",
+          "Les panneaux solaires",
+          "La turbine à gaz"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية طاقة نظيفة لا تحتاج إلى وقود للتشغيل؟",
+        "choices": [
+          "محطة الفحم",
+          "مولد الديزل",
+          "الألواح الشمسية",
+          "توربين الغاز"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural phenomenon is linked to warm sea water and can intensify storms?",
+    "choices": [
+      "Meteor showers",
+      "Solar eclipses",
+      "Hurricanes",
+      "Snowstorms"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel phénomène naturel est lié aux eaux chaudes et peut intensifier les tempêtes ?",
+        "choices": [
+          "Les pluies de météores",
+          "Les éclipses solaires",
+          "Les ouragans",
+          "Les tempêtes de neige"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ظاهرة طبيعية ترتبط بمياه البحر الدافئة وقد تزيد من شدة العواصف؟",
+        "choices": [
+          "زخات الشهب",
+          "كسوف الشمس",
+          "الأعاصير",
+          "العواصف الثلجية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which carbon accounting term refers to emissions that occur along the entire supply chain of a company?",
+    "choices": [
+      "Wind emissions",
+      "Scope 0 emissions",
+      "Mass emissions",
+      "Scope 3 emissions"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel terme de comptabilité carbone désigne les émissions tout au long de la chaîne d’approvisionnement d’une entreprise ?",
+        "choices": [
+          "Les émissions du vent",
+          "Les émissions de périmètre 0",
+          "Les émissions de masse",
+          "Les émissions de périmètre 3"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح المحاسبي للكربون الذي يشير إلى الانبعاثات عبر سلسلة التوريد بأكملها للشركة؟",
+        "choices": [
+          "انبعاثات الرياح",
+          "الانبعاثات النطاق صفر",
+          "انبعاثات الكتلة",
+          "الانبعاثات النطاق 3"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item is most likely to contain greenhouse gases in its foam?",
+    "choices": [
+      "Wooden spoons",
+      "Some insulation foams",
+      "Cotton shirts",
+      "Glass cups"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel objet courant peut contenir des gaz à effet de serre dans sa mousse ?",
+        "choices": [
+          "Les cuillères en bois",
+          "Certaines mousses isolantes",
+          "Les chemises en coton",
+          "Les verres en verre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شيء شائع قد يحتوي غازات دفيئة في رغوته؟",
+        "choices": [
+          "الملاعق الخشبية",
+          "بعض رغاوي العزل",
+          "القمصان القطنية",
+          "أكواب الزجاج"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the global agreement that was adopted in Kyoto in 1997?",
+    "choices": [
+      "Paris Agreement",
+      "Basel Convention",
+      "Kyoto Protocol",
+      "Montreal Protocol"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’accord mondial adopté à Kyoto en 1997 ?",
+        "choices": [
+          "L’accord de Paris",
+          "La convention de Bâle",
+          "Le protocole de Kyoto",
+          "Le protocole de Montréal"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الاتفاق العالمي الذي اعتُمد في كيوتو عام 1997؟",
+        "choices": [
+          "اتفاق باريس",
+          "اتفاقية بازل",
+          "بروتوكول كيوتو",
+          "بروتوكول مونتريال"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “the carbon price” in climate policy?",
+    "choices": [
+      "A subsidy for airports",
+      "A cost placed on each tonne of carbon emitted",
+      "A discount on oil",
+      "A fixed price for coal"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que « le prix du carbone » dans les politiques climatiques ?",
+        "choices": [
+          "Une subvention aux aéroports",
+          "Un coût attaché à chaque tonne de carbone émise",
+          "Une remise sur le pétrole",
+          "Un prix fixe du charbon"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«سعر الكربون» في السياسات المناخية؟",
+        "choices": [
+          "دعم للمطارات",
+          "تكلفة تُفرض على كل طن من الكربون المنبعث",
+          "تخفيض على النفط",
+          "سعر ثابت للفحم"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is an important indicator of climate change in polar regions?",
+    "choices": [
+      "Monkey",
+      "Polar bear",
+      "Camel",
+      "Kangaroo"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal est un bon indicateur du changement climatique dans les régions polaires ?",
+        "choices": [
+          "Le singe",
+          "L’ours polaire",
+          "Le chameau",
+          "Le kangourou"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يُعد مؤشرًا مهمًا لتغير المناخ في المناطق القطبية؟",
+        "choices": [
+          "القرد",
+          "الدب القطبي",
+          "الجمل",
+          "الكنغر"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which measure can help to reduce urban heat in summer?",
+    "choices": [
+      "White or reflective roofs",
+      "Removing green spaces",
+      "Closing all parks",
+      "Black asphalt everywhere"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure peut réduire la chaleur urbaine en été ?",
+        "choices": [
+          "Les toits blancs ou réfléchissants",
+          "La suppression des espaces verts",
+          "La fermeture de tous les parcs",
+          "L’asphalte noir partout"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يمكن أن يخفف حرارة المدن في الصيف؟",
+        "choices": [
+          "الأسطح البيضاء أو العاكسة",
+          "إزالة المساحات الخضراء",
+          "إغلاق كل الحدائق",
+          "الأسفلت الأسود في كل مكان"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for a scenario that describes possible future greenhouse gas pathways?",
+    "choices": [
+      "Random Coastal Plan",
+      "Regional Crop Program",
+      "Representative Concentration Pathway (RCP)",
+      "Rural Cooling Policy"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un scénario décrivant des trajectoires possibles des gaz à effet de serre ?",
+        "choices": [
+          "Le plan côtier aléatoire",
+          "Le programme régional des cultures",
+          "Les trajectoires de concentration représentatives (RCP)",
+          "La politique de refroidissement rural"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم السيناريو الذي يصف مسارات محتملة لتركيزات غازات الاحتباس الحراري مستقبلًا؟",
+        "choices": [
+          "خطة الساحل العشوائية",
+          "برنامج المحاصيل الإقليمي",
+          "مسارات التركيز التمثيلية (RCP)",
+          "سياسة التبريد الريفي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action reduces heat trapped in homes during summer?",
+    "choices": [
+      "Using ovens all day",
+      "Heating the house in summer",
+      "Using shade and natural ventilation",
+      "Closing all windows in the daytime"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne réduit la chaleur piégée dans les maisons l’été ?",
+        "choices": [
+          "Utiliser le four toute la journée",
+          "Chauffer la maison en été",
+          "Utiliser l’ombre et la ventilation naturelle",
+          "Fermer toutes les fenêtres en journée"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يقلل الحرارة المحتبسة داخل المنزل في الصيف؟",
+        "choices": [
+          "استخدام الفرن طوال النهار",
+          "تدفئة المنزل في الصيف",
+          "استخدام الظل والتهوية الطبيعية",
+          "إغلاق كل النوافذ نهارًا"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which gas makes up most of the greenhouse effect of water vapour in the atmosphere?",
+    "choices": [
+      "Helium",
+      "Water vapour",
+      "Argon",
+      "Neon"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz constitue l’essentiel de l’effet de serre naturel dans l’atmosphère ?",
+        "choices": [
+          "L’hélium",
+          "La vapeur d’eau",
+          "L’argon",
+          "Le néon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز يشكّل الجزء الأكبر من تأثير الاحتباس الحراري الطبيعي في الغلاف الجوي؟",
+        "choices": [
+          "الهيليوم",
+          "بخار الماء",
+          "الأرغون",
+          "النيون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which network monitors atmospheric carbon dioxide levels at the Mauna Loa observatory since 1958?",
+    "choices": [
+      "Doppler radar network",
+      "Keeling Curve measurements",
+      "Solar observatory",
+      "Seismic network"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel relevé suit les concentrations atmosphériques de CO₂ à l’observatoire de Mauna Loa depuis 1958 ?",
+        "choices": [
+          "Le réseau de radars Doppler",
+          "La courbe de Keeling",
+          "L’observatoire solaire",
+          "Le réseau sismique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سلسلة قياسات تتابع تركيز ثاني أكسيد الكربون في الجو من مرصد ماونا لوا منذ عام 1958؟",
+        "choices": [
+          "شبكة رادار دوبلر",
+          "منحنى كيلنغ",
+          "المرصد الشمسي",
+          "الشبكة الزلزالية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  }
+]

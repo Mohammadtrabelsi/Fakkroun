@@ -1,0 +1,716 @@
+[
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the fishing practice that uses a long line with many hooks?",
+    "choices": [
+      "Purse seining",
+      "Longlining",
+      "Spearfishing",
+      "Trawling"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la pêche qui utilise une longue ligne munie de nombreux hameçons ?",
+        "choices": [
+          "La senne tournante",
+          "La palangre",
+          "La pêche sous-marine",
+          "Le chalutage"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم طريقة الصيد التي تستخدم خطًا طويلًا مزودًا بعدد كبير من الخطاطيف؟",
+        "choices": [
+          "الصيد بالشبكة الدائرية",
+          "الصيد بالخيط الطويل (اللونغ لاين)",
+          "الصيد بالرمح",
+          "الجرف بالشباك"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a harbour used for in the blue economy?",
+    "choices": [
+      "Generating solar power",
+      "Growing crops",
+      "Mining minerals",
+      "Loading, unloading and servicing ships"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert un port dans l’économie bleue ?",
+        "choices": [
+          "Produire de l’énergie solaire",
+          "Cultiver des champs",
+          "Extraire des minéraux",
+          "Charger, décharger et entretenir les navires"
+        ]
+      },
+      "ar": {
+        "question": "ما وظيفة الميناء في الاقتصاد الأزرق؟",
+        "choices": [
+          "توليد الطاقة الشمسية",
+          "زراعة المحاصيل",
+          "استخراج المعادن",
+          "تحميل السفن وتفريغها وصيانتها"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea is famous for its marine biodiversity and borders Tunisia to the north?",
+    "choices": [
+      "Red Sea",
+      "Dead Sea",
+      "Caspian Sea",
+      "Mediterranean Sea"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle mer, riche en biodiversité, borde la Tunisie au nord ?",
+        "choices": [
+          "La mer Rouge",
+          "La mer Morte",
+          "La mer Caspienne",
+          "La mer Méditerranée"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بحر يتميز بتنوعه البيولوجي ويطل على تونس من الشمال؟",
+        "choices": [
+          "البحر الأحمر",
+          "البحر الميت",
+          "بحر قزوين",
+          "البحر الأبيض المتوسط"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “ocean tourism” in the blue economy?",
+    "choices": [
+      "Visiting coastal and marine areas for leisure while protecting them",
+      "Building ships out of coral",
+      "Mining the seabed for metals",
+      "Ban on all sea trips"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « tourisme océanique » dans l’économie bleue ?",
+        "choices": [
+          "Visiter les zones côtières et marines pour les loisirs en les protégeant",
+          "Construire des navires en corail",
+          "Extraire des métaux du fond marin",
+          "Interdire toute sortie en mer"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«السياحة البحرية» في الاقتصاد الأزرق؟",
+        "choices": [
+          "زيارة المناطق الساحلية والبحرية للترفيه مع حمايتها",
+          "بناء السفن من المرجان",
+          "التنقيب عن المعادن في قاع البحر",
+          "حظر الرحلات البحرية كلها"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which energy source uses the movement of ocean waves to generate electricity?",
+    "choices": [
+      "Coal",
+      "Biomass",
+      "Geothermal",
+      "Wave energy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie utilise le mouvement des vagues pour produire de l’électricité ?",
+        "choices": [
+          "Le charbon",
+          "La biomasse",
+          "La géothermie",
+          "L’énergie des vagues"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر طاقة يستخدم حركة أمواج البحر لتوليد الكهرباء؟",
+        "choices": [
+          "الفحم",
+          "الكتلة الحيوية",
+          "الطاقة الحرارية الأرضية",
+          "طاقة الأمواج"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is “marine aquaculture” most commonly used to produce?",
+    "choices": [
+      "Fish and shellfish",
+      "Plastic",
+      "Oil",
+      "Glass"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que produit le plus souvent l’aquaculture marine ?",
+        "choices": [
+          "Des poissons et des coquillages",
+          "Du plastique",
+          "Du pétrole",
+          "Du verre"
+        ]
+      },
+      "ar": {
+        "question": "ما المنتج الأكثر شيوعًا من تربية الأحياء المائية البحرية؟",
+        "choices": [
+          "الأسماك والمحاريات",
+          "البلاستيك",
+          "النفط",
+          "الزجاج"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which international agreement aims to conserve and sustainably use marine biodiversity beyond national jurisdiction?",
+    "choices": [
+      "Basel Convention",
+      "Ramsar Convention",
+      "Kyoto Protocol",
+      "BBNJ (High Seas Treaty)"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel accord international vise à conserver et utiliser durablement la biodiversité marine au-delà des juridictions nationales ?",
+        "choices": [
+          "La convention de Bâle",
+          "La convention de Ramsar",
+          "Le protocole de Kyoto",
+          "Le traité BBNJ (haute mer)"
+        ]
+      },
+      "ar": {
+        "question": "أيّ اتفاق دولي يهدف إلى حفظ التنوع البيولوجي البحري في المناطق خارج الولاية الوطنية واستخدامه بشكل مستدام؟",
+        "choices": [
+          "اتفاقية بازل",
+          "اتفاقية رامسار",
+          "بروتوكول كيوتو",
+          "اتفاقية أعالي البحار (BBNJ)"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “blue flag” beach?",
+    "choices": [
+      "A beach reserved for private owners",
+      "A beach covered in algae",
+      "A beach that meets high standards of water quality and environment",
+      "A beach where swimming is banned"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une plage « Pavillon bleu » ?",
+        "choices": [
+          "Une plage réservée à des propriétaires privés",
+          "Une plage couverte d’algues",
+          "Une plage qui respecte des critères élevés de qualité de l’eau et d’environnement",
+          "Une plage où la baignade est interdite"
+        ]
+      },
+      "ar": {
+        "question": "ما هو الشاطئ الحاصل على «العلم الأزرق»؟",
+        "choices": [
+          "شاطئ مخصص لملاك خاصين",
+          "شاطئ مغطى بالطحالب",
+          "شاطئ يستوفي معايير عالية لجودة المياه والبيئة",
+          "شاطئ يُمنع فيه السباحة"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which kind of vessel is used to transport goods across the sea in large quantities?",
+    "choices": [
+      "Tram",
+      "Cargo ship",
+      "Helicopter",
+      "Bicycle"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel type de navire sert à transporter de grandes quantités de marchandises par mer ?",
+        "choices": [
+          "Le tramway",
+          "Le navire de charge",
+          "L’hélicoptère",
+          "La bicyclette"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من السفن يُستخدم لنقل البضائع الكبيرة عبر البحر؟",
+        "choices": [
+          "الترام",
+          "سفينة الشحن",
+          "المروحية",
+          "الدراجة"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “bluefin tuna” management mainly about?",
+    "choices": [
+      "Exporting tuna to space",
+      "Limiting catches to prevent stock collapse",
+      "Banning all tuna farming forever",
+      "Breeding tuna in deserts"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Sur quoi porte surtout la gestion du thon rouge ?",
+        "choices": [
+          "Exporter du thon dans l’espace",
+          "Limiter les captures pour éviter l’effondrement du stock",
+          "Interdire à jamais l’élevage du thon",
+          "Élever du thon dans les déserts"
+        ]
+      },
+      "ar": {
+        "question": "على ماذا تركز إدارة صيد التونة الزرقاء بشكل أساسي؟",
+        "choices": [
+          "تصدير التونة إلى الفضاء",
+          "تحديد الصيد لمنع انهيار المخزون",
+          "حظر تربية التونة إلى الأبد",
+          "تربية التونة في الصحراء"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which marine resource is harvested for food, cosmetics and biofuel from algae?",
+    "choices": [
+      "Limestone",
+      "Seaweed",
+      "Iron ore",
+      "Coal"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource marine est récoltée pour l’alimentation, les cosmétiques et les biocarburants à partir d’algues ?",
+        "choices": [
+          "Le calcaire",
+          "Les algues marines",
+          "Le minerai de fer",
+          "Le charbon"
+        ]
+      },
+      "ar": {
+        "question": "ما المورد البحري الذي يُحصد من الطحالب للغذاء ومستحضرات التجميل والوقود الحيوي؟",
+        "choices": [
+          "الحجر الجيري",
+          "الطحالب البحرية",
+          "خام الحديد",
+          "الفحم"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main reason coastal communities depend on the sea?",
+    "choices": [
+      "Producing glass",
+      "Mining desert sand",
+      "Growing wheat",
+      "Fishing and tourism"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Pourquoi les communautés côtières dépendent-elles surtout de la mer ?",
+        "choices": [
+          "La fabrication du verre",
+          "L’extraction du sable du désert",
+          "La culture du blé",
+          "La pêche et le tourisme"
+        ]
+      },
+      "ar": {
+        "question": "لماذا تعتمد المجتمعات الساحلية على البحر بشكل كبير؟",
+        "choices": [
+          "صناعة الزجاج",
+          "استخراج رمال الصحراء",
+          "زراعة القمح",
+          "الصيد والسياحة"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian port city is a major centre for fishing and seafood trade?",
+    "choices": [
+      "Tataouine",
+      "Tozeur",
+      "Kairouan",
+      "Sfax"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville portuaire tunisienne est un grand centre de pêche et de commerce des produits de la mer ?",
+        "choices": [
+          "Tataouine",
+          "Tozeur",
+          "Kairouan",
+          "Sfax"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة مينائية تونسية تُعد مركزًا كبيرًا للصيد وتجارة المأكولات البحرية؟",
+        "choices": [
+          "تطاوين",
+          "توزر",
+          "القيروان",
+          "صفاقس"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “bioprospecting” in the sea mean?",
+    "choices": [
+      "Building artificial reefs",
+      "Drilling for oil at sea",
+      "Searching marine organisms for useful compounds",
+      "Counting fish in nets"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifie la « bioprospection » en mer ?",
+        "choices": [
+          "Construire des récifs artificiels",
+          "Forer pour extraire du pétrole en mer",
+          "Rechercher des composés utiles chez les organismes marins",
+          "Compter les poissons dans les filets"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الاستكشاف الحيوي» (Bioprospecting) في البحر؟",
+        "choices": [
+          "بناء الشعاب الاصطناعية",
+          "الحفر بحثًا عن النفط في البحر",
+          "البحث عن مركبات مفيدة لدى الكائنات البحرية",
+          "عدّ الأسماك في الشباك"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is a symbol of coastal wetlands and a bird that wades in shallow water?",
+    "choices": [
+      "Eagle",
+      "Owl",
+      "Penguin",
+      "Flamingo"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel oiseau, symbole des zones humides côtières, marche dans les eaux peu profondes ?",
+        "choices": [
+          "L’aigle",
+          "La chouette",
+          "Le manchot",
+          "Le flamant rose"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طائر يُعد رمزًا للأراضي الرطبة الساحلية ويخوض في المياه الضحلة؟",
+        "choices": [
+          "النسر",
+          "البومة",
+          "البطريق",
+          "طائر النحام (الفلامنغو)"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is a “marine spatial planning” approach?",
+    "choices": [
+      "Organising the use of sea space among different activities",
+      "Naming ocean currents",
+      "Designing ships",
+      "Measuring the depth of trenches"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’approche de « planification spatiale marine » ?",
+        "choices": [
+          "Organiser l’usage de l’espace marin entre différentes activités",
+          "Nommer les courants océaniques",
+          "Concevoir des navires",
+          "Mesurer la profondeur des fosses"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بنهج «التخطيط المكاني البحري»؟",
+        "choices": [
+          "تنظيم استخدام المساحة البحرية بين الأنشطة المختلفة",
+          "تسمية التيارات البحرية",
+          "تصميم السفن",
+          "قياس عمق الخنادق"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which resource is extracted from the seabed as “polymetallic nodules”?",
+    "choices": [
+      "Oxygen",
+      "Fresh water",
+      "Metals such as manganese and nickel",
+      "Sand for beaches"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource est extraite du fond marin sous forme de « nodules polymétalliques » ?",
+        "choices": [
+          "De l’oxygène",
+          "De l’eau douce",
+          "Des métaux comme le manganèse et le nickel",
+          "Du sable pour les plages"
+        ]
+      },
+      "ar": {
+        "question": "ما المورد الذي يُستخرج من قاع البحر على شكل «عُقيدات متعددة المعادن»؟",
+        "choices": [
+          "الأكسجين",
+          "مياه عذبة",
+          "معادن كالمنغنيز والنيكل",
+          "رمال للشواطئ"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a “lighthouse” used for at sea?",
+    "choices": [
+      "Storing oil",
+      "Producing salt",
+      "Growing fish",
+      "Guiding ships safely"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert un phare en mer ?",
+        "choices": [
+          "Stocker du pétrole",
+          "Produire du sel",
+          "Élever des poissons",
+          "Guider les navires en toute sécurité"
+        ]
+      },
+      "ar": {
+        "question": "ما وظيفة المنارة في البحر؟",
+        "choices": [
+          "تخزين النفط",
+          "إنتاج الملح",
+          "تربية الأسماك",
+          "إرشاد السفن بأمان"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a common by-product of salt production from seawater?",
+    "choices": [
+      "Diesel",
+      "Glass",
+      "Brine",
+      "Gold"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est un sous-produit courant de la production de sel à partir de l’eau de mer ?",
+        "choices": [
+          "Le gazole",
+          "Le verre",
+          "La saumure",
+          "L’or"
+        ]
+      },
+      "ar": {
+        "question": "ما المنتج الثانوي الشائع لإنتاج الملح من ماء البحر؟",
+        "choices": [
+          "الديزل",
+          "الزجاج",
+          "المحلول الملحي المركز (الشَّلِيخ)",
+          "الذهب"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian sea-based activity is linked to the salt marshes and salt pans of the south?",
+    "choices": [
+      "Gold mining",
+      "Diamond mining",
+      "Oil drilling in deserts",
+      "Salt production"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle activité maritime tunisienne est liée aux sebkhas et marais salants du sud ?",
+        "choices": [
+          "L’extraction d’or",
+          "L’extraction de diamants",
+          "Le forage pétrolier dans les déserts",
+          "La production de sel"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نشاط بحري تونسي مرتبط بالسبخات ومصانع الملح في الجنوب؟",
+        "choices": [
+          "استخراج الذهب",
+          "استخراج الماس",
+          "التنقيب عن النفط في الصحراء",
+          "إنتاج الملح"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  },
+  {
+    "category": "blue-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main advantage of recirculating aquaculture systems?",
+    "choices": [
+      "They need no fish feed",
+      "They require no electricity",
+      "They produce more plastic",
+      "They reuse water and reduce pollution"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal avantage des systèmes d’aquaculture en circuit fermé ?",
+        "choices": [
+          "Ils n’ont besoin d’aucun aliment pour poissons",
+          "Ils n’ont besoin d’aucune électricité",
+          "Ils produisent davantage de plastique",
+          "Ils réutilisent l’eau et réduisent la pollution"
+        ]
+      },
+      "ar": {
+        "question": "ما الميزة الرئيسية لأنظمة تربية الأحياء المائية المغلقة (RAS)؟",
+        "choices": [
+          "عدم الحاجة إلى علف للأسماك",
+          "عدم الحاجة إلى الكهرباء",
+          "إنتاج مزيد من البلاستيك",
+          "إعادة استخدام المياه وتقليل التلوث"
+        ]
+      }
+    },
+    "reference_text": "FAO, The State of World Fisheries and Aquaculture"
+  }
+]

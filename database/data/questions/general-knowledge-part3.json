@@ -1,0 +1,629 @@
+[
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many sides does a triangle have?",
+    "choices": [
+      "Five",
+      "Four",
+      "Three",
+      "Six"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Combien de côtés possède un triangle ?",
+        "choices": [
+          "Cinq",
+          "Quatre",
+          "Trois",
+          "Six"
+        ]
+      },
+      "ar": {
+        "question": "كم ضلعًا للمثلث؟",
+        "choices": [
+          "خمسة",
+          "أربعة",
+          "ثلاثة",
+          "ستة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which metal is used to make the core of most electrical wires?",
+    "choices": [
+      "Silver",
+      "Gold",
+      "Iron",
+      "Copper"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel métal est utilisé pour l’âme de la plupart des fils électriques ?",
+        "choices": [
+          "L’argent",
+          "L’or",
+          "Le fer",
+          "Le cuivre"
+        ]
+      },
+      "ar": {
+        "question": "ما الفلز المستخدم في معظم أسلاك الكهرباء؟",
+        "choices": [
+          "الفضة",
+          "الذهب",
+          "الحديد",
+          "النحاس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many hours are there in one day?",
+    "choices": [
+      "36",
+      "12",
+      "24",
+      "48"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Combien d’heures compte une journée ?",
+        "choices": [
+          "36",
+          "12",
+          "24",
+          "48"
+        ]
+      },
+      "ar": {
+        "question": "كم ساعة في اليوم الواحد؟",
+        "choices": [
+          "36",
+          "12",
+          "24",
+          "48"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal is known as the king of the jungle?",
+    "choices": [
+      "Lion",
+      "Gorilla",
+      "Tiger",
+      "Elephant"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal est appelé le roi de la jungle ?",
+        "choices": [
+          "Le lion",
+          "Le gorille",
+          "Le tigre",
+          "L’éléphant"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يُلقّب بملك الغابة؟",
+        "choices": [
+          "الأسد",
+          "الغوريلا",
+          "النمر",
+          "الفيل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the currency of the United Kingdom?",
+    "choices": [
+      "Dollar",
+      "Yen",
+      "Euro",
+      "Pound sterling"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la monnaie du Royaume-Uni ?",
+        "choices": [
+          "Le dollar",
+          "Le yen",
+          "L’euro",
+          "La livre sterling"
+        ]
+      },
+      "ar": {
+        "question": "ما عملة المملكة المتحدة؟",
+        "choices": [
+          "الدولار",
+          "الين",
+          "اليورو",
+          "الجنيه الإسترليني"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which colour do you get by mixing red and white?",
+    "choices": [
+      "Brown",
+      "Pink",
+      "Green",
+      "Purple"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle couleur obtient-on en mélangeant du rouge et du blanc ?",
+        "choices": [
+          "Le marron",
+          "Le rose",
+          "Le vert",
+          "Le violet"
+        ]
+      },
+      "ar": {
+        "question": "ما اللون الناتج عن خلط الأحمر والأبيض؟",
+        "choices": [
+          "البني",
+          "الوردي",
+          "الأخضر",
+          "البنفسجي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest organ of the human body?",
+    "choices": [
+      "Skin",
+      "Liver",
+      "Brain",
+      "Heart"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand organe du corps humain ?",
+        "choices": [
+          "La peau",
+          "Le foie",
+          "Le cerveau",
+          "Le cœur"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر عضو في جسم الإنسان؟",
+        "choices": [
+          "الجلد",
+          "الكبد",
+          "الدماغ",
+          "القلب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which language is spoken by the most people in South America?",
+    "choices": [
+      "English",
+      "French",
+      "Portuguese",
+      "Spanish"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle langue est parlée par le plus grand nombre de personnes en Amérique du Sud ?",
+        "choices": [
+          "L’anglais",
+          "Le français",
+          "Le portugais",
+          "L’espagnol"
+        ]
+      },
+      "ar": {
+        "question": "ما اللغة الأكثر تحدثًا في أمريكا الجنوبية؟",
+        "choices": [
+          "الإنجليزية",
+          "الفرنسية",
+          "البرتغالية",
+          "الإسبانية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who wrote the Arabic epic “The Thousand and One Nights” as a collection of stories?",
+    "choices": [
+      "Anonymous compilers",
+      "Ibn Sina",
+      "Al-Khwarizmi",
+      "Ibn Rushd"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qui a réuni le recueil de contes arabes « Les Mille et Une Nuits » ?",
+        "choices": [
+          "Des compilateurs anonymes",
+          "Ibn Sina",
+          "Al-Khwarizmi",
+          "Ibn Rushd"
+        ]
+      },
+      "ar": {
+        "question": "من جمع حكايات «ألف ليلة وليلة» ككتاب؟",
+        "choices": [
+          "جامعون مجهولون",
+          "ابن سينا",
+          "الخوارزمي",
+          "ابن رشد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest organ of the solar system by volume?",
+    "choices": [
+      "Jupiter",
+      "Sun",
+      "Earth",
+      "Saturn"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand corps du Système solaire par son volume ?",
+        "choices": [
+          "Jupiter",
+          "Le Soleil",
+          "La Terre",
+          "Saturne"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر جرم في المجموعة الشمسية من حيث الحجم؟",
+        "choices": [
+          "المشتري",
+          "الشمس",
+          "الأرض",
+          "زحل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the opposite of “hot”?",
+    "choices": [
+      "Dry",
+      "Cold",
+      "Warm",
+      "Wet"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le contraire de « chaud » ?",
+        "choices": [
+          "Sec",
+          "Froid",
+          "Tiède",
+          "Mouillé"
+        ]
+      },
+      "ar": {
+        "question": "ما عكس كلمة «حار»؟",
+        "choices": [
+          "جاف",
+          "بارد",
+          "دافئ",
+          "مبلل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country has the largest population in the world?",
+    "choices": [
+      "China",
+      "Indonesia",
+      "India",
+      "United States"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays compte la plus grande population du monde ?",
+        "choices": [
+          "La Chine",
+          "L’Indonésie",
+          "L’Inde",
+          "Les États-Unis"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة لديها أكبر عدد من السكان في العالم؟",
+        "choices": [
+          "الصين",
+          "إندونيسيا",
+          "الهند",
+          "الولايات المتحدة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous scientist developed the theory of evolution by natural selection?",
+    "choices": [
+      "Gregor Mendel",
+      "Louis Pasteur",
+      "Isaac Newton",
+      "Charles Darwin"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel savant célèbre a développé la théorie de l’évolution par sélection naturelle ?",
+        "choices": [
+          "Gregor Mendel",
+          "Louis Pasteur",
+          "Isaac Newton",
+          "Charles Darwin"
+        ]
+      },
+      "ar": {
+        "question": "من طوّر نظرية التطور بالانتخاب الطبيعي؟",
+        "choices": [
+          "غريغور مندل",
+          "لويس باستور",
+          "إسحاق نيوتن",
+          "تشارلز داروين"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which festival marks the end of Ramadan in Muslim communities?",
+    "choices": [
+      "Eid al-Adha",
+      "Mawlid",
+      "Eid al-Fitr",
+      "Ashura"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle fête marque la fin du ramadan dans les communautés musulmanes ?",
+        "choices": [
+          "L’Aïd el-Adha",
+          "Le Mawlid",
+          "L’Aïd el-Fitr",
+          "L’Achoura"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عيد يحتفل به المسلمون بعد انتهاء شهر رمضان؟",
+        "choices": [
+          "عيد الأضحى",
+          "المولد النبوي",
+          "عيد الفطر",
+          "عاشوراء"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the smallest bone in the human body?",
+    "choices": [
+      "Stapes",
+      "Radius",
+      "Femur",
+      "Clavicle"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus petit os du corps humain ?",
+        "choices": [
+          "L’étrier",
+          "Le radius",
+          "Le fémur",
+          "La clavicule"
+        ]
+      },
+      "ar": {
+        "question": "ما أصغر عظمة في جسم الإنسان؟",
+        "choices": [
+          "الركاب",
+          "الكعبرة",
+          "عظم الفخذ",
+          "عظمة الترقوة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the main language of Brazil?",
+    "choices": [
+      "Spanish",
+      "Portuguese",
+      "English",
+      "French"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la langue principale du Brésil ?",
+        "choices": [
+          "L’espagnol",
+          "Le portugais",
+          "L’anglais",
+          "Le français"
+        ]
+      },
+      "ar": {
+        "question": "ما اللغة الرسمية الرئيسية في البرازيل؟",
+        "choices": [
+          "الإسبانية",
+          "البرتغالية",
+          "الإنجليزية",
+          "الفرنسية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which famous painting shows a woman with a pearl earring by Johannes Vermeer?",
+    "choices": [
+      "The Milkmaid",
+      "The Anniversary",
+      "The Night Watch",
+      "Girl with a Pearl Earring"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel tableau célèbre de Johannes Vermeer représente une jeune femme avec une perle à l’oreille ?",
+        "choices": [
+          "La Laitière",
+          "L’Anniversaire",
+          "La Ronde de nuit",
+          "La Jeune Fille à la perle"
+        ]
+      },
+      "ar": {
+        "question": "ما اللوحة الشهيرة لفيرمير التي تُظهر فتاة بقرط لؤلؤة؟",
+        "choices": [
+          "بائعة الحليب",
+          "الذكرى السنوية",
+          "حراسة الليل",
+          "الفتاة ذات القرط اللؤلؤي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which continent is the Nile River mostly located?",
+    "choices": [
+      "Asia",
+      "Europe",
+      "South America",
+      "Africa"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Sur quel continent se trouve principalement le Nil ?",
+        "choices": [
+          "L’Asie",
+          "L’Europe",
+          "L’Amérique du Sud",
+          "L’Afrique"
+        ]
+      },
+      "ar": {
+        "question": "في أي قارة يقع معظم نهر النيل؟",
+        "choices": [
+          "آسيا",
+          "أوروبا",
+          "أمريكا الجنوبية",
+          "إفريقيا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "general-knowledge",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which mineral is the main ingredient of pearls?",
+    "choices": [
+      "Silicon dioxide",
+      "Calcium carbonate",
+      "Sodium chloride",
+      "Iron oxide"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel minéral est l’ingrédient principal des perles ?",
+        "choices": [
+          "Le dioxyde de silicium",
+          "Le carbonate de calcium",
+          "Le chlorure de sodium",
+          "L’oxyde de fer"
+        ]
+      },
+      "ar": {
+        "question": "ما المعدن الرئيسي المكوِّن للؤلؤ؟",
+        "choices": [
+          "ثاني أكسيد السيليكون",
+          "كربونات الكالسيوم",
+          "كلوريد الصوديوم",
+          "أكسيد الحديد"
+        ]
+      }
+    }
+  }
+]

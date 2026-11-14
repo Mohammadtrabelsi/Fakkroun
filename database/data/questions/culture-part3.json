@@ -1,0 +1,728 @@
+[
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is famous for the samurai tradition?",
+    "choices": [
+      "Japan",
+      "Vietnam",
+      "Korea",
+      "China"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est célèbre pour la tradition des samouraïs ?",
+        "choices": [
+          "Le Japon",
+          "Le Viêt Nam",
+          "La Corée",
+          "La Chine"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر بتقاليد الساموراي؟",
+        "choices": [
+          "اليابان",
+          "فيتنام",
+          "كوريا",
+          "الصين"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which famous opera is set in ancient Egypt and was commissioned for the opening of the Suez Canal?",
+    "choices": [
+      "Carmen",
+      "Tosca",
+      "La Traviata",
+      "Aida"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel célèbre opéra se déroule dans l’Égypte ancienne et fut commandé pour l’ouverture du canal de Suez ?",
+        "choices": [
+          "Carmen",
+          "Tosca",
+          "La Traviata",
+          "Aïda"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أوبرا شهيرة تدور أحداثها في مصر القديمة وكُلّف بها بمناسبة افتتاح قناة السويس؟",
+        "choices": [
+          "كارمن",
+          "توسكا",
+          "لا traviata (لا تراڤياتا)",
+          "عايدة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Egyptian singer is known as “Kawkab al-Sharq” (Star of the East)?",
+    "choices": [
+      "Asmahan",
+      "Fairuz",
+      "Warda",
+      "Umm Kulthum"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle chanteuse égyptienne est appelée « l’Astre de l’Orient » ?",
+        "choices": [
+          "Asmahan",
+          "Fayrouz",
+          "Warda",
+          "Oum Kalsoum"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مطربة مصرية تُلقّب بـ«كوكب الشرق»؟",
+        "choices": [
+          "أسمهان",
+          "فيروز",
+          "وردة",
+          "أم كلثوم"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Lebanese singer is nicknamed the “Lady of the Morning”?",
+    "choices": [
+      "Warda",
+      "Umm Kulthum",
+      "Fairuz",
+      "Nancy Ajram"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle chanteuse libanaise est surnommée « la Dame du matin » ?",
+        "choices": [
+          "Warda",
+          "Oum Kalsoum",
+          "Fayrouz",
+          "Nancy Ajram"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مطربة لبنانية تُلقّب بـ«سيدة الصباح»؟",
+        "choices": [
+          "وردة",
+          "أم كلثوم",
+          "فيروز",
+          "نانسي عجرم"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian writer is famous for the poem “The Will to Live” (Iradat al-Hayat)?",
+    "choices": [
+      "Naguib Mahfouz",
+      "Abu al-Qasim al-Shabbi",
+      "Taha Hussein",
+      "Ahmed Shawqi"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel poète tunisien est célèbre pour le poème « La Volonté de vivre » ?",
+        "choices": [
+          "Naguib Mahfouz",
+          "Abou al-Qasim Echebbi",
+          "Taha Hussein",
+          "Ahmed Chawqi"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شاعر تونسي اشتهر بقصيدة «إرادة الحياة»؟",
+        "choices": [
+          "نجيب محفوظ",
+          "أبو القاسم الشابي",
+          "طه حسين",
+          "أحمد شوقي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Chinese festival is celebrated with dragon dances and lanterns, usually in February?",
+    "choices": [
+      "Chinese New Year",
+      "Thanksgiving",
+      "Christmas",
+      "Ramadan"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle fête chinoise est célébrée avec des danses du dragon et des lanternes, généralement en février ?",
+        "choices": [
+          "Le Nouvel An chinois",
+          "Thanksgiving",
+          "Noël",
+          "Le ramadan"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عيد صيني يُحتفل به برقصات التنين والفوانيس، وغالبًا في فبراير؟",
+        "choices": [
+          "رأس السنة الصينية",
+          "عيد الشكر",
+          "عيد الميلاد",
+          "رمضان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Spanish painter is known for the painting “Las Meninas”?",
+    "choices": [
+      "Diego Velázquez",
+      "Pablo Picasso",
+      "Francisco Goya",
+      "El Greco"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel peintre espagnol est connu pour « Les Ménines » ?",
+        "choices": [
+          "Diego Vélasquez",
+          "Pablo Picasso",
+          "Francisco de Goya",
+          "Le Gréco"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رسام إسباني اشتهر بلوحة «الوصيفات» (Las Meninas)؟",
+        "choices": [
+          "دييغو فيلاسكيز",
+          "بابلو بيكاسو",
+          "فرانسيسكو غويا",
+          "إل غريكو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Persian poet wrote the classic “Shahnameh”?",
+    "choices": [
+      "Omar Khayyam",
+      "Ferdowsi",
+      "Rumi",
+      "Hafez"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel poète persan a écrit le « Livre des rois » (Shahnameh) ?",
+        "choices": [
+          "Omar Khayyam",
+          "Ferdowsi",
+          "Rumi",
+          "Hafez"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شاعر فارسي ألّف ملحمة «الشاهنامه»؟",
+        "choices": [
+          "عمر الخيام",
+          "الفردوسي",
+          "جلال الدين الرومي",
+          "حافظ الشيرازي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which famous structure in Paris was designed by Gustave Eiffel?",
+    "choices": [
+      "Arc de Triomphe",
+      "Louvre Pyramid",
+      "Eiffel Tower",
+      "Notre-Dame"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel monument parisien célèbre a été conçu par Gustave Eiffel ?",
+        "choices": [
+          "L’Arc de Triomphe",
+          "La pyramide du Louvre",
+          "La tour Eiffel",
+          "Notre-Dame"
+        ]
+      },
+      "ar": {
+        "question": "أيّ معلم شهير في باريس صممه غوستاف إيفل؟",
+        "choices": [
+          "قوس النصر",
+          "هرم اللوفر",
+          "برج إيفل",
+          "نوتردام"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Brazilian composer wrote the bossa nova song “The Girl from Ipanema”?",
+    "choices": [
+      "Caetano Veloso",
+      "Ary Barroso",
+      "Heitor Villa-Lobos",
+      "Antônio Carlos Jobim"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel compositeur brésilien a écrit la bossa-nova « La Fille d’Ipanema » ?",
+        "choices": [
+          "Caetano Veloso",
+          "Ary Barroso",
+          "Heitor Villa-Lobos",
+          "Antônio Carlos Jobim"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملحن برازيلي كتب أغنية البوسا نوفا «فتاة إيبانيما»؟",
+        "choices": [
+          "كايتانو فيلوزو",
+          "آري بارّوسو",
+          "هيتور فيلا لوبوس",
+          "أنتونيو كارلوس جوبيم"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which musical instrument is the main instrument of Flamenco music?",
+    "choices": [
+      "Drum",
+      "Trumpet",
+      "Harp",
+      "Guitar"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel instrument est principal dans la musique flamenco ?",
+        "choices": [
+          "Le tambour",
+          "La trompette",
+          "La harpe",
+          "La guitare"
+        ]
+      },
+      "ar": {
+        "question": "ما الآلة الرئيسية في موسيقى الفلامنكو؟",
+        "choices": [
+          "الطبلة",
+          "البوق",
+          "القيثارة",
+          "الغيتار"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian musical tradition is associated with the Maloof music of Andalusian origin?",
+    "choices": [
+      "Raï",
+      "Gnawa",
+      "Tarab",
+      "Malouf"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle tradition musicale tunisienne d’origine andalouse est associée au malouf ?",
+        "choices": [
+          "Le raï",
+          "La gnaouaa",
+          "Le tarab",
+          "Le malouf"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تراث موسيقي تونسي ذي أصل أندلسي يُعرف بالمالوف؟",
+        "choices": [
+          "الراي",
+          "الكناوة",
+          "الطرب",
+          "المالوف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous English playwright wrote “Hamlet”?",
+    "choices": [
+      "George Bernard Shaw",
+      "William Shakespeare",
+      "Christopher Marlowe",
+      "Oscar Wilde"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel dramaturge anglais célèbre a écrit « Hamlet » ?",
+        "choices": [
+          "George Bernard Shaw",
+          "William Shakespeare",
+          "Christopher Marlowe",
+          "Oscar Wilde"
+        ]
+      },
+      "ar": {
+        "question": "من كتب مسرحية «هاملت»؟",
+        "choices": [
+          "جورج برنارد شو",
+          "وليام شكسبير",
+          "كريستوفر مارلو",
+          "أوسكار وايلد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which festival is famous for the running of the bulls in Pamplona?",
+    "choices": [
+      "Oktoberfest",
+      "San Fermín",
+      "Diwali",
+      "Carnival of Venice"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle fête est célèbre pour l’encierro (course des taureaux) à Pampelune ?",
+        "choices": [
+          "L’Oktoberfest",
+          "San Fermín",
+          "Diwali",
+          "Le carnaval de Venise"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مهرجان يشتهر بسباق الثيران في بامبلونا؟",
+        "choices": [
+          "أوكتوبرفست",
+          "سان فيرمين",
+          "ديوالي",
+          "كرنفال البندقية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Japanese art form is a form of theatre using masks and traditional music, dating back centuries?",
+    "choices": [
+      "Tea ceremony",
+      "Noh theatre",
+      "Haiku poetry",
+      "Kabuki dance"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle forme d’art japonais est un théâtre traditionnel avec masques et musique, remontant à plusieurs siècles ?",
+        "choices": [
+          "La cérémonie du thé",
+          "Le théâtre nô",
+          "La poésie haïku",
+          "La danse kabuki"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فن ياباني هو مسرح تقليدي يستخدم الأقنعة والموسيقى التقليدية منذ قرون؟",
+        "choices": [
+          "طقوس الشاي",
+          "مسرح النو",
+          "شعر الهايكو",
+          "رقص الكابوكي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Egyptian novelist wrote “Zaynab” and is considered a pioneer of the modern Arabic novel?",
+    "choices": [
+      "Yusuf Idris",
+      "Taha Hussein",
+      "Muhammad Husayn Haykal",
+      "Naguib Mahfouz"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel romancier égyptien a écrit « Zaynab » et est considéré comme un pionnier du roman arabe moderne ?",
+        "choices": [
+          "Youssef Idriss",
+          "Taha Hussein",
+          "Mohammed Hussein Heikal",
+          "Naguib Mahfouz"
+        ]
+      },
+      "ar": {
+        "question": "أيّ روائي مصري كتب رواية «زينب» ويُعد من رواد الرواية العربية الحديثة؟",
+        "choices": [
+          "يوسف إدريس",
+          "طه حسين",
+          "محمد حسين هيكل",
+          "نجيب محفوظ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which painting technique uses watercolour applied on wet paper?",
+    "choices": [
+      "Oil painting",
+      "Wet-on-wet",
+      "Fresco",
+      "Mosaic"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle technique de peinture utilise l’aquarelle appliquée sur papier humide ?",
+        "choices": [
+          "La peinture à l’huile",
+          "La technique humide sur humide",
+          "La fresque",
+          "La mosaïque"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية رسم تستخدم الألوان المائية على ورق مبلل؟",
+        "choices": [
+          "الرسم بالزيت",
+          "الرسم على المبلل",
+          "الجص الجداري (الفريسكو)",
+          "الفسيفساء"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the traditional Japanese theatre of puppets?",
+    "choices": [
+      "Taiko",
+      "Noh",
+      "Bunraku",
+      "Kyogen"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le théâtre traditionnel japonais de marionnettes ?",
+        "choices": [
+          "Le taiko",
+          "Le nô",
+          "Le bunraku",
+          "Le kyôgen"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم المسرح الياباني التقليدي للدمى المتحركة؟",
+        "choices": [
+          "تايكو",
+          "النو",
+          "بونراكو",
+          "كيوغن"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Indian musical form of classical music uses ragas and talas?",
+    "choices": [
+      "Rock",
+      "Reggae",
+      "Jazz",
+      "Hindustani classical music"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle forme de musique classique indienne repose sur les ragas et les talas ?",
+        "choices": [
+          "Le rock",
+          "Le reggae",
+          "Le jazz",
+          "La musique classique hindoustanie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شكل من الموسيقى الكلاسيكية الهندية يعتمد على الراغا والتالا؟",
+        "choices": [
+          "الروك",
+          "الريغي",
+          "الجاز",
+          "الموسيقى الهندوستانية الكلاسيكية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which famous festival in Tunisia celebrates the cinema of the Mediterranean?",
+    "choices": [
+      "Carthage Film Festival",
+      "Berlin Film Festival",
+      "Venice Film Festival",
+      "Cannes Film Festival"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel festival tunisien célèbre le cinéma méditerranéen ?",
+        "choices": [
+          "Journées cinématographiques de Carthage (JCC)",
+          "Berlinale",
+          "Mostra de Venise",
+          "Festival de Cannes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مهرجان تونسي يحتفي بالسينما المتوسطية؟",
+        "choices": [
+          "أيام قرطاج السينمائية",
+          "مهرجان برلين",
+          "مهرجان البندقية",
+          "مهرجان كان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is the birthplace of Flamenco dance?",
+    "choices": [
+      "Portugal",
+      "Argentina",
+      "Spain",
+      "Mexico"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays est née la danse flamenco ?",
+        "choices": [
+          "Le Portugal",
+          "L’Argentine",
+          "L’Espagne",
+          "Le Mexique"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة نشأت رقصة الفلامنكو؟",
+        "choices": [
+          "البرتغال",
+          "الأرجنتين",
+          "إسبانيا",
+          "المكسيك"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Arabic calligraphy style is known for its rounded and flowing letters and is used on many Islamic monuments?",
+    "choices": [
+      "Latin cursive",
+      "Thuluth",
+      "Cuneiform",
+      "Pictograph"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel style de calligraphie arabe, aux lettres arrondies et fluides, orne de nombreux monuments islamiques ?",
+        "choices": [
+          "La cursive latine",
+          "Le thuluth",
+          "Le cunéiforme",
+          "Le pictogramme"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أسلوب من الخط العربي يشتهر بحروفه المستديرة المنسابة ويُزين كثيرًا من المعالم الإسلامية؟",
+        "choices": [
+          "الخط اللاتيني المتصل",
+          "خط الثلث",
+          "الخط المسماري",
+          "الكتابة الهيروغليفية"
+        ]
+      }
+    }
+  }
+]

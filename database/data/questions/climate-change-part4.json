@@ -1,0 +1,716 @@
+[
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural layer of the atmosphere is closest to the Earth’s surface?",
+    "choices": [
+      "Troposphere",
+      "Mesosphere",
+      "Stratosphere",
+      "Thermosphere"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle couche de l’atmosphère est la plus proche de la surface terrestre ?",
+        "choices": [
+          "La troposphère",
+          "La mésosphère",
+          "La stratosphère",
+          "La thermosphère"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طبقة من الغلاف الجوي هي الأقرب إلى سطح الأرض؟",
+        "choices": [
+          "التروبوسفير",
+          "الميزوسفير",
+          "الستراتوسفير",
+          "الثرموسفير"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main cause of sea level change in the short term due to warming?",
+    "choices": [
+      "Ocean salinity",
+      "Earthquakes",
+      "Thermal expansion of seawater",
+      "Lunar eclipses"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la cause principale des variations du niveau de la mer liées au réchauffement à court terme ?",
+        "choices": [
+          "La salinité des océans",
+          "Les séismes",
+          "La dilatation thermique de l’eau de mer",
+          "Les éclipses lunaires"
+        ]
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي لتغير مستوى البحر على المدى القصير بسبب الاحترار؟",
+        "choices": [
+          "ملوحة المحيطات",
+          "الزلازل",
+          "التمدد الحراري لمياه البحر",
+          "خسوف القمر"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country hosted the 2015 climate conference that produced the Paris Agreement?",
+    "choices": [
+      "Tunisia",
+      "France",
+      "Japan",
+      "Germany"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a accueilli la conférence climat de 2015 qui a produit l’accord de Paris ?",
+        "choices": [
+          "La Tunisie",
+          "La France",
+          "Le Japon",
+          "L’Allemagne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة استضافت مؤتمر المناخ عام 2015 الذي أنتج اتفاق باريس؟",
+        "choices": [
+          "تونس",
+          "فرنسا",
+          "اليابان",
+          "ألمانيا"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does the term “carbon sequestration” mean?",
+    "choices": [
+      "Dissolving carbon in water",
+      "Emitting carbon from factories",
+      "Capturing and storing carbon for long periods",
+      "Burning carbon fuels"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « séquestration du carbone » ?",
+        "choices": [
+          "Dissoudre le carbone dans l’eau",
+          "Émettre du carbone depuis les usines",
+          "Capter et stocker le carbone pendant longtemps",
+          "Brûler des combustibles carbonés"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني «احتجاز الكربون» (Carbon sequestration)؟",
+        "choices": [
+          "إذابة الكربون في الماء",
+          "انبعاث الكربون من المصانع",
+          "التقاط الكربون وتخزينه لفترات طويلة",
+          "حرق وقود الكربون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which gas is released from the decomposition of organic matter in landfills and is a potent greenhouse gas?",
+    "choices": [
+      "Methane",
+      "Helium",
+      "Neon",
+      "Argon"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz, puissant gaz à effet de serre, se dégage de la décomposition de la matière organique dans les décharges ?",
+        "choices": [
+          "Le méthane",
+          "L’hélium",
+          "Le néon",
+          "L’argon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز دفيء قوي ينطلق من تحلل المواد العضوية في المكبات؟",
+        "choices": [
+          "الميثان",
+          "الهيليوم",
+          "النيون",
+          "الأرغون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the term “feedback loop” mean in climate science?",
+    "choices": [
+      "A process where an initial change triggers further changes that amplify or reduce it",
+      "A loop of tape used in laboratories",
+      "A broadcast for weather forecasts",
+      "A type of climate map"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « boucle de rétroaction » en science du climat ?",
+        "choices": [
+          "Un processus où un changement initial en déclenche d’autres qui l’amplifient ou l’atténuent",
+          "Une bande utilisée en laboratoire",
+          "Une émission de prévisions météo",
+          "Un type de carte climatique"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني مصطلح «حلقة التغذية الراجعة» في علم المناخ؟",
+        "choices": [
+          "عملية يؤدي فيها تغيّر أولي إلى تغيرات أخرى تضخّمه أو تخففه",
+          "شريط لاصق يُستخدم في المختبرات",
+          "برنامج لنشرات الطقس",
+          "نوع من الخرائط المناخية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which season is typically coldest in the Northern Hemisphere?",
+    "choices": [
+      "Winter",
+      "Spring",
+      "Summer",
+      "Autumn"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle saison est généralement la plus froide dans l’hémisphère Nord ?",
+        "choices": [
+          "L’hiver",
+          "Le printemps",
+          "L’été",
+          "L’automne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فصل يكون عادةً الأبرد في نصف الكرة الشمالي؟",
+        "choices": [
+          "الشتاء",
+          "الربيع",
+          "الصيف",
+          "الخريف"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of energy is linked to the greatest share of greenhouse emissions worldwide?",
+    "choices": [
+      "Hydro energy",
+      "Fossil fuel energy",
+      "Wind energy",
+      "Solar energy"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel type d’énergie est lié à la plus grande part des émissions de gaz à effet de serre dans le monde ?",
+        "choices": [
+          "L’énergie hydraulique",
+          "L’énergie fossile",
+          "L’énergie éolienne",
+          "L’énergie solaire"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الطاقة يرتبط بأكبر حصة من انبعاثات الاحتباس الحراري عالميًا؟",
+        "choices": [
+          "الطاقة الكهرومائية",
+          "الطاقة الأحفورية",
+          "طاقة الرياح",
+          "الطاقة الشمسية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the process by which the oceans absorb CO₂ and become more acidic?",
+    "choices": [
+      "Tidal locking",
+      "Ocean acidification",
+      "Ocean salinisation",
+      "Ocean freezing"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle le processus par lequel les océans absorbent le CO₂ et deviennent plus acides ?",
+        "choices": [
+          "Le verrouillage de marée",
+          "L’acidification des océans",
+          "La salinisation des océans",
+          "La congélation des océans"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم العملية التي تمتص فيها المحيطات ثاني أكسيد الكربون فتصبح أكثر حموضة؟",
+        "choices": [
+          "القفل المدّي",
+          "تحمّض المحيطات",
+          "تملّح المحيطات",
+          "تجمد المحيطات"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which type of forest is most effective at absorbing carbon?",
+    "choices": [
+      "Desert shrubland",
+      "Tundra",
+      "Tropical rainforests",
+      "Salt marsh only"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel type de forêt absorbe le plus efficacement le carbone ?",
+        "choices": [
+          "Les buissons désertiques",
+          "La toundra",
+          "Les forêts tropicales humides",
+          "Les marais salés uniquement"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من الغابات يمتص الكربون بأكبر كفاءة؟",
+        "choices": [
+          "الشجيرات الصحراوية",
+          "التندرا",
+          "الغابات الاستوائية المطيرة",
+          "المستنقعات المالحة فقط"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does “climate” describe compared with “weather”?",
+    "choices": [
+      "Only rainfall",
+      "The position of the Sun",
+      "Long-term average conditions over decades",
+      "Only one day’s temperature"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que décrit le « climat », par rapport à la « météo » ?",
+        "choices": [
+          "Uniquement les précipitations",
+          "La position du Soleil",
+          "Les conditions moyennes sur de longues périodes, des décennies",
+          "La température d’une seule journée"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يصف «المناخ» مقارنةً بـ«الطقس»؟",
+        "choices": [
+          "الهطول فقط",
+          "موقع الشمس",
+          "المتوسط طويل الأمد للظروف الجوية لعقود",
+          "درجة حرارة يوم واحد"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian sector is most vulnerable to drought linked to climate change?",
+    "choices": [
+      "Agriculture",
+      "Mining of gold",
+      "Video game production",
+      "Airports"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel secteur tunisien est le plus vulnérable à la sécheresse liée au changement climatique ?",
+        "choices": [
+          "L’agriculture",
+          "L’extraction d’or",
+          "La production de jeux vidéo",
+          "Les aéroports"
+        ]
+      },
+      "ar": {
+        "question": "أيّ قطاع في تونس هو الأكثر عرضة للجفاف المرتبط بتغير المناخ؟",
+        "choices": [
+          "الفلاحة",
+          "استخراج الذهب",
+          "إنتاج ألعاب الفيديو",
+          "المطارات"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which measure helps cities adapt to heat waves?",
+    "choices": [
+      "Paving all parks",
+      "Removing all shade",
+      "Banning air conditioners",
+      "Planting trees and green roofs"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure aide les villes à s’adapter aux vagues de chaleur ?",
+        "choices": [
+          "Bétonner tous les parcs",
+          "Supprimer toute ombre",
+          "Interdire les climatiseurs",
+          "Planter des arbres et végétaliser les toits"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يساعد المدن على التكيف مع موجات الحر؟",
+        "choices": [
+          "تعبيد جميع الحدائق",
+          "إزالة كل الظل",
+          "حظر أجهزة التكييف",
+          "زراعة الأشجار والأسطح الخضراء"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which international body was created in 1988 to assess climate science?",
+    "choices": [
+      "IPCC",
+      "WTO",
+      "OPEC",
+      "NATO"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel organisme international a été créé en 1988 pour évaluer la science du climat ?",
+        "choices": [
+          "Le GIEC",
+          "L’OMC",
+          "L’OPEP",
+          "L’OTAN"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هيئة دولية أُنشئت عام 1988 لتقييم علم المناخ؟",
+        "choices": [
+          "الفريق الحكومي الدولي المعني بتغير المناخ",
+          "منظمة التجارة العالمية",
+          "أوبك",
+          "حلف الناتو"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is an example of a renewable energy source that does not emit greenhouse gases during operation?",
+    "choices": [
+      "Oil power",
+      "Coal power",
+      "Wind power",
+      "Diesel generators"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est un exemple d’énergie renouvelable qui n’émet pas de gaz à effet de serre en fonctionnement ?",
+        "choices": [
+          "L’énergie pétrolière",
+          "L’énergie charbonnière",
+          "L’énergie éolienne",
+          "Les groupes électrogènes diesel"
+        ]
+      },
+      "ar": {
+        "question": "ما مثال على مصدر طاقة متجدد لا ينبعث منه غازات دفيئة أثناء التشغيل؟",
+        "choices": [
+          "طاقة النفط",
+          "طاقة الفحم",
+          "طاقة الرياح",
+          "مولدات الديزل"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural event is strongly influenced by warmer sea surface temperatures and can become more intense?",
+    "choices": [
+      "Solar eclipses",
+      "Meteor showers",
+      "Earthquakes",
+      "Tropical cyclones"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel phénomène naturel est fortement influencé par des eaux de surface plus chaudes et peut devenir plus intense ?",
+        "choices": [
+          "Les éclipses solaires",
+          "Les pluies de météores",
+          "Les séismes",
+          "Les cyclones tropicaux"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ظاهرة طبيعية تتأثر بشدة بارتفاع حرارة سطح البحر وقد تزداد شدتها؟",
+        "choices": [
+          "كسوف الشمس",
+          "زخات الشهب",
+          "الزلازل",
+          "الأعاصير المدارية"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the target to keep warming well below 2 °C above pre-industrial levels?",
+    "choices": [
+      "Paris Agreement goal",
+      "Kyoto target",
+      "Montreal Limit",
+      "Basel Limit"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’objectif visant à limiter le réchauffement nettement sous 2 °C par rapport à l’ère préindustrielle ?",
+        "choices": [
+          "L’objectif de l’accord de Paris",
+          "L’objectif de Kyoto",
+          "La limite de Montréal",
+          "La limite de Bâle"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الهدف الرامي إلى إبقاء الاحترار نحو درجتين مئويتين فوق مستويات ما قبل الصناعة؟",
+        "choices": [
+          "هدف اتفاق باريس",
+          "هدف كيوتو",
+          "حد مونتريال",
+          "حد بازل"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does an “emissions inventory” record?",
+    "choices": [
+      "The number of trees planted",
+      "The population of cities",
+      "The price of oil",
+      "The amount of greenhouse gases released by a country or company"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Que recense un « inventaire des émissions » ?",
+        "choices": [
+          "Le nombre d’arbres plantés",
+          "La population des villes",
+          "Le prix du pétrole",
+          "La quantité de gaz à effet de serre émise par un pays ou une entreprise"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يسجل «جرد الانبعاثات» (Emissions inventory)؟",
+        "choices": [
+          "عدد الأشجار المزروعة",
+          "عدد سكان المدن",
+          "سعر النفط",
+          "كمية غازات الاحتباس الحراري التي تطلقها دولة أو شركة"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which resource is most affected by drought in the Mediterranean region?",
+    "choices": [
+      "Water",
+      "Oil",
+      "Diamonds",
+      "Gold"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource est la plus affectée par la sécheresse en Méditerranée ?",
+        "choices": [
+          "L’eau",
+          "Le pétrole",
+          "Les diamants",
+          "L’or"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مورد يتأثر أكثر بالجفاف في منطقة البحر الأبيض المتوسط؟",
+        "choices": [
+          "المياه",
+          "النفط",
+          "الماس",
+          "الذهب"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which greenhouse gas is commonly emitted by agricultural soils and livestock in large amounts?",
+    "choices": [
+      "Neon",
+      "Helium",
+      "Nitrous oxide",
+      "Argon"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz à effet de serre est émis en grande quantité par les sols agricoles et l’élevage ?",
+        "choices": [
+          "Le néon",
+          "L’hélium",
+          "Le protoxyde d’azote",
+          "L’argon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز دفيء ينطلق بكميات كبيرة من التربة الزراعية والماشية؟",
+        "choices": [
+          "النيون",
+          "الهيليوم",
+          "أكسيد النيتروز",
+          "الأرغون"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  },
+  {
+    "category": "climate-change",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the term for the increase in average global temperature since the late 19th century?",
+    "choices": [
+      "Little ice age",
+      "Ice age",
+      "Cold spell",
+      "Global warming"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on la hausse de la température moyenne mondiale depuis la fin du XIXe siècle ?",
+        "choices": [
+          "Le petit âge glaciaire",
+          "L’ère glaciaire",
+          "La vague de froid",
+          "Le réchauffement climatique"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف ارتفاع متوسط حرارة الكوكب منذ أواخر القرن التاسع عشر؟",
+        "choices": [
+          "العصر الجليدي الصغير",
+          "العصر الجليدي",
+          "موجة البرد",
+          "الاحترار العالمي"
+        ]
+      }
+    },
+    "reference_text": "IPCC, Sixth Assessment Report, Synthesis Report (2023)"
+  }
+]

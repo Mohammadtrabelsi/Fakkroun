@@ -1,0 +1,298 @@
+[
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "In which year did the French Revolution begin?",
+    "choices": [
+      "1815",
+      "1776",
+      "1789",
+      "1689"
+    ],
+    "correct": 3,
+    "explanation": "It began in 1789, with the storming of the Bastille on 14 July.",
+    "reference_text": "Encyclopaedia Britannica, French Revolution",
+    "translations": {
+      "fr": {
+        "question": "En quelle année a commencé la Révolution française ?",
+        "choices": [
+          "1815",
+          "1776",
+          "1789",
+          "1689"
+        ],
+        "explanation": "Elle débute en 1789 avec la prise de la Bastille, le 14 juillet."
+      },
+      "ar": {
+        "question": "في أي عام اندلعت الثورة الفرنسية؟",
+        "choices": [
+          "1815",
+          "1776",
+          "1789",
+          "1689"
+        ],
+        "explanation": "اندلعت الثورة الفرنسية عام 1789، وكان من أبرز أحداثها اقتحام سجن الباستيل في 14 يوليو."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who was the first President of the United States?",
+    "choices": [
+      "Abraham Lincoln",
+      "John Adams",
+      "George Washington",
+      "Thomas Jefferson"
+    ],
+    "correct": 3,
+    "explanation": "George Washington served from 1789 to 1797.",
+    "reference_text": "Encyclopaedia Britannica, George Washington",
+    "translations": {
+      "fr": {
+        "question": "Qui fut le premier président des États-Unis ?",
+        "choices": [
+          "Abraham Lincoln",
+          "John Adams",
+          "George Washington",
+          "Thomas Jefferson"
+        ],
+        "explanation": "George Washington a présidé les États-Unis de 1789 à 1797."
+      },
+      "ar": {
+        "question": "من كان أول رئيس للولايات المتحدة الأمريكية؟",
+        "choices": [
+          "أبراهام لينكولن",
+          "جون آدامز",
+          "جورج واشنطن",
+          "توماس جيفرسون"
+        ],
+        "explanation": "تولى جورج واشنطن الرئاسة بين عامي 1789 و1797."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which empire built most of the Colosseum in Rome?",
+    "choices": [
+      "Ottoman Empire",
+      "Byzantine Empire",
+      "Roman Empire",
+      "Mongol Empire"
+    ],
+    "correct": 3,
+    "explanation": "The Colosseum was built in the 1st century AD under the Roman Empire.",
+    "reference_text": "Encyclopaedia Britannica, Colosseum",
+    "translations": {
+      "fr": {
+        "question": "Quel empire a construit le Colisée de Rome ?",
+        "choices": [
+          "L’Empire ottoman",
+          "L’Empire byzantin",
+          "L’Empire romain",
+          "L’Empire mongol"
+        ],
+        "explanation": "Le Colisée a été construit au Ier siècle de notre ère, sous l’Empire romain."
+      },
+      "ar": {
+        "question": "أيّ إمبراطورية بنت معظم الكولوسيوم في روما؟",
+        "choices": [
+          "الدولة العثمانية",
+          "الإمبراطورية البيزنطية",
+          "الإمبراطورية الرومانية",
+          "الإمبراطورية المغولية"
+        ],
+        "explanation": "شُيّد الكولوسيوم في القرن الأول الميلادي في عهد الإمبراطورية الرومانية."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which year did World War II end?",
+    "choices": [
+      "1945",
+      "1950",
+      "1947",
+      "1943"
+    ],
+    "correct": 1,
+    "explanation": "The war ended in 1945, with Japan’s formal surrender in September.",
+    "reference_text": "Encyclopaedia Britannica, World War II",
+    "translations": {
+      "fr": {
+        "question": "En quelle année s’est achevée la Seconde Guerre mondiale ?",
+        "choices": [
+          "1945",
+          "1950",
+          "1947",
+          "1943"
+        ],
+        "explanation": "La guerre s’est achevée en 1945, avec la capitulation officielle du Japon en septembre."
+      },
+      "ar": {
+        "question": "في أي عام انتهت الحرب العالمية الثانية؟",
+        "choices": [
+          "1945",
+          "1950",
+          "1947",
+          "1943"
+        ],
+        "explanation": "انتهت الحرب عام 1945، وكان الاستسلام الرسمي لليابان في سبتمبر من ذلك العام."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Carthage, near present-day Tunis, was founded by which people?",
+    "choices": [
+      "Aztecs",
+      "Phoenicians",
+      "Mongols",
+      "Vikings"
+    ],
+    "correct": 2,
+    "explanation": "According to tradition, Tyrian settlers, who were Phoenicians, founded Carthage in the 9th century BC.",
+    "reference_text": "Encyclopaedia Britannica, Carthage",
+    "translations": {
+      "fr": {
+        "question": "Carthage, près de l’actuelle Tunis, a été fondée par quel peuple ?",
+        "choices": [
+          "Les Aztèques",
+          "Les Phéniciens",
+          "Les Mongols",
+          "Les Vikings"
+        ],
+        "explanation": "Selon la tradition, des colons venus de Tyr, cité phénicienne, fondèrent Carthage au IXe siècle avant notre ère."
+      },
+      "ar": {
+        "question": "من أسّس قرطاج القريبة من تونس الحالية؟",
+        "choices": [
+          "الأزتيك",
+          "الفينيقيون",
+          "المغول",
+          "الفايكنغ"
+        ],
+        "explanation": "تقول الروايات إن قرطاج أسسها فينيقيون قدموا من صور في القرن التاسع قبل الميلاد."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who was the first President of independent Tunisia?",
+    "choices": [
+      "Zine El Abidine Ben Ali",
+      "Habib Bourguiba",
+      "Mohamed Ghannouchi",
+      "Béji Caïd Essebsi"
+    ],
+    "correct": 2,
+    "explanation": "Habib Bourguiba led Tunisia from 1957 to 1987, after independence in 1956.",
+    "reference_text": "Encyclopaedia Britannica, Habib Bourguiba",
+    "translations": {
+      "fr": {
+        "question": "Qui fut le premier président de la Tunisie indépendante ?",
+        "choices": [
+          "Zine El Abidine Ben Ali",
+          "Habib Bourguiba",
+          "Mohamed Ghannouchi",
+          "Béji Caïd Essebsi"
+        ],
+        "explanation": "Habib Bourguiba, figure de l’indépendance acquise en 1956, a dirigé le pays de 1957 à 1987."
+      },
+      "ar": {
+        "question": "من كان أول رئيس لتونس المستقلة؟",
+        "choices": [
+          "زين العابدين بن علي",
+          "الحبيب بورقيبة",
+          "محمد الغنوشي",
+          "الباجي قائد السبسي"
+        ],
+        "explanation": "تولى الحبيب بورقيبة رئاسة تونس المستقلة من عام 1957 حتى 1987."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "The Treaty of Westphalia (1648) is associated with which principle?",
+    "choices": [
+      "Abolition of slavery",
+      "State sovereignty",
+      "The creation of the United Nations",
+      "Freedom of the seas"
+    ],
+    "correct": 2,
+    "explanation": "The treaties established the system of sovereign states that underpins modern international law.",
+    "reference_text": "Encyclopaedia Britannica, Peace of Westphalia",
+    "translations": {
+      "fr": {
+        "question": "Le traité de Westphalie (1648) est associé à quel principe ?",
+        "choices": [
+          "L’abolition de l’esclavage",
+          "La souveraineté des États",
+          "La création de l’ONU",
+          "La liberté des mers"
+        ],
+        "explanation": "Ces traités ont fondé le système d’États souverains et égaux, base du droit international moderne."
+      },
+      "ar": {
+        "question": "يرتبط صلح وستفاليا (1648) بأي مبدأ؟",
+        "choices": [
+          "إلغاء العبودية",
+          "سيادة الدول",
+          "إنشاء الأمم المتحدة",
+          "حرية البحار"
+        ],
+        "explanation": "أرست معاهدات وستفاليا مبدأ سيادة الدول، وهو أساس النظام الدولي الحديث."
+      }
+    }
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "In which year did the Berlin Wall fall?",
+    "choices": [
+      "1979",
+      "1989",
+      "1985",
+      "1991"
+    ],
+    "correct": 2,
+    "explanation": "The wall fell on 9 November 1989, paving the way for German reunification in 1990.",
+    "reference_text": "Encyclopaedia Britannica, Berlin Wall",
+    "translations": {
+      "fr": {
+        "question": "En quelle année le mur de Berlin est-il tombé ?",
+        "choices": [
+          "1979",
+          "1989",
+          "1985",
+          "1991"
+        ],
+        "explanation": "La chute du mur, le 9 novembre 1989, a ouvert la voie à la réunification allemande en 1990."
+      },
+      "ar": {
+        "question": "في أي عام سقط جدار برلين؟",
+        "choices": [
+          "1979",
+          "1989",
+          "1985",
+          "1991"
+        ],
+        "explanation": "سقط الجدار في 9 نوفمبر 1989، ومهّد لإعادة توحيد ألمانيا عام 1990."
+      }
+    }
+  }
+]

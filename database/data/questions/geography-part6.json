@@ -1,0 +1,596 @@
+[
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Spain’s neighbour Portugal?",
+    "choices": [
+      "Coimbra",
+      "Madrid",
+      "Porto",
+      "Lisbon"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Portugal, voisin de l’Espagne ?",
+        "choices": [
+          "Coimbra",
+          "Madrid",
+          "Porto",
+          "Lisbonne"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة البرتغال الجارة لإسبانيا؟",
+        "choices": [
+          "كويمبرا",
+          "مدريد",
+          "بورتو",
+          "لشبونة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Ireland?",
+    "choices": [
+      "Dublin",
+      "Cork",
+      "Belfast",
+      "Galway"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Irlande ?",
+        "choices": [
+          "Dublin",
+          "Cork",
+          "Belfast",
+          "Galway"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة أيرلندا؟",
+        "choices": [
+          "دبلن",
+          "كورك",
+          "بلفاست",
+          "غالواي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Poland?",
+    "choices": [
+      "Warsaw",
+      "Krakow",
+      "Wroclaw",
+      "Gdansk"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Pologne ?",
+        "choices": [
+          "Varsovie",
+          "Cracovie",
+          "Wrocław",
+          "Gdańsk"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة بولندا؟",
+        "choices": [
+          "وارسو",
+          "كراكوف",
+          "فروتسواف",
+          "غدانسك"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Sweden?",
+    "choices": [
+      "Uppsala",
+      "Stockholm",
+      "Gothenburg",
+      "Malmö"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Suède ?",
+        "choices": [
+          "Uppsala",
+          "Stockholm",
+          "Göteborg",
+          "Malmö"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة السويد؟",
+        "choices": [
+          "أوبسالا",
+          "ستوكهولم",
+          "غوتنبرغ",
+          "مالمو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Norway?",
+    "choices": [
+      "Trondheim",
+      "Bergen",
+      "Stavanger",
+      "Oslo"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Norvège ?",
+        "choices": [
+          "Trondheim",
+          "Bergen",
+          "Stavanger",
+          "Oslo"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة النرويج؟",
+        "choices": [
+          "تروندهايم",
+          "بيرغن",
+          "ستافانغر",
+          "أوسلو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the capital of the Netherlands?",
+    "choices": [
+      "Rotterdam",
+      "Utrecht",
+      "Amsterdam",
+      "The Hague"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale des Pays-Bas ?",
+        "choices": [
+          "Rotterdam",
+          "Utrecht",
+          "Amsterdam",
+          "La Haye"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة هولندا؟",
+        "choices": [
+          "روتردام",
+          "أوتريخت",
+          "أمستردام",
+          "لاهاي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian city is the second largest city after Tunis?",
+    "choices": [
+      "Sfax",
+      "Sousse",
+      "Bizerte",
+      "Kairouan"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la deuxième ville de Tunisie après Tunis ?",
+        "choices": [
+          "Sfax",
+          "Sousse",
+          "Bizerte",
+          "Kairouan"
+        ]
+      },
+      "ar": {
+        "question": "ما المدينة التونسية الثانية بعد تونس العاصمة من حيث عدد السكان؟",
+        "choices": [
+          "صفاقس",
+          "سوسة",
+          "بنزرت",
+          "القيروان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which mountain is the highest in Africa outside the Atlas range?",
+    "choices": [
+      "Mount Kilimanjaro",
+      "Mount Toubkal",
+      "Mount Kenya",
+      "Ras Dashen"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus haute montagne d’Afrique en dehors de l’Atlas ?",
+        "choices": [
+          "Le Kilimandjaro",
+          "Le Toubkal",
+          "Le mont Kenya",
+          "Ras Dashen"
+        ]
+      },
+      "ar": {
+        "question": "ما أعلى جبل في إفريقيا خارج سلسلة الأطلس؟",
+        "choices": [
+          "كليمنجارو",
+          "جبل توبقال",
+          "جبل كينيا",
+          "راس دشن"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest city in Egypt by population?",
+    "choices": [
+      "Cairo",
+      "Luxor",
+      "Giza",
+      "Alexandria"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande ville d’Égypte par sa population ?",
+        "choices": [
+          "Le Caire",
+          "Louxor",
+          "Gizeh",
+          "Alexandrie"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر مدينة في مصر من حيث عدد السكان؟",
+        "choices": [
+          "القاهرة",
+          "الأقصر",
+          "الجيزة",
+          "الإسكندرية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country has the Great Barrier Reef on its coast?",
+    "choices": [
+      "Mexico",
+      "Brazil",
+      "South Africa",
+      "Australia"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Sur les côtes de quel pays se trouve la Grande Barrière de corail ?",
+        "choices": [
+          "Le Mexique",
+          "Le Brésil",
+          "L’Afrique du Sud",
+          "L’Australie"
+        ]
+      },
+      "ar": {
+        "question": "على سواحل أي دولة يقع الحاجز المرجاني العظيم؟",
+        "choices": [
+          "المكسيك",
+          "البرازيل",
+          "جنوب إفريقيا",
+          "أستراليا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is the largest in Central America?",
+    "choices": [
+      "Panama",
+      "Guatemala",
+      "Nicaragua",
+      "Honduras"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand pays d’Amérique centrale ?",
+        "choices": [
+          "Le Panama",
+          "Le Guatemala",
+          "Le Nicaragua",
+          "Le Honduras"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر دولة في أمريكا الوسطى؟",
+        "choices": [
+          "بنما",
+          "غواتيمالا",
+          "نيكاراغوا",
+          "هندوراس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which strait separates Asia from North America?",
+    "choices": [
+      "Bass Strait",
+      "Strait of Malacca",
+      "Taiwan Strait",
+      "Bering Strait"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel détroit sépare l’Asie de l’Amérique du Nord ?",
+        "choices": [
+          "Le détroit de Bass",
+          "Le détroit de Malacca",
+          "Le détroit de Taïwan",
+          "Le détroit de Béring"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مضيق يفصل آسيا عن أمريكا الشمالية؟",
+        "choices": [
+          "مضيق باس",
+          "مضيق ملقا",
+          "مضيق تايوان",
+          "مضيق بيرينغ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country has the city of Kyoto as its former capital?",
+    "choices": [
+      "Korea",
+      "Japan",
+      "China",
+      "Thailand"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve Kyoto, ancienne capitale ?",
+        "choices": [
+          "La Corée",
+          "Le Japon",
+          "La Chine",
+          "La Thaïlande"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة تقع كيوتو، العاصمة السابقة؟",
+        "choices": [
+          "كوريا",
+          "اليابان",
+          "الصين",
+          "تايلاند"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which lake is the highest navigable lake in the world?",
+    "choices": [
+      "Lake Baikal",
+      "Lake Victoria",
+      "Lake Titicaca",
+      "Lake Geneva"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel lac est le plus haut lac navigable du monde ?",
+        "choices": [
+          "Le lac Baïkal",
+          "Le lac Victoria",
+          "Le lac Titicaca",
+          "Le lac Léman"
+        ]
+      },
+      "ar": {
+        "question": "ما أعلى بحيرة صالحة للملاحة في العالم؟",
+        "choices": [
+          "بحيرة بايكال",
+          "بحيرة فيكتوريا",
+          "بحيرة تيتيكاكا",
+          "بحيرة جنيف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is the largest producer of dates in the world?",
+    "choices": [
+      "Morocco",
+      "Egypt",
+      "Tunisia",
+      "Algeria"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est le premier producteur mondial de dattes ?",
+        "choices": [
+          "Le Maroc",
+          "L’Égypte",
+          "La Tunisie",
+          "L’Algérie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تُعد أكبر منتج للتمور في العالم؟",
+        "choices": [
+          "المغرب",
+          "مصر",
+          "تونس",
+          "الجزائر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country lies on both the Atlantic and Indian oceans at its southern tip?",
+    "choices": [
+      "Kenya",
+      "Egypt",
+      "South Africa",
+      "Madagascar"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays borde à la fois l’Atlantique et l’océan Indien à sa pointe sud ?",
+        "choices": [
+          "Le Kenya",
+          "L’Égypte",
+          "L’Afrique du Sud",
+          "Madagascar"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تطل على المحيطين الأطلسي والهندي عند طرفها الجنوبي؟",
+        "choices": [
+          "كينيا",
+          "مصر",
+          "جنوب إفريقيا",
+          "مدغشقر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest island country in the Indian Ocean?",
+    "choices": [
+      "Sri Lanka",
+      "Maldives",
+      "Madagascar",
+      "Mauritius"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand pays insulaire de l’océan Indien ?",
+        "choices": [
+          "Sri Lanka",
+          "Maldives",
+          "Madagascar",
+          "Maurice"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر دولة جزرية في المحيط الهندي؟",
+        "choices": [
+          "سريلانكا",
+          "المالديف",
+          "مدغشقر",
+          "موريشيوس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is shaped like a boot?",
+    "choices": [
+      "Portugal",
+      "Greece",
+      "Italy",
+      "Spain"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a la forme d’une botte ?",
+        "choices": [
+          "Le Portugal",
+          "La Grèce",
+          "L’Italie",
+          "L’Espagne"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشبه شكلها الحذاء الطويل؟",
+        "choices": [
+          "البرتغال",
+          "اليونان",
+          "إيطاليا",
+          "إسبانيا"
+        ]
+      }
+    }
+  }
+]

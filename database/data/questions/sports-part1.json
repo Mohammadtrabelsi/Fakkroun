@@ -1,0 +1,779 @@
+[
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many players from one football (soccer) team are on the pitch at the same time?",
+    "choices": [
+      "9",
+      "10",
+      "12",
+      "11"
+    ],
+    "correct": 4,
+    "explanation": "Each side has eleven players on the field, including the goalkeeper.",
+    "reference_text": "IFAB Laws of the Game",
+    "translations": {
+      "fr": {
+        "question": "Combien de joueurs d’une équipe de football sont sur le terrain en même temps ?",
+        "choices": [
+          "9",
+          "10",
+          "12",
+          "11"
+        ],
+        "explanation": "Chaque équipe aligne onze joueurs, gardien compris."
+      },
+      "ar": {
+        "question": "كم عدد لاعبي فريق كرة القدم الموجودين في الملعب في وقت واحد؟",
+        "choices": [
+          "9",
+          "10",
+          "12",
+          "11"
+        ],
+        "explanation": "يلعب لكل فريق أحد عشر لاعبًا داخل الملعب، بمن فيهم حارس المرمى."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is contested for the Davis Cup?",
+    "choices": [
+      "Rugby",
+      "Golf",
+      "Cricket",
+      "Tennis"
+    ],
+    "correct": 4,
+    "explanation": "The Davis Cup is the premier international team tournament in men’s tennis.",
+    "reference_text": "International Tennis Federation",
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue pour la Coupe Davis ?",
+        "choices": [
+          "Le rugby",
+          "Le golf",
+          "Le cricket",
+          "Le tennis"
+        ],
+        "explanation": "La Coupe Davis est la grande compétition internationale par équipes du tennis masculin."
+      },
+      "ar": {
+        "question": "ما الرياضة التي تُلعب من أجل كأس ديفيس؟",
+        "choices": [
+          "الرجبي",
+          "الجولف",
+          "الكريكت",
+          "التنس"
+        ],
+        "explanation": "كأس ديفيس أهم بطولة دولية للفرق في التنس الرجالي."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many holes are there on a standard golf course?",
+    "choices": [
+      "20",
+      "18",
+      "9",
+      "12"
+    ],
+    "correct": 2,
+    "explanation": "A full course has 18 holes, though some courses have nine.",
+    "reference_text": "R&A Rules of Golf",
+    "translations": {
+      "fr": {
+        "question": "Combien de trous compte un parcours de golf standard ?",
+        "choices": [
+          "20",
+          "18",
+          "9",
+          "12"
+        ],
+        "explanation": "Un parcours complet compte 18 trous, mais certains n’en ont que neuf."
+      },
+      "ar": {
+        "question": "كم عدد الحفر في ملعب الجولف القياسي؟",
+        "choices": [
+          "20",
+          "18",
+          "9",
+          "12"
+        ],
+        "explanation": "الملعب الكامل يضم 18 حفرة، وبعضها تسع حفر فقط."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is played at Wimbledon?",
+    "choices": [
+      "Squash",
+      "Golf",
+      "Cricket",
+      "Tennis"
+    ],
+    "correct": 4,
+    "explanation": "Wimbledon is the oldest tennis tournament in the world.",
+    "reference_text": "All England Lawn Tennis Club",
+    "translations": {
+      "fr": {
+        "question": "Quel sport se joue à Wimbledon ?",
+        "choices": [
+          "Le squash",
+          "Le golf",
+          "Le cricket",
+          "Le tennis"
+        ],
+        "explanation": "Wimbledon est le plus ancien tournoi de tennis au monde."
+      },
+      "ar": {
+        "question": "ما الرياضة التي تُلعب في ويمبلدون؟",
+        "choices": [
+          "الاسكواش",
+          "الجولف",
+          "الكريكت",
+          "التنس"
+        ],
+        "explanation": "بطولة ويمبلدون هي أقدم بطولة تنس في العالم."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many points is a three-pointer worth in basketball?",
+    "choices": [
+      "2",
+      "1",
+      "4",
+      "3"
+    ],
+    "correct": 4,
+    "explanation": "A three-pointer is a shot taken from beyond the arc, worth three points.",
+    "reference_text": "FIBA basketball rules",
+    "translations": {
+      "fr": {
+        "question": "Combien de points vaut un tir à trois points au basket-ball ?",
+        "choices": [
+          "2",
+          "1",
+          "4",
+          "3"
+        ],
+        "explanation": "Il s’agit d’un tir tenté au-delà de la ligne à trois points, qui vaut trois points."
+      },
+      "ar": {
+        "question": "كم نقطة تُحتسب لرمية الثلاث نقاط في كرة السلة؟",
+        "choices": [
+          "2",
+          "1",
+          "4",
+          "3"
+        ],
+        "explanation": "تُسجَّل رمية الثلاث نقاط من خلف خط القوس وتساوي ثلاث نقاط."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country has won the most FIFA World Cup titles?",
+    "choices": [
+      "Italy",
+      "Argentina",
+      "Germany",
+      "Brazil"
+    ],
+    "correct": 4,
+    "explanation": "Brazil has won five World Cups, more than any other nation.",
+    "reference_text": "FIFA World Cup records",
+    "translations": {
+      "fr": {
+        "question": "Quel pays a remporté le plus de Coupes du monde de football ?",
+        "choices": [
+          "L’Italie",
+          "L’Argentine",
+          "L’Allemagne",
+          "Le Brésil"
+        ],
+        "explanation": "Le Brésil a remporté cinq Coupes du monde, plus que toute autre nation."
+      },
+      "ar": {
+        "question": "أيّ دولة فازت بأكبر عدد من بطولات كأس العالم لكرة القدم؟",
+        "choices": [
+          "إيطاليا",
+          "الأرجنتين",
+          "ألمانيا",
+          "البرازيل"
+        ],
+        "explanation": "فازت البرازيل بخمس بطولات، وهو أكبر رصيد بين الدول."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the standard length of an Olympic swimming pool?",
+    "choices": [
+      "25 m",
+      "33 m",
+      "100 m",
+      "50 m"
+    ],
+    "correct": 4,
+    "explanation": "Olympic pools are 50 metres long with eight lanes.",
+    "reference_text": "FINA (World Aquatics) pool regulations",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la longueur standard d’une piscine olympique ?",
+        "choices": [
+          "25 m",
+          "33 m",
+          "100 m",
+          "50 m"
+        ],
+        "explanation": "Les piscines olympiques mesurent 50 mètres de long, avec huit couloirs."
+      },
+      "ar": {
+        "question": "ما الطول القياسي لحمام السباحة الأولمبي؟",
+        "choices": [
+          "25 م",
+          "33 م",
+          "100 م",
+          "50 م"
+        ],
+        "explanation": "يبلغ طول حمام السباحة الأولمبي 50 مترًا، ويضم ثمانية مسارات."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which sport uses a shuttlecock?",
+    "choices": [
+      "Squash",
+      "Table tennis",
+      "Tennis",
+      "Badminton"
+    ],
+    "correct": 4,
+    "explanation": "Badminton players hit a feathered shuttlecock over a net.",
+    "reference_text": "Badminton World Federation",
+    "translations": {
+      "fr": {
+        "question": "Quel sport utilise un volant ?",
+        "choices": [
+          "Le squash",
+          "Le tennis de table",
+          "Le tennis",
+          "Le badminton"
+        ],
+        "explanation": "Au badminton, les joueurs envoient un volant à plumes par-dessus un filet."
+      },
+      "ar": {
+        "question": "أيّ رياضة تستخدم الريشة؟",
+        "choices": [
+          "الاسكواش",
+          "تنس الطاولة",
+          "التنس",
+          "البادمنتون"
+        ],
+        "explanation": "يضرب لاعبو البادمنتون الريشة فوق شبكة."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How many balls are there in one over of cricket?",
+    "choices": [
+      "5",
+      "6",
+      "8",
+      "10"
+    ],
+    "correct": 2,
+    "explanation": "An over consists of six legal deliveries.",
+    "reference_text": "MCC Laws of Cricket",
+    "translations": {
+      "fr": {
+        "question": "Combien de balles compte une « over » au cricket ?",
+        "choices": [
+          "5",
+          "6",
+          "8",
+          "10"
+        ],
+        "explanation": "Une over comprend six livraisons légales."
+      },
+      "ar": {
+        "question": "كم كرة تتكون منها الـ«أوفر» في الكريكت؟",
+        "choices": [
+          "5",
+          "6",
+          "8",
+          "10"
+        ],
+        "explanation": "تتكون الأوفر من ست رميات قانونية."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which footballer is nicknamed “The Black Pearl”?",
+    "choices": [
+      "Zinedine Zidane",
+      "Diego Maradona",
+      "Pelé",
+      "Lionel Messi"
+    ],
+    "correct": 3,
+    "explanation": "Pelé, the Brazilian forward, is nicknamed the Black Pearl.",
+    "reference_text": "FIFA Legends profile",
+    "translations": {
+      "fr": {
+        "question": "Quel footballeur est surnommé « la Perle noire » ?",
+        "choices": [
+          "Zinedine Zidane",
+          "Diego Maradona",
+          "Pelé",
+          "Lionel Messi"
+        ],
+        "explanation": "Pelé, l’attaquant brésilien, est surnommé la Perle noire."
+      },
+      "ar": {
+        "question": "أيّ لاعب كرة قدم يُلقّب بـ«اللؤلؤة السوداء»؟",
+        "choices": [
+          "زين الدين زيدان",
+          "دييغو مارادونا",
+          "بيليه",
+          "ليونيل ميسي"
+        ],
+        "explanation": "بيليه، مهاجم البرازيل، يُلقّب باللؤلؤة السوداء."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country hosted the 2010 FIFA World Cup?",
+    "choices": [
+      "Brazil",
+      "South Africa",
+      "Germany",
+      "Qatar"
+    ],
+    "correct": 2,
+    "explanation": "The tournament was the first World Cup held on African soil.",
+    "reference_text": "FIFA World Cup 2010",
+    "translations": {
+      "fr": {
+        "question": "Quel pays a accueilli la Coupe du monde de football 2010 ?",
+        "choices": [
+          "Le Brésil",
+          "L’Afrique du Sud",
+          "L’Allemagne",
+          "Le Qatar"
+        ],
+        "explanation": "C’était la première Coupe du monde organisée sur le sol africain."
+      },
+      "ar": {
+        "question": "أيّ دولة استضافت كأس العالم لكرة القدم عام 2010؟",
+        "choices": [
+          "البرازيل",
+          "جنوب أفريقيا",
+          "ألمانيا",
+          "قطر"
+        ],
+        "explanation": "كانت أول بطولة كأس عالم تُقام على الأراضي الإفريقية."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who holds the record for the most Olympic gold medals?",
+    "choices": [
+      "Mark Spitz",
+      "Carl Lewis",
+      "Usain Bolt",
+      "Michael Phelps"
+    ],
+    "correct": 4,
+    "explanation": "Michael Phelps won 23 Olympic gold medals, all in swimming.",
+    "reference_text": "International Olympic Committee records",
+    "translations": {
+      "fr": {
+        "question": "Qui détient le record de médailles d’or olympiques ?",
+        "choices": [
+          "Mark Spitz",
+          "Carl Lewis",
+          "Usain Bolt",
+          "Michael Phelps"
+        ],
+        "explanation": "Michael Phelps a remporté 23 médailles d’or olympiques, toutes en natation."
+      },
+      "ar": {
+        "question": "من يحمل الرقم القياسي في عدد الميداليات الذهبية الأولمبية؟",
+        "choices": [
+          "مارك سبيتز",
+          "كارل لويس",
+          "يوسين بولت",
+          "مايكل فيلبس"
+        ],
+        "explanation": "فاز مايكل فيلبس بـ23 ميدالية ذهبية أولمبية، كلها في السباحة."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “hat-trick” in football?",
+    "choices": [
+      "A penalty kick taken by a goalkeeper",
+      "Three goals scored by one player in a match",
+      "Three fouls in a row",
+      "Three yellow cards for one team"
+    ],
+    "correct": 2,
+    "explanation": "Scoring three goals in one match is called a hat-trick.",
+    "reference_text": "IFAB Laws of the Game",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « triplé » au football ?",
+        "choices": [
+          "Un penalty tiré par un gardien",
+          "Trois buts marqués par un même joueur dans un match",
+          "Trois fautes de suite",
+          "Trois cartons jaunes pour une équipe"
+        ],
+        "explanation": "Marquer trois buts dans un même match s’appelle un triplé."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«الهاتريك» في كرة القدم؟",
+        "choices": [
+          "ركلة جزاء يسددها حارس المرمى",
+          "تسجيل ثلاثة أهداف بواسطة لاعب واحد في مباراة",
+          "ثلاث أخطاء متتالية",
+          "ثلاث بطاقات صفراء لفريق"
+        ],
+        "explanation": "تسجيل ثلاثة أهداف في مباراة واحدة يُسمى هاتريك."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "In which sport would you perform a “slam dunk”?",
+    "choices": [
+      "Volleyball",
+      "Handball",
+      "Water polo",
+      "Basketball"
+    ],
+    "correct": 4,
+    "explanation": "A slam dunk is a shot where the player forces the ball down through the hoop.",
+    "reference_text": "FIBA basketball rules",
+    "translations": {
+      "fr": {
+        "question": "Dans quel sport réalise-t-on un « dunk » ?",
+        "choices": [
+          "Le volley-ball",
+          "Le handball",
+          "Le water-polo",
+          "Le basket-ball"
+        ],
+        "explanation": "Le dunk consiste à enfoncer le ballon directement dans le panier."
+      },
+      "ar": {
+        "question": "في أي رياضة يُؤدَّى «السلام دانك»؟",
+        "choices": [
+          "الكرة الطائرة",
+          "كرة اليد",
+          "كرة الماء",
+          "كرة السلة"
+        ],
+        "explanation": "السلام دانك رمية يُدفَع فيها الكرة بقوة عبر السلة من الأعلى."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which martial art originated in Japan and its name means “the gentle way”?",
+    "choices": [
+      "Judo",
+      "Kung Fu",
+      "Karate",
+      "Taekwondo"
+    ],
+    "correct": 1,
+    "explanation": "Judo was founded by Jigoro Kano in 1882.",
+    "reference_text": "International Judo Federation",
+    "translations": {
+      "fr": {
+        "question": "Quel art martial né au Japon signifie « la voie de la souplesse » ?",
+        "choices": [
+          "Le judo",
+          "Le kung-fu",
+          "Le karaté",
+          "Le taekwondo"
+        ],
+        "explanation": "Le judo a été fondé par Jigoro Kano en 1882."
+      },
+      "ar": {
+        "question": "أيّ فنون القتال نشأ في اليابان، ويعني اسمه «الطريق اللطيف»؟",
+        "choices": [
+          "الجودو",
+          "الكونغ فو",
+          "الكاراتيه",
+          "التايكوندو"
+        ],
+        "explanation": "أسّس جيغورو كانو رياضة الجودو عام 1882."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "How many players from one volleyball team are on the court at the same time?",
+    "choices": [
+      "6",
+      "7",
+      "5",
+      "4"
+    ],
+    "correct": 1,
+    "explanation": "Each volleyball team fields six players on court.",
+    "reference_text": "FIVB volleyball rules",
+    "translations": {
+      "fr": {
+        "question": "Combien de joueurs d’une équipe de volley-ball sont sur le terrain en même temps ?",
+        "choices": [
+          "6",
+          "7",
+          "5",
+          "4"
+        ],
+        "explanation": "Chaque équipe aligne six joueurs sur le terrain."
+      },
+      "ar": {
+        "question": "كم عدد لاعبي فريق الكرة الطائرة الموجودين في الملعب في وقت واحد؟",
+        "choices": [
+          "6",
+          "7",
+          "5",
+          "4"
+        ],
+        "explanation": "يلعب لكل فريق ستة لاعبين داخل الملعب."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country is generally credited with inventing table tennis?",
+    "choices": [
+      "China",
+      "Sweden",
+      "England",
+      "Japan"
+    ],
+    "correct": 3,
+    "explanation": "Table tennis developed in England in the late 19th century.",
+    "reference_text": "International Table Tennis Federation history",
+    "translations": {
+      "fr": {
+        "question": "Quel pays est généralement crédité de l’invention du tennis de table ?",
+        "choices": [
+          "La Chine",
+          "La Suède",
+          "L’Angleterre",
+          "Le Japon"
+        ],
+        "explanation": "Le tennis de table est né en Angleterre à la fin du XIXe siècle."
+      },
+      "ar": {
+        "question": "أيّ دولة يُنسب إليها عادةً اختراع تنس الطاولة؟",
+        "choices": [
+          "الصين",
+          "السويد",
+          "إنجلترا",
+          "اليابان"
+        ],
+        "explanation": "نشأت لعبة تنس الطاولة في إنجلترا في أواخر القرن التاسع عشر."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sport is known as “the king of sports” and is played with a round ball between two teams of eleven?",
+    "choices": [
+      "Rugby",
+      "Hockey",
+      "Football (soccer)",
+      "Handball"
+    ],
+    "correct": 3,
+    "explanation": "Football is the world’s most popular sport, played with eleven players per side.",
+    "reference_text": "FIFA, football overview",
+    "translations": {
+      "fr": {
+        "question": "Quel sport, joué avec un ballon rond entre deux équipes de onze, est surnommé « le roi des sports » ?",
+        "choices": [
+          "Le rugby",
+          "Le hockey",
+          "Le football",
+          "Le handball"
+        ],
+        "explanation": "Le football est le sport le plus populaire au monde, avec onze joueurs par équipe."
+      },
+      "ar": {
+        "question": "أيّ رياضة تُلقّب بـ«ملك الرياضات» وتُلعب بكرة مستديرة بين فريقين من أحد عشر لاعبًا؟",
+        "choices": [
+          "الرجبي",
+          "الهوكي",
+          "كرة القدم",
+          "كرة اليد"
+        ],
+        "explanation": "كرة القدم أكثر الرياضات شعبية في العالم، ويضم كل فريق أحد عشر لاعبًا."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In tennis, what score comes after 40-40 (deuce) when a player wins a point?",
+    "choices": [
+      "Game point",
+      "Advantage",
+      "Love",
+      "Set point"
+    ],
+    "correct": 2,
+    "explanation": "Winning a point from deuce gives that player the advantage.",
+    "reference_text": "ITF rules of tennis",
+    "translations": {
+      "fr": {
+        "question": "Au tennis, quel est le score après 40-40 (égalité) lorsqu’un joueur gagne un point ?",
+        "choices": [
+          "Balle de jeu",
+          "L’avantage",
+          "Zéro (love)",
+          "Balle de set"
+        ],
+        "explanation": "Gagner un point à égalité donne l’avantage à ce joueur."
+      },
+      "ar": {
+        "question": "في التنس، ما النتيجة بعد التعادل 40-40 عندما يكسب اللاعب نقطة؟",
+        "choices": [
+          "نقطة الفوز بالشوط",
+          "الأفضلية",
+          "صفر (لوف)",
+          "نقطة الفوز بالمجموعة"
+        ],
+        "explanation": "الفوز بنقطة من حالة التعادل يمنح اللاعب الأفضلية."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which national team won the 2019 Africa Cup of Nations?",
+    "choices": [
+      "Senegal’s national team",
+      "Nigeria’s national team",
+      "Nobody from Tunisia",
+      "Algeria’s national team"
+    ],
+    "correct": 4,
+    "explanation": "Algeria won the 2019 Africa Cup of Nations held in Egypt.",
+    "reference_text": "Confederation of African Football, AFCON 2019",
+    "translations": {
+      "fr": {
+        "question": "Quelle équipe a remporté la Coupe d’Afrique des nations 2019 ?",
+        "choices": [
+          "L’équipe du Sénégal",
+          "L’équipe du Nigeria",
+          "Aucune équipe tunisienne",
+          "L’équipe d’Algérie"
+        ],
+        "explanation": "L’Algérie a remporté la CAN 2019 organisée en Égypte."
+      },
+      "ar": {
+        "question": "أيّ منتخب فاز بكأس أمم إفريقيا 2019؟",
+        "choices": [
+          "منتخب السنغال",
+          "منتخب نيجيريا",
+          "لا يوجد منتخب تونسي",
+          "منتخب الجزائر"
+        ],
+        "explanation": "فاز منتخب الجزائر بكأس أمم إفريقيا 2019 التي أُقيمت في مصر."
+      }
+    }
+  },
+  {
+    "category": "sports",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "How many minutes are in a standard football match, not counting stoppage time?",
+    "choices": [
+      "90",
+      "80",
+      "100",
+      "60"
+    ],
+    "correct": 1,
+    "explanation": "A match has two halves of 45 minutes each.",
+    "reference_text": "IFAB Laws of the Game",
+    "translations": {
+      "fr": {
+        "question": "Combien de minutes dure un match de football standard, hors temps additionnel ?",
+        "choices": [
+          "90",
+          "80",
+          "100",
+          "60"
+        ],
+        "explanation": "Un match compte deux mi-temps de 45 minutes."
+      },
+      "ar": {
+        "question": "كم دقيقة تستغرق مباراة كرة القدم القياسية دون احتساب الوقت بدل الضائع؟",
+        "choices": [
+          "90",
+          "80",
+          "100",
+          "60"
+        ],
+        "explanation": "تتكون المباراة من شوطين مدة كل منهما 45 دقيقة."
+      }
+    }
+  }
+]

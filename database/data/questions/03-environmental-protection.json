@@ -1,0 +1,298 @@
+[
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What does the “polluter pays” principle mean?",
+    "choices": [
+      "Only citizens pay for clean-up",
+      "Large factories pay nothing",
+      "Polluters receive government payments",
+      "Those who cause pollution should pay for the damage and its prevention"
+    ],
+    "correct": 4,
+    "explanation": "The principle makes the party that causes pollution bear the cost of the damage and of prevention.",
+    "reference_text": "UN Rio Declaration principle 16",
+    "translations": {
+      "fr": {
+        "question": "Que signifie le principe « pollueur-payeur » ?",
+        "choices": [
+          "Seuls les citoyens paient la dépollution",
+          "Les grandes usines ne paient rien",
+          "Les pollueurs reçoivent des aides publiques",
+          "Celui qui pollue doit payer les dommages et la prévention"
+        ],
+        "explanation": "Ce principe fait supporter le coût de la pollution à celui qui la cause."
+      },
+      "ar": {
+        "question": "ماذا يعني مبدأ «الملوِّث يدفع»؟",
+        "choices": [
+          "لا يدفع تكاليف التنظيف إلا المواطنون",
+          "لا تدفع المصانع الكبيرة شيئًا",
+          "يحصل الملوثون على دعم حكومي",
+          "من يتسبب في التلوث عليه أن يدفع تكلفة الأضرار والوقاية منها"
+        ],
+        "explanation": "يُحمّل هذا المبدأ المتسبب في التلوث تكلفة الأضرار وإجراءات الوقاية منها."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which gas was the main cause of ozone layer depletion in the 20th century?",
+    "choices": [
+      "Chlorofluorocarbons (CFCs)",
+      "Helium",
+      "Oxygen",
+      "Nitrogen"
+    ],
+    "correct": 1,
+    "explanation": "CFCs release chlorine in the stratosphere, where it destroys ozone molecules.",
+    "reference_text": "UNEP Montreal Protocol ozone assessment",
+    "translations": {
+      "fr": {
+        "question": "Quel gaz était la principale cause de l’appauvrissement de la couche d’ozone au XXe siècle ?",
+        "choices": [
+          "Les chlorofluorocarbures (CFC)",
+          "L’hélium",
+          "L’oxygène",
+          "L’azote"
+        ],
+        "explanation": "Les CFC libèrent du chlore dans la stratosphère, où il détruit les molécules d’ozone."
+      },
+      "ar": {
+        "question": "أيّ غاز كان السبب الرئيسي في استنزاف طبقة الأوزون خلال القرن العشرين؟",
+        "choices": [
+          "مركبات الكلوروفلوروكربون (CFCs)",
+          "الهيليوم",
+          "الأكسجين",
+          "النيتروجين"
+        ],
+        "explanation": "تطلق مركبات CFC الكلور في طبقة الستراتوسفير، فيدمّر الكلور جزيئات الأوزون."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which international treaty phased out CFCs?",
+    "choices": [
+      "Basel Convention",
+      "Kyoto Protocol",
+      "Montreal Protocol",
+      "Ramsar Convention"
+    ],
+    "correct": 3,
+    "explanation": "Adopted in 1987, the Montreal Protocol organised the reduction and phase-out of ozone-depleting substances.",
+    "reference_text": "UNEP Montreal Protocol",
+    "translations": {
+      "fr": {
+        "question": "Quel traité international a conduit à l’élimination progressive des CFC ?",
+        "choices": [
+          "La convention de Bâle",
+          "Le protocole de Kyoto",
+          "Le protocole de Montréal",
+          "La convention de Ramsar"
+        ],
+        "explanation": "Signé en 1987, le protocole de Montréal a organisé la réduction puis l’élimination des substances qui appauvrissent la couche d’ozone."
+      },
+      "ar": {
+        "question": "أيّ اتفاقية دولية أدت إلى التخلص التدريجي من مركبات CFC؟",
+        "choices": [
+          "اتفاقية بازل",
+          "بروتوكول كيوتو",
+          "بروتوكول مونتريال",
+          "اتفاقية رامسار"
+        ],
+        "explanation": "اعتُمد بروتوكول مونتريال عام 1987 لتقليص المواد المستنزفة لطبقة الأوزون ثم التخلص منها."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is an “environmental impact assessment” (EIA)?",
+    "choices": [
+      "A test of river water quality",
+      "A tax on polluting vehicles",
+      "A yearly report on a country’s forests",
+      "A study of a project’s likely environmental effects before approval"
+    ],
+    "correct": 4,
+    "explanation": "An EIA is carried out before a project is approved, so its effects can be weighed in advance.",
+    "reference_text": "UNEP environmental impact assessment guidance",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « étude d’impact environnemental » (EIE) ?",
+        "choices": [
+          "Un test de la qualité de l’eau des rivières",
+          "Une taxe sur les véhicules polluants",
+          "Un rapport annuel sur les forêts d’un pays",
+          "Une analyse des effets environnementaux probables d’un projet avant son autorisation"
+        ],
+        "explanation": "L’étude d’impact est réalisée avant la décision d’autoriser un projet, afin d’en évaluer les conséquences."
+      },
+      "ar": {
+        "question": "ما هو «تقييم الأثر البيئي» (EIA)؟",
+        "choices": [
+          "اختبار لجودة مياه الأنهار",
+          "ضريبة على المركبات الملوثة",
+          "تقرير سنوي عن غابات الدولة",
+          "دراسة للآثار البيئية المحتملة لمشروع قبل الموافقة عليه"
+        ],
+        "explanation": "يُجرى التقييم قبل اتخاذ قرار الترخيص للمشروع لتقدير آثاره على البيئة."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main purpose of the Ramsar Convention?",
+    "choices": [
+      "Protection of whales",
+      "Conservation of wetlands",
+      "Regulation of air travel emissions",
+      "Control of nuclear waste"
+    ],
+    "correct": 2,
+    "explanation": "The Ramsar Convention, signed in 1971, protects wetlands of international importance.",
+    "reference_text": "Ramsar Convention on Wetlands (1971)",
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif principal de la convention de Ramsar ?",
+        "choices": [
+          "Protéger les baleines",
+          "Conserver les zones humides",
+          "Réguler les émissions du transport aérien",
+          "Contrôler les déchets nucléaires"
+        ],
+        "explanation": "La convention de Ramsar, signée en 1971, protège les zones humides d’importance internationale."
+      },
+      "ar": {
+        "question": "ما الهدف الرئيسي من اتفاقية رامسار؟",
+        "choices": [
+          "حماية الحيتان",
+          "حفظ الأراضي الرطبة",
+          "تنظيم انبعاثات النقل الجوي",
+          "مراقبة النفايات النووية"
+        ],
+        "explanation": "صدرت اتفاقية رامسار عام 1971 لحماية الأراضي الرطبة ذات الأهمية الدولية."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “biodiversity” refer to?",
+    "choices": [
+      "The total weight of living things",
+      "The number of national parks",
+      "The variety of life at genetic, species and ecosystem levels",
+      "Only the variety of plant species"
+    ],
+    "correct": 3,
+    "explanation": "Biodiversity covers the diversity of genes, species and ecosystems together.",
+    "reference_text": "Convention on Biological Diversity (1992)",
+    "translations": {
+      "fr": {
+        "question": "À quoi correspond la « biodiversité » ?",
+        "choices": [
+          "Le poids total des êtres vivants",
+          "Le nombre de parcs nationaux",
+          "La variété du vivant aux niveaux génétique, spécifique et écosystémique",
+          "Uniquement la variété des espèces végétales"
+        ],
+        "explanation": "La biodiversité couvre la diversité des gènes, des espèces et des écosystèmes."
+      },
+      "ar": {
+        "question": "ماذا يشير مصطلح «التنوع البيولوجي»؟",
+        "choices": [
+          "الوزن الإجمالي للكائنات الحية",
+          "عدد المنتزهات الوطنية",
+          "تنوع الحياة على المستويات الجينية والأنواع والنظم البيئية",
+          "تنوع النباتات وحدها"
+        ],
+        "explanation": "يشمل التنوع البيولوجي تنوع الجينات والأنواع والنظم البيئية معًا."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the Aarhus Convention about?",
+    "choices": [
+      "Access to environmental information, public participation and justice",
+      "Trade of endangered species",
+      "Management of Arctic shipping",
+      "Nuclear weapons testing"
+    ],
+    "correct": 1,
+    "explanation": "Adopted in 1998, the Aarhus Convention gives the public rights to environmental information, participation and legal recourse.",
+    "reference_text": "UNECE Aarhus Convention (1998)",
+    "translations": {
+      "fr": {
+        "question": "Sur quoi porte la convention d’Aarhus ?",
+        "choices": [
+          "L’accès à l’information environnementale, la participation du public et la justice",
+          "Le commerce des espèces menacées",
+          "La gestion du trafic maritime arctique",
+          "Les essais d’armes nucléaires"
+        ],
+        "explanation": "Adoptée en 1998, la convention d’Aarhus reconnaît au public des droits d’accès à l’information, de participation et de recours."
+      },
+      "ar": {
+        "question": "ما الذي تتناوله اتفاقية آرهوس؟",
+        "choices": [
+          "الحق في الحصول على المعلومات البيئية والمشاركة العامة والعدالة",
+          "تجارة الأنواع المهددة بالانقراض",
+          "إدارة الملاحة في القطب الشمالي",
+          "تجارب الأسلحة النووية"
+        ],
+        "explanation": "اعتُمدت اتفاقية آرهوس عام 1998، وتمنح الجمهور حقوقًا في الوصول إلى المعلومات البيئية والمشاركة في القرارات واللجوء إلى القضاء."
+      }
+    }
+  },
+  {
+    "category": "environmental-protection",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “eutrophication” in lakes and rivers?",
+    "choices": [
+      "The growth of coral reefs",
+      "Removal of salt by rain",
+      "Excess nutrients causing algae blooms and oxygen loss",
+      "Rapid freezing of surface water"
+    ],
+    "correct": 3,
+    "explanation": "Excess nitrogen and phosphorus fuel algae; when they decompose, they use up the water’s oxygen.",
+    "reference_text": "US EPA nutrient pollution guidance",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’« eutrophisation » des lacs et des rivières ?",
+        "choices": [
+          "La croissance des récifs coralliens",
+          "L’élimination du sel par la pluie",
+          "Un excès de nutriments provoquant des proliférations d’algues et une baisse de l’oxygène",
+          "Le gel rapide de la surface de l’eau"
+        ],
+        "explanation": "Les nitrates et les phosphates en excès nourrissent les algues ; en se décomposant, celles-ci consomment l’oxygène de l’eau."
+      },
+      "ar": {
+        "question": "ما هو «الإثراء الغذائي» (Eutrophication) في البحيرات والأنهار؟",
+        "choices": [
+          "نمو الشعاب المرجانية",
+          "إزالة الملح بفعل المطر",
+          "فائض المغذيات الذي يسبب ازدهار الطحالب وتراجع الأكسجين",
+          "التجمد السريع لسطح الماء"
+        ],
+        "explanation": "يغذي فائض النيتروجين والفوسفور الطحالب، وعند تحللها تستهلك كمية كبيرة من أكسجين الماء."
+      }
+    }
+  }
+]

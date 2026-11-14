@@ -1,0 +1,662 @@
+[
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Egypt’s neighbour to the west?",
+    "choices": [
+      "Amman",
+      "Tripoli",
+      "Cairo",
+      "Khartoum"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du voisin occidental de l’Égypte ?",
+        "choices": [
+          "Amman",
+          "Tripoli",
+          "Le Caire",
+          "Khartoum"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة الدولة المجاورة لمصر من الغرب؟",
+        "choices": [
+          "عمّان",
+          "طرابلس",
+          "القاهرة",
+          "الخرطوم"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Sudan?",
+    "choices": [
+      "Khartoum",
+      "Port Sudan",
+      "Juba",
+      "Omdurman"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Soudan ?",
+        "choices": [
+          "Khartoum",
+          "Port-Soudan",
+          "Djouba",
+          "Omdourman"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة السودان؟",
+        "choices": [
+          "الخرطوم",
+          "بورتسودان",
+          "جوبا",
+          "أم درمان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Jordan?",
+    "choices": [
+      "Amman",
+      "Aqaba",
+      "Zarqa",
+      "Irbid"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Jordanie ?",
+        "choices": [
+          "Amman",
+          "Aqaba",
+          "Zarqa",
+          "Irbid"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة الأردن؟",
+        "choices": [
+          "عمّان",
+          "العقبة",
+          "الزرقاء",
+          "إربد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Lebanon?",
+    "choices": [
+      "Sidon",
+      "Byblos",
+      "Tripoli",
+      "Beirut"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Liban ?",
+        "choices": [
+          "Sidon",
+          "Byblos",
+          "Tripoli",
+          "Beyrouth"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة لبنان؟",
+        "choices": [
+          "صيدا",
+          "جبيل",
+          "طرابلس",
+          "بيروت"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Syria?",
+    "choices": [
+      "Homs",
+      "Latakia",
+      "Damascus",
+      "Aleppo"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Syrie ?",
+        "choices": [
+          "Homs",
+          "Lattaquié",
+          "Damas",
+          "Alep"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة سوريا؟",
+        "choices": [
+          "حمص",
+          "اللاذقية",
+          "دمشق",
+          "حلب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Iraq?",
+    "choices": [
+      "Mosul",
+      "Erbil",
+      "Basra",
+      "Baghdad"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Irak ?",
+        "choices": [
+          "Mossoul",
+          "Erbil",
+          "Bassorah",
+          "Bagdad"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة العراق؟",
+        "choices": [
+          "الموصل",
+          "أربيل",
+          "البصرة",
+          "بغداد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Kuwait?",
+    "choices": [
+      "Salmiya",
+      "Kuwait City",
+      "Jahra",
+      "Hawalli"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Koweït ?",
+        "choices": [
+          "Salmiya",
+          "Koweït",
+          "Jahra",
+          "Hawalli"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة الكويت؟",
+        "choices": [
+          "السالمية",
+          "مدينة الكويت",
+          "الجهراء",
+          "حولي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Algeria’s neighbour Libya?",
+    "choices": [
+      "Misrata",
+      "Derna",
+      "Benghazi",
+      "Tripoli"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Libye, voisine de l’Algérie ?",
+        "choices": [
+          "Misrata",
+          "Derna",
+          "Benghazi",
+          "Tripoli"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة ليبيا المجاورة للجزائر؟",
+        "choices": [
+          "مصراتة",
+          "درنة",
+          "بنغازي",
+          "طرابلس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian governorate is known for its Roman ruins at Dougga?",
+    "choices": [
+      "Gafsa",
+      "Tozeur",
+      "Kebili",
+      "Béja"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel gouvernorat tunisien est connu pour les ruines romaines de Dougga ?",
+        "choices": [
+          "Gafsa",
+          "Tozeur",
+          "Kébili",
+          "Béja"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ولاية تونسية تشتهر بآثار دقة الرومانية؟",
+        "choices": [
+          "قفصة",
+          "توزر",
+          "قبلي",
+          "باجة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest city in Saudi Arabia?",
+    "choices": [
+      "Jeddah",
+      "Medina",
+      "Mecca",
+      "Riyadh"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande ville d’Arabie saoudite ?",
+        "choices": [
+          "Djeddah",
+          "Médine",
+          "La Mecque",
+          "Riyad"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر مدينة في السعودية؟",
+        "choices": [
+          "جدة",
+          "المدينة المنورة",
+          "مكة المكرمة",
+          "الرياض"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country has the Atlas Mountains as its main mountain range?",
+    "choices": [
+      "Egypt",
+      "Libya",
+      "Morocco",
+      "Sudan"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a pour principale chaîne de montagnes l’Atlas ?",
+        "choices": [
+          "L’Égypte",
+          "La Libye",
+          "Le Maroc",
+          "Le Soudan"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة تُعد سلسلة الأطلس أهم سلسلة جبلية؟",
+        "choices": [
+          "مصر",
+          "ليبيا",
+          "المغرب",
+          "السودان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Mediterranean island is the largest of the Balearic Islands?",
+    "choices": [
+      "Ibiza",
+      "Formentera",
+      "Menorca",
+      "Mallorca"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande des îles Baléares ?",
+        "choices": [
+          "Ibiza",
+          "Formentera",
+          "Minorque",
+          "Majorque"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر جزر البليار؟",
+        "choices": [
+          "إيبيزا",
+          "فورمنتيرا",
+          "مينوركا",
+          "مايوركا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest city in Italy by population?",
+    "choices": [
+      "Turin",
+      "Milan",
+      "Naples",
+      "Rome"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande ville d’Italie par sa population ?",
+        "choices": [
+          "Turin",
+          "Milan",
+          "Naples",
+          "Rome"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر مدينة في إيطاليا من حيث عدد السكان؟",
+        "choices": [
+          "تورينو",
+          "ميلانو",
+          "نابولي",
+          "روما"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which country has the Kalahari Desert within its borders?",
+    "choices": [
+      "Egypt",
+      "Sudan",
+      "Botswana",
+      "Morocco"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays compte le désert du Kalahari sur son territoire ?",
+        "choices": [
+          "L’Égypte",
+          "Le Soudan",
+          "Le Botswana",
+          "Le Maroc"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تقع فيها صحراء كالاهاري؟",
+        "choices": [
+          "مصر",
+          "السودان",
+          "بوتسوانا",
+          "المغرب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Ethiopia?",
+    "choices": [
+      "Dar es Salaam",
+      "Addis Ababa",
+      "Kampala",
+      "Nairobi"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Éthiopie ?",
+        "choices": [
+          "Dar es Salaam",
+          "Addis-Abeba",
+          "Kampala",
+          "Nairobi"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة إثيوبيا؟",
+        "choices": [
+          "دار السلام",
+          "أديس أبابا",
+          "كمبالا",
+          "نيروبي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is known as the Land of a Thousand Hills?",
+    "choices": [
+      "Ghana",
+      "Rwanda",
+      "Uganda",
+      "Kenya"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est surnommé le « Pays aux mille collines » ?",
+        "choices": [
+          "Le Ghana",
+          "Le Rwanda",
+          "L’Ouganda",
+          "Le Kenya"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تُلقّب بـ«بلاد الألف تلة»؟",
+        "choices": [
+          "غانا",
+          "رواندا",
+          "أوغندا",
+          "كينيا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest island in the Mediterranean Sea by population?",
+    "choices": [
+      "Sicily",
+      "Cyprus",
+      "Crete",
+      "Sardinia"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’île la plus peuplée de la Méditerranée ?",
+        "choices": [
+          "La Sicile",
+          "Chypre",
+          "La Crète",
+          "La Sardaigne"
+        ]
+      },
+      "ar": {
+        "question": "ما أكثر جزر البحر المتوسط سكانًا؟",
+        "choices": [
+          "صقلية",
+          "قبرص",
+          "كريت",
+          "سردينيا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is famous for the Angkor Wat temple complex?",
+    "choices": [
+      "Laos",
+      "Cambodia",
+      "Thailand",
+      "Vietnam"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est célèbre pour le complexe du temple d’Angkor Vat ?",
+        "choices": [
+          "Le Laos",
+          "Le Cambodge",
+          "La Thaïlande",
+          "Le Viêt Nam"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر بمجمع معبد أنغكور وات؟",
+        "choices": [
+          "لاوس",
+          "كمبوديا",
+          "تايلاند",
+          "فيتنام"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Nigeria?",
+    "choices": [
+      "Lagos",
+      "Abuja",
+      "Ibadan",
+      "Kano"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Nigeria ?",
+        "choices": [
+          "Lagos",
+          "Abuja",
+          "Ibadan",
+          "Kano"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة نيجيريا؟",
+        "choices": [
+          "لاغوس",
+          "أبوجا",
+          "إبادان",
+          "كانو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian town is famous for the Great Mosque of Sousse and its medina?",
+    "choices": [
+      "Mahdia",
+      "Monastir",
+      "Hammamet",
+      "Sousse"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne est célèbre pour sa grande mosquée et sa médina ?",
+        "choices": [
+          "Mahdia",
+          "Monastir",
+          "Hammamet",
+          "Sousse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة تونسية تشتهر بجامعها الكبير وبمدينتها العتيقة؟",
+        "choices": [
+          "المهدية",
+          "المنستير",
+          "الحمامات",
+          "سوسة"
+        ]
+      }
+    }
+  }
+]

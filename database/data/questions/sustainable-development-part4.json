@@ -1,0 +1,648 @@
+[
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on responsible energy for everyone?",
+    "choices": [
+      "SDG 1",
+      "SDG 5",
+      "SDG 10",
+      "SDG 7"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD vise une énergie responsable pour tous ?",
+        "choices": [
+          "L’ODD 1",
+          "L’ODD 5",
+          "L’ODD 10",
+          "L’ODD 7"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يسعى إلى طاقة مسؤولة للجميع؟",
+        "choices": [
+          "الهدف 1",
+          "الهدف 5",
+          "الهدف 10",
+          "الهدف 7"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on decent work and economic growth?",
+    "choices": [
+      "SDG 4",
+      "SDG 8",
+      "SDG 9",
+      "SDG 14"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur le travail décent et la croissance économique ?",
+        "choices": [
+          "L’ODD 4",
+          "L’ODD 8",
+          "L’ODD 9",
+          "L’ODD 14"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول العمل اللائق والنمو الاقتصادي؟",
+        "choices": [
+          "الهدف 4",
+          "الهدف 8",
+          "الهدف 9",
+          "الهدف 14"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the main purpose of an environmental impact study?",
+    "choices": [
+      "To count tourists",
+      "To predict and reduce harm from a project",
+      "To choose the colour of buildings",
+      "To advertise new cars"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but principal d’une étude d’impact environnemental ?",
+        "choices": [
+          "Compter les touristes",
+          "Prévoir et réduire les dommages d’un projet",
+          "Choisir la couleur des bâtiments",
+          "Faire la publicité de voitures"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من دراسة الأثر البيئي؟",
+        "choices": [
+          "عدّ السياح",
+          "التنبؤ بأضرار المشروع والحد منها",
+          "اختيار لون المباني",
+          "الترويج للسيارات"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does the acronym SDG stand for?",
+    "choices": [
+      "Strategic Defence Group",
+      "Social Digital Growth",
+      "Sustainable Development Goal",
+      "Standard Data Grid"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Que signifie l’acronyme ODD ?",
+        "choices": [
+          "Groupe de défense stratégique",
+          "Croissance numérique sociale",
+          "Objectif de développement durable",
+          "Grille de données standard"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار SDG؟",
+        "choices": [
+          "مجموعة الدفاع الاستراتيجي",
+          "النمو الرقمي الاجتماعي",
+          "هدف التنمية المستدامة",
+          "شبكة البيانات القياسية"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which concept promotes sharing rather than owning products?",
+    "choices": [
+      "Mass production",
+      "Sharing economy",
+      "Hoarding",
+      "Monopoly"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel concept favorise le partage plutôt que la possession des produits ?",
+        "choices": [
+          "La production de masse",
+          "L’économie du partage",
+          "L’accumulation",
+          "Le monopole"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مفهوم يشجع على المشاركة بدلًا من تملك المنتجات؟",
+        "choices": [
+          "الإنتاج الكبير",
+          "اقتصاد المشاركة",
+          "الاكتناز",
+          "الاحتكار"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does “sustainable finance” focus on?",
+    "choices": [
+      "Hiding money from taxes",
+      "Investing only in fossil fuels",
+      "Lending to the military only",
+      "Investing in projects with positive environmental and social impact"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Sur quoi porte la « finance durable » ?",
+        "choices": [
+          "Dissimuler de l’argent au fisc",
+          "Investir uniquement dans les énergies fossiles",
+          "Prêter uniquement aux armées",
+          "Investir dans des projets à impact environnemental et social positif"
+        ]
+      },
+      "ar": {
+        "question": "على ماذا تركز «التمويل المستدام»؟",
+        "choices": [
+          "إخفاء الأموال عن الضرائب",
+          "الاستثمار في الوقود الأحفوري فقط",
+          "الإقراض للجيوش فقط",
+          "الاستثمار في مشاريع ذات أثر بيئي واجتماعي إيجابي"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action supports sustainable transport?",
+    "choices": [
+      "Cycling to work",
+      "Flying for short trips",
+      "Using plastic bags",
+      "Driving alone every day"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne soutient les transports durables ?",
+        "choices": [
+          "Aller au travail à vélo",
+          "Prendre l’avion pour de courts trajets",
+          "Utiliser des sacs plastiques",
+          "Conduire seul tous les jours"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يدعم النقل المستدام؟",
+        "choices": [
+          "ركوب الدراجة إلى العمل",
+          "السفر بالطائرة في الرحلات القصيرة",
+          "استخدام الأكياس البلاستيكية",
+          "القيادة وحدك كل يوم"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which approach integrates social, economic and environmental goals in one plan?",
+    "choices": [
+      "Random planning",
+      "Single-sector planning",
+      "Integrated planning",
+      "Isolated projects"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle approche intègre les objectifs sociaux, économiques et environnementaux dans un même plan ?",
+        "choices": [
+          "La planification aléatoire",
+          "La planification sectorielle",
+          "La planification intégrée",
+          "Les projets isolés"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نهج يدمج الأهداف الاجتماعية والاقتصادية والبيئية في خطة واحدة؟",
+        "choices": [
+          "التخطيط العشوائي",
+          "التخطيط القطاعي",
+          "التخطيط المتكامل",
+          "المشاريع المعزولة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian strategy supports renewable energy as part of national development?",
+    "choices": [
+      "National Textile Plan",
+      "National Energy Transition Strategy",
+      "National Tourism Strategy",
+      "Export Strategy for Olive Oil only"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle stratégie tunisienne soutient les énergies renouvelables dans le développement national ?",
+        "choices": [
+          "Le plan national du textile",
+          "La stratégie nationale de transition énergétique",
+          "La stratégie nationale du tourisme",
+          "La stratégie d’exportation de l’huile d’olive uniquement"
+        ]
+      },
+      "ar": {
+        "question": "أيّ استراتيجية تونسية تدعم الطاقات المتجددة ضمن التنمية الوطنية؟",
+        "choices": [
+          "المخطط الوطني للنسيج",
+          "الاستراتيجية الوطنية للانتقال الطاقي",
+          "الاستراتيجية الوطنية للسياحة",
+          "استراتيجية تصدير زيت الزيتون فقط"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is “reforestation”?",
+    "choices": [
+      "Cutting down forests",
+      "Building new roads through forests",
+      "Burning forests for fields",
+      "Replanting trees in areas where forests were lost"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « reboisement » ?",
+        "choices": [
+          "Abattre des forêts",
+          "Construire des routes à travers les forêts",
+          "Brûler les forêts pour cultiver",
+          "Replanter des arbres là où les forêts ont disparu"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«إعادة التشجير»؟",
+        "choices": [
+          "قطع الغابات",
+          "شق الطرق عبر الغابات",
+          "حرق الغابات لاستصلاح الأرض",
+          "إعادة زراعة الأشجار في المناطق التي فقدت غاباتها"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is a common sustainable farming practice that protects soil?",
+    "choices": [
+      "Burning crop residues",
+      "Conservation tillage",
+      "Deep ploughing every day",
+      "Monoculture only"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle pratique agricole durable protège les sols ?",
+        "choices": [
+          "Le brûlage des résidus",
+          "Le travail réduit du sol",
+          "Le labour profond chaque jour",
+          "La monoculture uniquement"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ممارسة زراعية مستدامة تحمي التربة؟",
+        "choices": [
+          "حرق بقايا المحاصيل",
+          "الحراثة المحافظة",
+          "الحراثة العميقة يوميًا",
+          "زراعة محصول واحد فقط"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which goal refers to cities being inclusive, safe, resilient and sustainable?",
+    "choices": [
+      "SDG 17",
+      "SDG 3",
+      "SDG 11",
+      "SDG 6"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel objectif concerne des villes inclusives, sûres, résilientes et durables ?",
+        "choices": [
+          "L’ODD 17",
+          "L’ODD 3",
+          "L’ODD 11",
+          "L’ODD 6"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتعلق بجعل المدن شاملة وآمنة ومرنة ومستدامة؟",
+        "choices": [
+          "الهدف 17",
+          "الهدف 3",
+          "الهدف 11",
+          "الهدف 6"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “resilience” mean in sustainable development?",
+    "choices": [
+      "The skill of fast travel",
+      "The power to produce waste",
+      "The ability to stop change completely",
+      "The ability to withstand and recover from shocks"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Que signifie la « résilience » dans le développement durable ?",
+        "choices": [
+          "L’habileté à voyager vite",
+          "Le pouvoir de produire des déchets",
+          "La capacité à arrêter tout changement",
+          "La capacité à résister aux chocs et à s’en remettre"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تعني «المرونة» في التنمية المستدامة؟",
+        "choices": [
+          "مهارة السفر السريع",
+          "القدرة على إنتاج النفايات",
+          "القدرة على إيقاف التغيير تمامًا",
+          "القدرة على الصمود أمام الصدمات والتعافي منها"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item is best to reduce plastic use in the kitchen?",
+    "choices": [
+      "Plastic wrap every day",
+      "Disposable plates",
+      "Reusable containers",
+      "Styrofoam cups"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel objet quotidien réduit le mieux l’usage du plastique dans la cuisine ?",
+        "choices": [
+          "Le film plastique au quotidien",
+          "Les assiettes jetables",
+          "Les contenants réutilisables",
+          "Les gobelets en polystyrène"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة يومية تقلل استخدام البلاستيك في المطبخ أكثر من غيرها؟",
+        "choices": [
+          "رقائق البلاستيك يوميًا",
+          "الأطباق أحادية الاستعمال",
+          "الحاويات القابلة لإعادة الاستعمال",
+          "أكواب الستايروفوم"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which framework sets out principles for responsible business conduct across human rights and environment?",
+    "choices": [
+      "UN Guiding Principles on Business and Human Rights",
+      "Treaty of Rome",
+      "Geneva Convention",
+      "Bretton Woods Agreement"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel cadre fixe des principes de conduite responsable des entreprises en matière de droits humains et d’environnement ?",
+        "choices": [
+          "Les principes directeurs de l’ONU relatifs aux entreprises et aux droits de l’homme",
+          "Le traité de Rome",
+          "La convention de Genève",
+          "Les accords de Bretton Woods"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إطار يحدد مبادئ السلوك المسؤول للشركات في مجالي حقوق الإنسان والبيئة؟",
+        "choices": [
+          "المبادئ التوجيهية للأمم المتحدة بشأن الأعمال وحقوق الإنسان",
+          "معاهدة روما",
+          "اتفاقية جنيف",
+          "اتفاقيات بريتون وودز"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is a “smart city”?",
+    "choices": [
+      "A city built underground only",
+      "A city without roads",
+      "A city using digital technology to improve services and sustainability",
+      "A city with no electricity"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’une « ville intelligente » ?",
+        "choices": [
+          "Une ville construite uniquement sous terre",
+          "Une ville sans routes",
+          "Une ville qui utilise le numérique pour améliorer les services et la durabilité",
+          "Une ville sans électricité"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«المدينة الذكية»؟",
+        "choices": [
+          "مدينة مبنية تحت الأرض فقط",
+          "مدينة بلا طرق",
+          "مدينة تستخدم التكنولوجيا الرقمية لتحسين الخدمات والاستدامة",
+          "مدينة بلا كهرباء"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which SDG focuses on partnerships and means of implementation?",
+    "choices": [
+      "SDG 1",
+      "SDG 17",
+      "SDG 6",
+      "SDG 9"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur les partenariats et les moyens de mise en œuvre ?",
+        "choices": [
+          "L’ODD 1",
+          "L’ODD 17",
+          "L’ODD 6",
+          "L’ODD 9"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الشراكات ووسائل التنفيذ؟",
+        "choices": [
+          "الهدف 1",
+          "الهدف 17",
+          "الهدف 6",
+          "الهدف 9"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which approach evaluates how the value of nature and ecosystem services should be considered in decisions?",
+    "choices": [
+      "Military budgeting",
+      "Advertising planning",
+      "Tax avoidance",
+      "Natural capital accounting"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle approche évalue la valeur de la nature et des services écosystémiques dans les décisions ?",
+        "choices": [
+          "La budgétisation militaire",
+          "La planification publicitaire",
+          "L’évitement fiscal",
+          "La comptabilité du capital naturel"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نهج يقيّم قيمة الطبيعة وخدمات النظم البيئية في عملية اتخاذ القرار؟",
+        "choices": [
+          "الميزانية العسكرية",
+          "التخطيط الإعلاني",
+          "التهرب الضريبي",
+          "محاسبة رأس المال الطبيعي"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday habit helps save energy at home?",
+    "choices": [
+      "Switching off lights when leaving a room",
+      "Charging phones all night for no reason",
+      "Leaving all appliances on",
+      "Keeping windows open with heating on"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle habitude quotidienne aide à économiser l’énergie à la maison ?",
+        "choices": [
+          "Éteindre la lumière en quittant une pièce",
+          "Charger son téléphone toute la nuit sans raison",
+          "Laisser tous les appareils allumés",
+          "Garder les fenêtres ouvertes avec le chauffage"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عادة يومية تساعد على توفير الطاقة في المنزل؟",
+        "choices": [
+          "إطفاء الأضواء عند مغادرة الغرفة",
+          "شحن الهاتف طوال الليل دون داع",
+          "ترك كل الأجهزة مشتعلة",
+          "إبقاء النوافذ مفتوحة مع تشغيل التدفئة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  }
+]

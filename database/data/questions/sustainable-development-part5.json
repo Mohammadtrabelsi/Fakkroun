@@ -1,0 +1,512 @@
+[
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on good health and well-being?",
+    "choices": [
+      "SDG 2",
+      "SDG 5",
+      "SDG 4",
+      "SDG 3"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur la bonne santé et le bien-être ?",
+        "choices": [
+          "L’ODD 2",
+          "L’ODD 5",
+          "L’ODD 4",
+          "L’ODD 3"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الصحة الجيدة والرفاه؟",
+        "choices": [
+          "الهدف 2",
+          "الهدف 5",
+          "الهدف 4",
+          "الهدف 3"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on quality education?",
+    "choices": [
+      "SDG 3",
+      "SDG 7",
+      "SDG 4",
+      "SDG 6"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur l’éducation de qualité ?",
+        "choices": [
+          "L’ODD 3",
+          "L’ODD 7",
+          "L’ODD 4",
+          "L’ODD 6"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول التعليم الجيد؟",
+        "choices": [
+          "الهدف 3",
+          "الهدف 7",
+          "الهدف 4",
+          "الهدف 6"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which SDG focuses on climate action?",
+    "choices": [
+      "SDG 13",
+      "SDG 15",
+      "SDG 12",
+      "SDG 14"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur la lutte contre le changement climatique ?",
+        "choices": [
+          "L’ODD 13",
+          "L’ODD 15",
+          "L’ODD 12",
+          "L’ODD 14"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول العمل المناخي؟",
+        "choices": [
+          "الهدف 13",
+          "الهدف 15",
+          "الهدف 12",
+          "الهدف 14"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “green finance” mean?",
+    "choices": [
+      "Investing only in casinos",
+      "Financing projects that benefit the environment",
+      "Hiding money from banks",
+      "Printing money in green ink"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Que signifie la « finance verte » ?",
+        "choices": [
+          "Investir uniquement dans les casinos",
+          "Le financement de projets bénéfiques à l’environnement",
+          "Cacher de l’argent aux banques",
+          "Imprimer de la monnaie à l’encre verte"
+        ]
+      },
+      "ar": {
+        "question": "ماذا تعني «التمويل الأخضر»؟",
+        "choices": [
+          "الاستثمار في الكازينوهات فقط",
+          "تمويل مشاريع مفيدة للبيئة",
+          "إخفاء الأموال عن البنوك",
+          "طباعة النقود بالحبر الأخضر"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which concept refers to ensuring that all people have access to basic services such as water, health and education?",
+    "choices": [
+      "Price fixing",
+      "Universal access",
+      "Monopoly control",
+      "Export ban"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel concept désigne l’accès de tous aux services de base comme l’eau, la santé et l’éducation ?",
+        "choices": [
+          "L’entente sur les prix",
+          "L’accès universel",
+          "Le contrôle monopolistique",
+          "L’interdiction d’exporter"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مفهوم يشير إلى ضمان حصول الجميع على الخدمات الأساسية كالمياه والصحة والتعليم؟",
+        "choices": [
+          "تحديد الأسعار بالاتفاق",
+          "الوصول الشامل",
+          "السيطرة الاحتكارية",
+          "حظر التصدير"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main objective of a “green economy” strategy in developing countries?",
+    "choices": [
+      "Exporting all natural resources",
+      "Stopping all development",
+      "Closing schools",
+      "Creating jobs while protecting natural resources"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif principal d’une stratégie d’« économie verte » dans les pays en développement ?",
+        "choices": [
+          "Exporter toutes les ressources naturelles",
+          "Arrêter tout développement",
+          "Fermer les écoles",
+          "Créer des emplois tout en protégeant les ressources naturelles"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف الرئيسي لاستراتيجية «الاقتصاد الأخضر» في الدول النامية؟",
+        "choices": [
+          "تصدير جميع الموارد الطبيعية",
+          "وقف كل تنمية",
+          "إغلاق المدارس",
+          "خلق فرص العمل مع حماية الموارد الطبيعية"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action supports sustainable food?",
+    "choices": [
+      "Throwing food away",
+      "Buying local and seasonal products",
+      "Eating only processed food",
+      "Buying out-of-season imports"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne soutient une alimentation durable ?",
+        "choices": [
+          "Jeter la nourriture",
+          "Acheter local et de saison",
+          "Manger uniquement des aliments transformés",
+          "Acheter des produits importés hors saison"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يدعم الغذاء المستدام؟",
+        "choices": [
+          "رمي الطعام",
+          "شراء المنتجات المحلية والموسمية",
+          "تناول الأطعمة المصنعة فقط",
+          "شراء منتجات مستوردة خارج موسمها"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “carbon footprint” reduction usually involve for households?",
+    "choices": [
+      "Using less energy and choosing low-carbon transport",
+      "Using more fuel",
+      "Driving daily to every shop",
+      "Buying more disposable products"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que implique généralement la réduction de l’empreinte carbone pour un foyer ?",
+        "choices": [
+          "Consommer moins d’énergie et choisir des transports bas carbone",
+          "Consommer plus de carburant",
+          "Prendre la voiture tous les jours pour chaque course",
+          "Acheter plus de produits jetables"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يتضمن خفض البصمة الكربونية للأسرة عادةً؟",
+        "choices": [
+          "استهلاك طاقة أقل واختيار وسائل نقل منخفضة الكربون",
+          "استهلاك وقود أكبر",
+          "القيادة يوميًا لكل مشوار",
+          "شراء منتجات أحادية الاستعمال أكثر"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which approach aims to build infrastructure that is resilient to climate and disaster risks?",
+    "choices": [
+      "Fragile housing",
+      "Resilient infrastructure",
+      "Temporary tents only",
+      "Unplanned building"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle approche vise à construire des infrastructures résilientes aux risques climatiques et aux catastrophes ?",
+        "choices": [
+          "Les logements fragiles",
+          "Les infrastructures résilientes",
+          "Les tentes temporaires uniquement",
+          "La construction non planifiée"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نهج يسعى إلى بناء بنية تحتية مرنة أمام المخاطر المناخية والكوارث؟",
+        "choices": [
+          "المساكن الهشة",
+          "البنية التحتية المرنة",
+          "الخيام المؤقتة فقط",
+          "البناء غير المخطط"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main purpose of a recycling programme in a school?",
+    "choices": [
+      "Teaching students to reduce and reuse waste",
+      "Closing the school library",
+      "Building a new school",
+      "Selling school furniture"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le but principal d’un programme de recyclage dans une école ?",
+        "choices": [
+          "Apprendre aux élèves à réduire et réutiliser les déchets",
+          "Fermer la bibliothèque",
+          "Construire une nouvelle école",
+          "Vendre le mobilier scolaire"
+        ]
+      },
+      "ar": {
+        "question": "ما الغرض الرئيسي من برنامج إعادة التدوير في المدرسة؟",
+        "choices": [
+          "تعليم الطلاب تقليل النفايات وإعادة استخدامها",
+          "إغلاق مكتبة المدرسة",
+          "بناء مدرسة جديدة",
+          "بيع أثاث المدرسة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the “polluter pays” principle linked to in sustainable development?",
+    "choices": [
+      "Free access to pollution",
+      "Tax evasion",
+      "Subsidies for coal",
+      "Environmental responsibility and cost recovery"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi est lié le principe « pollueur-payeur » dans le développement durable ?",
+        "choices": [
+          "L’accès libre à la pollution",
+          "L’évasion fiscale",
+          "Les subventions au charbon",
+          "La responsabilité environnementale et le recouvrement des coûts"
+        ]
+      },
+      "ar": {
+        "question": "بماذا يرتبط مبدأ «الملوّث يدفع» في التنمية المستدامة؟",
+        "choices": [
+          "الحق المجاني في التلوث",
+          "التهرب الضريبي",
+          "دعم الفحم",
+          "المسؤولية البيئية واسترداد التكاليف"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which framework is used by governments to measure national progress beyond GDP alone?",
+    "choices": [
+      "Human Development Index",
+      "Stock market index",
+      "Credit score",
+      "Trade deficit"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel cadre les gouvernements utilisent-ils pour mesurer le progrès national au-delà du seul PIB ?",
+        "choices": [
+          "L’indice de développement humain",
+          "L’indice boursier",
+          "La cote de crédit",
+          "Le déficit commercial"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إطار تستخدمه الحكومات لقياس التقدم الوطني بما يتجاوز الناتج المحلي الإجمالي وحده؟",
+        "choices": [
+          "مؤشر التنمية البشرية",
+          "مؤشر سوق الأسهم",
+          "التصنيف الائتماني",
+          "العجز التجاري"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is a common sustainable practice in the home garden?",
+    "choices": [
+      "Burning dry leaves",
+      "Using chemical pesticides every week",
+      "Composting and rainwater harvesting",
+      "Cutting all trees"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle pratique durable est courante au jardin ?",
+        "choices": [
+          "Brûler les feuilles mortes",
+          "Utiliser des pesticides chimiques chaque semaine",
+          "Le compostage et la récupération de l’eau de pluie",
+          "Couper tous les arbres"
+        ]
+      },
+      "ar": {
+        "question": "ما الممارسة المستدامة الشائعة في حديقة المنزل؟",
+        "choices": [
+          "حرق الأوراق الجافة",
+          "استخدام المبيدات الكيميائية كل أسبوع",
+          "التسميد العضوي وحصاد مياه الأمطار",
+          "قطع كل الأشجار"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the main goal of the UN’s SDG 9?",
+    "choices": [
+      "Build resilient infrastructure and promote innovation",
+      "Protect life below water",
+      "End poverty",
+      "Ensure clean water"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif principal de l’ODD 9 de l’ONU ?",
+        "choices": [
+          "Bâtir des infrastructures résilientes et promouvoir l’innovation",
+          "Protéger la vie aquatique",
+          "Mettre fin à la pauvreté",
+          "Garantir l’eau propre"
+        ]
+      },
+      "ar": {
+        "question": "ما الهدف الرئيسي للهدف 9 من أهداف الأمم المتحدة؟",
+        "choices": [
+          "بناء بنية تحتية مرنة وتعزيز الابتكار",
+          "حماية الحياة تحت الماء",
+          "القضاء على الفقر",
+          "ضمان المياه النظيفة"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “environmental justice”?",
+    "choices": [
+      "Fair treatment of all people regardless of income or race in environmental decisions",
+      "Court cases about wildlife only",
+      "Punishment of farmers",
+      "Taxes on pollution"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « justice environnementale » ?",
+        "choices": [
+          "Le traitement équitable de tous, quels que soient revenus ou origine, dans les décisions environnementales",
+          "Les procès concernant uniquement la faune",
+          "La sanction des agriculteurs",
+          "Les taxes sur la pollution"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«العدالة البيئية»؟",
+        "choices": [
+          "المعاملة العادلة لجميع الناس بغض النظر عن الدخل أو العرق في القرارات البيئية",
+          "القضايا القضائية الخاصة بالحياة البرية فقط",
+          "معاقبة المزارعين",
+          "ضرائب على التلوث"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  }
+]

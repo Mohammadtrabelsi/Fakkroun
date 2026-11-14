@@ -1,0 +1,648 @@
+[
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable source is harnessed by solar panels on rooftops?",
+    "choices": [
+      "Natural gas",
+      "Sunlight",
+      "Coal",
+      "Uranium"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle source renouvelable exploitent les panneaux solaires sur les toits ?",
+        "choices": [
+          "Le gaz naturel",
+          "La lumière du soleil",
+          "Le charbon",
+          "L’uranium"
+        ]
+      },
+      "ar": {
+        "question": "ما المصدر المتجدد الذي تستغله الألواح الشمسية على الأسطح؟",
+        "choices": [
+          "الغاز الطبيعي",
+          "ضوء الشمس",
+          "الفحم",
+          "اليورانيوم"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural force drives wind turbines?",
+    "choices": [
+      "Falling rocks",
+      "Ocean salt",
+      "Moving air",
+      "Underground fire"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle force naturelle fait tourner les éoliennes ?",
+        "choices": [
+          "Les chutes de pierres",
+          "Le sel de l’océan",
+          "L’air en mouvement",
+          "Le feu souterrain"
+        ]
+      },
+      "ar": {
+        "question": "ما القوة الطبيعية التي تحرك توربينات الرياح؟",
+        "choices": [
+          "تساقط الصخور",
+          "ملح المحيط",
+          "الهواء المتحرك",
+          "النار الباطنية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source uses the power of falling water?",
+    "choices": [
+      "Oil power",
+      "Coal power",
+      "Hydropower",
+      "Nuclear power"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle source d’énergie utilise la force de l’eau qui tombe ?",
+        "choices": [
+          "L’énergie pétrolière",
+          "L’énergie charbonnière",
+          "L’hydroélectricité",
+          "L’énergie nucléaire"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر طاقة يستخدم قوة المياه المتساقطة؟",
+        "choices": [
+          "طاقة النفط",
+          "طاقة الفحم",
+          "الطاقة الكهرومائية",
+          "الطاقة النووية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is a major producer of solar power in Africa?",
+    "choices": [
+      "Finland",
+      "Iceland",
+      "Norway",
+      "Morocco"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est un grand producteur d’énergie solaire en Afrique ?",
+        "choices": [
+          "La Finlande",
+          "L’Islande",
+          "La Norvège",
+          "Le Maroc"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تُعد من كبار منتجي الطاقة الشمسية في إفريقيا؟",
+        "choices": [
+          "فنلندا",
+          "آيسلندا",
+          "النرويج",
+          "المغرب"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the energy stored in a battery called?",
+    "choices": [
+      "Chemical energy",
+      "Nuclear energy",
+      "Tidal energy",
+      "Wind energy"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel type d’énergie est stocké dans une pile ou une batterie ?",
+        "choices": [
+          "L’énergie chimique",
+          "L’énergie nucléaire",
+          "L’énergie marémotrice",
+          "L’énergie éolienne"
+        ]
+      },
+      "ar": {
+        "question": "ما نوع الطاقة المخزنة في البطارية؟",
+        "choices": [
+          "الطاقة الكيميائية",
+          "الطاقة النووية",
+          "طاقة المد والجزر",
+          "طاقة الرياح"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which technology uses the difference in temperature between the ocean surface and deep water?",
+    "choices": [
+      "Wind turbine",
+      "Biogas digester",
+      "Solar chimney",
+      "Ocean thermal energy conversion"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie utilise la différence de température entre la surface de l’océan et les eaux profondes ?",
+        "choices": [
+          "L’éolienne",
+          "Le digesteur de biogaz",
+          "La cheminée solaire",
+          "La conversion d’énergie thermique des mers"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية تستفيد من فارق الحرارة بين سطح المحيط والمياه العميقة؟",
+        "choices": [
+          "توربين الرياح",
+          "هاضم الغاز الحيوي",
+          "مدخنة الطاقة الشمسية",
+          "تحويل الطاقة الحرارية للمحيطات"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which power plant type uses steam produced by the Earth’s heat?",
+    "choices": [
+      "Geothermal plant",
+      "Gas turbine",
+      "Coal plant",
+      "Diesel generator"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel type de centrale utilise la vapeur produite par la chaleur de la Terre ?",
+        "choices": [
+          "La centrale géothermique",
+          "La turbine à gaz",
+          "La centrale à charbon",
+          "Le groupe électrogène diesel"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نوع من المحطات يستخدم البخار الناتج عن حرارة الأرض؟",
+        "choices": [
+          "محطة حرارية أرضية",
+          "توربين الغاز",
+          "محطة الفحم",
+          "مولد الديزل"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the efficiency of a typical commercial solar panel roughly?",
+    "choices": [
+      "About 20 per cent",
+      "About 1 per cent",
+      "About 80 per cent",
+      "About 50 per cent"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le rendement d’un panneau solaire commercial typique, environ ?",
+        "choices": [
+          "Environ 20 %",
+          "Environ 1 %",
+          "Environ 80 %",
+          "Environ 50 %"
+        ]
+      },
+      "ar": {
+        "question": "ما كفاءة لوح شمسي تجاري نموذجي تقريبًا؟",
+        "choices": [
+          "نحو 20%",
+          "نحو 1%",
+          "نحو 80%",
+          "نحو 50%"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which energy form is produced when hydrogen and oxygen combine to make water?",
+    "choices": [
+      "Nuclear fission",
+      "Solar heat",
+      "Electricity in fuel cells",
+      "Tidal flow"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle forme d’énergie est produite quand l’hydrogène et l’oxygène se combinent pour former de l’eau ?",
+        "choices": [
+          "La fission nucléaire",
+          "La chaleur solaire",
+          "L’électricité des piles à combustible",
+          "Le courant de marée"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شكل من الطاقة ينتج عندما يتحد الهيدروجين والأكسجين لتكوين الماء؟",
+        "choices": [
+          "الانشطار النووي",
+          "الحرارة الشمسية",
+          "الكهرباء في خلايا الوقود",
+          "تيار المد"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source is generated by the tides of the sea?",
+    "choices": [
+      "Coal energy",
+      "Nuclear energy",
+      "Gas energy",
+      "Tidal energy"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie est produite par les marées ?",
+        "choices": [
+          "L’énergie charbonnière",
+          "L’énergie nucléaire",
+          "L’énergie gazière",
+          "L’énergie marémotrice"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طاقة تُنتج من مدّ البحر وجزره؟",
+        "choices": [
+          "طاقة الفحم",
+          "الطاقة النووية",
+          "طاقة الغاز",
+          "طاقة المد والجزر"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “solar thermal” system mainly used for?",
+    "choices": [
+      "Heating water and buildings",
+      "Making fuel for cars",
+      "Producing diamonds",
+      "Generating radio waves"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert surtout un système solaire thermique ?",
+        "choices": [
+          "Chauffer l’eau et les bâtiments",
+          "Fabriquer du carburant pour les voitures",
+          "Produire des diamants",
+          "Émettre des ondes radio"
+        ]
+      },
+      "ar": {
+        "question": "ما الاستخدام الرئيسي لأنظمة الطاقة الشمسية الحرارية؟",
+        "choices": [
+          "تسخين المياه والمباني",
+          "صنع وقود للسيارات",
+          "إنتاج الماس",
+          "بث الموجات الراديوية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which renewable energy technology is sometimes called ‘pumped hydro’?",
+    "choices": [
+      "Pumped-storage hydropower",
+      "Biogas plant",
+      "Hydrogen engine",
+      "Solar tower"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie renouvelable est parfois appelée « pompage-turbinage » ?",
+        "choices": [
+          "L’hydroélectricité à réserve pompée",
+          "La centrale à biogaz",
+          "Le moteur à hydrogène",
+          "La tour solaire"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية متجددة تُسمّى أحيانًا «الضخ الكهرومائي»؟",
+        "choices": [
+          "التخزين الكهرومائي بالضخ",
+          "محطة الغاز الحيوي",
+          "محرك الهيدروجين",
+          "برج الطاقة الشمسية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which resource is used to make biofuels?",
+    "choices": [
+      "Sand",
+      "Granite",
+      "Glass",
+      "Plants and organic waste"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource sert à fabriquer les biocarburants ?",
+        "choices": [
+          "Le sable",
+          "Le granit",
+          "Le verre",
+          "Les plantes et les déchets organiques"
+        ]
+      },
+      "ar": {
+        "question": "ما المادة المستخدمة في إنتاج الوقود الحيوي؟",
+        "choices": [
+          "الرمل",
+          "الجرانيت",
+          "الزجاج",
+          "النباتات والمخلفات العضوية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country leads the world in installed hydropower capacity?",
+    "choices": [
+      "Switzerland",
+      "Norway",
+      "Iceland",
+      "China"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est le premier au monde en capacité hydroélectrique installée ?",
+        "choices": [
+          "La Suisse",
+          "La Norvège",
+          "L’Islande",
+          "La Chine"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تتصدر العالم في القدرة المركبة للطاقة الكهرومائية؟",
+        "choices": [
+          "سويسرا",
+          "النرويج",
+          "آيسلندا",
+          "الصين"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “grid parity” for solar energy?",
+    "choices": [
+      "When solar energy is free for everyone",
+      "When solar power costs the same as grid electricity",
+      "When the grid stops working",
+      "When solar panels generate exactly the grid frequency"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que la « parité réseau » (grid parity) pour l’énergie solaire ?",
+        "choices": [
+          "Quand l’énergie solaire est gratuite pour tous",
+          "Quand l’électricité solaire coûte le même prix que l’électricité du réseau",
+          "Quand le réseau cesse de fonctionner",
+          "Quand les panneaux produisent exactement la fréquence du réseau"
+        ]
+      },
+      "ar": {
+        "question": "ما المقصود بـ«تكافؤ الشبكة» (Grid parity) للطاقة الشمسية؟",
+        "choices": [
+          "عندما تصبح الطاقة الشمسية مجانية للجميع",
+          "عندما تصبح تكلفة الكهرباء الشمسية مساوية لتكلفة كهرباء الشبكة",
+          "عندما تتوقف الشبكة عن العمل",
+          "عندما تنتج الألواح تردد الشبكة بالضبط"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural resource is the main fuel of geothermal energy?",
+    "choices": [
+      "Heat from the Earth",
+      "Oil",
+      "Coal",
+      "Wood"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource naturelle est le « carburant » principal de la géothermie ?",
+        "choices": [
+          "La chaleur de la Terre",
+          "Le pétrole",
+          "Le charbon",
+          "Le bois"
+        ]
+      },
+      "ar": {
+        "question": "ما المورد الطبيعي الذي يمثل الوقود الأساسي للطاقة الحرارية الأرضية؟",
+        "choices": [
+          "حرارة الأرض",
+          "النفط",
+          "الفحم",
+          "الخشب"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which energy source is produced by splitting atoms in a reactor?",
+    "choices": [
+      "Nuclear energy",
+      "Wind energy",
+      "Biomass energy",
+      "Solar energy"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie est produite par la fission des atomes dans un réacteur ?",
+        "choices": [
+          "L’énergie nucléaire",
+          "L’énergie éolienne",
+          "L’énergie de biomasse",
+          "L’énergie solaire"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طاقة تُنتج بانشطار الذرات داخل المفاعل؟",
+        "choices": [
+          "الطاقة النووية",
+          "طاقة الرياح",
+          "طاقة الكتلة الحيوية",
+          "الطاقة الشمسية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which energy carrier stores energy and can be used in fuel cells without emitting CO₂ at the point of use?",
+    "choices": [
+      "Diesel",
+      "Gasoline",
+      "Coal",
+      "Hydrogen"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel vecteur énergétique peut stocker de l’énergie et alimenter des piles à combustible sans émettre de CO₂ sur le lieu d’usage ?",
+        "choices": [
+          "Le gazole",
+          "L’essence",
+          "Le charbon",
+          "L’hydrogène"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حامل للطاقة يمكن تخزينه واستخدامه في خلايا الوقود دون انبعاث ثاني أكسيد الكربون عند الاستعمال؟",
+        "choices": [
+          "الديزل",
+          "البنزين",
+          "الفحم",
+          "الهيدروجين"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call energy that comes from natural sources that are constantly replenished?",
+    "choices": [
+      "Waste energy",
+      "Fossil energy",
+      "Renewable energy",
+      "Nuclear energy"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on l’énergie issue de sources naturelles qui se renouvellent constamment ?",
+        "choices": [
+          "L’énergie des déchets",
+          "L’énergie fossile",
+          "L’énergie renouvelable",
+          "L’énergie nucléaire"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الطاقة المستمدة من مصادر طبيعية تتجدد باستمرار؟",
+        "choices": [
+          "طاقة النفايات",
+          "الطاقة الأحفورية",
+          "الطاقة المتجددة",
+          "الطاقة النووية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  }
+]

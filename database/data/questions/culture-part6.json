@@ -1,0 +1,332 @@
+[
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Italian painter painted the ceiling of the Sistine Chapel?",
+    "choices": [
+      "Raphael",
+      "Michelangelo",
+      "Caravaggio",
+      "Titian"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel peintre italien a décoré le plafond de la chapelle Sixtine ?",
+        "choices": [
+          "Raphaël",
+          "Michel-Ange",
+          "Le Caravage",
+          "Titien"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رسام إيطالي زخرف سقف كنيسة سيستين؟",
+        "choices": [
+          "رافائيل",
+          "ميكيل أنجلو",
+          "كارافادجيو",
+          "تيتيان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Japanese art involves folding paper into shapes without cutting?",
+    "choices": [
+      "Sumi-e",
+      "Bonsai",
+      "Origami",
+      "Ikebana"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel art japonais consiste à plier du papier sans le couper ?",
+        "choices": [
+          "Le sumi-e",
+          "Le bonsaï",
+          "L’origami",
+          "L’ikebana"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فن ياباني يقوم على طيّ الورق دون قصّه؟",
+        "choices": [
+          "السومي إي",
+          "البونساي",
+          "الأوريغامي",
+          "الإيكيبانا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which novel by Victor Hugo tells the story of Quasimodo, the bell-ringer of a cathedral?",
+    "choices": [
+      "Madame Bovary",
+      "The Count of Monte Cristo",
+      "Les Misérables",
+      "The Hunchback of Notre-Dame"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel roman de Victor Hugo raconte l’histoire de Quasimodo, le sonneur de cloches d’une cathédrale ?",
+        "choices": [
+          "Madame Bovary",
+          "Le Comte de Monte-Cristo",
+          "Les Misérables",
+          "Notre-Dame de Paris"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رواية لفيكتور هوغو تحكي قصة كوازيمودو، قارع أجراس الكاتدرائية؟",
+        "choices": [
+          "مدام بوفاري",
+          "كونت مونت كريستو",
+          "البؤساء",
+          "أحدب نوتردام"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is known for the Flamenco dance and guitar music?",
+    "choices": [
+      "Peru",
+      "Mexico",
+      "Spain",
+      "Brazil"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est connu pour la danse flamenco et la guitare ?",
+        "choices": [
+          "Le Pérou",
+          "Le Mexique",
+          "L’Espagne",
+          "Le Brésil"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر برقص الفلامنكو وموسيقى الغيتار؟",
+        "choices": [
+          "بيرو",
+          "المكسيك",
+          "إسبانيا",
+          "البرازيل"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Egyptian composer wrote the national anthem of Egypt?",
+    "choices": [
+      "Umm Kulthum",
+      "Sayed Darwish",
+      "Mohamed Abdel Wahab",
+      "Riad al-Sunbati"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel compositeur égyptien a écrit l’hymne national de l’Égypte ?",
+        "choices": [
+          "Oum Kalsoum",
+          "Sayed Darwich",
+          "Mohamed Abdel Wahab",
+          "Riad al-Sounbati"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملحن مصري كتب النشيد الوطني المصري؟",
+        "choices": [
+          "أم كلثوم",
+          "سيد درويش",
+          "محمد عبد الوهاب",
+          "رياض السنباطي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which festival is known as the festival of lights in India?",
+    "choices": [
+      "Diwali",
+      "Eid",
+      "Christmas",
+      "Holi"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle fête est connue comme la fête des lumières en Inde ?",
+        "choices": [
+          "Diwali",
+          "L’Aïd",
+          "Noël",
+          "Holi"
+        ]
+      },
+      "ar": {
+        "question": "ما المهرجان المعروف بمهرجان الأنوار في الهند؟",
+        "choices": [
+          "ديوالي",
+          "العيد",
+          "عيد الميلاد",
+          "هولي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian city is known for its traditional pottery and its handicraft market?",
+    "choices": [
+      "Kasserine",
+      "Nabeul",
+      "Sidi Bou Said",
+      "Tozeur"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne est connue pour sa poterie traditionnelle et son artisanat ?",
+        "choices": [
+          "Kasserine",
+          "Nabeul",
+          "Sidi Bou Saïd",
+          "Tozeur"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة تونسية تشتهر بالفخار التقليدي وسوق الصناعات اليدوية؟",
+        "choices": [
+          "القصرين",
+          "نابل",
+          "سيدي بوسعيد",
+          "توزر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which famous musical is set in Paris and tells the story of an opera-house phantom?",
+    "choices": [
+      "Chicago",
+      "Cats",
+      "The Phantom of the Opera",
+      "The Lion King"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle comédie musicale célèbre se déroule à Paris et raconte l’histoire d’un fantôme de l’opéra ?",
+        "choices": [
+          "Chicago",
+          "Cats",
+          "Le Fantôme de l’Opéra",
+          "Le Roi lion"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مسرحية غنائية شهيرة تدور أحداثها في باريس حول شبح دار الأوبرا؟",
+        "choices": [
+          "شيكاغو",
+          "القطط",
+          "شبح الأوبرا",
+          "الملك الأسد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is famous for the Carnival of Venice and its masks?",
+    "choices": [
+      "Spain",
+      "France",
+      "Italy",
+      "Greece"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est célèbre pour le carnaval de Venise et ses masques ?",
+        "choices": [
+          "L’Espagne",
+          "La France",
+          "L’Italie",
+          "La Grèce"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تشتهر بكرنفال البندقية وأقنعته؟",
+        "choices": [
+          "إسبانيا",
+          "فرنسا",
+          "إيطاليا",
+          "اليونان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Lebanese author wrote “The Prophet” in English?",
+    "choices": [
+      "Khalil Gibran",
+      "Mikhail Naimy",
+      "Amin Maalouf",
+      "Elias Khoury"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel auteur libanais a écrit « Le Prophète » en anglais ?",
+        "choices": [
+          "Khalil Gibran",
+          "Mikhaïl Naïmy",
+          "Amin Maalouf",
+          "Elias Khoury"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كاتب لبناني كتب «النبي» بالإنجليزية؟",
+        "choices": [
+          "جبران خليل جبران",
+          "ميخائيل نعيمة",
+          "أمين معلوف",
+          "إلياس خوري"
+        ]
+      }
+    }
+  }
+]

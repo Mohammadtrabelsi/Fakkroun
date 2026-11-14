@@ -1,0 +1,104 @@
+[
+  {
+    "category": "sustainable-development",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday action supports SDG 12 (responsible consumption)?",
+    "choices": [
+      "Throwing away working items",
+      "Buying only what is needed",
+      "Using single-use plates at every event",
+      "Buying the newest gadget every month"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle action quotidienne soutient l’ODD 12 (consommation responsable) ?",
+        "choices": [
+          "Jeter des objets qui fonctionnent",
+          "N’acheter que le nécessaire",
+          "Utiliser des assiettes jetables à chaque événement",
+          "Acheter le dernier gadget chaque mois"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يومي يدعم الهدف 12 (الاستهلاك المسؤول)؟",
+        "choices": [
+          "رمي الأشياء التي تعمل",
+          "شراء ما نحتاجه فقط",
+          "استخدام أطباق لمرة واحدة في كل مناسبة",
+          "شراء أحدث جهاز كل شهر"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which SDG focuses on life on land and protecting forests?",
+    "choices": [
+      "SDG 16",
+      "SDG 14",
+      "SDG 15",
+      "SDG 13"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel ODD porte sur la vie terrestre et la protection des forêts ?",
+        "choices": [
+          "L’ODD 16",
+          "L’ODD 14",
+          "L’ODD 15",
+          "L’ODD 13"
+        ]
+      },
+      "ar": {
+        "question": "أيّ هدف يتناول الحياة في البر وحماية الغابات؟",
+        "choices": [
+          "الهدف 16",
+          "الهدف 14",
+          "الهدف 15",
+          "الهدف 13"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  },
+  {
+    "category": "sustainable-development",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does the term “decent work” mean in sustainable development?",
+    "choices": [
+      "Work that is productive and provides fair pay and safe conditions",
+      "Work without any pay",
+      "Work only in mines",
+      "Work only for machines"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Que signifie « travail décent » dans le développement durable ?",
+        "choices": [
+          "Un travail productif assurant une rémunération équitable et des conditions sûres",
+          "Un travail sans rémunération",
+          "Un travail uniquement dans les mines",
+          "Un travail réservé aux machines"
+        ]
+      },
+      "ar": {
+        "question": "ماذا يعني «العمل اللائق» في التنمية المستدامة؟",
+        "choices": [
+          "عمل منتج يوفّر أجرًا عادلًا وظروفًا آمنة",
+          "عمل بدون أجر",
+          "عمل في المناجم فقط",
+          "عمل للآلات وحدها"
+        ]
+      }
+    },
+    "reference_text": "UN General Assembly, Transforming our world: the 2030 Agenda (A/RES/70/1)"
+  }
+]

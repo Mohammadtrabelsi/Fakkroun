@@ -1,0 +1,668 @@
+[
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the chemical symbol for silver?",
+    "choices": [
+      "Si",
+      "Ag",
+      "Sn",
+      "Sr"
+    ],
+    "correct": 2,
+    "explanation": "Ag comes from the Latin word “argentum”.",
+    "reference_text": "IUPAC periodic table",
+    "translations": {
+      "fr": {
+        "question": "Quel est le symbole chimique de l’argent ?",
+        "choices": [
+          "Si",
+          "Ag",
+          "Sn",
+          "Sr"
+        ],
+        "explanation": "Ag vient du latin « argentum »."
+      },
+      "ar": {
+        "question": "ما الرمز الكيميائي للفضة؟",
+        "choices": [
+          "Si",
+          "Ag",
+          "Sn",
+          "Sr"
+        ],
+        "explanation": "الرمز Ag مأخوذ من الكلمة اللاتينية «argentum»."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the closest star to Earth?",
+    "choices": [
+      "Sirius",
+      "Proxima Centauri",
+      "The Sun",
+      "Betelgeuse"
+    ],
+    "correct": 3,
+    "explanation": "The Sun is our nearest star, about 150 million kilometres away.",
+    "reference_text": "NASA Sun facts",
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’étoile la plus proche de la Terre ?",
+        "choices": [
+          "Sirius",
+          "Proxima du Centaure",
+          "Le Soleil",
+          "Bételgeuse"
+        ],
+        "explanation": "Le Soleil est notre étoile la plus proche, à environ 150 millions de kilomètres."
+      },
+      "ar": {
+        "question": "ما أقرب نجم إلى الأرض؟",
+        "choices": [
+          "الشعرى اليمانية",
+          "بروكسيما القنطور",
+          "الشمس",
+          "منكب الجوزاء"
+        ],
+        "explanation": "الشمس هي أقرب نجم إلينا، على بعد نحو 150 مليون كيلومتر."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call animals that eat only plants?",
+    "choices": [
+      "Omnivores",
+      "Carnivores",
+      "Herbivores",
+      "Parasites"
+    ],
+    "correct": 3,
+    "explanation": "Herbivores feed only on plant material.",
+    "reference_text": "Encyclopaedia Britannica, herbivore",
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on les animaux qui ne mangent que des végétaux ?",
+        "choices": [
+          "Les omnivores",
+          "Les carnivores",
+          "Les herbivores",
+          "Les parasites"
+        ],
+        "explanation": "Les herbivores se nourrissent uniquement de matière végétale."
+      },
+      "ar": {
+        "question": "ما اسم الحيوانات التي تتغذى على النباتات فقط؟",
+        "choices": [
+          "آكلات كل شيء",
+          "آكلات اللحوم",
+          "آكلات الأعشاب",
+          "الطفيليات"
+        ],
+        "explanation": "آكلات الأعشاب تتغذى على المواد النباتية فقط."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which force keeps the planets in orbit around the Sun?",
+    "choices": [
+      "Magnetism",
+      "Friction",
+      "Electricity",
+      "Gravity"
+    ],
+    "correct": 4,
+    "explanation": "Gravity holds planets in orbit around the Sun.",
+    "reference_text": "NASA gravity basics",
+    "translations": {
+      "fr": {
+        "question": "Quelle force maintient les planètes en orbite autour du Soleil ?",
+        "choices": [
+          "Le magnétisme",
+          "Le frottement",
+          "L’électricité",
+          "La gravitation"
+        ],
+        "explanation": "La gravitation maintient les planètes en orbite autour du Soleil."
+      },
+      "ar": {
+        "question": "ما القوة التي تُبقي الكواكب في مدارها حول الشمس؟",
+        "choices": [
+          "المغناطيسية",
+          "الاحتكاك",
+          "الكهرباء",
+          "الجاذبية"
+        ],
+        "explanation": "الجاذبية هي التي تُبقي الكواكب في مداراتها حول الشمس."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the basic unit of heredity?",
+    "choices": [
+      "Tissue",
+      "Gene",
+      "Cell",
+      "Organ"
+    ],
+    "correct": 2,
+    "explanation": "Genes are sequences of DNA that carry hereditary information.",
+    "reference_text": "NHGRI genetics glossary",
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’unité de base de l’hérédité ?",
+        "choices": [
+          "Le tissu",
+          "Le gène",
+          "La cellule",
+          "L’organe"
+        ],
+        "explanation": "Les gènes sont des séquences d’ADN qui portent l’information héréditaire."
+      },
+      "ar": {
+        "question": "ما الوحدة الأساسية للوراثة؟",
+        "choices": [
+          "النسيج",
+          "الجين",
+          "الخلية",
+          "العضو"
+        ],
+        "explanation": "الجينات مقاطع من الحمض النووي تحمل المعلومات الوراثية."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the atomic number of carbon?",
+    "choices": [
+      "8",
+      "12",
+      "4",
+      "6"
+    ],
+    "correct": 4,
+    "explanation": "Carbon has six protons, so its atomic number is 6.",
+    "reference_text": "IUPAC periodic table",
+    "translations": {
+      "fr": {
+        "question": "Quel est le numéro atomique du carbone ?",
+        "choices": [
+          "8",
+          "12",
+          "4",
+          "6"
+        ],
+        "explanation": "Le carbone possède six protons, donc son numéro atomique est 6."
+      },
+      "ar": {
+        "question": "ما العدد الذري للكربون؟",
+        "choices": [
+          "8",
+          "12",
+          "4",
+          "6"
+        ],
+        "explanation": "يحتوي الكربون على ستة بروتونات، لذلك عدده الذري 6."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which scientist proposed the laws of motion and universal gravitation?",
+    "choices": [
+      "Johannes Kepler",
+      "Isaac Newton",
+      "Albert Einstein",
+      "Galileo"
+    ],
+    "correct": 2,
+    "explanation": "Newton published his laws of motion and gravitation in the Principia in 1687.",
+    "reference_text": "Encyclopaedia Britannica, Isaac Newton",
+    "translations": {
+      "fr": {
+        "question": "Quel savant a énoncé les lois du mouvement et la gravitation universelle ?",
+        "choices": [
+          "Johannes Kepler",
+          "Isaac Newton",
+          "Albert Einstein",
+          "Galilée"
+        ],
+        "explanation": "Newton a publié ces lois dans les Principia en 1687."
+      },
+      "ar": {
+        "question": "من وضع قوانين الحركة وقانون الجذب الكوني؟",
+        "choices": [
+          "يوهانس كبلر",
+          "إسحاق نيوتن",
+          "ألبرت أينشتاين",
+          "غاليليو"
+        ],
+        "explanation": "نشر نيوتن قوانين الحركة والجذب في كتابه «المبادئ» عام 1687."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the unit of electrical resistance?",
+    "choices": [
+      "Ampere",
+      "Ohm",
+      "Farad",
+      "Volt"
+    ],
+    "correct": 2,
+    "explanation": "Resistance is measured in ohms, named after Georg Ohm.",
+    "reference_text": "SI units, BIPM",
+    "translations": {
+      "fr": {
+        "question": "Quelle est l’unité de la résistance électrique ?",
+        "choices": [
+          "L’ampère",
+          "L’ohm",
+          "Le farad",
+          "Le volt"
+        ],
+        "explanation": "La résistance se mesure en ohms, du nom de Georg Ohm."
+      },
+      "ar": {
+        "question": "ما وحدة قياس المقاومة الكهربائية؟",
+        "choices": [
+          "الأمبير",
+          "الأوم",
+          "الفاراد",
+          "الفولت"
+        ],
+        "explanation": "تُقاس المقاومة بالأوم نسبة إلى جورج أوم."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which particle has a negative electric charge?",
+    "choices": [
+      "Photon",
+      "Neutron",
+      "Electron",
+      "Proton"
+    ],
+    "correct": 3,
+    "explanation": "Electrons carry a negative charge; protons are positive and neutrons are neutral.",
+    "reference_text": "Encyclopaedia Britannica, subatomic particles",
+    "translations": {
+      "fr": {
+        "question": "Quelle particule porte une charge électrique négative ?",
+        "choices": [
+          "Le photon",
+          "Le neutron",
+          "L’électron",
+          "Le proton"
+        ],
+        "explanation": "Les électrons sont chargés négativement ; les protons sont positifs et les neutrons neutres."
+      },
+      "ar": {
+        "question": "أيّ جسيم يحمل شحنة كهربائية سالبة؟",
+        "choices": [
+          "الفوتون",
+          "النيوترون",
+          "الإلكترون",
+          "البروتون"
+        ],
+        "explanation": "الإلكترونات سالبة الشحنة، والبروتونات موجبة، والنيوترونات متعادلة."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the study of the Earth’s rocks and minerals called?",
+    "choices": [
+      "Biology",
+      "Geology",
+      "Astronomy",
+      "Ecology"
+    ],
+    "correct": 2,
+    "explanation": "Geology studies the Earth’s structure, rocks and history.",
+    "reference_text": "Encyclopaedia Britannica, geology",
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’étude des roches et des minéraux de la Terre ?",
+        "choices": [
+          "La biologie",
+          "La géologie",
+          "L’astronomie",
+          "L’écologie"
+        ],
+        "explanation": "La géologie étudie la structure, les roches et l’histoire de la Terre."
+      },
+      "ar": {
+        "question": "ما اسم علم دراسة صخور الأرض ومعادنها؟",
+        "choices": [
+          "علم الأحياء",
+          "علم الجيولوجيا",
+          "علم الفلك",
+          "علم البيئة"
+        ],
+        "explanation": "تدرس الجيولوجيا بنية الأرض وصخورها وتاريخها."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do bees collect from flowers to make honey?",
+    "choices": [
+      "Pollen only",
+      "Nectar",
+      "Sap",
+      "Water"
+    ],
+    "correct": 2,
+    "explanation": "Bees collect nectar, which they process into honey.",
+    "reference_text": "Encyclopaedia Britannica, honey bee",
+    "translations": {
+      "fr": {
+        "question": "Que récoltent les abeilles dans les fleurs pour faire le miel ?",
+        "choices": [
+          "Uniquement du pollen",
+          "Du nectar",
+          "De la sève",
+          "De l’eau"
+        ],
+        "explanation": "Les abeilles récoltent du nectar, qu’elles transforment en miel."
+      },
+      "ar": {
+        "question": "ماذا تجمع النحلة من الأزهار لصنع العسل؟",
+        "choices": [
+          "حبوب اللقاح وحدها",
+          "الرحيق",
+          "العصارة",
+          "الماء"
+        ],
+        "explanation": "تجمع النحلة الرحيق وتحوّله إلى عسل."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which scientist discovered penicillin in 1928?",
+    "choices": [
+      "Alexander Fleming",
+      "Marie Curie",
+      "Robert Koch",
+      "Louis Pasteur"
+    ],
+    "correct": 1,
+    "explanation": "Fleming noticed a mould that killed bacteria, leading to penicillin.",
+    "reference_text": "Nobel Prize in Physiology or Medicine 1945",
+    "translations": {
+      "fr": {
+        "question": "Quel savant a découvert la pénicilline en 1928 ?",
+        "choices": [
+          "Alexander Fleming",
+          "Marie Curie",
+          "Robert Koch",
+          "Louis Pasteur"
+        ],
+        "explanation": "Fleming a remarqué une moisissure qui tuait des bactéries, ce qui a mené à la pénicilline."
+      },
+      "ar": {
+        "question": "من اكتشف البنسلين عام 1928؟",
+        "choices": [
+          "ألكسندر فلمنج",
+          "ماري كيوري",
+          "روبرت كوخ",
+          "لويس باستور"
+        ],
+        "explanation": "لاحظ فلمنج عفنًا يقتل البكتيريا، فكان ذلك بداية البنسلين."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the boiling point of water at sea level in degrees Celsius?",
+    "choices": [
+      "110",
+      "100",
+      "90",
+      "212"
+    ],
+    "correct": 2,
+    "explanation": "Water boils at 100 °C at standard atmospheric pressure.",
+    "reference_text": "NIST water properties",
+    "translations": {
+      "fr": {
+        "question": "Quel est le point d’ébullition de l’eau au niveau de la mer, en degrés Celsius ?",
+        "choices": [
+          "110",
+          "100",
+          "90",
+          "212"
+        ],
+        "explanation": "L’eau bout à 100 °C sous la pression atmosphérique normale."
+      },
+      "ar": {
+        "question": "ما درجة غليان الماء عند مستوى سطح البحر بالدرجات المئوية؟",
+        "choices": [
+          "110",
+          "100",
+          "90",
+          "212"
+        ],
+        "explanation": "يغلي الماء عند 100 درجة مئوية تحت الضغط الجوي المعتاد."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the main component of the Sun?",
+    "choices": [
+      "Oxygen",
+      "Helium",
+      "Hydrogen",
+      "Carbon"
+    ],
+    "correct": 3,
+    "explanation": "Hydrogen makes up about three quarters of the Sun’s mass.",
+    "reference_text": "NASA Sun facts",
+    "translations": {
+      "fr": {
+        "question": "Quel est le principal composant du Soleil ?",
+        "choices": [
+          "L’oxygène",
+          "L’hélium",
+          "L’hydrogène",
+          "Le carbone"
+        ],
+        "explanation": "L’hydrogène représente environ les trois quarts de la masse du Soleil."
+      },
+      "ar": {
+        "question": "ما المكوّن الرئيسي للشمس؟",
+        "choices": [
+          "الأكسجين",
+          "الهيليوم",
+          "الهيدروجين",
+          "الكربون"
+        ],
+        "explanation": "يشكّل الهيدروجين نحو ثلاثة أرباع كتلة الشمس."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “Wi-Fi” allow devices to do?",
+    "choices": [
+      "Print documents",
+      "Charge batteries wirelessly",
+      "Measure temperature",
+      "Connect to networks wirelessly"
+    ],
+    "correct": 4,
+    "explanation": "Wi-Fi uses radio waves to connect devices to a local network without cables.",
+    "reference_text": "IEEE 802.11 standards",
+    "translations": {
+      "fr": {
+        "question": "Que permet le Wi-Fi aux appareils ?",
+        "choices": [
+          "Imprimer des documents",
+          "Recharger les batteries sans fil",
+          "Mesurer la température",
+          "Se connecter sans fil à un réseau"
+        ],
+        "explanation": "Le Wi-Fi utilise des ondes radio pour relier les appareils à un réseau local sans câble."
+      },
+      "ar": {
+        "question": "ماذا تتيح تقنية الواي فاي للأجهزة؟",
+        "choices": [
+          "طباعة الوثائق",
+          "شحن البطاريات لاسلكيًا",
+          "قياس درجة الحرارة",
+          "الاتصال بالشبكات لاسلكيًا"
+        ],
+        "explanation": "يستخدم الواي فاي الموجات الراديوية لربط الأجهزة بالشبكة المحلية دون أسلاك."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which element has the highest melting point among metals?",
+    "choices": [
+      "Lead",
+      "Tungsten",
+      "Gold",
+      "Iron"
+    ],
+    "correct": 2,
+    "explanation": "Tungsten melts at about 3,422 °C, the highest of all metals.",
+    "reference_text": "CRC Handbook of Chemistry and Physics",
+    "translations": {
+      "fr": {
+        "question": "Quel métal possède le point de fusion le plus élevé ?",
+        "choices": [
+          "Le plomb",
+          "Le tungstène",
+          "L’or",
+          "Le fer"
+        ],
+        "explanation": "Le tungstène fond vers 3 422 °C, le plus haut de tous les métaux."
+      },
+      "ar": {
+        "question": "أيّ فلز له أعلى درجة انصهار بين الفلزات؟",
+        "choices": [
+          "الرصاص",
+          "التنغستن",
+          "الذهب",
+          "الحديد"
+        ],
+        "explanation": "ينصهر التنغستن عند نحو 3422 درجة مئوية، وهي أعلى درجة بين الفلزات."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which organ in the human body is responsible for thinking and memory?",
+    "choices": [
+      "Brain",
+      "Stomach",
+      "Lungs",
+      "Heart"
+    ],
+    "correct": 1,
+    "explanation": "The brain controls thought, memory, movement and the senses.",
+    "reference_text": "Encyclopaedia Britannica, brain",
+    "translations": {
+      "fr": {
+        "question": "Quel organe du corps humain gère la pensée et la mémoire ?",
+        "choices": [
+          "Le cerveau",
+          "L’estomac",
+          "Les poumons",
+          "Le cœur"
+        ],
+        "explanation": "Le cerveau contrôle la pensée, la mémoire, le mouvement et les sens."
+      },
+      "ar": {
+        "question": "أيّ عضو في جسم الإنسان مسؤول عن التفكير والذاكرة؟",
+        "choices": [
+          "الدماغ",
+          "المعدة",
+          "الرئتان",
+          "القلب"
+        ],
+        "explanation": "يتحكم الدماغ في التفكير والذاكرة والحركة والحواس."
+      }
+    }
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main gas responsible for the greenhouse effect?",
+    "choices": [
+      "Oxygen",
+      "Carbon dioxide and water vapour",
+      "Argon",
+      "Nitrogen"
+    ],
+    "correct": 2,
+    "explanation": "Water vapour is the most abundant greenhouse gas; CO₂ is the main long-term driver.",
+    "reference_text": "NOAA greenhouse gases",
+    "translations": {
+      "fr": {
+        "question": "Quel gaz est principalement responsable de l’effet de serre ?",
+        "choices": [
+          "L’oxygène",
+          "Le dioxyde de carbone et la vapeur d’eau",
+          "L’argon",
+          "L’azote"
+        ],
+        "explanation": "La vapeur d’eau est le gaz à effet de serre le plus abondant ; le CO₂ en est le principal moteur à long terme."
+      },
+      "ar": {
+        "question": "أيّ غاز يتحمل المسؤولية الرئيسية عن تأثير الاحتباس الحراري؟",
+        "choices": [
+          "الأكسجين",
+          "ثاني أكسيد الكربون وبخار الماء",
+          "الأرغون",
+          "النيتروجين"
+        ],
+        "explanation": "بخار الماء أكثر غازات الاحتباس وفرة، وثاني أكسيد الكربون المحرك الرئيسي على المدى الطويل."
+      }
+    }
+  }
+]

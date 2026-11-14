@@ -1,0 +1,629 @@
+[
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Italian city is famous for its leaning tower?",
+    "choices": [
+      "Florence",
+      "Rome",
+      "Pisa",
+      "Venice"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville italienne est célèbre pour sa tour penchée ?",
+        "choices": [
+          "Florence",
+          "Rome",
+          "Pise",
+          "Venise"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة إيطالية تشتهر ببرجها المائل؟",
+        "choices": [
+          "فلورنسا",
+          "روما",
+          "بيزا",
+          "البندقية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who painted “The Scream”?",
+    "choices": [
+      "Gustav Klimt",
+      "Vincent van Gogh",
+      "Paul Gauguin",
+      "Edvard Munch"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Qui a peint « Le Cri » ?",
+        "choices": [
+          "Gustav Klimt",
+          "Vincent van Gogh",
+          "Paul Gauguin",
+          "Edvard Munch"
+        ]
+      },
+      "ar": {
+        "question": "من رسم لوحة «الصرخة»؟",
+        "choices": [
+          "غوستاف كليمت",
+          "فنسنت فان غوخ",
+          "بول غوغان",
+          "إدفارد مونك"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which novelist wrote “The Old Man and the Sea”?",
+    "choices": [
+      "Ernest Hemingway",
+      "John Steinbeck",
+      "William Faulkner",
+      "F. Scott Fitzgerald"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel romancier a écrit « Le Vieil Homme et la Mer » ?",
+        "choices": [
+          "Ernest Hemingway",
+          "John Steinbeck",
+          "William Faulkner",
+          "F. Scott Fitzgerald"
+        ]
+      },
+      "ar": {
+        "question": "من كتب رواية «الشيخ والبحر»؟",
+        "choices": [
+          "إرنست همنغواي",
+          "جون شتاينبك",
+          "ويليام فولكنر",
+          "إف. سكوت فيتزجيرالد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Russian composer wrote the ballet “Swan Lake”?",
+    "choices": [
+      "Modest Mussorgsky",
+      "Pyotr Ilyich Tchaikovsky",
+      "Igor Stravinsky",
+      "Sergei Rachmaninoff"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel compositeur russe a écrit le ballet « Le Lac des cygnes » ?",
+        "choices": [
+          "Modeste Moussorgski",
+          "Piotr Ilitch Tchaïkovski",
+          "Igor Stravinski",
+          "Sergueï Rachmaninov"
+        ]
+      },
+      "ar": {
+        "question": "من ألّف باليه «بحيرة البجع» من الملحنين الروس؟",
+        "choices": [
+          "موديست موسورغسكي",
+          "بيوتر تشايكوفسكي",
+          "إيغور سترافينسكي",
+          "سيرغي راخمانينوف"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which painting by Leonardo da Vinci depicts the Last Supper of Jesus with his apostles?",
+    "choices": [
+      "The School of Athens",
+      "The Birth of Venus",
+      "The Last Supper",
+      "Guernica"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle peinture de Léonard de Vinci représente la Cène ?",
+        "choices": [
+          "L’École d’Athènes",
+          "La Naissance de Vénus",
+          "La Cène",
+          "Guernica"
+        ]
+      },
+      "ar": {
+        "question": "أيّ لوحة لليوناردو دافنشي تصوّر العشاء الأخير للمسيح مع تلاميذه؟",
+        "choices": [
+          "مدرسة أثينا",
+          "ولادة فينوس",
+          "العشاء الأخير",
+          "غيرنيكا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian artist is known for paintings on Tunisian life and traditional motifs?",
+    "choices": [
+      "Pablo Picasso",
+      "Ammar Farhat",
+      "Claude Monet",
+      "Vincent van Gogh"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel artiste tunisien est connu pour ses peintures de la vie tunisienne et ses motifs traditionnels ?",
+        "choices": [
+          "Pablo Picasso",
+          "Ammar Farhat",
+          "Claude Monet",
+          "Vincent van Gogh"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فنان تونسي اشتهر بلوحات الحياة التونسية والنقوش التقليدية؟",
+        "choices": [
+          "بابلو بيكاسو",
+          "عمار الفرحات",
+          "كلود مونيه",
+          "فنسنت فان غوخ"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which famous festival in Japan celebrates cherry blossoms?",
+    "choices": [
+      "Carnival",
+      "Oktoberfest",
+      "Diwali",
+      "Hanami"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle fête japonaise célèbre les fleurs de cerisier ?",
+        "choices": [
+          "Le carnaval",
+          "L’Oktoberfest",
+          "Diwali",
+          "Hanami"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مهرجان ياباني يحتفل بأزهار الكرز؟",
+        "choices": [
+          "الكرنفال",
+          "أوكتوبرفست",
+          "ديوالي",
+          "هانامي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is the origin of the classical ballet?",
+    "choices": [
+      "India",
+      "Brazil",
+      "Japan",
+      "France"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est à l’origine du ballet classique ?",
+        "choices": [
+          "L’Inde",
+          "Le Brésil",
+          "Le Japon",
+          "La France"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة نشأ فيها الباليه الكلاسيكي؟",
+        "choices": [
+          "الهند",
+          "البرازيل",
+          "اليابان",
+          "فرنسا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Arab writer wrote the famous novel “Season of Migration to the North”?",
+    "choices": [
+      "Naguib Mahfouz",
+      "Ghassan Kanafani",
+      "Tayeb Salih",
+      "Khalil Gibran"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel écrivain arabe a écrit le roman « Saison de la migration vers le nord » ?",
+        "choices": [
+          "Naguib Mahfouz",
+          "Ghassan Kanafani",
+          "Al-Tayyeb Salih",
+          "Khalil Gibran"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كاتب عربي كتب رواية «موسم الهجرة إلى الشمال»؟",
+        "choices": [
+          "نجيب محفوظ",
+          "غسان كنفاني",
+          "الطيب صالح",
+          "جبران خليل جبران"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which musical instrument is played by blowing air into a mouthpiece and has keys and a long tube?",
+    "choices": [
+      "Drum",
+      "Saxophone",
+      "Guitar",
+      "Harp"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel instrument se joue en soufflant dans un embout, avec des clés et un long tube ?",
+        "choices": [
+          "La batterie",
+          "Le saxophone",
+          "La guitare",
+          "La harpe"
+        ]
+      },
+      "ar": {
+        "question": "أيّ آلة موسيقية تُعزف بالنفخ في فم مخصص، ولها مفاتيح وأنبوب طويل؟",
+        "choices": [
+          "الطبلة",
+          "الساكسفون",
+          "الغيتار",
+          "القيثارة"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Spanish writer created the character Don Quixote?",
+    "choices": [
+      "Federico García Lorca",
+      "Gabriel García Márquez",
+      "Lope de Vega",
+      "Miguel de Cervantes"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel écrivain espagnol a créé le personnage de Don Quichotte ?",
+        "choices": [
+          "Federico García Lorca",
+          "Gabriel García Márquez",
+          "Lope de Vega",
+          "Miguel de Cervantes"
+        ]
+      },
+      "ar": {
+        "question": "من ابتكر شخصية دون كيشوت؟",
+        "choices": [
+          "فدريكو غارسيا لوركا",
+          "غابرييل غارسيا ماركيز",
+          "لوبي دي فيغا",
+          "ميغيل دي ثيربانتس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Indian poet and philosopher won the Nobel Prize in Literature in 1913?",
+    "choices": [
+      "Rabindranath Tagore",
+      "Mahatma Gandhi",
+      "Sarojini Naidu",
+      "Premchand"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel poète et philosophe indien a reçu le prix Nobel de littérature en 1913 ?",
+        "choices": [
+          "Rabindranath Tagore",
+          "Mahatma Gandhi",
+          "Sarojini Naidu",
+          "Premchand"
+        ]
+      },
+      "ar": {
+        "question": "أيّ شاعر وفيلسوف هندي فاز بجائزة نوبل في الأدب عام 1913؟",
+        "choices": [
+          "رابيندرانات طاغور",
+          "المهاتما غاندي",
+          "ساروجيني نايدو",
+          "بريمتشاند"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the name of the Brazilian celebration famous for its colourful parades and samba schools?",
+    "choices": [
+      "Oktoberfest",
+      "Holi",
+      "Carnival of Rio",
+      "Thanksgiving"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la fête brésilienne célèbre pour ses défilés colorés et ses écoles de samba ?",
+        "choices": [
+          "L’Oktoberfest",
+          "Holi",
+          "Le carnaval de Rio",
+          "Thanksgiving"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الاحتفال البرازيلي الشهير بعروضه الملونة ومدارس السامبا؟",
+        "choices": [
+          "أوكتوبرفست",
+          "هولي",
+          "كرنفال ريو",
+          "عيد الشكر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which painter is associated with the Impressionist series of water lilies?",
+    "choices": [
+      "Frida Kahlo",
+      "Pablo Picasso",
+      "Salvador Dalí",
+      "Claude Monet"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel peintre est associé à la série des nymphéas impressionnistes ?",
+        "choices": [
+          "Frida Kahlo",
+          "Pablo Picasso",
+          "Salvador Dalí",
+          "Claude Monet"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رسام يرتبط بسلسلة لوحات زنابق الماء الانطباعية؟",
+        "choices": [
+          "فريدا كاهلو",
+          "بابلو بيكاسو",
+          "سلفادور دالي",
+          "كلود مونيه"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Mexican painter is famous for her self-portraits and the painting ‘The Two Fridas’?",
+    "choices": [
+      "Remedios Varo",
+      "Rufino Tamayo",
+      "Diego Rivera",
+      "Frida Kahlo"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle peintre mexicaine est célèbre pour ses autoportraits et « Les Deux Fridas » ?",
+        "choices": [
+          "Remedios Varo",
+          "Rufino Tamayo",
+          "Diego Rivera",
+          "Frida Kahlo"
+        ]
+      },
+      "ar": {
+        "question": "أيّ رسامة مكسيكية اشتهرت بلوحات الوجه الذاتي ولوحة «الفريدتان»؟",
+        "choices": [
+          "ريميديوس فارو",
+          "روفينو تاماو",
+          "دييغو ريفيرا",
+          "فريدا كاهلو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country hosts the famous Oktoberfest beer festival?",
+    "choices": [
+      "Czech Republic",
+      "Austria",
+      "Belgium",
+      "Germany"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se tient la célèbre fête de la bière Oktoberfest ?",
+        "choices": [
+          "La République tchèque",
+          "L’Autriche",
+          "La Belgique",
+          "L’Allemagne"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة يُقام مهرجان البيرة الشهير أوكتوبرفست؟",
+        "choices": [
+          "جمهورية التشيك",
+          "النمسا",
+          "بلجيكا",
+          "ألمانيا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian musician is famous for the Malouf tradition and oriental music?",
+    "choices": [
+      "Umm Kulthum",
+      "Warda",
+      "Ali Riahi",
+      "Mohamed Abdel Wahab"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel musicien tunisien est célèbre pour la tradition du malouf et la musique orientale ?",
+        "choices": [
+          "Oum Kalsoum",
+          "Warda",
+          "Ali Riahi",
+          "Mohamed Abdel Wahab"
+        ]
+      },
+      "ar": {
+        "question": "أيّ موسيقي تونسي اشتهر بتراث المالوف والموسيقى الشرقية؟",
+        "choices": [
+          "أم كلثوم",
+          "وردة",
+          "علي الرياحي",
+          "محمد عبد الوهاب"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the Japanese art of creating bonsai?",
+    "choices": [
+      "Growing miniature trees in pots",
+      "Cooking rice",
+      "Building boats",
+      "Painting on silk"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que l’art japonais du bonsaï ?",
+        "choices": [
+          "Cultiver de petits arbres en pot",
+          "Cuisiner du riz",
+          "Construire des bateaux",
+          "Peindre sur soie"
+        ]
+      },
+      "ar": {
+        "question": "ما هو فن البونساي الياباني؟",
+        "choices": [
+          "تربية أشجار صغيرة في أصص",
+          "طهي الأرز",
+          "صناعة القوارب",
+          "الرسم على الحرير"
+        ]
+      }
+    }
+  },
+  {
+    "category": "culture",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is the origin of the sport and art of kung fu?",
+    "choices": [
+      "Vietnam",
+      "Japan",
+      "China",
+      "Thailand"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est à l’origine du kung-fu, art martial ?",
+        "choices": [
+          "Le Viêt Nam",
+          "Le Japon",
+          "La Chine",
+          "La Thaïlande"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة نشأ فيها فن الكونغ فو القتالي؟",
+        "choices": [
+          "فيتنام",
+          "اليابان",
+          "الصين",
+          "تايلاند"
+        ]
+      }
+    }
+  }
+]

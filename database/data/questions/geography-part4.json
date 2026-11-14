@@ -1,0 +1,662 @@
+[
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Portugal?",
+    "choices": [
+      "Madrid",
+      "Seville",
+      "Lisbon",
+      "Porto"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Portugal ?",
+        "choices": [
+          "Madrid",
+          "Séville",
+          "Lisbonne",
+          "Porto"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة البرتغال؟",
+        "choices": [
+          "مدريد",
+          "إشبيلية",
+          "لشبونة",
+          "بورتو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Morocco?",
+    "choices": [
+      "Tangier",
+      "Fes",
+      "Casablanca",
+      "Rabat"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Maroc ?",
+        "choices": [
+          "Tanger",
+          "Fès",
+          "Casablanca",
+          "Rabat"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة المغرب؟",
+        "choices": [
+          "طنجة",
+          "فاس",
+          "الدار البيضاء",
+          "الرباط"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Tunisia?",
+    "choices": [
+      "Tunis",
+      "Bizerte",
+      "Sousse",
+      "Sfax"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Tunisie ?",
+        "choices": [
+          "Tunis",
+          "Bizerte",
+          "Sousse",
+          "Sfax"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة تونس؟",
+        "choices": [
+          "تونس",
+          "بنزرت",
+          "سوسة",
+          "صفاقس"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Mexico?",
+    "choices": [
+      "Guadalajara",
+      "Monterrey",
+      "Mexico City",
+      "Cancún"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Mexique ?",
+        "choices": [
+          "Guadalajara",
+          "Monterrey",
+          "Mexico",
+          "Cancún"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة المكسيك؟",
+        "choices": [
+          "غوادالاخارا",
+          "مونتيري",
+          "مكسيكو سيتي",
+          "كانكون"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the capital of Argentina?",
+    "choices": [
+      "Buenos Aires",
+      "Córdoba",
+      "Rosario",
+      "Mendoza"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Argentine ?",
+        "choices": [
+          "Buenos Aires",
+          "Córdoba",
+          "Rosario",
+          "Mendoza"
+        ]
+      },
+      "ar": {
+        "question": "ما عاصمة الأرجنتين؟",
+        "choices": [
+          "بوينس آيرس",
+          "قرطبة",
+          "روزاريو",
+          "مندوزا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country lies entirely in the Southern Hemisphere and is an island continent?",
+    "choices": [
+      "Australia",
+      "Canada",
+      "Iceland",
+      "Japan"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays se trouve entièrement dans l’hémisphère Sud et forme un continent-île ?",
+        "choices": [
+          "L’Australie",
+          "Le Canada",
+          "L’Islande",
+          "Le Japon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تقع بالكامل في نصف الكرة الجنوبي وتُعد قارة جزرية؟",
+        "choices": [
+          "أستراليا",
+          "كندا",
+          "آيسلندا",
+          "اليابان"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the largest city in Canada by population?",
+    "choices": [
+      "Calgary",
+      "Toronto",
+      "Ottawa",
+      "Vancouver"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande ville du Canada par sa population ?",
+        "choices": [
+          "Calgary",
+          "Toronto",
+          "Ottawa",
+          "Vancouver"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر مدينة في كندا من حيث عدد السكان؟",
+        "choices": [
+          "كالجاري",
+          "تورونتو",
+          "أوتاوا",
+          "فانكوفر"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which strait separates Sicily from the Italian mainland?",
+    "choices": [
+      "Strait of Otranto",
+      "Strait of Messina",
+      "Strait of Gibraltar",
+      "Bosporus"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel détroit sépare la Sicile de la péninsule italienne ?",
+        "choices": [
+          "Le détroit d’Otrante",
+          "Le détroit de Messine",
+          "Le détroit de Gibraltar",
+          "Le Bosphore"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مضيق يفصل صقلية عن البر الإيطالي؟",
+        "choices": [
+          "مضيق أوترانتو",
+          "مضيق مسينا",
+          "مضيق جبل طارق",
+          "البوسفور"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest island in the Caribbean Sea?",
+    "choices": [
+      "Cuba",
+      "Puerto Rico",
+      "Jamaica",
+      "Hispaniola"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande île de la mer des Caraïbes ?",
+        "choices": [
+          "Cuba",
+          "Porto Rico",
+          "La Jamaïque",
+          "Hispaniola"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر جزيرة في البحر الكاريبي؟",
+        "choices": [
+          "كوبا",
+          "بورتوريكو",
+          "جامايكا",
+          "هيسبانيولا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian oasis town is famous for its date palms and is located in the south-west?",
+    "choices": [
+      "Monastir",
+      "Bizerte",
+      "Tozeur",
+      "Hammamet"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle oasis tunisienne est célèbre pour ses palmiers dattiers et se situe au sud-ouest ?",
+        "choices": [
+          "Monastir",
+          "Bizerte",
+          "Tozeur",
+          "Hammamet"
+        ]
+      },
+      "ar": {
+        "question": "أيّ واحة تونسية تشتهر بنخيل التمر وتقع في الجنوب الغربي؟",
+        "choices": [
+          "المنستير",
+          "بنزرت",
+          "توزر",
+          "الحمامات"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which mountain is the highest in the Alps?",
+    "choices": [
+      "Eiger",
+      "Mont Blanc",
+      "Matterhorn",
+      "Jungfrau"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus haute montagne des Alpes ?",
+        "choices": [
+          "L’Eiger",
+          "Le mont Blanc",
+          "Le Cervin",
+          "La Jungfrau"
+        ]
+      },
+      "ar": {
+        "question": "ما أعلى جبل في جبال الألب؟",
+        "choices": [
+          "إيغر",
+          "مون بلان",
+          "ماترهورن",
+          "يونغفراو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Japanese island is the largest of the four main islands?",
+    "choices": [
+      "Kyushu",
+      "Honshu",
+      "Hokkaido",
+      "Shikoku"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande des quatre îles principales du Japon ?",
+        "choices": [
+          "Kyushu",
+          "Honshu",
+          "Hokkaido",
+          "Shikoku"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر الجزر الأربع الرئيسية في اليابان؟",
+        "choices": [
+          "كيوشو",
+          "هونشو",
+          "هوكايدو",
+          "شيكوكو"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ocean is the deepest in the world?",
+    "choices": [
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean",
+      "Atlantic Ocean"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel océan est le plus profond du monde ?",
+        "choices": [
+          "L’océan Indien",
+          "L’océan Arctique",
+          "L’océan Pacifique",
+          "L’océan Atlantique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ محيط هو الأعمق في العالم؟",
+        "choices": [
+          "المحيط الهندي",
+          "المحيط المتجمد الشمالي",
+          "المحيط الهادئ",
+          "المحيط الأطلسي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country has the Nile’s source in its territory?",
+    "choices": [
+      "Libya",
+      "Egypt",
+      "Sudan",
+      "Uganda"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve la source du Nil Blanc ?",
+        "choices": [
+          "La Libye",
+          "L’Égypte",
+          "Le Soudan",
+          "L’Ouganda"
+        ]
+      },
+      "ar": {
+        "question": "في أي دولة تقع منابع النيل الأبيض الرئيسية؟",
+        "choices": [
+          "ليبيا",
+          "مصر",
+          "السودان",
+          "أوغندا"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the highest mountain in the world above sea level?",
+    "choices": [
+      "Kangchenjunga",
+      "K2",
+      "Mount Everest",
+      "Lhotse"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus haute montagne du monde au-dessus du niveau de la mer ?",
+        "choices": [
+          "Le Kangchenjunga",
+          "Le K2",
+          "L’Everest",
+          "Le Lhotse"
+        ]
+      },
+      "ar": {
+        "question": "ما أعلى جبل في العالم فوق مستوى سطح البحر؟",
+        "choices": [
+          "كانشنجونغا",
+          "كيه 2",
+          "إيفرست",
+          "لوتسي"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which continent has the most countries?",
+    "choices": [
+      "Asia",
+      "Africa",
+      "Europe",
+      "South America"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel continent compte le plus de pays ?",
+        "choices": [
+          "L’Asie",
+          "L’Afrique",
+          "L’Europe",
+          "L’Amérique du Sud"
+        ]
+      },
+      "ar": {
+        "question": "أيّ قارة لديها أكبر عدد من الدول؟",
+        "choices": [
+          "آسيا",
+          "إفريقيا",
+          "أوروبا",
+          "أمريكا الجنوبية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Mediterranean island is an autonomous region of Italy with its capital at Palermo?",
+    "choices": [
+      "Corsica",
+      "Malta",
+      "Sardinia",
+      "Sicily"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle île méditerranéenne est une région autonome italienne dont la capitale est Palerme ?",
+        "choices": [
+          "La Corse",
+          "Malte",
+          "La Sardaigne",
+          "La Sicile"
+        ]
+      },
+      "ar": {
+        "question": "أيّ جزيرة متوسطية تُعد إقليمًا إيطاليًا ذا حكم ذاتي وعاصمتها باليرمو؟",
+        "choices": [
+          "كورسيكا",
+          "مالطا",
+          "سردينيا",
+          "صقلية"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which lake lies on the border between Tanzania, Uganda and Kenya?",
+    "choices": [
+      "Lake Malawi",
+      "Lake Tanganyika",
+      "Lake Victoria",
+      "Lake Chad"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel lac se trouve à la frontière entre la Tanzanie, l’Ouganda et le Kenya ?",
+        "choices": [
+          "Le lac Malawi",
+          "Le lac Tanganyika",
+          "Le lac Victoria",
+          "Le lac Tchad"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بحيرة تقع على الحدود بين تنزانيا وأوغندا وكينيا؟",
+        "choices": [
+          "بحيرة مالاوي",
+          "بحيرة تنجانيقا",
+          "بحيرة فيكتوريا",
+          "بحيرة تشاد"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is the largest in the Middle East by area?",
+    "choices": [
+      "Iraq",
+      "Egypt",
+      "Saudi Arabia",
+      "Iran"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand pays du Moyen-Orient par sa superficie ?",
+        "choices": [
+          "L’Irak",
+          "L’Égypte",
+          "L’Arabie saoudite",
+          "L’Iran"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة هي الأكبر في الشرق الأوسط من حيث المساحة؟",
+        "choices": [
+          "العراق",
+          "مصر",
+          "السعودية",
+          "إيران"
+        ]
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Tunisian city is famous for its blue and white buildings overlooking the sea?",
+    "choices": [
+      "Sidi Bou Said",
+      "Kasserine",
+      "Tataouine",
+      "Gafsa"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne est célèbre pour ses maisons bleues et blanches face à la mer ?",
+        "choices": [
+          "Sidi Bou Saïd",
+          "Kasserine",
+          "Tataouine",
+          "Gafsa"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة تونسية تشتهر بمبانيها الزرقاء والبيضاء المطلة على البحر؟",
+        "choices": [
+          "سيدي بوسعيد",
+          "القصرين",
+          "تطاوين",
+          "قفصة"
+        ]
+      }
+    }
+  }
+]

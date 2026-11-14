@@ -1,0 +1,853 @@
+[
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Egypt?",
+    "choices": [
+      "Alexandria",
+      "Cairo",
+      "Luxor",
+      "Giza"
+    ],
+    "correct": 2,
+    "explanation": "Cairo is the capital and largest city of Egypt.",
+    "reference_text": "Encyclopaedia Britannica, Egypt",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Égypte ?",
+        "choices": [
+          "Alexandrie",
+          "Le Caire",
+          "Louxor",
+          "Gizeh"
+        ],
+        "explanation": "Le Caire est la capitale et la plus grande ville d’Égypte."
+      },
+      "ar": {
+        "question": "ما عاصمة مصر؟",
+        "choices": [
+          "الإسكندرية",
+          "القاهرة",
+          "الأقصر",
+          "الجيزة"
+        ],
+        "explanation": "القاهرة هي عاصمة مصر وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Algeria?",
+    "choices": [
+      "Annaba",
+      "Oran",
+      "Algiers",
+      "Constantine"
+    ],
+    "correct": 3,
+    "explanation": "Algiers is the capital and largest city of Algeria.",
+    "reference_text": "Encyclopaedia Britannica, Algeria",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Algérie ?",
+        "choices": [
+          "Annaba",
+          "Oran",
+          "Alger",
+          "Constantine"
+        ],
+        "explanation": "Alger est la capitale et la plus grande ville d’Algérie."
+      },
+      "ar": {
+        "question": "ما عاصمة الجزائر؟",
+        "choices": [
+          "عنابة",
+          "وهران",
+          "الجزائر العاصمة",
+          "قسنطينة"
+        ],
+        "explanation": "الجزائر العاصمة هي عاصمة البلاد وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Libya?",
+    "choices": [
+      "Benghazi",
+      "Misrata",
+      "Tripoli",
+      "Sabha"
+    ],
+    "correct": 3,
+    "explanation": "Tripoli is the capital and largest city of Libya.",
+    "reference_text": "Encyclopaedia Britannica, Libya",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la Libye ?",
+        "choices": [
+          "Benghazi",
+          "Misrata",
+          "Tripoli",
+          "Sebha"
+        ],
+        "explanation": "Tripoli est la capitale et la plus grande ville de Libye."
+      },
+      "ar": {
+        "question": "ما عاصمة ليبيا؟",
+        "choices": [
+          "بنغازي",
+          "مصراتة",
+          "طرابلس",
+          "سبها"
+        ],
+        "explanation": "طرابلس هي عاصمة ليبيا وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of France?",
+    "choices": [
+      "Lyon",
+      "Paris",
+      "Nice",
+      "Marseille"
+    ],
+    "correct": 2,
+    "explanation": "Paris is the capital and largest city of France.",
+    "reference_text": "Encyclopaedia Britannica, France",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de la France ?",
+        "choices": [
+          "Lyon",
+          "Paris",
+          "Nice",
+          "Marseille"
+        ],
+        "explanation": "Paris est la capitale et la plus grande ville de France."
+      },
+      "ar": {
+        "question": "ما عاصمة فرنسا؟",
+        "choices": [
+          "ليون",
+          "باريس",
+          "نيس",
+          "مارسيليا"
+        ],
+        "explanation": "باريس هي عاصمة فرنسا وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ocean lies between Africa and Australia?",
+    "choices": [
+      "Atlantic Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean",
+      "Indian Ocean"
+    ],
+    "correct": 4,
+    "explanation": "The Indian Ocean separates Africa from Australia.",
+    "reference_text": "Encyclopaedia Britannica, Indian Ocean",
+    "translations": {
+      "fr": {
+        "question": "Quel océan se trouve entre l’Afrique et l’Australie ?",
+        "choices": [
+          "L’océan Atlantique",
+          "L’océan Arctique",
+          "L’océan Pacifique",
+          "L’océan Indien"
+        ],
+        "explanation": "L’océan Indien sépare l’Afrique de l’Australie."
+      },
+      "ar": {
+        "question": "أيّ محيط يقع بين إفريقيا وأستراليا؟",
+        "choices": [
+          "المحيط الأطلسي",
+          "المحيط المتجمد الشمالي",
+          "المحيط الهادئ",
+          "المحيط الهندي"
+        ],
+        "explanation": "يفصل المحيط الهندي بين إفريقيا وأستراليا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which desert covers much of northern Africa?",
+    "choices": [
+      "Kalahari",
+      "Gobi",
+      "Sahara",
+      "Atacama"
+    ],
+    "correct": 3,
+    "explanation": "The Sahara covers much of North Africa.",
+    "reference_text": "Encyclopaedia Britannica, Sahara",
+    "translations": {
+      "fr": {
+        "question": "Quel désert couvre une grande partie de l’Afrique du Nord ?",
+        "choices": [
+          "Le Kalahari",
+          "Le Gobi",
+          "Le Sahara",
+          "L’Atacama"
+        ],
+        "explanation": "Le Sahara couvre une grande partie de l’Afrique du Nord."
+      },
+      "ar": {
+        "question": "أيّ صحراء تغطي معظم شمال إفريقيا؟",
+        "choices": [
+          "صحراء كالاهاري",
+          "صحراء غوبي",
+          "الصحراء الكبرى",
+          "صحراء أتاكاما"
+        ],
+        "explanation": "تغطي الصحراء الكبرى معظم شمال إفريقيا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which river is the longest in France?",
+    "choices": [
+      "Loire",
+      "Seine",
+      "Rhône",
+      "Garonne"
+    ],
+    "correct": 1,
+    "explanation": "The Loire is France’s longest river, at about 1,000 kilometres.",
+    "reference_text": "Encyclopaedia Britannica, Loire River",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus long fleuve de France ?",
+        "choices": [
+          "La Loire",
+          "La Seine",
+          "Le Rhône",
+          "La Garonne"
+        ],
+        "explanation": "La Loire est le plus long fleuve de France, avec environ 1 000 kilomètres."
+      },
+      "ar": {
+        "question": "ما أطول نهر في فرنسا؟",
+        "choices": [
+          "اللوار",
+          "السين",
+          "الرون",
+          "الغارون"
+        ],
+        "explanation": "نهر اللوار هو أطول أنهار فرنسا، بطول نحو 1000 كيلومتر."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country has the city of Timbuktu?",
+    "choices": [
+      "Chad",
+      "Niger",
+      "Mali",
+      "Senegal"
+    ],
+    "correct": 3,
+    "explanation": "Timbuktu is a historic city in Mali, once a centre of scholarship.",
+    "reference_text": "UNESCO, Timbuktu",
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve la ville de Tombouctou ?",
+        "choices": [
+          "Le Tchad",
+          "Le Niger",
+          "Le Mali",
+          "Le Sénégal"
+        ],
+        "explanation": "Tombouctou est une ville historique du Mali, longtemps centre de savoir."
+      },
+      "ar": {
+        "question": "في أي دولة تقع مدينة تمبكتو؟",
+        "choices": [
+          "تشاد",
+          "النيجر",
+          "مالي",
+          "السنغال"
+        ],
+        "explanation": "تمبكتو مدينة تاريخية في مالي، كانت مركزًا للعلم قديمًا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is made up of more than 17,000 islands and is the largest archipelago state?",
+    "choices": [
+      "Indonesia",
+      "Maldives",
+      "Japan",
+      "Philippines"
+    ],
+    "correct": 1,
+    "explanation": "Indonesia has around 17,000 islands, the largest archipelago in the world.",
+    "reference_text": "Encyclopaedia Britannica, Indonesia",
+    "translations": {
+      "fr": {
+        "question": "Quel pays compte plus de 17 000 îles et est le plus grand État archipel ?",
+        "choices": [
+          "L’Indonésie",
+          "Les Maldives",
+          "Le Japon",
+          "Les Philippines"
+        ],
+        "explanation": "L’Indonésie compte environ 17 000 îles, le plus grand archipel du monde."
+      },
+      "ar": {
+        "question": "أيّ دولة تتكون من أكثر من 17 ألف جزيرة وهي أكبر دولة أرخبيلية؟",
+        "choices": [
+          "إندونيسيا",
+          "المالديف",
+          "اليابان",
+          "الفلبين"
+        ],
+        "explanation": "تضم إندونيسيا نحو 17 ألف جزيرة، وهي أكبر أرخبيل في العالم."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which mountain range separates Europe from Asia?",
+    "choices": [
+      "Carpathians",
+      "Ural Mountains",
+      "Alps",
+      "Pyrenees"
+    ],
+    "correct": 2,
+    "explanation": "The Ural Mountains are traditionally considered the boundary between Europe and Asia.",
+    "reference_text": "Encyclopaedia Britannica, Ural Mountains",
+    "translations": {
+      "fr": {
+        "question": "Quelle chaîne de montagnes sépare traditionnellement l’Europe de l’Asie ?",
+        "choices": [
+          "Les Carpates",
+          "L’Oural",
+          "Les Alpes",
+          "Les Pyrénées"
+        ],
+        "explanation": "L’Oural est traditionnellement considéré comme la frontière entre l’Europe et l’Asie."
+      },
+      "ar": {
+        "question": "أيّ سلسلة جبلية تفصل تقليديًا بين أوروبا وآسيا؟",
+        "choices": [
+          "جبال الكاربات",
+          "جبال الأورال",
+          "جبال الألب",
+          "جبال البيرينيه"
+        ],
+        "explanation": "تُعد جبال الأورال الحد التقليدي الفاصل بين أوروبا وآسيا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest country in the world by area?",
+    "choices": [
+      "Russia",
+      "China",
+      "Canada",
+      "United States"
+    ],
+    "correct": 1,
+    "explanation": "Russia is the largest country in the world, covering about 17 million square kilometres.",
+    "reference_text": "Encyclopaedia Britannica, Russia",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand pays du monde par sa superficie ?",
+        "choices": [
+          "La Russie",
+          "La Chine",
+          "Le Canada",
+          "Les États-Unis"
+        ],
+        "explanation": "La Russie est le plus grand pays du monde, avec environ 17 millions de kilomètres carrés."
+      },
+      "ar": {
+        "question": "ما أكبر دولة في العالم من حيث المساحة؟",
+        "choices": [
+          "روسيا",
+          "الصين",
+          "كندا",
+          "الولايات المتحدة"
+        ],
+        "explanation": "روسيا أكبر دولة في العالم، بمساحة تقارب 17 مليون كيلومتر مربع."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which strait separates Europe from Africa at Gibraltar?",
+    "choices": [
+      "Strait of Hormuz",
+      "Strait of Gibraltar",
+      "Bab el-Mandeb",
+      "Bosporus"
+    ],
+    "correct": 2,
+    "explanation": "The Strait of Gibraltar links the Atlantic Ocean to the Mediterranean Sea.",
+    "reference_text": "Encyclopaedia Britannica, Strait of Gibraltar",
+    "translations": {
+      "fr": {
+        "question": "Quel détroit sépare l’Europe de l’Afrique à Gibraltar ?",
+        "choices": [
+          "Le détroit d’Ormuz",
+          "Le détroit de Gibraltar",
+          "Bab el-Mandeb",
+          "Le Bosphore"
+        ],
+        "explanation": "Le détroit de Gibraltar relie l’océan Atlantique à la mer Méditerranée."
+      },
+      "ar": {
+        "question": "أيّ مضيق يفصل أوروبا عن إفريقيا عند جبل طارق؟",
+        "choices": [
+          "مضيق هرمز",
+          "مضيق جبل طارق",
+          "باب المندب",
+          "البوسفور"
+        ],
+        "explanation": "يربط مضيق جبل طارق المحيط الأطلسي بالبحر الأبيض المتوسط."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the highest mountain in Europe outside the Caucasus?",
+    "choices": [
+      "Mont Blanc",
+      "Mount Elbrus",
+      "Matterhorn",
+      "Triglav"
+    ],
+    "correct": 1,
+    "explanation": "Mont Blanc, in the Alps, is the highest peak in the Alps and western Europe.",
+    "reference_text": "Encyclopaedia Britannica, Mont Blanc",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus haut sommet d’Europe hors Caucase ?",
+        "choices": [
+          "Le mont Blanc",
+          "Le mont Elbrous",
+          "Le Cervin",
+          "Triglav"
+        ],
+        "explanation": "Le mont Blanc, dans les Alpes, est le plus haut sommet des Alpes et de l’Europe occidentale."
+      },
+      "ar": {
+        "question": "ما أعلى قمة جبلية في أوروبا خارج جبال القوقاز؟",
+        "choices": [
+          "مون بلان",
+          "جبل إلبروس",
+          "ماترهورن",
+          "تريغلاف"
+        ],
+        "explanation": "مون بلان في جبال الألب أعلى قمة في الألب وأوروبا الغربية."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is landlocked and has Vienna as its capital?",
+    "choices": [
+      "Hungary",
+      "Austria",
+      "Italy",
+      "Switzerland"
+    ],
+    "correct": 2,
+    "explanation": "Austria is landlocked and its capital, Vienna, lies on the Danube.",
+    "reference_text": "Encyclopaedia Britannica, Austria",
+    "translations": {
+      "fr": {
+        "question": "Quel pays sans littoral a pour capitale Vienne ?",
+        "choices": [
+          "La Hongrie",
+          "L’Autriche",
+          "L’Italie",
+          "La Suisse"
+        ],
+        "explanation": "L’Autriche n’a pas de littoral ; sa capitale, Vienne, est située sur le Danube."
+      },
+      "ar": {
+        "question": "أيّ دولة حبيسة لا تطل على البحر وعاصمتها فيينا؟",
+        "choices": [
+          "المجر",
+          "النمسا",
+          "إيطاليا",
+          "سويسرا"
+        ],
+        "explanation": "النمسا دولة حبيسة، وعاصمتها فيينا تقع على نهر الدانوب."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which continent is the Sahara Desert located on?",
+    "choices": [
+      "Australia",
+      "South America",
+      "Asia",
+      "Africa"
+    ],
+    "correct": 4,
+    "explanation": "The Sahara is the largest hot desert on the African continent.",
+    "reference_text": "Encyclopaedia Britannica, Sahara",
+    "translations": {
+      "fr": {
+        "question": "Sur quel continent se trouve le désert du Sahara ?",
+        "choices": [
+          "L’Australie",
+          "L’Amérique du Sud",
+          "L’Asie",
+          "L’Afrique"
+        ],
+        "explanation": "Le Sahara est le plus grand désert chaud du continent africain."
+      },
+      "ar": {
+        "question": "على أي قارة تقع الصحراء الكبرى؟",
+        "choices": [
+          "أستراليا",
+          "أمريكا الجنوبية",
+          "آسيا",
+          "إفريقيا"
+        ],
+        "explanation": "الصحراء الكبرى هي أكبر صحراء حارة في القارة الإفريقية."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which is the capital of Spain?",
+    "choices": [
+      "Valencia",
+      "Madrid",
+      "Barcelona",
+      "Seville"
+    ],
+    "correct": 2,
+    "explanation": "Madrid is the capital and largest city of Spain.",
+    "reference_text": "Encyclopaedia Britannica, Spain",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale de l’Espagne ?",
+        "choices": [
+          "Valence",
+          "Madrid",
+          "Barcelone",
+          "Séville"
+        ],
+        "explanation": "Madrid est la capitale et la plus grande ville d’Espagne."
+      },
+      "ar": {
+        "question": "ما عاصمة إسبانيا؟",
+        "choices": [
+          "بلنسية",
+          "مدريد",
+          "برشلونة",
+          "إشبيلية"
+        ],
+        "explanation": "مدريد هي عاصمة إسبانيا وأكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the largest lake in Africa by area?",
+    "choices": [
+      "Lake Tanganyika",
+      "Lake Victoria",
+      "Lake Chad",
+      "Lake Malawi"
+    ],
+    "correct": 2,
+    "explanation": "Lake Victoria is the largest lake in Africa and the second-largest freshwater lake in the world by area.",
+    "reference_text": "Encyclopaedia Britannica, Lake Victoria",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand lac d’Afrique par sa superficie ?",
+        "choices": [
+          "Le lac Tanganyika",
+          "Le lac Victoria",
+          "Le lac Tchad",
+          "Le lac Malawi"
+        ],
+        "explanation": "Le lac Victoria est le plus grand lac d’Afrique par sa superficie."
+      },
+      "ar": {
+        "question": "ما أكبر بحيرة في إفريقيا من حيث المساحة؟",
+        "choices": [
+          "بحيرة تنجانيقا",
+          "بحيرة فيكتوريا",
+          "بحيرة تشاد",
+          "بحيرة مالاوي"
+        ],
+        "explanation": "بحيرة فيكتوريا هي أكبر بحيرات إفريقيا مساحةً."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is home to the ancient city of Petra?",
+    "choices": [
+      "Jordan",
+      "Syria",
+      "Egypt",
+      "Lebanon"
+    ],
+    "correct": 1,
+    "explanation": "Petra, the rock-cut city of the Nabataeans, is in southern Jordan.",
+    "reference_text": "UNESCO, Petra",
+    "translations": {
+      "fr": {
+        "question": "Dans quel pays se trouve l’ancienne cité de Pétra ?",
+        "choices": [
+          "La Jordanie",
+          "La Syrie",
+          "L’Égypte",
+          "Le Liban"
+        ],
+        "explanation": "Pétra, cité taillée dans la roche des Nabatéens, se trouve dans le sud de la Jordanie."
+      },
+      "ar": {
+        "question": "في أي دولة تقع مدينة البتراء القديمة؟",
+        "choices": [
+          "الأردن",
+          "سوريا",
+          "مصر",
+          "لبنان"
+        ],
+        "explanation": "البتراء، المدينة المنحوتة في الصخر للأنباط، تقع جنوب الأردن."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian city is the main seaport on the Gulf of Gabès?",
+    "choices": [
+      "Sfax",
+      "Nabeul",
+      "Bizerte",
+      "Gabès"
+    ],
+    "correct": 4,
+    "explanation": "Gabès is the main port city on the Gulf of Gabès in southern Tunisia.",
+    "reference_text": "Tunisian Ministry of Transport",
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne est le principal port du golfe de Gabès ?",
+        "choices": [
+          "Sfax",
+          "Nabeul",
+          "Bizerte",
+          "Gabès"
+        ],
+        "explanation": "Gabès est la principale ville portuaire du golfe de Gabès, dans le sud tunisien."
+      },
+      "ar": {
+        "question": "ما المدينة التونسية التي تُعد أهم ميناء على خليج قابس؟",
+        "choices": [
+          "صفاقس",
+          "نابل",
+          "بنزرت",
+          "قابس"
+        ],
+        "explanation": "قابس هي المدينة المينائية الرئيسية على خليج قابس جنوب تونس."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is famous for its tulips and windmills?",
+    "choices": [
+      "Belgium",
+      "Netherlands",
+      "Denmark",
+      "Germany"
+    ],
+    "correct": 2,
+    "explanation": "The Netherlands is known for tulips, windmills and canals.",
+    "reference_text": "Encyclopaedia Britannica, Netherlands",
+    "translations": {
+      "fr": {
+        "question": "Quel pays est célèbre pour ses tulipes et ses moulins à vent ?",
+        "choices": [
+          "La Belgique",
+          "Les Pays-Bas",
+          "Le Danemark",
+          "L’Allemagne"
+        ],
+        "explanation": "Les Pays-Bas sont connus pour leurs tulipes, leurs moulins et leurs canaux."
+      },
+      "ar": {
+        "question": "أيّ بلد يشتهر بزهور التوليب وطواحين الهواء؟",
+        "choices": [
+          "بلجيكا",
+          "هولندا",
+          "الدنمارك",
+          "ألمانيا"
+        ],
+        "explanation": "تشتهر هولندا بالتوليب وطواحين الهواء والقنوات المائية."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the largest island in the world?",
+    "choices": [
+      "Borneo",
+      "New Guinea",
+      "Madagascar",
+      "Greenland"
+    ],
+    "correct": 4,
+    "explanation": "Greenland is the largest island that is not a continent.",
+    "reference_text": "Encyclopaedia Britannica, Greenland",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la plus grande île du monde ?",
+        "choices": [
+          "Bornéo",
+          "La Nouvelle-Guinée",
+          "Madagascar",
+          "Le Groenland"
+        ],
+        "explanation": "Le Groenland est la plus grande île du monde qui ne soit pas un continent."
+      },
+      "ar": {
+        "question": "ما أكبر جزيرة في العالم؟",
+        "choices": [
+          "بورنيو",
+          "غينيا الجديدة",
+          "مدغشقر",
+          "غرينلاند"
+        ],
+        "explanation": "غرينلاند هي أكبر جزيرة في العالم وليست قارة."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Arabian country has the capital Doha?",
+    "choices": [
+      "Oman",
+      "Bahrain",
+      "Kuwait",
+      "Qatar"
+    ],
+    "correct": 4,
+    "explanation": "Doha is the capital of Qatar, on the Persian Gulf coast.",
+    "reference_text": "Encyclopaedia Britannica, Qatar",
+    "translations": {
+      "fr": {
+        "question": "Quel pays arabe a pour capitale Doha ?",
+        "choices": [
+          "Oman",
+          "Bahreïn",
+          "Koweït",
+          "Qatar"
+        ],
+        "explanation": "Doha est la capitale du Qatar, sur la côte du golfe Persique."
+      },
+      "ar": {
+        "question": "أيّ دولة عربية عاصمتها الدوحة؟",
+        "choices": [
+          "عُمان",
+          "البحرين",
+          "الكويت",
+          "قطر"
+        ],
+        "explanation": "الدوحة عاصمة قطر، وتقع على ساحل الخليج العربي."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which sea is between Saudi Arabia and Africa?",
+    "choices": [
+      "Dead Sea",
+      "Red Sea",
+      "Black Sea",
+      "Caspian Sea"
+    ],
+    "correct": 2,
+    "explanation": "The Red Sea separates the Arabian Peninsula from northeastern Africa.",
+    "reference_text": "Encyclopaedia Britannica, Red Sea",
+    "translations": {
+      "fr": {
+        "question": "Quelle mer sépare l’Arabie saoudite de l’Afrique ?",
+        "choices": [
+          "La mer Morte",
+          "La mer Rouge",
+          "La mer Noire",
+          "La mer Caspienne"
+        ],
+        "explanation": "La mer Rouge sépare la péninsule Arabique du nord-est de l’Afrique."
+      },
+      "ar": {
+        "question": "أيّ بحر يفصل بين السعودية وإفريقيا؟",
+        "choices": [
+          "البحر الميت",
+          "البحر الأحمر",
+          "البحر الأسود",
+          "بحر قزوين"
+        ],
+        "explanation": "يفصل البحر الأحمر شبه الجزيرة العربية عن شمال شرق إفريقيا."
+      }
+    }
+  }
+]

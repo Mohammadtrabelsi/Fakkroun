@@ -1,0 +1,784 @@
+[
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which marine animal has eight arms?",
+    "choices": [
+      "Squid",
+      "Octopus",
+      "Jellyfish",
+      "Starfish"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin possède huit bras ?",
+        "choices": [
+          "Le calmar",
+          "La pieuvre",
+          "La méduse",
+          "L’étoile de mer"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان بحري له ثماني أذرع؟",
+        "choices": [
+          "الحبار",
+          "الأخطبوط",
+          "قنديل البحر",
+          "نجم البحر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call the young form of a fish?",
+    "choices": [
+      "Larva or fry",
+      "Embryo",
+      "Nymph",
+      "Pupa"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on la forme jeune d’un poisson ?",
+        "choices": [
+          "La larve ou l’alevin",
+          "L’embryon",
+          "Le nymphe",
+          "La nymphe"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الشكل الصغير من السمك في أطواره الأولى؟",
+        "choices": [
+          "اليرقة أو الزريعة",
+          "الجنين",
+          "الحورية",
+          "الشرنقة"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which creature is famous for regrowing lost body parts and lives on the sea floor?",
+    "choices": [
+      "Sea star",
+      "Seal",
+      "Shark",
+      "Tuna"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle créature est célèbre pour régénérer ses membres perdus et vit sur le fond marin ?",
+        "choices": [
+          "L’étoile de mer",
+          "Le phoque",
+          "Le requin",
+          "Le thon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يشتهر بإعادة نمو أعضائه المفقودة ويعيش في قاع البحر؟",
+        "choices": [
+          "نجم البحر",
+          "الفقمة",
+          "القرش",
+          "التونة"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which fish is known for its ability to change its sex during its life?",
+    "choices": [
+      "Herring",
+      "Tuna",
+      "Salmon",
+      "Clownfish"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel poisson est connu pour pouvoir changer de sexe au cours de sa vie ?",
+        "choices": [
+          "Le hareng",
+          "Le thon",
+          "Le saumon",
+          "Le poisson-clown"
+        ]
+      },
+      "ar": {
+        "question": "أيّ سمكة تُعرف بقدرتها على تغيير جنسها خلال حياتها؟",
+        "choices": [
+          "الرنجة",
+          "التونة",
+          "السلمون",
+          "سمكة المهرج"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which marine habitat is formed by living corals and is a biodiversity hotspot?",
+    "choices": [
+      "Glacier",
+      "Coral reef",
+      "Mud flat",
+      "Sand dune"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel habitat marin est formé de coraux vivants et constitue un point chaud de biodiversité ?",
+        "choices": [
+          "Le glacier",
+          "Le récif corallien",
+          "La vasière",
+          "La dune de sable"
+        ]
+      },
+      "ar": {
+        "question": "أيّ موئل بحري يتكون من المرجان الحي ويُعد من بؤر التنوع البيولوجي؟",
+        "choices": [
+          "الأنهار الجليدية",
+          "الشعاب المرجانية",
+          "المستنقعات الطينية",
+          "الكثبان الرملية"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which animal is a large marine reptile that surfaces to breathe and can live for many decades?",
+    "choices": [
+      "Sea turtle",
+      "Sea lion",
+      "Dolphin",
+      "Penguin"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel animal est un grand reptile marin qui remonte respirer et peut vivre plusieurs décennies ?",
+        "choices": [
+          "La tortue marine",
+          "L’otarie",
+          "Le dauphin",
+          "Le manchot"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان هو زاحف بحري كبير يصعد إلى السطح للتنفس ويعيش عقودًا طويلة؟",
+        "choices": [
+          "السلحفاة البحرية",
+          "أسد البحر",
+          "الدلفين",
+          "البطريق"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Mediterranean marine plant forms underwater meadows that protect coasts from erosion?",
+    "choices": [
+      "Sargassum",
+      "Posidonia oceanica",
+      "Spirulina",
+      "Kelp"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle plante marine méditerranéenne forme des prairies sous-marines qui protègent le littoral de l’érosion ?",
+        "choices": [
+          "Le sargasse",
+          "La posidonie",
+          "La spiruline",
+          "Le kelp"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نبات بحري متوسطي يشكل مروجًا تحت الماء تحمي السواحل من التآكل؟",
+        "choices": [
+          "السرغاسوم",
+          "البوسيدونيا (Posidonia oceanica)",
+          "السبيرولينا",
+          "الكلب البحري"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which marine animal is known for its bioluminescent light and lives in the deep sea?",
+    "choices": [
+      "Sardine",
+      "Clownfish",
+      "Parrot fish",
+      "Anglerfish"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin est connu pour sa lumière bioluminescente et vit dans les grands fonds ?",
+        "choices": [
+          "La sardine",
+          "Le poisson-clown",
+          "Le poisson-perroquet",
+          "Le baudroie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان بحري يُعرف بضوئه الحيوي ويعيش في أعماق البحار؟",
+        "choices": [
+          "السردين",
+          "سمكة المهرج",
+          "سمكة الببغاء",
+          "سمكة الصياد (الغِيْلَم)"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which whale is famous for its long song, produced in the ocean for communication?",
+    "choices": [
+      "Minke whale",
+      "Humpback whale",
+      "Grey whale",
+      "Right whale"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle baleine est célèbre pour son long chant utilisé pour communiquer dans l’océan ?",
+        "choices": [
+          "Le petit rorqual",
+          "La baleine à bosse",
+          "La baleine grise",
+          "La baleine franche"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حوت يشتهر بأغنياته الطويلة التي يُصدرها للتواصل في المحيط؟",
+        "choices": [
+          "حوت المينك",
+          "الحوت الأحدب",
+          "الحوت الرمادي",
+          "حوت الغرينلاند"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which family of fish includes the tuna, mackerel and bonito?",
+    "choices": [
+      "Gadidae",
+      "Scombridae",
+      "Salmonidae",
+      "Cyprinidae"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle famille de poissons comprend le thon, le maquereau et la bonite ?",
+        "choices": [
+          "Les gadidés",
+          "Les scombridés",
+          "Les salmonidés",
+          "Les cyprinidés"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فصيلة من الأسماك تشمل التونة والماكريل والبونيتو؟",
+        "choices": [
+          "فصيلة القديات",
+          "فصيلة السكمبريات",
+          "فصيلة السلمونيات",
+          "فصيلة الشبوطيات"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of a seaweed that floats freely in the Sargasso Sea?",
+    "choices": [
+      "Nori",
+      "Spirulina",
+      "Kelp",
+      "Sargassum"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’algue qui flotte librement dans la mer des Sargasses ?",
+        "choices": [
+          "Le nori",
+          "La spiruline",
+          "Le kelp",
+          "Le sargasse"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الطحلب الذي يطفو بحرية في بحر السارجاسو؟",
+        "choices": [
+          "النوري",
+          "السبيرولينا",
+          "الكلب البحري",
+          "السرغاسوم"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which animal lives in colonies on Antarctic ice and cannot fly?",
+    "choices": [
+      "Albatross",
+      "Emperor penguin",
+      "Pelican",
+      "Seagull"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel animal vit en colonies sur les glaces antarctiques et ne peut pas voler ?",
+        "choices": [
+          "L’albatros",
+          "Le manchot empereur",
+          "Le pélican",
+          "La mouette"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يعيش في مستعمرات على جليد القارة القطبية الجنوبية ولا يطير؟",
+        "choices": [
+          "طائر القطرس",
+          "البطريق الإمبراطوري",
+          "البجعة",
+          "النورس"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “marine protected area” that bans fishing called?",
+    "choices": [
+      "Free fishing zone",
+      "Tourist beach",
+      "No-take zone",
+      "Shipping lane"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on une zone marine protégée où la pêche est interdite ?",
+        "choices": [
+          "Une zone de pêche libre",
+          "Une plage touristique",
+          "Une zone de non-prélèvement",
+          "Une voie maritime"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم المنطقة البحرية المحمية التي يُمنع فيها الصيد تمامًا؟",
+        "choices": [
+          "منطقة الصيد الحر",
+          "شاطئ سياحي",
+          "منطقة الحظر الكامل للصيد",
+          "ممر الملاحة"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which marine animal is the largest reptile alive today?",
+    "choices": [
+      "Leatherback sea turtle",
+      "Iguana",
+      "Sea snake",
+      "Saltwater crocodile"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand reptile vivant actuel ?",
+        "choices": [
+          "La tortue luth",
+          "L’iguane",
+          "Le serpent de mer",
+          "Le crocodile marin"
+        ]
+      },
+      "ar": {
+        "question": "ما أكبر الزواحف الحية حاليًا؟",
+        "choices": [
+          "السلحفاة الجلدية",
+          "الإغوانا",
+          "ثعبان البحر",
+          "التمساح المالح"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea creature is shaped like a jelly and has stinging tentacles?",
+    "choices": [
+      "Sea urchin",
+      "Starfish",
+      "Jellyfish",
+      "Crab"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle créature marine a une forme de gelée et des tentacules urticants ?",
+        "choices": [
+          "L’oursin",
+          "L’étoile de mer",
+          "La méduse",
+          "Le crabe"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن بحري يشبه الهلام وله لوامس لاسعة؟",
+        "choices": [
+          "قنفذ البحر",
+          "نجم البحر",
+          "قنديل البحر",
+          "السلطعون"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which organism is responsible for producing much of Earth’s oxygen in the oceans?",
+    "choices": [
+      "Corals",
+      "Sharks",
+      "Sea urchins",
+      "Phytoplankton"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel organisme produit une grande partie de l’oxygène de l’océan ?",
+        "choices": [
+          "Les coraux",
+          "Les requins",
+          "Les oursins",
+          "Le phytoplancton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كائن ينتج جزءًا كبيرًا من الأكسجين في المحيطات؟",
+        "choices": [
+          "المرجان",
+          "أسماك القرش",
+          "قنافذ البحر",
+          "العوالق النباتية"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian coastal lagoon is famous for its birdlife and is a Ramsar site?",
+    "choices": [
+      "Carthage",
+      "Ichkeul",
+      "Zarzis",
+      "Sidi Bou Said"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle lagune côtière tunisienne est célèbre pour ses oiseaux et est un site Ramsar ?",
+        "choices": [
+          "Carthage",
+          "Ichkeul",
+          "Zarzis",
+          "Sidi Bou Saïd"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بحيرة ساحلية تونسية تشتهر بطيورها وتُعد موقعًا مدرجًا ضمن اتفاقية رامسار؟",
+        "choices": [
+          "قرطاج",
+          "إشكل",
+          "جرجيس",
+          "سيدي بوسعيد"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which animal is known as the “sea cow” and grazes on seagrass?",
+    "choices": [
+      "Seal",
+      "Otter",
+      "Manatee",
+      "Walrus"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel animal, appelé « vache de mer », broute les herbiers marins ?",
+        "choices": [
+          "Le phoque",
+          "La loutre",
+          "Le lamantin",
+          "Le morse"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان يُعرف بـ«بقرة البحر» ويرعى الحشائش البحرية؟",
+        "choices": [
+          "الفقمة",
+          "ابن عرس البحري",
+          "أبقار البحر (المانتي)",
+          "الفظ"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea animal has a shell and a foot and is known to move slowly on rocks?",
+    "choices": [
+      "Dolphin",
+      "Shark",
+      "Eel",
+      "Snail"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel animal marin possède une coquille et un pied, et se déplace lentement sur les rochers ?",
+        "choices": [
+          "Le dauphin",
+          "Le requin",
+          "L’anguille",
+          "Le gastéropode (bigorneau)"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حيوان بحري له صدفة وقدم ويتحرك ببطء على الصخور؟",
+        "choices": [
+          "الدلفين",
+          "القرش",
+          "الأنقليس",
+          "البطلينوس (قوقع بحري)"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ocean zone lies between 200 and 1,000 metres deep and receives very little sunlight?",
+    "choices": [
+      "Abyssal zone",
+      "Intertidal zone",
+      "Mesopelagic zone",
+      "Epipelagic zone"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle zone océanique se situe entre 200 et 1 000 mètres de profondeur et reçoit très peu de lumière ?",
+        "choices": [
+          "La zone abyssale",
+          "La zone intertidale",
+          "La zone mésopélagique",
+          "La zone épipélagique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ نطاق بحري يقع بين عمق 200 و1000 متر ويتلقى قدرًا ضئيلًا من الضوء؟",
+        "choices": [
+          "النطاق السحيق (أبيسال)",
+          "المنطقة المدّية",
+          "النطاق المتوسط (ميزوبيلاجيك)",
+          "النطاق السطحي (إيبيبيلاجيك)"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which bird is commonly seen diving into the sea from high above to catch fish?",
+    "choices": [
+      "Crow",
+      "Owl",
+      "Hen",
+      "Gannet"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel oiseau plonge souvent de haut dans la mer pour attraper des poissons ?",
+        "choices": [
+          "Le corbeau",
+          "La chouette",
+          "La poule",
+          "Le fou de Bassan"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طائر يُشاهد كثيرًا وهو يغوص من الأعلى في البحر لصيد الأسماك؟",
+        "choices": [
+          "الغراب",
+          "البومة",
+          "الدجاجة",
+          "طائر الغانت (البلشون البحري)"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which marine mammal can stay underwater the longest while hunting in deep waters?",
+    "choices": [
+      "Seal",
+      "Dolphin",
+      "Otter",
+      "Sperm whale"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel mammifère marin peut rester le plus longtemps en apnée pendant la chasse en eaux profondes ?",
+        "choices": [
+          "Le phoque",
+          "Le dauphin",
+          "La loutre",
+          "Le cachalot"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ثدييات بحرية يمكنه البقاء تحت الماء لأطول مدة أثناء الصيد في الأعماق؟",
+        "choices": [
+          "الفقمة",
+          "الدلفين",
+          "ابن عرس البحري",
+          "حوت العنبر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  },
+  {
+    "category": "marine-biodiversity",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Tunisian sea is the body of water that borders the country to the north and east?",
+    "choices": [
+      "Mediterranean Sea",
+      "Black Sea",
+      "Caspian Sea",
+      "Red Sea"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle mer borde la Tunisie au nord et à l’est ?",
+        "choices": [
+          "La mer Méditerranée",
+          "La mer Noire",
+          "La mer Caspienne",
+          "La mer Rouge"
+        ]
+      },
+      "ar": {
+        "question": "أيّ بحر يطل على تونس من الشمال والشرق؟",
+        "choices": [
+          "البحر الأبيض المتوسط",
+          "البحر الأسود",
+          "بحر قزوين",
+          "البحر الأحمر"
+        ]
+      }
+    },
+    "reference_text": "IUCN, The IUCN Red List of Threatened Species"
+  }
+]

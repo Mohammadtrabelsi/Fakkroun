@@ -1,0 +1,614 @@
+[
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which Egyptian pharaoh is famous for building the Great Pyramid?",
+    "choices": [
+      "Ramesses II",
+      "Tutankhamun",
+      "Khufu",
+      "Akhenaten"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pharaon égyptien est célèbre pour avoir fait construire la Grande Pyramide ?",
+        "choices": [
+          "Ramsès II",
+          "Toutankhamon",
+          "Khéops",
+          "Akhenaton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فرعون مصري اشتهر ببناء الهرم الأكبر؟",
+        "choices": [
+          "رمسيس الثاني",
+          "توت عنخ آمون",
+          "خوفو",
+          "إخناتون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country was ruled by Napoleon Bonaparte as emperor?",
+    "choices": [
+      "Germany",
+      "Russia",
+      "France",
+      "Spain"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Sur quel pays Napoléon Bonaparte a-t-il régné en tant qu’empereur ?",
+        "choices": [
+          "L’Allemagne",
+          "La Russie",
+          "La France",
+          "L’Espagne"
+        ]
+      },
+      "ar": {
+        "question": "على أي دولة حكم نابليون بونابرت إمبراطورًا؟",
+        "choices": [
+          "ألمانيا",
+          "روسيا",
+          "فرنسا",
+          "إسبانيا"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which ancient civilisation built the city of Mohenjo-daro?",
+    "choices": [
+      "Hittite Empire",
+      "Aztec civilisation",
+      "Indus Valley Civilisation",
+      "Mayan civilisation"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle civilisation ancienne a bâti la cité de Mohenjo-daro ?",
+        "choices": [
+          "L’Empire hittite",
+          "La civilisation aztèque",
+          "La civilisation de la vallée de l’Indus",
+          "La civilisation maya"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حضارة قديمة بنت مدينة موهينجو دارو؟",
+        "choices": [
+          "الإمبراطورية الحثية",
+          "حضارة الأزتيك",
+          "حضارة وادي السند",
+          "حضارة المايا"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Tunisian city was the site of the Carthaginian harbour of the ancient Punic era?",
+    "choices": [
+      "Carthage",
+      "Mahdia",
+      "Kairouan",
+      "Gabès"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle ville tunisienne abritait le port carthaginois de l’époque punique ?",
+        "choices": [
+          "Carthage",
+          "Mahdia",
+          "Kairouan",
+          "Gabès"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مدينة تونسية كان فيها الميناء القرطاجي في العهد البوني؟",
+        "choices": [
+          "قرطاج",
+          "المهدية",
+          "القيروان",
+          "قابس"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which war was fought between Rome and Carthage over three rounds?",
+    "choices": [
+      "Hundred Years’ War",
+      "Crimean War",
+      "Peloponnesian War",
+      "Punic Wars"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle guerre a opposé Rome et Carthage en trois conflits successifs ?",
+        "choices": [
+          "La guerre de Cent Ans",
+          "La guerre de Crimée",
+          "La guerre du Péloponnèse",
+          "Les guerres puniques"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حرب دارت بين روما وقرطاج في ثلاث جولات؟",
+        "choices": [
+          "حرب المائة عام",
+          "حرب القرم",
+          "حرب البيلوبونيز",
+          "الحروب البونية"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Who was the Carthaginian general who crossed the Alps with elephants?",
+    "choices": [
+      "Scipio Africanus",
+      "Hamilcar Barca",
+      "Julius Caesar",
+      "Hannibal Barca"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel général carthaginois traversa les Alpes avec des éléphants ?",
+        "choices": [
+          "Scipion l’Africain",
+          "Hamilcar Barca",
+          "Jules César",
+          "Hannibal Barca"
+        ]
+      },
+      "ar": {
+        "question": "من هو القائد القرطاجي الذي عبر جبال الألب بالفيلة؟",
+        "choices": [
+          "سكيبيو الأفريقي",
+          "حملقار برقة",
+          "يوليوس قيصر",
+          "حنبعل برقة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Tunisian religious city is home to the Zitouna Mosque?",
+    "choices": [
+      "Monastir",
+      "Tunis",
+      "Kairouan",
+      "Sousse"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Dans quelle ville tunisienne se trouve la mosquée Zitouna ?",
+        "choices": [
+          "Monastir",
+          "Tunis",
+          "Kairouan",
+          "Sousse"
+        ]
+      },
+      "ar": {
+        "question": "في أيّ مدينة تونسية يقع جامع الزيتونة؟",
+        "choices": [
+          "المنستير",
+          "تونس",
+          "القيروان",
+          "سوسة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "In which century did the Arab conquest of North Africa take place?",
+    "choices": [
+      "15th century",
+      "5th century",
+      "7th century",
+      "10th century"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Au cours de quel siècle a eu lieu la conquête arabe de l’Afrique du Nord ?",
+        "choices": [
+          "XVe siècle",
+          "Ve siècle",
+          "VIIe siècle",
+          "Xe siècle"
+        ]
+      },
+      "ar": {
+        "question": "في أي قرن جرى الفتح العربي لشمال إفريقيا؟",
+        "choices": [
+          "القرن الخامس عشر",
+          "القرن الخامس",
+          "القرن السابع",
+          "القرن العاشر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which French king was executed during the French Revolution in 1793?",
+    "choices": [
+      "Louis XVI",
+      "Louis Philippe",
+      "Charles X",
+      "Louis XIV"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel roi de France fut exécuté pendant la Révolution en 1793 ?",
+        "choices": [
+          "Louis XVI",
+          "Louis-Philippe",
+          "Charles X",
+          "Louis XIV"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملك فرنسي أُعدم خلال الثورة الفرنسية عام 1793؟",
+        "choices": [
+          "لويس السادس عشر",
+          "لويس فيليب",
+          "شارل العاشر",
+          "لويس الرابع عشر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Egyptian queen had a famous bust, now in Berlin, known as the ‘beautiful one has come’?",
+    "choices": [
+      "Ahmose",
+      "Nefertiti",
+      "Cleopatra",
+      "Hatshepsut"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle reine égyptienne possède un célèbre buste conservé à Berlin ?",
+        "choices": [
+          "Ahmosis",
+          "Néfertiti",
+          "Cléopâtre",
+          "Hatchepsout"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ملكة مصرية يُعرف تمثالها النصفي الشهير المحفوظ في برلين؟",
+        "choices": [
+          "أحمس",
+          "نفرتيتي",
+          "كليوباترا",
+          "حتشبسوت"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which ocean did Christopher Columbus cross on his first voyage to the Americas?",
+    "choices": [
+      "Pacific Ocean",
+      "Atlantic Ocean",
+      "Arctic Ocean",
+      "Indian Ocean"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel océan Christophe Colomb a-t-il traversé lors de son premier voyage vers les Amériques ?",
+        "choices": [
+          "L’océan Pacifique",
+          "L’océan Atlantique",
+          "L’océan Arctique",
+          "L’océan Indien"
+        ]
+      },
+      "ar": {
+        "question": "أيّ محيط عبره كريستوفر كولومبوس في رحلته الأولى إلى الأمريكتين؟",
+        "choices": [
+          "المحيط الهادئ",
+          "المحيط الأطلسي",
+          "المحيط المتجمد الشمالي",
+          "المحيط الهندي"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which Byzantine emperor built the Hagia Sophia in its present form in the 6th century?",
+    "choices": [
+      "Heraclius",
+      "Basil II",
+      "Justinian I",
+      "Constantine XI"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel empereur byzantin fit construire Sainte-Sophie dans sa forme actuelle au VIe siècle ?",
+        "choices": [
+          "Héraclius",
+          "Basile II",
+          "Justinien Ier",
+          "Constantin XI"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إمبراطور بيزنطي أمر ببناء آيا صوفيا بشكلها الحالي في القرن السادس؟",
+        "choices": [
+          "هرقل",
+          "باسيل الثاني",
+          "جستنيان الأول",
+          "قسطنطين الحادي عشر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country was the first to send astronauts into orbit around the Earth?",
+    "choices": [
+      "United States",
+      "Soviet Union",
+      "France",
+      "China"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays a envoyé en premier un humain en orbite autour de la Terre ?",
+        "choices": [
+          "Les États-Unis",
+          "L’Union soviétique",
+          "La France",
+          "La Chine"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة أرسلت أول إنسان إلى مدار حول الأرض؟",
+        "choices": [
+          "الولايات المتحدة",
+          "الاتحاد السوفياتي",
+          "فرنسا",
+          "الصين"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Who was the leader of the Soviet Union during most of World War II?",
+    "choices": [
+      "Joseph Stalin",
+      "Nikita Khrushchev",
+      "Leon Trotsky",
+      "Vladimir Lenin"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Qui dirigeait l’Union soviétique pendant la majeure partie de la Seconde Guerre mondiale ?",
+        "choices": [
+          "Joseph Staline",
+          "Nikita Khrouchtchev",
+          "Léon Trotski",
+          "Vladimir Lénine"
+        ]
+      },
+      "ar": {
+        "question": "من كان زعيم الاتحاد السوفياتي خلال معظم الحرب العالمية الثانية؟",
+        "choices": [
+          "جوزيف ستالين",
+          "نيكيتا خروتشوف",
+          "ليون تروتسكي",
+          "فلاديمير لينين"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which pharaoh is known for moving the capital to Akhetaten and for promoting the cult of Aten?",
+    "choices": [
+      "Seti I",
+      "Thutmose III",
+      "Akhenaten",
+      "Ramesses II"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel pharaon déplaça la capitale à Akhetaton et promut le culte d’Aton ?",
+        "choices": [
+          "Séthi Ier",
+          "Thoutmosis III",
+          "Akhenaton",
+          "Ramsès II"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فرعون نقل العاصمة إلى أخيتاتون وروّج لعبادة آتون؟",
+        "choices": [
+          "سيتي الأول",
+          "تحتمس الثالث",
+          "إخناتون",
+          "رمسيس الثاني"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which ancient wonder was located in Babylon and featured terraced gardens?",
+    "choices": [
+      "Pharos of Alexandria",
+      "Hanging Gardens of Babylon",
+      "Temple of Artemis",
+      "Colossus of Rhodes"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle merveille antique située à Babylone comportait des jardins en terrasses ?",
+        "choices": [
+          "Le phare d’Alexandrie",
+          "Les jardins suspendus de Babylone",
+          "Le temple d’Artémis",
+          "Le colosse de Rhodes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عجيبة قديمة كانت في بابل وتضم حدائق متدرجة؟",
+        "choices": [
+          "منارة الإسكندرية",
+          "الحدائق المعلقة في بابل",
+          "معبد أرتميس",
+          "تمثال رودس"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which war was fought in Europe from 1914 to 1918?",
+    "choices": [
+      "World War II",
+      "Thirty Years’ War",
+      "Hundred Years’ War",
+      "World War I"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle guerre a été menée en Europe de 1914 à 1918 ?",
+        "choices": [
+          "La Seconde Guerre mondiale",
+          "La guerre de Trente Ans",
+          "La guerre de Cent Ans",
+          "La Première Guerre mondiale"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حرب دارت في أوروبا من 1914 إلى 1918؟",
+        "choices": [
+          "الحرب العالمية الثانية",
+          "حرب الثلاثين عامًا",
+          "حرب المائة عام",
+          "الحرب العالمية الأولى"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "history",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which ruler founded the Mali Empire?",
+    "choices": [
+      "Shaka Zulu",
+      "Sundiata Keita",
+      "Mansa Musa",
+      "Askia Muhammad"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel souverain fonda l’Empire du Mali ?",
+        "choices": [
+          "Chaka Zoulou",
+          "Soundiata Keïta",
+          "Mansa Moussa",
+          "Askia Mohammed"
+        ]
+      },
+      "ar": {
+        "question": "أيّ حاكم أسس إمبراطورية مالي؟",
+        "choices": [
+          "شاكا زولو",
+          "سوندياتا كيتا",
+          "منسا موسى",
+          "أسكيا محمد"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  }
+]

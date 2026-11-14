@@ -1,0 +1,648 @@
+[
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source uses the heat of the sun to produce hot water?",
+    "choices": [
+      "Nuclear",
+      "Coal",
+      "Wind",
+      "Solar thermal"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quelle source d’énergie utilise la chaleur du soleil pour produire de l’eau chaude ?",
+        "choices": [
+          "Le nucléaire",
+          "Le charbon",
+          "L’éolien",
+          "Le solaire thermique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر طاقة يستخدم حرارة الشمس لإنتاج الماء الساخن؟",
+        "choices": [
+          "الطاقة النووية",
+          "الفحم",
+          "طاقة الرياح",
+          "الطاقة الشمسية الحرارية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable resource grows again quickly and can produce bioenergy?",
+    "choices": [
+      "Coal",
+      "Biomass",
+      "Uranium",
+      "Crude oil"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle ressource renouvelable repousse rapidement et peut produire de la bioénergie ?",
+        "choices": [
+          "Le charbon",
+          "La biomasse",
+          "L’uranium",
+          "Le pétrole brut"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مورد متجدد ينمو من جديد بسرعة ويمكن أن ينتج طاقة حيوية؟",
+        "choices": [
+          "الفحم",
+          "الكتلة الحيوية",
+          "اليورانيوم",
+          "النفط الخام"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source is used by a dam to produce electricity?",
+    "choices": [
+      "Water",
+      "Coal",
+      "Oil",
+      "Gas"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie utilise un barrage pour produire de l’électricité ?",
+        "choices": [
+          "L’eau",
+          "Le charbon",
+          "Le pétrole",
+          "Le gaz"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر طاقة يستخدمه السد لإنتاج الكهرباء؟",
+        "choices": [
+          "الماء",
+          "الفحم",
+          "النفط",
+          "الغاز"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which country is one of the largest producers of wind energy in Europe?",
+    "choices": [
+      "Germany",
+      "Egypt",
+      "Libya",
+      "Algeria"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est l’un des plus grands producteurs d’énergie éolienne en Europe ?",
+        "choices": [
+          "L’Allemagne",
+          "L’Égypte",
+          "La Libye",
+          "L’Algérie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تُعد من أكبر منتجي طاقة الرياح في أوروبا؟",
+        "choices": [
+          "ألمانيا",
+          "مصر",
+          "ليبيا",
+          "الجزائر"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which Moroccan project is one of the largest concentrated solar power complexes in the world?",
+    "choices": [
+      "Atlas tunnel",
+      "Tangier port",
+      "Hassan II dam",
+      "Noor Ouarzazate"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel projet marocain est l’un des plus grands complexes solaires à concentration du monde ?",
+        "choices": [
+          "Le tunnel de l’Atlas",
+          "Le port de Tanger",
+          "Le barrage Hassan II",
+          "Noor Ouarzazate"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مشروع مغربي يُعد من أكبر مجمعات الطاقة الشمسية المركّزة في العالم؟",
+        "choices": [
+          "نفق الأطلس",
+          "ميناء طنجة",
+          "سد الحسن الثاني",
+          "نور ورزازات"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “energy storage” used for in renewable systems?",
+    "choices": [
+      "Keeping energy available when production is low",
+      "Creating pollution",
+      "Burning fuel",
+      "Making noise"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert le « stockage de l’énergie » dans les systèmes renouvelables ?",
+        "choices": [
+          "Garder l’énergie disponible quand la production est faible",
+          "Créer de la pollution",
+          "Brûler du carburant",
+          "Faire du bruit"
+        ]
+      },
+      "ar": {
+        "question": "ما فائدة «تخزين الطاقة» في أنظمة الطاقة المتجددة؟",
+        "choices": [
+          "توفير الطاقة عندما يكون الإنتاج منخفضًا",
+          "إحداث التلوث",
+          "حرق الوقود",
+          "إصدار الضوضاء"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which renewable energy technology uses the movement of rivers or tides?",
+    "choices": [
+      "Oil engines",
+      "Hydropower",
+      "Coal power",
+      "Gas turbines"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie renouvelable utilise le mouvement des rivières ou des marées ?",
+        "choices": [
+          "Les moteurs à pétrole",
+          "L’hydroélectricité",
+          "La centrale à charbon",
+          "Les turbines à gaz"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية متجددة تستخدم حركة الأنهار أو المد؟",
+        "choices": [
+          "محركات النفط",
+          "الطاقة الكهرومائية",
+          "محطة الفحم",
+          "التوربينات الغازية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What do we call energy produced by plants and organic waste through fermentation?",
+    "choices": [
+      "Solar energy",
+      "Tidal energy",
+      "Biogas",
+      "Nuclear energy"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on l’énergie produite par les plantes et déchets organiques par fermentation ?",
+        "choices": [
+          "L’énergie solaire",
+          "L’énergie marémotrice",
+          "Le biogaz",
+          "L’énergie nucléaire"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الطاقة الناتجة من النباتات والمخلفات العضوية عبر التخمير؟",
+        "choices": [
+          "الطاقة الشمسية",
+          "طاقة المد",
+          "الغاز الحيوي",
+          "الطاقة النووية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which company term describes a power plant that generates electricity for the grid at large scale?",
+    "choices": [
+      "Garden lamp",
+      "Personal fan",
+      "Battery pack",
+      "Utility-scale power plant"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel terme désigne une centrale qui produit de l’électricité à grande échelle pour le réseau ?",
+        "choices": [
+          "Lampe de jardin",
+          "Ventilateur personnel",
+          "Batterie individuelle",
+          "Centrale à grande échelle (utility-scale)"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف محطة توليد كبيرة تغذي الشبكة الكهربائية؟",
+        "choices": [
+          "مصباح حديقة",
+          "مروحة شخصية",
+          "حزمة بطاريات",
+          "محطة واسعة النطاق (Utility-scale)"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural event provides energy to plants through photosynthesis?",
+    "choices": [
+      "Volcanoes",
+      "Sunlight",
+      "Lightning",
+      "Earthquakes"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel phénomène naturel fournit l’énergie nécessaire à la photosynthèse ?",
+        "choices": [
+          "Les volcans",
+          "La lumière du soleil",
+          "La foudre",
+          "Les séismes"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ظاهرة طبيعية تزود النباتات بالطاقة عبر البناء الضوئي؟",
+        "choices": [
+          "البراكين",
+          "ضوء الشمس",
+          "البرق",
+          "الزلازل"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which term describes a renewable energy system that is not connected to the main grid?",
+    "choices": [
+      "Off-grid system",
+      "Shared grid",
+      "Smart grid only",
+      "On-grid system"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel terme désigne un système d’énergie renouvelable non raccordé au réseau principal ?",
+        "choices": [
+          "Le système autonome (off-grid)",
+          "Le réseau partagé",
+          "Le réseau intelligent uniquement",
+          "Le système raccordé (on-grid)"
+        ]
+      },
+      "ar": {
+        "question": "ما المصطلح الذي يصف نظام طاقة متجددة غير متصل بالشبكة الرئيسية؟",
+        "choices": [
+          "نظام مستقل عن الشبكة (Off-grid)",
+          "شبكة مشتركة",
+          "شبكة ذكية فقط",
+          "نظام متصل بالشبكة (On-grid)"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which energy source is generated by the rise and fall of the tide?",
+    "choices": [
+      "Coal",
+      "Tidal energy",
+      "Nuclear fuel",
+      "Diesel"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie est produite par la montée et la descente des marées ?",
+        "choices": [
+          "Le charbon",
+          "L’énergie marémotrice",
+          "Le combustible nucléaire",
+          "Le diesel"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طاقة تنتج عن ارتفاع المد وانخفاضه؟",
+        "choices": [
+          "الفحم",
+          "طاقة المد والجزر",
+          "الوقود النووي",
+          "الديزل"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which renewable energy is produced by heat from deep rock layers in the Earth?",
+    "choices": [
+      "Wind energy",
+      "Biomass",
+      "Geothermal energy",
+      "Solar energy"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle énergie renouvelable est produite par la chaleur des roches profondes de la Terre ?",
+        "choices": [
+          "L’énergie éolienne",
+          "La biomasse",
+          "La géothermie",
+          "L’énergie solaire"
+        ]
+      },
+      "ar": {
+        "question": "أيّ طاقة متجددة تُنتج من حرارة الصخور العميقة في باطن الأرض؟",
+        "choices": [
+          "طاقة الرياح",
+          "الكتلة الحيوية",
+          "الطاقة الحرارية الأرضية",
+          "الطاقة الشمسية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which measure encourages households to install solar panels by paying them for electricity they feed into the grid?",
+    "choices": [
+      "Fine for shade",
+      "Feed-in tariff",
+      "Tax on sunlight",
+      "Ban on rooftops"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle mesure encourage les foyers à installer des panneaux solaires en les rémunérant pour l’électricité injectée ?",
+        "choices": [
+          "L’amende pour ombre",
+          "Le tarif d’achat",
+          "La taxe sur le soleil",
+          "L’interdiction des toits"
+        ]
+      },
+      "ar": {
+        "question": "أيّ إجراء يشجع الأسر على تركيب الألواح الشمسية بدفع مقابل الكهرباء التي تضخها إلى الشبكة؟",
+        "choices": [
+          "غرامة على الظل",
+          "تعرفة الشراء",
+          "ضريبة على ضوء الشمس",
+          "حظر الأسطح"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which natural energy source is used for generating electricity by wind turbines?",
+    "choices": [
+      "Wind",
+      "Oil",
+      "Coal",
+      "Gas"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle source naturelle sert à produire l’électricité des éoliennes ?",
+        "choices": [
+          "Le vent",
+          "Le pétrole",
+          "Le charbon",
+          "Le gaz"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مصدر طبيعي تستخدمه توربينات الرياح لإنتاج الكهرباء؟",
+        "choices": [
+          "الرياح",
+          "النفط",
+          "الفحم",
+          "الغاز"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “solar tracker” designed to do?",
+    "choices": [
+      "Track clouds",
+      "Monitor traffic",
+      "Measure rainfall",
+      "Follow the sun’s movement to capture more light"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "À quoi sert un « suiveur solaire » (solar tracker) ?",
+        "choices": [
+          "Suivre les nuages",
+          "Surveiller la circulation",
+          "Mesurer les précipitations",
+          "Suivre le mouvement du soleil pour capter plus de lumière"
+        ]
+      },
+      "ar": {
+        "question": "ما وظيفة «متتبّع الشمس» (Solar tracker)؟",
+        "choices": [
+          "تتبع السحب",
+          "مراقبة حركة المرور",
+          "قياس هطول الأمطار",
+          "تتبع حركة الشمس لالتقاط مزيد من الضوء"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which metric describes how many kilowatt-hours a solar panel produces per kilowatt of installed capacity?",
+    "choices": [
+      "Market share",
+      "Tax rate",
+      "Interest rate",
+      "Specific yield"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel indicateur décrit la production en kilowattheures par kilowatt installé d’un panneau solaire ?",
+        "choices": [
+          "La part de marché",
+          "Le taux d’imposition",
+          "Le taux d’intérêt",
+          "Le rendement spécifique"
+        ]
+      },
+      "ar": {
+        "question": "أيّ مؤشر يصف عدد الكيلوواط ساعة التي ينتجها اللوح الشمسي لكل كيلوواط من القدرة المركبة؟",
+        "choices": [
+          "الحصة السوقية",
+          "معدل الضريبة",
+          "سعر الفائدة",
+          "الإنتاجية النوعية"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which country is the largest producer of solar panels in the world?",
+    "choices": [
+      "Finland",
+      "China",
+      "Norway",
+      "Iceland"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel pays est le premier producteur mondial de panneaux solaires ?",
+        "choices": [
+          "La Finlande",
+          "La Chine",
+          "La Norvège",
+          "L’Islande"
+        ]
+      },
+      "ar": {
+        "question": "أيّ دولة تُعد أكبر منتج للألواح الشمسية في العالم؟",
+        "choices": [
+          "فنلندا",
+          "الصين",
+          "النرويج",
+          "آيسلندا"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  },
+  {
+    "category": "renewable-energy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which renewable energy technology converts ocean wave movement into electricity?",
+    "choices": [
+      "Diesel generator",
+      "Gas engine",
+      "Wave energy converter",
+      "Coal turbine"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle technologie renouvelable convertit le mouvement des vagues en électricité ?",
+        "choices": [
+          "Le groupe électrogène diesel",
+          "Le moteur à gaz",
+          "Le convertisseur d’énergie des vagues",
+          "La turbine à charbon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ تقنية متجددة تحوّل حركة أمواج البحر إلى كهرباء؟",
+        "choices": [
+          "مولد الديزل",
+          "محرك الغاز",
+          "محوّل طاقة الأمواج",
+          "توربين الفحم"
+        ]
+      }
+    },
+    "reference_text": "IEA, Renewables (latest annual market report)"
+  }
+]

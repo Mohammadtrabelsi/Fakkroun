@@ -1,0 +1,750 @@
+[
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the chemical symbol for iron?",
+    "choices": [
+      "Ir",
+      "In",
+      "I",
+      "Fe"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel est le symbole chimique du fer ?",
+        "choices": [
+          "Ir",
+          "In",
+          "I",
+          "Fe"
+        ]
+      },
+      "ar": {
+        "question": "ما الرمز الكيميائي للحديد؟",
+        "choices": [
+          "Ir",
+          "In",
+          "I",
+          "Fe"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the chemical symbol for oxygen?",
+    "choices": [
+      "Og",
+      "Os",
+      "O",
+      "Ox"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel est le symbole chimique de l’oxygène ?",
+        "choices": [
+          "Og",
+          "Os",
+          "O",
+          "Ox"
+        ]
+      },
+      "ar": {
+        "question": "ما الرمز الكيميائي للأكسجين؟",
+        "choices": [
+          "Og",
+          "Os",
+          "O",
+          "Ox"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "How many bones does a typical adult human skull have?",
+    "choices": [
+      "30",
+      "8",
+      "22",
+      "12"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Combien d’os compte un crâne humain adulte, environ ?",
+        "choices": [
+          "30",
+          "8",
+          "22",
+          "12"
+        ]
+      },
+      "ar": {
+        "question": "كم عظمة تقريبًا في جمجمة الإنسان البالغ؟",
+        "choices": [
+          "30",
+          "8",
+          "22",
+          "12"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which planet has the most moons in the Solar System (as of recent counts)?",
+    "choices": [
+      "Neptune",
+      "Uranus",
+      "Saturn",
+      "Jupiter"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle planète possède le plus grand nombre de lunes dans le Système solaire (selon les décomptes récents) ?",
+        "choices": [
+          "Neptune",
+          "Uranus",
+          "Saturne",
+          "Jupiter"
+        ]
+      },
+      "ar": {
+        "question": "أيّ كوكب يمتلك أكبر عدد من الأقمار في المجموعة الشمسية حسب أحدث الإحصاءات؟",
+        "choices": [
+          "نبتون",
+          "أورانوس",
+          "زحل",
+          "المشتري"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the powerhouse of energy transfer in a cell that produces ATP?",
+    "choices": [
+      "Lysosome",
+      "Vacuole",
+      "Mitochondrion",
+      "Nucleus"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel organite produit l’ATP, source d’énergie de la cellule ?",
+        "choices": [
+          "Le lysosome",
+          "La vacuole",
+          "La mitochondrie",
+          "Le noyau"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عضية تنتج الـATP الذي يمد الخلية بالطاقة؟",
+        "choices": [
+          "الليسوسوم",
+          "الفجوة",
+          "الميتوكوندريا",
+          "النواة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which gas is produced when plants and animals break down food in the absence of oxygen?",
+    "choices": [
+      "Oxygen",
+      "Helium",
+      "Methane",
+      "Argon"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel gaz est produit lorsque des matières organiques se décomposent en l’absence d’oxygène ?",
+        "choices": [
+          "L’oxygène",
+          "L’hélium",
+          "Le méthane",
+          "L’argon"
+        ]
+      },
+      "ar": {
+        "question": "أيّ غاز ينتج عندما تتحلل المواد العضوية في غياب الأكسجين؟",
+        "choices": [
+          "الأكسجين",
+          "الهيليوم",
+          "الميثان",
+          "الأرغون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the scale used to measure the acidity of a solution?",
+    "choices": [
+      "Beaufort scale",
+      "pH scale",
+      "Mohs scale",
+      "Richter scale"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle l’échelle qui mesure l’acidité d’une solution ?",
+        "choices": [
+          "L’échelle de Beaufort",
+          "L’échelle de pH",
+          "L’échelle de Mohs",
+          "L’échelle de Richter"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم المقياس المستخدم لقياس حموضة المحلول؟",
+        "choices": [
+          "مقياس بوفورت",
+          "مقياس الأس الهيدروجيني (pH)",
+          "مقياس موس",
+          "مقياس ريختر"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the name of the first artificial satellite launched into orbit, in 1957?",
+    "choices": [
+      "Explorer 1",
+      "Apollo 11",
+      "Sputnik 1",
+      "Vostok 1"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel fut le premier satellite artificiel lancé en orbite, en 1957 ?",
+        "choices": [
+          "Explorer 1",
+          "Apollo 11",
+          "Spoutnik 1",
+          "Vostok 1"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم أول قمر صناعي أُطلق إلى المدار عام 1957؟",
+        "choices": [
+          "إكسبلورر 1",
+          "أبولو 11",
+          "سبوتنيك 1",
+          "فوستوك 1"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the main function of the roots of a plant?",
+    "choices": [
+      "Producing oxygen",
+      "Absorbing water and minerals",
+      "Attracting insects",
+      "Making seeds"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la fonction principale des racines d’une plante ?",
+        "choices": [
+          "Produire de l’oxygène",
+          "Absorber l’eau et les minéraux",
+          "Attirer les insectes",
+          "Produire des graines"
+        ]
+      },
+      "ar": {
+        "question": "ما الوظيفة الرئيسية لجذور النبات؟",
+        "choices": [
+          "إنتاج الأكسجين",
+          "امتصاص الماء والمعادن",
+          "جذب الحشرات",
+          "إنتاج البذور"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the layer of Earth’s atmosphere that contains the ozone layer?",
+    "choices": [
+      "Exosphere",
+      "Mesosphere",
+      "Stratosphere",
+      "Troposphere"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Comment s’appelle la couche de l’atmosphère terrestre qui contient la couche d’ozone ?",
+        "choices": [
+          "L’exosphère",
+          "La mésosphère",
+          "La stratosphère",
+          "La troposphère"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم الطبقة من الغلاف الجوي للأرض التي تحتوي طبقة الأوزون؟",
+        "choices": [
+          "الإكسوسفير",
+          "الميزوسفير",
+          "الستراتوسفير",
+          "التروبوسفير"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which scientist formulated the law stating that pressure and volume of a gas are inversely proportional at constant temperature?",
+    "choices": [
+      "Michael Faraday",
+      "Antoine Lavoisier",
+      "Joseph Priestley",
+      "Robert Boyle"
+    ],
+    "correct": 4,
+    "translations": {
+      "fr": {
+        "question": "Quel savant a énoncé la loi selon laquelle la pression et le volume d’un gaz sont inversement proportionnels à température constante ?",
+        "choices": [
+          "Michael Faraday",
+          "Antoine Lavoisier",
+          "Joseph Priestley",
+          "Robert Boyle"
+        ]
+      },
+      "ar": {
+        "question": "من وضع قانون أن الضغط والحجم لغاز ما متناسبان عكسيًا عند ثبات درجة الحرارة؟",
+        "choices": [
+          "مايكل فاراداي",
+          "أنطوان لافوازييه",
+          "جوزيف بريستلي",
+          "روبرت بويل"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What do we call a material that allows electricity to flow through it easily?",
+    "choices": [
+      "Conductor",
+      "Battery",
+      "Magnet",
+      "Insulator"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Comment appelle-t-on un matériau qui laisse facilement passer le courant électrique ?",
+        "choices": [
+          "Un conducteur",
+          "Une pile",
+          "Un aimant",
+          "Un isolant"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم المادة التي تسمح بمرور الكهرباء عبرها بسهولة؟",
+        "choices": [
+          "موصل",
+          "بطارية",
+          "مغناطيس",
+          "عازل"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main gas responsible for the blue colour of the sky?",
+    "choices": [
+      "Carbon dioxide reflecting the ocean",
+      "Water vapour",
+      "Scattering of sunlight by air molecules",
+      "Oxygen only"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle est la cause principale de la couleur bleue du ciel ?",
+        "choices": [
+          "Le CO₂ qui reflète l’océan",
+          "La vapeur d’eau",
+          "La diffusion de la lumière solaire par les molécules de l’air",
+          "L’oxygène seul"
+        ]
+      },
+      "ar": {
+        "question": "ما السبب الرئيسي للون الأزرق للسماء؟",
+        "choices": [
+          "ثاني أكسيد الكربون المنعكس من المحيط",
+          "بخار الماء",
+          "تشتت ضوء الشمس بواسطة جزيئات الهواء",
+          "الأكسجين وحده"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the unit used to measure the energy content of food?",
+    "choices": [
+      "Kilocalorie",
+      "Newton",
+      "Pascal",
+      "Ampere"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quelle unité mesure la valeur énergétique des aliments ?",
+        "choices": [
+          "La kilocalorie",
+          "Le newton",
+          "Le pascal",
+          "L’ampère"
+        ]
+      },
+      "ar": {
+        "question": "ما الوحدة المستخدمة لقياس الطاقة في الطعام؟",
+        "choices": [
+          "كيلو كالوري",
+          "النيوتن",
+          "الباسكال",
+          "الأمبير"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which organ helps you digest food by producing bile?",
+    "choices": [
+      "Lungs",
+      "Brain",
+      "Liver",
+      "Heart"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel organe aide à digérer les aliments en produisant la bile ?",
+        "choices": [
+          "Les poumons",
+          "Le cerveau",
+          "Le foie",
+          "Le cœur"
+        ]
+      },
+      "ar": {
+        "question": "أيّ عضو يساعد على الهضم بإفراز الصفراء؟",
+        "choices": [
+          "الرئتان",
+          "الدماغ",
+          "الكبد",
+          "القلب"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the most common metal used in construction?",
+    "choices": [
+      "Steel",
+      "Silver",
+      "Lead",
+      "Gold"
+    ],
+    "correct": 1,
+    "translations": {
+      "fr": {
+        "question": "Quel est le métal le plus utilisé dans la construction ?",
+        "choices": [
+          "L’acier",
+          "L’argent",
+          "Le plomb",
+          "L’or"
+        ]
+      },
+      "ar": {
+        "question": "ما أكثر الفلزات استخدامًا في البناء؟",
+        "choices": [
+          "الفولاذ",
+          "الفضة",
+          "الرصاص",
+          "الذهب"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which particle in an atom has no electric charge?",
+    "choices": [
+      "Electron",
+      "Positron",
+      "Neutron",
+      "Proton"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle particule de l’atome n’a pas de charge électrique ?",
+        "choices": [
+          "L’électron",
+          "Le positron",
+          "Le neutron",
+          "Le proton"
+        ]
+      },
+      "ar": {
+        "question": "أيّ جسيم في الذرة لا يحمل شحنة كهربائية؟",
+        "choices": [
+          "الإلكترون",
+          "البوزيترون",
+          "النيوترون",
+          "البروتون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which tool is used to measure atmospheric pressure?",
+    "choices": [
+      "Anemometer",
+      "Barometer",
+      "Hygrometer",
+      "Thermometer"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel instrument mesure la pression atmosphérique ?",
+        "choices": [
+          "L’anémomètre",
+          "Le baromètre",
+          "L’hygromètre",
+          "Le thermomètre"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة تُستخدم لقياس الضغط الجوي؟",
+        "choices": [
+          "مقياس سرعة الرياح",
+          "مقياس الضغط الجوي (البارومتر)",
+          "مقياس الرطوبة",
+          "مقياس الحرارة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which natural phenomenon is caused by the Moon blocking the Sun’s light?",
+    "choices": [
+      "Lunar eclipse",
+      "Solar eclipse",
+      "Aurora",
+      "Rainbow"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quel phénomène naturel est causé par la Lune qui masque la lumière du Soleil ?",
+        "choices": [
+          "Une éclipse lunaire",
+          "Une éclipse solaire",
+          "Une aurore",
+          "Un arc-en-ciel"
+        ]
+      },
+      "ar": {
+        "question": "أيّ ظاهرة طبيعية تحدث عندما يحجب القمر ضوء الشمس؟",
+        "choices": [
+          "خسوف القمر",
+          "كسوف الشمس",
+          "الشفق القطبي",
+          "قوس قزح"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which branch of science studies the structure and function of the heart?",
+    "choices": [
+      "Neurology",
+      "Cardiology",
+      "Dermatology",
+      "Ophthalmology"
+    ],
+    "correct": 2,
+    "translations": {
+      "fr": {
+        "question": "Quelle discipline médicale étudie la structure et le fonctionnement du cœur ?",
+        "choices": [
+          "La neurologie",
+          "La cardiologie",
+          "La dermatologie",
+          "L’ophtalmologie"
+        ]
+      },
+      "ar": {
+        "question": "أيّ فرع من العلوم يدرس بنية القلب ووظيفته؟",
+        "choices": [
+          "طب الأعصاب",
+          "أمراض القلب",
+          "الأمراض الجلدية",
+          "طب العيون"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which everyday item uses the principle of a magnet?",
+    "choices": [
+      "Glass",
+      "Plate",
+      "Compass",
+      "Spoon"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quel objet courant utilise le principe de l’aimant ?",
+        "choices": [
+          "Le verre",
+          "L’assiette",
+          "La boussole",
+          "La cuillère"
+        ]
+      },
+      "ar": {
+        "question": "أيّ أداة شائعة تعتمد على مبدأ المغناطيس؟",
+        "choices": [
+          "الزجاج",
+          "الصحن",
+          "البوصلة",
+          "الملعقة"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  },
+  {
+    "category": "science-technology",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the name of the force that keeps objects moving in a circle?",
+    "choices": [
+      "Magnetic force",
+      "Centrifugal force only",
+      "Centripetal force",
+      "Friction"
+    ],
+    "correct": 3,
+    "translations": {
+      "fr": {
+        "question": "Quelle force maintient un objet en mouvement circulaire ?",
+        "choices": [
+          "La force magnétique",
+          "La force centrifuge seule",
+          "La force centripète",
+          "Le frottement"
+        ]
+      },
+      "ar": {
+        "question": "ما اسم القوة التي تُبقي الجسم يتحرك في مسار دائري؟",
+        "choices": [
+          "القوة المغناطيسية",
+          "قوة الطرد المركزي وحدها",
+          "قوة الجذب المركزي",
+          "الاحتكاك"
+        ]
+      }
+    },
+    "reference_text": "Encyclopaedia Britannica"
+  }
+]
