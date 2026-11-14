@@ -69,6 +69,8 @@ class PlatformAnalytics
             'active_players' => $this->gameResults->query()->whereIn('game_id', (clone $games)->select('id'))->distinct()->count('user_id'),
             'avg_players_per_game' => round((float) $this->gameResults->query()->whereIn('game_id', $resultGameIds)->selectRaw('count(*) as players')->groupBy('game_id')->get()->avg('players'), 1),
             'answers' => $total,
+            'correct_responses' => (clone $answers)->where('is_correct', true)->count(),
+            'wrong_responses' => (clone $answers)->where('is_correct', false)->count(),
             'correct_rate' => $total > 0 ? round(100 * (clone $answers)->where('is_correct', true)->count() / $total, 1) : null,
             'avg_response_seconds' => $total > 0 ? round(((float) (clone $answers)->avg('response_ms')) / 1000, 1) : null,
             'duplicate_exclusions' => (clone $answers)->where('is_duplicate_excluded', true)->count(),
@@ -146,7 +148,14 @@ class PlatformAnalytics
             ->selectRaw('game_questions.question_id as id, count(*) as answers, sum(case when player_answers.is_correct then 1 else 0 end) as correct, avg(player_answers.response_ms) as response_ms')
             ->groupBy('game_questions.question_id')
             ->get()
-            ->map(fn ($row) => ['id' => (int) $row->id, 'answers' => (int) $row->answers, 'correct_rate' => round(100 * $row->correct / max(1, $row->answers), 1), 'avg_seconds' => round($row->response_ms / 1000, 1)]);
+            ->map(fn ($row) => [
+                'id' => (int) $row->id,
+                'answers' => (int) $row->answers,
+                'correct' => (int) $row->correct,
+                'wrong' => (int) $row->answers - (int) $row->correct,
+                'correct_rate' => round(100 * $row->correct / max(1, $row->answers), 1),
+                'avg_seconds' => round($row->response_ms / 1000, 1),
+            ]);
 
         $ranked = $stats->where('answers', '>=', self::MIN_ANSWERS);
 
@@ -158,6 +167,8 @@ class PlatformAnalytics
             'hardest' => $ranked->sortBy('correct_rate')->take($limit)->values()->all(),
             'easiest' => $ranked->sortByDesc('correct_rate')->take($limit)->values()->all(),
             'most_played' => $stats->sortByDesc('answers')->take($limit)->values()->all(),
+            'most_correct' => $stats->where('correct', '>', 0)->sortByDesc('correct')->take($limit)->values()->all(),
+            'most_wrong' => $stats->where('wrong', '>', 0)->sortByDesc('wrong')->take($limit)->values()->all(),
             'most_reported' => $reported->all(),
         ];
 
@@ -168,6 +179,51 @@ class PlatformAnalytics
             'body' => $questions[$row['id']]?->translations->firstWhere('language', $questions[$row['id']]->origin_language)?->body ?? '—',
             'uuid' => $questions[$row['id']]?->uuid,
         ], $rows), $lists);
+    }
+
+    /**
+     * Rooms created in the period: count, lifecycle status and average seats taken.
+     *
+     * @return array{created: int, by_status: array<string, int>, avg_players: float|null}
+     */
+    public function rooms(Carbon $from, Carbon $to): array
+    {
+        $rooms = $this->rooms->query()->whereBetween('created_at', [$from, $to]);
+        $created = (clone $rooms)->count();
+
+        return [
+            'created' => $created,
+            'by_status' => (clone $rooms)->selectRaw('status, count(*) as total')->groupBy('status')->pluck('total', 'status')->map(fn ($total) => (int) $total)->all(),
+            'avg_players' => $created > 0
+                ? round(DB::table('room_players')->whereIn('room_id', (clone $rooms)->select('id'))->count() / $created, 1)
+                : null,
+        ];
+    }
+
+    /**
+     * Players in the period: new registered accounts, and who played a game
+     * (registered players and guests).
+     *
+     * @return array{registrations: int, registered_players: int, guest_players: int}
+     */
+    public function players(Carbon $from, Carbon $to): array
+    {
+        $games = $this->games->query()->whereBetween('started_at', [$from, $to])->select('id');
+        $played = $this->gameResults->query()
+            ->whereIn('game_results.game_id', $games)
+            ->join('users', 'users.id', '=', 'game_results.user_id')
+            ->selectRaw('users.is_guest as is_guest, count(distinct game_results.user_id) as players')
+            ->groupBy('users.is_guest')
+            ->get();
+
+        $guests = (int) $played->filter(fn ($row) => (bool) $row->is_guest)->sum('players');
+        $registered = (int) $played->reject(fn ($row) => (bool) $row->is_guest)->sum('players');
+
+        return [
+            'registrations' => $this->users->query()->where('is_guest', false)->whereBetween('created_at', [$from, $to])->count(),
+            'registered_players' => $registered,
+            'guest_players' => $guests,
+        ];
     }
 
     /**

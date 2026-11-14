@@ -33,6 +33,8 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
             'daily' => $analytics->dailyGames($from, $to),
             'breakdown' => $analytics->breakdown($from, $to),
             'questions' => $analytics->questions($from, $to),
+            'rooms' => $analytics->rooms($from, $to),
+            'players' => $analytics->players($from, $to),
             'bank' => $analytics->bank(),
             'ai' => $analytics->ai($from, $to),
             'fairPlay' => $analytics->fairPlay($from, $to),
@@ -55,9 +57,30 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
         $data = $this->data;
         $peak = max(1, ...array_values($data['daily']), ...[0]);
 
+        $questionLists = collect(['hardest', 'easiest', 'most_played', 'most_correct', 'most_wrong', 'most_reported'])
+            ->mapWithKeys(fn (string $list): array => [$list => [
+                'label' => __('analytics.lists.'.$list),
+                'rows' => collect($data['questions'][$list])->map(fn (array $row): array => [
+                    'body' => \Illuminate\Support\Str::limit($row['body'], 70),
+                    'url' => $row['uuid'] ? route('admin.questions.edit', $row['uuid']) : null,
+                    'value' => match ($list) {
+                        'most_reported' => trans_choice('analytics.reports', $row['reports'], ['count' => $row['reports']]),
+                        'most_played' => number_format($row['answers']),
+                        'most_correct' => __('analytics.count_correct', ['count' => number_format($row['correct'])]),
+                        'most_wrong' => __('analytics.count_wrong', ['count' => number_format($row['wrong'])]),
+                        default => $row['correct_rate'].' %',
+                    },
+                ])->all(),
+            ]]);
+
         return [
             'd' => $data,
             'o' => $data['overview'],
+            'questionLists' => $questionLists,
+            'roomStatuses' => collect($data['rooms']['by_status'])->map(fn (int $total, string $status): array => [
+                'label' => __('analytics.room_status.'.$status),
+                'value' => number_format($total),
+            ])->values()->all(),
             'fmt' => fn (int|float|null $value, string $suffix = ''): string => $value === null ? '—' : number_format($value, is_float($value) ? 1 : 0).$suffix,
             'peak' => max($data['daily'] ?: [0]),
             'bars' => collect($data['daily'])->map(fn (int $count, string $day): array => [
@@ -88,6 +111,8 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
             ['games_completed', $fmt($o['games_completed']), __('analytics.of_started', ['count' => number_format($o['games_started'])])],
             ['active_players', $fmt($o['active_players']), __('analytics.avg_players', ['count' => $fmt($o['avg_players_per_game'])])],
             ['answers', $fmt($o['answers']), __('analytics.duplicates', ['count' => number_format($o['duplicate_exclusions'])])],
+            ['correct_responses', $fmt($o['correct_responses']), __('analytics.correct_rate_hint', ['rate' => $fmt($o['correct_rate'], ' %')])],
+            ['wrong_responses', $fmt($o['wrong_responses']), ''],
             ['correct_rate', $fmt($o['correct_rate'], ' %'), __('analytics.avg_response', ['seconds' => $fmt($o['avg_response_seconds'])])],
             ['rooms_created', $fmt($o['rooms_created']), ''],
         ] as [$key, $value, $hint])
@@ -124,14 +149,14 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
     <h3 class="ms-fs-18 ms-mb-8">{{ __('analytics.question_title') }}</h3>
     <p class="text-muted ms-fs-13 ms-mb-16">{{ __('analytics.question_hint', ['min' => \App\Domain\Analytics\PlatformAnalytics::MIN_ANSWERS]) }}</p>
     <div class="ms-row-10 ms-wrap ms-mb-24">
-        @foreach (['hardest', 'easiest', 'most_played', 'most_reported'] as $list)
+        @foreach ($questionLists as $list)
             <div class="card ms-flex-1 ms-minw-260">
-                <div class="card-kicker">{{ __('analytics.lists.'.$list) }}</div>
+                <div class="card-kicker">{{ $list['label'] }}</div>
                 <ol class="ms-fs-13 ms-stack-8">
-                    @forelse ($d['questions'][$list] as $row)
+                    @forelse ($list['rows'] as $row)
                         <li class="ms-row-between">
-                            <span>@if ($row['uuid'])<a href="{{ route('admin.questions.edit', $row['uuid']) }}" wire:navigate>{{ \Illuminate\Support\Str::limit($row['body'], 70) }}</a>@else{{ \Illuminate\Support\Str::limit($row['body'], 70) }}@endif</span>
-                            <b class="tabular-nums ms-nowrap">{{ $list === 'most_reported' ? trans_choice('analytics.reports', $row['reports'], ['count' => $row['reports']]) : ($list === 'most_played' ? number_format($row['answers']) : $row['correct_rate'].' %') }}</b>
+                            <span>@if ($row['url'])<a href="{{ $row['url'] }}" wire:navigate>{{ $row['body'] }}</a>@else{{ $row['body'] }}@endif</span>
+                            <b class="tabular-nums ms-nowrap">{{ $row['value'] }}</b>
                         </li>
                     @empty
                         <li class="text-muted">{{ __('analytics.no_data') }}</li>
@@ -139,6 +164,29 @@ new #[Layout('layouts::app')] #[Title('Analytics')] class extends Component
                 </ol>
             </div>
         @endforeach
+    </div>
+
+    <div class="ms-row-10 ms-wrap ms-mb-24">
+        <div class="card ms-flex-1 ms-minw-260">
+            <div class="card-kicker">{{ __('analytics.rooms.title') }}</div>
+            <ul class="ms-fs-13">
+                <li class="ms-row-between"><span>{{ __('analytics.rooms.created') }}</span><b>{{ number_format($d['rooms']['created']) }}</b></li>
+                <li class="ms-row-between"><span>{{ __('analytics.rooms.avg_players') }}</span><b>{{ $fmt($d['rooms']['avg_players']) }}</b></li>
+                @foreach ($roomStatuses as $status)
+                    <li class="ms-row-between"><span>{{ $status['label'] }}</span><b>{{ $status['value'] }}</b></li>
+                @endforeach
+            </ul>
+        </div>
+
+        <div class="card ms-flex-1 ms-minw-260">
+            <div class="card-kicker">{{ __('analytics.players.title') }}</div>
+            <ul class="ms-fs-13">
+                <li class="ms-row-between"><span>{{ __('analytics.players.registrations') }}</span><b>{{ number_format($d['players']['registrations']) }}</b></li>
+                <li class="ms-row-between"><span>{{ __('analytics.players.registered') }}</span><b>{{ number_format($d['players']['registered_players']) }}</b></li>
+                <li class="ms-row-between"><span>{{ __('analytics.players.guests') }}</span><b>{{ number_format($d['players']['guest_players']) }}</b></li>
+            </ul>
+            <p class="text-muted ms-fs-12">{{ __('analytics.players.note') }}</p>
+        </div>
     </div>
 
     <div class="ms-row-10 ms-wrap">
