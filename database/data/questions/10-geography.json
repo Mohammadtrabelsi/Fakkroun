@@ -1,0 +1,178 @@
+[
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is the capital of Morocco?",
+    "choices": ["Casablanca", "Rabat", "Marrakesh", "Fes"],
+    "correct": 2,
+    "explanation": "Rabat is the administrative capital; Casablanca is the largest city.",
+    "reference_text": "Encyclopaedia Britannica, Morocco",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Maroc ?",
+        "choices": ["Casablanca", "Rabat", "Marrakech", "Fès"],
+        "explanation": "Rabat est la capitale administrative du Maroc ; Casablanca en est la plus grande ville."
+      },
+      "ar": {
+        "question": "ما عاصمة المغرب؟",
+        "choices": ["الدار البيضاء", "الرباط", "مراكش", "فاس"],
+        "explanation": "الرباط هي العاصمة الإدارية للمملكة، أما الدار البيضاء فهي أكبر مدنها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which is the largest country in Africa by area?",
+    "choices": ["Algeria", "Democratic Republic of the Congo", "Sudan", "Libya"],
+    "correct": 1,
+    "explanation": "Algeria is the largest country in Africa and the largest Arab country by area.",
+    "reference_text": "Encyclopaedia Britannica, Africa",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus grand pays d’Afrique par sa superficie ?",
+        "choices": ["L’Algérie", "La République démocratique du Congo", "Le Soudan", "La Libye"],
+        "explanation": "L’Algérie est le plus vaste pays d’Afrique, et le plus grand pays arabe par sa superficie."
+      },
+      "ar": {
+        "question": "ما أكبر دولة في إفريقيا من حيث المساحة؟",
+        "choices": ["الجزائر", "جمهورية الكونغو الديمقراطية", "السودان", "ليبيا"],
+        "explanation": "تُعد الجزائر أكبر دولة في إفريقيا من حيث المساحة."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which sea borders Tunisia to the north and east?",
+    "choices": ["The Red Sea", "The Caspian Sea", "The Mediterranean Sea", "The Black Sea"],
+    "correct": 3,
+    "explanation": "Tunisia is bordered by the Mediterranean to the north and east, by Algeria to the west and by Libya to the south-east.",
+    "reference_text": "Encyclopaedia Britannica, Tunisia",
+    "translations": {
+      "fr": {
+        "question": "Quelle mer borde la Tunisie au nord et à l’est ?",
+        "choices": ["La mer Rouge", "La mer Caspienne", "La mer Méditerranée", "La mer Noire"],
+        "explanation": "La Tunisie est bordée par la Méditerranée au nord et à l’est, par l’Algérie à l’ouest et par la Libye au sud-est."
+      },
+      "ar": {
+        "question": "أيّ بحر يُحيط بتونس من الشمال والشرق؟",
+        "choices": ["البحر الأحمر", "بحر قزوين", "البحر الأبيض المتوسط", "البحر الأسود"],
+        "explanation": "تطل تونس على البحر الأبيض المتوسط من الشمال والشرق، وتحدّها الجزائر غربًا وليبيا جنوبًا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the capital of Canada?",
+    "choices": ["Toronto", "Ottawa", "Montreal", "Vancouver"],
+    "correct": 2,
+    "explanation": "Ottawa, in Ontario, is the federal capital; Toronto is the largest city.",
+    "reference_text": "Encyclopaedia Britannica, Canada",
+    "translations": {
+      "fr": {
+        "question": "Quelle est la capitale du Canada ?",
+        "choices": ["Toronto", "Ottawa", "Montréal", "Vancouver"],
+        "explanation": "Ottawa, en Ontario, est la capitale fédérale ; Toronto en est la plus grande ville."
+      },
+      "ar": {
+        "question": "ما عاصمة كندا؟",
+        "choices": ["تورونتو", "أوتاوا", "مونتريال", "فانكوفر"],
+        "explanation": "أوتاوا، الواقعة في مقاطعة أونتاريو، هي العاصمة الاتحادية لكندا."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which mountain range runs through Morocco and Algeria?",
+    "choices": ["Atlas Mountains", "Alps", "Andes", "Pyrenees"],
+    "correct": 1,
+    "explanation": "The Atlas range stretches across North Africa and includes the highest peaks of the Maghreb.",
+    "reference_text": "Encyclopaedia Britannica, Atlas Mountains",
+    "translations": {
+      "fr": {
+        "question": "Quelle chaîne de montagnes traverse le Maroc et l’Algérie ?",
+        "choices": ["L’Atlas", "Les Alpes", "Les Andes", "Les Pyrénées"],
+        "explanation": "La chaîne de l’Atlas s’étend en Afrique du Nord et comprend les plus hauts sommets du Maghreb."
+      },
+      "ar": {
+        "question": "أيّ سلسلة جبلية تمتد عبر المغرب والجزائر؟",
+        "choices": ["جبال الأطلس", "جبال الألب", "جبال الأنديز", "جبال البيرينيه"],
+        "explanation": "تمتد سلسلة الأطلس عبر شمال إفريقيا، ومنها المغرب والجزائر، وتضم أعلى قممه."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "Which river flows through Cairo?",
+    "choices": ["Niger", "Tigris", "Nile", "Euphrates"],
+    "correct": 3,
+    "explanation": "Cairo grew up along the banks of the Nile.",
+    "reference_text": "Encyclopaedia Britannica, Nile River",
+    "translations": {
+      "fr": {
+        "question": "Quel fleuve traverse le Caire ?",
+        "choices": ["Le Niger", "Le Tigre", "Le Nil", "L’Euphrate"],
+        "explanation": "Le Caire s’est développé sur les rives du Nil, qui le traverse."
+      },
+      "ar": {
+        "question": "أيّ نهر يمرّ بالقاهرة؟",
+        "choices": ["النيجر", "دجلة", "النيل", "الفرات"],
+        "explanation": "تقع القاهرة على ضفاف نهر النيل، الذي يمر بها."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is the longest river in Europe?",
+    "choices": ["Danube", "Rhine", "Volga", "Seine"],
+    "correct": 3,
+    "explanation": "The Volga, in Russia, is Europe’s longest river; the Danube comes second.",
+    "reference_text": "Encyclopaedia Britannica, Volga River",
+    "translations": {
+      "fr": {
+        "question": "Quel est le plus long fleuve d’Europe ?",
+        "choices": ["Le Danube", "Le Rhin", "La Volga", "La Seine"],
+        "explanation": "La Volga, en Russie, est le plus long fleuve d’Europe ; le Danube arrive en deuxième position."
+      },
+      "ar": {
+        "question": "ما أطول نهر في أوروبا؟",
+        "choices": ["الدانوب", "الراين", "الفولغا", "السين"],
+        "explanation": "يُعد نهر الفولغا في روسيا أطول أنهار أوروبا، ويحتل الدانوب المرتبة الثانية."
+      }
+    }
+  },
+  {
+    "category": "geography",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "Which is the deepest lake in the world?",
+    "choices": ["Lake Baikal", "Lake Victoria", "Lake Superior", "Lake Tanganyika"],
+    "correct": 1,
+    "explanation": "Lake Baikal in Siberia is more than 1,600 metres deep, the deepest known lake.",
+    "reference_text": "Encyclopaedia Britannica, Lake Baikal",
+    "translations": {
+      "fr": {
+        "question": "Quel est le lac le plus profond du monde ?",
+        "choices": ["Le lac Baïkal", "Le lac Victoria", "Le lac Supérieur", "Le lac Tanganyika"],
+        "explanation": "Le lac Baïkal, en Sibérie, dépasse 1 600 mètres de profondeur, ce qui en fait le lac le plus profond connu."
+      },
+      "ar": {
+        "question": "ما أعمق بحيرة في العالم؟",
+        "choices": ["بحيرة بايكال", "بحيرة فيكتوريا", "بحيرة سوبيريور", "بحيرة تنجانيقا"],
+        "explanation": "تقع بحيرة بايكال في سيبيريا، ويتجاوز عمقها 1600 متر."
+      }
+    }
+  }
+]

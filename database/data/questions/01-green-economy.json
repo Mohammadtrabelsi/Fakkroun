@@ -1,0 +1,178 @@
+[
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which of these is a typical green-economy measure?",
+    "choices": ["Subsidising coal power plants", "Improving energy efficiency in buildings", "Banning all recycling", "Increasing single-use plastic packaging"],
+    "correct": 2,
+    "explanation": "Energy efficiency cuts energy use and emissions while the economy keeps running.",
+    "reference_text": "UNEP green economy principles",
+    "translations": {
+      "fr": {
+        "question": "Laquelle de ces mesures relève de l’économie verte ?",
+        "choices": ["Subventionner les centrales à charbon", "Améliorer l’efficacité énergétique des bâtiments", "Interdire tout recyclage", "Augmenter les emballages plastiques à usage unique"],
+        "explanation": "L’efficacité énergétique réduit la consommation d’énergie et les émissions tout en maintenant l’activité économique."
+      },
+      "ar": {
+        "question": "أيّ هذه الإجراءات يُعدّ من ممارسات الاقتصاد الأخضر؟",
+        "choices": ["دعم محطات الفحم الكهربائية", "تحسين كفاءة الطاقة في المباني", "حظر إعادة التدوير كليًا", "زيادة التغليف البلاستيكي أحادي الاستعمال"],
+        "explanation": "تقلل كفاءة الطاقة استهلاك الطاقة والانبعاثات مع استمرار النشاط الاقتصادي."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "What is “upcycling”?",
+    "choices": ["Shipping waste to other countries", "Burning waste only to produce heat", "Turning used products into items of higher value", "Selling products at a higher price"],
+    "correct": 3,
+    "explanation": "Upcycling gives discarded materials a second, more valuable life instead of throwing them away.",
+    "reference_text": "UNEP green economy principles",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « surcyclage » (upcycling) ?",
+        "choices": ["Expédier les déchets vers d’autres pays", "Brûler les déchets uniquement pour produire de la chaleur", "Transformer des objets usagés en objets de plus grande valeur", "Vendre les produits plus cher"],
+        "explanation": "Le surcyclage donne une seconde vie plus précieuse aux matériaux jetés."
+      },
+      "ar": {
+        "question": "ما المقصود بـ«إعادة الترقية» (Upcycling)؟",
+        "choices": ["شحن النفايات إلى دول أخرى", "حرق النفايات لإنتاج الحرارة فقط", "تحويل المنتجات المستعملة إلى منتجات ذات قيمة أعلى", "بيع المنتجات بسعر أعلى"],
+        "explanation": "تمنح إعادة الترقية المواد المهملة حياة ثانية أكثر قيمة بدلًا من التخلص منها."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "easy",
+    "language": "en",
+    "question": "Which of these materials is biodegradable?",
+    "choices": ["Polystyrene foam", "Aluminium can", "Glass bottle", "Paper"],
+    "correct": 4,
+    "explanation": "Paper breaks down naturally through microorganisms; glass and metal do not biodegrade.",
+    "reference_text": "UNEP green economy principles",
+    "translations": {
+      "fr": {
+        "question": "Lequel de ces matériaux est biodégradable ?",
+        "choices": ["Le polystyrène expansé", "La canette en aluminium", "La bouteille en verre", "Le papier"],
+        "explanation": "Le papier se décompose naturellement grâce aux micro-organismes ; le verre et le métal ne se biodégradent pas."
+      },
+      "ar": {
+        "question": "أيّ هذه المواد قابل للتحلل الحيوي؟",
+        "choices": ["رغوة البوليستيرين", "علبة الألومنيوم", "زجاجة الزجاج", "الورق"],
+        "explanation": "يتحلل الورق طبيعيًا بفعل الكائنات الدقيقة، أما الزجاج والمعدن فلا يتحللان حيويًا."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is the main goal of eco-design?",
+    "choices": ["Making products as cheap as possible", "Reducing a product’s environmental impact over its whole life", "Using only plastic packaging", "Replacing every product each year"],
+    "correct": 2,
+    "explanation": "Eco-design considers materials, energy use, repair and end of life from the very start.",
+    "reference_text": "UNEP green economy principles",
+    "translations": {
+      "fr": {
+        "question": "Quel est l’objectif principal de l’éco-conception ?",
+        "choices": ["Rendre les produits les moins chers possible", "Réduire l’impact environnemental d’un produit sur toute sa durée de vie", "N’utiliser que des emballages plastiques", "Remplacer chaque produit chaque année"],
+        "explanation": "L’éco-conception prend en compte dès le départ les matériaux, l’énergie, la réparation et la fin de vie."
+      },
+      "ar": {
+        "question": "ما الهدف الرئيسي من التصميم البيئي؟",
+        "choices": ["جعل المنتجات أرخص ما يمكن", "تقليل الأثر البيئي للمنتج طوال دورة حياته", "الاعتماد على التغليف البلاستيكي وحده", "استبدال كل منتج كل عام"],
+        "explanation": "يأخذ التصميم البيئي في الحسبان منذ البداية المواد والطاقة والإصلاح ونهاية العمر الافتراضي."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What does “EPR”, a core principle of waste policy, stand for?",
+    "choices": ["Extended Producer Responsibility", "Environmental Public Report", "Energy Production Rate", "European Plastic Regulation"],
+    "correct": 1,
+    "explanation": "EPR makes producers responsible for what happens to their products at the end of their life.",
+    "reference_text": "OECD extended producer responsibility guidance",
+    "translations": {
+      "fr": {
+        "question": "Que signifie « REP » (responsabilité élargie du producteur), principe clé de la politique des déchets ?",
+        "choices": ["Responsabilité élargie du producteur", "Rapport public environnemental", "Taux de production d’énergie", "Réglementation européenne du plastique"],
+        "explanation": "La REP oblige les producteurs à prendre en charge la fin de vie de leurs produits."
+      },
+      "ar": {
+        "question": "ماذا يعني اختصار EPR، وهو مبدأ أساسي في سياسات النفايات؟",
+        "choices": ["المسؤولية الموسعة للمنتج", "تقرير بيئي عام", "معدل إنتاج الطاقة", "لائحة البلاستيك الأوروبية"],
+        "explanation": "تُلزم المسؤولية الموسعة للمنتج الشركات بتحمّل مسؤولية نهاية عمر منتجاتها."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "medium",
+    "language": "en",
+    "question": "What is a “carbon credit”?",
+    "choices": ["A tax on imported fuel", "A bank loan for solar panels", "A tradable certificate for one tonne of CO₂ avoided or removed", "A subsidy for coal exploration"],
+    "correct": 3,
+    "explanation": "A carbon credit represents one tonne of CO₂ avoided or removed from the atmosphere, and it can be traded.",
+    "reference_text": "UNFCCC carbon market mechanisms",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce qu’un « crédit carbone » ?",
+        "choices": ["Une taxe sur les carburants importés", "Un prêt bancaire pour panneaux solaires", "Un certificat négociable correspondant à une tonne de CO₂ évitée ou retirée", "Une subvention à l’exploration du charbon"],
+        "explanation": "Un crédit carbone représente une tonne de CO₂ évitée ou retirée de l’atmosphère, et il peut être échangé."
+      },
+      "ar": {
+        "question": "ما هو «الائتمان الكربوني»؟",
+        "choices": ["ضريبة على الوقود المستورد", "قرض مصرفي لألواح الطاقة الشمسية", "شهادة قابلة للتداول تمثل طنًا من ثاني أكسيد الكربون تم تجنبه أو إزالته", "دعم حكومي لاستكشاف الفحم"],
+        "explanation": "يمثل الائتمان الكربوني طنًا من ثاني أكسيد الكربون تم تجنبه أو إزالته من الجو، ويمكن تداوله."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What does a “Life Cycle Assessment” (LCA) measure?",
+    "choices": ["A product’s environmental impacts from raw materials to disposal", "Only the price of a product over its lifetime", "The number of employees needed per product", "How long a factory has been operating"],
+    "correct": 1,
+    "explanation": "An LCA evaluates all the environmental impacts of a product, from extracting raw materials to end of life.",
+    "reference_text": "ISO 14040 life cycle assessment",
+    "translations": {
+      "fr": {
+        "question": "Que mesure une « analyse du cycle de vie » (ACV) ?",
+        "choices": ["Les impacts environnementaux d’un produit, de l’extraction des matières à l’élimination", "Uniquement le prix d’un produit pendant sa durée de vie", "Le nombre d’employés nécessaires par produit", "Depuis combien de temps une usine fonctionne"],
+        "explanation": "L’ACV évalue tous les impacts d’un produit, de l’extraction des matières premières jusqu’à sa fin de vie."
+      },
+      "ar": {
+        "question": "ماذا يقيس «تقييم دورة الحياة» (LCA)؟",
+        "choices": ["الأثر البيئي للمنتج من المواد الخام حتى التخلص منه", "سعر المنتج خلال عمره فقط", "عدد العاملين اللازمين لكل منتج", "المدة التي يعمل فيها المصنع"],
+        "explanation": "يقيّم تقييم دورة الحياة كل الآثار البيئية للمنتج، من استخراج المواد الخام حتى نهاية عمره."
+      }
+    }
+  },
+  {
+    "category": "green-economy",
+    "difficulty": "hard",
+    "language": "en",
+    "question": "What is “greenwashing”?",
+    "choices": ["Painting factories green to save energy", "Misleading claims that a product or company is environmentally friendly", "A method for cleaning polluted rivers", "Government funding for green start-ups"],
+    "correct": 2,
+    "explanation": "Greenwashing means presenting a product or company as greener than it really is.",
+    "reference_text": "EU rules on environmental claims",
+    "translations": {
+      "fr": {
+        "question": "Qu’est-ce que le « greenwashing » (écoblanchiment) ?",
+        "choices": ["Peindre les usines en vert pour économiser l’énergie", "Des affirmations trompeuses sur le caractère écologique d’un produit ou d’une entreprise", "Une méthode pour nettoyer les rivières polluées", "Un financement public des start-ups vertes"],
+        "explanation": "L’écoblanchiment consiste à se présenter comme plus respectueux de l’environnement qu’on ne l’est réellement."
+      },
+      "ar": {
+        "question": "ما هو «الغسل الأخضر» (Greenwashing)؟",
+        "choices": ["طلاء المصانع بالأخضر لتوفير الطاقة", "ادعاءات مضللة بأن منتجًا أو شركة صديقة للبيئة", "طريقة لتنظيف الأنهار الملوثة", "تمويل حكومي للشركات الناشئة الخضراء"],
+        "explanation": "الغسل الأخضر هو تقديم صورة عن الالتزام البيئي أكبر من الواقع الفعلي."
+      }
+    }
+  }
+]
