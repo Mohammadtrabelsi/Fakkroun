@@ -7,6 +7,7 @@ It is built on top of the MajidaStarter kit documented below. Fakkroun-specific 
 - [`00-technical-assessment.md`](docs/fakkroun/00-technical-assessment.md): repository audit, proposed schema, risks and roadmap
 - [`01-phase-1-report.md`](docs/fakkroun/01-phase-1-report.md): Phase 1 (foundation) progress report
 - [`02-mvp.md`](docs/fakkroun/02-mvp.md): the first playable version (question bank, moderation, live multiplayer games) and how to try it
+- [`demo/fakkroun-demo.mp4`](docs/fakkroun/demo/fakkroun-demo.mp4): a 1 min 40 s recorded play-through (host on a laptop, two guests on phones)
 - `03-…` to `11-next-step-*.md`: one file per next step, starting with [running CI](docs/fakkroun/03-next-step-run-ci.md)
 
 After migrating, run `php artisan db:seed --class=ConfigDatabaseSeeder` to create the roles, the admin account and the 13 initial categories (or `php artisan db:seed` to also get 18 playable demo questions), and `php artisan storage:link` so profile pictures and cover images are served.
