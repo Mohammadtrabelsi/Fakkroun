@@ -1,6 +1,6 @@
 # MajidaStarter: starter-kit reference
 
-Fakkroun is built on the MajidaStarter kit. This file keeps the kit-level reference (features, configuration, seeded accounts, services, localization, roles, scaffolding) that the root [`README.md`](../README.md) links to. Fakkroun's own features are described in the root README and in [`docs/fakkroun/`](fakkroun).
+Fakkroun is built on the MajidaStarter kit. This file keeps the kit-level reference (features, configuration, seeded accounts, services, localization, roles, scaffolding) that the root [`README.md`](README.md) links to. Fakkroun's own features are described in the root README and in [`docs/fakkroun/`](../fakkroun).
 
 ## Highlights
 
@@ -17,10 +17,10 @@ Fakkroun is built on the MajidaStarter kit. This file keeps the kit-level refere
 - **SEO structured data & RSS** — schema.org JSON-LD (Organization, WebSite, BreadcrumbList, BlogPosting) with [spatie/schema-org](https://github.com/spatie/schema-org), canonical/Open Graph tags, and an RSS feed at `/feed` with [spatie/laravel-feed](https://github.com/spatie/laravel-feed). Slugs are generated and kept stable by [spatie/laravel-sluggable](https://github.com/spatie/laravel-sluggable).
 - **Spam protection** — the register and forgot-password forms carry a honeypot and timing check ([spatie/laravel-honeypot](https://github.com/spatie/laravel-honeypot)).
 - **Backups & health monitoring** — scheduled, monitored database + upload backups ([spatie/laravel-backup](https://spatie.be/docs/laravel-backup)) and application health checks ([spatie/laravel-health](https://spatie.be/docs/laravel-health)), each with an admin page; a token-protected `/health.json` for uptime monitors.
-- **PDF & spreadsheets** — post PDFs from a shared Blade layout ([spatie/laravel-pdf](https://spatie.be/docs/laravel-pdf), DomPDF driver), streamed CSV/XLSX exports and a validated category import ([spatie/simple-excel](https://github.com/spatie/simple-excel)). See **[docs/spatie-integrations.md](spatie-integrations.md)** for these features in detail.
+- **PDF & spreadsheets** — post PDFs from a shared Blade layout ([spatie/laravel-pdf](https://spatie.be/docs/laravel-pdf), DomPDF driver), streamed CSV/XLSX exports and a validated category import ([spatie/simple-excel](https://github.com/spatie/simple-excel)). See **[docs/spatie-integrations.md](../spatie-integrations.md)** for these features in detail.
 - **Visit statistics** — page views on the public site are counted (bots, admin, API and asset requests are excluded) and shown on the dashboards.
 - **System health** — the admin dashboard checks the database, cache and queue, and `/up` exposes a liveness endpoint for uptime monitors.
-- **REST API** — every service is exposed as JSON endpoints under `/api`, protected by the same authorization gates as the web UI. Sessions and Sanctum personal access tokens are both accepted (see [API](../README.md#api)).
+- **REST API** — every service is exposed as JSON endpoints under `/api`, protected by the same authorization gates as the web UI. Sessions and Sanctum personal access tokens are both accepted (see [API](README.md#api)).
 - **Localization (i18n) with RTL support** — English, Arabic, and French ship by default, with a language switcher, per-session locale persistence, and automatic text-direction handling.
 - **Translatable settings** — site name and description are stored per-locale via [spatie/laravel-translatable](https://spatie.be/docs/laravel-translatable).
 - **Light / dark theme toggle** — a persistent, no-flash theme switcher.
@@ -41,7 +41,7 @@ Fakkroun is built on the MajidaStarter kit. This file keeps the kit-level refere
 - **Scheduler:** run `php artisan schedule:work` locally, or add `* * * * * php /path/to/artisan schedule:run` to cron in production. The scheduler prunes the activity log, rebuilds the sitemap, runs the health checks every minute and the daily backup.
 - **Sitemap:** set `APP_URL` to the canonical production domain (e.g. `https://www.example.com`) — every sitemap and robots.txt URL is built from it, and generation refuses `localhost`/`.test`-style hosts in production. The PHP user running the scheduler and queue worker must be able to write to `public/`. Run `php artisan sitemap:generate` once after deploying.
 - **New permissions:** after upgrading, run `php artisan migrate --force` and `php artisan db:seed --class=RolesAndPermissionsSeeder --force` so the admin role gets `manage tags`, `view system health` and `manage backups`.
-- **Backups:** the server needs `mysqldump`/`pg_dump`/`sqlite3` for your database driver. Set `BACKUP_NOTIFICATION_EMAIL` and, for off-site disks, `BACKUP_DISKS` and `BACKUP_ARCHIVE_PASSWORD`. Archives exclude `.env` and the source code. Restore steps: [docs/spatie-integrations.md#restoring](spatie-integrations.md#restoring).
+- **Backups:** the server needs `mysqldump`/`pg_dump`/`sqlite3` for your database driver. Set `BACKUP_NOTIFICATION_EMAIL` and, for off-site disks, `BACKUP_DISKS` and `BACKUP_ARCHIVE_PASSWORD`. Archives exclude `.env` and the source code. Restore steps: [docs/spatie-integrations.md#restoring](../spatie-integrations.md#restoring).
 - **Health monitoring:** the scheduler runs the checks every minute. Set `HEALTH_NOTIFICATION_EMAIL` for alerts and `HEALTH_SECRET_TOKEN` to enable `/health.json` for external monitors.
 - **Maintenance mode** is controlled from **Admin → Settings**; it does not need `php artisan down`.
 - **Health checks:** point uptime monitors at `/up`. The admin dashboard's system-health card shows the same probes in more detail.
