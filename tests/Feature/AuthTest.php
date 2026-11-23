@@ -116,6 +116,45 @@ class AuthTest extends TestCase
         $this->assertGuest();
     }
 
+    public function test_front_sign_in_lands_on_the_front_not_the_admin_panel(): void
+    {
+        $player = User::factory()->create(['password' => bcrypt('password')]);
+
+        Livewire::withSession(['url.intended' => route('admin.dashboard')])
+            ->test('pages::auth.login')
+            ->set('email', $player->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertRedirect(route('dashboard'));
+
+        $this->assertAuthenticatedAs($player);
+    }
+
+    public function test_front_sign_in_returns_to_a_front_page_it_was_sent_from(): void
+    {
+        $player = User::factory()->create(['password' => bcrypt('password')]);
+        $invitation = route('rooms.invitation', 'ABCD2345');
+
+        Livewire::withSession(['url.intended' => $invitation])
+            ->test('pages::auth.login')
+            ->set('email', $player->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertRedirect($invitation);
+    }
+
+    public function test_staff_sign_in_ignores_a_front_page_and_goes_to_the_back_office(): void
+    {
+        $admin = User::factory()->admin()->create(['password' => bcrypt('password')]);
+
+        Livewire::withSession(['url.intended' => route('dashboard')])
+            ->test('pages::auth.admin-login')
+            ->set('email', $admin->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertRedirect(route('admin.dashboard'));
+    }
+
     public function test_guests_are_sent_to_the_matching_login(): void
     {
         $this->get('/admin/dashboard')->assertRedirect('/admin/login');

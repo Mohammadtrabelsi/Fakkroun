@@ -79,6 +79,6 @@ trait AuthenticatesIntoPortal
 
         // Full page load: the two portals use different layouts and the target
         // may be a plain controller route (e.g. /join/{code}).
-        $this->redirect(PostLoginRedirect::urlFor($user));
+        $this->redirect(PostLoginRedirect::urlFor($user, $portal));
     }
 }
