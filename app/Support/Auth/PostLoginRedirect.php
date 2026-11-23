@@ -12,8 +12,8 @@ final class PostLoginRedirect
      * Front-office sign-in (player portal) always stays on the front: the page
      * that sent them to log in (e.g. a room invitation) when it is a front page,
      * otherwise the player dashboard. Back-office URLs are never used there.
-     * Staff sign-in (staff portal) lands on their back-office home, unless it
-     * was sent to a front page.
+     * Staff sign-in (staff portal) always lands in the back office: the back-office
+     * page they were sent to, else their back-office home.
      */
     public static function urlFor(User $user, string $portal): string
     {
@@ -25,9 +25,13 @@ final class PostLoginRedirect
                 : route('dashboard');
         }
 
-        $default = $user->canAccessBackoffice() ? $user->backofficeHomeUrl() : route('dashboard');
+        if (! $user->canAccessBackoffice()) {
+            return route('dashboard');
+        }
 
-        return $intended !== '' ? $intended : $default;
+        return $intended !== '' && self::isBackofficeUrl($intended)
+            ? $intended
+            : $user->backofficeHomeUrl();
     }
 
     private static function isBackofficeUrl(string $url): bool

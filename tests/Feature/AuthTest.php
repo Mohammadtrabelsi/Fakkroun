@@ -143,6 +143,18 @@ class AuthTest extends TestCase
             ->assertRedirect($invitation);
     }
 
+    public function test_staff_sign_in_ignores_a_front_page_and_goes_to_the_back_office(): void
+    {
+        $admin = User::factory()->admin()->create(['password' => bcrypt('password')]);
+
+        Livewire::withSession(['url.intended' => route('dashboard')])
+            ->test('pages::auth.admin-login')
+            ->set('email', $admin->email)
+            ->set('password', 'password')
+            ->call('login')
+            ->assertRedirect(route('admin.dashboard'));
+    }
+
     public function test_guests_are_sent_to_the_matching_login(): void
     {
         $this->get('/admin/dashboard')->assertRedirect('/admin/login');
