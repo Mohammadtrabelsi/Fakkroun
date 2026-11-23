@@ -48,9 +48,11 @@ Route::livewire('/leaderboard', 'pages::leaderboard')->name('leaderboard');
 Route::livewire('/play', 'pages::rooms.start')->name('play');
 
 // Playing needs no account: anyone can join with a code and a nickname (the
-// join page signs visitors in as guest players, see GuestPlayers). Only
-// creating a room, and every account page below, needs a real account.
+// join page signs visitors in as guest players, see GuestPlayers). Hosting is
+// open the same way: the create page takes a nickname from visitors who are
+// not signed in. Every account page below still needs a real account.
 Route::livewire('/play/join', 'pages::rooms.join')->name('rooms.join');
+Route::livewire('/play/host', 'pages::rooms.create')->name('rooms.create');
 // Shareable invitation link (spec §12.2); visitors without a session pick a
 // nickname on the join page first.
 Route::livewire('/join/{code}', 'pages::rooms.invitation')
@@ -102,7 +104,6 @@ Route::middleware(['auth', 'registered'])->group(function () {
         Route::livewire('/players/{user}', 'pages::players.show')->name('players.show');
 
         Route::middleware('can:play games')->group(function () {
-            Route::livewire('/play/host', 'pages::rooms.create')->name('rooms.create');
             Route::livewire('/play/history', 'pages::rooms.history')->name('rooms.history');
         });
 

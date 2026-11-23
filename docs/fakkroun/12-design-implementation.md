@@ -41,6 +41,6 @@ Resolved and removed: B3 ("Request changes" added), B4 (per-language translation
 
 | # | Topic | Brief | Current | Proposal |
 | --- | --- | --- | --- | --- |
-| B1 | **Guest players** | Guests join with a nickname and a session token | Master spec §12: registered players only; `room_players.user_id` is required | Allow guests **only to join** (not to host), with a nickname, rate-limited by IP; results are not kept on any profile. Needs your confirmation, since it changes the schema and the anti-abuse model. |
+| B1 | **Guest players** | Guests join with a nickname and a session token | Master spec §12: registered players only; `room_players.user_id` is required | **Decided 2026-11-23:** guests may join **and host** with a nickname (`/play/host`), rate-limited by IP; results are not kept on any profile. No schema change: a guest is a throwaway user, so `room_players.user_id` still holds. Guests who host a room are not pruned while that room exists. |
 | B2 | **Room code length** | 4 characters | 6 characters, unique for the platform's lifetime | 4 characters are fine if codes are **recycled** once a room has finished (unique only among open rooms). Confirm and I'll switch. |
 | B5 | **Real time** | Reverb + Echo | Polling (MVP) | Reverb is named in the brief, so it's allowed, but it needs `composer require`/`npm install`, which can't run in this environment. Do it as soon as CI or a local PHP 8.4 is available ([`04`](04-next-step-realtime-reverb.md)). |

@@ -47,10 +47,6 @@ class RoomService
     {
         $this->authorizePlay($host);
 
-        // Playing needs no account, hosting does.
-        if ($host->isGuest()) {
-            throw new AuthorizationException;
-        }
         $game = $this->settings->all()['game'];
         $scoring = $this->settings->all()['scoring'];
 
@@ -103,6 +99,31 @@ class RoomService
 
             return $room;
         });
+    }
+
+    /**
+     * Hosts a room as a nickname-only guest player: the throwaway guest is
+     * created and signed in by the caller only when the room was created. If
+     * the room cannot be created, the guest is deleted so nothing is left behind.
+     *
+     * @param  array<string, mixed>  $input  same keys as create()
+     * @return array{room: Room, guest: User}
+     *
+     * @throws \Throwable when the room cannot be created (validation, limits)
+     */
+    public function createAsGuest(string $nickname, array $input): array
+    {
+        $guest = $this->guests->create($nickname);
+
+        try {
+            $room = $this->create($guest, $input);
+        } catch (\Throwable $e) {
+            $guest->forceDelete();
+
+            throw $e;
+        }
+
+        return ['room' => $room, 'guest' => $guest];
     }
 
     /**
