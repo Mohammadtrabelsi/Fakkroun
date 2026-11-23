@@ -16,7 +16,7 @@ Fakkroun is built on the **MajidaStarter** kit (Laravel 13, Livewire 4). The kit
 | Area | What it does |
 | --- | --- |
 | **Live games** | Hosts create a room (topics, number of questions, seconds per question, difficulty, language, maximum players). Each room gets a 6-character code, an invitation link and a QR code. The lobby offers copy, Web Share and WhatsApp. The server sets all deadlines and scores; clients only send a choice. |
-| **Guest play** | Anyone can join a room with a code or invitation link and a nickname. Creating a room needs an account. |
+| **Guest play** | Anyone can join or host a room with a nickname, using a code or invitation link. No account is needed. |
 | **Duplicate-answer rule** | When enough players give the same answer, none of those answers score. The threshold is set in admin settings. |
 | **Scoring and results** | Points by difficulty, plus a speed bonus. Running leaderboard, final ranking and per-player statistics. Game history, achievements and a public leaderboard (weekly and all-time). |
 | **Question bank** | Four-choice questions with a translation per language, each approved on its own. Lifecycle: draft, pending, review, approved, published. Revision history, exact and near-duplicate detection, and import and export (CSV, XLSX, JSON). |

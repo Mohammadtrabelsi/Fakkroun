@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Domain\Billing\PlanService;
+use App\Domain\Gameplay\Models\Room;
 use App\Enums\AccountStatus;
 use App\Models\Concerns\TracksUserActions;
 use App\Notifications\QueuedResetPassword;
@@ -14,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Prunable;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -79,7 +81,21 @@ class User extends Authenticatable
      */
     public function prunable(): Builder
     {
-        return static::withTrashed()->where('is_guest', true)->where('created_at', '<', now()->subDays(7));
+        // A guest who hosted a room stays: rooms.host_id cascades, and deleting
+        // the host would also delete that room and its game history for the
+        // players who took part.
+        return static::withTrashed()
+            ->where('is_guest', true)
+            ->where('created_at', '<', now()->subDays(7))
+            ->whereDoesntHave('hostedRooms');
+    }
+
+    /**
+     * @return HasMany<Room, $this>
+     */
+    public function hostedRooms(): HasMany
+    {
+        return $this->hasMany(Room::class, 'host_id');
     }
 
     public function isAdmin(): bool

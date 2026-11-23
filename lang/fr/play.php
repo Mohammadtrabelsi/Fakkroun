@@ -15,6 +15,7 @@ return [
         'title' => 'Créer une salle',
         'description' => 'Choisissez les thèmes et les règles, puis invitez les joueurs avec le code ou le lien de la salle.',
         'default_name' => 'Salle de :name',
+        'nickname_hint' => 'Aucun compte nécessaire : le pseudo est ce que voient les autres joueurs.',
         'name' => 'Nom de la salle',
         'categories' => 'Thèmes',
         'language' => 'Langue des questions',
@@ -39,7 +40,6 @@ return [
         'sign_in' => 'Se connecter',
         'nickname' => 'Pseudo',
         'nickname_placeholder' => 'ex. Sami',
-        'create_needs_account' => '(nécessite un compte)',
         'guest_cta' => 'Créez un compte pour organiser vos propres salles et garder vos scores.',
         'guest_cta_button' => 'Créer un compte',
         'or_create' => 'Vous préférez organiser une partie ?',
@@ -91,7 +91,6 @@ return [
         'host_step_2' => 'Partagez le code QR, le lien ou le code de la salle.',
         'host_step_3' => 'Lancez la partie quand tout le monde est là.',
         'host_button' => 'Organiser une salle',
-        'host_needs_account' => 'Organiser une salle nécessite un compte gratuit. Connectez-vous d’abord, vous reviendrez directement à votre salle.',
     ],
     'rule' => [
         'title' => 'Règle des réponses identiques',

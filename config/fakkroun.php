@@ -279,6 +279,8 @@ return [
         'reset-password' => [6, 60],
         // Guests get a throwaway account when they join: keep this one tight.
         'join-room' => [10, 60],
+        // Hosting as a nickname-only guest (create page) also creates a throwaway account.
+        'create-room' => [10, 60],
         // Looking a typed code up to show its QR code (join page): one per complete code.
         'room-code-lookup' => [20, 60],
     ],

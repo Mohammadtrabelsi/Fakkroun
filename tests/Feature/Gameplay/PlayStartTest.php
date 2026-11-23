@@ -18,21 +18,13 @@ class PlayStartTest extends GameplayTestCase
             ->assertSee(__('play.start.join_title'))
             ->assertSee(__('play.start.host_title'))
             ->assertSee('action="'.route('rooms.join').'"', false)
-            ->assertSee('href="'.route('rooms.create').'"', false)
-            ->assertSee(__('play.start.host_needs_account'));
+            ->assertSee('href="'.route('rooms.create').'"', false);
     }
 
-    public function test_registered_players_are_not_told_to_create_an_account(): void
-    {
-        $this->actingAs($this->player())->get(route('play'))->assertOk()
-            ->assertSee(__('play.start.host_title'))
-            ->assertDontSee(__('play.start.host_needs_account'));
-    }
-
-    public function test_guest_players_see_that_hosting_needs_an_account(): void
+    public function test_guest_players_can_host_from_the_chooser(): void
     {
         $this->actingAs(app(GuestPlayers::class)->create('Sami'))->get(route('play'))->assertOk()
-            ->assertSee(__('play.start.host_needs_account'));
+            ->assertSee('href="'.route('rooms.create').'"', false);
     }
 
     public function test_play_buttons_open_the_chooser_for_everyone(): void
@@ -41,14 +33,11 @@ class PlayStartTest extends GameplayTestCase
         $this->actingAs($this->player())->get(route('home'))->assertSee('href="'.route('play').'"', false);
     }
 
-    public function test_hosting_sends_visitors_and_guest_players_to_the_sign_in_and_back(): void
+    public function test_hosting_opens_for_visitors_and_guest_players_without_sign_in(): void
     {
-        $this->get(route('rooms.create'))->assertRedirect(route('login'));
+        $this->get(route('rooms.create'))->assertOk();
 
-        $this->actingAs(app(GuestPlayers::class)->create('Sami'))->get(route('rooms.create'))
-            ->assertRedirect(route('login'))
-            ->assertSessionHas('url.intended', route('rooms.create'));
-        $this->assertGuest();
+        $this->actingAs(app(GuestPlayers::class)->create('Sami'))->get(route('rooms.create'))->assertOk();
     }
 
     public function test_the_waiting_room_offers_qr_code_link_whatsapp_and_messenger(): void

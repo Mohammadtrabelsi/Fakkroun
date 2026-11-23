@@ -205,8 +205,7 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Join a room')] class exten
 
         <p class="m-0 text-ink-muted">
             {{ __('play.join.or_create') }}
-            <a href="{{ auth()->check() && ! auth()->user()->isGuest() ? route('rooms.create') : route('login') }}" class="font-semibold text-sea">{{ __('play.create.title') }}</a>
-            <span class="text-sm">{{ __('play.join.create_needs_account') }}</span>
+            <a href="{{ route('rooms.create') }}" class="font-semibold text-sea">{{ __('play.create.title') }}</a>
         </p>
     </div>
 </div>

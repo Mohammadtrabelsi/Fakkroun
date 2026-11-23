@@ -3,6 +3,7 @@
 use App\Domain\Gameplay\QuestionSelector;
 use App\Domain\Gameplay\RoomService;
 use App\Services\PlatformSettings;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Computed;
@@ -13,11 +14,17 @@ use Livewire\Component;
 
 /**
  * Play lobby (fakkroun-design/design/Lobby.dc.html): create a room, join with
- * a code, or pick an open public room.
+ * a code, or pick an open public room. Visitors who are not signed in host
+ * with a nickname: the room is created by a guest player (GuestPlayers).
  */
 new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Component
 {
+    use \App\Support\Livewire\ThrottlesSubmissions;
+
     public string $name = '';
+
+    /** Display name for a host who is not signed in. */
+    public string $nickname = '';
 
     /** @var array<int, int> */
     public array $categoryIds = [];
@@ -41,15 +48,19 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
 
     public function mount(PlatformSettings $settings): void
     {
-        $this->authorize('play games');
+        $user = auth()->user();
+
+        if ($user !== null) {
+            $this->authorize('play games');
+        }
 
         $game = $settings->all()['game'];
-        $this->name = __('play.create.default_name', ['name' => Str::before(auth()->user()->name, ' ')]);
+        $this->name = $user === null ? '' : __('play.create.default_name', ['name' => Str::before($user->name, ' ')]);
         $this->questionCount = in_array((int) $game['default_question_count'], $this->counts(), true) ? (int) $game['default_question_count'] : ($this->counts()[0] ?? 10);
         $this->secondsPerQuestion = in_array((int) $game['default_question_seconds'], $this->times(), true) ? (int) $game['default_question_seconds'] : ($this->times()[0] ?? 20);
         $this->maxPlayers = (int) min($game['max_players'], 10);
         $this->duplicateRule = (bool) $settings->get('scoring.duplicate_rule_default');
-        $this->language = auth()->user()->preferredQuestionLocale();
+        $this->language = $user?->preferredQuestionLocale() ?? app()->getLocale();
         $this->categoryIds = app(RoomService::class)->defaultCategoryIds();
     }
 
@@ -96,20 +107,32 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
 
     public function create(RoomService $rooms): void
     {
-        $this->authorize('play games');
+        $input = [
+            'name' => $this->name,
+            'category_ids' => array_map('intval', $this->categoryIds),
+            'question_count' => $this->questionCount,
+            'seconds_per_question' => $this->secondsPerQuestion,
+            'difficulty' => $this->difficulty,
+            'language' => $this->language,
+            'duplicate_rule' => $this->duplicateRule,
+            'max_players' => $this->maxPlayers,
+            'visibility' => $this->isPrivate ? 'private' : 'public',
+        ];
 
         try {
-            $room = $rooms->create(auth()->user(), [
-                'name' => $this->name,
-                'category_ids' => array_map('intval', $this->categoryIds),
-                'question_count' => $this->questionCount,
-                'seconds_per_question' => $this->secondsPerQuestion,
-                'difficulty' => $this->difficulty,
-                'language' => $this->language,
-                'duplicate_rule' => $this->duplicateRule,
-                'max_players' => $this->maxPlayers,
-                'visibility' => $this->isPrivate ? 'private' : 'public',
-            ]);
+            // Public form: every attempt counts, including ones that create a guest.
+            $this->throttleSubmission('create-room', 'form');
+
+            if (auth()->guest()) {
+                $this->validate(['nickname' => ['required', 'string', 'min:2', 'max:24']], [], ['nickname' => __('play.join.nickname')]);
+
+                ['room' => $room, 'guest' => $guest] = $rooms->createAsGuest($this->nickname, $input);
+                Auth::login($guest);
+                session()->regenerate();
+            } else {
+                $this->authorize('play games');
+                $room = $rooms->create(auth()->user(), $input);
+            }
         } catch (ValidationException $e) {
             foreach ($e->errors() as $key => $messages) {
                 $this->addError(Str::before($key, '.'), $messages[0]);
@@ -127,6 +150,13 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
 
     public function join(RoomService $rooms): void
     {
+        // Joining takes a nickname for visitors who are not signed in: the join page asks for it.
+        if (auth()->guest()) {
+            $this->redirect(route('rooms.join', ['code' => $this->code]), navigate: true);
+
+            return;
+        }
+
         $room = $rooms->findByCode($this->code);
 
         if ($room === null) {
@@ -159,6 +189,17 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
             <h2 id="create-h" class="m-0 text-[26px] font-semibold">{{ __('play.create.title') }}</h2>
 
             @error('form') <p role="alert" class="m-0 rounded-xl bg-tint-sun p-3 font-semibold text-[#5A3618]">{{ $message }}</p> @enderror
+
+            @guest
+                <div class="flex flex-col gap-2">
+                    <label for="host-nickname" class="font-semibold">{{ __('play.join.nickname') }}</label>
+                    <input id="host-nickname" wire:model="nickname" type="text" autocomplete="nickname" minlength="2" maxlength="24" placeholder="{{ __('play.join.nickname_placeholder') }}"
+                           @error('nickname') aria-invalid="true" aria-describedby="host-nickname-error" @enderror
+                           class="min-h-[52px] rounded-[14px] border-2 border-sand-400 bg-white px-4 text-[17px] font-medium text-ink">
+                    @error('nickname') <span id="host-nickname-error" role="alert" class="text-sm text-wrong">{{ $message }}</span> @enderror
+                    <span class="text-sm text-ink-soft">{{ __('play.create.nickname_hint') }}</span>
+                </div>
+            @endguest
 
             <div class="flex flex-col gap-2">
                 <label for="room-name" class="font-semibold">{{ __('play.create.name') }}</label>

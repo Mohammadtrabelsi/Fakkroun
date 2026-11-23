@@ -6,11 +6,8 @@ use Livewire\Component;
 
 /*
  * Where every "Play" button leads: the player picks between joining a room
- * (code or QR code, no account needed) and hosting one (create the room, then
- * share its QR code from the waiting room).
- *
- * Hosting needs a real account: the create page sends visitors and guest
- * players through the sign-in and brings them back.
+ * (code or QR code) and hosting one (create the room, then share its QR code
+ * from the waiting room). Neither needs an account: visitors pick a nickname.
  */
 new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Component
 {
@@ -20,7 +17,6 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
     public function with(): array
     {
         return [
-            'needsAccount' => auth()->user()?->isGuest() !== false,
             'hostSteps' => [__('play.start.host_step_1'), __('play.start.host_step_2'), __('play.start.host_step_3')],
         ];
     }
@@ -61,9 +57,6 @@ new #[Layout('components.layouts.fakkroun')] #[Title('Play')] class extends Comp
                 </ol>
                 <div class="mt-auto flex flex-col gap-2">
                     <a href="{{ route('rooms.create') }}" class="fk-btn fk-btn-primary min-h-14 rounded-[14px] text-lg">{{ __('play.start.host_button') }}</a>
-                    @if ($needsAccount)
-                        <p class="m-0 text-sm text-ink-muted">{{ __('play.start.host_needs_account') }}</p>
-                    @endif
                 </div>
             </section>
         </div>

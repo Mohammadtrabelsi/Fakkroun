@@ -15,6 +15,7 @@ return [
         'title' => 'Create a room',
         'description' => 'Choose topics and rules, then invite players with the room code or link.',
         'default_name' => ':name’s room',
+        'nickname_hint' => 'No account needed: the nickname is how the other players see you.',
         'name' => 'Room name',
         'categories' => 'Topics',
         'language' => 'Question language',
@@ -39,7 +40,6 @@ return [
         'sign_in' => 'Sign in',
         'nickname' => 'Nickname',
         'nickname_placeholder' => 'e.g. Sami',
-        'create_needs_account' => '(needs an account)',
         'guest_cta' => 'Create an account to host your own rooms and keep your scores.',
         'guest_cta_button' => 'Create an account',
         'or_create' => 'Hosting a game instead?',
@@ -91,7 +91,6 @@ return [
         'host_step_2' => 'Share the QR code, the link or the room code.',
         'host_step_3' => 'Start the game when everyone is in.',
         'host_button' => 'Host a room',
-        'host_needs_account' => 'Hosting needs a free account. You sign in first, then come straight back to your room.',
     ],
     'rule' => [
         'title' => 'Duplicate-answer rule',
