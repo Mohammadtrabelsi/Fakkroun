@@ -1,4 +1,4 @@
-FROM php:8.4-fpm-alpine
+FROM php:8.5-fpm-alpine
 
 # Build arguments for matching the host user (avoids permission issues on ./src)
 ARG UID=1000
